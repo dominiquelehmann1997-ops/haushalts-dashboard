@@ -251,10 +251,42 @@ export async function seedDatabase(prisma: PrismaClient) {
   }
 
   // -------------------------------------------------------------------------
-  // Recipe (no ingredients yet — Phase 6) + MealPlanEntry (Mo–Fr)
+  // Recipe (with Ingredient lists — Phase 6) + MealPlanEntry (Mo–Fr)
   // -------------------------------------------------------------------------
   const recipeNames = ["Pasta al Pomodoro", "Gemüse-Curry", "Reste", "Ofengemüse", "Pizzaabend"];
   const simpleRecipes = new Set(["Pasta al Pomodoro", "Reste"]);
+
+  // Ingredient lists per recipe — Pasta al Pomodoro intentionally includes
+  // Tomaten/Basilikum/Parmesan to line up with the seeded "recipe" shopping
+  // items above. "Reste" (leftovers) has none.
+  const recipeIngredients: Record<string, { name: string; amount: string | null; unit: string | null }[]> = {
+    "Pasta al Pomodoro": [
+      { name: "Nudeln", amount: "500", unit: "g" },
+      { name: "Tomaten", amount: "6", unit: null },
+      { name: "Basilikum", amount: "1", unit: "Bund" },
+      { name: "Parmesan", amount: "100", unit: "g" },
+      { name: "Knoblauch", amount: "2", unit: "Zehen" },
+      { name: "Olivenöl", amount: null, unit: null },
+    ],
+    "Gemüse-Curry": [
+      { name: "Gemüsemischung", amount: "500", unit: "g" },
+      { name: "Kokosmilch", amount: "1", unit: "Dose" },
+      { name: "Currypaste", amount: "2", unit: "EL" },
+      { name: "Reis", amount: "300", unit: "g" },
+    ],
+    Reste: [],
+    Ofengemüse: [
+      { name: "Kartoffeln", amount: "1", unit: "kg" },
+      { name: "Karotten", amount: "4", unit: null },
+      { name: "Zucchini", amount: "2", unit: null },
+      { name: "Olivenöl", amount: null, unit: null },
+    ],
+    Pizzaabend: [
+      { name: "Pizzateig", amount: "2", unit: null },
+      { name: "Tomatensoße", amount: "1", unit: "Glas" },
+      { name: "Käse", amount: "200", unit: "g" },
+    ],
+  };
 
   const recipesByName = new Map<string, { id: string }>();
   for (const name of recipeNames) {
@@ -262,6 +294,17 @@ export async function seedDatabase(prisma: PrismaClient) {
       data: { name, simple: simpleRecipes.has(name) },
     });
     recipesByName.set(name, recipe);
+
+    for (const ingredient of recipeIngredients[name] ?? []) {
+      await prisma.ingredient.create({
+        data: {
+          recipeId: recipe.id,
+          name: ingredient.name,
+          amount: ingredient.amount,
+          unit: ingredient.unit,
+        },
+      });
+    }
   }
 
   const mealPlan: { date: Date; recipeName: string }[] = [
