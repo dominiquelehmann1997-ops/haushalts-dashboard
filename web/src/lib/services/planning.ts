@@ -9,7 +9,15 @@ import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import { dayBounds } from "@/lib/dates";
 import { planTask } from "@/lib/engine";
-import type { Balances, EngineTask, PersonKey, PhaseConfig, PlanInput, PlanResult } from "@/lib/engine/types";
+import type {
+  Balances,
+  DayForecast,
+  EngineTask,
+  PersonKey,
+  PhaseConfig,
+  PlanInput,
+  PlanResult,
+} from "@/lib/engine/types";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { getWeeklyBalances } from "@/lib/repositories/accounts";
 import { assignTask } from "@/lib/repositories/tasks";
@@ -17,6 +25,18 @@ import { assignTask } from "@/lib/repositories/tasks";
 export interface PlanDecision {
   taskId: string;
   result: PlanResult;
+}
+
+export interface PlanDueTasksOptions {
+  /**
+   * Forecast for `day` and following days, fed straight into the engine's
+   * weather check (`@/lib/engine/weatherCheck`). Injected by the caller
+   * (Phase 8 fetches it via `@/integrations/weather/openMeteo`'s
+   * `getForecast`) — `planDueTasks` itself never calls the network.
+   * Defaults to `[]`, which matches the previous hardcoded-stub behavior
+   * (no forecast data → outdoor tasks are never deferred for weather).
+   */
+  forecast?: DayForecast[];
 }
 
 const DEFAULT_PHASE: PhaseConfig = {
@@ -71,8 +91,16 @@ async function loadPhaseConfig(client: PrismaClient): Promise<PhaseConfig> {
  * `assigned` bookings update the local balances incrementally so fairness
  * spreads work across the batch, `deferred` tasks are rescheduled, and
  * `unassignable` tasks are left untouched (still open, unassigned).
+ *
+ * `opts.forecast` is passed straight through to the engine's weather check —
+ * see `PlanDueTasksOptions`. `busy` stays `[]` for now (Phase 4 wires it up).
  */
-export async function planDueTasks(day: Date, client: PrismaClient = prisma): Promise<PlanDecision[]> {
+export async function planDueTasks(
+  day: Date,
+  opts: PlanDueTasksOptions = {},
+  client: PrismaClient = prisma,
+): Promise<PlanDecision[]> {
+  const { forecast = [] } = opts;
   const { start, end } = dayBounds(day);
 
   const phase = await loadPhaseConfig(client);
@@ -99,7 +127,7 @@ export async function planDueTasks(day: Date, client: PrismaClient = prisma): Pr
       window: undefined,
       persons: ["dome", "emely"],
       busy: [],
-      forecast: [],
+      forecast,
       phase,
       balances,
     };

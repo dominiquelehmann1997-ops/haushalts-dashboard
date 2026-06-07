@@ -4,6 +4,7 @@ import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import { dayBounds } from "@/lib/dates";
 import { selectByFairness } from "@/lib/engine/fairness";
+import type { DayForecast } from "@/lib/engine/types";
 import { getWeeklyBalances } from "@/lib/repositories/accounts";
 
 import { planDueTasks } from "./planning";
@@ -40,8 +41,38 @@ describe("planning service", () => {
     });
   }
 
+  /** Formats a Date as a local "YYYY-MM-DD" key, matching `DayForecast.date`. */
+  function dateKey(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+  async function createOpenOutdoorTask(input: {
+    title: string;
+    allowedPersons: "both" | "dome" | "emely";
+    effort: number;
+    weatherCondition: { noRain: boolean; minTemp?: number };
+    dueDate: Date;
+  }) {
+    return client.task.create({
+      data: {
+        title: input.title,
+        type: "todo",
+        effort: input.effort,
+        status: "open",
+        allowedPersons: input.allowedPersons,
+        outdoor: true,
+        weatherCondition: JSON.stringify(input.weatherCondition),
+        assignedToId: null,
+        dueDate: input.dueDate,
+      },
+    });
+  }
+
   it("returns [] when all of today's due tasks are already assigned", async () => {
-    const decisions = await planDueTasks(today, client);
+    const decisions = await planDueTasks(today, {}, client);
     expect(decisions).toEqual([]);
   });
 
@@ -56,7 +87,7 @@ describe("planning service", () => {
       effort: 10,
     });
 
-    const decisions = await planDueTasks(today, client);
+    const decisions = await planDueTasks(today, {}, client);
 
     expect(decisions).toHaveLength(1);
     expect(decisions[0]).toMatchObject({
@@ -82,7 +113,7 @@ describe("planning service", () => {
       effort: 10,
     });
 
-    const decisions = await planDueTasks(today, client);
+    const decisions = await planDueTasks(today, {}, client);
 
     expect(decisions).toHaveLength(1);
     expect(decisions[0]).toMatchObject({
@@ -117,7 +148,7 @@ describe("planning service", () => {
       effort: 10,
     });
 
-    const decisions = await planDueTasks(today, client);
+    const decisions = await planDueTasks(today, {}, client);
 
     expect(decisions).toHaveLength(2);
     expect(decisions[0]).toMatchObject({
@@ -136,5 +167,46 @@ describe("planning service", () => {
     for (const t of both) {
       expect(t.assignedTo?.key).toBeDefined();
     }
+  });
+
+  it("defers an unassigned outdoor 'noRain' task due today to a later dry day, given an injected forecast", async () => {
+    // Local midnight, two days from today — matches `checkWeather`'s
+    // `fromLocalDateKey(later.date)` (which the engine uses as `suggestedDay`).
+    const dryDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2);
+
+    const forecast: DayForecast[] = [
+      {
+        date: dateKey(today),
+        rainWindows: [{ from: "00:00", to: "23:59" }],
+        minTemp: 10,
+        maxTemp: 16,
+      },
+      {
+        date: dateKey(dryDay),
+        rainWindows: [],
+        minTemp: 12,
+        maxTemp: 20,
+      },
+    ];
+
+    const task = await createOpenOutdoorTask({
+      title: "Garten umgraben",
+      allowedPersons: "both",
+      effort: 30,
+      weatherCondition: { noRain: true },
+      dueDate: today,
+    });
+
+    const decisions = await planDueTasks(today, { forecast }, client);
+
+    expect(decisions).toHaveLength(1);
+    expect(decisions[0]).toMatchObject({
+      taskId: task.id,
+      result: { kind: "deferred", suggestedDay: dryDay },
+    });
+
+    const updated = await client.task.findUniqueOrThrow({ where: { id: task.id } });
+    expect(updated.status).toBe("moved");
+    expect(updated.dueDate.getTime()).toBe(dryDay.getTime());
   });
 });
