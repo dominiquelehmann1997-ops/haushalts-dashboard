@@ -91,7 +91,7 @@ describe("generateNextOccurrence", () => {
     expect(created?.title).toBe(task.title);
     expect(created?.effort).toBe(task.effort);
     expect(created?.rhythm).toBe(task.rhythm);
-    expect(created?.dueDate.getTime() - task.dueDate.getTime()).toBe(7 * 24 * 60 * 60 * 1000);
+    expect(created!.dueDate.getTime() - task.dueDate.getTime()).toBe(7 * 24 * 60 * 60 * 1000);
   });
 
   it("does not create a second successor when one already exists", async () => {
