@@ -163,3 +163,15 @@ model Note {
   pinned Boolean   @default(false)
   date   DateTime?
 }
+
+/// Stored OAuth credentials for a third-party provider (Phase 4: Google Calendar,
+/// read-only). Only the refresh token is required to stay "connected" across
+/// restarts; access token + expiry are cached opportunistically.
+model OAuthToken {
+  id           String    @id @default(cuid())
+  provider     String    @unique // "google"
+  refreshToken String
+  accessToken  String?
+  expiresAt    DateTime?
+  updatedAt    DateTime  @updatedAt
+}

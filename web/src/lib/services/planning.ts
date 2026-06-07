@@ -11,6 +11,7 @@ import { dayBounds } from "@/lib/dates";
 import { planTask } from "@/lib/engine";
 import type {
   Balances,
+  BusyWindow,
   DayForecast,
   EngineTask,
   PersonKey,
@@ -37,6 +38,19 @@ export interface PlanDueTasksOptions {
    * (no forecast data → outdoor tasks are never deferred for weather).
    */
   forecast?: DayForecast[];
+  /**
+   * Busy windows for `day` (and surrounding days, if useful), fed straight
+   * into the engine's availability check (`@/lib/engine/availability` —
+   * tested in Phase 2). Injected by the caller (Phase 4 fetches it via
+   * `@/lib/repositories/calendar`'s `getBusyWindows`) — `planDueTasks` itself
+   * never queries calendar data directly.
+   *
+   * Defaults to `[]`. Note: only affects tasks that carry a time `window` —
+   * tasks currently have none (`window: undefined` below), so this is plumbed
+   * through for future task-time-windows support; the engine's overlap logic
+   * is already covered by Phase 2's availability tests.
+   */
+  busy?: BusyWindow[];
 }
 
 const DEFAULT_PHASE: PhaseConfig = {
@@ -92,15 +106,15 @@ async function loadPhaseConfig(client: PrismaClient): Promise<PhaseConfig> {
  * spreads work across the batch, `deferred` tasks are rescheduled, and
  * `unassignable` tasks are left untouched (still open, unassigned).
  *
- * `opts.forecast` is passed straight through to the engine's weather check —
- * see `PlanDueTasksOptions`. `busy` stays `[]` for now (Phase 4 wires it up).
+ * `opts.forecast`/`opts.busy` are passed straight through to the engine's
+ * weather/availability checks — see `PlanDueTasksOptions`.
  */
 export async function planDueTasks(
   day: Date,
   opts: PlanDueTasksOptions = {},
   client: PrismaClient = prisma,
 ): Promise<PlanDecision[]> {
-  const { forecast = [] } = opts;
+  const { forecast = [], busy = [] } = opts;
   const { start, end } = dayBounds(day);
 
   const phase = await loadPhaseConfig(client);
@@ -126,7 +140,7 @@ export async function planDueTasks(
       day,
       window: undefined,
       persons: ["dome", "emely"],
-      busy: [],
+      busy,
       forecast,
       phase,
       balances,
