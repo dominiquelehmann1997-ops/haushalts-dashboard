@@ -2,24 +2,7 @@
 
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
-
-/** Returns the Monday 00:00 → Sunday 23:59:59.999 bounds of the current local ISO week. */
-function currentWeekBounds(): { start: Date; end: Date } {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ...
-  const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
-
-  const monday = new Date(today);
-  monday.setDate(monday.getDate() + diffToMonday);
-
-  const sunday = new Date(monday);
-  sunday.setDate(sunday.getDate() + 6);
-  sunday.setHours(23, 59, 59, 999);
-
-  return { start: monday, end: sunday };
-}
+import { currentWeekBounds } from "@/lib/dates";
 
 /**
  * Sums `AccountEntry.points` per person ("dome" | "emely") for entries whose

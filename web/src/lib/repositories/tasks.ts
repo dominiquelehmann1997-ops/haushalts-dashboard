@@ -6,17 +6,7 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { Task, TaskStatus } from "@/lib/domain";
-
-/** Returns the local-day [start, end] bounds (00:00:00.000 → 23:59:59.999) for `date`. */
-function dayBounds(date: Date): { start: Date; end: Date } {
-  const start = new Date(date);
-  start.setHours(0, 0, 0, 0);
-
-  const end = new Date(start);
-  end.setHours(23, 59, 59, 999);
-
-  return { start, end };
-}
+import { dayBounds } from "@/lib/dates";
 
 type TaskRow = {
   id: string;
