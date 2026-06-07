@@ -49,6 +49,8 @@ model Task {
   projectId String?
   project   Project? @relation(fields: [projectId], references: [id])
 
+  // id of the routine Task this instance was generated from (Phase 3 recurrence).
+  // Intentionally a bare scalar, not a self-relation, to keep recurring chains simple.
   recurringParentId String?
 
   dueDate     DateTime
