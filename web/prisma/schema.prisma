@@ -1,0 +1,163 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// SQLite has no native enum type — string columns are used for enum-like
+// fields. Allowed values are documented per field below.
+
+/// Household member. key values: "dome" | "emely" | "baby"
+model Person {
+  id          String @id @default(cuid())
+  key         String @unique // "dome" | "emely" | "baby"
+  name        String
+  colorAccent String
+  role        String // "adult" | "baby"
+
+  assignedTasks  Task[]
+  accountEntries AccountEntry[]
+}
+
+/// A task / routine / shopping / project item.
+model Task {
+  id               String  @id @default(cuid())
+  title            String
+  type             String // "routine" | "todo" | "shopping" | "project"
+  effort           Int
+  rhythm           String? // e.g. "weekly", "2x-week"
+  allowedPersons   String // "both" | "dome" | "emely"
+  outdoor          Boolean @default(false)
+  weatherCondition String? // JSON string: {noRain:bool, minTemp?:number}
+  status           String  @default("open") // "open" | "done" | "moved" | "failed"
+  reason           String?
+  icon             String?
+  note             String?
+  sub              String?
+
+  assignedToId String?
+  assignedTo   Person? @relation(fields: [assignedToId], references: [id])
+
+  projectId String?
+  project   Project? @relation(fields: [projectId], references: [id])
+
+  recurringParentId String?
+
+  dueDate     DateTime
+  completedAt DateTime?
+  createdAt   DateTime @default(now())
+
+  accountEntries AccountEntry[]
+}
+
+/// Grouping of related tasks.
+model Project {
+  id    String  @id @default(cuid())
+  title String
+  icon  String?
+
+  tasks Task[]
+}
+
+/// Synced calendar event (e.g. from Google Calendar).
+model CalendarEvent {
+  id          String   @id @default(cuid())
+  externalId  String   @unique
+  calendarKey String
+  title       String
+  start       DateTime
+  end         DateTime
+  personKey   String? // "dome" | "emely" | "baby"
+  kind        String   @default("termin") // "termin" | "baby-arzt"
+  place       String?
+  updatedAt   DateTime @updatedAt
+}
+
+/// A points-based ledger entry for a person's "Konto".
+model AccountEntry {
+  id String @id @default(cuid())
+
+  personId String
+  person   Person @relation(fields: [personId], references: [id])
+
+  label  String
+  points Int
+  source String // "planned" | "nachtrag" | "betreuung"
+
+  taskId String?
+  task   Task?   @relation(fields: [taskId], references: [id])
+
+  occurredAt DateTime @default(now())
+}
+
+/// Time-bound configuration for "normal" vs "Elternzeit" mode.
+model PhaseSetting {
+  id           String    @id @default(cuid())
+  mode         String // "normal" | "elternzeit"
+  targetDome   Int
+  targetEmely  Int
+  caregiverKey String? // "dome" | "emely" | "baby"
+  activeFrom   DateTime
+  activeUntil  DateTime?
+  isActive     Boolean   @default(true)
+}
+
+/// A recipe used for meal planning.
+model Recipe {
+  id     String  @id @default(cuid())
+  name   String
+  simple Boolean @default(true)
+  tags   String? // JSON string array
+
+  ingredients     Ingredient[]
+  mealPlanEntries MealPlanEntry[]
+}
+
+/// A single ingredient line of a recipe.
+model Ingredient {
+  id String @id @default(cuid())
+
+  recipeId String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+
+  name   String
+  amount String?
+  unit   String?
+}
+
+/// A planned meal for a given date.
+model MealPlanEntry {
+  id   String   @id @default(cuid())
+  date DateTime
+
+  recipeId String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+}
+
+/// A shopping list item.
+model ShoppingItem {
+  id        String   @id @default(cuid())
+  text      String
+  meal      Boolean  @default(false)
+  source    String   @default("manual") // "manual" | "recipe"
+  recipeRef String?
+  done      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+/// A pinned/dated note.
+model Note {
+  id     String    @id @default(cuid())
+  icon   String?
+  text   String
+  pinned Boolean   @default(false)
+  date   DateTime?
+}
