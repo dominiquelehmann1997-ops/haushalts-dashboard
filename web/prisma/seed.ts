@@ -1,56 +1,60 @@
 import "dotenv/config";
 
+import { pathToFileURL } from "node:url";
+
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 
 import { PrismaClient } from "../src/generated/prisma/client";
-
-// Standalone PrismaClient instance for the seed script (not the app singleton,
-// so this file can run independently via `tsx prisma/seed.ts` / `prisma db seed`).
-const adapter = new PrismaBetterSqlite3({
-  url: process.env.DATABASE_URL ?? "file:./dev.db",
-});
-const prisma = new PrismaClient({ adapter });
 
 // ---------------------------------------------------------------------------
 // Date helpers — everything is anchored to "today" (local midnight) and the
 // current ISO week (Monday–Sunday), so the seed stays reusable across runs.
 // ---------------------------------------------------------------------------
 
-const today = new Date();
-today.setHours(0, 0, 0, 0);
-
-/** Returns a Date at `today + days`, local midnight. */
+/** Returns a Date at `date + days`, local midnight preserved. */
 function addDays(date: Date, days: number): Date {
   const d = new Date(date);
   d.setDate(d.getDate() + days);
   return d;
 }
 
-/** Returns a Date on `today` at the given local hour:minute. */
-function atTime(hours: number, minutes: number): Date {
-  const d = new Date(today);
-  d.setHours(hours, minutes, 0, 0);
-  return d;
-}
+/**
+ * Wipes all tables and re-creates the full fixture dataset, anchored to the
+ * runtime "today" (local midnight) and the current ISO week (Monday–Sunday).
+ *
+ * Single source of truth for fixtures: used by both the CLI seed entrypoint
+ * (`main`, against the dev DB) and the Vitest test-DB harness (against a
+ * dedicated test DB) — see `web/src/test/db.ts`. Idempotent: safe to call
+ * repeatedly, also doubles as a per-test reset.
+ */
+export async function seedDatabase(prisma: PrismaClient) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
-// Monday of the current ISO week containing `today`.
-const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ...
-const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
-const monday = addDays(today, diffToMonday);
+  /** Returns a Date on `today` at the given local hour:minute. */
+  function atTime(hours: number, minutes: number): Date {
+    const d = new Date(today);
+    d.setHours(hours, minutes, 0, 0);
+    return d;
+  }
 
-const weekdays = {
-  mo: monday,
-  di: addDays(monday, 1),
-  mi: addDays(monday, 2),
-  do: addDays(monday, 3),
-  fr: addDays(monday, 4),
-};
+  // Monday of the current ISO week containing `today`.
+  const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ...
+  const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+  const monday = addDays(today, diffToMonday);
 
-// ~3 months ago, local midnight.
-const threeMonthsAgo = new Date(today);
-threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+  const weekdays = {
+    mo: monday,
+    di: addDays(monday, 1),
+    mi: addDays(monday, 2),
+    do: addDays(monday, 3),
+    fr: addDays(monday, 4),
+  };
 
-async function main() {
+  // ~3 months ago, local midnight.
+  const threeMonthsAgo = new Date(today);
+  threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+
   console.log(`Seeding... (today = ${today.toISOString()}, monday = ${monday.toISOString()})`);
 
   // -------------------------------------------------------------------------
@@ -442,11 +446,31 @@ async function main() {
   console.log("\nSeed completed.");
 }
 
-main()
-  .catch((error) => {
+// ---------------------------------------------------------------------------
+// CLI entrypoint — standalone PrismaClient against the dev DB (not the app
+// singleton, so this file can run independently via `tsx prisma/seed.ts` /
+// `prisma db seed`).
+// ---------------------------------------------------------------------------
+
+async function main() {
+  const adapter = new PrismaBetterSqlite3({
+    url: process.env.DATABASE_URL ?? "file:./dev.db",
+  });
+  const prisma = new PrismaClient({ adapter });
+
+  try {
+    await seedDatabase(prisma);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+// Run only when executed directly (e.g. `tsx prisma/seed.ts`), not when
+// imported (e.g. by the test-DB harness for `seedDatabase`).
+const isMainModule = Boolean(process.argv[1]) && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isMainModule) {
+  main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });
+}
