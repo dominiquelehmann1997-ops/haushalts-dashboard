@@ -1,6 +1,9 @@
 # Visual-companion / Brainstorming-Artefakte
 .superpowers/
 
+# Design-Handoff aus Claude Design (Binär-Bundle, neu ladbar)
+.design-handoff/
+
 # Abhängigkeiten / Builds (für später)
 node_modules/
 dist/
