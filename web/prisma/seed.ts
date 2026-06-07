@@ -101,7 +101,7 @@ export async function seedDatabase(prisma: PrismaClient) {
       completedAt: today,
     },
   });
-  const tAbendessen = await prisma.task.create({
+  await prisma.task.create({
     data: {
       title: "Abendessen kochen",
       type: "routine",
@@ -113,7 +113,7 @@ export async function seedDatabase(prisma: PrismaClient) {
       dueDate: today,
     },
   });
-  const tBad = await prisma.task.create({
+  await prisma.task.create({
     data: {
       title: "Bad putzen",
       type: "routine",
@@ -141,7 +141,7 @@ export async function seedDatabase(prisma: PrismaClient) {
       dueDate: today,
     },
   });
-  const tWaesche = await prisma.task.create({
+  await prisma.task.create({
     data: {
       title: "Wäsche zusammenlegen",
       type: "routine",
@@ -309,61 +309,42 @@ export async function seedDatabase(prisma: PrismaClient) {
   });
 
   // -------------------------------------------------------------------------
-  // AccountEntry — weekly split ≈ Dome 60 / Emely 40, occurredAt within
-  // the current ISO week (Monday..Sunday).
+  // AccountEntry — bereits ERLEDIGTE Arbeit dieser Woche (Spec: Punkte nur
+  // fürs Erledigen). Bewusst entkoppelt von den noch offenen Heute-Aufgaben:
+  // nur die tatsächlich erledigte Aufgabe (Müll) trägt eine `taskId`; die
+  // übrigen Buchungen stehen für früher in der Woche erledigte Arbeit.
+  // Wochen-Aufteilung ≈ Dome 60 / Emely 40; occurredAt innerhalb der ISO-Woche.
   // -------------------------------------------------------------------------
   const weekTimestamp = atTime(9, 0); // any moment within the current week
 
-  await prisma.accountEntry.create({
-    data: {
-      personId: dome.id,
-      label: "Müll rausbringen",
-      points: 5,
-      source: "planned",
-      taskId: tMuell.id,
-      occurredAt: weekTimestamp,
-    },
-  });
-  await prisma.accountEntry.create({
-    data: {
-      personId: dome.id,
-      label: "Bad putzen",
-      points: 25,
-      source: "planned",
-      taskId: tBad.id,
-      occurredAt: weekTimestamp,
-    },
-  });
-  await prisma.accountEntry.create({
-    data: {
-      personId: dome.id,
-      label: "Abendessen kochen",
-      points: 30,
-      source: "planned",
-      taskId: tAbendessen.id,
-      occurredAt: weekTimestamp,
-    },
-  });
-  await prisma.accountEntry.create({
-    data: {
-      personId: emely.id,
-      label: "Wäsche zusammenlegen",
-      points: 10,
-      source: "planned",
-      taskId: tWaesche.id,
-      occurredAt: weekTimestamp,
-    },
-  });
-  await prisma.accountEntry.create({
-    data: {
-      personId: emely.id,
-      label: "Babybetreuung",
-      points: 30,
-      source: "betreuung",
-      taskId: null,
-      occurredAt: weekTimestamp,
-    },
-  });
+  const accountEntries: {
+    person: { id: string };
+    label: string;
+    points: number;
+    source: "planned" | "betreuung";
+    taskId: string | null;
+  }[] = [
+    // Dome: 5 + 25 + 30 = 60
+    { person: dome, label: "Müll rausbringen", points: 5, source: "planned", taskId: tMuell.id },
+    { person: dome, label: "Wocheneinkauf erledigt", points: 25, source: "planned", taskId: null },
+    { person: dome, label: "Küche geputzt", points: 30, source: "planned", taskId: null },
+    // Emely: 10 + 30 = 40
+    { person: emely, label: "Wäsche gewaschen", points: 10, source: "planned", taskId: null },
+    { person: emely, label: "Babybetreuung", points: 30, source: "betreuung", taskId: null },
+  ];
+
+  for (const entry of accountEntries) {
+    await prisma.accountEntry.create({
+      data: {
+        personId: entry.person.id,
+        label: entry.label,
+        points: entry.points,
+        source: entry.source,
+        taskId: entry.taskId,
+        occurredAt: weekTimestamp,
+      },
+    });
+  }
 
   // -------------------------------------------------------------------------
   // Verification output
