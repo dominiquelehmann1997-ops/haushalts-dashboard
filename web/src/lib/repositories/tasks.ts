@@ -6,7 +6,9 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { Task, TaskStatus } from "@/lib/domain";
+import type { PersonKey } from "@/lib/engine/types";
 import { dayBounds } from "@/lib/dates";
+import { recordCompletion } from "@/lib/engine/completion";
 
 type TaskRow = {
   id: string;
@@ -79,6 +81,93 @@ export async function getOpenTaskCount(client: PrismaClient = prisma): Promise<n
     where: {
       projectId: null,
       status: "open",
+    },
+  });
+}
+
+/**
+ * Updates a task's `status` (+ `reason`, `completedAt`) and recomputes its
+ * "planned" booking from scratch — making any status transition idempotent:
+ *
+ * 1. Delete any existing `AccountEntry` for this task with `source: "planned"`.
+ * 2. If the new status is `"done"`, reload the task (with `assignedTo`) and run
+ *    it through the engine's `recordCompletion`; if it returns an entry, create
+ *    the corresponding `AccountEntry` (resolving `personId` from `personKey`,
+ *    `occurredAt = now`).
+ *
+ * Keeps the booking logic single-sourced in the engine — no duplicated points math.
+ */
+export async function setTaskStatus(
+  id: string,
+  status: TaskStatus,
+  reason: string | null,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  await client.task.update({
+    where: { id },
+    data: {
+      status,
+      reason,
+      completedAt: status === "done" ? new Date() : null,
+    },
+  });
+
+  // Recompute the "planned" booking from scratch — idempotent for any transition.
+  await client.accountEntry.deleteMany({
+    where: { taskId: id, source: "planned" },
+  });
+
+  if (status === "done") {
+    const task = await client.task.findUniqueOrThrow({
+      where: { id },
+      include: { assignedTo: true },
+    });
+
+    const assignedKey = task.assignedTo?.key;
+    const assignedTo: PersonKey | null =
+      assignedKey === "dome" || assignedKey === "emely" ? assignedKey : null;
+
+    const entryInput = recordCompletion({
+      id: task.id,
+      title: task.title,
+      status: "done",
+      effort: task.effort,
+      assignedTo,
+    });
+
+    if (entryInput) {
+      const person = await client.person.findUniqueOrThrow({
+        where: { key: entryInput.personKey },
+      });
+
+      await client.accountEntry.create({
+        data: {
+          personId: person.id,
+          label: entryInput.label,
+          points: entryInput.points,
+          source: entryInput.source,
+          taskId: entryInput.taskId,
+          occurredAt: new Date(),
+        },
+      });
+    }
+  }
+}
+
+/** Sets a task's `assignedTo` (resolved by `personKey`) and `dueDate`. */
+export async function assignTask(
+  id: string,
+  personKey: "dome" | "emely",
+  day: Date,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  const person = await client.person.findUniqueOrThrow({ where: { key: personKey } });
+
+  await client.task.update({
+    where: { id },
+    data: {
+      assignedToId: person.id,
+      dueDate: day,
     },
   });
 }

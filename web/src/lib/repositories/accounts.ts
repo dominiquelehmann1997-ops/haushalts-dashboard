@@ -1,7 +1,7 @@
 // Repository for the points-based "Konto" / weekly split.
 
 import { prisma } from "@/lib/db";
-import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaClient, AccountEntry } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
 
 /**
@@ -46,4 +46,30 @@ export async function getComputedSplit(
     dome: Math.round((dome / total) * 100),
     emely: Math.round((emely / total) * 100),
   };
+}
+
+/**
+ * Creates a manual `AccountEntry` (e.g. a "Nachtrag" or "Betreuung" booking),
+ * resolving `personId` from `personKey` and stamping `occurredAt = now`.
+ */
+export async function addManualEntry(
+  input: {
+    personKey: "dome" | "emely";
+    label: string;
+    points: number;
+    source: "nachtrag" | "betreuung";
+  },
+  client: PrismaClient = prisma,
+): Promise<AccountEntry> {
+  const person = await client.person.findUniqueOrThrow({ where: { key: input.personKey } });
+
+  return client.accountEntry.create({
+    data: {
+      personId: person.id,
+      label: input.label,
+      points: input.points,
+      source: input.source,
+      occurredAt: new Date(),
+    },
+  });
 }
