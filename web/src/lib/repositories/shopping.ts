@@ -17,3 +17,12 @@ export async function getShoppingItems(client: PrismaClient = prisma): Promise<S
     done: row.done,
   }));
 }
+
+/** Updates a shopping item's `done` flag. */
+export async function setShoppingDone(
+  id: string,
+  done: boolean,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  await client.shoppingItem.update({ where: { id }, data: { done } });
+}

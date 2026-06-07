@@ -1,4 +1,5 @@
-import { mealPlan, notes, type ShoppingItem } from "@/lib/data";
+import type { ShoppingItem, Meal, Note } from "@/lib/data";
+import type { ProjectProgress } from "@/lib/repositories/projects";
 import { Card, CardHead } from "@/components/ui";
 import { CheckIcon } from "@/components/icons";
 
@@ -56,12 +57,12 @@ export function ShoppingWidget({
   );
 }
 
-export function MealPlanWidget() {
+export function MealPlanWidget({ meals }: { meals: Meal[] }) {
   return (
     <Card>
       <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" />
       <ul className="space-y-1.5">
-        {mealPlan.map((m) => (
+        {meals.map((m) => (
           <li
             key={m.day}
             className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-colors ${
@@ -94,7 +95,7 @@ export function MealPlanWidget() {
   );
 }
 
-export function NotesWidget() {
+export function NotesWidget({ notes }: { notes: Note[] }) {
   return (
     <Card>
       <CardHead eyebrow="Schwarzes Brett" title="Notizen" />
@@ -113,15 +114,19 @@ export function NotesWidget() {
   );
 }
 
-export function WeekWidget() {
-  const proj = { done: 4, total: 6 };
-  const pct = Math.round((proj.done / proj.total) * 100);
+export function WeekWidget({
+  openTaskCount,
+  project,
+}: {
+  openTaskCount: number;
+  project: ProjectProgress | null;
+}) {
   return (
     <Card>
       <CardHead eyebrow="Wochenübersicht" title="Stand der Woche" />
       <div className="flex items-center gap-4 p-3.5 rounded-2xl bg-cream/60 dark:bg-white/[0.03] mb-4">
         <span className="font-display font-semibold text-[34px] leading-none text-ink dark:text-cream tabular-nums">
-          9
+          {openTaskCount}
         </span>
         <span className="text-[13.5px] text-ink-soft dark:text-cream/55 leading-snug">
           offene Aufgaben
@@ -129,26 +134,30 @@ export function WeekWidget() {
           über die Woche verteilt
         </span>
       </div>
-      <div className="p-3.5 rounded-2xl ring-1 ring-dome/20 bg-dome-tint dark:bg-dome/10">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2 min-w-0">
-            <span className="text-[15px]">🍼</span>
-            <span className="text-[13.5px] font-semibold text-ink dark:text-cream/90 truncate">
-              Babyzimmer einrichten
+      {project && (
+        <div className="p-3.5 rounded-2xl ring-1 ring-dome/20 bg-dome-tint dark:bg-dome/10">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="text-[15px]">{project.icon}</span>
+              <span className="text-[13.5px] font-semibold text-ink dark:text-cream/90 truncate">
+                {project.title}
+              </span>
+            </div>
+            <span className="text-[12px] font-semibold text-dome-deep dark:text-dome shrink-0">
+              {project.done}/{project.total}
             </span>
           </div>
-          <span className="text-[12px] font-semibold text-dome-deep dark:text-dome shrink-0">
-            {proj.done}/{proj.total}
-          </span>
+          <div className="h-2.5 rounded-full bg-white dark:bg-white/10 overflow-hidden">
+            <div
+              className="h-full rounded-full bg-dome transition-all duration-700"
+              style={{ width: project.pct + "%" }}
+            ></div>
+          </div>
+          <p className="text-[11.5px] text-ink-faint mt-2">
+            Laufendes Projekt · {project.pct}% geschafft
+          </p>
         </div>
-        <div className="h-2.5 rounded-full bg-white dark:bg-white/10 overflow-hidden">
-          <div
-            className="h-full rounded-full bg-dome transition-all duration-700"
-            style={{ width: pct + "%" }}
-          ></div>
-        </div>
-        <p className="text-[11.5px] text-ink-faint mt-2">Laufendes Projekt · {pct}% geschafft</p>
-      </div>
+      )}
     </Card>
   );
 }

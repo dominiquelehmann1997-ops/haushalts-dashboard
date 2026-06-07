@@ -1,12 +1,47 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { initialTasks, initialShopping } from "@/lib/data";
+import { useEffect, useState, startTransition } from "react";
+import type {
+  Task,
+  Appointment,
+  ShoppingItem,
+  Meal,
+  Note,
+} from "@/lib/data";
+import type { CurrentWeather } from "@/integrations/weather/openMeteo";
+import type { ActivePhase } from "@/lib/repositories/phase";
+import type { ProjectProgress } from "@/lib/repositories/projects";
+import { toggleTaskAction } from "@/app/actions/tasks";
+import { toggleShoppingAction } from "@/app/actions/shopping";
 import { Header } from "@/components/header";
 import { WeatherTile, TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles";
 import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/components/widgets";
 
-export default function Dashboard() {
+export interface DashboardProps {
+  initialTasks: Task[];
+  initialShopping: ShoppingItem[];
+  weather: CurrentWeather;
+  appointments: Appointment[];
+  split: { dome: number; emely: number };
+  phase: ActivePhase | null;
+  meals: Meal[];
+  notes: Note[];
+  project: ProjectProgress | null;
+  openTaskCount: number;
+}
+
+export default function Dashboard({
+  initialTasks,
+  initialShopping,
+  weather,
+  appointments,
+  split,
+  phase,
+  meals,
+  notes,
+  project,
+  openTaskCount,
+}: DashboardProps) {
   const [dark, setDark] = useState(false);
   const [tasks, setTasks] = useState(initialTasks);
   const [shopping, setShopping] = useState(initialShopping);
@@ -15,7 +50,7 @@ export default function Dashboard() {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const toggleTask = (id: string) =>
+  const toggleTask = (id: string) => {
     setTasks((ts) =>
       ts.map((t) =>
         t.id === id && (t.status === "open" || t.status === "done")
@@ -23,8 +58,16 @@ export default function Dashboard() {
           : t,
       ),
     );
-  const toggleShop = (id: string) =>
+    startTransition(() => {
+      toggleTaskAction(id);
+    });
+  };
+  const toggleShop = (id: string) => {
     setShopping((s) => s.map((i) => (i.id === id ? { ...i, done: !i.done } : i)));
+    startTransition(() => {
+      toggleShoppingAction(id);
+    });
+  };
 
   const domeTasks = tasks.filter((t) => t.person === "dome");
   const emelyTasks = tasks.filter((t) => t.person === "emely");
@@ -37,7 +80,7 @@ export default function Dashboard() {
         {/* HERO BAND */}
         <section className="rise" style={{ animationDelay: ".02s" }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
-            <WeatherTile />
+            <WeatherTile weather={weather} />
             <TaskTile
               person="dome"
               tasks={domeTasks}
@@ -50,10 +93,10 @@ export default function Dashboard() {
               onToggle={toggleTask}
               sub="bewusst wenig · nur in den Schläfchen"
             />
-            <AppointmentsTile />
+            <AppointmentsTile appointments={appointments} />
           </div>
           <div className="mt-4 sm:mt-5">
-            <ElternzeitStripe />
+            <ElternzeitStripe split={split} phase={phase} />
           </div>
         </section>
 
@@ -61,9 +104,9 @@ export default function Dashboard() {
         <section className="mt-7 sm:mt-9 rise" style={{ animationDelay: ".12s" }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
             <ShoppingWidget items={shopping} onToggle={toggleShop} />
-            <MealPlanWidget />
-            <NotesWidget />
-            <WeekWidget />
+            <MealPlanWidget meals={meals} />
+            <NotesWidget notes={notes} />
+            <WeekWidget openTaskCount={openTaskCount} project={project} />
           </div>
         </section>
 

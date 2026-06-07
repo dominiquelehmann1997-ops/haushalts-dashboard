@@ -1,4 +1,6 @@
-import { PERSON, weather, appointments, split, type Task } from "@/lib/data";
+import { PERSON, type Task, type Appointment } from "@/lib/data";
+import type { CurrentWeather } from "@/integrations/weather/openMeteo";
+import type { ActivePhase } from "@/lib/repositories/phase";
 import { Card, CardHead, PersonBadge } from "@/components/ui";
 import { CheckIcon, CloudRainGlyph, CalendarGlyph } from "@/components/icons";
 
@@ -73,7 +75,7 @@ export function TaskRow({ task, onToggle }: { task: Task; onToggle: (id: string)
   );
 }
 
-export function WeatherTile() {
+export function WeatherTile({ weather }: { weather: CurrentWeather }) {
   return (
     <Card className="relative overflow-hidden">
       <div className="absolute -right-6 -top-8 w-36 h-36 rounded-full bg-gradient-to-br from-sky-100 to-cream dark:from-sky-500/10 dark:to-transparent blur-2xl"></div>
@@ -140,10 +142,14 @@ export function TaskTile({
   );
 }
 
-export function AppointmentsTile() {
+export function AppointmentsTile({ appointments }: { appointments: Appointment[] }) {
   return (
     <Card>
-      <CardHead eyebrow="Termine · Heute" title="3 Termine" right={<CalendarGlyph />} />
+      <CardHead
+        eyebrow="Termine · Heute"
+        title={`${appointments.length} Termine`}
+        right={<CalendarGlyph />}
+      />
       <ul className="space-y-1">
         {appointments.map((a, i) => (
           <li
@@ -177,7 +183,14 @@ export function AppointmentsTile() {
   );
 }
 
-export function ElternzeitStripe() {
+export function ElternzeitStripe({
+  split,
+  phase,
+}: {
+  split: { dome: number; emely: number };
+  phase: ActivePhase | null;
+}) {
+  void phase;
   return (
     <div className="rounded-xl2 bg-gradient-to-r from-emely-tint via-white to-dome-tint dark:from-emely/10 dark:via-[#26241F] dark:to-dome/10 shadow-card p-5 sm:p-6 ring-1 ring-black/[0.04] dark:ring-white/5">
       <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
