@@ -3,6 +3,7 @@ import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ActivePhase } from "@/lib/repositories/phase";
 import { Card, CardHead, PersonBadge } from "@/components/ui";
 import { CheckIcon, CloudRainGlyph, CalendarGlyph } from "@/components/icons";
+import { PhaseSwitch } from "@/components/PhaseSwitch";
 
 export function TaskRow({ task, onToggle }: { task: Task; onToggle: (id: string) => void }) {
   const p = PERSON[task.person];
@@ -190,32 +191,54 @@ export function ElternzeitStripe({
   split: { dome: number; emely: number };
   phase: ActivePhase | null;
 }) {
-  void phase;
+  const isElternzeit = phase?.mode !== "normal";
+
   return (
     <div className="rounded-xl2 bg-gradient-to-r from-emely-tint via-white to-dome-tint dark:from-emely/10 dark:via-[#26241F] dark:to-dome/10 shadow-card p-5 sm:p-6 ring-1 ring-black/[0.04] dark:ring-white/5">
       <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
         <div className="lg:w-[38%] shrink-0">
           <div className="flex items-center gap-2 mb-2">
             <span className="relative flex h-2.5 w-2.5 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-dome/40"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-dome"></span>
+              {isElternzeit && (
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-dome/40"></span>
+              )}
+              <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isElternzeit ? "bg-dome" : "bg-ink-faint"}`}></span>
             </span>
-            <span className="whitespace-nowrap text-[11px] font-semibold tracking-[0.14em] uppercase text-dome-deep dark:text-dome">
-              Elternzeit-Modus aktiv
+            <span
+              className={`whitespace-nowrap text-[11px] font-semibold tracking-[0.14em] uppercase ${
+                isElternzeit ? "text-dome-deep dark:text-dome" : "text-ink-faint"
+              }`}
+            >
+              {isElternzeit ? "Elternzeit-Modus aktiv" : "Normal-Modus"}
             </span>
           </div>
           <p className="text-[14.5px] leading-relaxed text-ink-soft dark:text-cream/60">
-            <span className="font-semibold text-ink dark:text-cream/90">
-              Dome übernimmt aktuell den Großteil.
-            </span>{" "}
-            Emely ist den Tag über mit der Kleinen zuhause — Betreuung ist auch Arbeit. Hausarbeit
-            landet bewusst nicht automatisch bei ihr.
+            {isElternzeit ? (
+              <>
+                <span className="font-semibold text-ink dark:text-cream/90">
+                  Dome übernimmt aktuell den Großteil.
+                </span>{" "}
+                Emely ist den Tag über mit der Kleinen zuhause — Betreuung ist auch Arbeit.
+                Hausarbeit landet bewusst nicht automatisch bei ihr.
+              </>
+            ) : (
+              <>
+                <span className="font-semibold text-ink dark:text-cream/90">
+                  Beide teilen sich die Woche.
+                </span>{" "}
+                Keine besondere Lebensphase aktuell — die Aufteilung orientiert sich am
+                gemeinsamen Zielwert unten.
+              </>
+            )}
           </p>
         </div>
 
         <div className="flex-1 min-w-0">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">
-            Aufgaben-Aufteilung · diese Woche
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint">
+              Aufgaben-Aufteilung · diese Woche
+            </div>
+            <PhaseSwitch phase={phase} />
           </div>
           <div className="flex items-center justify-between text-[12.5px] font-semibold mb-2">
             <span className="flex items-center gap-1.5 text-dome-deep dark:text-dome">
@@ -240,7 +263,11 @@ export function ElternzeitStripe({
             </div>
           </div>
           <p className="text-[12px] text-ink-faint mt-2">
-            Ziel ist nicht 50/50 — sondern fair zur aktuellen Lebenssituation.
+            {isElternzeit
+              ? "Ziel ist nicht 50/50 — sondern fair zur aktuellen Lebenssituation."
+              : phase
+                ? `Ziel: Dome ${phase.targetDome}% / Emely ${phase.targetEmely}% — fair zur aktuellen Lebenssituation.`
+                : "Ziel ist nicht 50/50 — sondern fair zur aktuellen Lebenssituation."}
           </p>
         </div>
       </div>

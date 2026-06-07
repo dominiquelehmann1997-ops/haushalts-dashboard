@@ -16,6 +16,7 @@ import { toggleShoppingAction } from "@/app/actions/shopping";
 import { Header } from "@/components/header";
 import { WeatherTile, TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles";
 import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/components/widgets";
+import { AddDoneEntry } from "@/components/AddDoneEntry";
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -97,6 +98,9 @@ export default function Dashboard({
           </div>
           <div className="mt-4 sm:mt-5">
             <ElternzeitStripe split={split} phase={phase} />
+          </div>
+          <div className="mt-3 sm:mt-4">
+            <AddDoneEntry />
           </div>
         </section>
 
