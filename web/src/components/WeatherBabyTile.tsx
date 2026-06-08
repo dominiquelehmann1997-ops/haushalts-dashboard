@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { Card, CardHead } from "@/components/ui";
+import { CloudRainGlyph } from "@/components/icons";
 import { recommendClothing } from "@/lib/baby/clothing";
 import { uvAdvice } from "@/lib/baby/uv";
 import { BABY } from "@/lib/baby/profile";
+import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { AgeBand, Situation, Warmth, UvLevel } from "@/lib/baby/types";
 
 const SITUATIONS: { key: Situation; label: string }[] = [
@@ -57,39 +59,60 @@ function Chip({
   );
 }
 
-export function BabyWeatherCard({
-  temp,
-  uvIndex,
+export function WeatherBabyTile({
+  weather,
   ageBand,
   ageLabel,
 }: {
-  temp: number;
-  uvIndex: number;
+  weather: CurrentWeather;
   ageBand: AgeBand;
   ageLabel: string;
 }) {
   const [situation, setSituation] = useState<Situation>("allgemein");
 
-  const clothing = recommendClothing({ tempC: temp, situation, ageBand });
-  const uv = uvAdvice(uvIndex, ageBand);
-  const showUv = uvIndex >= 3;
+  const clothing = recommendClothing({ tempC: weather.temp, situation, ageBand });
+  const uv = uvAdvice(weather.uvIndex, ageBand);
+  const showUv = weather.uvIndex >= 3;
 
   return (
-    <Card>
-      <CardHead
-        eyebrow="Baby-Wetter · Heute"
-        title={`Für ${BABY.name}`}
-        sub={`${ageLabel} alt`}
-        right={
-          <span
-            className={`shrink-0 inline-flex items-center gap-1.5 text-[12px] font-semibold px-2.5 py-1 rounded-full ${WARMTH_TINT[clothing.warmth]}`}
-          >
-            {temp}° · {clothing.warmth}
-          </span>
-        }
-      />
+    <Card className="relative overflow-hidden">
+      <div className="absolute -right-6 -top-8 w-36 h-36 rounded-full bg-gradient-to-br from-sky-100 to-cream dark:from-sky-500/10 dark:to-transparent blur-2xl"></div>
 
-      {/* Auswahl: Situation (Alter wird automatisch aus dem Geburtsdatum berechnet) */}
+      {/* Wetter */}
+      <CardHead eyebrow="Wetter · Heute" title={weather.label} />
+      <div className="flex items-end gap-3">
+        <span className="text-[54px] leading-none font-display font-semibold text-ink dark:text-cream tracking-tight">
+          {weather.temp}°
+        </span>
+        <CloudRainGlyph />
+        <span className="ml-auto text-[13.5px] text-ink-soft dark:text-cream/55">
+          {weather.hi}° / {weather.lo}°
+        </span>
+      </div>
+      {weather.rainFrom && (
+        <div className="mt-3 inline-flex items-center gap-2 text-[13px] font-medium px-3 py-1.5 rounded-full bg-sky-50 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
+          <span>☔</span> {weather.detail}
+        </div>
+      )}
+
+      {/* Trenner */}
+      <div className="my-5 border-t border-black/5 dark:border-white/10"></div>
+
+      {/* Baby */}
+      <div className="flex items-center justify-between gap-3 mb-3">
+        <div className="min-w-0">
+          <span className="text-[15px] font-display font-semibold text-ink dark:text-cream">
+            Für {BABY.name}
+          </span>
+          <span className="text-[12.5px] text-ink-faint"> · {ageLabel} alt</span>
+        </div>
+        <span
+          className={`shrink-0 inline-flex items-center text-[12px] font-semibold px-2.5 py-1 rounded-full ${WARMTH_TINT[clothing.warmth]}`}
+        >
+          {clothing.warmth}
+        </span>
+      </div>
+
       <div className="flex flex-wrap gap-1.5 mb-4">
         {SITUATIONS.map((s) => (
           <Chip key={s.key} active={situation === s.key} onClick={() => setSituation(s.key)}>
@@ -98,7 +121,6 @@ export function BabyWeatherCard({
         ))}
       </div>
 
-      {/* Kleidungsempfehlung */}
       <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-2">
         Anziehen · {clothing.tempBand}
       </div>
@@ -119,7 +141,6 @@ export function BabyWeatherCard({
         </p>
       )}
 
-      {/* UV */}
       {showUv && (
         <div className="mt-4 flex items-start gap-2.5">
           <span
@@ -131,7 +152,6 @@ export function BabyWeatherCard({
         </div>
       )}
 
-      {/* Hinweis */}
       <p className="text-[11.5px] text-ink-faint mt-4 leading-snug">
         Orientierung nach dem Zwiebelprinzip — im Zweifel den <strong>Nackentest</strong> machen
         (Nacken warm &amp; trocken = wohl). Jedes Baby empfindet Wärme anders.

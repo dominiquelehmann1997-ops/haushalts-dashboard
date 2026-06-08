@@ -15,10 +15,10 @@ import type { AgeBand } from "@/lib/baby/types";
 import { toggleTaskAction } from "@/app/actions/tasks";
 import { toggleShoppingAction } from "@/app/actions/shopping";
 import { Header } from "@/components/header";
-import { WeatherTile, TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles";
+import { TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles";
 import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/components/widgets";
 import { AddDoneEntry } from "@/components/AddDoneEntry";
-import { BabyWeatherCard } from "@/components/BabyWeatherCard";
+import { WeatherBabyTile } from "@/components/WeatherBabyTile";
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -87,15 +87,7 @@ export default function Dashboard({
         {/* HERO BAND */}
         <section className="rise" style={{ animationDelay: ".02s" }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
-            <div className="flex flex-col gap-4 sm:gap-5">
-              <WeatherTile weather={weather} />
-              <BabyWeatherCard
-                temp={weather.temp}
-                uvIndex={weather.uvIndex}
-                ageBand={babyAgeBand}
-                ageLabel={babyAgeLabel}
-              />
-            </div>
+            <WeatherBabyTile weather={weather} ageBand={babyAgeBand} ageLabel={babyAgeLabel} />
             <TaskTile
               person="dome"
               tasks={domeTasks}

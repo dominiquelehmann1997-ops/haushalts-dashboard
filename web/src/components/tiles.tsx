@@ -1,8 +1,7 @@
 import { PERSON, type Task, type Appointment } from "@/lib/data";
-import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ActivePhase } from "@/lib/repositories/phase";
 import { Card, CardHead, PersonBadge } from "@/components/ui";
-import { CheckIcon, CloudRainGlyph, CalendarGlyph } from "@/components/icons";
+import { CheckIcon, CalendarGlyph } from "@/components/icons";
 import { PhaseSwitch } from "@/components/PhaseSwitch";
 
 export function TaskRow({ task, onToggle }: { task: Task; onToggle: (id: string) => void }) {
@@ -73,31 +72,6 @@ export function TaskRow({ task, onToggle }: { task: Task; onToggle: (id: string)
         {task.sub && <p className="text-[12px] text-ink-faint mt-0.5">{task.sub}</p>}
       </div>
     </li>
-  );
-}
-
-export function WeatherTile({ weather }: { weather: CurrentWeather }) {
-  return (
-    <Card className="relative overflow-hidden">
-      <div className="absolute -right-6 -top-8 w-36 h-36 rounded-full bg-gradient-to-br from-sky-100 to-cream dark:from-sky-500/10 dark:to-transparent blur-2xl"></div>
-      <CardHead eyebrow="Wetter · Heute" title="Bedeckt & kühl" />
-      <div className="flex items-end gap-3">
-        <span className="text-[54px] leading-none font-display font-semibold text-ink dark:text-cream tracking-tight">
-          {weather.temp}°
-        </span>
-        <CloudRainGlyph />
-      </div>
-      <div className="mt-4 flex items-center gap-2 text-[13.5px] text-ink-soft dark:text-cream/55">
-        <span className="font-semibold text-ink dark:text-cream/80">{weather.label}</span>
-        <span className="text-ink-faint">·</span>
-        <span>
-          {weather.hi}° / {weather.lo}°
-        </span>
-      </div>
-      <div className="mt-3 inline-flex items-center gap-2 text-[13px] font-medium px-3 py-1.5 rounded-full bg-sky-50 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
-        <span>☔</span> {weather.detail}
-      </div>
-    </Card>
   );
 }
 
