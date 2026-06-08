@@ -2,6 +2,7 @@ import type { ShoppingItem, Meal, Note } from "@/lib/data";
 import type { ProjectProgress } from "@/lib/repositories/projects";
 import { Card, CardHead } from "@/components/ui";
 import { CheckIcon } from "@/components/icons";
+import { BringSyncControl } from "@/components/BringSyncControl";
 
 export function ShoppingWidget({
   items,
@@ -16,11 +17,7 @@ export function ShoppingWidget({
       <CardHead
         eyebrow="Einkaufsliste"
         title={`${left} Artikel offen`}
-        right={
-          <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 dark:bg-emerald-500/15 dark:text-emerald-300 px-2 py-1 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>synct mit Bring!
-          </span>
-        }
+        right={<BringSyncControl items={items} />}
       />
       <ul className="-mx-1.5">
         {items.map((item) => (
