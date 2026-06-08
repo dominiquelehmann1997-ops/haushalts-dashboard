@@ -5,6 +5,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 import type { Appointment, PersonKey } from "@/lib/domain";
 import type { BusyWindow } from "@/lib/engine/types";
 import type { CalendarEventInput } from "@/integrations/calendar/google";
+import { correctedBusyEnd, isOvernightShift } from "@/lib/calendar/shifts";
 import { dayBounds, formatTime } from "@/lib/dates";
 
 /**
@@ -80,17 +81,28 @@ export async function upsertEvents(
  *
  * Other events without a person (e.g. birthdays) and baby events
  * (`personKey: "baby"`) are excluded — they don't constrain availability.
+ *
+ * Dome's overnight shifts ("Nacht"/"LN") are entered ending 23:59 on their
+ * start day but actually keep Dome busy (shift + following sleep) until 14:00
+ * the next day (see `@/lib/calendar/shifts`). Their window end is corrected
+ * accordingly. Because such a shift starting the day *before* `from` still
+ * constrains the requested range, the fetch looks back one extra day, then
+ * windows that don't actually overlap `[from, to]` are dropped — which also
+ * discards unrelated previous-day events pulled in by that look-back.
  */
 export async function getBusyWindows(
   from: Date,
   to: Date,
   client: PrismaClient = prisma,
 ): Promise<BusyWindow[]> {
+  const lookbackFrom = new Date(from);
+  lookbackFrom.setDate(lookbackFrom.getDate() - 1);
+
   const rows = await client.calendarEvent.findMany({
     where: {
       OR: [{ personKey: { in: ["dome", "emely"] } }, { calendarKey: "family" }],
       start: { lte: to },
-      end: { gte: from },
+      end: { gte: lookbackFrom },
     },
     orderBy: { start: "asc" },
   });
@@ -98,12 +110,16 @@ export async function getBusyWindows(
   const windows: BusyWindow[] = [];
   for (const row of rows) {
     if (row.personKey === "dome" || row.personKey === "emely") {
-      windows.push({ person: row.personKey, start: row.start, end: row.end });
+      const end =
+        row.personKey === "dome" && isOvernightShift(row.title)
+          ? correctedBusyEnd(row.start)
+          : row.end;
+      windows.push({ person: row.personKey, start: row.start, end });
     } else if (row.calendarKey === "family") {
       windows.push({ person: "dome", start: row.start, end: row.end });
       windows.push({ person: "emely", start: row.start, end: row.end });
     }
   }
 
-  return windows;
+  return windows.filter((w) => w.start <= to && w.end >= from);
 }

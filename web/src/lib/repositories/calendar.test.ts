@@ -109,5 +109,90 @@ describe("calendar repository", () => {
       expect(windows.some((w) => (w as { person: string }).person === "baby")).toBe(false);
       expect(windows).toHaveLength(4);
     });
+
+    describe("overnight shifts (Nacht/LN)", () => {
+      const dayAt = (base: Date, dayOffset: number, hours: number, minutes: number) => {
+        const d = new Date(base);
+        d.setDate(d.getDate() + dayOffset);
+        d.setHours(hours, minutes, 0, 0);
+        return d;
+      };
+
+      async function addShift(title: string, startDayOffset: number) {
+        await client.calendarEvent.create({
+          data: {
+            externalId: `shift-${title}-${startDayOffset}`,
+            calendarKey: "dome",
+            title,
+            start: dayAt(today, startDayOffset, 21, 0),
+            end: dayAt(today, startDayOffset, 23, 59),
+            personKey: "dome",
+            kind: "termin",
+            place: null,
+          },
+        });
+      }
+
+      it("extends a 'Nacht' shift's busy window to 14:00 the next day", async () => {
+        await addShift("Nacht", 0);
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows).toContainEqual({
+          person: "dome",
+          start: dayAt(today, 0, 21, 0),
+          end: dayAt(today, 1, 14, 0),
+        });
+      });
+
+      it("treats 'LN' identically to 'Nacht'", async () => {
+        await addShift("LN", 0);
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows).toContainEqual({
+          person: "dome",
+          start: dayAt(today, 0, 21, 0),
+          end: dayAt(today, 1, 14, 0),
+        });
+      });
+
+      it("surfaces a previous-day overnight shift as a busy window reaching into the requested day", async () => {
+        await addShift("Nacht", -1); // shift started yesterday, runs into today
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows).toContainEqual({
+          person: "dome",
+          start: dayAt(today, -1, 21, 0),
+          end: dayAt(today, 0, 14, 0),
+        });
+      });
+
+      it("does not surface an unrelated previous-day event for the requested day", async () => {
+        await client.calendarEvent.create({
+          data: {
+            externalId: "yesterday-zahnarzt",
+            calendarKey: "dome",
+            title: "Zahnarzt",
+            start: dayAt(today, -1, 10, 0),
+            end: dayAt(today, -1, 11, 0),
+            personKey: "dome",
+            kind: "termin",
+            place: null,
+          },
+        });
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows.some((w) => w.start.getTime() === dayAt(today, -1, 10, 0).getTime())).toBe(
+          false,
+        );
+      });
+    });
   });
 });
