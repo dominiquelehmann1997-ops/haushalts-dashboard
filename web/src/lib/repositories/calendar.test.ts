@@ -69,30 +69,45 @@ describe("calendar repository", () => {
 
       const windows = await getBusyWindows(start, end, client);
 
-      expect(windows).toHaveLength(2);
+      const emelyWindows = windows.filter((w) => w.person === "emely");
+      const domeWindows = windows.filter((w) => w.person === "dome");
 
-      const emely = windows.find((w) => w.person === "emely");
-      const dome = windows.find((w) => w.person === "dome");
-
-      expect(emely).toMatchObject({
-        person: "emely",
-        start: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 11, 0),
-        end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 12, 0),
-      });
-      expect(dome).toMatchObject({
-        person: "dome",
-        start: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 18, 30),
-        end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 20, 0),
-      });
+      expect(emelyWindows).toContainEqual(
+        expect.objectContaining({
+          person: "emely",
+          start: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 11, 0),
+          end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 12, 0),
+        }),
+      );
+      expect(domeWindows).toContainEqual(
+        expect.objectContaining({
+          person: "dome",
+          start: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 18, 30),
+          end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 20, 0),
+        }),
+      );
     });
 
-    it("excludes events without a dome/emely personKey (e.g. the family 'Paket abholen' event)", async () => {
+    it("turns the family calendar's personless events (e.g. 'Paket abholen') into a busy window for both dome and emely", async () => {
+      const { start, end } = dayBounds(today);
+
+      const windows = await getBusyWindows(start, end, client);
+      const paketWindows = windows.filter(
+        (w) =>
+          w.start.getTime() ===
+          new Date(today.getFullYear(), today.getMonth(), today.getDate(), 20, 0).getTime(),
+      );
+
+      expect(paketWindows.map((w) => w.person).sort()).toEqual(["dome", "emely"]);
+    });
+
+    it("excludes baby events from busy windows", async () => {
       const { start, end } = dayBounds(today);
 
       const windows = await getBusyWindows(start, end, client);
 
       expect(windows.some((w) => (w as { person: string }).person === "baby")).toBe(false);
-      expect(windows).toHaveLength(2);
+      expect(windows).toHaveLength(4);
     });
   });
 });

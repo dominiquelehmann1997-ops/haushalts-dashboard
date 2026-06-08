@@ -60,9 +60,15 @@ function parseEventTime(time: GoogleEventTime | undefined): Date {
   throw new Error("Google Calendar event is missing both start.dateTime and start.date");
 }
 
-/** Derives `personKey` from `calendarKey`: `"dome"`/`"emely"` map directly, anything else (e.g. `"family"`) is `null`. */
+/**
+ * Derives `personKey` from `calendarKey` by prefix: keys starting with
+ * `"dome"`/`"emely"` (e.g. `"dome_dienstplan"`, `"dome_verein"`) belong to
+ * that person; anything else (e.g. `"family"`, `"geburtstage"`) is `null`.
+ */
 function derivePersonKey(calendarKey: string): string | null {
-  return calendarKey === "dome" || calendarKey === "emely" ? calendarKey : null;
+  if (calendarKey.startsWith("dome")) return "dome";
+  if (calendarKey.startsWith("emely")) return "emely";
+  return null;
 }
 
 /** Classifies an event's `kind` from its title via the baby/medical heuristic. */
@@ -79,8 +85,8 @@ function deriveKind(title: string): "termin" | "baby-arzt" {
  *   the same Google event `id` — on multiple calendars, e.g. a shared family
  *   event also showing on a personal calendar).
  * - Handles both timed (`start.dateTime`) and all-day (`start.date`) events.
- * - `personKey` is derived from `calendarKey` (`"dome"`/`"emely"` → itself,
- *   else `null`, e.g. the family calendar).
+ * - `personKey` is derived from `calendarKey` by prefix (keys starting with
+ *   `"dome"`/`"emely"` → that person, else `null`, e.g. `"family"`/`"geburtstage"`).
  * - `kind` is `"baby-arzt"` when the title matches the medical/baby
  *   heuristic (case-insensitive `U\d`, `Kinderarzt`, `Hebamme`,
  *   `U-Untersuchung`, `Vorsorge`, `Impf`), else `"termin"`.
@@ -154,7 +160,19 @@ export async function fetchEvents(
   });
 
   if (!response.ok) {
-    throw new Error(`Google Calendar request failed: ${response.status} ${response.statusText}`);
+    const reason = await response
+      .json()
+      .then((body: { error?: { message?: string; errors?: { reason?: string }[] } }) => {
+        const detail = body.error?.errors?.[0]?.reason;
+        const message = body.error?.message;
+        return [detail, message].filter(Boolean).join(": ");
+      })
+      .catch(() => undefined);
+
+    throw new Error(
+      `Google Calendar request failed for "${calendarKey}" (${calendarId}): ${response.status} ${response.statusText}` +
+        (reason ? ` — ${reason}` : ""),
+    );
   }
 
   const body = (await response.json()) as { items?: unknown[] };

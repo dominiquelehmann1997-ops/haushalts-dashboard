@@ -80,7 +80,8 @@ wrong — check the server logs for details).
 ## 6. Find your calendar IDs
 
 For each calendar you want to sync (Dome's personal calendar, Emely's personal
-calendar, the shared family calendar):
+calendar, the shared family calendar, and any of Dome's extra calendars —
+work schedule, sports club, birthdays):
 
 1. Open [Google Calendar](https://calendar.google.com/) in the browser.
 2. In the left sidebar, hover over the calendar, click the **⋮** (three-dot
@@ -98,13 +99,24 @@ calendar, the shared family calendar):
 ## 7. Fill in the calendar IDs in `web/.env`
 
 ```env
-GOOGLE_CALENDAR_DOME=<Dome's calendar ID>
-GOOGLE_CALENDAR_EMELY=<Emely's calendar ID>
+GOOGLE_CALENDAR_DOME=<Dome's personal calendar ID>
+GOOGLE_CALENDAR_EMELY=<Emely's personal calendar ID>
 GOOGLE_CALENDAR_FAMILY=<family calendar ID>
+GOOGLE_CALENDAR_DOME_DIENSTPLAN=<Dome's work-schedule calendar ID>
+GOOGLE_CALENDAR_DOME_VEREIN=<Dome's athletics-club calendar ID>
+GOOGLE_CALENDAR_GEBURTSTAGE=<birthdays calendar ID>
 ```
 
 You can leave any of these empty — the sync skips calendars whose env var
 isn't set.
+
+`DOME`, `EMELY`, `DOME_DIENSTPLAN` and `DOME_VEREIN` are treated as that
+person's own appointments: they show up in the "Termine" tile *and* count as
+busy windows for the planning engine (it won't schedule anything on top of
+them). `FAMILY` events apply to **both** of you (they're entered there
+because they concern the whole household) and become a busy window for both
+Dome and Emely. `GEBURTSTAGE` is purely informational — shown in the tile but
+never blocks availability.
 
 ## 8. Trigger the sync
 

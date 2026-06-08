@@ -1,9 +1,11 @@
 // GET|POST /api/sync/calendar — pulls the next 14 days of events from each
-// configured Google Calendar (`GOOGLE_CALENDAR_DOME/EMELY/FAMILY` → calendar
-// keys "dome"/"emely"/"family"; calendars whose env var is unset are skipped)
-// and upserts them into `CalendarEvent` (`@/lib/repositories/calendar`'s
-// `upsertEvents`). Once synced, the appointments tile (`getTodaysEvents`)
-// picks them up automatically — no further wiring needed.
+// configured Google Calendar (GOOGLE_CALENDAR_DOME/EMELY/FAMILY/
+// DOME_DIENSTPLAN/DOME_VEREIN/GEBURTSTAGE → calendar keys "dome"/"emely"/
+// "family"/"dome_dienstplan"/"dome_verein"/"geburtstage"; calendars whose env
+// var is unset are skipped) and upserts them into `CalendarEvent`
+// (`@/lib/repositories/calendar`'s `upsertEvents`). Once synced, the
+// appointments tile (`getTodaysEvents`) picks them up automatically — no
+// further wiring needed.
 //
 // Read-only: never writes back to Google. "Not connected" (no stored OAuth
 // token) is reported as a clear JSON error rather than crashing.
@@ -21,6 +23,9 @@ function configuredCalendars(): { calendarId: string; calendarKey: string }[] {
     { calendarKey: "dome", calendarId: process.env.GOOGLE_CALENDAR_DOME },
     { calendarKey: "emely", calendarId: process.env.GOOGLE_CALENDAR_EMELY },
     { calendarKey: "family", calendarId: process.env.GOOGLE_CALENDAR_FAMILY },
+    { calendarKey: "dome_dienstplan", calendarId: process.env.GOOGLE_CALENDAR_DOME_DIENSTPLAN },
+    { calendarKey: "dome_verein", calendarId: process.env.GOOGLE_CALENDAR_DOME_VEREIN },
+    { calendarKey: "geburtstage", calendarId: process.env.GOOGLE_CALENDAR_GEBURTSTAGE },
   ];
 
   return candidates
@@ -33,7 +38,7 @@ async function runSync() {
 
   if (calendars.length === 0) {
     return NextResponse.json(
-      { error: "No calendars configured — set GOOGLE_CALENDAR_DOME/EMELY/FAMILY (see docs/setup/google-calendar.md)." },
+      { error: "No calendars configured — set GOOGLE_CALENDAR_DOME/EMELY/FAMILY/DOME_DIENSTPLAN/DOME_VEREIN/GEBURTSTAGE (see docs/setup/google-calendar.md)." },
       { status: 400 },
     );
   }

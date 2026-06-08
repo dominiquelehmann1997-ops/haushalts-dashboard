@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { Appointment, PersonKey } from "@/lib/domain";
-import type { BusyWindow, PersonKey as EnginePersonKey } from "@/lib/engine/types";
+import type { BusyWindow } from "@/lib/engine/types";
 import type { CalendarEventInput } from "@/integrations/calendar/google";
 import { dayBounds, formatTime } from "@/lib/dates";
 
@@ -70,10 +70,16 @@ export async function upsertEvents(
 
 /**
  * `CalendarEvent` rows in `[from, to]` (overlap, not containment — `start <=
- * to AND end >= from`) whose `personKey` is `"dome"`/`"emely"`, mapped to the
- * engine's `BusyWindow[]` (`@/lib/engine/types`). Family/baby events (no
- * person, or `personKey: "baby"`) are excluded — they don't constrain a
- * person's availability for planning.
+ * to AND end >= from`) that constrain someone's availability, mapped to the
+ * engine's `BusyWindow[]` (`@/lib/engine/types`):
+ *
+ * - Rows with `personKey` `"dome"`/`"emely"` become one window for that person.
+ * - Family-calendar rows (`calendarKey === "family"`, no `personKey` — events
+ *   entered there apply to both) become one window each for `"dome"` and
+ *   `"emely"`.
+ *
+ * Other events without a person (e.g. birthdays) and baby events
+ * (`personKey: "baby"`) are excluded — they don't constrain availability.
  */
 export async function getBusyWindows(
   from: Date,
@@ -82,16 +88,22 @@ export async function getBusyWindows(
 ): Promise<BusyWindow[]> {
   const rows = await client.calendarEvent.findMany({
     where: {
-      personKey: { in: ["dome", "emely"] },
+      OR: [{ personKey: { in: ["dome", "emely"] } }, { calendarKey: "family" }],
       start: { lte: to },
       end: { gte: from },
     },
     orderBy: { start: "asc" },
   });
 
-  return rows.map((row) => ({
-    person: row.personKey as EnginePersonKey,
-    start: row.start,
-    end: row.end,
-  }));
+  const windows: BusyWindow[] = [];
+  for (const row of rows) {
+    if (row.personKey === "dome" || row.personKey === "emely") {
+      windows.push({ person: row.personKey, start: row.start, end: row.end });
+    } else if (row.calendarKey === "family") {
+      windows.push({ person: "dome", start: row.start, end: row.end });
+      windows.push({ person: "emely", start: row.start, end: row.end });
+    }
+  }
+
+  return windows;
 }

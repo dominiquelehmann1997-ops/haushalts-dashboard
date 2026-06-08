@@ -53,6 +53,14 @@ describe("mapGoogleEvents", () => {
     expect(familyEvents.every((e) => e.personKey === null)).toBe(true);
   });
 
+  it('derives personKey "dome"/"emely" from calendarKeys with that prefix (e.g. "dome_dienstplan", "dome_verein"), and null for non-matching keys (e.g. "geburtstage")', () => {
+    expect(mapGoogleEvents(googleEventsFixture, "dome_dienstplan")[0].personKey).toBe("dome");
+    expect(mapGoogleEvents(googleEventsFixture, "dome_verein")[0].personKey).toBe("dome");
+
+    const birthdayEvents = mapGoogleEvents(googleEventsFixture, "geburtstage");
+    expect(birthdayEvents.every((e) => e.personKey === null)).toBe(true);
+  });
+
   it("sets calendarKey on every mapped event", () => {
     const events = mapGoogleEvents(googleEventsFixture, "dome");
     expect(events.every((e) => e.calendarKey === "dome")).toBe(true);
