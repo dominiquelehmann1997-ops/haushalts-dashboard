@@ -11,6 +11,7 @@ import type {
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ActivePhase } from "@/lib/repositories/phase";
 import type { ProjectProgress } from "@/lib/repositories/projects";
+import type { AgeBand } from "@/lib/baby/types";
 import { toggleTaskAction } from "@/app/actions/tasks";
 import { toggleShoppingAction } from "@/app/actions/shopping";
 import { Header } from "@/components/header";
@@ -30,6 +31,8 @@ export interface DashboardProps {
   notes: Note[];
   project: ProjectProgress | null;
   openTaskCount: number;
+  babyAgeBand: AgeBand;
+  babyAgeLabel: string;
 }
 
 export default function Dashboard({
@@ -43,6 +46,8 @@ export default function Dashboard({
   notes,
   project,
   openTaskCount,
+  babyAgeBand,
+  babyAgeLabel,
 }: DashboardProps) {
   const [dark, setDark] = useState(false);
   const [tasks, setTasks] = useState(initialTasks);
@@ -84,7 +89,12 @@ export default function Dashboard({
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
             <div className="flex flex-col gap-4 sm:gap-5">
               <WeatherTile weather={weather} />
-              <BabyWeatherCard temp={weather.temp} uvIndex={weather.uvIndex} />
+              <BabyWeatherCard
+                temp={weather.temp}
+                uvIndex={weather.uvIndex}
+                ageBand={babyAgeBand}
+                ageLabel={babyAgeLabel}
+              />
             </div>
             <TaskTile
               person="dome"

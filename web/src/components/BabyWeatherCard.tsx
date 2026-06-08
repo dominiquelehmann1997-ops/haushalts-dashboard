@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Card, CardHead } from "@/components/ui";
 import { recommendClothing } from "@/lib/baby/clothing";
 import { uvAdvice } from "@/lib/baby/uv";
+import { BABY } from "@/lib/baby/profile";
 import type { AgeBand, Situation, Warmth, UvLevel } from "@/lib/baby/types";
 
 const SITUATIONS: { key: Situation; label: string }[] = [
@@ -13,11 +14,6 @@ const SITUATIONS: { key: Situation; label: string }[] = [
   { key: "auto", label: "Auto" },
   { key: "schlafen", label: "Schlafen" },
   { key: "zuhause", label: "Zuhause" },
-];
-
-const AGES: { key: AgeBand; label: string }[] = [
-  { key: "0-3m", label: "0–3 Mon." },
-  { key: "4m+", label: "4+ Mon." },
 ];
 
 const WARMTH_TINT: Record<Warmth, string> = {
@@ -61,9 +57,18 @@ function Chip({
   );
 }
 
-export function BabyWeatherCard({ temp, uvIndex }: { temp: number; uvIndex: number }) {
+export function BabyWeatherCard({
+  temp,
+  uvIndex,
+  ageBand,
+  ageLabel,
+}: {
+  temp: number;
+  uvIndex: number;
+  ageBand: AgeBand;
+  ageLabel: string;
+}) {
   const [situation, setSituation] = useState<Situation>("allgemein");
-  const [ageBand, setAgeBand] = useState<AgeBand>("0-3m");
 
   const clothing = recommendClothing({ tempC: temp, situation, ageBand });
   const uv = uvAdvice(uvIndex, ageBand);
@@ -73,7 +78,8 @@ export function BabyWeatherCard({ temp, uvIndex }: { temp: number; uvIndex: numb
     <Card>
       <CardHead
         eyebrow="Baby-Wetter · Heute"
-        title="Für die Kleine"
+        title={`Für ${BABY.name}`}
+        sub={`${ageLabel} alt`}
         right={
           <span
             className={`shrink-0 inline-flex items-center gap-1.5 text-[12px] font-semibold px-2.5 py-1 rounded-full ${WARMTH_TINT[clothing.warmth]}`}
@@ -83,18 +89,11 @@ export function BabyWeatherCard({ temp, uvIndex }: { temp: number; uvIndex: numb
         }
       />
 
-      {/* Auswahl: Situation + Alter */}
-      <div className="flex flex-wrap gap-1.5 mb-1">
+      {/* Auswahl: Situation (Alter wird automatisch aus dem Geburtsdatum berechnet) */}
+      <div className="flex flex-wrap gap-1.5 mb-4">
         {SITUATIONS.map((s) => (
           <Chip key={s.key} active={situation === s.key} onClick={() => setSituation(s.key)}>
             {s.label}
-          </Chip>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-1.5 mb-4">
-        {AGES.map((a) => (
-          <Chip key={a.key} active={ageBand === a.key} onClick={() => setAgeBand(a.key)}>
-            {a.label}
           </Chip>
         ))}
       </div>

@@ -9,6 +9,8 @@ import { getShoppingItems } from "@/lib/repositories/shopping";
 import { getWeekMealPlan } from "@/lib/repositories/meals";
 import { getNotes } from "@/lib/repositories/notes";
 import { getActiveProjectProgress } from "@/lib/repositories/projects";
+import { babyAge } from "@/lib/baby/age";
+import { BABY } from "@/lib/baby/profile";
 
 export default async function Home() {
   const today = new Date();
@@ -45,6 +47,8 @@ export default async function Home() {
     weather = weatherFallback;
   }
 
+  const { ageBand: babyAgeBand, label: babyAgeLabel } = babyAge(BABY.birth, today);
+
   return (
     <Dashboard
       initialTasks={[...domeTasks, ...emelyTasks]}
@@ -57,6 +61,8 @@ export default async function Home() {
       notes={notes}
       project={project}
       openTaskCount={openTaskCount}
+      babyAgeBand={babyAgeBand}
+      babyAgeLabel={babyAgeLabel}
     />
   );
 }
