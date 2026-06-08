@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, startTransition } from "react";
+import { useEffect, useState, useOptimistic, startTransition } from "react";
 import type {
   Task,
   Appointment,
@@ -50,29 +50,41 @@ export default function Dashboard({
   babyAgeLabel,
 }: DashboardProps) {
   const [dark, setDark] = useState(false);
-  const [tasks, setTasks] = useState(initialTasks);
-  const [shopping, setShopping] = useState(initialShopping);
+
+  // `useOptimistic` keeps the server props (`initialTasks`/`initialShopping`)
+  // as the source of truth — so when a Server Action revalidates the route
+  // (e.g. generating the meal plan adds recipe items to the shopping list),
+  // the new server data flows in live — while still applying an instant
+  // optimistic toggle during the pending transition.
+  const [tasks, toggleTaskOptimistic] = useOptimistic(
+    initialTasks,
+    (state: Task[], id: string) =>
+      state.map((t) =>
+        t.id === id && (t.status === "open" || t.status === "done")
+          ? { ...t, status: t.status === "open" ? "done" : "open" }
+          : t,
+      ),
+  );
+  const [shopping, toggleShopOptimistic] = useOptimistic(
+    initialShopping,
+    (state: ShoppingItem[], id: string) =>
+      state.map((i) => (i.id === id ? { ...i, done: !i.done } : i)),
+  );
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
   const toggleTask = (id: string) => {
-    setTasks((ts) =>
-      ts.map((t) =>
-        t.id === id && (t.status === "open" || t.status === "done")
-          ? { ...t, status: t.status === "open" ? "done" : "open" }
-          : t,
-      ),
-    );
-    startTransition(() => {
-      toggleTaskAction(id);
+    startTransition(async () => {
+      toggleTaskOptimistic(id);
+      await toggleTaskAction(id);
     });
   };
   const toggleShop = (id: string) => {
-    setShopping((s) => s.map((i) => (i.id === id ? { ...i, done: !i.done } : i)));
-    startTransition(() => {
-      toggleShoppingAction(id);
+    startTransition(async () => {
+      toggleShopOptimistic(id);
+      await toggleShoppingAction(id);
     });
   };
 

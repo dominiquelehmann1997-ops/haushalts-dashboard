@@ -16,8 +16,12 @@ import { currentWeekBounds } from "@/lib/dates";
  * Reads the current ISO week's meal plan, collects the unique (case-
  * insensitive) ingredient names across all planned recipes, and regenerates
  * the `source: "recipe"` shopping items to match exactly that set.
+ *
+ * Returns the recipe ingredient names it wrote (display casing), so callers
+ * can push exactly those to Bring without re-querying — see
+ * `generatePlanAction`.
  */
-export async function syncIngredientsToShopping(client: PrismaClient = prisma): Promise<void> {
+export async function syncIngredientsToShopping(client: PrismaClient = prisma): Promise<string[]> {
   const { start, end } = currentWeekBounds();
 
   const entries = await client.mealPlanEntry.findMany({
@@ -36,9 +40,12 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
 
   await client.shoppingItem.deleteMany({ where: { source: "recipe" } });
 
-  for (const name of byKey.values()) {
+  const names = [...byKey.values()];
+  for (const name of names) {
     await client.shoppingItem.create({
       data: { text: name, meal: true, source: "recipe", done: false },
     });
   }
+
+  return names;
 }

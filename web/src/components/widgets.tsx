@@ -3,6 +3,7 @@ import type { ProjectProgress } from "@/lib/repositories/projects";
 import { Card, CardHead } from "@/components/ui";
 import { CheckIcon } from "@/components/icons";
 import { BringSyncControl } from "@/components/BringSyncControl";
+import { MealPlanControl } from "@/components/MealPlanControl";
 
 export function ShoppingWidget({
   items,
@@ -57,7 +58,7 @@ export function ShoppingWidget({
 export function MealPlanWidget({ meals }: { meals: Meal[] }) {
   return (
     <Card>
-      <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" />
+      <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" right={<MealPlanControl />} />
       <ul className="space-y-1.5">
         {meals.map((m) => (
           <li

@@ -34,6 +34,18 @@ describe("shoppingSync service", () => {
     expect(tomaten?.done).toBe(false);
   });
 
+  it("returns the recipe ingredient names it wrote (for downstream Bring push)", async () => {
+    const names = await syncIngredientsToShopping(client);
+
+    const recipeItems = await client.shoppingItem.findMany({ where: { source: "recipe" } });
+    const recipeTexts = recipeItems.map((i) => i.text);
+
+    // The returned names match exactly the persisted recipe items (same set).
+    expect([...names].sort()).toEqual([...recipeTexts].sort());
+    // And ingredients of the planned recipes are present.
+    expect(names).toContain("Tomaten");
+  });
+
   it("leaves manual items untouched", async () => {
     await syncIngredientsToShopping(client);
 
