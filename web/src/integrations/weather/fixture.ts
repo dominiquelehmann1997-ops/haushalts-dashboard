@@ -23,10 +23,12 @@ export const openMeteoFixture = {
     time: "2026-06-07T14:00",
     temperature_2m: 18.4,
     weather_code: 61,
+    uv_index: 4.2,
   },
   current_units: {
     temperature_2m: "°C",
     weather_code: "wmo code",
+    uv_index: "",
   },
   hourly_units: {
     time: "iso8601",
@@ -105,6 +107,7 @@ export const openMeteoFixture = {
     temperature_2m_max: [18.6, 19.1],
     temperature_2m_min: [10.1, 10.2],
     weather_code: [61, 2],
+    uv_index_max: [5.4, 6.8],
   },
 };
 

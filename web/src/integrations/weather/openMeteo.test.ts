@@ -41,6 +41,7 @@ describe("mapCurrent", () => {
       hi: 19,
       lo: 10,
       rainFrom: "08:00",
+      uvIndex: 4,
     });
   });
 
@@ -51,11 +52,20 @@ describe("mapCurrent", () => {
   it("falls back to the label as detail when there is no rain today", () => {
     const dryFixture = {
       ...openMeteoFixture,
-      current: { time: "2026-06-08T12:00", temperature_2m: 17.8, weather_code: 2 },
+      current: { time: "2026-06-08T12:00", temperature_2m: 17.8, weather_code: 2, uv_index: 1.1 },
     };
     const dryCurrent = mapCurrent(dryFixture);
     expect(dryCurrent.rainFrom).toBe("");
     expect(dryCurrent.detail).toBe(dryCurrent.label);
     expect(dryCurrent.label).toBe("Bewölkt");
+  });
+
+  it("maps the current UV index, rounded", () => {
+    expect(mapCurrent(openMeteoFixture).uvIndex).toBe(4);
+  });
+
+  it("falls back to today's daily uv_index_max when current is absent", () => {
+    const noCurrent = { ...openMeteoFixture, current: undefined };
+    expect(mapCurrent(noCurrent).uvIndex).toBe(5);
   });
 });

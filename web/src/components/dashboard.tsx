@@ -17,6 +17,7 @@ import { Header } from "@/components/header";
 import { WeatherTile, TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles";
 import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/components/widgets";
 import { AddDoneEntry } from "@/components/AddDoneEntry";
+import { BabyWeatherCard } from "@/components/BabyWeatherCard";
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -80,8 +81,11 @@ export default function Dashboard({
 
         {/* HERO BAND */}
         <section className="rise" style={{ animationDelay: ".02s" }}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
-            <WeatherTile weather={weather} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
+            <div className="flex flex-col gap-4 sm:gap-5">
+              <WeatherTile weather={weather} />
+              <BabyWeatherCard temp={weather.temp} uvIndex={weather.uvIndex} />
+            </div>
             <TaskTile
               person="dome"
               tasks={domeTasks}

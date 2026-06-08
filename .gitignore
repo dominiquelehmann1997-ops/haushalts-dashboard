@@ -25,4 +25,5 @@ Thumbs.db
 
 # Tooling-Caches / lokale Arbeitsnotizen
 .firecrawl/
+.playwright-cli/
 web/Kalender_IDs.txt

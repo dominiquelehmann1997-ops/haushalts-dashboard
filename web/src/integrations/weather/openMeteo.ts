@@ -22,6 +22,7 @@ export interface OpenMeteoResponse {
     time: string;
     temperature_2m: number;
     weather_code: number;
+    uv_index?: number;
   };
   hourly: {
     time: string[]; // local "YYYY-MM-DDTHH:MM" (timezone applied)
@@ -33,6 +34,7 @@ export interface OpenMeteoResponse {
     temperature_2m_max: number[];
     temperature_2m_min: number[];
     weather_code: number[];
+    uv_index_max: number[];
   };
 }
 
@@ -43,6 +45,7 @@ export interface CurrentWeather {
   hi: number;
   lo: number;
   rainFrom: string;
+  uvIndex: number;
 }
 
 /** Splits a local "YYYY-MM-DDTHH:MM" hourly timestamp into its date key and "HH:MM" time. */
@@ -155,6 +158,10 @@ export function mapCurrent(raw: OpenMeteoResponse): CurrentWeather {
   const label = current ? labelForCode(current.weather_code) : labelForCode(raw.daily.weather_code[dailyIndex]);
   const detail = rainFrom ? `Regen ab ${rainFrom} Uhr` : label;
 
+  const uvIndex = Math.round(
+    current?.uv_index ?? raw.daily.uv_index_max[dailyIndex] ?? 0,
+  );
+
   return {
     temp: current ? Math.round(current.temperature_2m) : Math.round(raw.daily.temperature_2m_max[dailyIndex]),
     label,
@@ -162,6 +169,7 @@ export function mapCurrent(raw: OpenMeteoResponse): CurrentWeather {
     hi: Math.round(raw.daily.temperature_2m_max[dailyIndex]),
     lo: Math.round(raw.daily.temperature_2m_min[dailyIndex]),
     rainFrom,
+    uvIndex,
   };
 }
 
@@ -181,8 +189,8 @@ function buildUrl(days: number): string {
     latitude: String(lat),
     longitude: String(lon),
     hourly: "precipitation,temperature_2m",
-    daily: "temperature_2m_max,temperature_2m_min,weather_code",
-    current: "temperature_2m,weather_code",
+    daily: "temperature_2m_max,temperature_2m_min,weather_code,uv_index_max",
+    current: "temperature_2m,weather_code,uv_index",
     timezone: "auto",
     forecast_days: String(days),
   });

@@ -58,6 +58,7 @@ export const weather = {
   hi: 19,
   lo: 12,
   rainFrom: "16:00",
+  uvIndex: 3,
 };
 
 export const initialTasks: Task[] = [
