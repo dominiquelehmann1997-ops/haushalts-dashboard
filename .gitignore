@@ -22,3 +22,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.log
+
+# Tooling-Caches / lokale Arbeitsnotizen
+.firecrawl/
+web/Kalender_IDs.txt
