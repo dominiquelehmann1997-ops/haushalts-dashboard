@@ -66,10 +66,14 @@ export async function getDomeShiftsForWeek(
     orderBy: { start: "asc" },
   });
 
+  // Rows are ordered by start ascending; first classifiable event per day wins
+  // so calendar noise (a corrected/duplicate entry) can't silently flip a shift.
   const map = new Map<string, ShiftClass>();
   for (const row of rows) {
+    const key = localDateKey(row.start);
+    if (map.has(key)) continue;
     const shift = classifyShift(row.title);
-    if (shift) map.set(localDateKey(row.start), shift);
+    if (shift) map.set(key, shift);
   }
   return map;
 }

@@ -75,7 +75,7 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
               {m.day}
             </span>
             <span
-              className={`text-[14.5px] ${
+              className={`flex-1 min-w-0 text-[14.5px] ${
                 m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
               } ${m.light ? "italic" : ""}`}
             >

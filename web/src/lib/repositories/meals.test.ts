@@ -134,4 +134,31 @@ describe("getDomeShiftsForWeek", () => {
     expect(map.get(localDateKey(wed))).toBeUndefined();
     expect(map.get(localDateKey(thu))).toBeUndefined();
   });
+
+  it("keeps the earliest classifiable shift when a day has two (first-wins)", async () => {
+    const { start: monday } = currentWeekBounds();
+    const tue = new Date(monday);
+    tue.setDate(tue.getDate() + 1);
+
+    // Earlier event (06:00) = Früh; later event (21:00, via helper) = Spät.
+    const earlyStart = new Date(tue);
+    earlyStart.setHours(6, 0, 0, 0);
+    const earlyEnd = new Date(tue);
+    earlyEnd.setHours(14, 0, 0, 0);
+    await client.calendarEvent.create({
+      data: {
+        externalId: `dome-frueh-${tue.getTime()}`,
+        calendarKey: "dome",
+        title: "Früh",
+        start: earlyStart,
+        end: earlyEnd,
+        personKey: "dome",
+        kind: "termin",
+      },
+    });
+    await domeEvent(tue, "Spät"); // later start (21:00)
+
+    const map = await getDomeShiftsForWeek(monday, client);
+    expect(map.get(localDateKey(tue))).toBe("frueh"); // earliest wins
+  });
 });
