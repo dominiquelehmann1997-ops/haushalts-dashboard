@@ -71,7 +71,10 @@ export async function rerollDraftDay(
   if (!entry) return null;
 
   const recipes: Recipe[] = await client.recipe.findMany({ orderBy: { name: "asc" } });
+  if (recipes.length === 0) return null; // nothing to pick from (mirrors generateWeekPlan)
   const { needsSimple, needsReheatable } = constraintFromEntry(entry.reason, entry.extraPortion);
+  // `reason` is free-text String? in the DB, but only generateWeekPlan writes it
+  // (from deriveDayConstraints → MealReason | null), so the cast is safe here.
   const constraint: DayConstraint = {
     date: entry.date,
     needsSimple,

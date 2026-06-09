@@ -84,6 +84,8 @@ describe("mealDraft editing", () => {
   it("rerollDraftDay swaps to a different recipe and keeps reason/extraPortion", async () => {
     await generateWeekPlan(new Date(), { preferSimple: false }, client);
     const before = await draftMondayEntry();
+    const allRecipes = await client.recipe.findMany();
+    expect(allRecipes.length).toBeGreaterThan(1); // prereq: a different recipe must exist
 
     const updated = await rerollDraftDay(before.date, false, client, zeroRng);
     expect(updated).not.toBeNull();
