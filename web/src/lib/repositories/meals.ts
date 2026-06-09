@@ -53,11 +53,14 @@ export async function getDomeShiftsForWeek(
   client: PrismaClient = prisma,
 ): Promise<Map<string, ShiftClass>> {
   const monday = mondayOf(weekStart);
-  const sunday = new Date(monday);
-  sunday.setDate(sunday.getDate() + 6); // upper bound; Mon–Sat covered
+  // Mon–Sat: Saturday is included as a lookahead so "day before Spätdienst"
+  // can be detected for Friday; Sunday is out of range.
+  const saturdayEnd = new Date(monday);
+  saturdayEnd.setDate(saturdayEnd.getDate() + 5);
+  saturdayEnd.setHours(23, 59, 59, 999);
 
   const rows = await client.calendarEvent.findMany({
-    where: { personKey: "dome", start: { gte: monday, lt: sunday } },
+    where: { personKey: "dome", start: { gte: monday, lte: saturdayEnd } },
     orderBy: { start: "asc" },
   });
 

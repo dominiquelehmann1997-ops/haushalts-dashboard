@@ -55,7 +55,10 @@ export function mondayOf(date: Date): Date {
   return monday;
 }
 
-/** Stable local-day key "YYYY-M-D" (no padding) for map lookups by calendar day. */
+/**
+ * Stable local-day key "YYYY-M-D" (no padding) for map lookups by calendar day.
+ * @example localDateKey(new Date(2026, 5, 9)) // "2026-6-9"
+ */
 export function localDateKey(date: Date): string {
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }

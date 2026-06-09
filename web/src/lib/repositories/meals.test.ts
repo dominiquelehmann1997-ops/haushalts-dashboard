@@ -89,9 +89,30 @@ describe("getDomeShiftsForWeek", () => {
     const { start: monday } = currentWeekBounds();
     const wed = new Date(monday);
     wed.setDate(wed.getDate() + 2);
-    await domeEvent(wed, "Sport"); // kein Schicht-Titel
+    const thu = new Date(monday);
+    thu.setDate(thu.getDate() + 3);
+
+    await domeEvent(wed, "Sport"); // dome, but not a shift title
+
+    // An emely shift-titled event must be ignored (only dome is queried).
+    const thuStart = new Date(thu);
+    thuStart.setHours(21, 0, 0, 0);
+    const thuEnd = new Date(thu);
+    thuEnd.setHours(23, 59, 0, 0);
+    await client.calendarEvent.create({
+      data: {
+        externalId: `emely-spaet-${thu.getTime()}`,
+        calendarKey: "emely",
+        title: "Spät",
+        start: thuStart,
+        end: thuEnd,
+        personKey: "emely",
+        kind: "termin",
+      },
+    });
 
     const map = await getDomeShiftsForWeek(monday, client);
     expect(map.get(localDateKey(wed))).toBeUndefined();
+    expect(map.get(localDateKey(thu))).toBeUndefined();
   });
 });
