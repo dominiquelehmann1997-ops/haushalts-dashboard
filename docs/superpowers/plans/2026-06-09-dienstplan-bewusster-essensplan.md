@@ -531,12 +531,13 @@ Expected: FAIL — `constraints` wird nicht ausgewertet / `reason`/`extraPortion
 
 - [ ] **Step 3: Write the implementation**
 
-`src/lib/services/mealPlanner.ts` ersetzen ab der `GenerateWeekPlanOptions`-Definition bis Dateiende. Imports oben um den Constraint-Typ ergänzen und `Recipe` importieren:
+`src/lib/services/mealPlanner.ts` ersetzen ab der `GenerateWeekPlanOptions`-Definition bis Dateiende. Imports oben um den Constraint-Typ ergänzen und `Recipe` importieren (`addDays` wird bereits aus `@/lib/dates` importiert — diese Zeile beibehalten, **nicht** lokal neu definieren):
 
 ```ts
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { MealPlanEntry, Recipe } from "@/generated/prisma/client";
+import { addDays } from "@/lib/dates";
 import type { DayConstraint } from "@/lib/services/mealConstraints";
 ```
 
@@ -554,7 +555,7 @@ export interface GenerateWeekPlanOptions {
 }
 ```
 
-`shuffle`, `addDays`, `weekBoundsOf` bleiben. Eine `noConstraint`-Fabrik und einen Pool-Selektor ergänzen (vor `generateWeekPlan`):
+`shuffle` und `weekBoundsOf` bleiben (`addDays` kommt jetzt aus `@/lib/dates`, kein lokaler Helfer mehr). Eine `noConstraint`-Fabrik und einen Pool-Selektor ergänzen (vor `generateWeekPlan`):
 
 ```ts
 /** A constraint with no requirements, for days/weeks without shift data. */
