@@ -8,6 +8,7 @@
 import { useState, useTransition } from "react";
 
 import type { DraftMeal, RecipeOption } from "@/lib/data";
+import { MealReasonBadge } from "@/components/widgets";
 import {
   approveDraftAction,
   discardDraftAction,
@@ -30,6 +31,7 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
   };
 
   const handleApprove = () => {
+    setResult(null);
     setCopied(false);
     startTransition(async () => {
       setResult(await approveDraftAction(new Date().toISOString()));
@@ -77,32 +79,23 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
               {m.day}
             </span>
             <span className="flex-1 min-w-0 text-[14.5px] text-ink-soft dark:text-cream/70">{m.dish}</span>
-            {m.reason && (
-              <span
-                className={`shrink-0 text-[10.5px] font-semibold px-2 py-0.5 rounded-full ${
-                  m.reason === "emely-allein"
-                    ? "bg-emely-tint text-emely-deep dark:bg-emely/15 dark:text-emely"
-                    : "bg-cream text-ink-soft dark:bg-white/10 dark:text-cream/70"
-                }`}
-              >
-                {m.reason === "emely-allein" ? "Emely allein" : m.extraPortion ? "Aufwärmen · +Portion" : "Aufwärmen"}
-              </span>
-            )}
+            <MealReasonBadge reason={m.reason} extraPortion={m.extraPortion} />
             <button
               type="button"
               onClick={() => run(() => rerollDraftDayAction(m.dateISO))}
               disabled={pending}
-              title="Tag neu würfeln"
+              title={`${m.day} neu würfeln`}
               className="shrink-0 text-[13px] px-2 py-1 rounded-lg hover:bg-white dark:hover:bg-white/10 disabled:cursor-wait"
             >
               🎲
             </button>
             <select
-              value={m.recipeId}
+              key={m.recipeId}
+              defaultValue={m.recipeId}
               disabled={pending}
               onChange={(e) => run(() => setDraftDayRecipeAction(m.dateISO, e.target.value))}
               className="shrink-0 text-[12px] rounded-lg bg-white dark:bg-white/10 px-1.5 py-1 max-w-[120px]"
-              aria-label="Gericht tauschen"
+              aria-label={`${m.day} Gericht tauschen`}
             >
               {recipes.map((r) => (
                 <option key={r.id} value={r.id}>
