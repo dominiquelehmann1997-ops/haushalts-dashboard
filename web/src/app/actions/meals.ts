@@ -1,42 +1,40 @@
 "use server";
 
-// Thin Server Action wrapper around the meal-planning services — generates
-// the week's plan (recipe-book selection, phase-aware ordering, shuffled day
-// assignment), syncs the derived ingredients into the shared shopping list,
-// pushes exactly those ingredients to Bring!, then revalidates the dashboard.
-// No business logic here: recipe selection lives in `generateWeekPlan`,
-// ingredient aggregation in `syncIngredientsToShopping`, the Bring push in
-// `@/integrations/bring/client` (see `@/lib/services/*`).
+// Server Actions rund um den Wochen-Essensplan-Entwurf (Roadmap C1).
+// Erzeugen schreibt einen Entwurf (dienstbewusst, keine Einkauf-Berührung).
+// Bearbeiten würfelt einen Tag neu oder tauscht sein Rezept. Abnicken befördert
+// den Entwurf zum aktiven Plan und pusht dann die Zutaten — batch-fähig
+// (`planShoppingBatches`; C1 eine Rutsche) — auf Einkaufsliste + Bring.
 
 import { revalidatePath } from "next/cache";
 
 import { generateWeekPlan } from "@/lib/services/mealPlanner";
 import { deriveDayConstraints } from "@/lib/services/mealConstraints";
+import {
+  approveDraft,
+  discardDraft,
+  rerollDraftDay,
+  setDraftDayRecipe,
+} from "@/lib/services/mealDraft";
 import { syncIngredientsToShopping } from "@/lib/services/shoppingSync";
+import { planShoppingBatches } from "@/lib/services/shoppingBatches";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { getDomeShiftsForWeek } from "@/lib/repositories/meals";
 import { localDateKey } from "@/lib/dates";
 import { pushShoppingList, type BringPushResult } from "@/integrations/bring/client";
 
-export interface GeneratePlanResult {
-  /** The recipe ingredient names written to the list (and pushed to Bring). */
+/** Result of approving a draft and pushing its ingredients. */
+export interface ApprovePlanResult {
+  /** `false` when there was no draft to approve. */
+  approved: boolean;
+  /** Recipe ingredient names written to the list (empty if not approved). */
   ingredients: string[];
-  /** Outcome of pushing those ingredients to Bring! (never throws). */
+  /** Aggregated outcome of pushing the batches to Bring! (never throws). */
   bring: BringPushResult;
 }
 
-/**
- * Generates the meal plan for the week containing `weekStart`, syncs its
- * ingredients into the shopping list, and pushes *only those recipe
- * ingredients* to Bring! (manual items are left untouched). In "Elternzeit"
- * mode, simple recipes are preferred (less cooking effort for the caregiving
- * phase). The day→recipe assignment is shuffled, so each call yields a fresh
- * plan.
- *
- * Returns the ingredients and the Bring push result so the UI can confirm
- * success or offer the manual copy-to-clipboard fallback.
- */
-export async function generatePlanAction(weekStart: Date): Promise<GeneratePlanResult> {
+/** Generates the dienstbewusst DRAFT plan for the week (no shopping/Bring). */
+export async function generatePlanAction(weekStart: Date): Promise<void> {
   const phase = await getActivePhase();
 
   const shifts = await getDomeShiftsForWeek(weekStart);
@@ -49,11 +47,57 @@ export async function generatePlanAction(weekStart: Date): Promise<GeneratePlanR
     preferSimple: phase?.mode === "elternzeit",
     constraints,
   });
-  const ingredients = await syncIngredientsToShopping();
-
-  const bring = await pushShoppingList(ingredients.map((name) => ({ name })));
 
   revalidatePath("/");
+}
 
-  return { ingredients, bring };
+/** Re-rolls a single draft day's recipe (dienstbewusst). */
+export async function rerollDraftDayAction(dateISO: string): Promise<void> {
+  const phase = await getActivePhase();
+  await rerollDraftDay(new Date(dateISO), phase?.mode === "elternzeit");
+  revalidatePath("/");
+}
+
+/** Manually swaps a draft day's recipe. */
+export async function setDraftDayRecipeAction(dateISO: string, recipeId: string): Promise<void> {
+  await setDraftDayRecipe(new Date(dateISO), recipeId);
+  revalidatePath("/");
+}
+
+/** Discards the week's draft. */
+export async function discardDraftAction(weekStart: Date): Promise<void> {
+  await discardDraft(weekStart);
+  revalidatePath("/");
+}
+
+/**
+ * Approves the week's draft: promotes it to the active plan, then syncs its
+ * ingredients onto the shopping list and pushes them to Bring! in batches
+ * (C1: one batch). Returns the outcome for the UI's confirmation pill /
+ * manual-copy fallback. A Bring failure does NOT undo the approval.
+ */
+export async function approveDraftAction(weekStart: Date): Promise<ApprovePlanResult> {
+  const approved = await approveDraft(weekStart);
+  if (!approved) {
+    revalidatePath("/");
+    return { approved: false, ingredients: [], bring: { ok: true, pushed: 0 } };
+  }
+
+  const ingredients = await syncIngredientsToShopping();
+  const batches = planShoppingBatches(ingredients);
+
+  let bring: BringPushResult = { ok: true, pushed: 0 };
+  let pushed = 0;
+  for (const batch of batches) {
+    const result = await pushShoppingList(batch.items);
+    if (!result.ok) {
+      bring = result;
+      break;
+    }
+    pushed += result.pushed;
+    bring = { ok: true, pushed };
+  }
+
+  revalidatePath("/");
+  return { approved: true, ingredients, bring };
 }
