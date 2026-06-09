@@ -32,6 +32,10 @@ export interface Meal {
   dish: string;
   today: boolean;
   light?: boolean;
+  /** Shift-aware hint: "emely-allein" | "aufwaermen-extra" | null. */
+  reason?: string | null;
+  /** True when an extra portion is planned (Dome takes leftovers to work). */
+  extraPortion?: boolean;
 }
 
 export interface Note {

@@ -36,6 +36,25 @@ describe("meals repository", () => {
     const todays = plan.filter((m) => m.today);
     expect(todays).toHaveLength(isWeekday ? 1 : 0);
   });
+
+  it("getWeekMealPlan surfaces reason/extraPortion from the entry", async () => {
+    const { start } = (await import("@/lib/dates")).currentWeekBounds();
+    const monday = new Date(start);
+
+    const entry = await client.mealPlanEntry.findFirstOrThrow({
+      where: { date: { gte: monday } },
+      orderBy: { date: "asc" },
+    });
+    await client.mealPlanEntry.update({
+      where: { id: entry.id },
+      data: { reason: "emely-allein", extraPortion: true },
+    });
+
+    const plan = await getWeekMealPlan(client);
+    const mondayMeal = plan.find((m) => m.day === "Mo");
+    expect(mondayMeal?.reason).toBe("emely-allein");
+    expect(mondayMeal?.extraPortion).toBe(true);
+  });
 });
 
 describe("getDomeShiftsForWeek", () => {

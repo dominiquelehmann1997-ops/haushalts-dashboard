@@ -81,6 +81,26 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
             >
               {m.dish}
             </span>
+            {m.reason && (
+              <span
+                className={`shrink-0 text-[10.5px] font-semibold px-2 py-0.5 rounded-full ${
+                  m.reason === "emely-allein"
+                    ? "bg-emely-tint text-emely-deep dark:bg-emely/15 dark:text-emely"
+                    : "bg-cream text-ink-soft dark:bg-white/10 dark:text-cream/70"
+                }`}
+                title={
+                  m.reason === "emely-allein"
+                    ? "Spätdienst Dome — Emely kocht allein"
+                    : "Aufwärmbar + Extraportion für Dome"
+                }
+              >
+                {m.reason === "emely-allein"
+                  ? "Emely allein"
+                  : m.extraPortion
+                    ? "Aufwärmen · +Portion"
+                    : "Aufwärmen"}
+              </span>
+            )}
             {m.today && (
               <span className="ml-auto text-[10.5px] font-bold tracking-wide uppercase text-emely-deep dark:text-emely">
                 Heute

@@ -39,6 +39,8 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
     day: WEEKDAY_LABELS[row.date.getDay()],
     dish: row.recipe.name,
     today: isToday(row.date),
+    reason: row.reason,
+    extraPortion: row.extraPortion,
   }));
 }
 

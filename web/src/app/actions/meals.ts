@@ -11,8 +11,11 @@
 import { revalidatePath } from "next/cache";
 
 import { generateWeekPlan } from "@/lib/services/mealPlanner";
+import { deriveDayConstraints } from "@/lib/services/mealConstraints";
 import { syncIngredientsToShopping } from "@/lib/services/shoppingSync";
 import { getActivePhase } from "@/lib/repositories/phase";
+import { getDomeShiftsForWeek } from "@/lib/repositories/meals";
+import { localDateKey } from "@/lib/dates";
 import { pushShoppingList, type BringPushResult } from "@/integrations/bring/client";
 
 export interface GeneratePlanResult {
@@ -36,7 +39,16 @@ export interface GeneratePlanResult {
 export async function generatePlanAction(weekStart: Date): Promise<GeneratePlanResult> {
   const phase = await getActivePhase();
 
-  await generateWeekPlan(weekStart, { preferSimple: phase?.mode === "elternzeit" });
+  const shifts = await getDomeShiftsForWeek(weekStart);
+  const constraints = deriveDayConstraints(
+    weekStart,
+    (date) => shifts.get(localDateKey(date)) ?? null,
+  );
+
+  await generateWeekPlan(weekStart, {
+    preferSimple: phase?.mode === "elternzeit",
+    constraints,
+  });
   const ingredients = await syncIngredientsToShopping();
 
   const bring = await pushShoppingList(ingredients.map((name) => ({ name })));
