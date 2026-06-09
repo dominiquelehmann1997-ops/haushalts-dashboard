@@ -55,6 +55,23 @@ export function ShoppingWidget({
   );
 }
 
+export function MealReasonBadge({ reason, extraPortion }: { reason?: string | null; extraPortion?: boolean }) {
+  if (!reason) return null;
+  const isAlone = reason === "emely-allein";
+  return (
+    <span
+      className={`shrink-0 text-[10.5px] font-semibold px-2 py-0.5 rounded-full ${
+        isAlone
+          ? "bg-emely-tint text-emely-deep dark:bg-emely/15 dark:text-emely"
+          : "bg-cream text-ink-soft dark:bg-white/10 dark:text-cream/70"
+      }`}
+      title={isAlone ? "Spätdienst Dome — Emely kocht allein" : "Aufwärmbar + Extraportion für Dome"}
+    >
+      {isAlone ? "Emely allein" : extraPortion ? "Aufwärmen · +Portion" : "Aufwärmen"}
+    </span>
+  );
+}
+
 export function MealPlanWidget({ meals }: { meals: Meal[] }) {
   return (
     <Card>
@@ -81,26 +98,7 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
             >
               {m.dish}
             </span>
-            {m.reason && (
-              <span
-                className={`shrink-0 text-[10.5px] font-semibold px-2 py-0.5 rounded-full ${
-                  m.reason === "emely-allein"
-                    ? "bg-emely-tint text-emely-deep dark:bg-emely/15 dark:text-emely"
-                    : "bg-cream text-ink-soft dark:bg-white/10 dark:text-cream/70"
-                }`}
-                title={
-                  m.reason === "emely-allein"
-                    ? "Spätdienst Dome — Emely kocht allein"
-                    : "Aufwärmbar + Extraportion für Dome"
-                }
-              >
-                {m.reason === "emely-allein"
-                  ? "Emely allein"
-                  : m.extraPortion
-                    ? "Aufwärmen · +Portion"
-                    : "Aufwärmen"}
-              </span>
-            )}
+            <MealReasonBadge reason={m.reason} extraPortion={m.extraPortion} />
             {m.today && (
               <span className="ml-auto text-[10.5px] font-bold tracking-wide uppercase text-emely-deep dark:text-emely">
                 Heute

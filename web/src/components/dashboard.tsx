@@ -6,6 +6,8 @@ import type {
   Appointment,
   ShoppingItem,
   Meal,
+  DraftMeal,
+  RecipeOption,
   Note,
 } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
@@ -19,6 +21,7 @@ import { TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles
 import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/components/widgets";
 import { AddDoneEntry } from "@/components/AddDoneEntry";
 import { WeatherBabyTile } from "@/components/WeatherBabyTile";
+import { MealDraftPanel } from "@/components/MealDraftPanel";
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -28,6 +31,8 @@ export interface DashboardProps {
   split: { dome: number; emely: number };
   phase: ActivePhase | null;
   meals: Meal[];
+  draft: DraftMeal[];
+  recipes: RecipeOption[];
   notes: Note[];
   project: ProjectProgress | null;
   openTaskCount: number;
@@ -43,6 +48,8 @@ export default function Dashboard({
   split,
   phase,
   meals,
+  draft,
+  recipes,
   notes,
   project,
   openTaskCount,
@@ -131,6 +138,12 @@ export default function Dashboard({
             <WeekWidget openTaskCount={openTaskCount} project={project} />
           </div>
         </section>
+
+        {draft.length > 0 && (
+          <section className="mt-4 sm:mt-5">
+            <MealDraftPanel draft={draft} recipes={recipes} />
+          </section>
+        )}
 
         <footer className="mt-10 text-center text-[12px] text-ink-faint/80">
           Haushalts-Cockpit · ruhig statt vollgepackt · Mock-Demo

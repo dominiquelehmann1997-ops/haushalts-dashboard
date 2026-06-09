@@ -6,7 +6,7 @@ import { getTodaysEvents } from "@/lib/repositories/calendar";
 import { getComputedSplit } from "@/lib/repositories/accounts";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { getShoppingItems } from "@/lib/repositories/shopping";
-import { getWeekMealPlan } from "@/lib/repositories/meals";
+import { getWeekMealPlan, getDraftMealPlan, listRecipes } from "@/lib/repositories/meals";
 import { getNotes } from "@/lib/repositories/notes";
 import { getActiveProjectProgress } from "@/lib/repositories/projects";
 import { babyAge } from "@/lib/baby/age";
@@ -24,6 +24,8 @@ export default async function Home() {
     phase,
     shopping,
     meals,
+    draft,
+    recipes,
     notes,
     project,
     openTaskCount,
@@ -35,6 +37,8 @@ export default async function Home() {
     getActivePhase(),
     getShoppingItems(),
     getWeekMealPlan(),
+    getDraftMealPlan(),
+    listRecipes(),
     getNotes(),
     getActiveProjectProgress(),
     getOpenTaskCount(),
@@ -58,6 +62,8 @@ export default async function Home() {
       split={split}
       phase={phase}
       meals={meals}
+      draft={draft}
+      recipes={recipes}
       notes={notes}
       project={project}
       openTaskCount={openTaskCount}
