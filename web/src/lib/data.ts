@@ -27,6 +27,13 @@ export interface ShoppingItem {
   done: boolean;
 }
 
+export interface FreshShoppingState {
+  /** Offene Frisch-Rezept-Items, die noch nicht auf Bring sind. */
+  pendingItems: string[];
+  /** Vorschlagstag (ISO) für den Frische-Einkauf, oder null. */
+  suggestedDayISO: string | null;
+}
+
 export interface Meal {
   day: string;
   dish: string;

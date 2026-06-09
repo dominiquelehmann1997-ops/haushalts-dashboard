@@ -14,6 +14,7 @@ export type {
   Task,
   Appointment,
   ShoppingItem,
+  FreshShoppingState,
   Meal,
   DraftMeal,
   RecipeOption,
