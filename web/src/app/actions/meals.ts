@@ -1,10 +1,10 @@
 "use server";
 
-// Server Actions rund um den Wochen-Essensplan-Entwurf (Roadmap C1).
+// Server Actions rund um den Wochen-Essensplan-Entwurf (Roadmap C1/D1).
 // Erzeugen schreibt einen Entwurf (dienstbewusst, keine Einkauf-Berührung).
-// Bearbeiten würfelt einen Tag neu oder tauscht sein Rezept. Abnicken befördert
-// den Entwurf zum aktiven Plan und pusht dann die Zutaten — batch-fähig
-// (`planShoppingBatches`; C1 eine Rutsche) — auf Einkaufsliste + Bring.
+// Bearbeiten würfelt einen Tag neu oder tauscht sein Rezept. Abnicken pusht nur
+// die **haltbar**-Rutsche sofort auf Bring; die **frisch**-Rutsche folgt später
+// per `pushFreshBatchAction` (Roadmap D1).
 
 import { revalidatePath } from "next/cache";
 
@@ -17,20 +17,24 @@ import {
   setDraftDayRecipe,
 } from "@/lib/services/mealDraft";
 import { syncIngredientsToShopping } from "@/lib/services/shoppingSync";
-import { planShoppingBatches } from "@/lib/services/shoppingBatches";
+import { pushRecipeBatch } from "@/lib/services/shoppingBatch";
+import { getFreshShoppingState } from "@/lib/repositories/shopping";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { getDomeShiftsForWeek } from "@/lib/repositories/meals";
 import { localDateKey } from "@/lib/dates";
-import { pushShoppingList, type BringPushResult } from "@/integrations/bring/client";
+import type { BringPushResult } from "@/integrations/bring/client";
+import type { FreshShoppingState } from "@/lib/domain";
 
-/** Result of approving a draft and pushing its ingredients. */
+/** Result of approving a draft: the haltbar push outcome + the pending fresh state. */
 export interface ApprovePlanResult {
   /** `false` when there was no draft to approve. */
   approved: boolean;
-  /** Recipe ingredient names written to the list (empty if not approved). */
+  /** Haltbar ingredient names pushed to Bring (empty if not approved) — for the copy fallback. */
   ingredients: string[];
-  /** Aggregated outcome of pushing the batches to Bring! (never throws). */
+  /** Outcome of pushing the *haltbar* batch to Bring! (never throws). */
   bring: BringPushResult;
+  /** Pending fresh batch (items + suggested day) to surface in the dashboard. */
+  fresh: FreshShoppingState;
 }
 
 /** Generates the dienstbewusst DRAFT plan for the week (no shopping/Bring). */
@@ -73,36 +77,41 @@ export async function discardDraftAction(weekStartISO: string): Promise<void> {
 }
 
 /**
- * Approves the week's draft: promotes it to the active plan, then syncs its
- * ingredients onto the shopping list and pushes them to Bring! in batches
- * (C1: one batch). Returns the outcome for the UI's confirmation pill /
- * manual-copy fallback. A Bring failure does NOT undo the approval.
+ * Approves the week's draft: promotes it to the active plan, syncs its
+ * ingredients onto the shopping list, then pushes ONLY the "haltbar" batch to
+ * Bring! immediately. The "frisch" batch stays pending and is surfaced via the
+ * returned `fresh` state (pushed later by the user). A Bring failure does NOT
+ * undo the approval.
  */
 export async function approveDraftAction(weekStartISO: string): Promise<ApprovePlanResult> {
   const weekStart = new Date(weekStartISO);
   const approved = await approveDraft(weekStart);
   if (!approved) {
     revalidatePath("/");
-    return { approved: false, ingredients: [], bring: { ok: true, pushed: 0 } };
+    return {
+      approved: false,
+      ingredients: [],
+      bring: { ok: true, pushed: 0 },
+      fresh: { pendingItems: [], suggestedDayISO: null },
+    };
   }
 
   // syncIngredientsToShopping operates on the current ISO week (see shoppingSync);
-  // in C1 the UI only ever approves the current week's draft.
-  const ingredients = await syncIngredientsToShopping();
-  const batches = planShoppingBatches(ingredients);
-
-  let bring: BringPushResult = { ok: true, pushed: 0 };
-  let pushed = 0;
-  for (const batch of batches) {
-    const result = await pushShoppingList(batch.items);
-    if (!result.ok) {
-      bring = result;
-      break;
-    }
-    pushed += result.pushed;
-    bring = { ok: true, pushed };
-  }
+  // in C1/D1 the UI only ever approves the current week's draft.
+  await syncIngredientsToShopping();
+  const haltbar = await pushRecipeBatch("haltbar");
+  const fresh = await getFreshShoppingState();
 
   revalidatePath("/");
-  return { approved: true, ingredients, bring };
+  return { approved: true, ingredients: haltbar.items, bring: haltbar.bring, fresh };
+}
+
+/**
+ * Pushes the pending "frisch" batch to Bring! (the deferred second shopping run).
+ * Returns the push outcome + the affected names for the copy fallback.
+ */
+export async function pushFreshBatchAction(): Promise<{ bring: BringPushResult; items: string[] }> {
+  const result = await pushRecipeBatch("frisch");
+  revalidatePath("/");
+  return result;
 }
