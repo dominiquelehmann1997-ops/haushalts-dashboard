@@ -17,7 +17,7 @@ export function MealPlanControl() {
   const handleGenerate = () => {
     setDone(false);
     startTransition(async () => {
-      await generatePlanAction(new Date());
+      await generatePlanAction(new Date().toISOString());
       setDone(true);
     });
   };

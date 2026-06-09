@@ -34,7 +34,8 @@ export interface ApprovePlanResult {
 }
 
 /** Generates the dienstbewusst DRAFT plan for the week (no shopping/Bring). */
-export async function generatePlanAction(weekStart: Date): Promise<void> {
+export async function generatePlanAction(weekStartISO: string): Promise<void> {
+  const weekStart = new Date(weekStartISO);
   const phase = await getActivePhase();
 
   const shifts = await getDomeShiftsForWeek(weekStart);
@@ -65,7 +66,8 @@ export async function setDraftDayRecipeAction(dateISO: string, recipeId: string)
 }
 
 /** Discards the week's draft. */
-export async function discardDraftAction(weekStart: Date): Promise<void> {
+export async function discardDraftAction(weekStartISO: string): Promise<void> {
+  const weekStart = new Date(weekStartISO);
   await discardDraft(weekStart);
   revalidatePath("/");
 }
@@ -76,13 +78,16 @@ export async function discardDraftAction(weekStart: Date): Promise<void> {
  * (C1: one batch). Returns the outcome for the UI's confirmation pill /
  * manual-copy fallback. A Bring failure does NOT undo the approval.
  */
-export async function approveDraftAction(weekStart: Date): Promise<ApprovePlanResult> {
+export async function approveDraftAction(weekStartISO: string): Promise<ApprovePlanResult> {
+  const weekStart = new Date(weekStartISO);
   const approved = await approveDraft(weekStart);
   if (!approved) {
     revalidatePath("/");
     return { approved: false, ingredients: [], bring: { ok: true, pushed: 0 } };
   }
 
+  // syncIngredientsToShopping operates on the current ISO week (see shoppingSync);
+  // in C1 the UI only ever approves the current week's draft.
   const ingredients = await syncIngredientsToShopping();
   const batches = planShoppingBatches(ingredients);
 
