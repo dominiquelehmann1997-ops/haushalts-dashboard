@@ -5,6 +5,7 @@ import { pathToFileURL } from "node:url";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 
 import { PrismaClient } from "../src/generated/prisma/client";
+import { classifyFreshness } from "../src/lib/services/freshness";
 
 // ---------------------------------------------------------------------------
 // Date helpers — everything is anchored to "today" (local midnight) and the
@@ -307,6 +308,7 @@ export async function seedDatabase(prisma: PrismaClient) {
           name: ingredient.name,
           amount: ingredient.amount,
           unit: ingredient.unit,
+          category: classifyFreshness(ingredient.name),
         },
       });
     }
