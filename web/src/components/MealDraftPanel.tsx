@@ -67,7 +67,7 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
             disabled={pending}
             className={`${PILL} text-emerald-700 bg-emerald-50 dark:bg-emerald-500/15 dark:text-emerald-300 hover:bg-emerald-100 disabled:cursor-wait`}
           >
-            {pending ? "…" : result?.bring.ok ? `✓ Abgenickt · ${result.bring.pushed} an Bring` : "Abnicken"}
+            {pending ? "…" : result?.approved ? `✓ Abgenickt · ${result.bring.ok ? result.bring.pushed : 0} an Bring` : "Abnicken"}
           </button>
         </div>
       </div>
