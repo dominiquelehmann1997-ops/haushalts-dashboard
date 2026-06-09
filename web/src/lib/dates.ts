@@ -55,6 +55,14 @@ export function mondayOf(date: Date): Date {
   return monday;
 }
 
+/** Returns the Monday 00:00 → Sunday 23:59:59.999 bounds of the local ISO week containing `date`. */
+export function weekBoundsOf(date: Date): { start: Date; end: Date } {
+  const start = mondayOf(date);
+  const end = addDays(start, 6);
+  end.setHours(23, 59, 59, 999);
+  return { start, end };
+}
+
 /**
  * Stable local-day key "YYYY-M-D" (no padding) for map lookups by calendar day.
  * @example localDateKey(new Date(2026, 5, 9)) // "2026-6-9"
