@@ -53,19 +53,33 @@ Hängt an: A (korrekte Dienst-Verfügbarkeit). Sichtbarer Mehrwert dieses Schrit
 
 ## C · Essensplan-Entwurf → Push an beide Handys → abnicken/ändern
 
-- Entwurf des Wochenplans wird **zu Wochenbeginn** bzw. in einem **Zeitfenster,
-  in dem beide zuhause sind**, automatisch erzeugt.
-- **Benachrichtigung an Domes und Emelys Handy.**
-- Beide schauen den Plan an und **nicken ihn ab** oder **nehmen Änderungen vor**.
+In drei Teile zerlegt: **C1** (Entwurf + Abnicken/Ändern) · **C2** (Benachrichtigung
+aufs Handy) · **C3** (automatischer Auslöser „wenn beide zuhause").
 
-Vermutlich nötig (größter Brocken):
-- **Auslöser/Zeitfenster** (wann „beide zuhause" — evtl. aus Kalender ableiten).
-- **Benachrichtigungskanal zum Handy** — offene Entscheidung: Web-Push/PWA,
-  Telegram-Bot, Todoist oder E-Mail.
-- **Entwurfs-Zustand** des Plans (pending) + **Freigabe-/Bearbeiten-Aktion**
-  (gut bedienbar am Handy → zahlt auf die Leitidee ein).
+### C1 · Entwurfs-Zustand + Abnicken/Ändern — ✅ ERLEDIGT (2026-06-09)
 
-Hängt an: B (es wird ja der dienstbewusste Plan freigegeben).
+`MealPlanEntry.status` ("active" | "draft"): „Woche neu planen" erzeugt jetzt
+einen **Entwurf**; die Essensplan-Kachel zeigt weiter den **aktiven** Plan, ein
+separates **`MealDraftPanel`** zeigt den Entwurf mit „🎲 neu würfeln" (dienstbewusst)
+und Rezept-Tausch. **Abnicken** (einer reicht) befördert den Entwurf zum aktiven
+Plan und pusht erst dann die Zutaten — batch-fähig (`planShoppingBatches`, C1 eine
+Rutsche) — auf Einkaufsliste + Bring; **Verwerfen** löscht den Entwurf. Spec/Plan:
+`docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md`,
+`docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md`.
+
+### C2 · Benachrichtigung aufs Handy — offen
+
+- **Benachrichtigung an Domes und Emelys Handy**, wenn ein Entwurf bereitliegt.
+- **Benachrichtigungskanal** — offene Entscheidung: Web-Push/PWA, Telegram-Bot,
+  Todoist oder E-Mail. (Heute läuft die App nur als `next dev` auf localhost —
+  kein öffentlicher HTTPS-Host; das beeinflusst die Kanalwahl.)
+
+### C3 · Automatischer Auslöser „wenn beide zuhause" — offen
+
+- Entwurf **zu Wochenbeginn** bzw. in einem **Zeitfenster, in dem beide zuhause
+  sind**, automatisch erzeugen (evtl. aus Kalender/Verfügbarkeit ableiten).
+
+Hängt an: B (der dienstbewusste Plan wird freigegeben). C1 ist Fundament für C2/C3.
 
 ---
 
