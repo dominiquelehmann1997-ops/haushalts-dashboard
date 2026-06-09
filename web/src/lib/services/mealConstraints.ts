@@ -7,7 +7,7 @@
 // des "reiner Mapper + Unit-Test"-Musters.
 
 import type { ShiftClass } from "@/lib/calendar/shifts";
-import { mondayOf } from "@/lib/dates";
+import { addDays, mondayOf } from "@/lib/dates";
 
 export type MealReason = "emely-allein" | "aufwaermen-extra";
 
@@ -18,13 +18,6 @@ export interface DayConstraint {
   extraPortion: boolean;
   /** Anzeige-Verdichtung: priorisiert `emely-allein` über `aufwaermen-extra`. */
   reason: MealReason | null;
-}
-
-/** Returns a Date at `date + days`, local midnight preserved. */
-function addDays(date: Date, days: number): Date {
-  const d = new Date(date);
-  d.setDate(d.getDate() + days);
-  return d;
 }
 
 /**

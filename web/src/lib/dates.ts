@@ -38,6 +38,13 @@ export function formatTime(date: Date): string {
   return `${hours}:${minutes}`;
 }
 
+/** Returns a new Date offset by `days` calendar days, local midnight preserved. */
+export function addDays(date: Date, days: number): Date {
+  const d = new Date(date);
+  d.setDate(d.getDate() + days);
+  return d;
+}
+
 /** Returns local midnight on the Monday of the ISO week containing `date`. */
 export function mondayOf(date: Date): Date {
   const monday = new Date(date);

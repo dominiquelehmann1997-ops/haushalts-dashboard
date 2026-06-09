@@ -6,6 +6,7 @@
 // deterministic ordering — just "pick the first 5 recipes by the configured
 // order, cycling if the book has fewer than 5".
 
+import { addDays } from "@/lib/dates";
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { MealPlanEntry } from "@/generated/prisma/client";
@@ -13,13 +14,6 @@ import type { MealPlanEntry } from "@/generated/prisma/client";
 export interface GenerateWeekPlanOptions {
   /** When `true`, recipes flagged `simple` are ordered first (then by name). */
   preferSimple: boolean;
-}
-
-/** Returns a Date at `date + days`, local midnight preserved. */
-function addDays(date: Date, days: number): Date {
-  const d = new Date(date);
-  d.setDate(d.getDate() + days);
-  return d;
 }
 
 /**

@@ -74,6 +74,10 @@ describe("deriveDayConstraints", () => {
     );
     expect(result[0].reason).toBeNull();
     expect(result[1].reason).toBeNull();
+    expect(result[0].needsSimple).toBe(false);
+    expect(result[0].needsReheatable).toBe(false);
+    expect(result[1].needsSimple).toBe(false);
+    expect(result[1].needsReheatable).toBe(false);
   });
 
   it("normalisiert einen beliebigen Wochentag auf den Montag der Woche", () => {
