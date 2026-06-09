@@ -2,8 +2,10 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
+import { currentWeekBounds } from "@/lib/dates";
 
 import { generateWeekPlan } from "./mealPlanner";
+import type { DayConstraint } from "./mealConstraints";
 
 describe("mealPlanner service", () => {
   let client: PrismaClient;
@@ -95,5 +97,108 @@ describe("mealPlanner service", () => {
     expect(shuffledNames).not.toEqual(identityNames);
     // Same set of recipes, just a different order.
     expect([...shuffledNames].sort()).toEqual([...identityNames].sort());
+  });
+});
+
+describe("generateWeekPlan — dienstbewusst", () => {
+  let cclient: PrismaClient;
+
+  beforeEach(async () => {
+    cclient ??= createTestClient();
+    await resetDatabase(cclient);
+  });
+
+  afterAll(async () => {
+    await cclient?.$disconnect();
+  });
+
+  /** Builds a 5-day (Mon–Fri) constraint array for the current week. */
+  function constraintsForWeek(
+    overrides: Partial<Record<0 | 1 | 2 | 3 | 4, Partial<DayConstraint>>>,
+  ): DayConstraint[] {
+    const { start } = currentWeekBounds();
+    return [0, 1, 2, 3, 4].map((offset) => {
+      const date = new Date(start);
+      date.setDate(date.getDate() + offset);
+      return {
+        date,
+        needsSimple: false,
+        needsReheatable: false,
+        extraPortion: false,
+        reason: null,
+        ...overrides[offset as 0 | 1 | 2 | 3 | 4],
+      };
+    });
+  }
+
+  const identityRng = () => 0.999;
+
+  it("a needsSimple day gets a simple recipe and persists reason/extraPortion", async () => {
+    const constraints = constraintsForWeek({
+      0: { needsSimple: true, reason: "emely-allein" },
+    });
+    const entries = await generateWeekPlan(
+      new Date(),
+      { preferSimple: false, constraints },
+      cclient,
+      identityRng,
+    );
+    const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
+    const monday = sorted[0];
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: monday.recipeId } });
+    expect(recipe.simple).toBe(true);
+    expect(monday.reason).toBe("emely-allein");
+    expect(monday.extraPortion).toBe(false);
+  });
+
+  it("a needsReheatable day gets a reheatable recipe and extraPortion=true", async () => {
+    const constraints = constraintsForWeek({
+      1: { needsReheatable: true, extraPortion: true, reason: "aufwaermen-extra" },
+    });
+    const entries = await generateWeekPlan(
+      new Date(),
+      { preferSimple: false, constraints },
+      cclient,
+      identityRng,
+    );
+    const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
+    const tuesday = sorted[1];
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: tuesday.recipeId } });
+    expect(recipe.reheatable).toBe(true);
+    expect(tuesday.extraPortion).toBe(true);
+    expect(tuesday.reason).toBe("aufwaermen-extra");
+  });
+
+  it("conflict day (needsSimple+needsReheatable) prefers a recipe that is both (Reste)", async () => {
+    const constraints = constraintsForWeek({
+      2: {
+        needsSimple: true,
+        needsReheatable: true,
+        extraPortion: true,
+        reason: "emely-allein",
+      },
+    });
+    const entries = await generateWeekPlan(
+      new Date(),
+      { preferSimple: false, constraints },
+      cclient,
+      identityRng,
+    );
+    const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
+    const wed = sorted[2];
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: wed.recipeId } });
+    expect(recipe.simple && recipe.reheatable).toBe(true);
+    expect(recipe.name).toBe("Reste");
+  });
+
+  it("without constraints behaves like before: 5 entries, all reason null", async () => {
+    const entries = await generateWeekPlan(
+      new Date(),
+      { preferSimple: false },
+      cclient,
+      identityRng,
+    );
+    expect(entries).toHaveLength(5);
+    expect(entries.every((e) => e.reason === null && !e.extraPortion)).toBe(true);
   });
 });

@@ -1,19 +1,22 @@
-// Meal-plan generator (Phase 6, stage 1) — picks recipes from the curated
-// recipe book for Mon–Fr of the week containing `weekStart` and (re-)writes
-// the `MealPlanEntry` rows for that week.
-//
-// Stage 1 is intentionally simple: no variety/repetition heuristics beyond a
-// deterministic ordering — just "pick the first 5 recipes by the configured
-// order, cycling if the book has fewer than 5".
+// Meal-plan generator — picks recipes from the curated recipe book for Mon–Fr
+// of the week containing `weekStart`, respecting per-day shift constraints
+// (simple / reheatable requirements, extra-portion flag, reason label) derived
+// from Dome's shift schedule.
 
 import { addDays } from "@/lib/dates";
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
-import type { MealPlanEntry } from "@/generated/prisma/client";
+import type { MealPlanEntry, Recipe } from "@/generated/prisma/client";
+import type { DayConstraint } from "@/lib/services/mealConstraints";
 
 export interface GenerateWeekPlanOptions {
-  /** When `true`, recipes flagged `simple` are ordered first (then by name). */
+  /** When `true`, recipes flagged `simple` are preferred on unconstrained days. */
   preferSimple: boolean;
+  /**
+   * Per-weekday (Mon–Fri) cooking constraints derived from Dome's shifts.
+   * When omitted, every day is treated as unconstrained (no reason / no extra).
+   */
+  constraints?: DayConstraint[];
 }
 
 /**
@@ -45,17 +48,53 @@ function weekBoundsOf(date: Date): { start: Date; end: Date } {
   return { start, end };
 }
 
+/** A constraint with no requirements, for days/weeks without shift data. */
+function noConstraint(date: Date): DayConstraint {
+  return {
+    date,
+    needsSimple: false,
+    needsReheatable: false,
+    extraPortion: false,
+    reason: null,
+  };
+}
+
+/**
+ * Ordered candidate pool for one day, derived from the (already shuffled, and
+ * for `preferSimple` simple-first) `base` list. Filters by the day's
+ * constraints with the conflict priority from the spec; falls back to `base`
+ * whenever a filtered pool would be empty so a recipe can always be chosen.
+ */
+function candidatesFor(
+  c: DayConstraint,
+  base: Recipe[],
+  preferSimple: boolean,
+): Recipe[] {
+  let pool: Recipe[];
+  if (c.needsSimple && c.needsReheatable) {
+    const both = base.filter((r) => r.simple && r.reheatable);
+    pool = both.length > 0 ? both : base.filter((r) => r.simple); // simple has priority
+  } else if (c.needsSimple) {
+    pool = base.filter((r) => r.simple);
+  } else if (c.needsReheatable) {
+    pool = base.filter((r) => r.reheatable);
+  } else {
+    pool = preferSimple ? base.filter((r) => r.simple) : base;
+  }
+  return pool.length > 0 ? pool : base;
+}
+
 /**
  * Generates (and persists) the Mon–Fr meal plan for the week containing
  * `weekStart`, replacing any existing entries for that week.
  *
- * Selection: with `preferSimple`, recipes flagged `simple` sort first (then by
- * name); otherwise purely by name. The first 5 recipes are taken, cycling
- * deterministically through the ordered list if the book has fewer than 5.
- *
- * The selected recipes are then assigned to the weekdays in a *shuffled* order
- * (Fisher–Yates via `rng`, default `Math.random`) so re-generating produces a
- * fresh plan — injecting `rng` keeps it deterministic in tests.
+ * For each weekday the recipe is chosen from a candidate pool that satisfies
+ * that day's shift constraints (`opts.constraints`, Mon–Fri; defaults to
+ * unconstrained). `preferSimple` biases unconstrained days toward simple
+ * recipes. Within the pool, the first not-yet-used recipe wins (variety);
+ * `rng` shuffles the base order so re-generating yields a fresh plan — and
+ * keeps tests deterministic when injected. Each entry persists the day's
+ * `reason` and `extraPortion` marker.
  */
 export async function generateWeekPlan(
   weekStart: Date,
@@ -68,27 +107,36 @@ export async function generateWeekPlan(
   const recipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
   if (recipes.length === 0) return [];
 
-  const ordered = opts.preferSimple
-    ? [...recipes].sort((a, b) => {
-        if (a.simple !== b.simple) return a.simple ? -1 : 1;
-        return a.name.localeCompare(b.name);
-      })
-    : recipes;
+  // Freshness: shuffle once; for preferSimple, stable-sort simple recipes first.
+  let base = shuffle(recipes, rng);
+  if (opts.preferSimple) {
+    base = [...base].sort((a, b) => (a.simple === b.simple ? 0 : a.simple ? -1 : 1));
+  }
 
   const weekdayDates = [0, 1, 2, 3, 4].map((offset) => addDays(monday, offset));
-
-  const selected = shuffle(
-    weekdayDates.map((_, index) => ordered[index % ordered.length]),
-    rng,
+  const constraints = weekdayDates.map(
+    (date, i) => opts.constraints?.[i] ?? noConstraint(date),
   );
 
   // Replace: wipe this week's plan, then (re-)create the 5 entries.
   await client.mealPlanEntry.deleteMany({ where: { date: { gte: monday, lte: sunday } } });
 
+  const used = new Set<string>();
   const created: MealPlanEntry[] = [];
   for (let i = 0; i < weekdayDates.length; i++) {
+    const c = constraints[i];
+    const pool = candidatesFor(c, base, opts.preferSimple);
+    const fresh = pool.filter((r) => !used.has(r.id));
+    const pick = (fresh.length > 0 ? fresh : pool)[0];
+    used.add(pick.id);
+
     const entry = await client.mealPlanEntry.create({
-      data: { date: weekdayDates[i], recipeId: selected[i].id },
+      data: {
+        date: weekdayDates[i],
+        recipeId: pick.id,
+        reason: c.reason,
+        extraPortion: c.extraPortion,
+      },
     });
     created.push(entry);
   }
