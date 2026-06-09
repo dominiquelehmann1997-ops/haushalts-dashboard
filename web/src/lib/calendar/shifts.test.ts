@@ -40,6 +40,7 @@ describe("classifyShift", () => {
     expect(classifyShift("lt")).toBe("lt");
     expect(classifyShift("Nacht")).toBe("nacht");
     expect(classifyShift("LN")).toBe("nacht");
+    expect(classifyShift(" LN ")).toBe("nacht");
   });
 
   it("returns null for unknown titles and substring look-alikes (exact word match)", () => {

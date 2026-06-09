@@ -13,16 +13,13 @@
 /** Hour Dome is available again after an overnight shift's following sleep. */
 const WAKE_HOUR = 14;
 
-/** Exact event titles (lowercased) that denote an overnight shift. */
-const OVERNIGHT_SHIFT_TITLES = new Set(["nacht", "ln"]);
-
 /**
  * True when `title` is exactly an overnight shift — "Nacht" or "LN",
  * case-insensitive and trimmed. Matches the whole title (not a substring), so
  * "Nachtisch"/"Nachtschicht" do not qualify.
  */
 export function isOvernightShift(title: string): boolean {
-  return OVERNIGHT_SHIFT_TITLES.has(title.trim().toLowerCase());
+  return classifyShift(title) === "nacht";
 }
 
 /**
