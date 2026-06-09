@@ -58,7 +58,7 @@ function noConstraint(date: Date): DayConstraint {
  * constraints with the conflict priority from the spec; falls back to `base`
  * whenever a filtered pool would be empty so a recipe can always be chosen.
  */
-function candidatesFor(
+export function candidatesFor(
   c: DayConstraint,
   base: Recipe[],
   preferSimple: boolean,
@@ -79,7 +79,9 @@ function candidatesFor(
 
 /**
  * Generates (and persists) the Mon–Fr meal plan for the week containing
- * `weekStart`, replacing any existing entries for that week.
+ * `weekStart` **as a draft** (`status: "draft"`), replacing any existing draft
+ * entries for that week. The active plan and shopping list are untouched —
+ * promotion to active happens via `approveDraft`.
  *
  * For each weekday the recipe is chosen from a candidate pool that satisfies
  * that day's shift constraints (`opts.constraints`, Mon–Fri; defaults to
@@ -111,8 +113,10 @@ export async function generateWeekPlan(
     (date, i) => opts.constraints?.[i] ?? noConstraint(date),
   );
 
-  // Replace: wipe this week's plan, then (re-)create the 5 entries.
-  await client.mealPlanEntry.deleteMany({ where: { date: { gte: monday, lte: sunday } } });
+  // Replace: wipe only the draft entries for this week, then (re-)create 5 draft entries.
+  await client.mealPlanEntry.deleteMany({
+    where: { date: { gte: monday, lte: sunday }, status: "draft" },
+  });
 
   const used = new Set<string>();
   const created: MealPlanEntry[] = [];
@@ -129,6 +133,7 @@ export async function generateWeekPlan(
         recipeId: pick.id,
         reason: c.reason,
         extraPortion: c.extraPortion,
+        status: "draft",
       },
     });
     created.push(entry);

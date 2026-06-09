@@ -59,8 +59,10 @@ describe("mealPlanner service", () => {
     expect(second).toHaveLength(5);
 
     const { start, end } = (await import("@/lib/dates")).currentWeekBounds();
-    const all = await client.mealPlanEntry.findMany({ where: { date: { gte: start, lte: end } } });
-    expect(all).toHaveLength(5);
+    const drafts = await client.mealPlanEntry.findMany({
+      where: { date: { gte: start, lte: end }, status: "draft" },
+    });
+    expect(drafts).toHaveLength(5);
   });
 
   it("generateWeekPlan({preferSimple: false}) with identity rng orders by name — Monday is alphabetically first", async () => {
@@ -97,6 +99,21 @@ describe("mealPlanner service", () => {
     expect(shuffledNames).not.toEqual(identityNames);
     // Same set of recipes, just a different order.
     expect([...shuffledNames].sort()).toEqual([...identityNames].sort());
+  });
+
+  it("generateWeekPlan writes drafts and leaves seeded active entries intact", async () => {
+    const today = new Date();
+    await generateWeekPlan(today, { preferSimple: false }, client, identityRng);
+
+    const { start, end } = (await import("@/lib/dates")).currentWeekBounds();
+    const active = await client.mealPlanEntry.findMany({
+      where: { date: { gte: start, lte: end }, status: "active" },
+    });
+    const drafts = await client.mealPlanEntry.findMany({
+      where: { date: { gte: start, lte: end }, status: "draft" },
+    });
+    expect(active).toHaveLength(5); // seed plan untouched
+    expect(drafts).toHaveLength(5); // freshly generated draft
   });
 });
 
