@@ -43,6 +43,12 @@ export async function getFreshShoppingState(
   });
   const pendingItems = pendingRows.map((r) => r.text);
 
+  // No pending fresh items → no suggestion (keeps the DTO internally consistent
+  // and skips the plan scan).
+  if (pendingItems.length === 0) {
+    return { pendingItems, suggestedDayISO: null };
+  }
+
   const { start, end } = currentWeekBounds();
   const entries = await client.mealPlanEntry.findMany({
     where: { date: { gte: start, lte: end }, status: "active" },

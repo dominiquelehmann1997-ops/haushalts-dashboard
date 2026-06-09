@@ -39,5 +39,6 @@ describe("getFreshShoppingState", () => {
     });
     const state = await getFreshShoppingState(client);
     expect(state.pendingItems).toEqual([]);
+    expect(state.suggestedDayISO).toBeNull();
   });
 });
