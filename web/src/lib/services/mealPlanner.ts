@@ -3,7 +3,7 @@
 // (simple / reheatable requirements, extra-portion flag, reason label) derived
 // from Dome's shift schedule.
 
-import { addDays } from "@/lib/dates";
+import { addDays, mondayOf } from "@/lib/dates";
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { MealPlanEntry, Recipe } from "@/generated/prisma/client";
@@ -35,16 +35,9 @@ function shuffle<T>(items: T[], rng: () => number): T[] {
 
 /** Returns the Monday 00:00 → Sunday 23:59:59.999 bounds of the local ISO week containing `date`. */
 function weekBoundsOf(date: Date): { start: Date; end: Date } {
-  const start = new Date(date);
-  start.setHours(0, 0, 0, 0);
-
-  const dayOfWeek = start.getDay(); // 0 = Sunday, 1 = Monday, ...
-  const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
-  start.setDate(start.getDate() + diffToMonday);
-
+  const start = mondayOf(date);
   const end = addDays(start, 6);
   end.setHours(23, 59, 59, 999);
-
   return { start, end };
 }
 
