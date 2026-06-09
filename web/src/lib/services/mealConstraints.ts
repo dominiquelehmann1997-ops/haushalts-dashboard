@@ -49,3 +49,19 @@ export function deriveDayConstraints(
     return { date, needsSimple, needsReheatable, extraPortion, reason };
   });
 }
+
+/**
+ * Rekonstruiert `{ needsSimple, needsReheatable }` verlustfrei aus einem
+ * gespeicherten Eintrag. Gilt, weil `deriveDayConstraints` immer
+ * `extraPortion === needsReheatable` setzt und `reason === "emely-allein"`
+ * genau `needsSimple` markiert. Wird vom Re-Roll eines Entwurfs-Tages genutzt.
+ */
+export function constraintFromEntry(
+  reason: string | null,
+  extraPortion: boolean,
+): { needsSimple: boolean; needsReheatable: boolean } {
+  return {
+    needsSimple: reason === "emely-allein",
+    needsReheatable: extraPortion,
+  };
+}

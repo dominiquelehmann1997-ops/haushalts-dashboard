@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import type { ShiftClass } from "@/lib/calendar/shifts";
 
-import { deriveDayConstraints } from "./mealConstraints";
+import { constraintFromEntry, deriveDayConstraints } from "./mealConstraints";
 
 /** Builds a shiftByDay lookup from local-date → class for a Monday-based week. */
 function lookupFrom(map: Record<string, ShiftClass>): (d: Date) => ShiftClass | null {
@@ -84,5 +84,28 @@ describe("deriveDayConstraints", () => {
     const thursday = new Date(2026, 5, 11); // gleiche Woche wie MON
     const result = deriveDayConstraints(thursday, () => null);
     expect(result[0].date.getDate()).toBe(8); // Montag
+  });
+});
+
+describe("constraintFromEntry", () => {
+  it("reconstructs needsSimple/needsReheatable losslessly from a stored entry", () => {
+    expect(constraintFromEntry("emely-allein", false)).toEqual({
+      needsSimple: true,
+      needsReheatable: false,
+    });
+    expect(constraintFromEntry("aufwaermen-extra", true)).toEqual({
+      needsSimple: false,
+      needsReheatable: true,
+    });
+    // Konflikt-Tag: reason emely-allein + extraPortion true → beide true
+    expect(constraintFromEntry("emely-allein", true)).toEqual({
+      needsSimple: true,
+      needsReheatable: true,
+    });
+    // Kein Constraint
+    expect(constraintFromEntry(null, false)).toEqual({
+      needsSimple: false,
+      needsReheatable: false,
+    });
   });
 });
