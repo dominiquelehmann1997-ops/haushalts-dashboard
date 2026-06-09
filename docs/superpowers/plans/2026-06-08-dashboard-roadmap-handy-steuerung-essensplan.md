@@ -85,15 +85,32 @@ Hängt an: B (der dienstbewusste Plan wird freigegeben). C1 ist Fundament für C
 
 ## D · Einkauf als verteilte Aufgabe — Timing & Haltbarkeit
 
-- Einkaufen fällt **mit in die Aufgabenverteilung**.
-- **Sinnvolle Termine** dafür finden: z.B. wenn einer **eh unterwegs** ist und
-  **auf dem Weg** einkauft (Kalender nach Terminen-mit-Ort durchsuchen).
-- Einkaufsliste entsprechend erstellen und auf **Haltbarkeit** der Lebensmittel
-  achten (nah am Verbrauch einkaufen).
+In drei Teile zerlegt: **D1** (Haltbarkeits-Batching, gestaffelter Bring-Push) ·
+**D2** (Einkaufstermine „auf dem Weg" aus dem Kalender) · **D3** (Einkauf als
+Aufgabe in der Verteil-/Konto-Engine).
 
-Vermutlich nötig (datenintensiv, daher zuletzt):
-- Einkauf als planbare Aufgabe in der Verteil-Engine.
-- Termin-mit-Ort-Erkennung im Kalender für „auf dem Weg".
-- Haltbarkeits-/Shelf-Life-Info pro Zutat.
+### D1 · Haltbarkeits-Batching, gestaffelt auf Bring — ✅ ERLEDIGT (2026-06-09)
 
-Hängt an: B/C (Plan → Zutaten → Einkauf) und A (Verfügbarkeit/Timing).
+Zutaten tragen eine Haltbarkeits-Kategorie (`Ingredient.category` "frisch"/
+"haltbar", per Namens-Heuristik `classifyFreshness` vorbelegt). Beim Abnicken geht
+nur die **haltbar**-Rutsche sofort auf Bring (`pushRecipeBatch("haltbar")`,
+`ShoppingItem.pushed`); die **frisch**-Rutsche bleibt offen und wird über den
+`FreshShoppingControl` mit Vorschlagstag (Tag vor frühestem Frisch-Verbrauch) +
+Knopf „Jetzt auf Bring" nachgereicht. Ersetzt den C1-Platzhalter
+`planShoppingBatches`. Spec/Plan:
+`docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md`,
+`docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md`.
+
+### D2 · Einkaufstermine „auf dem Weg" — offen
+
+- **Sinnvolle Termine** finden: wenn einer **eh unterwegs** ist und **auf dem
+  Weg** einkauft (Kalender nach Terminen-mit-Ort `place` durchsuchen). Verfeinert
+  den Vorschlagstag/-ort der Frisch-Rutsche aus D1.
+
+### D3 · Einkauf als verteilte Aufgabe — offen
+
+- Einkaufen fällt **mit in die Aufgabenverteilung** (`Task.type:"shopping"` in die
+  Verteil-/Konto-Engine einhängen).
+
+Hängt an: B/C (Plan → Zutaten → Einkauf) und A (Verfügbarkeit/Timing). D1 ist
+Fundament für D2/D3.
