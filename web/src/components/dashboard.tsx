@@ -9,6 +9,7 @@ import type {
   DraftMeal,
   RecipeOption,
   Note,
+  FreshShoppingState,
 } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ActivePhase } from "@/lib/repositories/phase";
@@ -22,6 +23,7 @@ import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/compo
 import { AddDoneEntry } from "@/components/AddDoneEntry";
 import { WeatherBabyTile } from "@/components/WeatherBabyTile";
 import { MealDraftPanel } from "@/components/MealDraftPanel";
+import { FreshShoppingControl } from "@/components/FreshShoppingControl";
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -31,6 +33,7 @@ export interface DashboardProps {
   split: { dome: number; emely: number };
   phase: ActivePhase | null;
   meals: Meal[];
+  fresh: FreshShoppingState;
   draft: DraftMeal[];
   recipes: RecipeOption[];
   notes: Note[];
@@ -48,6 +51,7 @@ export default function Dashboard({
   split,
   phase,
   meals,
+  fresh,
   draft,
   recipes,
   notes,
@@ -142,6 +146,12 @@ export default function Dashboard({
         {draft.length > 0 && (
           <section className="mt-4 sm:mt-5">
             <MealDraftPanel draft={draft} recipes={recipes} />
+          </section>
+        )}
+
+        {fresh.pendingItems.length > 0 && (
+          <section className="mt-4 sm:mt-5">
+            <FreshShoppingControl fresh={fresh} />
           </section>
         )}
 
