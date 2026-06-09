@@ -324,7 +324,7 @@ export async function seedDatabase(prisma: PrismaClient) {
     const recipe = recipesByName.get(entry.recipeName);
     if (!recipe) continue;
     await prisma.mealPlanEntry.create({
-      data: { date: entry.date, recipeId: recipe.id },
+      data: { date: entry.date, recipeId: recipe.id, status: "active" },
     });
   }
 
