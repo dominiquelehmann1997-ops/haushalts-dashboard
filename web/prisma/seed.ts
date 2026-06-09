@@ -255,6 +255,7 @@ export async function seedDatabase(prisma: PrismaClient) {
   // -------------------------------------------------------------------------
   const recipeNames = ["Pasta al Pomodoro", "Gemüse-Curry", "Reste", "Ofengemüse", "Pizzaabend"];
   const simpleRecipes = new Set(["Pasta al Pomodoro", "Reste"]);
+  const reheatableRecipes = new Set(["Gemüse-Curry", "Ofengemüse", "Reste"]);
 
   // Ingredient lists per recipe — Pasta al Pomodoro intentionally includes
   // Tomaten/Basilikum/Parmesan to line up with the seeded "recipe" shopping
@@ -291,7 +292,11 @@ export async function seedDatabase(prisma: PrismaClient) {
   const recipesByName = new Map<string, { id: string }>();
   for (const name of recipeNames) {
     const recipe = await prisma.recipe.create({
-      data: { name, simple: simpleRecipes.has(name) },
+      data: {
+        name,
+        simple: simpleRecipes.has(name),
+        reheatable: reheatableRecipes.has(name),
+      },
     });
     recipesByName.set(name, recipe);
 

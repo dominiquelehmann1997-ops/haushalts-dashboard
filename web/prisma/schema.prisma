@@ -114,10 +114,11 @@ model PhaseSetting {
 
 /// A recipe used for meal planning.
 model Recipe {
-  id     String  @id @default(cuid())
-  name   String
-  simple Boolean @default(true)
-  tags   String? // JSON string array
+  id         String  @id @default(cuid())
+  name       String
+  simple     Boolean @default(true)
+  reheatable Boolean @default(false)
+  tags       String? // JSON string array
 
   ingredients     Ingredient[]
   mealPlanEntries MealPlanEntry[]
@@ -137,8 +138,10 @@ model Ingredient {
 
 /// A planned meal for a given date.
 model MealPlanEntry {
-  id   String   @id @default(cuid())
-  date DateTime
+  id           String   @id @default(cuid())
+  date         DateTime
+  reason       String? // "emely-allein" | "aufwaermen-extra" | null
+  extraPortion Boolean  @default(false)
 
   recipeId String
   recipe   Recipe @relation(fields: [recipeId], references: [id])
