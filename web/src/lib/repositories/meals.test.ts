@@ -3,7 +3,9 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { getWeekMealPlan } from "./meals";
+import { currentWeekBounds, localDateKey } from "@/lib/dates";
+
+import { getDomeShiftsForWeek, getWeekMealPlan } from "./meals";
 
 describe("meals repository", () => {
   let client: PrismaClient;
@@ -33,5 +35,63 @@ describe("meals repository", () => {
 
     const todays = plan.filter((m) => m.today);
     expect(todays).toHaveLength(isWeekday ? 1 : 0);
+  });
+});
+
+describe("getDomeShiftsForWeek", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  /** Creates a dome calendar event on `date` with `title`. */
+  async function domeEvent(date: Date, title: string) {
+    const start = new Date(date);
+    start.setHours(21, 0, 0, 0);
+    const end = new Date(date);
+    end.setHours(23, 59, 0, 0);
+    await client.calendarEvent.create({
+      data: {
+        externalId: `shift-${title}-${date.getTime()}`,
+        calendarKey: "dome",
+        title,
+        start,
+        end,
+        personKey: "dome",
+        kind: "termin",
+      },
+    });
+  }
+
+  it("classifies Dome's Mon–Sat shifts into a date→class map", async () => {
+    const { start: monday } = currentWeekBounds();
+    const tue = new Date(monday);
+    tue.setDate(tue.getDate() + 1);
+    const sat = new Date(monday);
+    sat.setDate(sat.getDate() + 5);
+
+    await domeEvent(tue, "Spät");
+    await domeEvent(sat, "Nacht");
+
+    const map = await getDomeShiftsForWeek(monday, client);
+
+    expect(map.get(localDateKey(tue))).toBe("spaet");
+    expect(map.get(localDateKey(sat))).toBe("nacht"); // Samstag-Lookahead enthalten
+  });
+
+  it("ignores non-shift titles and other persons", async () => {
+    const { start: monday } = currentWeekBounds();
+    const wed = new Date(monday);
+    wed.setDate(wed.getDate() + 2);
+    await domeEvent(wed, "Sport"); // kein Schicht-Titel
+
+    const map = await getDomeShiftsForWeek(monday, client);
+    expect(map.get(localDateKey(wed))).toBeUndefined();
   });
 });

@@ -54,3 +54,8 @@ export function mondayOf(date: Date): Date {
   monday.setDate(monday.getDate() + diffToMonday);
   return monday;
 }
+
+/** Stable local-day key "YYYY-M-D" (no padding) for map lookups by calendar day. */
+export function localDateKey(date: Date): string {
+  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+}

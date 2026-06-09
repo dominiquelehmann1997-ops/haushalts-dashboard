@@ -3,7 +3,8 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { Meal } from "@/lib/domain";
-import { currentWeekBounds } from "@/lib/dates";
+import { currentWeekBounds, localDateKey, mondayOf } from "@/lib/dates";
+import { classifyShift, type ShiftClass } from "@/lib/calendar/shifts";
 
 // German short weekday labels, indexed by `Date#getDay()` (0 = Sunday).
 const WEEKDAY_LABELS = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"] as const;
@@ -39,4 +40,31 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
     dish: row.recipe.name,
     today: isToday(row.date),
   }));
+}
+
+/**
+ * Dome's shift class per local day for Mon–Sat of the week containing
+ * `weekStart`, keyed by `localDateKey`. Saturday is included as a lookahead so
+ * "day before Spätdienst" can be detected for Friday. Only `personKey: "dome"`
+ * events whose title classifies to a `ShiftClass` are kept.
+ */
+export async function getDomeShiftsForWeek(
+  weekStart: Date,
+  client: PrismaClient = prisma,
+): Promise<Map<string, ShiftClass>> {
+  const monday = mondayOf(weekStart);
+  const sunday = new Date(monday);
+  sunday.setDate(sunday.getDate() + 6); // upper bound; Mon–Sat covered
+
+  const rows = await client.calendarEvent.findMany({
+    where: { personKey: "dome", start: { gte: monday, lt: sunday } },
+    orderBy: { start: "asc" },
+  });
+
+  const map = new Map<string, ShiftClass>();
+  for (const row of rows) {
+    const shift = classifyShift(row.title);
+    if (shift) map.set(localDateKey(row.start), shift);
+  }
+  return map;
 }
