@@ -24,7 +24,7 @@ Gilt für alle vier Features:
 
 Entscheidung: **berechnet beim Lesen** (statt materialisiert gespeichert). Passt zum bestehenden Codebase-Muster (reine Mapper + Unit-Tests, z.B. `freshness.ts`, `fairness.ts`, `mealConstraints.ts`): deterministisch, auditierbar, kaum neues Schema. Persistiert werden nur echte Eingaben und ein Zeitstempel:
 
-- `Recipe.rating` (neues Feld) — echte Eingabe
+- `Recipe.rating` (Cache-Feld) — gespiegelt aus dem Vault-Frontmatter (kein Dashboard-Input)
 - `FreshnessOverride` (neue Tabelle) — echte Korrektur
 - `ShoppingItem.pushedAt` (neues Feld) — Zeitstempel zur späteren Vorlauf-Messung
 - „Aufschieben"-Markierung an Aufgaben — über vorhandenes `Task.status="moved"` + Reason
@@ -37,7 +37,7 @@ Alle gelernten Werte (Gewichtung, EWMA-Intervall, Vorlauf) werden bei Bedarf aus
 
 **Problem:** `generateWeekPlan` (`mealPlanner.ts`) shuffelt zufällig und nimmt das erste noch-nicht-diese-Woche-benutzte Rezept. Es lernt nicht, was tatsächlich oft/gern gekocht wird.
 
-**Neu gespeichert:** `Recipe.rating` (`"favorit" | "ok" | "selten"`, Default `"ok"`), einmalig im Rezeptbuch gesetzt.
+**Quelle des Ratings:** `Recipe.rating` (`"favorit" | "ok" | "selten"`, Default `"ok"`). Das Rating wird **nicht** über ein Dashboard-UI gesetzt, sondern kommt aus dem **Obsidian-Vault-Frontmatter** und wird beim Ingest in die DB gespiegelt — siehe [2026-06-10-rezepte-vault-design.md](2026-06-10-rezepte-vault-design.md). **Voraussetzung: Rezepte-Vault V1 (Schema + Ingest).**
 
 **Auswahl-Logik:**
 
@@ -47,7 +47,7 @@ Alle gelernten Werte (Gewichtung, EWMA-Intervall, Vorlauf) werden bei Bedarf aus
 
 **Reine Funktion:** `weightedPick(pool, ratings, recentHistory, rng)` → deterministisch mit injiziertem `rng` (wie der bestehende `shuffle`), Unit-getestet.
 
-**UI:** Rating-Einstellung (Liebling/ok/selten) im Rezeptbuch.
+**Kein Dashboard-UI nötig:** Rating wird im Vault gepflegt (Frontmatter), nicht im Dashboard.
 
 ---
 
@@ -88,7 +88,7 @@ Kein Sonderfall-Rechnen.
 
 **Neu gespeichert:** Tabelle `FreshnessOverride` (normalisierter Name → `"frisch" | "haltbar"`). Eine Korrektur upserted den Override.
 
-**Logik:** `resolveFreshness(name, overrides)` schaut **erst in die Overrides, dann auf die Keyword-Heuristik**. Echte Eingabe → gespeichert; Heuristik bleibt Fallback.
+**Logik:** Auflösungsreihenfolge **Frontmatter-`freshness` (aus dem Rezepte-Vault, falls am Zutaten-Item vorhanden) → C1-Override → Keyword-Heuristik**. `resolveFreshness(name, overrides)` deckt die letzten beiden Stufen ab; die Frontmatter-Angabe kommt bereits als `Ingredient.category` aus dem Vault-Ingest. Echte Eingabe → gespeichert; Heuristik bleibt Fallback.
 
 **UI:** Korrektur-Möglichkeit am Einkaufs-/Zutaten-Item (frisch ↔ haltbar umschalten), die den Override schreibt.
 
@@ -110,7 +110,7 @@ Kein Sonderfall-Rechnen.
 
 ## Schema-Änderungen (Zusammenfassung)
 
-- `Recipe.rating String @default("ok")` — `"favorit" | "ok" | "selten"`
+- `Recipe.rating String @default("ok")` — `"favorit" | "ok" | "selten"`, befüllt vom Vault-Ingest (s. Rezepte-Vault-Spec; dort auch `Recipe.slug`/`archived`)
 - `ShoppingItem.pushedAt DateTime?` — gesetzt beim Push auf Bring
 - Neue Tabelle `FreshnessOverride { id, name (unique, normalisiert), freshness ("frisch"|"haltbar") }`
 - Keine Schema-Änderung für Aufgaben-Lernen — „Aufschieben" nutzt vorhandenes `Task.status="moved"` + `reason`.
@@ -134,7 +134,7 @@ Integration nur dort, wo es Generator/Actions berührt (`mealPlanner.ts`, Recurr
 
 Leitgedanke: sofort spürbare Wins und Daten-Erfassung zuerst — Zeitreihen-Features zahlen sich erst nach Wochen Historie aus, also muss das Mitschreiben früh stehen. Jedes Feature ist eine eigene Implementierungs-Aufgabe.
 
-- **Phase 1 — sofortige Wins:** Feature A (Rating + Gewichtung) und C1 (Haltbarkeits-Korrektur). Beide wirken unmittelbar, isoliert, geringes Risiko.
+- **Phase 1 — Fundament + sofortige Wins:** zuerst **Rezepte-Vault V1** (Voraussetzung, eigene Spec), darauf **Feature A** (Gewichtung + Recency); parallel **C1** (Haltbarkeits-Korrektur), isoliert.
 - **Phase 2 — Erfassung (auch ohne Lernen nützlich):** „Aufschieben"-Element an Aufgaben (UX-Nutzen sofort) und `ShoppingItem.pushedAt`. Schreibt ab jetzt die Historie für Phase 3 mit.
 - **Phase 3 — gelernte Lese-Werte:** Feature B (`learnedInterval` im Generator) und C2 (`learnedLeadTime` im Frisch-Vorschlag). Greifen, sobald genug Daten da sind — vorher Fallback auf Heuristik.
 
