@@ -37,3 +37,24 @@ export function correctedBusyEnd(start: Date): Date {
   end.setHours(WAKE_HOUR, 0, 0, 0);
   return end;
 }
+
+/** Domes Schicht-Klassen, abgeleitet aus dem exakten Kalender-Titel. */
+export type ShiftClass = "frueh" | "spaet" | "lt" | "nacht";
+
+/** Exakte Titel (lowercased) → Schicht-Klasse. */
+const SHIFT_TITLES = new Map<string, ShiftClass>([
+  ["früh", "frueh"],
+  ["spät", "spaet"],
+  ["lt", "lt"],
+  ["nacht", "nacht"],
+  ["ln", "nacht"],
+]);
+
+/**
+ * Klassifiziert `title` zu einer `ShiftClass` — exakter, getrimmter,
+ * case-insensitiver Voll-Match (wie `isOvernightShift`). Unbekannte oder
+ * Teilstring-Titel ("Nachtisch", "Spätschicht") liefern `null`.
+ */
+export function classifyShift(title: string): ShiftClass | null {
+  return SHIFT_TITLES.get(title.trim().toLowerCase()) ?? null;
+}
