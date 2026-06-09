@@ -22,7 +22,7 @@ import { classifyFreshness } from "@/lib/services/freshness";
  *
  * Returns the recipe ingredient names it wrote (display casing), so callers
  * can push exactly those to Bring without re-querying — see
- * `generatePlanAction`.
+ * `approveDraftAction`.
  */
 export async function syncIngredientsToShopping(client: PrismaClient = prisma): Promise<string[]> {
   const { start, end } = currentWeekBounds();
