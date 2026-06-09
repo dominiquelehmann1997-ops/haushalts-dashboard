@@ -37,3 +37,13 @@ export function formatTime(date: Date): string {
   const minutes = date.getMinutes().toString().padStart(2, "0");
   return `${hours}:${minutes}`;
 }
+
+/** Returns local midnight on the Monday of the ISO week containing `date`. */
+export function mondayOf(date: Date): Date {
+  const monday = new Date(date);
+  monday.setHours(0, 0, 0, 0);
+  const dayOfWeek = monday.getDay(); // 0 = Sunday, 1 = Monday, ...
+  const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+  monday.setDate(monday.getDate() + diffToMonday);
+  return monday;
+}
