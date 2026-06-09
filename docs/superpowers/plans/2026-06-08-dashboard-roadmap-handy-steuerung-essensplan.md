@@ -24,24 +24,30 @@ Folgetag; danach Schlaf bis ~14:00. Korrigiert in `getBusyWindows`
 
 ---
 
-## B · Dienstplan-bewusster Essensplan
+## B · Dienstplan-bewusster Essensplan — ✅ ERLEDIGT (2026-06-09)
 
-Der Essensplan-Entwurf soll sich am **Kalender / Dienstplan** orientieren statt
-nur Rezepte zu mischen (heute: `web/src/lib/services/mealPlanner.ts`).
+Umgesetzt: `classifyShift` (Früh/Spät/LT/Nacht) +
+`deriveDayConstraints` (rein) leiten je Wochentag die Koch-Constraints aus
+Domes Schichten ab; `generateWeekPlan` wählt passende Rezepte und persistiert
+`reason`/`extraPortion`; Server Action verdrahtet Schichten→Constraints→Planer;
+die Essensplan-Kachel zeigt ein Badge je Tag. Neues Rezept-Flag `reheatable`.
+Spec/Plan: `docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md`,
+`docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md`.
 
-Regeln aus den Gedanken des Auftraggebers:
+Der Essensplan-Entwurf orientiert sich nun am **Kalender / Dienstplan** statt
+nur Rezepte zu mischen (`web/src/lib/services/mealPlanner.ts`).
+
+Umgesetzte Regeln:
 - **Dome hat Spätdienst** → an dem Tag **schnelle, einfache Gerichte**, damit
   **Emely** sie allein machen kann, während sie Kaya betreut.
 - **Tag vor Domes Spätdienst** oder **Tag von Domes Nachtdienst** → Gerichte,
   die sich **gut aufwärmen** lassen (+ Extraportion), damit Dome sie sich **bei
   der Arbeit aufwärmen** kann.
 
-Vermutlich nötig:
-- Neues Rezept-Flag/Tag `reheatable` (zusätzlich zum vorhandenen `simple`).
-- Planer-Logik liest Domes Schichten (Verfügbarkeit aus A) und ordnet Rezepte
-  passend zu Tagen zu.
-
 Hängt an: A (korrekte Dienst-Verfügbarkeit). Sichtbarer Mehrwert dieses Schritts.
+
+> Offen für später: „Extraportion" ist aktuell nur ein sichtbarer Marker —
+> echte Einkaufsmengen/Haltbarkeit folgen in Schritt D.
 
 ---
 
