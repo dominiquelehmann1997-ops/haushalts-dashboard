@@ -38,7 +38,7 @@ describe("meals repository", () => {
   });
 
   it("getWeekMealPlan surfaces reason/extraPortion from the entry", async () => {
-    const { start } = (await import("@/lib/dates")).currentWeekBounds();
+    const { start } = currentWeekBounds();
     const monday = new Date(start);
 
     const entry = await client.mealPlanEntry.findFirstOrThrow({

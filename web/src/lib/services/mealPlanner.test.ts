@@ -201,4 +201,29 @@ describe("generateWeekPlan — dienstbewusst", () => {
     expect(entries).toHaveLength(5);
     expect(entries.every((e) => e.reason === null && !e.extraPortion)).toBe(true);
   });
+
+  it("falls back to the full book when no recipe satisfies the constraint", async () => {
+    // Remove every reheatable recipe so a needsReheatable day has an empty pool.
+    await cclient.recipe.updateMany({ data: { reheatable: false } });
+
+    const constraints = constraintsForWeek({
+      0: { needsReheatable: true, extraPortion: true, reason: "aufwaermen-extra" },
+    });
+    const entries = await generateWeekPlan(
+      new Date(),
+      { preferSimple: false, constraints },
+      cclient,
+      identityRng,
+    );
+
+    expect(entries).toHaveLength(5);
+    const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
+    const monday = sorted[0];
+    // A recipe is still chosen (from the fallback base list) and the marker persists.
+    expect(monday.recipeId).toBeTruthy();
+    expect(monday.reason).toBe("aufwaermen-extra");
+    expect(monday.extraPortion).toBe(true);
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: monday.recipeId } });
+    expect(recipe.reheatable).toBe(false); // proves the empty-pool → base fallback fired
+  });
 });
