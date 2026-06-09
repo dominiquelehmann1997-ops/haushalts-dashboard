@@ -71,4 +71,21 @@ describe("shoppingSync service", () => {
     const names = items.map((i) => i.text.toLowerCase());
     expect(new Set(names).size).toBe(names.length);
   });
+
+  it("ignores draft meal-plan entries (only active recipes feed the list)", async () => {
+    const { start } = (await import("@/lib/dates")).currentWeekBounds();
+    const recipe = await client.recipe.create({
+      data: {
+        name: "ZZZ Draft-Only-Gericht",
+        simple: true,
+        ingredients: { create: [{ name: "Geheimzutat-XYZ", amount: null, unit: null }] },
+      },
+    });
+    await client.mealPlanEntry.create({
+      data: { date: new Date(start), recipeId: recipe.id, status: "draft" },
+    });
+
+    const names = await syncIngredientsToShopping(client);
+    expect(names).not.toContain("Geheimzutat-XYZ");
+  });
 });

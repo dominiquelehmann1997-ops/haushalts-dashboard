@@ -38,6 +38,21 @@ export interface Meal {
   extraPortion?: boolean;
 }
 
+export interface DraftMeal {
+  /** ISO-Datum des Tages, für Server-Action-Aufrufe. */
+  dateISO: string;
+  day: string; // "Mo".."Fr"
+  dish: string;
+  recipeId: string;
+  reason?: string | null;
+  extraPortion?: boolean;
+}
+
+export interface RecipeOption {
+  id: string;
+  name: string;
+}
+
 export interface Note {
   id: string;
   icon: string;

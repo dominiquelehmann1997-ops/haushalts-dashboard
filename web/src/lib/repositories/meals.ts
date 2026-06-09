@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
-import type { Meal } from "@/lib/domain";
+import type { Meal, DraftMeal, RecipeOption } from "@/lib/domain";
 import { currentWeekBounds, localDateKey, mondayOf } from "@/lib/dates";
 import { classifyShift, type ShiftClass } from "@/lib/calendar/shifts";
 
@@ -30,7 +30,7 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
   const { start, end } = currentWeekBounds();
 
   const rows = await client.mealPlanEntry.findMany({
-    where: { date: { gte: start, lte: end } },
+    where: { date: { gte: start, lte: end }, status: "active" },
     include: { recipe: true },
     orderBy: { date: "asc" },
   });
@@ -42,6 +42,36 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
     reason: row.reason,
     extraPortion: row.extraPortion,
   }));
+}
+
+/**
+ * Wie `getWeekMealPlan`, aber nur die Entwurfs-Einträge (`status:"draft"`) der
+ * aktuellen Woche — inkl. `dateISO` und `recipeId`, damit die Entwurfs-Ansicht
+ * einzelne Tage neu würfeln oder das Rezept tauschen kann.
+ */
+export async function getDraftMealPlan(client: PrismaClient = prisma): Promise<DraftMeal[]> {
+  const { start, end } = currentWeekBounds();
+
+  const rows = await client.mealPlanEntry.findMany({
+    where: { date: { gte: start, lte: end }, status: "draft" },
+    include: { recipe: true },
+    orderBy: { date: "asc" },
+  });
+
+  return rows.map((row) => ({
+    dateISO: row.date.toISOString(),
+    day: WEEKDAY_LABELS[row.date.getDay()],
+    dish: row.recipe.name,
+    recipeId: row.recipeId,
+    reason: row.reason,
+    extraPortion: row.extraPortion,
+  }));
+}
+
+/** Alle Rezepte als `{ id, name }`, nach Name sortiert — fürs Tausch-Picker. */
+export async function listRecipes(client: PrismaClient = prisma): Promise<RecipeOption[]> {
+  const recipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
+  return recipes.map((r) => ({ id: r.id, name: r.name }));
 }
 
 /**

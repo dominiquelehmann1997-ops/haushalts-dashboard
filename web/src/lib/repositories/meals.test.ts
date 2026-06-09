@@ -5,7 +5,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 
 import { currentWeekBounds, localDateKey } from "@/lib/dates";
 
-import { getDomeShiftsForWeek, getWeekMealPlan } from "./meals";
+import { getDomeShiftsForWeek, getDraftMealPlan, getWeekMealPlan, listRecipes } from "./meals";
 
 describe("meals repository", () => {
   let client: PrismaClient;
@@ -54,6 +54,56 @@ describe("meals repository", () => {
     const mondayMeal = plan.find((m) => m.day === "Mo");
     expect(mondayMeal?.reason).toBe("emely-allein");
     expect(mondayMeal?.extraPortion).toBe(true);
+  });
+
+  it("getWeekMealPlan returns only active entries (ignores drafts)", async () => {
+    const { start } = currentWeekBounds();
+    const monday = new Date(start);
+    const end = new Date(start);
+    end.setHours(23, 59, 59, 999);
+    const seeded = await client.mealPlanEntry.findFirstOrThrow({
+      where: { date: { gte: monday, lte: end } },
+      orderBy: { date: "asc" },
+    });
+    await client.mealPlanEntry.create({
+      data: { date: seeded.date, recipeId: seeded.recipeId, status: "draft" },
+    });
+
+    const plan = await getWeekMealPlan(client);
+    expect(plan).toHaveLength(5); // still only the 5 active entries
+  });
+
+  it("getDraftMealPlan returns only draft entries with dateISO + recipeId", async () => {
+    const { start } = currentWeekBounds();
+    const monday = new Date(start);
+    const seeded = await client.mealPlanEntry.findFirstOrThrow({
+      where: { date: { gte: monday } },
+      orderBy: { date: "asc" },
+    });
+    await client.mealPlanEntry.create({
+      data: {
+        date: seeded.date,
+        recipeId: seeded.recipeId,
+        status: "draft",
+        reason: "emely-allein",
+        extraPortion: false,
+      },
+    });
+
+    const draft = await getDraftMealPlan(client);
+    expect(draft).toHaveLength(1);
+    expect(draft[0].recipeId).toBe(seeded.recipeId);
+    expect(draft[0].reason).toBe("emely-allein");
+    expect(typeof draft[0].dateISO).toBe("string");
+    expect(draft[0].day).toBe("Mo");
+  });
+
+  it("listRecipes returns id+name sorted by name", async () => {
+    const recipes = await listRecipes(client);
+    const names = recipes.map((r) => r.name);
+    expect(names).toEqual([...names].sort());
+    expect(recipes[0]).toHaveProperty("id");
+    expect(recipes[0]).toHaveProperty("name");
   });
 });
 

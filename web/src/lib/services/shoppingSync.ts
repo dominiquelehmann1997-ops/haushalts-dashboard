@@ -25,7 +25,7 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
   const { start, end } = currentWeekBounds();
 
   const entries = await client.mealPlanEntry.findMany({
-    where: { date: { gte: start, lte: end } },
+    where: { date: { gte: start, lte: end }, status: "active" },
     include: { recipe: { include: { ingredients: true } } },
   });
 

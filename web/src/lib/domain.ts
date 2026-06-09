@@ -15,6 +15,8 @@ export type {
   Appointment,
   ShoppingItem,
   Meal,
+  DraftMeal,
+  RecipeOption,
   Note,
   PersonStyle,
 } from "./data";
