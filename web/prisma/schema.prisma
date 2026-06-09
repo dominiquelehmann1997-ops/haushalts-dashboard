@@ -131,9 +131,10 @@ model Ingredient {
   recipeId String
   recipe   Recipe @relation(fields: [recipeId], references: [id])
 
-  name   String
-  amount String?
-  unit   String?
+  name     String
+  amount   String?
+  unit     String?
+  category String? // "frisch" | "haltbar" (per classifyFreshness vorbelegt)
 }
 
 /// A planned meal for a given date.
@@ -155,6 +156,8 @@ model ShoppingItem {
   meal      Boolean  @default(false)
   source    String   @default("manual") // "manual" | "recipe"
   recipeRef String?
+  category  String? // "frisch" | "haltbar" für Rezept-Items; null für manuelle
+  pushed    Boolean  @default(false) // schon auf Bring? (nur Rezept-Items)
   done      Boolean  @default(false)
   createdAt DateTime @default(now())
 }
