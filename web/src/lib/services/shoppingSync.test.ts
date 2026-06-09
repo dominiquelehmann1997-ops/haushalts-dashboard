@@ -88,4 +88,19 @@ describe("shoppingSync service", () => {
     const names = await syncIngredientsToShopping(client);
     expect(names).not.toContain("Geheimzutat-XYZ");
   });
+
+  it("tags recipe shopping items with a freshness category and pushed=false", async () => {
+    await syncIngredientsToShopping(client);
+
+    const tomaten = await client.shoppingItem.findFirstOrThrow({
+      where: { source: "recipe", text: "Tomaten" },
+    });
+    expect(tomaten.category).toBe("frisch");
+    expect(tomaten.pushed).toBe(false);
+
+    const nudeln = await client.shoppingItem.findFirstOrThrow({
+      where: { source: "recipe", text: "Nudeln" },
+    });
+    expect(nudeln.category).toBe("haltbar");
+  });
 });
