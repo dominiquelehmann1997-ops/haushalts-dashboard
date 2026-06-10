@@ -24,6 +24,7 @@ import { AddDoneEntry } from "@/components/AddDoneEntry";
 import { WeatherBabyTile } from "@/components/WeatherBabyTile";
 import { MealDraftPanel } from "@/components/MealDraftPanel";
 import { FreshShoppingControl } from "@/components/FreshShoppingControl";
+import { VaultIngestControl } from "@/components/VaultIngestControl";
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -135,6 +136,9 @@ export default function Dashboard({
 
         {/* WIDGET ROW */}
         <section className="mt-7 sm:mt-9 rise" style={{ animationDelay: ".12s" }}>
+          <div className="flex justify-end mb-2">
+            <VaultIngestControl />
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
             <ShoppingWidget items={shopping} onToggle={toggleShop} />
             <MealPlanWidget meals={meals} />
