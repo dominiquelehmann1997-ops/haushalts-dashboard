@@ -70,7 +70,10 @@ export async function rerollDraftDay(
   const entry = await findDraftEntryForDay(date, client);
   if (!entry) return null;
 
-  const recipes: Recipe[] = await client.recipe.findMany({ orderBy: { name: "asc" } });
+  const recipes: Recipe[] = await client.recipe.findMany({
+    where: { archived: false },
+    orderBy: { name: "asc" },
+  });
   if (recipes.length === 0) return null; // nothing to pick from (mirrors generateWeekPlan)
   const { needsSimple, needsReheatable } = constraintFromEntry(entry.reason, entry.extraPortion);
   // `reason` is free-text String? in the DB, but only generateWeekPlan writes it

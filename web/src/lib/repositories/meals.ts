@@ -70,7 +70,10 @@ export async function getDraftMealPlan(client: PrismaClient = prisma): Promise<D
 
 /** Alle Rezepte als `{ id, name }`, nach Name sortiert — fürs Tausch-Picker. */
 export async function listRecipes(client: PrismaClient = prisma): Promise<RecipeOption[]> {
-  const recipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
+  const recipes = await client.recipe.findMany({
+    where: { archived: false },
+    orderBy: { name: "asc" },
+  });
   return recipes.map((r) => ({ id: r.id, name: r.name }));
 }
 

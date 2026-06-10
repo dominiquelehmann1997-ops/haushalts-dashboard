@@ -107,6 +107,30 @@ describe("meals repository", () => {
   });
 });
 
+describe("listRecipes", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("excludes archived recipes", async () => {
+    const before = await listRecipes(client);
+    expect(before.length).toBeGreaterThan(0);
+    const target = before[0];
+    await client.recipe.update({ where: { id: target.id }, data: { archived: true } });
+
+    const after = await listRecipes(client);
+    expect(after.find((r) => r.id === target.id)).toBeUndefined();
+    expect(after.length).toBe(before.length - 1);
+  });
+});
+
 describe("getDomeShiftsForWeek", () => {
   let client: PrismaClient;
 

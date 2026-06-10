@@ -91,7 +91,10 @@ export async function generateWeekPlan(
 ): Promise<MealPlanEntry[]> {
   const { start: monday, end: sunday } = weekBoundsOf(weekStart);
 
-  const recipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
+  const recipes = await client.recipe.findMany({
+    where: { archived: false },
+    orderBy: { name: "asc" },
+  });
   if (recipes.length === 0) return [];
 
   // Freshness: shuffle once; for preferSimple, stable-sort simple recipes first.
