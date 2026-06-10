@@ -41,4 +41,19 @@ describe("getFreshShoppingState", () => {
     expect(state.pendingItems).toEqual([]);
     expect(state.suggestedDayISO).toBeNull();
   });
+
+  it("Overrides verschieben den Vorschlagstag (Mo-Zutaten haltbar → frühester Frisch-Tag Di)", async () => {
+    await client.freshnessOverride.create({ data: { name: "tomaten", freshness: "haltbar" } });
+    await client.freshnessOverride.create({ data: { name: "basilikum", freshness: "haltbar" } });
+    // Sync neu laufen lassen, damit die Items die korrigierte Kategorie tragen.
+    await syncIngredientsToShopping(client);
+
+    const state = await getFreshShoppingState(client);
+
+    expect(state.pendingItems).not.toContain("Tomaten");
+    expect(state.pendingItems).toContain("Kokosmilch");
+    // Frühester Frisch-Verbrauch ist jetzt Dienstag (Kokosmilch) → Vorschlag Montag.
+    const { start } = currentWeekBounds();
+    expect(state.suggestedDayISO).toBe(new Date(start).toISOString());
+  });
 });

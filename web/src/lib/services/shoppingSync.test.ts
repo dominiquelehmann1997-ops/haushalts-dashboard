@@ -103,4 +103,27 @@ describe("shoppingSync service", () => {
     });
     expect(nudeln.category).toBe("haltbar");
   });
+
+  it("wendet gelernte Haltbarkeits-Korrekturen an (Override schlägt Heuristik)", async () => {
+    await client.freshnessOverride.create({ data: { name: "tomaten", freshness: "haltbar" } });
+
+    await syncIngredientsToShopping(client);
+
+    const tomaten = await client.shoppingItem.findFirstOrThrow({
+      where: { source: "recipe", text: "Tomaten" },
+    });
+    expect(tomaten.category).toBe("haltbar");
+  });
+
+  it("explizite Angabe (Ingredient.category) schlägt den Override", async () => {
+    await client.ingredient.updateMany({ where: { name: "Nudeln" }, data: { category: "frisch" } });
+    await client.freshnessOverride.create({ data: { name: "nudeln", freshness: "haltbar" } });
+
+    await syncIngredientsToShopping(client);
+
+    const nudeln = await client.shoppingItem.findFirstOrThrow({
+      where: { source: "recipe", text: "Nudeln" },
+    });
+    expect(nudeln.category).toBe("frisch");
+  });
 });

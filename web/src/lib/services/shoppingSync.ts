@@ -11,14 +11,15 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
-import { classifyFreshness } from "@/lib/services/freshness";
+import { resolveFreshness } from "@/lib/services/freshness";
+import { getFreshnessOverrides } from "@/lib/repositories/freshnessOverride";
 
 /**
  * Reads the current ISO week's meal plan, collects the unique (case-
  * insensitive) ingredient names across all planned recipes, and regenerates
  * the `source: "recipe"` shopping items to match exactly that set. Each item
- * gets a freshness `category` (from `Ingredient.category`, falling back to
- * `classifyFreshness`) and `pushed: false`.
+ * gets a freshness `category` (from `Ingredient.category`, falling back to a
+ * learned override, then `classifyFreshness`) and `pushed: false`.
  *
  * Returns the recipe ingredient names it wrote (display casing), so callers
  * can push exactly those to Bring without re-querying — see
@@ -32,6 +33,8 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
     include: { recipe: { include: { ingredients: true } } },
   });
 
+  const overrides = await getFreshnessOverrides(client);
+
   // Case-insensitive dedupe, preserving first-seen casing for display and the
   // ingredient's freshness category (falls back to the name heuristic).
   const byKey = new Map<string, { name: string; category: string }>();
@@ -41,7 +44,7 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
       if (!byKey.has(key)) {
         byKey.set(key, {
           name: ingredient.name.trim(),
-          category: ingredient.category ?? classifyFreshness(ingredient.name),
+          category: ingredient.category ?? resolveFreshness(ingredient.name, overrides),
         });
       }
     }

@@ -4,7 +4,8 @@ import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { ShoppingItem, FreshShoppingState } from "@/lib/domain";
 import { currentWeekBounds } from "@/lib/dates";
-import { classifyFreshness, suggestFreshShoppingDay } from "@/lib/services/freshness";
+import { resolveFreshness, suggestFreshShoppingDay } from "@/lib/services/freshness";
+import { getFreshnessOverrides } from "@/lib/repositories/freshnessOverride";
 
 /** All shopping items, not-done first then by creation order, mapped to the domain DTO. */
 export async function getShoppingItems(client: PrismaClient = prisma): Promise<ShoppingItem[]> {
@@ -56,10 +57,12 @@ export async function getFreshShoppingState(
     orderBy: { date: "asc" },
   });
 
+  const overrides = await getFreshnessOverrides(client);
+
   let earliest: Date | null = null;
   for (const entry of entries) {
     const hasFresh = entry.recipe.ingredients.some(
-      (i) => (i.category ?? classifyFreshness(i.name)) === "frisch",
+      (i) => (i.category ?? resolveFreshness(i.name, overrides)) === "frisch",
     );
     if (hasFresh) {
       earliest = entry.date;
