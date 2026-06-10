@@ -114,6 +114,25 @@ describe("ingestVault", () => {
     }
   });
 
+  it("does not archive existing vault recipes when the vault yields no recipes", async () => {
+    const dir = writeVault({ "kokos-curry.md": CURRY });
+    try {
+      await ingestVault(dir, client); // kokos-curry now an active vault recipe
+      const emptyDir = writeVault({ "_template.md": SUPPE }); // only a template → seenSlugs empty
+      try {
+        const report = await ingestVault(emptyDir, client);
+        expect(report.imported).toBe(0);
+        expect(report.archived).toBe(0);
+        const curry = await client.recipe.findUnique({ where: { slug: "kokos-curry" } });
+        expect(curry?.archived).toBe(false);
+      } finally {
+        rmSync(emptyDir, { recursive: true, force: true });
+      }
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
   it("reports an error and imports nothing for a missing vault path", async () => {
     const report = await ingestVault(path.join(tmpdir(), "does-not-exist-xyz"), client);
     expect(report.imported).toBe(0);

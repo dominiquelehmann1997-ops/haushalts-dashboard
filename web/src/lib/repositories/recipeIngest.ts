@@ -92,15 +92,21 @@ export async function ingestVault(
     imported += 1;
   }
 
-  // Orphan-Archivierung: nur Vault-Rezepte (slug != null), die nicht gesehen wurden.
-  const archivedResult = await client.recipe.updateMany({
-    where: {
-      slug: { notIn: seenSlugs },
-      NOT: { slug: null },
-      archived: false,
-    },
-    data: { archived: true },
-  });
+  // Orphan-Archivierung: nur wenn überhaupt Rezepte gesehen wurden (sonst würde
+  // ein leerer/transient leerer Vault fälschlich ALLE Vault-Rezepte archivieren).
+  // Nur Vault-Rezepte (slug != null), die nicht gesehen wurden.
+  let archived = 0;
+  if (seenSlugs.length > 0) {
+    const archivedResult = await client.recipe.updateMany({
+      where: {
+        slug: { notIn: seenSlugs },
+        NOT: { slug: null },
+        archived: false,
+      },
+      data: { archived: true },
+    });
+    archived = archivedResult.count;
+  }
 
-  return { imported, archived: archivedResult.count, errors };
+  return { imported, archived, errors };
 }
