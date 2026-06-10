@@ -8,6 +8,8 @@ import type { MealPlanEntry, Recipe } from "@/generated/prisma/client";
 import { dayBounds, weekBoundsOf } from "@/lib/dates";
 import { candidatesFor } from "./mealPlanner";
 import { constraintFromEntry, type DayConstraint, type MealReason } from "./mealConstraints";
+import { weightedPick } from "./mealWeights";
+import { recentRecipeUse } from "@/lib/repositories/meals";
 
 /**
  * Befördert den Entwurf der Woche zum aktiven Plan: löscht die aktiven Einträge
@@ -59,6 +61,7 @@ async function findDraftEntryForDay(date: Date, client: PrismaClient) {
  * Würfelt das Rezept eines Entwurfs-Tages neu — dienstbewusst: rekonstruiert den
  * Tages-Constraint aus dem Eintrag, nutzt dieselbe Pool-Logik wie der Planer und
  * schließt das aktuelle Rezept möglichst aus. `reason`/`extraPortion` bleiben.
+ * Der Pick ist gewichtet wie im Planer (Rating favorit/ok/selten + Recency).
  * Gibt `null`, wenn es keinen Entwurfs-Eintrag für den Tag gibt.
  */
 export async function rerollDraftDay(
@@ -89,7 +92,10 @@ export async function rerollDraftDay(
   const pool = candidatesFor(constraint, recipes, preferSimple);
   const others = pool.filter((r) => r.id !== entry.recipeId);
   const choices = others.length > 0 ? others : pool;
-  const pick = choices[Math.floor(rng() * choices.length)];
+  // Gewichteter Pick wie im Planer (Rating + Recency); choices ist nie leer
+  // (recipes.length > 0 + base-Fallback in candidatesFor) → `!` sicher.
+  const recent = await recentRecipeUse(weekBoundsOf(entry.date).start, client);
+  const pick = weightedPick(choices, recent, rng)!;
 
   return client.mealPlanEntry.update({
     where: { id: entry.id },

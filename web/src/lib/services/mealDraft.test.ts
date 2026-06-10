@@ -108,6 +108,27 @@ describe("mealDraft editing", () => {
     expect(recipe.simple).toBe(true);
   });
 
+  it("rerollDraftDay würfelt gewichtet (favorit gewinnt die Rad-Mitte)", async () => {
+    await generateWeekPlan(new Date(), { preferSimple: false }, client);
+    const monday = await draftMondayEntry();
+
+    // Das aktuelle Montags-Rezept ist ausgeschlossen; unter den übrigen vier
+    // (alphabetisch) wird das zweite favorit, der Rest selten:
+    // Gewichte [0.3, 3, 0.3, 0.3] → Summe 3.9; rng 0.6 → 2.34 → kumulativ
+    // [0.3, 3.3, …] → favorit gewinnt. (Alter Zufalls-Index hätte
+    // choices[Math.floor(0.6·4)] = choices[2] gewählt — der Test
+    // unterscheidet also wirklich alten und neuen Mechanismus.)
+    const others = await client.recipe.findMany({
+      where: { id: { not: monday.recipeId } },
+      orderBy: { name: "asc" },
+    });
+    await client.recipe.updateMany({ data: { rating: "selten" } });
+    await client.recipe.update({ where: { id: others[1].id }, data: { rating: "favorit" } });
+
+    const updated = await rerollDraftDay(monday.date, false, client, () => 0.6);
+    expect(updated!.recipeId).toBe(others[1].id);
+  });
+
   it("setDraftDayRecipe sets exactly the chosen recipe on the draft entry", async () => {
     await generateWeekPlan(new Date(), { preferSimple: false }, client);
     const monday = await draftMondayEntry();
