@@ -3,8 +3,16 @@
 // Roulette-Rad, der injizierte `rng` hält die Auswahl in Tests deterministisch.
 // Constraints bleiben harte Filter — gewichtet wird nur INNERHALB des Pools.
 
-/** Rating → Auswahl-Gewicht. Unbekannte Werte zählen wie "ok". */
-const RATING_WEIGHTS: Record<string, number> = { favorit: 3, ok: 1, selten: 0.3 };
+import type { Rating } from "@/lib/services/recipeVault";
+
+// `satisfies` sichert die Tabelle gegen den Domänen-Typ ab (alle Rating-Werte
+// abgedeckt, keine Tippfehler-Keys); die Funktionen nehmen bewusst `string`,
+// weil Prisma `Recipe.rating` untypisiert liefert — unbekannt → Gewicht 1 ("ok").
+const RATING_WEIGHTS: Record<string, number> = {
+  favorit: 3,
+  ok: 1,
+  selten: 0.3,
+} satisfies Record<Rating, number>;
 
 export function ratingWeight(rating: string): number {
   return RATING_WEIGHTS[rating] ?? 1;
