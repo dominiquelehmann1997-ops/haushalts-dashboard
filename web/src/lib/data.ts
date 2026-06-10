@@ -25,6 +25,8 @@ export interface ShoppingItem {
   text: string;
   meal: boolean;
   done: boolean;
+  /** "frisch" | "haltbar" für Rezept-Items (Korrektur-Toggle sichtbar); null für manuelle. */
+  category?: "frisch" | "haltbar" | null;
 }
 
 export interface FreshShoppingState {

@@ -8,6 +8,7 @@ import { revalidatePath } from "next/cache";
 
 import { prisma } from "@/lib/db";
 import { setShoppingDone, getShoppingItems } from "@/lib/repositories/shopping";
+import { toggleItemFreshness } from "@/lib/repositories/freshnessOverride";
 import { pushShoppingList, toBringItems, type BringPushResult } from "@/integrations/bring/client";
 
 /** Toggles a shopping item's `done` flag. */
@@ -16,6 +17,16 @@ export async function toggleShoppingAction(id: string): Promise<void> {
 
   await setShoppingDone(id, !item.done);
 
+  revalidatePath("/");
+}
+
+/**
+ * Korrigiert die Haltbarkeit eines Rezept-Einkaufs-Items (frisch ↔ haltbar).
+ * Schreibt das Korrektur-Gedächtnis (`FreshnessOverride`), sodass die Zutat
+ * künftig direkt richtig eingestuft wird (Sanftes Lernen C1).
+ */
+export async function toggleFreshnessAction(id: string): Promise<void> {
+  await toggleItemFreshness(id);
   revalidatePath("/");
 }
 

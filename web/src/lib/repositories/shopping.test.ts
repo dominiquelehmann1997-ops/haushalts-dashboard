@@ -5,7 +5,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
 import { syncIngredientsToShopping } from "@/lib/services/shoppingSync";
 
-import { getFreshShoppingState } from "./shopping";
+import { getFreshShoppingState, getShoppingItems } from "./shopping";
 
 describe("getFreshShoppingState", () => {
   let client: PrismaClient;
@@ -55,5 +55,29 @@ describe("getFreshShoppingState", () => {
     // Frühester Frisch-Verbrauch ist jetzt Dienstag (Kokosmilch) → Vorschlag Montag.
     const { start } = currentWeekBounds();
     expect(state.suggestedDayISO).toBe(new Date(start).toISOString());
+  });
+});
+
+describe("getShoppingItems", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+    await syncIngredientsToShopping(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("liefert die Haltbarkeits-Kategorie nur für Rezept-Items", async () => {
+    const items = await getShoppingItems(client);
+
+    const tomaten = items.find((i) => i.text === "Tomaten");
+    const brot = items.find((i) => i.text === "Brot"); // manuell
+
+    expect(tomaten?.category).toBe("frisch");
+    expect(brot?.category).toBeNull();
   });
 });

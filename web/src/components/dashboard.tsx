@@ -16,7 +16,7 @@ import type { ActivePhase } from "@/lib/repositories/phase";
 import type { ProjectProgress } from "@/lib/repositories/projects";
 import type { AgeBand } from "@/lib/baby/types";
 import { toggleTaskAction } from "@/app/actions/tasks";
-import { toggleShoppingAction } from "@/app/actions/shopping";
+import { toggleFreshnessAction, toggleShoppingAction } from "@/app/actions/shopping";
 import { Header } from "@/components/header";
 import { TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles";
 import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/components/widgets";
@@ -99,6 +99,11 @@ export default function Dashboard({
       await toggleShoppingAction(id);
     });
   };
+  const toggleFreshness = (id: string) => {
+    startTransition(async () => {
+      await toggleFreshnessAction(id);
+    });
+  };
 
   const domeTasks = tasks.filter((t) => t.person === "dome");
   const emelyTasks = tasks.filter((t) => t.person === "emely");
@@ -140,7 +145,7 @@ export default function Dashboard({
             <VaultIngestControl />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
-            <ShoppingWidget items={shopping} onToggle={toggleShop} />
+            <ShoppingWidget items={shopping} onToggle={toggleShop} onToggleFreshness={toggleFreshness} />
             <MealPlanWidget meals={meals} />
             <NotesWidget notes={notes} />
             <WeekWidget openTaskCount={openTaskCount} project={project} />

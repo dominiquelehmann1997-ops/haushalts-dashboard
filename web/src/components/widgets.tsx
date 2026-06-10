@@ -8,9 +8,11 @@ import { MealPlanControl } from "@/components/MealPlanControl";
 export function ShoppingWidget({
   items,
   onToggle,
+  onToggleFreshness,
 }: {
   items: ShoppingItem[];
   onToggle: (id: string) => void;
+  onToggleFreshness: (id: string) => void;
 }) {
   const left = items.filter((i) => !i.done).length;
   return (
@@ -43,6 +45,23 @@ export function ShoppingWidget({
             >
               {item.text}
             </span>
+            {item.category && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleFreshness(item.id);
+                }}
+                title="Haltbarkeit umschalten — die Korrektur wird für diese Zutat gemerkt"
+                className={`shrink-0 text-[10.5px] font-semibold px-2 py-0.5 rounded-full transition-colors ${
+                  item.category === "frisch"
+                    ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-500/25"
+                    : "bg-cream text-ink-soft dark:bg-white/10 dark:text-cream/70 hover:bg-cream/80 dark:hover:bg-white/15"
+                }`}
+              >
+                {item.category}
+              </button>
+            )}
             {item.meal && (
               <span title="Zutat aus dem Essensplan" className="text-[12px] opacity-70">
                 🍽️

@@ -18,6 +18,10 @@ export async function getShoppingItems(client: PrismaClient = prisma): Promise<S
     text: row.text,
     meal: row.meal,
     done: row.done,
+    category:
+      row.source === "recipe" && (row.category === "frisch" || row.category === "haltbar")
+        ? row.category
+        : null,
   }));
 }
 
