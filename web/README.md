@@ -56,3 +56,10 @@ Das Frontmatter-`rating` steuert, wie oft ein Rezept im Wochenplan landet:
 harten Dienstplan-Constraints. Zusätzlich werden Gerichte gedämpft, die in den
 letzten ~14 Tagen schon im aktiven Plan standen (nie ganz ausgeschlossen).
 Ohne Bewertungen/Historie verhält sich der Planer wie vorher (Fallback).
+
+### Haltbarkeits-Korrektur
+
+Stuft die Heuristik eine Zutat falsch ein (z.B. Kokosmilch als „frisch"), lässt
+sich das direkt am Einkaufs-Item umschalten — die Korrektur wird gemerkt und
+gilt für jedes künftige Auftauchen der Zutat. Reihenfolge: explizite
+`freshness`-Angabe im Rezept-Frontmatter → gemerkte Korrektur → Keyword-Heuristik.
