@@ -10,7 +10,7 @@
 Heute liegen Rezepte als `Recipe`/`Ingredient` in der SQLite-DB; es gibt **kein UI zum Anlegen/Bearbeiten**, nur einen Tausch-Picker beim Planen (`listRecipes`). Rezepte in einem Obsidian-Vault (ein `.md` pro Rezept) zu pflegen bringt:
 
 - eine bequeme Pflege-/**Kochansicht** direkt in Obsidian (Markdown rendert die Schritte),
-- **geräteübergreifenden Zugriff** über Obsidian-Sync (iCloud/Syncthing/git/Obsidian Sync) — passt zu „App läuft nur lokal, kein Host", weil Obsidian die Synchronisation übernimmt und das Dashboard nur die lokal gesyncte Kopie liest,
+- **geräteübergreifenden Zugriff** über **Obsidian Sync** (vom Auftraggeber bestätigt) — passt zu „App läuft nur lokal, kein Host", weil Obsidian die Synchronisation übernimmt und das Dashboard nur die lokal gesyncte Kopie liest. `RECIPE_VAULT_PATH` zeigt entsprechend auf die **lokal gesyncte Vault-Kopie auf der Dashboard-Maschine**,
 - einfaches **Sammeln aus verschiedenen Quellen** über einen gestaffelten Import.
 
 ## Source of Truth
