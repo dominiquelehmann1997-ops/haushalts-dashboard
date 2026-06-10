@@ -2,7 +2,7 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
-import { currentWeekBounds } from "@/lib/dates";
+import { addDays, currentWeekBounds } from "@/lib/dates";
 
 import { generateWeekPlan } from "./mealPlanner";
 import type { DayConstraint } from "./mealConstraints";
@@ -30,10 +30,10 @@ describe("mealPlanner service", () => {
     return names;
   }
 
-  // An rng returning ~1 makes Fisher–Yates a no-op (each i swaps with itself),
-  // so the day-assignment keeps the selection-pool order — used to pin the
-  // otherwise-shuffled output deterministically in assertions.
+  // Mit weightedPick wählt rng→0.999 stets das LETZTE Element des Tages-Pools
+  // (Rad-Ende) und rng→0 das ERSTE — beides pinnt die Auswahl deterministisch.
   const identityRng = () => 0.999;
+  const zeroRng = () => 0;
 
   it("generateWeekPlan({preferSimple: true}) creates 5 entries Mon–Fr, simple recipe first (identity rng)", async () => {
     const today = new Date();
@@ -65,9 +65,9 @@ describe("mealPlanner service", () => {
     expect(drafts).toHaveLength(5);
   });
 
-  it("generateWeekPlan({preferSimple: false}) with identity rng orders by name — Monday is alphabetically first", async () => {
+  it("generateWeekPlan({preferSimple: false}) mit zero rng wählt für Montag das alphabetisch erste Rezept", async () => {
     const today = new Date();
-    const entries = await generateWeekPlan(today, { preferSimple: false }, client, identityRng);
+    const entries = await generateWeekPlan(today, { preferSimple: false }, client, zeroRng);
 
     const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
     const monday = sorted[0];
@@ -88,8 +88,8 @@ describe("mealPlanner service", () => {
   it("varies the day→recipe assignment with the injected rng", async () => {
     const today = new Date();
 
-    // identityRng keeps selection-pool (alphabetical) order; an rng returning 0
-    // permutes it — the two day orders must differ.
+    // identityRng (~1) wählt je Tag das letzte, () => 0 das erste Pool-Element —
+    // die beiden Tages-Reihenfolgen müssen sich unterscheiden.
     const identityPlan = await generateWeekPlan(today, { preferSimple: false }, client, identityRng);
     const identityNames = await orderedNames(identityPlan);
 
@@ -114,6 +114,42 @@ describe("mealPlanner service", () => {
     });
     expect(active).toHaveLength(5); // seed plan untouched
     expect(drafts).toHaveLength(5); // freshly generated draft
+  });
+
+  it("gewichtet favorit-Rezepte höher (deterministisch über rng)", async () => {
+    // Erstes Rezept (alphabetisch) → favorit, Rest → selten: Gewichte [3, .3, .3, .3, .3]
+    await client.recipe.updateMany({ data: { rating: "selten" } });
+    const all = await client.recipe.findMany({ orderBy: { name: "asc" } });
+    await client.recipe.update({ where: { id: all[0].id }, data: { rating: "favorit" } });
+
+    // rng 0.5 → 0.5 · 4.2 = 2.1 < 3 → das favorit-Rezept gewinnt den Montag
+    const entries = await generateWeekPlan(new Date(), { preferSimple: false }, client, () => 0.5);
+    const monday = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime())[0];
+    expect(monday.recipeId).toBe(all[0].id);
+
+    // Gegenprobe: rng 0.95 → 3.99 → fällt ans Rad-Ende → NICHT das favorit-Rezept
+    const entries2 = await generateWeekPlan(new Date(), { preferSimple: false }, client, () => 0.95);
+    const monday2 = [...entries2].sort((a, b) => a.date.getTime() - b.date.getTime())[0];
+    expect(monday2.recipeId).not.toBe(all[0].id);
+  });
+
+  it("dämpft kürzlich gekochte Rezepte (Recency aus aktiver Historie)", async () => {
+    const { start: monday } = currentWeekBounds();
+    const all = await client.recipe.findMany({ orderBy: { name: "asc" } });
+
+    // Ohne Historie: alle Gewichte 1, rng 0.1 → 0.5 < 1 → alphabetisch erstes Rezept
+    const before = await generateWeekPlan(new Date(), { preferSimple: false }, client, () => 0.1);
+    const beforeMonday = [...before].sort((a, b) => a.date.getTime() - b.date.getTime())[0];
+    expect(beforeMonday.recipeId).toBe(all[0].id);
+
+    // Erstes Rezept vor 2 Tagen aktiv gekocht → Gewicht 0.15 (Floor):
+    // Summe 4.15, rng 0.1 → 0.415 > 0.15 → das ZWEITE Rezept gewinnt den Montag
+    await client.mealPlanEntry.create({
+      data: { date: addDays(monday, -2), recipeId: all[0].id, status: "active" },
+    });
+    const after = await generateWeekPlan(new Date(), { preferSimple: false }, client, () => 0.1);
+    const afterMonday = [...after].sort((a, b) => a.date.getTime() - b.date.getTime())[0];
+    expect(afterMonday.recipeId).toBe(all[1].id);
   });
 });
 

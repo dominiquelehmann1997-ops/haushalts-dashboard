@@ -2,12 +2,16 @@
 // of the week containing `weekStart`, respecting per-day shift constraints
 // (simple / reheatable requirements, extra-portion flag, reason label) derived
 // from Dome's shift schedule.
+// Innerhalb des erlaubten Pools wählt ein gewichtetes Roulette-Rad
+// (Rating favorit/ok/selten + Recency-Dämpfung, s. mealWeights.ts).
 
 import { addDays, weekBoundsOf } from "@/lib/dates";
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { MealPlanEntry, Recipe } from "@/generated/prisma/client";
 import type { DayConstraint } from "@/lib/services/mealConstraints";
+import { weightedPick } from "./mealWeights";
+import { recentRecipeUse } from "@/lib/repositories/meals";
 
 export interface GenerateWeekPlanOptions {
   /** When `true`, recipes flagged `simple` are preferred on unconstrained days. */
@@ -17,20 +21,6 @@ export interface GenerateWeekPlanOptions {
    * When omitted, every day is treated as unconstrained (no reason / no extra).
    */
   constraints?: DayConstraint[];
-}
-
-/**
- * Returns a shuffled copy of `items` using a Fisher–Yates shuffle driven by
- * `rng` (a `() => number` in `[0, 1)`, like `Math.random`). Pure — does not
- * mutate the input. Injecting `rng` keeps the shuffle deterministic in tests.
- */
-function shuffle<T>(items: T[], rng: () => number): T[] {
-  const result = [...items];
-  for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [result[i], result[j]] = [result[j], result[i]];
-  }
-  return result;
 }
 
 /** A constraint with no requirements, for days/weeks without shift data. */
@@ -45,9 +35,9 @@ function noConstraint(date: Date): DayConstraint {
 }
 
 /**
- * Ordered candidate pool for one day, derived from the (already shuffled, and
- * for `preferSimple` simple-first) `base` list. Filters by the day's
- * constraints with the conflict priority from the spec; falls back to `base`
+ * Ordered candidate pool for one day, derived from the `base` recipe list.
+ * Filters by the day's constraints with the conflict priority from the spec
+ * (incl. the `preferSimple` bias on unconstrained days); falls back to `base`
  * whenever a filtered pool would be empty so a recipe can always be chosen.
  */
 export function candidatesFor(
@@ -78,9 +68,11 @@ export function candidatesFor(
  * For each weekday the recipe is chosen from a candidate pool that satisfies
  * that day's shift constraints (`opts.constraints`, Mon–Fri; defaults to
  * unconstrained). `preferSimple` biases unconstrained days toward simple
- * recipes. Within the pool, the first not-yet-used recipe wins (variety);
- * `rng` shuffles the base order so re-generating yields a fresh plan — and
- * keeps tests deterministic when injected. Each entry persists the day's
+ * recipes. Within the pool, a weighted roulette pick chooses the recipe: rating weights
+ * (favorit 3× / ok 1× / selten 0.3×) times a recency damping for dishes cooked
+ * in the last ~14 days (active history, see `recentRecipeUse`). Not-yet-used
+ * recipes are preferred for variety. `rng` drives the wheel — injecting it
+ * keeps tests deterministic. Each entry persists the day's
  * `reason` and `extraPortion` marker.
  */
 export async function generateWeekPlan(
@@ -97,11 +89,8 @@ export async function generateWeekPlan(
   });
   if (recipes.length === 0) return [];
 
-  // Freshness: shuffle once; for preferSimple, stable-sort simple recipes first.
-  let base = shuffle(recipes, rng);
-  if (opts.preferSimple) {
-    base = [...base].sort((a, b) => (a.simple === b.simple ? 0 : a.simple ? -1 : 1));
-  }
+  // Recency-Dämpfung: was in den 21 Tagen VOR dieser Woche aktiv gekocht wurde.
+  const recent = await recentRecipeUse(monday, client);
 
   const weekdayDates = [0, 1, 2, 3, 4].map((offset) => addDays(monday, offset));
   const constraints = weekdayDates.map(
@@ -117,9 +106,10 @@ export async function generateWeekPlan(
   const created: MealPlanEntry[] = [];
   for (let i = 0; i < weekdayDates.length; i++) {
     const c = constraints[i];
-    const pool = candidatesFor(c, base, opts.preferSimple);
+    const pool = candidatesFor(c, recipes, opts.preferSimple);
     const fresh = pool.filter((r) => !used.has(r.id));
-    const pick = (fresh.length > 0 ? fresh : pool)[0];
+    // Pool ist nie leer (recipes.length > 0 + base-Fallback in candidatesFor) → `!` sicher.
+    const pick = weightedPick(fresh.length > 0 ? fresh : pool, recent, rng)!;
     used.add(pick.id);
 
     const entry = await client.mealPlanEntry.create({
