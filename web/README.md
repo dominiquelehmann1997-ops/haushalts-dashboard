@@ -48,3 +48,11 @@ RECIPE_VAULT_PATH="C:/Users/<user>/Obsidian/Haushalt/Rezepte"
 
 Vorlage: `docs/recipe-vault-template.md` als `_template.md` in den Ordner kopieren.
 Einlesen über den Button „Rezepte einlesen" im Dashboard.
+
+### Gewichtete Essensplan-Auswahl
+
+Das Frontmatter-`rating` steuert, wie oft ein Rezept im Wochenplan landet:
+`favorit` ≈ 3×, `ok` 1×, `selten` ≈ 0,3× Wahrscheinlichkeit — innerhalb der
+harten Dienstplan-Constraints. Zusätzlich werden Gerichte gedämpft, die in den
+letzten ~14 Tagen schon im aktiven Plan standen (nie ganz ausgeschlossen).
+Ohne Bewertungen/Historie verhält sich der Planer wie vorher (Fallback).
