@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Rezepte-Vault
+
+Rezepte werden in einem Obsidian-Vault als Markdown gepflegt (Vault = Wahrheit,
+DB = Cache). Das Dashboard liest die lokal per Obsidian Sync gesyncte Kopie.
+
+Setze `RECIPE_VAULT_PATH` in `web/.env` auf den Rezepte-Ordner, z.B.:
+
+```
+RECIPE_VAULT_PATH="C:/Users/<user>/Obsidian/Haushalt/Rezepte"
+```
+
+Vorlage: `docs/recipe-vault-template.md` als `_template.md` in den Ordner kopieren.
+Einlesen über den Button „Rezepte einlesen" im Dashboard.
