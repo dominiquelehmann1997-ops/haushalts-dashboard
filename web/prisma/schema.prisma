@@ -137,7 +137,7 @@ model Ingredient {
   name     String
   amount   String?
   unit     String?
-  category String? // "frisch" | "haltbar" (per classifyFreshness vorbelegt)
+  category String? // "frisch" | "haltbar" — explizite Angabe (Vault-Frontmatter); null → Override/Heuristik beim Lesen
 }
 
 /// A planned meal for a given date.
@@ -184,4 +184,12 @@ model OAuthToken {
   accessToken  String?
   expiresAt    DateTime?
   updatedAt    DateTime  @updatedAt
+}
+
+/// Gelernte Haltbarkeits-Korrektur (Sanftes Lernen C1): einmal am Einkaufs-Item
+/// korrigiert, gilt der Wert für jedes künftige Auftauchen der Zutat.
+model FreshnessOverride {
+  id        String @id @default(cuid())
+  name      String @unique // normalisierter Zutatenname (trim + lowercase)
+  freshness String // "frisch" | "haltbar"
 }

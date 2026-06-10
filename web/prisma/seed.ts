@@ -5,7 +5,6 @@ import { pathToFileURL } from "node:url";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 
 import { PrismaClient } from "../src/generated/prisma/client";
-import { classifyFreshness } from "../src/lib/services/freshness";
 
 // ---------------------------------------------------------------------------
 // Date helpers — everything is anchored to "today" (local midnight) and the
@@ -68,6 +67,7 @@ export async function seedDatabase(prisma: PrismaClient) {
   await prisma.project.deleteMany();
   await prisma.calendarEvent.deleteMany();
   await prisma.shoppingItem.deleteMany();
+  await prisma.freshnessOverride.deleteMany();
   await prisma.recipe.deleteMany();
   await prisma.note.deleteMany();
   await prisma.phaseSetting.deleteMany();
@@ -308,7 +308,9 @@ export async function seedDatabase(prisma: PrismaClient) {
           name: ingredient.name,
           amount: ingredient.amount,
           unit: ingredient.unit,
-          category: classifyFreshness(ingredient.name),
+          // null = keine explizite Angabe → Haltbarkeit wird beim Lesen aus
+          // Override/Heuristik aufgelöst (Sanftes Lernen C1).
+          category: null,
         },
       });
     }
