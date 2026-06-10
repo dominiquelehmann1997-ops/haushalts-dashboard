@@ -119,6 +119,9 @@ model Recipe {
   simple     Boolean @default(true)
   reheatable Boolean @default(false)
   tags       String? // JSON string array
+  rating     String  @default("ok") // "favorit" | "ok" | "selten" (aus Vault-Frontmatter; Feature A)
+  slug       String? @unique // stabiler Vault-Anker (Frontmatter `id`); null für Nicht-Vault-Rezepte
+  archived   Boolean @default(false) // true, wenn das Rezept nicht mehr im Vault liegt
 
   ingredients     Ingredient[]
   mealPlanEntries MealPlanEntry[]
