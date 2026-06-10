@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { Meal, DraftMeal, RecipeOption } from "@/lib/domain";
-import { currentWeekBounds, localDateKey, mondayOf } from "@/lib/dates";
+import { addDays, currentWeekBounds, localDateKey, mondayOf } from "@/lib/dates";
 import { classifyShift, type ShiftClass } from "@/lib/calendar/shifts";
 
 // German short weekday labels, indexed by `Date#getDay()` (0 = Sunday).
@@ -107,6 +107,32 @@ export async function getDomeShiftsForWeek(
     if (map.has(key)) continue;
     const shift = classifyShift(row.title);
     if (shift) map.set(key, shift);
+  }
+  return map;
+}
+
+/**
+ * Tage seit der letzten AKTIVEN Verwendung je Rezept, gemessen an `reference`
+ * (exklusiv) über die letzten `windowDays` Tage — Grundlage der Recency-
+ * Dämpfung der Essensplan-Gewichtung (Feature A). Entwürfe zählen nicht;
+ * fehlt ein Rezept in der Map, wurde es im Fenster nicht gekocht.
+ */
+export async function recentRecipeUse(
+  reference: Date,
+  client: PrismaClient = prisma,
+  windowDays = 21,
+): Promise<Map<string, number>> {
+  const from = addDays(reference, -windowDays);
+  const rows = await client.mealPlanEntry.findMany({
+    where: { status: "active", date: { gte: from, lt: reference } },
+    orderBy: { date: "desc" },
+  });
+
+  const map = new Map<string, number>();
+  for (const row of rows) {
+    if (map.has(row.recipeId)) continue; // desc sortiert → jüngste Verwendung gewinnt
+    // round statt floor: robust gegen DST-bedingte 23/25-Stunden-Tage
+    map.set(row.recipeId, Math.round((reference.getTime() - row.date.getTime()) / 86_400_000));
   }
   return map;
 }

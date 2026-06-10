@@ -3,9 +3,15 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { currentWeekBounds, localDateKey } from "@/lib/dates";
+import { addDays, currentWeekBounds, localDateKey } from "@/lib/dates";
 
-import { getDomeShiftsForWeek, getDraftMealPlan, getWeekMealPlan, listRecipes } from "./meals";
+import {
+  getDomeShiftsForWeek,
+  getDraftMealPlan,
+  getWeekMealPlan,
+  listRecipes,
+  recentRecipeUse,
+} from "./meals";
 
 describe("meals repository", () => {
   let client: PrismaClient;
@@ -234,5 +240,56 @@ describe("getDomeShiftsForWeek", () => {
 
     const map = await getDomeShiftsForWeek(monday, client);
     expect(map.get(localDateKey(tue))).toBe("frueh"); // earliest wins
+  });
+});
+
+describe("recentRecipeUse", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("mappt jedes Rezept auf die Tage seit der jüngsten aktiven Verwendung vor der Referenz", async () => {
+    const { start: monday } = currentWeekBounds();
+    const recipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
+
+    // zwei Verwendungen desselben Rezepts: die jüngste (vor 3 Tagen) zählt
+    await client.mealPlanEntry.create({
+      data: { date: addDays(monday, -10), recipeId: recipes[0].id, status: "active" },
+    });
+    await client.mealPlanEntry.create({
+      data: { date: addDays(monday, -3), recipeId: recipes[0].id, status: "active" },
+    });
+    await client.mealPlanEntry.create({
+      data: { date: addDays(monday, -7), recipeId: recipes[1].id, status: "active" },
+    });
+
+    const map = await recentRecipeUse(monday, client);
+    expect(map.get(recipes[0].id)).toBe(3);
+    expect(map.get(recipes[1].id)).toBe(7);
+  });
+
+  it("ignoriert Entwürfe, Einträge ab der Referenz und Einträge älter als 21 Tage", async () => {
+    const { start: monday } = currentWeekBounds();
+    const recipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
+
+    await client.mealPlanEntry.create({
+      data: { date: addDays(monday, -5), recipeId: recipes[0].id, status: "draft" },
+    });
+    await client.mealPlanEntry.create({
+      data: { date: addDays(monday, -30), recipeId: recipes[1].id, status: "active" },
+    });
+
+    const map = await recentRecipeUse(monday, client);
+    expect(map.has(recipes[0].id)).toBe(false);
+    expect(map.has(recipes[1].id)).toBe(false);
+    // die geseedeten aktiven Einträge der Woche liegen AUF/NACH dem Montag → zählen nicht
+    expect(map.size).toBe(0);
   });
 });
