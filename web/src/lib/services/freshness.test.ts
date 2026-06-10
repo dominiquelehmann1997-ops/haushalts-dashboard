@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 
-import { classifyFreshness, suggestFreshShoppingDay } from "./freshness";
+import {
+  classifyFreshness,
+  normalizeIngredientName,
+  resolveFreshness,
+  suggestFreshShoppingDay,
+  type Freshness,
+} from "./freshness";
 
 describe("classifyFreshness", () => {
   it("classifies known fresh keywords as frisch (case-insensitive, substring)", () => {
@@ -34,5 +40,30 @@ describe("suggestFreshShoppingDay", () => {
 
   it("returns null when there is no fresh-use date", () => {
     expect(suggestFreshShoppingDay(null)).toBeNull();
+  });
+});
+
+describe("normalizeIngredientName", () => {
+  it("trimmt und lowercased", () => {
+    expect(normalizeIngredientName("  Kokosmilch ")).toBe("kokosmilch");
+    expect(normalizeIngredientName("TOMATEN")).toBe("tomaten");
+  });
+});
+
+describe("resolveFreshness", () => {
+  it("nutzt den gelernten Override (normalisierter Lookup)", () => {
+    const overrides = new Map<string, Freshness>([["kokosmilch", "haltbar"]]);
+    expect(resolveFreshness("Kokosmilch", overrides)).toBe("haltbar");
+    expect(resolveFreshness("  KOKOSMILCH  ", overrides)).toBe("haltbar");
+  });
+
+  it("fällt ohne Override auf die Keyword-Heuristik zurück", () => {
+    expect(resolveFreshness("Kokosmilch", new Map())).toBe("frisch"); // "milch"-Keyword greift fälschlich
+    expect(resolveFreshness("Nudeln", new Map())).toBe("haltbar");
+  });
+
+  it("kann auch in Richtung frisch korrigieren", () => {
+    const overrides = new Map<string, Freshness>([["nudeln", "frisch"]]);
+    expect(resolveFreshness("Nudeln", overrides)).toBe("frisch");
   });
 });

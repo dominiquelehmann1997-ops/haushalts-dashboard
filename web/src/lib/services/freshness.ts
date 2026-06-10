@@ -43,6 +43,20 @@ export function classifyFreshness(name: string): Freshness {
   return FRESH_KEYWORDS.some((kw) => n.includes(kw)) ? "frisch" : "haltbar";
 }
 
+/** Normalisierter Zutatenname als Schlüssel für Overrides: trim + lowercase. */
+export function normalizeIngredientName(name: string): string {
+  return name.trim().toLowerCase();
+}
+
+/**
+ * Haltbarkeit mit Korrektur-Gedächtnis (Sanftes Lernen C1): ein gelernter
+ * Override (Map normalisierter Name → Frische) schlägt die Keyword-Heuristik.
+ * Die Frontmatter-Stufe davor liegt beim Aufrufer (`Ingredient.category`).
+ */
+export function resolveFreshness(name: string, overrides: Map<string, Freshness>): Freshness {
+  return overrides.get(normalizeIngredientName(name)) ?? classifyFreshness(name);
+}
+
 /**
  * Vorschlagstag für die Frische-Rutsche: der Tag VOR dem frühesten Verbrauchstag
  * einer Frisch-Zutat (etwas Vorlauf). `null`, wenn es keinen Frisch-Verbrauch gibt.
