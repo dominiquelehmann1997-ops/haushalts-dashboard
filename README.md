@@ -17,4 +17,12 @@ Konzeptphase. Die Design-Spezifikation liegt unter
 - **Aufgaben:** wiederkehrend, einmalig, Einkauf, Projekte — mit Status & Spontan-Nachtrag.
 - **Essensplan → Einkauf → Bring!:** Zutaten automatisch auf die Einkaufsliste, Push an Bring.
 
+## Betrieb am Tablet
+
+Das Dashboard kann lokal auf einem Android-Tablet (z.B. Google Pixel Tablet)
+laufen — Node-Server in Termux, im Chrome als PWA installiert. Anleitung:
+[`docs/tablet-termux-setup.md`](docs/tablet-termux-setup.md).
+Die echten Haushalts-Chores werden idempotent per `npm run import:chores`
+eingespielt (siehe `web/src/lib/services/chores.ts`).
+
 Der finale visuelle Look wird separat in Claude umgesetzt.
