@@ -12,18 +12,38 @@ const RHYTHM_OFFSET_DAYS: Record<string, number> = {
   weekly: 7,
   biweekly: 14,
   "2x-week": 3,
+  "3-day": 3,
+  "5-day": 5,
+};
+
+/** Rhythms advanced by whole calendar months (no day-count drift). */
+const RHYTHM_MONTHS: Record<string, number> = {
+  monthly: 1,
+  halfyearly: 6,
 };
 
 const DEFAULT_OFFSET_DAYS = 7;
 
 /**
- * Returns a *new* `Date` advanced from `from` by the offset for `rhythm`
- * (`"daily"` → +1, `"weekly"` → +7, `"biweekly"` → +14, `"2x-week"` → +3).
+ * Returns a *new* `Date` advanced from `from` by the offset for `rhythm`.
+ * Day-based rhythms (`daily`/`weekly`/`biweekly`/`2x-week`/`3-day`/`5-day`)
+ * add a fixed number of days; month-based rhythms (`monthly`/`halfyearly`)
+ * advance whole calendar months via `setMonth` (so 12th -> 12th, no drift).
  * Unknown/unsupported rhythms default to +7 days (weekly).
+ *
+ * Note: `setMonth` rolls over for shorter months (31 Jan + 1 month -> 3 Mar);
+ * acceptable for household chores.
  *
  * Pure — does not mutate `from`, has no DB dependency.
  */
 export function nextDueDate(rhythm: string, from: Date): Date {
+  const months = RHYTHM_MONTHS[rhythm];
+  if (months !== undefined) {
+    const result = new Date(from);
+    result.setMonth(result.getMonth() + months);
+    return result;
+  }
+
   const offsetDays = RHYTHM_OFFSET_DAYS[rhythm] ?? DEFAULT_OFFSET_DAYS;
   return new Date(from.getTime() + offsetDays * DAY_MS);
 }

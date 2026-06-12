@@ -28,6 +28,30 @@ describe("nextDueDate (pure)", () => {
     expect(result.getTime() - from.getTime()).toBe(3 * 24 * 60 * 60 * 1000);
   });
 
+  it("3-day -> +3 days", () => {
+    const result = nextDueDate("3-day", from);
+    expect(result.getTime() - from.getTime()).toBe(3 * 24 * 60 * 60 * 1000);
+  });
+
+  it("5-day -> +5 days", () => {
+    const result = nextDueDate("5-day", from);
+    expect(result.getTime() - from.getTime()).toBe(5 * 24 * 60 * 60 * 1000);
+  });
+
+  it("monthly -> +1 calendar month (same day-of-month)", () => {
+    const result = nextDueDate("monthly", new Date(2026, 5, 12)); // 12 Jun 2026
+    expect(result.getFullYear()).toBe(2026);
+    expect(result.getMonth()).toBe(6); // Jul
+    expect(result.getDate()).toBe(12);
+  });
+
+  it("halfyearly -> +6 calendar months across the year boundary", () => {
+    const result = nextDueDate("halfyearly", new Date(2026, 7, 12)); // 12 Aug 2026
+    expect(result.getFullYear()).toBe(2027);
+    expect(result.getMonth()).toBe(1); // Feb
+    expect(result.getDate()).toBe(12);
+  });
+
   it("unknown rhythm -> defaults to +7 days", () => {
     const result = nextDueDate("monthly-ish-nonsense", from);
     expect(result.getTime() - from.getTime()).toBe(7 * 24 * 60 * 60 * 1000);
