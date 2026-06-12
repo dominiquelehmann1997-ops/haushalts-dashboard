@@ -84,7 +84,9 @@ Neues **idempotentes** Skript, getrennt vom zerstörenden Demo-Seed
 - **Initiale Fälligkeit gestaffelt:** nicht alle 17 Tasks `dueDate = heute`. Deterministische
   Streuung: `dueDate = heute + (laufender Index modulo Intervall-Tage)` (Monats-Rhythmen: 0–6 Tage
   Streuung). Nach erster Erledigung übernimmt die Recurrence-Engine den echten Takt.
-- **`allowedPersons`:** Default `"both"` für alle (vom Nutzer im Spec-Review pro Chore korrigierbar).
+  **Bad „groß" und „klein"** (beide weekly) müssen auf **verschiedene Wochentage** fallen
+  (Nutzer-Vorgabe) — die Index-Streuung stellt das sicher; im Import-Test explizit geprüft.
+- **`allowedPersons`:** Default `"both"`, **Ausnahme: Rasen mähen → `"dome"`** (Nutzer-Vorgabe).
 
 **Vollständiges Mapping (17 Tasks aus der Liste):**
 
@@ -94,7 +96,7 @@ Neues **idempotentes** Skript, getrennt vom zerstörenden Demo-Seed
 | 2 | Bad putzen (groß) | routine | weekly | 30 | – | – | 🛁 | sub „groß" |
 | 3 | Bad putzen (klein) | routine | weekly | 15 | – | – | 🚽 | sub „klein" |
 | 4 | Treppe saugen | routine | 3-day | 5 | – | – | 🧹 | — |
-| 5 | Rasen mähen | routine | weekly | 60 | ja | noRain | 🌱 | — |
+| 5 | Rasen mähen | routine | weekly | 60 | ja | noRain | 🌱 | nur Dome (`allowedPersons:"dome"`) |
 | 6 | Wäsche waschen | routine | 5-day | 20 | – | – | 🧺 | „alle 5 Tage kontrollieren" |
 | 7 | Küchenfronten putzen | routine | monthly | 30 | – | – | 🧽 | — |
 | 8 | Sofa und Teppich absaugen | routine | 3-day | 10 | – | – | 🛋️ | — |
@@ -193,10 +195,8 @@ Doku/Skript + manueller Geräte-Test.
 - **Handy-Zugriff aufs Tablet** im WLAN (durch `0.0.0.0` vorbereitet, aber nicht eingerichtet).
 - **Home-Server / Raspberry Pi** als dauerhafter Host (spätere Architektur-Entscheidung).
 
-## Offene Punkte für den Nutzer-Review
+## Geklärt im Nutzer-Review (2026-06-12)
 
-- `allowedPersons` steht überall auf `"both"` — falls bestimmte Chores fix an Dome oder Emely
-  gehören (z.B. Rasen, Gassi), hier markieren.
-- Bad „groß" und „klein" sind beide `weekly` (wie in der Liste). Falls „groß" seltener sein soll
-  (z.B. monatlich tiefenrein), anpassen.
-- Icons/Emojis sind Vorschläge — Änderungswünsche willkommen.
+- `allowedPersons`: Rasen mähen → nur Dome; alle übrigen Chores → `"both"`.
+- Bad „groß" und „klein" bleiben beide `weekly`, müssen aber auf verschiedene Wochentage fallen.
+- Icons: nach Ermessen des Implementierers.
