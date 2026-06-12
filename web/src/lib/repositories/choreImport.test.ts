@@ -66,4 +66,16 @@ describe("importChores", () => {
     expect(after.status).toBe("done");
     expect(after.dueDate.getTime()).toBe(new Date(2026, 0, 1).getTime());
   });
+
+  it("creates the household people when none exist", async () => {
+    await client.accountEntry.deleteMany();
+    await client.task.deleteMany();
+    await client.person.deleteMany();
+
+    await importChores(client, today);
+
+    expect(await client.person.count()).toBe(3);
+    const dome = await client.person.findUnique({ where: { key: "dome" } });
+    expect(dome?.role).toBe("adult");
+  });
 });

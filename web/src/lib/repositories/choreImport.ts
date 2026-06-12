@@ -1,3 +1,4 @@
+// Repository for importing the static household-chore catalogue into Task rows.
 import { PrismaClient } from "@/generated/prisma/client";
 
 import { buildChoreTasks } from "@/lib/services/chores";
@@ -13,7 +14,7 @@ const PEOPLE = [
 /** Creates the three household members if they are missing (idempotent). */
 async function ensurePeople(client: PrismaClient): Promise<void> {
   for (const person of PEOPLE) {
-    const existing = await client.person.findFirst({ where: { key: person.key } });
+    const existing = await client.person.findUnique({ where: { key: person.key } });
     if (!existing) {
       await client.person.create({ data: { ...person } });
     }
@@ -27,6 +28,10 @@ async function ensurePeople(client: PrismaClient): Promise<void> {
  * - existing title -> update definition fields only; dueDate/status/assignedToId
  *   are left untouched so live progress is preserved.
  * Idempotent and non-destructive (touches no other tasks/tables).
+ *
+ * Takes an explicit `client` (no `= prisma` default) on purpose: the standalone
+ * CLI (`prisma/importChores.ts`) and the tests pass their own PrismaClient, so
+ * this repo never imports the `@/lib/db` singleton.
  */
 export async function importChores(client: PrismaClient, today: Date): Promise<Summary> {
   await ensurePeople(client);
