@@ -12,6 +12,11 @@ import { getActiveProjectProgress } from "@/lib/repositories/projects";
 import { babyAge } from "@/lib/baby/age";
 import { BABY } from "@/lib/baby/profile";
 
+// Render at request time, not build time: the dashboard depends on the current
+// date (today's tasks, baby age) and live DB state. Without this, `npm run build`
+// statically prerenders `/` and freezes `new Date()` to the build moment.
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
