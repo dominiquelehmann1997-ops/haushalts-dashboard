@@ -8,5 +8,10 @@ termux-wake-lock 2>/dev/null || true
 
 cd "$(dirname "$0")/../web"
 
+# Heute faellige, noch unverteilte Aufgaben ueber die Fairness-Engine zuweisen.
+# Idempotent (ruehrt bereits zugewiesene Tasks nicht an); Fehler darf den Start
+# nicht blockieren.
+npm run plan:today || true
+
 # Produktions-Server (vorher 'npm run build' ausfuehren).
 HOST=0.0.0.0 npm run start -- -H 0.0.0.0 -p 3001
