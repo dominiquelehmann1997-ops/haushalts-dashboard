@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
-    "import:chores": "tsx prisma/importChores.ts"
+    "import:chores": "tsx prisma/importChores.ts",
+    "import:recipes": "tsx prisma/ingestRecipes.ts"
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.8.0",
