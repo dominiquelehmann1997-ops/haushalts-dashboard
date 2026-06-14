@@ -1,13 +1,14 @@
 import type { Dispatch, SetStateAction } from "react";
-import { HEUTE } from "@/lib/data";
 import { SunIcon, MoonIcon } from "@/components/icons";
 
 export function Header({
   dark,
   setDark,
+  todayLabel,
 }: {
   dark: boolean;
   setDark: Dispatch<SetStateAction<boolean>>;
+  todayLabel: { weekday: string; date: string };
 }) {
   return (
     <header className="flex items-center justify-between gap-4 mb-6">
@@ -21,7 +22,7 @@ export function Header({
           Heute<span className="text-emely">.</span>
         </h1>
         <p className="text-[14.5px] text-ink-soft dark:text-cream/55 mt-1.5">
-          {HEUTE.weekday}, {HEUTE.date} · Was ist dran — und wer macht was?
+          {todayLabel.weekday}, {todayLabel.date} · Was ist dran — und wer macht was?
         </p>
       </div>
       <div className="flex items-center gap-2 shrink-0">

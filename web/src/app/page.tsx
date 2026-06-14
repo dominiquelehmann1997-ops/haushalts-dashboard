@@ -21,6 +21,11 @@ export default async function Home() {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  const todayLabel = {
+    weekday: today.toLocaleDateString("de-DE", { weekday: "long" }),
+    date: today.toLocaleDateString("de-DE", { day: "numeric", month: "long" }),
+  };
+
   const [
     domeTasks,
     emelyTasks,
@@ -77,6 +82,7 @@ export default async function Home() {
       openTaskCount={openTaskCount}
       babyAgeBand={babyAgeBand}
       babyAgeLabel={babyAgeLabel}
+      todayLabel={todayLabel}
     />
   );
 }

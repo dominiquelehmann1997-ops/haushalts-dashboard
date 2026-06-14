@@ -77,8 +77,6 @@ export interface PersonStyle {
   fill: string;
 }
 
-export const HEUTE = { weekday: "Montag", date: "7. Juni" };
-
 export const weather = {
   temp: 18,
   label: "Bewölkt",

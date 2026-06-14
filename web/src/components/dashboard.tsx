@@ -42,6 +42,7 @@ export interface DashboardProps {
   openTaskCount: number;
   babyAgeBand: AgeBand;
   babyAgeLabel: string;
+  todayLabel: { weekday: string; date: string };
 }
 
 export default function Dashboard({
@@ -60,6 +61,7 @@ export default function Dashboard({
   openTaskCount,
   babyAgeBand,
   babyAgeLabel,
+  todayLabel,
 }: DashboardProps) {
   const [dark, setDark] = useState(false);
 
@@ -111,7 +113,7 @@ export default function Dashboard({
   return (
     <div className="min-h-screen w-full">
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-9">
-        <Header dark={dark} setDark={setDark} />
+        <Header dark={dark} setDark={setDark} todayLabel={todayLabel} />
 
         {/* HERO BAND */}
         <section className="rise" style={{ animationDelay: ".02s" }}>
