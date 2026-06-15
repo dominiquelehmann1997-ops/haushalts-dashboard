@@ -42,6 +42,7 @@ describe("mapCurrent", () => {
       lo: 10,
       rainFrom: "08:00",
       uvIndex: 4,
+      wind: 12,
     });
   });
 
@@ -67,5 +68,10 @@ describe("mapCurrent", () => {
   it("falls back to today's daily uv_index_max when current is absent", () => {
     const noCurrent = { ...openMeteoFixture, current: undefined };
     expect(mapCurrent(noCurrent).uvIndex).toBe(5);
+  });
+
+  it("mapCurrent liest die Windgeschwindigkeit aus current", () => {
+    const result = mapCurrent(openMeteoFixture);
+    expect(result.wind).toBe(12);
   });
 });
