@@ -84,7 +84,7 @@ export default function Dashboard({
   const emelyTasks = tasks.filter((t) => t.person === "emely");
 
   return (
-    <div className="h-[100dvh] w-full overflow-hidden flex flex-col gap-3 p-3 sm:p-4">
+    <div className="h-[100svh] w-full overflow-hidden flex flex-col gap-2.5 p-2.5 sm:p-3">
       {/* Zone 1 — Topbar */}
       <section className="h-[15%] min-h-0 grid grid-cols-1 sm:grid-cols-[2fr_1fr_1.5fr] gap-3">
         <div className="flex flex-col justify-center">
