@@ -188,8 +188,9 @@ export async function deferTask(
     where: { id },
     data: {
       status: "moved",
+      reason: null,
       dueDate: nextDay,
-      note: `auf ${nextDay.toLocaleDateString("de-DE", { weekday: "short", day: "numeric", month: "short" })} verschoben`,
+      note: nextDay.toLocaleDateString("de-DE", { weekday: "short", day: "numeric", month: "short" }),
     },
   });
 }
