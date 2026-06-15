@@ -3,14 +3,9 @@ import { weather as weatherFallback } from "@/lib/data";
 import { getCurrent } from "@/integrations/weather/openMeteo";
 import { getTasksByPerson, getOpenTaskCount } from "@/lib/repositories/tasks";
 import { getTodaysEvents } from "@/lib/repositories/calendar";
-import { getComputedSplit } from "@/lib/repositories/accounts";
-import { getActivePhase } from "@/lib/repositories/phase";
-import { getShoppingItems, getFreshShoppingState } from "@/lib/repositories/shopping";
-import { getWeekMealPlan, getDraftMealPlan, listRecipes } from "@/lib/repositories/meals";
+import { getWeekMealPlan } from "@/lib/repositories/meals";
 import { getNotes } from "@/lib/repositories/notes";
 import { getActiveProjectProgress } from "@/lib/repositories/projects";
-import { babyAge } from "@/lib/baby/age";
-import { BABY } from "@/lib/baby/profile";
 
 // Render at request time, not build time: the dashboard depends on the current
 // date (today's tasks, baby age) and live DB state. Without this, `npm run build`
@@ -26,35 +21,16 @@ export default async function Home() {
     date: today.toLocaleDateString("de-DE", { day: "numeric", month: "long" }),
   };
 
-  const [
-    domeTasks,
-    emelyTasks,
-    appointments,
-    split,
-    phase,
-    shopping,
-    fresh,
-    meals,
-    draft,
-    recipes,
-    notes,
-    project,
-    openTaskCount,
-  ] = await Promise.all([
-    getTasksByPerson("dome", today),
-    getTasksByPerson("emely", today),
-    getTodaysEvents(today),
-    getComputedSplit(),
-    getActivePhase(),
-    getShoppingItems(),
-    getFreshShoppingState(),
-    getWeekMealPlan(),
-    getDraftMealPlan(),
-    listRecipes(),
-    getNotes(),
-    getActiveProjectProgress(),
-    getOpenTaskCount(),
-  ]);
+  const [domeTasks, emelyTasks, appointments, meals, notes, project, openTaskCount] =
+    await Promise.all([
+      getTasksByPerson("dome", today),
+      getTasksByPerson("emely", today),
+      getTodaysEvents(today),
+      getWeekMealPlan(),
+      getNotes(),
+      getActiveProjectProgress(),
+      getOpenTaskCount(),
+    ]);
 
   let weather = weatherFallback;
   try {
@@ -63,25 +39,15 @@ export default async function Home() {
     weather = weatherFallback;
   }
 
-  const { ageBand: babyAgeBand, label: babyAgeLabel } = babyAge(BABY.birth, today);
-
   return (
     <Dashboard
       initialTasks={[...domeTasks, ...emelyTasks]}
-      initialShopping={shopping}
       weather={weather}
       appointments={appointments}
-      split={split}
-      phase={phase}
       meals={meals}
-      fresh={fresh}
-      draft={draft}
-      recipes={recipes}
       notes={notes}
       project={project}
       openTaskCount={openTaskCount}
-      babyAgeBand={babyAgeBand}
-      babyAgeLabel={babyAgeLabel}
       todayLabel={todayLabel}
     />
   );

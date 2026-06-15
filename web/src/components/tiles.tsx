@@ -1,23 +1,72 @@
+"use client";
+
+import { useRef, useState } from "react";
 import { PERSON, type Task, type Appointment } from "@/lib/data";
 import type { ActivePhase } from "@/lib/repositories/phase";
 import { Card, CardHead, PersonBadge } from "@/components/ui";
 import { CheckIcon, CalendarGlyph } from "@/components/icons";
 import { PhaseSwitch } from "@/components/PhaseSwitch";
+import { TaskActionMenu } from "@/components/TaskActionMenu";
+import { AddDoneInline } from "@/components/AddDoneInline";
 
-export function TaskRow({ task, onToggle }: { task: Task; onToggle: (id: string) => void }) {
+export function TaskRow({
+  task,
+  onToggle,
+  onDefer,
+  onFail,
+}: {
+  task: Task;
+  onToggle: (id: string) => void;
+  onDefer: (id: string) => void;
+  onFail: (id: string) => void;
+}) {
   const p = PERSON[task.person];
   const done = task.status === "done";
   const moved = task.status === "moved";
   const failed = task.status === "failed";
   const interactive = task.status === "open" || task.status === "done";
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const longPressed = useRef(false);
+
+  const startPress = () => {
+    if (!interactive) return;
+    longPressed.current = false;
+    timer.current = setTimeout(() => {
+      longPressed.current = true;
+      setMenuOpen(true);
+    }, 500);
+  };
+  const cancelPress = () => {
+    if (timer.current) clearTimeout(timer.current);
+  };
+  const handleClick = () => {
+    if (longPressed.current) {
+      longPressed.current = false;
+      return; // Long-Press hat Menü geöffnet — Tap nicht als Toggle werten
+    }
+    if (interactive) onToggle(task.id);
+  };
+
   return (
     <li
-      className={`group flex items-start gap-3 py-2.5 px-2 -mx-2 rounded-2xl transition-colors ${
+      className={`group relative flex items-start gap-3 py-2.5 px-2 -mx-2 rounded-2xl transition-colors ${
         interactive ? "hover:bg-cream/70 dark:hover:bg-white/[0.03] cursor-pointer" : ""
       }`}
-      onClick={interactive ? () => onToggle(task.id) : undefined}
+      onClick={handleClick}
+      onPointerDown={startPress}
+      onPointerUp={cancelPress}
+      onPointerLeave={cancelPress}
     >
+      {menuOpen && (
+        <TaskActionMenu
+          onDone={() => onToggle(task.id)}
+          onDefer={() => onDefer(task.id)}
+          onFail={() => onFail(task.id)}
+          onClose={() => setMenuOpen(false)}
+        />
+      )}
       {moved ? (
         <span className="mt-0.5 shrink-0 w-[22px] h-[22px] rounded-full grid place-items-center bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300 text-[13px]">
           ↻
@@ -80,17 +129,21 @@ export function TaskTile({
   tasks,
   sub,
   onToggle,
+  onDefer,
+  onFail,
 }: {
   person: "dome" | "emely";
   tasks: Task[];
   sub?: string;
   onToggle: (id: string) => void;
+  onDefer: (id: string) => void;
+  onFail: (id: string) => void;
 }) {
   const p = PERSON[person];
   const openCount = tasks.filter((t) => t.status === "open").length;
   const doneCount = tasks.filter((t) => t.status === "done").length;
   return (
-    <Card className={`relative overflow-hidden ring-1 ${p.ring}`}>
+    <Card className={`relative overflow-hidden ring-1 ${p.ring} h-full flex flex-col`}>
       <span className={`absolute left-0 top-6 bottom-6 w-[3px] rounded-r-full ${p.fill}`}></span>
       <CardHead
         eyebrow="Aufgaben · Heute"
@@ -98,14 +151,17 @@ export function TaskTile({
         title={p.name}
         sub={sub}
         right={
-          <span className={`shrink-0 text-[12px] font-semibold px-2.5 py-1 rounded-full ${p.soft} ${p.text}`}>
-            {openCount} offen
-          </span>
+          <div className="flex items-center gap-2">
+            <span className={`shrink-0 text-[12px] font-semibold px-2.5 py-1 rounded-full ${p.soft} ${p.text}`}>
+              {openCount} offen
+            </span>
+            <AddDoneInline person={person} />
+          </div>
         }
       />
-      <ul className="-my-1">
+      <ul className="-my-1 flex-1 min-h-0 overflow-y-auto">
         {tasks.map((t) => (
-          <TaskRow key={t.id} task={t} onToggle={onToggle} />
+          <TaskRow key={t.id} task={t} onToggle={onToggle} onDefer={onDefer} onFail={onFail} />
         ))}
       </ul>
       {doneCount > 0 && (
@@ -119,13 +175,13 @@ export function TaskTile({
 
 export function AppointmentsTile({ appointments }: { appointments: Appointment[] }) {
   return (
-    <Card>
+    <Card className="h-full flex flex-col">
       <CardHead
         eyebrow="Termine · Heute"
         title={`${appointments.length} Termine`}
         right={<CalendarGlyph />}
       />
-      <ul className="space-y-1">
+      <ul className="space-y-1 flex-1 min-h-0 overflow-y-auto">
         {appointments.map((a, i) => (
           <li
             key={a.id}

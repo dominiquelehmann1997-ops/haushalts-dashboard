@@ -3,7 +3,6 @@ import type { ProjectProgress } from "@/lib/repositories/projects";
 import { Card, CardHead } from "@/components/ui";
 import { CheckIcon } from "@/components/icons";
 import { BringSyncControl } from "@/components/BringSyncControl";
-import { MealPlanControl } from "@/components/MealPlanControl";
 
 export function ShoppingWidget({
   items,
@@ -93,9 +92,9 @@ export function MealReasonBadge({ reason, extraPortion }: { reason?: string | nu
 
 export function MealPlanWidget({ meals }: { meals: Meal[] }) {
   return (
-    <Card>
-      <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" right={<MealPlanControl />} />
-      <ul className="space-y-1.5">
+    <Card className="h-full flex flex-col">
+      <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" />
+      <ul className="space-y-1.5 flex-1 min-h-0 overflow-y-auto">
         {meals.map((m) => (
           <li
             key={m.day}
@@ -132,9 +131,9 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
 
 export function NotesWidget({ notes }: { notes: Note[] }) {
   return (
-    <Card>
+    <Card className="h-full flex flex-col">
       <CardHead eyebrow="Schwarzes Brett" title="Notizen" />
-      <ul className="space-y-2.5">
+      <ul className="space-y-2.5 flex-1 min-h-0 overflow-y-auto">
         {notes.map((n) => (
           <li
             key={n.id}
