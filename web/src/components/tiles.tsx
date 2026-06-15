@@ -123,7 +123,7 @@ export function TaskRow({
         </div>
         {moved && (
           <p className="text-[12.5px] text-amber-700/90 dark:text-amber-300/80 mt-0.5">
-            Verschoben{task.note ? ` · ${task.note}` : "…"}
+            Verschoben{task.note ? ` · ${task.note}` : " …"}
           </p>
         )}
         {task.sub && <p className="text-[12px] text-ink-faint mt-0.5">{task.sub}</p>}
