@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -7,6 +8,12 @@ describe("PWA manifest", () => {
   const manifest = JSON.parse(
     readFileSync(join(process.cwd(), "public", "manifest.webmanifest"), "utf-8"),
   );
+  const icons = manifest.icons as Array<{
+    src: string;
+    sizes: string;
+    type: string;
+    purpose?: string;
+  }>;
 
   it("is installable as a standalone app", () => {
     expect(manifest.display).toBe("standalone");
@@ -15,14 +22,33 @@ describe("PWA manifest", () => {
     expect(manifest.name.length).toBeGreaterThan(0);
   });
 
-  it("declares 192 and 512 icon sizes", () => {
-    const sizes = manifest.icons.map((i: { sizes: string }) => i.sizes);
-    expect(sizes).toContain("192x192");
-    expect(sizes).toContain("512x512");
+  it("declares 192 and 512 PNG icons", () => {
+    const png192 = icons.find(
+      (i) => i.sizes === "192x192" && i.type === "image/png",
+    );
+    const png512 = icons.find(
+      (i) => i.sizes === "512x512" && i.type === "image/png",
+    );
+    expect(png192).toBeDefined();
+    expect(png512).toBeDefined();
   });
 
-  it("declares a maskable icon", () => {
-    const purposes = manifest.icons.map((i: { purpose?: string }) => i.purpose ?? "");
-    expect(purposes.join(" ")).toContain("maskable");
+  it("declares a maskable PNG icon", () => {
+    const maskable = icons.find(
+      (i) => (i.purpose ?? "").includes("maskable") && i.type === "image/png",
+    );
+    expect(maskable).toBeDefined();
+  });
+
+  it("ships the referenced icon files", () => {
+    for (const icon of icons) {
+      expect(
+        existsSync(join(process.cwd(), "public", icon.src.replace(/^\//, ""))),
+        `missing icon file: ${icon.src}`,
+      ).toBe(true);
+    }
+    expect(
+      existsSync(join(process.cwd(), "public", "apple-icon-180.png")),
+    ).toBe(true);
   });
 });

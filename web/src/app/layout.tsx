@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
+import { ServiceWorkerRegister } from "./sw-register";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -22,7 +23,13 @@ export const metadata: Metadata = {
     "Ruhiges Familien-Dashboard — Aufgaben, Termine, Essensplan und Einkauf an einem Ort. Mental Load reduzieren.",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Cockpit", statusBarStyle: "default" },
-  icons: { icon: "/icon.svg", apple: "/icon.svg" },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-icon-180.png",
+  },
 };
 
 export const viewport: Viewport = {
@@ -37,7 +44,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de" className={`${display.variable} ${body.variable}`}>
-      <body className="font-body text-ink antialiased">{children}</body>
+      <body className="font-body text-ink antialiased">
+        <ServiceWorkerRegister />
+        {children}
+      </body>
     </html>
   );
 }
