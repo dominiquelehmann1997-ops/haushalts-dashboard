@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
+    "gen:icons": "node scripts/gen-icons.mjs",
     "import:chores": "tsx prisma/importChores.ts",
     "import:recipes": "tsx prisma/ingestRecipes.ts",
     "plan:today": "tsx prisma/planToday.ts"
@@ -33,6 +34,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
     "prisma": "^7.8.0",
+    "sharp": "^0.34.0",
     "tailwindcss": "^4",
     "tsx": "^4.22.4",
     "typescript": "^5",
