@@ -24,6 +24,7 @@ export const openMeteoFixture = {
     temperature_2m: 18.4,
     weather_code: 61,
     uv_index: 4.2,
+    wind_speed_10m: 12,
   },
   current_units: {
     temperature_2m: "°C",

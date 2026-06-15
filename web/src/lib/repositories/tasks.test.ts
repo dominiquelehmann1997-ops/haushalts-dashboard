@@ -3,7 +3,15 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { getOpenTaskCount, getTasksByPerson, getTasksForDay } from "./tasks";
+import { deferTask, getOpenTaskCount, getTasksByPerson, getTasksForDay } from "./tasks";
+
+/** Formats a Date as a local "YYYY-MM-DD" key, matching `DayForecast.date`. */
+function dateKey(date: Date): string {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
 
 describe("tasks repository", () => {
   let client: PrismaClient;
@@ -46,5 +54,64 @@ describe("tasks repository", () => {
   it("getOpenTaskCount counts standalone tasks with status 'open'", async () => {
     const count = await getOpenTaskCount(client);
     expect(count).toBe(3);
+  });
+
+  describe("deferTask", () => {
+    it("setzt Status moved und schiebt dueDate auf den nächsten Rhythmus-Tag", async () => {
+      const dayStart = new Date(today);
+      dayStart.setHours(0, 0, 0, 0);
+
+      const person = await client.person.findUniqueOrThrow({ where: { key: "dome" } });
+      const task = await client.task.create({
+        data: {
+          title: "Bad putzen (klein)",
+          type: "routine",
+          effort: 15,
+          rhythm: "weekly",
+          allowedPersons: "both",
+          status: "open",
+          dueDate: dayStart,
+          assignedToId: person.id,
+        },
+      });
+
+      await deferTask(task.id, dayStart, client);
+
+      const after = await client.task.findUniqueOrThrow({ where: { id: task.id } });
+      expect(after.status).toBe("moved");
+
+      const expected = new Date(dayStart);
+      expected.setDate(expected.getDate() + 7);
+      expect(dateKey(after.dueDate)).toBe(dateKey(expected));
+    });
+
+    it("schiebt eine Aufgabe ohne Rhythmus auf morgen", async () => {
+      const dayStart = new Date(today);
+      dayStart.setHours(0, 0, 0, 0);
+
+      const person = await client.person.findUniqueOrThrow({ where: { key: "emely" } });
+      const task = await client.task.create({
+        data: {
+          title: "Einmalige Aufgabe",
+          type: "todo",
+          effort: 10,
+          rhythm: null,
+          allowedPersons: "both",
+          status: "open",
+          dueDate: dayStart,
+          assignedToId: person.id,
+        },
+      });
+
+      await deferTask(task.id, dayStart, client);
+
+      const after = await client.task.findUniqueOrThrow({ where: { id: task.id } });
+      expect(after.status).toBe("moved");
+
+      const expected = new Date(dayStart);
+      expected.setDate(expected.getDate() + 1);
+      expect(dateKey(after.dueDate)).toBe(dateKey(expected));
+      expect(after.note).toBeTruthy();
+    });
   });
 });

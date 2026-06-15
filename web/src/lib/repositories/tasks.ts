@@ -9,6 +9,7 @@ import type { Task, TaskStatus } from "@/lib/domain";
 import type { PersonKey } from "@/lib/engine/types";
 import { dayBounds } from "@/lib/dates";
 import { recordCompletion } from "@/lib/engine/completion";
+import { nextSensibleDay } from "@/lib/services/taskDefer";
 
 type TaskRow = {
   id: string;
@@ -168,6 +169,28 @@ export async function assignTask(
     data: {
       assignedToId: person.id,
       dueDate: day,
+    },
+  });
+}
+
+/**
+ * Schiebt eine Aufgabe auf den nächsten sinnvollen Tag (Rhythmus, sonst morgen)
+ * und markiert sie als `moved`. `note` dokumentiert die Verschiebung in der UI.
+ */
+export async function deferTask(
+  id: string,
+  today: Date,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  const task = await client.task.findUniqueOrThrow({ where: { id } });
+  const nextDay = nextSensibleDay({ rhythm: task.rhythm }, today);
+  await client.task.update({
+    where: { id },
+    data: {
+      status: "moved",
+      reason: null,
+      dueDate: nextDay,
+      note: nextDay.toLocaleDateString("de-DE", { weekday: "short", day: "numeric", month: "short" }),
     },
   });
 }

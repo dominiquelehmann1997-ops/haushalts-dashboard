@@ -11,17 +11,17 @@ export function Header({
   todayLabel: { weekday: string; date: string };
 }) {
   return (
-    <header className="flex items-center justify-between gap-4 mb-6">
+    <header className="flex items-center justify-between gap-4">
       <div>
         <div className="flex items-center gap-2.5">
           <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-ink-faint">
             Unser Zuhause
           </span>
         </div>
-        <h1 className="font-display font-bold text-ink dark:text-cream tracking-tight leading-none text-[34px] sm:text-[42px] mt-1">
+        <h1 className="font-display font-bold text-ink dark:text-cream tracking-tight leading-none text-[26px] sm:text-[32px] mt-0.5">
           Heute<span className="text-emely">.</span>
         </h1>
-        <p className="text-[14.5px] text-ink-soft dark:text-cream/55 mt-1.5">
+        <p className="text-[13px] text-ink-soft dark:text-cream/55 mt-1">
           {todayLabel.weekday}, {todayLabel.date} · Was ist dran — und wer macht was?
         </p>
       </div>

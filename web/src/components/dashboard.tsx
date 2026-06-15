@@ -1,88 +1,60 @@
 "use client";
 
 import { useEffect, useState, useOptimistic, startTransition } from "react";
-import type {
-  Task,
-  Appointment,
-  ShoppingItem,
-  Meal,
-  DraftMeal,
-  RecipeOption,
-  Note,
-  FreshShoppingState,
-} from "@/lib/data";
+import type { Task, Appointment, Meal, Note } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
-import type { ActivePhase } from "@/lib/repositories/phase";
 import type { ProjectProgress } from "@/lib/repositories/projects";
-import type { AgeBand } from "@/lib/baby/types";
-import { toggleTaskAction } from "@/app/actions/tasks";
-import { toggleFreshnessAction, toggleShoppingAction } from "@/app/actions/shopping";
+import { toggleTaskAction, deferTaskAction, failTaskAction } from "@/app/actions/tasks";
 import { Header } from "@/components/header";
-import { TaskTile, AppointmentsTile, ElternzeitStripe } from "@/components/tiles";
-import { ShoppingWidget, MealPlanWidget, NotesWidget, WeekWidget } from "@/components/widgets";
-import { AddDoneEntry } from "@/components/AddDoneEntry";
-import { WeatherBabyTile } from "@/components/WeatherBabyTile";
-import { MealDraftPanel } from "@/components/MealDraftPanel";
-import { FreshShoppingControl } from "@/components/FreshShoppingControl";
-import { VaultIngestControl } from "@/components/VaultIngestControl";
+import { TaskTile, AppointmentsTile } from "@/components/tiles";
+import { MealPlanWidget, NotesWidget } from "@/components/widgets";
+import { Weather } from "@/components/Weather";
+import { TopbarStats } from "@/components/TopbarStats";
 
 export interface DashboardProps {
   initialTasks: Task[];
-  initialShopping: ShoppingItem[];
   weather: CurrentWeather;
   appointments: Appointment[];
-  split: { dome: number; emely: number };
-  phase: ActivePhase | null;
   meals: Meal[];
-  fresh: FreshShoppingState;
-  draft: DraftMeal[];
-  recipes: RecipeOption[];
   notes: Note[];
   project: ProjectProgress | null;
   openTaskCount: number;
-  babyAgeBand: AgeBand;
-  babyAgeLabel: string;
   todayLabel: { weekday: string; date: string };
 }
 
 export default function Dashboard({
   initialTasks,
-  initialShopping,
   weather,
   appointments,
-  split,
-  phase,
   meals,
-  fresh,
-  draft,
-  recipes,
   notes,
   project,
   openTaskCount,
-  babyAgeBand,
-  babyAgeLabel,
   todayLabel,
 }: DashboardProps) {
   const [dark, setDark] = useState(false);
 
-  // `useOptimistic` keeps the server props (`initialTasks`/`initialShopping`)
-  // as the source of truth — so when a Server Action revalidates the route
-  // (e.g. generating the meal plan adds recipe items to the shopping list),
-  // the new server data flows in live — while still applying an instant
-  // optimistic toggle during the pending transition.
-  const [tasks, toggleTaskOptimistic] = useOptimistic(
+  // `useOptimistic` keeps the server prop (`initialTasks`) as the source of
+  // truth — so when a Server Action revalidates the route, the new server
+  // data flows in live — while still applying an instant optimistic update
+  // during the pending transition.
+  type TaskOptimisticAction = { id: string; type: "toggle" | "defer" | "fail" };
+  const [tasks, applyTaskOptimistic] = useOptimistic(
     initialTasks,
-    (state: Task[], id: string) =>
-      state.map((t) =>
-        t.id === id && (t.status === "open" || t.status === "done")
-          ? { ...t, status: t.status === "open" ? "done" : "open" }
-          : t,
-      ),
-  );
-  const [shopping, toggleShopOptimistic] = useOptimistic(
-    initialShopping,
-    (state: ShoppingItem[], id: string) =>
-      state.map((i) => (i.id === id ? { ...i, done: !i.done } : i)),
+    (state: Task[], { id, type }: TaskOptimisticAction) =>
+      state.map((t) => {
+        if (t.id !== id) return t;
+        if (type === "toggle") {
+          return t.status === "open" || t.status === "done"
+            ? { ...t, status: t.status === "open" ? "done" : "open" }
+            : t;
+        }
+        if (type === "defer") {
+          return { ...t, status: "moved" };
+        }
+        // type === "fail"
+        return { ...t, status: "failed" };
+      }),
   );
 
   useEffect(() => {
@@ -91,19 +63,20 @@ export default function Dashboard({
 
   const toggleTask = (id: string) => {
     startTransition(async () => {
-      toggleTaskOptimistic(id);
+      applyTaskOptimistic({ id, type: "toggle" });
       await toggleTaskAction(id);
     });
   };
-  const toggleShop = (id: string) => {
+  const deferTask = (id: string) => {
     startTransition(async () => {
-      toggleShopOptimistic(id);
-      await toggleShoppingAction(id);
+      applyTaskOptimistic({ id, type: "defer" });
+      await deferTaskAction(id);
     });
   };
-  const toggleFreshness = (id: string) => {
+  const failTask = (id: string) => {
     startTransition(async () => {
-      await toggleFreshnessAction(id);
+      applyTaskOptimistic({ id, type: "fail" });
+      await failTaskAction(id, "geht heute nicht");
     });
   };
 
@@ -111,65 +84,36 @@ export default function Dashboard({
   const emelyTasks = tasks.filter((t) => t.person === "emely");
 
   return (
-    <div className="min-h-screen w-full">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-9">
-        <Header dark={dark} setDark={setDark} todayLabel={todayLabel} />
+    <div className="h-[100svh] w-full overflow-hidden flex flex-col gap-2.5 p-2.5 sm:p-3">
+      {/* Zone 1 — Topbar */}
+      <section className="h-[15%] min-h-0 grid grid-cols-1 sm:grid-cols-[2fr_1fr_1.5fr] gap-3">
+        <div className="flex flex-col justify-center">
+          <Header dark={dark} setDark={setDark} todayLabel={todayLabel} />
+        </div>
+        <TopbarStats openTaskCount={openTaskCount} project={project} />
+        <Weather weather={weather} />
+      </section>
 
-        {/* HERO BAND */}
-        <section className="rise" style={{ animationDelay: ".02s" }}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
-            <WeatherBabyTile weather={weather} ageBand={babyAgeBand} ageLabel={babyAgeLabel} />
-            <TaskTile
-              person="dome"
-              tasks={domeTasks}
-              onToggle={toggleTask}
-              sub="übernimmt heute den Großteil"
-            />
-            <TaskTile
-              person="emely"
-              tasks={emelyTasks}
-              onToggle={toggleTask}
-              sub="bewusst wenig · nur in den Schläfchen"
-            />
-            <AppointmentsTile appointments={appointments} />
-          </div>
-          <div className="mt-4 sm:mt-5">
-            <ElternzeitStripe split={split} phase={phase} />
-          </div>
-          <div className="mt-3 sm:mt-4">
-            <AddDoneEntry />
-          </div>
-        </section>
+      {/* Zone 2 — Primär */}
+      <section className="flex-1 min-h-0 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+        <div className="min-h-0 overflow-hidden">
+          <TaskTile person="dome" tasks={domeTasks} onToggle={toggleTask} onDefer={deferTask} onFail={failTask} />
+        </div>
+        <div className="min-h-0 overflow-hidden">
+          <TaskTile person="emely" tasks={emelyTasks} onToggle={toggleTask} onDefer={deferTask} onFail={failTask} />
+        </div>
+        <div className="min-h-0 overflow-hidden">
+          <AppointmentsTile appointments={appointments} />
+        </div>
+        <div className="min-h-0 overflow-hidden">
+          <MealPlanWidget meals={meals} />
+        </div>
+      </section>
 
-        {/* WIDGET ROW */}
-        <section className="mt-7 sm:mt-9 rise" style={{ animationDelay: ".12s" }}>
-          <div className="flex justify-end mb-2">
-            <VaultIngestControl />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 items-start">
-            <ShoppingWidget items={shopping} onToggle={toggleShop} onToggleFreshness={toggleFreshness} />
-            <MealPlanWidget meals={meals} />
-            <NotesWidget notes={notes} />
-            <WeekWidget openTaskCount={openTaskCount} project={project} />
-          </div>
-        </section>
-
-        {draft.length > 0 && (
-          <section className="mt-4 sm:mt-5">
-            <MealDraftPanel draft={draft} recipes={recipes} />
-          </section>
-        )}
-
-        {fresh.pendingItems.length > 0 && (
-          <section className="mt-4 sm:mt-5">
-            <FreshShoppingControl fresh={fresh} />
-          </section>
-        )}
-
-        <footer className="mt-10 text-center text-[12px] text-ink-faint/80">
-          Haushalts-Cockpit · ruhig statt vollgepackt · Mock-Demo
-        </footer>
-      </div>
+      {/* Zone 3 — Notizen (read-only) */}
+      <section className="h-[22%] min-h-0 overflow-hidden">
+        <NotesWidget notes={notes} />
+      </section>
     </div>
   );
 }

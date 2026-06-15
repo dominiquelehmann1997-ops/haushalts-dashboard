@@ -1,78 +1,5 @@
-import type { ShoppingItem, Meal, Note } from "@/lib/data";
-import type { ProjectProgress } from "@/lib/repositories/projects";
+import type { Meal, Note } from "@/lib/data";
 import { Card, CardHead } from "@/components/ui";
-import { CheckIcon } from "@/components/icons";
-import { BringSyncControl } from "@/components/BringSyncControl";
-import { MealPlanControl } from "@/components/MealPlanControl";
-
-export function ShoppingWidget({
-  items,
-  onToggle,
-  onToggleFreshness,
-}: {
-  items: ShoppingItem[];
-  onToggle: (id: string) => void;
-  onToggleFreshness: (id: string) => void;
-}) {
-  const left = items.filter((i) => !i.done).length;
-  return (
-    <Card>
-      <CardHead
-        eyebrow="Einkaufsliste"
-        title={`${left} Artikel offen`}
-        right={<BringSyncControl items={items} />}
-      />
-      <ul className="-mx-1.5">
-        {items.map((item) => (
-          <li
-            key={item.id}
-            onClick={() => onToggle(item.id)}
-            className="group flex items-center gap-3 px-1.5 py-2 rounded-xl hover:bg-cream/70 dark:hover:bg-white/[0.03] cursor-pointer transition-colors"
-          >
-            <span
-              className={`shrink-0 w-[20px] h-[20px] rounded-md grid place-items-center border-2 transition-all ${
-                item.done
-                  ? "bg-dome border-transparent text-white"
-                  : "border-ink-faint/40 group-hover:border-ink-faint text-transparent"
-              }`}
-            >
-              <CheckIcon size={11} />
-            </span>
-            <span
-              className={`text-[14.5px] flex-1 ${
-                item.done ? "line-through text-ink-faint dark:text-cream/35" : "text-ink dark:text-cream/85"
-              }`}
-            >
-              {item.text}
-            </span>
-            {item.category && (
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onToggleFreshness(item.id);
-                }}
-                title="Haltbarkeit umschalten — die Korrektur wird für diese Zutat gemerkt"
-                className={`shrink-0 text-[10.5px] font-semibold px-2 py-0.5 rounded-full transition-colors ${
-                  item.category === "frisch"
-                    ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-500/25"
-                    : "bg-cream text-ink-soft dark:bg-white/10 dark:text-cream/70 hover:bg-cream/80 dark:hover:bg-white/15"
-                }`}
-              >
-                {item.category}
-              </button>
-            )}
-            {item.meal && (
-              <span title="Zutat aus dem Essensplan" className="text-[12px] opacity-70">
-                🍽️
-              </span>
-            )}
-          </li>
-        ))}
-      </ul>
-    </Card>
-  );
-}
 
 export function MealReasonBadge({ reason, extraPortion }: { reason?: string | null; extraPortion?: boolean }) {
   if (!reason) return null;
@@ -93,9 +20,9 @@ export function MealReasonBadge({ reason, extraPortion }: { reason?: string | nu
 
 export function MealPlanWidget({ meals }: { meals: Meal[] }) {
   return (
-    <Card>
-      <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" right={<MealPlanControl />} />
-      <ul className="space-y-1.5">
+    <Card className="h-full flex flex-col">
+      <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" />
+      <ul className="space-y-1.5 flex-1 min-h-0 overflow-y-auto">
         {meals.map((m) => (
           <li
             key={m.day}
@@ -132,9 +59,9 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
 
 export function NotesWidget({ notes }: { notes: Note[] }) {
   return (
-    <Card>
+    <Card className="h-full flex flex-col">
       <CardHead eyebrow="Schwarzes Brett" title="Notizen" />
-      <ul className="space-y-2.5">
+      <ul className="space-y-2.5 flex-1 min-h-0 overflow-y-auto">
         {notes.map((n) => (
           <li
             key={n.id}
@@ -145,54 +72,6 @@ export function NotesWidget({ notes }: { notes: Note[] }) {
           </li>
         ))}
       </ul>
-    </Card>
-  );
-}
-
-export function WeekWidget({
-  openTaskCount,
-  project,
-}: {
-  openTaskCount: number;
-  project: ProjectProgress | null;
-}) {
-  return (
-    <Card>
-      <CardHead eyebrow="Wochenübersicht" title="Stand der Woche" />
-      <div className="flex items-center gap-4 p-3.5 rounded-2xl bg-cream/60 dark:bg-white/[0.03] mb-4">
-        <span className="font-display font-semibold text-[34px] leading-none text-ink dark:text-cream tabular-nums">
-          {openTaskCount}
-        </span>
-        <span className="text-[13.5px] text-ink-soft dark:text-cream/55 leading-snug">
-          offene Aufgaben
-          <br />
-          über die Woche verteilt
-        </span>
-      </div>
-      {project && (
-        <div className="p-3.5 rounded-2xl ring-1 ring-dome/20 bg-dome-tint dark:bg-dome/10">
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-2 min-w-0">
-              <span className="text-[15px]">{project.icon}</span>
-              <span className="text-[13.5px] font-semibold text-ink dark:text-cream/90 truncate">
-                {project.title}
-              </span>
-            </div>
-            <span className="text-[12px] font-semibold text-dome-deep dark:text-dome shrink-0">
-              {project.done}/{project.total}
-            </span>
-          </div>
-          <div className="h-2.5 rounded-full bg-white dark:bg-white/10 overflow-hidden">
-            <div
-              className="h-full rounded-full bg-dome transition-all duration-700"
-              style={{ width: project.pct + "%" }}
-            ></div>
-          </div>
-          <p className="text-[11.5px] text-ink-faint mt-2">
-            Laufendes Projekt · {project.pct}% geschafft
-          </p>
-        </div>
-      )}
     </Card>
   );
 }
