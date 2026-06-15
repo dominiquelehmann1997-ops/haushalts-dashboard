@@ -8,7 +8,7 @@
 import { revalidatePath } from "next/cache";
 
 import { prisma } from "@/lib/db";
-import { setTaskStatus } from "@/lib/repositories/tasks";
+import { deferTask, setTaskStatus } from "@/lib/repositories/tasks";
 
 /** Toggles a task between "open" and "done"; other statuses are a no-op. */
 export async function toggleTaskAction(id: string): Promise<void> {
@@ -23,9 +23,11 @@ export async function toggleTaskAction(id: string): Promise<void> {
   revalidatePath("/");
 }
 
-/** Marks a task as "moved" with a reason (e.g. weather/availability deferral). */
-export async function deferTaskAction(id: string, reason: string): Promise<void> {
-  await setTaskStatus(id, "moved", reason);
+/** Schiebt eine Aufgabe auf den nächsten sinnvollen Tag (Status "moved"). */
+export async function deferTaskAction(id: string): Promise<void> {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  await deferTask(id, today);
   revalidatePath("/");
 }
 
