@@ -36,16 +36,25 @@ export default function Dashboard({
 
   // `useOptimistic` keeps the server prop (`initialTasks`) as the source of
   // truth — so when a Server Action revalidates the route, the new server
-  // data flows in live — while still applying an instant optimistic toggle
+  // data flows in live — while still applying an instant optimistic update
   // during the pending transition.
-  const [tasks, toggleTaskOptimistic] = useOptimistic(
+  type TaskOptimisticAction = { id: string; type: "toggle" | "defer" | "fail" };
+  const [tasks, applyTaskOptimistic] = useOptimistic(
     initialTasks,
-    (state: Task[], id: string) =>
-      state.map((t) =>
-        t.id === id && (t.status === "open" || t.status === "done")
-          ? { ...t, status: t.status === "open" ? "done" : "open" }
-          : t,
-      ),
+    (state: Task[], { id, type }: TaskOptimisticAction) =>
+      state.map((t) => {
+        if (t.id !== id) return t;
+        if (type === "toggle") {
+          return t.status === "open" || t.status === "done"
+            ? { ...t, status: t.status === "open" ? "done" : "open" }
+            : t;
+        }
+        if (type === "defer") {
+          return { ...t, status: "moved" };
+        }
+        // type === "fail"
+        return { ...t, status: "failed" };
+      }),
   );
 
   useEffect(() => {
@@ -54,17 +63,19 @@ export default function Dashboard({
 
   const toggleTask = (id: string) => {
     startTransition(async () => {
-      toggleTaskOptimistic(id);
+      applyTaskOptimistic({ id, type: "toggle" });
       await toggleTaskAction(id);
     });
   };
   const deferTask = (id: string) => {
     startTransition(async () => {
+      applyTaskOptimistic({ id, type: "defer" });
       await deferTaskAction(id);
     });
   };
   const failTask = (id: string) => {
     startTransition(async () => {
+      applyTaskOptimistic({ id, type: "fail" });
       await failTaskAction(id, "geht heute nicht");
     });
   };

@@ -1,11 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PERSON, type Task, type Appointment } from "@/lib/data";
-import type { ActivePhase } from "@/lib/repositories/phase";
 import { Card, CardHead, PersonBadge } from "@/components/ui";
 import { CheckIcon, CalendarGlyph } from "@/components/icons";
-import { PhaseSwitch } from "@/components/PhaseSwitch";
 import { TaskActionMenu } from "@/components/TaskActionMenu";
 import { AddDoneInline } from "@/components/AddDoneInline";
 
@@ -27,14 +25,22 @@ export function TaskRow({
   const interactive = task.status === "open" || task.status === "done";
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const longPressed = useRef(false);
+  const liRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => () => {
+    if (timer.current) clearTimeout(timer.current);
+  }, []);
 
   const startPress = () => {
     if (!interactive) return;
     longPressed.current = false;
     timer.current = setTimeout(() => {
       longPressed.current = true;
+      const rect = liRef.current?.getBoundingClientRect();
+      setMenuPosition(rect ? { x: rect.left, y: rect.bottom } : { x: 0, y: 0 });
       setMenuOpen(true);
     }, 500);
   };
@@ -51,6 +57,7 @@ export function TaskRow({
 
   return (
     <li
+      ref={liRef}
       className={`group relative flex items-start gap-3 py-2.5 px-2 -mx-2 rounded-2xl transition-colors ${
         interactive ? "hover:bg-cream/70 dark:hover:bg-white/[0.03] cursor-pointer" : ""
       }`}
@@ -61,6 +68,7 @@ export function TaskRow({
     >
       {menuOpen && (
         <TaskActionMenu
+          position={menuPosition}
           onDone={() => onToggle(task.id)}
           onDefer={() => onDefer(task.id)}
           onFail={() => onFail(task.id)}
@@ -115,7 +123,7 @@ export function TaskRow({
         </div>
         {moved && (
           <p className="text-[12.5px] text-amber-700/90 dark:text-amber-300/80 mt-0.5">
-            Verschoben · {task.note}
+            Verschoben{task.note ? ` · ${task.note}` : "…"}
           </p>
         )}
         {task.sub && <p className="text-[12px] text-ink-faint mt-0.5">{task.sub}</p>}
@@ -211,96 +219,5 @@ export function AppointmentsTile({ appointments }: { appointments: Appointment[]
         ))}
       </ul>
     </Card>
-  );
-}
-
-export function ElternzeitStripe({
-  split,
-  phase,
-}: {
-  split: { dome: number; emely: number };
-  phase: ActivePhase | null;
-}) {
-  const isElternzeit = phase?.mode !== "normal";
-
-  return (
-    <div className="rounded-xl2 bg-gradient-to-r from-emely-tint via-white to-dome-tint dark:from-emely/10 dark:via-[#26241F] dark:to-dome/10 shadow-card p-5 sm:p-6 ring-1 ring-black/[0.04] dark:ring-white/5">
-      <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
-        <div className="lg:w-[38%] shrink-0">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="relative flex h-2.5 w-2.5 shrink-0">
-              {isElternzeit && (
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-dome/40"></span>
-              )}
-              <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isElternzeit ? "bg-dome" : "bg-ink-faint"}`}></span>
-            </span>
-            <span
-              className={`whitespace-nowrap text-[11px] font-semibold tracking-[0.14em] uppercase ${
-                isElternzeit ? "text-dome-deep dark:text-dome" : "text-ink-faint"
-              }`}
-            >
-              {isElternzeit ? "Elternzeit-Modus aktiv" : "Normal-Modus"}
-            </span>
-          </div>
-          <p className="text-[14.5px] leading-relaxed text-ink-soft dark:text-cream/60">
-            {isElternzeit ? (
-              <>
-                <span className="font-semibold text-ink dark:text-cream/90">
-                  Dome übernimmt aktuell den Großteil.
-                </span>{" "}
-                Emely ist den Tag über mit der Kleinen zuhause — Betreuung ist auch Arbeit.
-                Hausarbeit landet bewusst nicht automatisch bei ihr.
-              </>
-            ) : (
-              <>
-                <span className="font-semibold text-ink dark:text-cream/90">
-                  Beide teilen sich die Woche.
-                </span>{" "}
-                Keine besondere Lebensphase aktuell — die Aufteilung orientiert sich am
-                gemeinsamen Zielwert unten.
-              </>
-            )}
-          </p>
-        </div>
-
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center justify-between gap-3 mb-2">
-            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-faint">
-              Aufgaben-Aufteilung · diese Woche
-            </div>
-            <PhaseSwitch phase={phase} />
-          </div>
-          <div className="flex items-center justify-between text-[12.5px] font-semibold mb-2">
-            <span className="flex items-center gap-1.5 text-dome-deep dark:text-dome">
-              <span className="w-2 h-2 rounded-full bg-dome"></span>Dome {split.dome}%
-            </span>
-            <span className="flex items-center gap-1.5 text-emely-deep dark:text-emely">
-              Emely {split.emely}%<span className="w-2 h-2 rounded-full bg-emely"></span>
-            </span>
-          </div>
-          <div className="h-4 rounded-full overflow-hidden flex bg-black/5 dark:bg-white/10 shadow-inner">
-            <div
-              className="bg-dome h-full flex items-center justify-start pl-2.5 transition-all duration-700"
-              style={{ width: split.dome + "%" }}
-            >
-              <span className="text-[10px] font-bold text-white/90 tracking-wide">DOME</span>
-            </div>
-            <div
-              className="bg-emely h-full flex items-center justify-end pr-2.5 transition-all duration-700"
-              style={{ width: split.emely + "%" }}
-            >
-              <span className="text-[10px] font-bold text-white/90 tracking-wide">EMELY</span>
-            </div>
-          </div>
-          <p className="text-[12px] text-ink-faint mt-2">
-            {isElternzeit
-              ? "Ziel ist nicht 50/50 — sondern fair zur aktuellen Lebenssituation."
-              : phase
-                ? `Ziel: Dome ${phase.targetDome}% / Emely ${phase.targetEmely}% — fair zur aktuellen Lebenssituation.`
-                : "Ziel ist nicht 50/50 — sondern fair zur aktuellen Lebenssituation."}
-          </p>
-        </div>
-      </div>
-    </div>
   );
 }
