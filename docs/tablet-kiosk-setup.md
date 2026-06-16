@@ -1,9 +1,10 @@
 # Tablet Kiosk Autostart
 
-Goal: on boot the tablet starts the dashboard server + Tailscale automatically,
-and Fully Kiosk Browser opens the dashboard fullscreen with the screen kept on.
+Goal: on boot the tablet starts the dashboard server + Cloudflare tunnel
+automatically, and Fully Kiosk Browser opens the dashboard fullscreen with the
+screen kept on.
 
-Prerequisite: Tailscale set up per [tablet-remote-access.md](./tablet-remote-access.md),
+Prerequisite: Cloudflare tunnel set up per [tablet-remote-access.md](./tablet-remote-access.md),
 and a production build exists (`cd web && npx next build --webpack`).
 
 ## 1. Server autostart (Termux:Boot)
@@ -19,15 +20,17 @@ and a production build exists (`cd web && npx next build --webpack`).
 3. Disable battery optimization for Termux and Termux:Boot (Android Settings →
    Apps → … → Battery → Unrestricted) so Android does not kill them.
 
-On the next reboot the script runs: wake-lock → tailscaled → dashboard →
-`tailscale serve`. Logs land in `~/dashboard.log` and `~/tailscaled.log`.
+On the next reboot the script runs: wake-lock → dashboard → wait for `:3001` →
+`cloudflared tunnel run cockpit`. Logs land in `~/dashboard.log` and
+`~/cloudflared.log`.
 
 ## 2. Display autostart (Fully Kiosk Browser)
 
 1. Install **Fully Kiosk Browser** (free tier is enough).
 2. Settings:
-   - **Start URL:** `https://<tablet>.<tailnet>.ts.net` (the MagicDNS HTTPS URL
-     from the remote-access doc).
+   - **Start URL:** `https://cockpit.domelehmann.org` (the Cloudflare HTTPS URL
+     from the remote-access doc). First load passes the Cloudflare Access login
+     once; Fully keeps the session cookie afterwards.
    - **Web Content → Autoplay / fullscreen:** enable **Fullscreen**.
    - **Device Management → Keep Screen On:** ON.
    - **Device Management → Screen Off Timer:** 0 (never).
@@ -47,8 +50,8 @@ are up. No manual intervention needed.
 1. Reboot the tablet.
 2. Within ~1 minute the dashboard should appear fullscreen (no browser toolbar),
    screen staying on.
-3. From the phone (anywhere on the tailnet), open the MagicDNS HTTPS URL and
-   confirm it loads; install via **Add to Home Screen**.
+3. From the phone (anywhere), open `https://cockpit.domelehmann.org`, pass the
+   Access login once, confirm it loads; install via **Add to Home Screen**.
 
 ## Troubleshooting
 

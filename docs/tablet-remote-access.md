@@ -1,73 +1,123 @@
-# Tablet Remote Access via Tailscale
+# Tablet Remote Access via Cloudflare Tunnel
 
 Goal: reach the dashboard from the phone anywhere, over HTTPS, without exposing
-it publicly. The tablet runs Tailscale in Termux (no root, userspace networking)
-and `tailscale serve` provides a real HTTPS cert on the MagicDNS name, proxying
-to the local Next.js server on `127.0.0.1:3001`. SQLite stays local — no DB
-migration.
+it publicly. The tablet runs a Cloudflare **named tunnel** (`cloudflared`, no
+root, fully userspace) that connects out to Cloudflare's edge and proxies the
+hostname `cockpit.domelehmann.org` to the local Next.js server on
+`localhost:3001`. **Cloudflare Access** gates the hostname so only one Google
+identity can reach it. SQLite stays local — no DB migration.
+
+> Why not Tailscale? The tablet is **Android 16** with no root. `tailscaled`
+> crashes on start with `netmon.New: route ip+net: netlinkrib: permission
+> denied` — Android 13+ blocks netlink for non-root apps. cloudflared needs no
+> netlink, so it works where Tailscale cannot.
 
 ## One-time account setup (from zero)
 
-1. On the phone, install the **Tailscale** app from the store.
-2. Open it, **Sign up**, choose **Continue with Google** (your Gmail). This
-   creates the tailnet and authorizes the phone.
-3. In the [admin console](https://login.tailscale.com/admin):
-   - **DNS → MagicDNS:** Enable.
-   - **DNS → HTTPS Certificates:** Enable.
-   Note the tailnet name shown, e.g. `tail1234.ts.net`.
+1. A domain on a **Cloudflare** account (here: `domelehmann.org`), nameservers
+   pointed at Cloudflare so it manages DNS.
+2. Cloudflare **Zero Trust** enabled on the account (free plan is enough) for
+   Access — set up in step *Lock it down* below.
 
 ## Tablet setup (Termux, no root)
 
 SSH in: `ssh -p 8022 u0_a353@192.168.178.91`
 
 ```bash
-pkg update && pkg install tailscale
+pkg update && pkg install cloudflared
 
-# Start the daemon in userspace mode (no root). Keep it running in the
-# background; on real use this is launched from the boot script (see kiosk doc).
-tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
+# 1. Authorize this machine against your Cloudflare account. Prints a URL —
+#    open it, pick the domain (domelehmann.org), Authorize. Writes
+#    ~/.cloudflared/cert.pem.
+cloudflared tunnel login
 
-# Authorize this device — prints a login URL. Open it, sign in with the SAME
-# Google account, approve the tablet.
-tailscale up
+# 2. Create the named tunnel. Writes ~/.cloudflared/<UUID>.json (the tunnel
+#    credentials — keep secret).
+cloudflared tunnel create cockpit
 
-# Confirm the tablet's MagicDNS name (e.g. tablet.tail1234.ts.net):
-tailscale status
+# 3. Route the hostname to this tunnel (creates a proxied CNAME in DNS).
+cloudflared tunnel route dns cockpit cockpit.domelehmann.org
 ```
 
-## Expose the dashboard over HTTPS
+Then write `~/.cloudflared/config.yml` (use the UUID printed by `create`):
 
-With the Next.js prod server already running on `127.0.0.1:3001`:
+```yaml
+tunnel: <UUID>
+credentials-file: /data/data/com.termux/files/home/.cloudflared/<UUID>.json
+ingress:
+  - hostname: cockpit.domelehmann.org
+    service: http://localhost:3001
+  - service: http_status:404
+```
+
+Validate: `cloudflared tunnel ingress validate` → `OK`.
+
+## Run the tunnel
+
+With the Next.js prod server already running on `localhost:3001`:
 
 ```bash
-tailscale serve --bg https / http://127.0.0.1:3001
-tailscale serve status   # shows the https://<tablet>.<tailnet>.ts.net URL
+cloudflared --no-autoupdate --logfile ~/cloudflared.log tunnel run cockpit
 ```
 
-The dashboard is now reachable from any device in the tailnet at
-`https://<tablet>.<tailnet>.ts.net`.
+The log should show four `Registered tunnel connection` lines (two Frankfurt,
+two Düsseldorf edge colos). The dashboard is then reachable at
+`https://cockpit.domelehmann.org`.
+
+On the tablet this is launched in the background and survives SSH disconnect /
+Doze the same way the dashboard server is — see the boot script
+([scripts/tablet-boot.sh](../scripts/tablet-boot.sh)) and
+[tablet-kiosk-setup.md](./tablet-kiosk-setup.md). The persistence trick:
+
+```bash
+# Launch + verify in ONE ssh session (a detached process can die if the flaky
+# ssh channel closes mid-spawn). wake-lock + setsid + </dev/null survives.
+setsid bash ~/run-tunnel.sh >/dev/null 2>&1 </dev/null &
+sleep 12 && tail -n 20 ~/cloudflared.log   # expect: Registered tunnel connection
+```
+
+## Lock it down — Cloudflare Access (mandatory)
+
+Until Access is configured the hostname is **public**. Set it up immediately:
+
+1. Open [Zero Trust](https://one.dash.cloudflare.com) → your account (pick a
+   team name + free plan on first use).
+2. **Access → Applications → Add an application → Self-hosted.**
+3. Name `Cockpit`; Session Duration e.g. `1 month`; Public hostname
+   `cockpit` + `domelehmann.org`.
+4. Policy: name `Only me`, action **Allow**, Include → **Emails** →
+   `dominique.lehmann1997@gmail.com`.
+5. Add the application.
+6. **Login method:** Google (Settings → Authentication → Login methods → add
+   Google), or **One-time PIN** (no setup — emails a code) as a simpler default.
+
+Verify the gate: `curl -I https://cockpit.domelehmann.org/` from outside should
+**302/redirect to `*.cloudflareaccess.com`**, not serve the dashboard.
 
 ## Why HTTPS matters here
 
-The PWA service worker only registers in a **secure context**. `http://100.x.x.x`
-(the raw Tailscale IP) is not a secure context, so SW + reliable install would
-break. The MagicDNS HTTPS URL is a proper secure context → install + standalone
-work from the phone anywhere.
+The PWA service worker only registers in a **secure context**.
+`https://cockpit.domelehmann.org` is a proper secure context → SW + install +
+standalone work from the phone anywhere. (The tablet itself can also install via
+`http://localhost:3001`, since localhost is a secure context.)
 
 ## Notes
 
 - No Next.js change needed: production `next start` does not restrict the `Host`
-  header (that is a dev-server concern), and `serve` maps root `/`, so the
-  manifest `start_url: "/"` stays valid.
-- Nothing is exposed publicly — only devices in your tailnet can reach it.
-- The phone install: open the MagicDNS HTTPS URL in the phone browser → browser
-  menu → **Add to Home Screen / Install app**.
+  header (that is a dev-server concern), and ingress maps `/`, so the manifest
+  `start_url: "/"` stays valid.
+- Nothing is exposed publicly once Access is on — only your authenticated
+  identity reaches it; the origin is never directly addressable.
+- The phone install: open `https://cockpit.domelehmann.org`, pass the Access
+  login once, then browser menu → **Add to Home Screen / Install app**.
 
 ## Troubleshooting
 
-- `tailscale serve` complains HTTPS is not available → re-check **HTTPS
-  Certificates** is enabled in the admin console and MagicDNS is on.
-- Cert provisioning can take a few seconds on first request; retry the URL.
-- If userspace `serve` misbehaves, fall back to plain reachability via the
-  MagicDNS name on port 3001 (`http://<tablet>.<tailnet>.ts.net:3001`) for
-  quick checks — but the PWA install needs the HTTPS `serve` path.
+- External request returns **530** (Cloudflare 1033) → the tunnel is not
+  connected. Check `~/cloudflared.log` for `Registered tunnel connection`; the
+  detached process may have died on a flaky ssh exit — relaunch + verify in one
+  session (see above).
+- `tunnel login` prints `Failed to fetch resource` → no domain selected /
+  authorized on the account; redo the login and pick `domelehmann.org`.
+- Login URL but no `cert.pem` written → authorize step not completed in the
+  browser; the `cloudflared tunnel login` process waits until you do.
