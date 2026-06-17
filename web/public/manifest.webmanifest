@@ -4,7 +4,6 @@
   "description": "Familien-Dashboard — Aufgaben, Termine, Essensplan und Einkauf.",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "landscape",
   "background_color": "#0b0f14",
   "theme_color": "#0f766e",
   "icons": [

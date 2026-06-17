@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   title: "Haushalts-Cockpit · Heute",
   description:
     "Ruhiges Familien-Dashboard — Aufgaben, Termine, Essensplan und Einkauf an einem Ort. Mental Load reduzieren.",
-  manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Cockpit", statusBarStyle: "default" },
   icons: {
     icon: [
@@ -44,6 +43,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de" className={`${display.variable} ${body.variable}`}>
+      <head>
+        <link rel="manifest" href="/manifest.webmanifest" crossOrigin="use-credentials" />
+      </head>
       <body className="font-body text-ink antialiased">
         <ServiceWorkerRegister />
         {children}
