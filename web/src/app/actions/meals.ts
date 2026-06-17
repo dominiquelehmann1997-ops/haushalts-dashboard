@@ -8,6 +8,7 @@
 
 import { revalidatePath } from "next/cache";
 
+import { sendToAdults } from "@/lib/services/pushNotify";
 import { generateWeekPlan } from "@/lib/services/mealPlanner";
 import { deriveDayConstraints } from "@/lib/services/mealConstraints";
 import {
@@ -51,6 +52,14 @@ export async function generatePlanAction(weekStartISO: string): Promise<void> {
   await generateWeekPlan(weekStart, {
     preferSimple: phase?.mode === "elternzeit",
     constraints,
+  });
+
+  // Roadmap C2: Beide Handys benachrichtigen, dass ein Entwurf bereitliegt.
+  // Non-fatal — ein Push-Fehler darf die Entwurfserzeugung nicht scheitern lassen.
+  await sendToAdults({
+    title: "Essensplan-Entwurf bereit 🍽️",
+    body: "Antippen zum Abnicken oder Ändern.",
+    url: "/",
   });
 
   revalidatePath("/");
