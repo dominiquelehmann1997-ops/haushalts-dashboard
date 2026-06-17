@@ -17,7 +17,9 @@ describe("service worker", () => {
     expect(existsSync(join(process.cwd(), "public", "offline.html"))).toBe(true);
   });
 
-  it("does not implement push notifications (out of scope)", () => {
-    expect(sw).not.toContain('addEventListener("push"');
+  it("implements push and notificationclick handlers", () => {
+    expect(sw).toContain('addEventListener("push"');
+    expect(sw).toContain('addEventListener("notificationclick"');
+    expect(sw).toContain("showNotification");
   });
 });
