@@ -16,7 +16,7 @@
 - Create: `web/src/app/(mobile)/layout.tsx`
 - Create: `web/src/components/mobile/MobileNavBar.tsx`
 
-- [ ] **Step 1: Write `MobileNavBar` Component**
+- [x] **Step 1: Write `MobileNavBar` Component**
 Implementiere die Navigation mit 4 Reitern (Essen, Aufgaben, Notizen, Einstellungen).
 ```tsx
 import Link from "next/link";
@@ -34,7 +34,7 @@ export function MobileNavBar() {
 }
 ```
 
-- [ ] **Step 2: Create Mobile Layout**
+- [x] **Step 2: Create Mobile Layout**
 Erstelle das Layout für alle `/mobile` Routen.
 ```tsx
 import { MobileNavBar } from "@/components/mobile/MobileNavBar";
@@ -54,7 +54,7 @@ export default function MobileLayout({ children }: { children: React.ReactNode }
 }
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 ```bash
 git add web/src/app/\(mobile\)/layout.tsx web/src/components/mobile/MobileNavBar.tsx
 git commit -m "feat(mobile): add isolated mobile layout and bottom navigation"
@@ -66,7 +66,7 @@ git commit -m "feat(mobile): add isolated mobile layout and bottom navigation"
 - Create: `web/src/app/(mobile)/mobile/page.tsx`
 - Create: `web/src/app/(mobile)/mobile/meals/page.tsx`
 
-- [ ] **Step 1: Add `/mobile` redirect**
+- [x] **Step 1: Add `/mobile` redirect**
 ```tsx
 import { redirect } from "next/navigation";
 
@@ -75,7 +75,7 @@ export default function MobileRoot() {
 }
 ```
 
-- [ ] **Step 2: Create Mobile Meals Page**
+- [x] **Step 2: Create Mobile Meals Page**
 ```tsx
 import { MealDraftPanel } from "@/components/MealDraftPanel";
 
@@ -90,7 +90,7 @@ export default function MobileMealsPage() {
 }
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 ```bash
 git add web/src/app/\(mobile\)/mobile/page.tsx web/src/app/\(mobile\)/mobile/meals/page.tsx
 git commit -m "feat(mobile): add meals interface and root redirect"
@@ -103,7 +103,7 @@ git commit -m "feat(mobile): add meals interface and root redirect"
 - Create: `web/src/app/(mobile)/mobile/notes/page.tsx`
 - Create: `web/src/app/(mobile)/mobile/settings/page.tsx`
 
-- [ ] **Step 1: Create Placeholder Pages**
+- [x] **Step 1: Create Placeholder Pages**
 Erstelle simple Platzhalter für die verbleibenden Navigationspunkte (analog zu diesem Beispiel):
 ```tsx
 export default function MobileTasksPage() {
@@ -116,7 +116,7 @@ export default function MobileTasksPage() {
 }
 ```
 
-- [ ] **Step 2: Commit**
+- [x] **Step 2: Commit**
 ```bash
 git add web/src/app/\(mobile\)/mobile/tasks/page.tsx web/src/app/\(mobile\)/mobile/notes/page.tsx web/src/app/\(mobile\)/mobile/settings/page.tsx
 git commit -m "feat(mobile): add placeholder pages for tasks, notes, settings"

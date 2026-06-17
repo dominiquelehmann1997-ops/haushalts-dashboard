@@ -15,7 +15,9 @@ Wir entwickeln gemeinsam ein **Haushalts-Dashboard**. Konzept, Design und eine e
 ## Was schon existiert (bitte zuerst lesen)
 - **Spec (maßgeblich):** `docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md` — Konzept, Verteil-Engine „Fairness-Konto", Elternzeit-Modus, Datenmodell, Risiken, Annahmen.
 - **Design-Prompt:** `docs/claude-design-prompt.md`.
-- **Lauffähige UI:** `web/` — Next.js 16 + React 19 + TypeScript + Tailwind v4. Pixeltreue Umsetzung des Designs, aber **nur mit Mock-Daten**.
+- **Lauffähige UI:** `web/` — Next.js 16 + React 19 + TypeScript + Tailwind v4. Pixeltreue Umsetzung des Designs.
+  - **Tablet-Ansicht:** Root-Route `/` (Nur Anzeige, "Glanceable").
+  - **Handy-Steuerung:** Eigene Route `/mobile` mit Bottom-Navigation-Bar (Essen, Aufgaben, Notizen, Settings) für die aktive Bedienung.
   - Mock-Daten + Typen: `web/src/lib/data.ts` ← **das ist die Andockstelle für echte Daten.**
   - Komponenten: `web/src/components/` (`tiles`, `widgets`, `header`, `dashboard`), Design-Tokens in `web/src/app/globals.css` (`@theme`).
   - Starten: `cd web && npm run dev` → http://localhost:3000.
