@@ -193,3 +193,12 @@ model FreshnessOverride {
   name      String @unique // normalisierter Zutatenname (trim + lowercase)
   freshness String // "frisch" | "haltbar"
 }
+
+model PushSubscription {
+  id        String   @id @default(cuid())
+  personKey String // "dome" | "emely"
+  endpoint  String   @unique
+  p256dh    String
+  auth      String
+  createdAt DateTime @default(now())
+}

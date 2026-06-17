@@ -72,6 +72,7 @@ export async function seedDatabase(prisma: PrismaClient) {
   await prisma.note.deleteMany();
   await prisma.phaseSetting.deleteMany();
   await prisma.person.deleteMany();
+  await prisma.pushSubscription.deleteMany();
 
   // -------------------------------------------------------------------------
   // Person
