@@ -10,6 +10,7 @@ import { TaskTile, AppointmentsTile } from "@/components/tiles";
 import { MealPlanWidget, NotesWidget } from "@/components/widgets";
 import { Weather } from "@/components/Weather";
 import { TopbarStats } from "@/components/TopbarStats";
+import { PushSetupControl } from "@/components/PushSetupControl";
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -109,6 +110,11 @@ export default function Dashboard({
           <MealPlanWidget meals={meals} />
         </div>
       </section>
+
+      {/* Zone 2.5 — Geräte-Push-Anmeldung (nahe Essensplan) */}
+      <div className="flex justify-end px-1">
+        <PushSetupControl />
+      </div>
 
       {/* Zone 3 — Notizen (read-only) */}
       <section className="h-[22%] min-h-0 overflow-hidden">
