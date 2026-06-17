@@ -40,24 +40,28 @@ export async function sendToAdults(
   client: PrismaClient = prisma,
 ): Promise<void> {
   if (!isPushConfigured()) return;
-  ensureVapid();
+  try {
+    ensureVapid();
 
-  const subs = await getAllSubscriptions(client);
-  const body = JSON.stringify(payload);
+    const subs = await getAllSubscriptions(client);
+    const body = JSON.stringify(payload);
 
-  await Promise.all(
-    subs.map(async (s) => {
-      try {
-        await webpush.sendNotification(
-          { endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } },
-          body,
-        );
-      } catch (err) {
-        const status = (err as { statusCode?: number }).statusCode;
-        if (status === 410 || status === 404) {
-          await deleteSubscription(s.endpoint, client).catch(() => {});
+    await Promise.all(
+      subs.map(async (s) => {
+        try {
+          await webpush.sendNotification(
+            { endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } },
+            body,
+          );
+        } catch (err) {
+          const status = (err as { statusCode?: number }).statusCode;
+          if (status === 410 || status === 404) {
+            await deleteSubscription(s.endpoint, client).catch(() => {});
+          }
         }
-      }
-    }),
-  );
+      }),
+    );
+  } catch {
+    // non-fatal: DB or push-infrastructure failure must not crash the caller
+  }
 }

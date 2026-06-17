@@ -76,6 +76,14 @@ describe("pushNotify", () => {
     expect(await getAllSubscriptions(client)).toHaveLength(1);
   });
 
+  it("never throws when the subscription DB lookup fails (non-fatal outer guard)", async () => {
+    const brokenClient = {
+      pushSubscription: { findMany: vi.fn().mockRejectedValue(new Error("db down")) },
+    } as unknown as PrismaClient;
+
+    await expect(sendToAdults(payload, brokenClient)).resolves.toBeUndefined();
+  });
+
   it("is a no-op (no sends) when VAPID is not configured", async () => {
     delete process.env.VAPID_PUBLIC_KEY;
     await upsertSubscription({ personKey: "dome", endpoint: "https://e/x", p256dh: "k", auth: "a" }, client);
