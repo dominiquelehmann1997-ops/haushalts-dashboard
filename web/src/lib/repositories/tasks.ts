@@ -180,6 +180,70 @@ export async function assignTask(
   });
 }
 
+export interface CreateTaskInput {
+  title: string;
+  type?: string; // default "todo"
+  effort: number;
+  allowedPersons: "both" | "dome" | "emely";
+  dueDate: Date;
+  rhythm?: string | null;
+  icon?: string | null;
+  assignToKey?: "dome" | "emely" | null;
+}
+
+/** Creates an open standalone task. Resolves `assignToKey` to a Person id when given. */
+export async function createTask(
+  input: CreateTaskInput,
+  client: PrismaClient = prisma,
+): Promise<{ id: string }> {
+  let assignedToId: string | null = null;
+  if (input.assignToKey) {
+    const person = await client.person.findUniqueOrThrow({ where: { key: input.assignToKey } });
+    assignedToId = person.id;
+  }
+  const task = await client.task.create({
+    data: {
+      title: input.title,
+      type: input.type ?? "todo",
+      effort: input.effort,
+      allowedPersons: input.allowedPersons,
+      rhythm: input.rhythm ?? null,
+      icon: input.icon ?? null,
+      status: "open",
+      dueDate: input.dueDate,
+      assignedToId,
+    },
+    select: { id: true },
+  });
+  return task;
+}
+
+export interface OpenTaskDTO {
+  id: string;
+  title: string;
+  icon: string;
+  person: "dome" | "emely" | null;
+  dueDateISO: string;
+  rhythm: string | null;
+}
+
+/** All open standalone tasks (incl. not-yet-due), for the "Erledigt nachtragen" picker. */
+export async function listOpenTasks(client: PrismaClient = prisma): Promise<OpenTaskDTO[]> {
+  const rows = await client.task.findMany({
+    where: { projectId: null, status: "open" },
+    include: { assignedTo: true },
+    orderBy: { dueDate: "asc" },
+  });
+  return rows.map((r) => ({
+    id: r.id,
+    title: r.title,
+    icon: r.icon ?? "",
+    person: r.assignedTo?.key === "dome" || r.assignedTo?.key === "emely" ? r.assignedTo.key : null,
+    dueDateISO: r.dueDate.toISOString(),
+    rhythm: r.rhythm ?? null,
+  }));
+}
+
 /**
  * Schiebt eine Aufgabe auf den nächsten sinnvollen Tag (Rhythmus, sonst morgen)
  * und markiert sie als `moved`. `note` dokumentiert die Verschiebung in der UI.

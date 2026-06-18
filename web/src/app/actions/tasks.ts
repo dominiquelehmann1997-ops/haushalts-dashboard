@@ -8,7 +8,7 @@
 import { revalidateDashboard } from "@/lib/revalidate";
 
 import { prisma } from "@/lib/db";
-import { deferTask, setTaskStatus } from "@/lib/repositories/tasks";
+import { deferTask, setTaskStatus, createTask, type CreateTaskInput } from "@/lib/repositories/tasks";
 
 /** Toggles a task between "open" and "done"; other statuses are a no-op. */
 export async function toggleTaskAction(id: string): Promise<void> {
@@ -34,5 +34,32 @@ export async function deferTaskAction(id: string): Promise<void> {
 /** Marks a task as "failed" with a reason. */
 export async function failTaskAction(id: string, reason: string): Promise<void> {
   await setTaskStatus(id, "failed", reason);
+  revalidateDashboard();
+}
+
+export interface AddTaskInput {
+  title: string;
+  type?: string;
+  effort: number;
+  allowedPersons: "both" | "dome" | "emely";
+  dueDateISO: string;
+  rhythm?: string | null;
+  icon?: string | null;
+  assignToKey?: "dome" | "emely" | null;
+}
+
+/** Creates a new standalone task from the mobile quick-add form. */
+export async function addTaskAction(input: AddTaskInput): Promise<void> {
+  const repoInput: CreateTaskInput = {
+    title: input.title,
+    type: input.type,
+    effort: input.effort,
+    allowedPersons: input.allowedPersons,
+    dueDate: new Date(input.dueDateISO),
+    rhythm: input.rhythm,
+    icon: input.icon,
+    assignToKey: input.assignToKey,
+  };
+  await createTask(repoInput);
   revalidateDashboard();
 }

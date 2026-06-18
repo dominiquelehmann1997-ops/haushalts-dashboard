@@ -4,7 +4,7 @@ import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
 import { getWeeklyBalances } from "./accounts";
-import { assignTask, setTaskStatus } from "./tasks";
+import { assignTask, setTaskStatus, createTask, listOpenTasks } from "./tasks";
 
 describe("tasks repository (writes)", () => {
   let client: PrismaClient;
@@ -96,6 +96,41 @@ describe("tasks repository (writes)", () => {
       });
       expect(entries).toHaveLength(1);
       expect(entries[0]?.points).toBe(25);
+    });
+  });
+
+  describe("createTask", () => {
+    it("creates an open standalone task assigned to a person on the given day", async () => {
+      const due = new Date("2026-03-01");
+      const { id } = await createTask(
+        { title: "Spontan: Fenster putzen", effort: 15, allowedPersons: "dome", dueDate: due, assignToKey: "dome" },
+        client,
+      );
+      const row = await client.task.findUniqueOrThrow({ where: { id }, include: { assignedTo: true } });
+      expect(row.status).toBe("open");
+      expect(row.type).toBe("todo");
+      expect(row.effort).toBe(15);
+      expect(row.assignedTo?.key).toBe("dome");
+      expect(row.projectId).toBeNull();
+    });
+
+    it("leaves assignedTo null when no person is given", async () => {
+      const { id } = await createTask(
+        { title: "Unzugeordnet", effort: 5, allowedPersons: "both", dueDate: new Date("2026-03-02") },
+        client,
+      );
+      const row = await client.task.findUniqueOrThrow({ where: { id } });
+      expect(row.assignedToId).toBeNull();
+    });
+  });
+
+  describe("listOpenTasks", () => {
+    it("returns only open standalone tasks, ordered by dueDate asc", async () => {
+      const open = await listOpenTasks(client);
+      expect(open.length).toBeGreaterThan(0);
+      expect(open.every((t) => typeof t.id === "string")).toBe(true);
+      const dues = open.map((t) => t.dueDateISO);
+      expect([...dues].sort()).toEqual(dues);
     });
   });
 
