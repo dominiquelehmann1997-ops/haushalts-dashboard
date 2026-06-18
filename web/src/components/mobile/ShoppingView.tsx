@@ -19,7 +19,10 @@ export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: F
       await toggleShoppingAction(id);
     });
 
-  const flipFresh = (id: string) => startTransition(() => toggleFreshnessAction(id));
+  const flipFresh = (id: string) =>
+    startTransition(async () => {
+      await toggleFreshnessAction(id);
+    });
 
   return (
     <div className="space-y-4">

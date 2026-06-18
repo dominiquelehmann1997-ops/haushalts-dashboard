@@ -92,17 +92,20 @@ function QuickAddForm({ onDone }: { onDone: () => void }) {
     today.setHours(0, 0, 0, 0);
     setPending(true);
     startTransition(async () => {
-      await addTaskAction({
-        title: t,
-        effort: Math.round(eff),
-        allowedPersons: who,
-        dueDateISO: today.toISOString(),
-        assignToKey: who === "both" ? null : who,
-      });
-      setTitle("");
-      setEffort("15");
-      setPending(false);
-      onDone();
+      try {
+        await addTaskAction({
+          title: t,
+          effort: Math.round(eff),
+          allowedPersons: who,
+          dueDateISO: today.toISOString(),
+          assignToKey: who === "both" ? null : who,
+        });
+        setTitle("");
+        setEffort("15");
+        onDone();
+      } finally {
+        setPending(false);
+      }
     });
   };
 
