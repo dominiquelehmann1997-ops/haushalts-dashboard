@@ -10,6 +10,7 @@ import type { PersonKey } from "@/lib/engine/types";
 import { dayBounds } from "@/lib/dates";
 import { recordCompletion } from "@/lib/engine/completion";
 import { nextSensibleDay } from "@/lib/services/taskDefer";
+import { generateNextOccurrence } from "@/lib/services/recurrence";
 
 type TaskRow = {
   id: string;
@@ -152,6 +153,12 @@ export async function setTaskStatus(
         },
       });
     }
+  }
+
+  // Recurring routines spawn their next open occurrence once done (idempotent:
+  // generateNextOccurrence no-ops for non-routines and guards against duplicates).
+  if (status === "done") {
+    await generateNextOccurrence(id, client);
   }
 }
 

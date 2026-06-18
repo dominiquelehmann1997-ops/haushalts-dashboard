@@ -3,8 +3,30 @@
 
 import { prisma } from "@/lib/db";
 import { PrismaClient, Task } from "@/generated/prisma/client";
+import { learnedInterval } from "@/lib/services/learnedInterval";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
+const DAY_MS_LOCAL = 24 * 60 * 60 * 1000;
+
+/** Real completion gaps (in days) for a routine chain, oldest → newest. */
+async function chainCompletionGaps(chainId: string, client: PrismaClient): Promise<number[]> {
+  const done = await client.task.findMany({
+    where: {
+      OR: [{ recurringParentId: chainId }, { id: chainId }],
+      status: "done",
+      completedAt: { not: null },
+    },
+    orderBy: { completedAt: "asc" },
+    select: { completedAt: true },
+  });
+  const gaps: number[] = [];
+  for (let i = 1; i < done.length; i++) {
+    const prev = done[i - 1]!.completedAt!.getTime();
+    const cur = done[i]!.completedAt!.getTime();
+    gaps.push((cur - prev) / DAY_MS_LOCAL);
+  }
+  return gaps;
+}
 
 /** Per-rhythm offsets in days. Unknown rhythms default to weekly (+7 days). */
 const RHYTHM_OFFSET_DAYS: Record<string, number> = {
@@ -81,6 +103,15 @@ export async function generateNextOccurrence(
   });
   if (existingSuccessor) return null;
 
+  // Interval restart: count from when it was actually done, not the old plan date.
+  const base = task.completedAt ?? task.dueDate;
+
+  const learned = learnedInterval(await chainCompletionGaps(chainId, client));
+  const nextDue =
+    learned != null
+      ? new Date(base.getTime() + Math.round(learned) * DAY_MS_LOCAL)
+      : nextDueDate(task.rhythm, base);
+
   return client.task.create({
     data: {
       title: task.title,
@@ -95,7 +126,7 @@ export async function generateNextOccurrence(
       assignedToId: null,
       status: "open",
       recurringParentId: chainId,
-      dueDate: nextDueDate(task.rhythm, task.dueDate),
+      dueDate: nextDue,
     },
   });
 }

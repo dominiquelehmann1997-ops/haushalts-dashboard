@@ -160,3 +160,62 @@ describe("generateNextOccurrence", () => {
     expect(created).toBeNull();
   });
 });
+
+describe("generateNextOccurrence — restart + learned interval", () => {
+  let client: PrismaClient;
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("bases the next dueDate on completedAt, not the old dueDate (interval restart)", async () => {
+    const due = new Date("2026-01-01T00:00:00.000Z");
+    const completedAt = new Date("2026-01-10T12:00:00.000Z"); // done 9 days late
+    const routine = await client.task.create({
+      data: {
+        title: "Test-Routine", type: "routine", effort: 10, allowedPersons: "both",
+        rhythm: "weekly", status: "done", dueDate: due, completedAt,
+      },
+    });
+
+    const next = await generateNextOccurrence(routine.id, client);
+
+    expect(next).not.toBeNull();
+    // weekly = +7 days from completedAt (2026-01-10), NOT from dueDate (2026-01-01)
+    expect(next!.dueDate.toISOString().slice(0, 10)).toBe("2026-01-17");
+  });
+
+  it("uses the learned interval once enough completions exist in the chain", async () => {
+    // Build a chain of 4 completions ~3 days apart -> learned < weekly(7)
+    const chainBase = await client.task.create({
+      data: {
+        title: "Häufige Routine", type: "routine", effort: 5, allowedPersons: "both",
+        rhythm: "weekly", status: "done",
+        dueDate: new Date("2026-02-01"), completedAt: new Date("2026-02-01"),
+      },
+    });
+    const days = ["2026-02-04", "2026-02-07", "2026-02-10"];
+    let last = chainBase;
+    for (const d of days) {
+      last = await client.task.create({
+        data: {
+          title: "Häufige Routine", type: "routine", effort: 5, allowedPersons: "both",
+          rhythm: "weekly", status: "done", recurringParentId: chainBase.id,
+          dueDate: new Date(d), completedAt: new Date(d),
+        },
+      });
+    }
+
+    const next = await generateNextOccurrence(last.id, client);
+
+    expect(next).not.toBeNull();
+    // gaps ~3 days -> next due ~3 days after 2026-02-10, well before +7 (2026-02-17)
+    const offsetDays =
+      (next!.dueDate.getTime() - new Date("2026-02-10").getTime()) / 86_400_000;
+    expect(offsetDays).toBeLessThan(7);
+    expect(offsetDays).toBeGreaterThan(0);
+  });
+});
