@@ -1,25 +1,36 @@
+"use client";
+
 import Link from "next/link";
-import { Utensils, CheckSquare, FileText, Settings } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Sun, CheckSquare, Utensils, ShoppingCart, Menu } from "lucide-react";
+
+const TABS = [
+  { href: "/mobile", label: "Heute", Icon: Sun, exact: true },
+  { href: "/mobile/tasks", label: "Aufgaben", Icon: CheckSquare, exact: false },
+  { href: "/mobile/meals", label: "Essen", Icon: Utensils, exact: false },
+  { href: "/mobile/shopping", label: "Einkauf", Icon: ShoppingCart, exact: false },
+  { href: "/mobile/more", label: "Mehr", Icon: Menu, exact: false },
+] as const;
 
 export function MobileNavBar() {
+  const pathname = usePathname();
   return (
-    <nav className="fixed bottom-0 w-full bg-slate-900 border-t border-slate-800 text-white flex justify-around py-3 z-50 pb-safe">
-      <Link href="/mobile/meals" className="flex flex-col items-center">
-        <Utensils size={24} />
-        <span className="text-xs mt-1">Essen</span>
-      </Link>
-      <Link href="/mobile/tasks" className="flex flex-col items-center">
-        <CheckSquare size={24} />
-        <span className="text-xs mt-1">Aufgaben</span>
-      </Link>
-      <Link href="/mobile/notes" className="flex flex-col items-center">
-        <FileText size={24} />
-        <span className="text-xs mt-1">Notizen</span>
-      </Link>
-      <Link href="/mobile/settings" className="flex flex-col items-center">
-        <Settings size={24} />
-        <span className="text-xs mt-1">Setup</span>
-      </Link>
+    <nav className="fixed bottom-0 inset-x-0 z-50 bg-cream-soft/95 dark:bg-[#26241F]/95 backdrop-blur border-t border-black/[0.06] dark:border-white/10 shadow-card flex justify-around py-2 pb-safe">
+      {TABS.map(({ href, label, Icon, exact }) => {
+        const active = exact ? pathname === href : pathname.startsWith(href);
+        return (
+          <Link
+            key={href}
+            href={href}
+            className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition-colors ${
+              active ? "text-dome-deep dark:text-dome" : "text-ink-faint hover:text-ink-soft dark:hover:text-cream/70"
+            }`}
+          >
+            <Icon size={22} strokeWidth={active ? 2.4 : 1.9} />
+            <span className="text-[11px] font-semibold">{label}</span>
+          </Link>
+        );
+      })}
     </nav>
   );
 }
