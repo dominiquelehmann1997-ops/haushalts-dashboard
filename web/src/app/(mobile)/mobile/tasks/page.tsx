@@ -1,8 +1,11 @@
-export default function MobileTasksPage() {
-  return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold mb-4">Aufgaben</h1>
-      <p className="text-slate-400">Hier folgen in den nächsten Schritten die verteilten Aufgaben.</p>
-    </div>
-  );
+import { TasksView } from "@/components/mobile/TasksView";
+import { getTasksForDay, listOpenTasks } from "@/lib/repositories/tasks";
+
+export const dynamic = "force-dynamic";
+
+export default async function MobileTasksPage() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const [todayTasks, allOpen] = await Promise.all([getTasksForDay(today), listOpenTasks()]);
+  return <TasksView todayTasks={todayTasks} allOpen={allOpen} />;
 }
