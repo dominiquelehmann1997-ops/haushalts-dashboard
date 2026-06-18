@@ -4,7 +4,7 @@
 // active mode (Normal/Elternzeit) and target split, then revalidates the
 // dashboard so the stripe reflects the new state.
 
-import { revalidatePath } from "next/cache";
+import { revalidateDashboard } from "@/lib/revalidate";
 
 import { setActivePhase } from "@/lib/repositories/phase";
 
@@ -15,5 +15,5 @@ export async function setPhaseAction(input: {
   caregiverKey?: string | null;
 }): Promise<void> {
   await setActivePhase(input);
-  revalidatePath("/");
+  revalidateDashboard();
 }

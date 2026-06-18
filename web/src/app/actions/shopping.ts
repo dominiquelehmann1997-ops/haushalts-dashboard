@@ -4,7 +4,7 @@
 // integration (Phase 7) — mutate/push, then revalidate the dashboard so the
 // UI reflects the new state.
 
-import { revalidatePath } from "next/cache";
+import { revalidateDashboard } from "@/lib/revalidate";
 
 import { prisma } from "@/lib/db";
 import { setShoppingDone, getShoppingItems } from "@/lib/repositories/shopping";
@@ -17,7 +17,7 @@ export async function toggleShoppingAction(id: string): Promise<void> {
 
   await setShoppingDone(id, !item.done);
 
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /**
@@ -27,7 +27,7 @@ export async function toggleShoppingAction(id: string): Promise<void> {
  */
 export async function toggleFreshnessAction(id: string): Promise<void> {
   await toggleItemFreshness(id);
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /**

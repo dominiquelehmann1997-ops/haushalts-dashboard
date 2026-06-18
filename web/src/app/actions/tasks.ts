@@ -5,7 +5,7 @@
 // logic here: status transitions and bookings are single-sourced in
 // `setTaskStatus` (see `@/lib/repositories/tasks`).
 
-import { revalidatePath } from "next/cache";
+import { revalidateDashboard } from "@/lib/revalidate";
 
 import { prisma } from "@/lib/db";
 import { deferTask, setTaskStatus } from "@/lib/repositories/tasks";
@@ -20,7 +20,7 @@ export async function toggleTaskAction(id: string): Promise<void> {
     await setTaskStatus(id, "open", null);
   }
 
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /** Schiebt eine Aufgabe auf den nächsten sinnvollen Tag (Status "moved"). */
@@ -28,11 +28,11 @@ export async function deferTaskAction(id: string): Promise<void> {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   await deferTask(id, today);
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /** Marks a task as "failed" with a reason. */
 export async function failTaskAction(id: string, reason: string): Promise<void> {
   await setTaskStatus(id, "failed", reason);
-  revalidatePath("/");
+  revalidateDashboard();
 }

@@ -3,7 +3,7 @@
 // Thin Server Action wrapper around the accounts repository — books a manual
 // "Konto" entry (Nachtrag/Betreuung), then revalidates the dashboard.
 
-import { revalidatePath } from "next/cache";
+import { revalidateDashboard } from "@/lib/revalidate";
 
 import { addManualEntry } from "@/lib/repositories/accounts";
 
@@ -14,5 +14,5 @@ export async function addManualEntryAction(input: {
   source: "nachtrag" | "betreuung";
 }): Promise<void> {
   await addManualEntry(input);
-  revalidatePath("/");
+  revalidateDashboard();
 }

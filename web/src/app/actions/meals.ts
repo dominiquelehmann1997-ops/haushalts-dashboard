@@ -6,7 +6,7 @@
 // die **haltbar**-Rutsche sofort auf Bring; die **frisch**-Rutsche folgt später
 // per `pushFreshBatchAction` (Roadmap D1).
 
-import { revalidatePath } from "next/cache";
+import { revalidateDashboard } from "@/lib/revalidate";
 
 import { sendToAdults } from "@/lib/services/pushNotify";
 import { generateWeekPlan } from "@/lib/services/mealPlanner";
@@ -62,27 +62,27 @@ export async function generatePlanAction(weekStartISO: string): Promise<void> {
     url: "/",
   });
 
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /** Re-rolls a single draft day's recipe (dienstbewusst). */
 export async function rerollDraftDayAction(dateISO: string): Promise<void> {
   const phase = await getActivePhase();
   await rerollDraftDay(new Date(dateISO), phase?.mode === "elternzeit");
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /** Manually swaps a draft day's recipe. */
 export async function setDraftDayRecipeAction(dateISO: string, recipeId: string): Promise<void> {
   await setDraftDayRecipe(new Date(dateISO), recipeId);
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /** Discards the week's draft. */
 export async function discardDraftAction(weekStartISO: string): Promise<void> {
   const weekStart = new Date(weekStartISO);
   await discardDraft(weekStart);
-  revalidatePath("/");
+  revalidateDashboard();
 }
 
 /**
@@ -96,7 +96,7 @@ export async function approveDraftAction(weekStartISO: string): Promise<ApproveP
   const weekStart = new Date(weekStartISO);
   const approved = await approveDraft(weekStart);
   if (!approved) {
-    revalidatePath("/");
+    revalidateDashboard();
     return {
       approved: false,
       ingredients: [],
@@ -111,7 +111,7 @@ export async function approveDraftAction(weekStartISO: string): Promise<ApproveP
   const haltbar = await pushRecipeBatch("haltbar");
   const fresh = await getFreshShoppingState();
 
-  revalidatePath("/");
+  revalidateDashboard();
   return { approved: true, ingredients: haltbar.items, bring: haltbar.bring, fresh };
 }
 
@@ -121,6 +121,6 @@ export async function approveDraftAction(weekStartISO: string): Promise<ApproveP
  */
 export async function pushFreshBatchAction(): Promise<{ bring: BringPushResult; items: string[] }> {
   const result = await pushRecipeBatch("frisch");
-  revalidatePath("/");
+  revalidateDashboard();
   return result;
 }
