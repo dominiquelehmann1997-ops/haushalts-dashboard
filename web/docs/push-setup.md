@@ -91,3 +91,38 @@ If the private key is compromised:
 2. Update `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, and `NEXT_PUBLIC_VAPID_PUBLIC_KEY` in all environments.
 3. All existing `PushSubscription` records in the database are now invalid — users must re-subscribe. You can truncate the `PushSubscription` table to force fresh subscriptions.
 4. Redeploy the app so the new public key is embedded in the client bundle.
+
+---
+
+## Tablet-Deploy (Android / Termux — Besonderheiten)
+
+Der laufende Betrieb ist Termux auf einem Android-Tablet (aarch64), SSH
+`ssh -p 8022 u0_a353@192.168.178.91`, Repo `~/haushalts-dashboard`, Prod-DB
+`web/dev.db`. Zwei Android-spezifische Hürden beim Ausrollen dieses Features:
+
+1. **Prisma migrate-engine läuft nicht auf Android** (`unknown OS "android"` →
+   `Schema engine error`), und die Tablet-DB hat keine `_prisma_migrations`-Historie
+   (per `db push` erstellt). Schema-Änderungen daher **direkt als SQL** via
+   `better-sqlite3` anwenden, nicht `prisma migrate deploy`. Für dieses Feature:
+
+   ```js
+   // aus web/ ausführen, damit require("better-sqlite3") auflöst
+   const db = require("better-sqlite3")("./dev.db");
+   db.exec(`CREATE TABLE IF NOT EXISTS "PushSubscription" (
+     "id" TEXT NOT NULL PRIMARY KEY, "personKey" TEXT NOT NULL,
+     "endpoint" TEXT NOT NULL, "p256dh" TEXT NOT NULL, "auth" TEXT NOT NULL,
+     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP);
+     CREATE UNIQUE INDEX IF NOT EXISTS "PushSubscription_endpoint_key"
+       ON "PushSubscription"("endpoint");`);
+   ```
+
+   Der Laufzeit-Adapter `@prisma/adapter-better-sqlite3` funktioniert dagegen normal.
+
+2. **Build braucht `next build --webpack`** — Turbopack hat keine native bindings
+   auf android/arm64 und bricht ab.
+
+Deploy-Reihenfolge (lokal→origin pushen, dann am Tablet in EINER SSH-Session):
+`git pull --ff-only` → `npm install` → `npx prisma generate` → Tabelle per SQL →
+VAPID-Vars in `web/.env` (vor dem Build, `NEXT_PUBLIC_*` wird eingebacken) →
+`npx next build --webpack` → `~/restart-dashboard.sh` → `curl localhost:3001`
+verifizieren. Der Cloudflare-Tunnel (`~/run-tunnel.sh`) läuft separat.

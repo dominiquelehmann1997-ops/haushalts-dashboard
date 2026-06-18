@@ -67,12 +67,26 @@ Rutsche) — auf Einkaufsliste + Bring; **Verwerfen** löscht den Entwurf. Spec/
 `docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md`,
 `docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md`.
 
-### C2 · Benachrichtigung aufs Handy — offen
+### C2 · Benachrichtigung aufs Handy — ✅ ERLEDIGT (2026-06-18)
 
-- **Benachrichtigung an Domes und Emelys Handy**, wenn ein Entwurf bereitliegt.
-- **Benachrichtigungskanal** — offene Entscheidung: Web-Push/PWA, Telegram-Bot,
-  Todoist oder E-Mail. (Heute läuft die App nur als `next dev` auf localhost —
-  kein öffentlicher HTTPS-Host; das beeinflusst die Kanalwahl.)
+**Kanal: Web-Push (PWA).** Der frühere Blocker (kein öffentlicher HTTPS-Host)
+ist weg — der Cloudflare-Tunnel (`cockpit.domelehmann.org`) liefert public HTTPS.
+`generatePlanAction` ruft nach der Entwurfserzeugung `sendToAdults` (non-fatal,
+selbstheilend bei 410/404); der Service-Worker zeigt die Notification, Tap öffnet
+die App. Geräte melden sich per `PushSetupControl` an (🔔 + Person-Picker), gemountet
+auf der Phone-UI unter `/mobile/settings`. Nur bei **neuem** Entwurf (nicht
+Reroll/Tausch). Web-Push gewählt statt Telegram/Todoist/E-Mail: nutzt Tunnel +
+Service-Worker, kein Fremdsystem.
+
+Umgesetzt subagent-driven (7 TDD-Tasks), am Tablet deployed (Tabelle direkt via
+better-sqlite3, da Prisma-migrate-engine nicht auf Android läuft; Build per
+`next build --webpack`). Spec/Plan:
+`docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md`,
+`docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md`. Betriebs-Setup:
+`web/docs/push-setup.md`.
+
+> Offen für später: gezielte Per-Person-Pushes (`personKey` ist schon gespeichert),
+> Action-Buttons in der Notification, weitere Push-Anlässe.
 
 ### C3 · Automatischer Auslöser „wenn beide zuhause" — offen
 
