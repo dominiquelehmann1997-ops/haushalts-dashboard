@@ -66,6 +66,7 @@ export interface Note {
   id: string;
   icon: string;
   text: string;
+  pinned?: boolean;
 }
 
 export interface PersonStyle {
