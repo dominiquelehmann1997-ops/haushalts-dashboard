@@ -15,7 +15,7 @@ const TABS = [
 export function MobileNavBar() {
   const pathname = usePathname();
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-50 bg-cream-soft/95 dark:bg-[#26241F]/95 backdrop-blur border-t border-black/[0.06] dark:border-white/10 shadow-card flex justify-around py-2 pb-safe">
+    <nav className="fixed bottom-0 inset-x-0 z-50 bg-cream-soft/95 dark:bg-[#26241F]/95 backdrop-blur border-t border-black/[0.06] dark:border-white/10 shadow-card flex justify-around pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))]">
       {TABS.map(({ href, label, Icon, exact }) => {
         const active = exact ? pathname === href : pathname.startsWith(href);
         return (

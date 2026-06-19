@@ -1,6 +1,17 @@
+import type { Viewport } from "next";
 import { MobileNavBar } from "@/components/mobile/MobileNavBar";
 import { ServiceWorkerRegister } from "@/app/sw-register";
 import "../globals.css";
+
+// viewport-fit=cover lets the layout extend under the system bars so
+// `env(safe-area-inset-*)` becomes non-zero — the bottom nav uses it to lift
+// its tap targets above the Android gesture/navigation bar in standalone PWA.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#f7f3ec",
+};
 
 export default function MobileLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +21,6 @@ export default function MobileLayout({ children }: { children: React.ReactNode }
             installed app opens the phone UI (incl. bottom nav), not the
             tablet root "/". Tablet keeps its own /manifest.webmanifest. */}
         <link rel="manifest" href="/manifest-mobile.webmanifest" crossOrigin="use-credentials" />
-        <meta name="theme-color" content="#f7f3ec" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="Handy" />
         {/* Before-paint: apply .dark when OS prefers dark — mobile only, tablet uses its own manual toggle */}
