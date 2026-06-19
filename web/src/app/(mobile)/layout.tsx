@@ -13,8 +13,13 @@ export default function MobileLayout({ children }: { children: React.ReactNode }
           }}
         />
       </head>
-      <body className="bg-cream text-ink dark:bg-[#1b1a18] dark:text-cream min-h-[100svh] flex flex-col pb-20 font-body">
-        <main className="flex-1 overflow-y-auto p-4 rise">{children}</main>
+      <body className="bg-cream text-ink dark:bg-[#1b1a18] dark:text-cream min-h-[100svh] flex flex-col font-body">
+        {/* Scroll container pads its own bottom so the last items clear the
+            fixed bottom nav (+ iOS safe area). Padding on <body> would not,
+            since the scroll happens inside <main>. */}
+        <main className="flex-1 overflow-y-auto p-4 pb-[calc(5.5rem+env(safe-area-inset-bottom))] rise">
+          {children}
+        </main>
         <MobileNavBar />
       </body>
     </html>
