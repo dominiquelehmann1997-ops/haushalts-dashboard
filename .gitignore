@@ -27,3 +27,6 @@ Thumbs.db
 .firecrawl/
 .playwright-cli/
 web/Kalender_IDs.txt
+
+# isolierte Feature-Worktrees
+.worktrees/
