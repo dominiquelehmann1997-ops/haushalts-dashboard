@@ -45,6 +45,15 @@ export default function RootLayout({
     <html lang="de" className={`${display.variable} ${body.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.webmanifest" crossOrigin="use-credentials" />
+        {/* Phones land on the dedicated /mobile control UI even if the PWA was
+            installed with start_url "/". Runs before paint; only on the root
+            path and only on narrow (phone) screens — the tablet stays on "/". */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(location.pathname==='/'&&window.matchMedia('(max-width:600px)').matches){location.replace('/mobile');}}catch(e){}",
+          }}
+        />
       </head>
       <body className="font-body text-ink antialiased">
         <ServiceWorkerRegister />
