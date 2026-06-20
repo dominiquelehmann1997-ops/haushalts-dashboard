@@ -42,6 +42,13 @@ export interface PlanInput {
   forecast: DayForecast[]; // forecast for `day` and following days
   phase: PhaseConfig;
   balances: Balances;
+  /**
+   * Belegungsanteil 0…1 pro Person für `day` (aus `@/lib/engine/capacity`'s
+   * `dayLoad`, vom Caller injiziert). `≥ 0.8` → Person an dem Tag gesperrt;
+   * sonst dämpft der Wert die Fairness-Auswahl. Fehlt das Feld, wirkt keine
+   * Kapazitäts-Logik (Alt-Verhalten).
+   */
+  dayLoad?: Record<PersonKey, number>;
 }
 
 export type PlanResult =

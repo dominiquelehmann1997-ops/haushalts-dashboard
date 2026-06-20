@@ -75,3 +75,26 @@ describe("planTask", () => {
     expect(result).toEqual({ kind: "unassignable", reason: "niemand erlaubt" });
   });
 });
+
+describe("planTask — Tageskapazität", () => {
+  const task: EngineTask = { id: "cap", allowedPersons: "both", outdoor: false, effort: 1 };
+
+  it("excludes a person whose day is fully booked (load ≥ 0.8) and assigns the other", () => {
+    // Ohne Kapazität gewänne dome (60/40, beide 0). Dome zu 90% belegt → emely.
+    const result = planTask(baseInput({ task, dayLoad: { dome: 0.9, emely: 0.1 } }));
+    expect(result).toEqual({ kind: "assigned", person: "emely", day: day(10) });
+  });
+
+  it("returns unassignable when everyone left is fully booked", () => {
+    const result = planTask(baseInput({ task, dayLoad: { dome: 0.85, emely: 0.95 } }));
+    expect(result).toEqual({ kind: "unassignable", reason: "ganztägig belegt" });
+  });
+
+  it("applies a soft bias for partial load without hard-excluding", () => {
+    // 50/50, beide 0 → ohne Last gewänne dome. Dome 60% belegt (<0.8) → Bias → emely.
+    const result = planTask(
+      baseInput({ task, phase: { mode: "normal", target: { dome: 50, emely: 50 } }, dayLoad: { dome: 0.6, emely: 0 } }),
+    );
+    expect(result).toEqual({ kind: "assigned", person: "emely", day: day(10) });
+  });
+});
