@@ -13,7 +13,8 @@
     "gen:icons": "node scripts/gen-icons.mjs",
     "import:chores": "tsx prisma/importChores.ts",
     "import:recipes": "tsx prisma/ingestRecipes.ts",
-    "plan:today": "tsx prisma/planToday.ts"
+    "plan:today": "tsx prisma/planToday.ts",
+    "sync:calendar": "tsx prisma/syncCalendar.ts"
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.8.0",

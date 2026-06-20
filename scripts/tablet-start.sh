@@ -8,6 +8,10 @@ termux-wake-lock 2>/dev/null || true
 
 cd "$(dirname "$0")/../web"
 
+# Google-Kalender vor der Verteilung syncen, damit die Engine frische Termine/
+# Schichten sieht. Fehler (offline/nicht verbunden) darf den Start nicht blockieren.
+npm run sync:calendar || true
+
 # Heute faellige, noch unverteilte Aufgaben ueber die Fairness-Engine zuweisen.
 # Idempotent (ruehrt bereits zugewiesene Tasks nicht an); Fehler darf den Start
 # nicht blockieren.
