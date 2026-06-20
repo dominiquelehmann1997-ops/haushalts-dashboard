@@ -11,6 +11,7 @@ import { Weather } from "@/components/Weather";
 import { PhaseSwitch } from "@/components/PhaseSwitch";
 import { Card } from "@/components/ui";
 import { PageHeader } from "@/components/mobile/PageHeader";
+import { SyncButton } from "@/components/SyncButton";
 import { PERSON } from "@/lib/data";
 
 type Opt = { id: string; type: "toggle" | "defer" | "fail" };
@@ -56,7 +57,7 @@ export function TodayView({
 
   return (
     <div className="space-y-4">
-      <PageHeader eyebrow="Heute im Fokus" title="Heute" />
+      <PageHeader eyebrow="Heute im Fokus" title="Heute" right={<SyncButton />} />
 
       <Weather weather={weather} />
 

@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import { SunIcon, MoonIcon } from "@/components/icons";
+import { SyncButton } from "@/components/SyncButton";
 
 export function Header({
   dark,
@@ -34,6 +35,7 @@ export function Header({
             <span className="w-2.5 h-2.5 rounded-full bg-emely"></span>Emely
           </span>
         </div>
+        <SyncButton />
         <button
           onClick={() => setDark((d) => !d)}
           aria-label="Dark Mode umschalten"
