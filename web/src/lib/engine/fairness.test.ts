@@ -36,4 +36,19 @@ describe("selectByFairness", () => {
     const balances: Balances = { dome: 0, emely: 100 };
     expect(selectByFairness(["dome"], balances, { dome: 60, emely: 40 })).toBe("dome");
   });
+
+  it("biases away from a busy person via loadPenalty", () => {
+    // Gleiche Ausgangslage (beide 0, 50/50) → ohne Penalty gewinnt dome (PERSON_ORDER).
+    const balances: Balances = { dome: 0, emely: 0 };
+    expect(selectByFairness(persons, balances, { dome: 50, emely: 50 })).toBe("dome");
+    // Dome zu 90% belegt → sein Defizit wird stark gedämpft → emely gewinnt.
+    expect(
+      selectByFairness(persons, balances, { dome: 50, emely: 50 }, { dome: 0.9, emely: 0 }),
+    ).toBe("emely");
+  });
+
+  it("ignores loadPenalty for a single candidate", () => {
+    const balances: Balances = { dome: 0, emely: 100 };
+    expect(selectByFairness(["dome"], balances, { dome: 50, emely: 50 }, { dome: 0.9, emely: 0 })).toBe("dome");
+  });
 });

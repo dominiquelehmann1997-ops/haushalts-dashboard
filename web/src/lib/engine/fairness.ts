@@ -17,19 +17,26 @@ export function computeShare(balances: Balances): Record<PersonKey, number> {
  * Picks the candidate with the greatest deficit (target share minus actual share),
  * i.e. the person most behind their fairness target. Ties broken by higher target,
  * then by `PERSON_ORDER`.
+ *
+ * `loadPenalty` (Anteil 0…1 pro Person, optional) dämpft das Defizit einer
+ * belegten Person: das verglichene Defizit wird mit `(1 − loadPenalty[person])`
+ * multipliziert. Eine stark belegte Person wirkt damit „ausgelasteter" und wird
+ * seltener gewählt. Ohne `loadPenalty` identisches Verhalten wie zuvor.
  */
 export function selectByFairness(
   persons: PersonKey[],
   balances: Balances,
   target: Record<PersonKey, number>,
+  loadPenalty?: Record<PersonKey, number>,
 ): PersonKey {
   if (persons.length === 1) return persons[0];
 
   const actual = computeShare(balances);
+  const weighted = (p: PersonKey) => (target[p] - actual[p]) * (1 - (loadPenalty?.[p] ?? 0));
 
   return [...persons].sort((a, b) => {
-    const deficitA = target[a] - actual[a];
-    const deficitB = target[b] - actual[b];
+    const deficitA = weighted(a);
+    const deficitB = weighted(b);
     if (deficitA !== deficitB) return deficitB - deficitA;
 
     if (target[a] !== target[b]) return target[b] - target[a];
