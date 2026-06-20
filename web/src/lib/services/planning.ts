@@ -42,14 +42,14 @@ export interface PlanDueTasksOptions {
   /**
    * Busy windows for `day` (and surrounding days, if useful), fed straight
    * into the engine's availability check (`@/lib/engine/availability` —
-   * tested in Phase 2). Injected by the caller (Phase 4 fetches it via
-   * `@/lib/repositories/calendar`'s `getBusyWindows`) — `planDueTasks` itself
-   * never queries calendar data directly.
+   * tested in Phase 2). Also reduced to a per-person day-capacity (`dayLoad`)
+   * via `computeDayLoad(busy, activeDayWindow(day))` that hard-blocks a person
+   * at ≥0.8 load and biases fairness — this applies to all due tasks,
+   * independent of whether a task carries a time `window`. Injected by the
+   * caller (Phase 4 fetches it via `@/lib/repositories/calendar`'s
+   * `getBusyWindows`) — `planDueTasks` itself never queries calendar data directly.
    *
-   * Defaults to `[]`. Note: only affects tasks that carry a time `window` —
-   * tasks currently have none (`window: undefined` below), so this is plumbed
-   * through for future task-time-windows support; the engine's overlap logic
-   * is already covered by Phase 2's availability tests.
+   * Defaults to `[]`.
    */
   busy?: BusyWindow[];
 }
