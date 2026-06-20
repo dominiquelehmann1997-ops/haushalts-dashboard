@@ -169,6 +169,25 @@ describe("planning service", () => {
     }
   });
 
+  it("assigns away from a person whose day is fully booked (busy → dayLoad)", async () => {
+    await createOpenStandaloneTask({ title: "Wäsche", allowedPersons: "both", effort: 1 });
+
+    // `today` ist im Test-Scope als `const today = new Date()` vorhanden; createOpenStandaloneTask setzt dueDate: today.
+    const d = today.getDate();
+    const busy = [
+      {
+        person: "dome" as const,
+        start: new Date(today.getFullYear(), today.getMonth(), d, 7, 0),
+        end: new Date(today.getFullYear(), today.getMonth(), d, 23, 0),
+      },
+    ];
+
+    const decisions = await planDueTasks(today, { busy }, client);
+
+    expect(decisions).toHaveLength(1);
+    expect(decisions[0].result).toMatchObject({ kind: "assigned", person: "emely" });
+  });
+
   it("defers an unassigned outdoor 'noRain' task due today to a later dry day, given an injected forecast", async () => {
     // Local midnight, two days from today — matches `checkWeather`'s
     // `fromLocalDateKey(later.date)` (which the engine uses as `suggestedDay`).

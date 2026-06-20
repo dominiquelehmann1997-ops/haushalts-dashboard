@@ -2,6 +2,9 @@ import "dotenv/config";
 
 import { prisma } from "../src/lib/db";
 import { planDueTasks } from "../src/lib/services/planning";
+import { getBusyWindows } from "../src/lib/repositories/calendar";
+import { getForecast } from "../src/integrations/weather/openMeteo";
+import { dayBounds } from "../src/lib/dates";
 
 // Verteilt die heute (oder am übergebenen Datum) fälligen, offenen, noch nicht
 // zugewiesenen Tasks über die Fairness-Engine und schreibt die Zuweisung in die
@@ -22,7 +25,21 @@ async function main() {
   }
 
   try {
-    const decisions = await planDueTasks(day);
+    const { start, end } = dayBounds(day);
+    let busy: Awaited<ReturnType<typeof getBusyWindows>> = [];
+    let forecast: Awaited<ReturnType<typeof getForecast>> = [];
+    try {
+      busy = await getBusyWindows(start, end);
+    } catch (e) {
+      console.warn("Busy-Windows konnten nicht geladen werden:", e);
+    }
+    try {
+      forecast = await getForecast();
+    } catch (e) {
+      console.warn("Forecast konnte nicht geladen werden:", e);
+    }
+
+    const decisions = await planDueTasks(day, { busy, forecast });
     const count = (kind: string) => decisions.filter((d) => d.result.kind === kind).length;
     console.log(
       `Verteilung für ${day.toISOString().slice(0, 10)}: ${decisions.length} fällige Tasks → ` +

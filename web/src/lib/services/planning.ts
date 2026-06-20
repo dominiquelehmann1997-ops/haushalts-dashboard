@@ -9,6 +9,7 @@ import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import { dayBounds } from "@/lib/dates";
 import { planTask } from "@/lib/engine";
+import { activeDayWindow, dayLoad as computeDayLoad } from "@/lib/engine/capacity";
 import type {
   Balances,
   BusyWindow,
@@ -115,6 +116,7 @@ export async function planDueTasks(
   client: PrismaClient = prisma,
 ): Promise<PlanDecision[]> {
   const { forecast = [], busy = [] } = opts;
+  const load = computeDayLoad(busy, activeDayWindow(day));
   const { start, end } = dayBounds(day);
 
   const phase = await loadPhaseConfig(client);
@@ -144,6 +146,7 @@ export async function planDueTasks(
       forecast,
       phase,
       balances,
+      dayLoad: load,
     };
 
     const result = planTask(input);
