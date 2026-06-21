@@ -28,7 +28,12 @@ export function BringSyncControl({ items }: { items: ShoppingItem[] }) {
   const handleCopy = () => {
     const text = items
       .filter((item) => !item.done)
-      .map((item) => `• ${item.text}`)
+      .map((item) => {
+        const qty = item.amount
+          ? ` (${item.unit ? `${item.amount} ${item.unit}` : item.amount})`
+          : "";
+        return `• ${item.text}${qty}`;
+      })
       .join("\n");
     navigator.clipboard.writeText(text).then(() => setCopied(true));
   };

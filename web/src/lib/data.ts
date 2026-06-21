@@ -27,6 +27,10 @@ export interface ShoppingItem {
   done: boolean;
   /** "frisch" | "haltbar" für Rezept-Items (Korrektur-Toggle sichtbar); null für manuelle. */
   category?: "frisch" | "haltbar" | null;
+  /** Zusammengerechnete Menge (z.B. "500", "10"); null wenn nicht verfügbar. */
+  amount?: string | null;
+  /** Einheit zur Menge (z.B. "g", "EL"); null wenn keine Einheit. */
+  unit?: string | null;
 }
 
 export interface FreshShoppingState {

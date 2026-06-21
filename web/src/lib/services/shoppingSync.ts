@@ -13,6 +13,26 @@ import { PrismaClient } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
 import { resolveFreshness } from "@/lib/services/freshness";
 import { getFreshnessOverrides } from "@/lib/repositories/freshnessOverride";
+import { isPantryBasic } from "@/lib/services/pantryBasics";
+
+type AmountUnit = { amount: string | null; unit: string | null };
+
+/**
+ * Addiert zwei Mengenangaben, wenn sie die gleiche Einheit haben.
+ * Schlägt die Addition fehl (verschiedene Einheiten, nicht-numerisch, ein Wert
+ * null), wird `{ amount: null, unit: null }` zurückgegeben.
+ */
+export function mergeAmounts(prev: AmountUnit, next: AmountUnit): AmountUnit {
+  if (!prev.amount || !next.amount) return { amount: null, unit: prev.unit ?? next.unit };
+  if (prev.unit !== next.unit) return { amount: null, unit: null };
+  const a = parseFloat(prev.amount);
+  const b = parseFloat(next.amount);
+  if (isNaN(a) || isNaN(b)) return { amount: null, unit: prev.unit };
+  const sum = a + b;
+  const formatted =
+    Number.isInteger(a) && Number.isInteger(b) ? String(sum) : sum.toFixed(1).replace(/\.0$/, "");
+  return { amount: formatted, unit: prev.unit };
+}
 
 /**
  * Reads the current ISO week's meal plan, collects the unique (case-
@@ -20,6 +40,10 @@ import { getFreshnessOverrides } from "@/lib/repositories/freshnessOverride";
  * the `source: "recipe"` shopping items to match exactly that set. Each item
  * gets a freshness `category` (from `Ingredient.category`, falling back to a
  * learned override, then `classifyFreshness`) and `pushed: false`.
+ *
+ * Vorrats-Basics (Öl, Salz, Pfeffer, Standardgewürze) werden übersprungen.
+ * Gleiche Zutaten aus mehreren Rezepten werden zusammengefasst — Mengen
+ * werden addiert, sofern die Einheit übereinstimmt.
  *
  * Returns the recipe ingredient names it wrote (display casing), so callers
  * can push exactly those to Bring without re-querying — see
@@ -35,17 +59,26 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
 
   const overrides = await getFreshnessOverrides(client);
 
-  // Case-insensitive dedupe, preserving first-seen casing for display and the
-  // ingredient's freshness category (falls back to the name heuristic).
-  const byKey = new Map<string, { name: string; category: string }>();
+  type Accumulated = { name: string; category: string; amount: string | null; unit: string | null };
+
+  // Case-insensitive dedupe with amount accumulation. Preserves first-seen
+  // casing for display. Pantry basics (Öl, Salz, Pfeffer, …) are skipped.
+  const byKey = new Map<string, Accumulated>();
   for (const entry of entries) {
     for (const ingredient of entry.recipe.ingredients) {
       const key = ingredient.name.trim().toLowerCase();
+      if (isPantryBasic(key)) continue;
       if (!byKey.has(key)) {
         byKey.set(key, {
           name: ingredient.name.trim(),
           category: ingredient.category ?? resolveFreshness(ingredient.name, overrides),
+          amount: ingredient.amount ?? null,
+          unit: ingredient.unit ?? null,
         });
+      } else {
+        const prev = byKey.get(key)!;
+        const merged = mergeAmounts(prev, { amount: ingredient.amount ?? null, unit: ingredient.unit ?? null });
+        byKey.set(key, { ...prev, ...merged });
       }
     }
   }
@@ -60,6 +93,8 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
         meal: true,
         source: "recipe",
         category: item.category,
+        amount: item.amount,
+        unit: item.unit,
         pushed: false,
         done: false,
       },

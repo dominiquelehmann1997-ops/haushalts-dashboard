@@ -51,6 +51,11 @@ export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: F
               >
                 {i.meal && <span className="mr-1.5">🍽️</span>}
                 {i.text}
+                {i.amount && (
+                  <span className="ml-1.5 text-ink-faint/70 text-[13px]">
+                    · {i.unit ? `${i.amount} ${i.unit}` : i.amount}
+                  </span>
+                )}
               </span>
               {i.category && (
                 <button

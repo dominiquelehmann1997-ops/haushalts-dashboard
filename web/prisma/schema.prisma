@@ -160,6 +160,8 @@ model ShoppingItem {
   source    String   @default("manual") // "manual" | "recipe"
   recipeRef String?
   category  String? // "frisch" | "haltbar" für Rezept-Items; null für manuelle
+  amount    String? // zusammengerechnete Menge (z.B. "800", "10"); null wenn nicht verfügbar
+  unit      String? // Einheit (z.B. "g", "ml", "EL"); null wenn keine Einheit
   pushed    Boolean  @default(false) // schon auf Bring? (nur Rezept-Items)
   done      Boolean  @default(false)
   createdAt DateTime @default(now())

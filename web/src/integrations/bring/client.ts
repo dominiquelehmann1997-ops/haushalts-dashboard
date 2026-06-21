@@ -25,9 +25,21 @@ export type BringPushResult = { ok: true; pushed: number } | { ok: false; error:
  * Maps shopping items to Bring push items — pure, no network/env access.
  * Only items still open (`done: false`) are pushed; items the household has
  * already checked off don't belong on Bring's list.
+ *
+ * When `amount` is present, it is passed as Bring's `spec` (the optional
+ * description/note line shown below the item name).
  */
-export function toBringItems(items: { text: string; done: boolean }[]): BringItem[] {
-  return items.filter((item) => !item.done).map((item) => ({ name: item.text }));
+export function toBringItems(
+  items: { text: string; done: boolean; amount?: string | null; unit?: string | null }[],
+): BringItem[] {
+  return items.filter((item) => !item.done).map((item) => {
+    const spec = item.amount
+      ? item.unit
+        ? `${item.amount} ${item.unit}`
+        : item.amount
+      : undefined;
+    return { name: item.text, ...(spec !== undefined ? { spec } : {}) };
+  });
 }
 
 /**
