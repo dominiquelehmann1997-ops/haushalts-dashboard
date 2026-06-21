@@ -1,7 +1,7 @@
 # Handy-Vollsteuerung (Mobile Control v2)
 
-> **Status:** Design freigegeben (2026-06-18).
-> Nächster Schritt: `writing-plans` → Implementierungs-Plan.
+> **Status:** ✅ Umgesetzt (2026-06-21).
+> Alle 12 Tasks abgeschlossen, 323 Tests grün.
 > Ersetzt/erweitert die ursprüngliche [Handy-Steuerung-Spec](2026-06-17-handy-steuerung-design.md).
 
 ## Ziel

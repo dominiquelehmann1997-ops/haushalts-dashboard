@@ -1,7 +1,7 @@
 # Google Kalender — Termine, intelligente Verteilung & Sync — Design
 
 **Datum:** 2026-06-20
-**Status:** Abgenommen (Brainstorming)
+**Status:** ✅ Umgesetzt (2026-06-21)
 **Kontext:** Phase 4 (Google-Kalender-Anbindung) ist im Code komplett vorhanden und
 getestet — OAuth-Flow, Sync-Route, Mapper, `CalendarEvent`-Modell, `AppointmentsTile`
 und die Verteil-Engine (`planTask` + `getBusyWindows` inkl. Schicht-Korrektur). Real

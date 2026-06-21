@@ -1,6 +1,6 @@
 # Handy-Vollsteuerung Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Make `/mobile` control the whole dashboard — re-skinned to the tablet's cream/ink/dome/emely design concept, with 5-tab navigation, quick-add tasks, persistent notes CRUD, and wired-up recurring-task completion that restarts the interval and adapts it via a learned EWMA.
 
@@ -61,7 +61,7 @@
 **Interfaces:**
 - Produces: `learnedInterval(intervalsInDays: number[]): number | null`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```ts
 // web/src/lib/services/learnedInterval.test.ts
@@ -98,9 +98,9 @@ describe("learnedInterval", () => {
 });
 ```
 
-- [ ] **Step 2: (User) run the test to confirm it fails** — `npx vitest run src/lib/services/learnedInterval.test.ts`. Expected: FAIL (module not found). *Agent: skip running vitest; proceed.*
+- [x] **Step 2: (User) run the test to confirm it fails** — `npx vitest run src/lib/services/learnedInterval.test.ts`. Expected: FAIL (module not found). *Agent: skip running vitest; proceed.*
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 ```ts
 // web/src/lib/services/learnedInterval.ts
@@ -129,9 +129,9 @@ export function learnedInterval(intervalsInDays: number[]): number | null {
 }
 ```
 
-- [ ] **Step 4: (User) run the test to confirm it passes** — `npx vitest run src/lib/services/learnedInterval.test.ts`. Expected: PASS. *Agent: run `npx tsc --noEmit` instead and confirm no errors.*
+- [x] **Step 4: (User) run the test to confirm it passes** — `npx vitest run src/lib/services/learnedInterval.test.ts`. Expected: PASS. *Agent: run `npx tsc --noEmit` instead and confirm no errors.*
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add web/src/lib/services/learnedInterval.ts web/src/lib/services/learnedInterval.test.ts
@@ -151,7 +151,7 @@ git commit -m "feat(learning): learnedInterval EWMA pure function (Feature B)"
 - Consumes: `learnedInterval(intervalsInDays: number[]): number | null` (Task 1); existing `nextDueDate(rhythm, from)`.
 - Produces: `generateNextOccurrence(taskId, client?)` now bases the successor's `dueDate` on the routine's `completedAt` (fallback `dueDate`) and uses the learned interval when available. `setTaskStatus(...,"done",...)` spawns the next occurrence.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```ts
 // web/src/lib/services/recurrence.test.ts  (add these cases; keep any existing ones)
@@ -220,9 +220,9 @@ describe("generateNextOccurrence — restart + learned interval", () => {
 });
 ```
 
-- [ ] **Step 2: (User) run the test to confirm it fails.** *Agent: skip; proceed.*
+- [x] **Step 2: (User) run the test to confirm it fails.** *Agent: skip; proceed.*
 
-- [ ] **Step 3: Update `generateNextOccurrence`** in `web/src/lib/services/recurrence.ts`. Add the import and replace the `client.task.create` block's `dueDate` computation with a completion-based, learned-interval-aware date.
+- [x] **Step 3: Update `generateNextOccurrence`** in `web/src/lib/services/recurrence.ts`. Add the import and replace the `client.task.create` block's `dueDate` computation with a completion-based, learned-interval-aware date.
 
 Add at top of file (after existing imports):
 
@@ -267,7 +267,7 @@ Then, inside `generateNextOccurrence`, after the `existingSuccessor` guard and b
 
 And change the created record's `dueDate: nextDueDate(task.rhythm, task.dueDate)` to `dueDate: nextDue`.
 
-- [ ] **Step 4: Wire it into completion.** In `web/src/lib/repositories/tasks.ts`, import and call the generator at the end of the `status === "done"` branch of `setTaskStatus`.
+- [x] **Step 4: Wire it into completion.** In `web/src/lib/repositories/tasks.ts`, import and call the generator at the end of the `status === "done"` branch of `setTaskStatus`.
 
 Add import near the top (with the other service imports):
 
@@ -285,9 +285,9 @@ At the very end of `setTaskStatus`, after the `if (status === "done") { ... }` b
   }
 ```
 
-- [ ] **Step 5: Typecheck.** Run `npx tsc --noEmit`. Expected: no errors. (User runs `npx vitest run src/lib/services/recurrence.test.ts src/lib/repositories/tasks.write.test.ts` and confirms green.)
+- [x] **Step 5: Typecheck.** Run `npx tsc --noEmit`. Expected: no errors. (User runs `npx vitest run src/lib/services/recurrence.test.ts src/lib/repositories/tasks.write.test.ts` and confirms green.)
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add web/src/lib/services/recurrence.ts web/src/lib/services/recurrence.test.ts web/src/lib/repositories/tasks.ts
@@ -311,7 +311,7 @@ git commit -m "feat(tasks): spawn next occurrence on completion, restart interva
     `OpenTaskDTO = { id: string; title: string; icon: string; person: "dome" | "emely" | null; dueDateISO: string; rhythm: string | null }`
   - `addTaskAction(input: AddTaskInput): Promise<void>` where `AddTaskInput` mirrors `CreateTaskInput` but with `dueDateISO: string` instead of `dueDate: Date`.
 
-- [ ] **Step 1: Write the failing test** (append to `tasks.write.test.ts`)
+- [x] **Step 1: Write the failing test** (append to `tasks.write.test.ts`)
 
 ```ts
   describe("createTask", () => {
@@ -352,9 +352,9 @@ git commit -m "feat(tasks): spawn next occurrence on completion, restart interva
 
 Add to the import line at the top of the test file: `import { assignTask, setTaskStatus, createTask, listOpenTasks } from "./tasks";`
 
-- [ ] **Step 2: (User) run to confirm fail.** *Agent: skip.*
+- [x] **Step 2: (User) run to confirm fail.** *Agent: skip.*
 
-- [ ] **Step 3: Implement in `web/src/lib/repositories/tasks.ts`**
+- [x] **Step 3: Implement in `web/src/lib/repositories/tasks.ts`**
 
 ```ts
 export interface CreateTaskInput {
@@ -422,7 +422,7 @@ export async function listOpenTasks(client: PrismaClient = prisma): Promise<Open
 }
 ```
 
-- [ ] **Step 4: Add `addTaskAction`** to `web/src/app/actions/tasks.ts` (and switch the file's `revalidatePath("/")` calls to `revalidateDashboard()` — see Task 5; if Task 5 not done yet, leave `revalidatePath("/")` and revisit).
+- [x] **Step 4: Add `addTaskAction`** to `web/src/app/actions/tasks.ts` (and switch the file's `revalidatePath("/")` calls to `revalidateDashboard()` — see Task 5; if Task 5 not done yet, leave `revalidatePath("/")` and revisit).
 
 ```ts
 import { createTask, type CreateTaskInput } from "@/lib/repositories/tasks";
@@ -455,9 +455,9 @@ export async function addTaskAction(input: AddTaskInput): Promise<void> {
 }
 ```
 
-- [ ] **Step 5: Typecheck.** `npx tsc --noEmit`. Expected: no errors.
+- [x] **Step 5: Typecheck.** `npx tsc --noEmit`. Expected: no errors.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add web/src/lib/repositories/tasks.ts web/src/lib/repositories/tasks.write.test.ts web/src/app/actions/tasks.ts
@@ -483,7 +483,7 @@ git commit -m "feat(tasks): createTask + listOpenTasks repo and addTaskAction"
   - `getNotes` DTO gains `pinned: boolean`.
   - Actions: `createNoteAction(input)`, `updateNoteAction(id, input)`, `deleteNoteAction(id)`, `togglePinNoteAction(id)` — all `Promise<void>`.
 
-- [ ] **Step 1: Add `pinned?` to the `Note` type** in `web/src/lib/data.ts` (find `export interface Note` and add the field):
+- [x] **Step 1: Add `pinned?` to the `Note` type** in `web/src/lib/data.ts` (find `export interface Note` and add the field):
 
 ```ts
 export interface Note {
@@ -494,7 +494,7 @@ export interface Note {
 }
 ```
 
-- [ ] **Step 2: Write the failing test** (append to `web/src/lib/repositories/notes.test.ts`)
+- [x] **Step 2: Write the failing test** (append to `web/src/lib/repositories/notes.test.ts`)
 
 ```ts
   describe("notes CRUD", () => {
@@ -528,9 +528,9 @@ export interface Note {
 
 Update the test file's import to include the new functions: `import { getNotes, createNote, updateNote, deleteNote, togglePinNote } from "./notes";`
 
-- [ ] **Step 3: (User) run to confirm fail.** *Agent: skip.*
+- [x] **Step 3: (User) run to confirm fail.** *Agent: skip.*
 
-- [ ] **Step 4: Implement in `web/src/lib/repositories/notes.ts`.** Extend `getNotes`'s map to include `pinned: row.pinned`, then add:
+- [x] **Step 4: Implement in `web/src/lib/repositories/notes.ts`.** Extend `getNotes`'s map to include `pinned: row.pinned`, then add:
 
 ```ts
 export async function createNote(
@@ -578,7 +578,7 @@ In the existing `getNotes` map, change the returned object to:
   }));
 ```
 
-- [ ] **Step 5: Create `web/src/app/actions/notes.ts`**
+- [x] **Step 5: Create `web/src/app/actions/notes.ts`**
 
 ```ts
 "use server";
@@ -612,9 +612,9 @@ export async function togglePinNoteAction(id: string): Promise<void> {
 
 (If Task 5 not done yet, temporarily `import { revalidatePath } from "next/cache"` and call `revalidatePath("/")`; replace when Task 5 lands.)
 
-- [ ] **Step 6: Typecheck.** `npx tsc --noEmit`. Expected: no errors.
+- [x] **Step 6: Typecheck.** `npx tsc --noEmit`. Expected: no errors.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add web/src/lib/data.ts web/src/lib/repositories/notes.ts web/src/lib/repositories/notes.test.ts web/src/app/actions/notes.ts
@@ -632,7 +632,7 @@ git commit -m "feat(notes): persistent notes CRUD repo + server actions"
 **Interfaces:**
 - Produces: `revalidateDashboard(): void` — revalidates `/` and every mobile route so both tablet and phone refresh after any mutation.
 
-- [ ] **Step 1: Create the helper**
+- [x] **Step 1: Create the helper**
 
 ```ts
 // web/src/lib/revalidate.ts
@@ -656,16 +656,16 @@ export function revalidateDashboard(): void {
 }
 ```
 
-- [ ] **Step 2: Replace `revalidatePath("/")` with `revalidateDashboard()`** in each action file. For each of `tasks.ts`, `meals.ts`, `shopping.ts`, `phase.ts`, `accounts.ts`, `notes.ts`:
+- [x] **Step 2: Replace `revalidatePath("/")` with `revalidateDashboard()`** in each action file. For each of `tasks.ts`, `meals.ts`, `shopping.ts`, `phase.ts`, `accounts.ts`, `notes.ts`:
   - remove the `import { revalidatePath } from "next/cache";` line **only if** no other `revalidatePath` call with a non-"/" argument remains,
   - add `import { revalidateDashboard } from "@/lib/revalidate";`,
   - swap every `revalidatePath("/")` → `revalidateDashboard()`.
 
   Note: `pushToBringAction` and `pushFreshBatchAction` in `meals.ts`/`shopping.ts` — keep their existing behavior; `pushToBringAction` has no revalidate today (leave as is), `pushFreshBatchAction` currently revalidates `/` → swap to `revalidateDashboard()`.
 
-- [ ] **Step 3: Typecheck + lint.** `npx tsc --noEmit && npm run lint`. Expected: no errors.
+- [x] **Step 3: Typecheck + lint.** `npx tsc --noEmit && npm run lint`. Expected: no errors.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add web/src/lib/revalidate.ts web/src/app/actions/
@@ -683,7 +683,7 @@ git commit -m "feat(actions): revalidate mobile routes too via shared revalidate
 **Interfaces:**
 - Produces: `<PageHeader eyebrow? title accentDot? right? />` — mobile page header in the `CardHead` visual language.
 
-- [ ] **Step 1: Rewrite the layout shell** `web/src/app/(mobile)/layout.tsx`
+- [x] **Step 1: Rewrite the layout shell** `web/src/app/(mobile)/layout.tsx`
 
 ```tsx
 import { MobileNavBar } from "@/components/mobile/MobileNavBar";
@@ -703,7 +703,7 @@ export default function MobileLayout({ children }: { children: React.ReactNode }
 
 (Dark mode: `prefers-color-scheme` drives it automatically via Tailwind's `dark` variant once the root has no forced `.dark` class — the tablet toggles `.dark` manually, but mobile relies on the media query. The `@custom-variant dark` in `globals.css` matches `.dark`; to honor the OS setting on mobile, add the media fallback in Step 2.)
 
-- [ ] **Step 2: Add an OS-dark fallback** to `web/src/app/globals.css` (append at end) so mobile follows the system without a manual toggle:
+- [x] **Step 2: Add an OS-dark fallback** to `web/src/app/globals.css` (append at end) so mobile follows the system without a manual toggle:
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -721,7 +721,7 @@ Note: the existing `@custom-variant dark (&:where(.dark, .dark *))` only reacts 
 
 Verify the tablet (`/`) still respects its manual toggle after this change (the manual `.dark` class still wins for `/`; the media query adds OS-driven dark where no class is set). If the tablet regresses, revert this line and instead gate mobile dark with an inline script that sets `.dark` from `matchMedia` in the mobile layout. Confirm visually in Step 4.
 
-- [ ] **Step 3: Create `PageHeader`**
+- [x] **Step 3: Create `PageHeader`**
 
 ```tsx
 // web/src/components/mobile/PageHeader.tsx
@@ -759,9 +759,9 @@ export function PageHeader({
 }
 ```
 
-- [ ] **Step 4: Verify.** `npx tsc --noEmit`. Then run the app (`npm run dev`) and load `/mobile/meals` — confirm cream background, no slate, header in brand style. Confirm `/` (tablet) dark toggle still works. *(User performs the visual check.)*
+- [x] **Step 4: Verify.** `npx tsc --noEmit`. Then run the app (`npm run dev`) and load `/mobile/meals` — confirm cream background, no slate, header in brand style. Confirm `/` (tablet) dark toggle still works. *(User performs the visual check.)*
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add "web/src/app/(mobile)/layout.tsx" web/src/components/mobile/PageHeader.tsx web/src/app/globals.css
@@ -778,7 +778,7 @@ git commit -m "feat(mobile): re-skin shell to cream/ink design + OS dark + PageH
 **Interfaces:**
 - Consumes: route paths `/mobile`, `/mobile/tasks`, `/mobile/meals`, `/mobile/shopping`, `/mobile/more`.
 
-- [ ] **Step 1: Rewrite the nav** as a client component that highlights the active tab via `usePathname`.
+- [x] **Step 1: Rewrite the nav** as a client component that highlights the active tab via `usePathname`.
 
 ```tsx
 // web/src/components/mobile/MobileNavBar.tsx
@@ -820,9 +820,9 @@ export function MobileNavBar() {
 }
 ```
 
-- [ ] **Step 2: Verify.** `npx tsc --noEmit`. User loads `/mobile/meals`, taps tabs — active tab tints teal, no slate.
+- [x] **Step 2: Verify.** `npx tsc --noEmit`. User loads `/mobile/meals`, taps tabs — active tab tints teal, no slate.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add web/src/components/mobile/MobileNavBar.tsx
@@ -840,7 +840,7 @@ git commit -m "feat(mobile): 5-tab cream bottom nav with active-tab accent"
 **Interfaces:**
 - Consumes: `getTasksByPerson`, `getTodaysEvents`, `getActivePhase`, `getComputedSplit`, `getCurrent`/`weather` fallback, `toggleTaskAction`/`deferTaskAction`/`failTaskAction`. Reuses `TaskTile`, `AppointmentsTile`, `Weather`, `PhaseSwitch`, `Card`.
 
-- [ ] **Step 1: Build the page** `web/src/app/(mobile)/mobile/page.tsx` (server component) — load the same data the tablet's `/` loads for "today", pass to a client `TodayView` for the interactive task tiles.
+- [x] **Step 1: Build the page** `web/src/app/(mobile)/mobile/page.tsx` (server component) — load the same data the tablet's `/` loads for "today", pass to a client `TodayView` for the interactive task tiles.
 
 ```tsx
 import { TodayView } from "@/components/mobile/TodayView";
@@ -885,7 +885,7 @@ export default async function MobileTodayPage() {
 }
 ```
 
-- [ ] **Step 2: Build `TodayView`** (client) — mirrors the tablet hero band stacked vertically, with the same optimistic task handling as `dashboard.tsx`.
+- [x] **Step 2: Build `TodayView`** (client) — mirrors the tablet hero band stacked vertically, with the same optimistic task handling as `dashboard.tsx`.
 
 ```tsx
 // web/src/components/mobile/TodayView.tsx
@@ -976,9 +976,9 @@ export function TodayView({
 }
 ```
 
-- [ ] **Step 3: Verify.** `npx tsc --noEmit`. User loads `/mobile`, confirms weather + both task tiles (tappable, optimistic), appointments, split bar render in brand style; long-press a task opens the action menu (defer/fail).
+- [x] **Step 3: Verify.** `npx tsc --noEmit`. User loads `/mobile`, confirms weather + both task tiles (tappable, optimistic), appointments, split bar render in brand style; long-press a task opens the action menu (defer/fail).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add "web/src/app/(mobile)/mobile/page.tsx" web/src/components/mobile/TodayView.tsx
@@ -996,7 +996,7 @@ git commit -m "feat(mobile): Heute landing page (weather, tasks, appointments, s
 **Interfaces:**
 - Consumes: `getTasksForDay`, `listOpenTasks` (Task 3), `toggleTaskAction`/`deferTaskAction`/`failTaskAction`, `addTaskAction` (Task 3). Reuses `TaskRow`, `Card`, `PersonBadge`, `PageHeader`.
 
-- [ ] **Step 1: Build the page** `web/src/app/(mobile)/mobile/tasks/page.tsx`
+- [x] **Step 1: Build the page** `web/src/app/(mobile)/mobile/tasks/page.tsx`
 
 ```tsx
 import { TasksView } from "@/components/mobile/TasksView";
@@ -1012,7 +1012,7 @@ export default async function MobileTasksPage() {
 }
 ```
 
-- [ ] **Step 2: Build `TasksView`** (client). Three blocks: today's open/done list (optimistic toggle/defer/fail), a quick-add form, and a "Erledigt nachtragen" picker over `allOpen` (not-due tasks) that completes a real task via `toggleTaskAction` (this is what triggers the recurrence restart + EWMA from Task 2).
+- [x] **Step 2: Build `TasksView`** (client). Three blocks: today's open/done list (optimistic toggle/defer/fail), a quick-add form, and a "Erledigt nachtragen" picker over `allOpen` (not-due tasks) that completes a real task via `toggleTaskAction` (this is what triggers the recurrence restart + EWMA from Task 2).
 
 ```tsx
 // web/src/components/mobile/TasksView.tsx
@@ -1205,9 +1205,9 @@ function CompleteExistingPicker({ tasks, onPicked }: { tasks: OpenTaskDTO[]; onP
 }
 ```
 
-- [ ] **Step 3: Verify.** `npx tsc --noEmit`. User loads `/mobile/tasks`: today's list toggles optimistically; "+" opens quick-add and a new task appears after submit; "Erledigt nachtragen" lists open tasks and completing a routine there spawns its next occurrence with a restarted due date. *(User confirms recurrence behavior against Task 2 tests run manually.)*
+- [x] **Step 3: Verify.** `npx tsc --noEmit`. User loads `/mobile/tasks`: today's list toggles optimistically; "+" opens quick-add and a new task appears after submit; "Erledigt nachtragen" lists open tasks and completing a routine there spawns its next occurrence with a restarted due date. *(User confirms recurrence behavior against Task 2 tests run manually.)*
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add "web/src/app/(mobile)/mobile/tasks/page.tsx" web/src/components/mobile/TasksView.tsx
@@ -1225,7 +1225,7 @@ git commit -m "feat(mobile): tasks page — list, quick-add, complete-existing (
 **Interfaces:**
 - Consumes: `getShoppingItems`, `getFreshShoppingState`, `toggleShoppingAction`, `toggleFreshnessAction`. Reuses `BringSyncControl`, `FreshShoppingControl`, `Card`, `PageHeader`.
 
-- [ ] **Step 1: Build the page** `web/src/app/(mobile)/mobile/shopping/page.tsx`
+- [x] **Step 1: Build the page** `web/src/app/(mobile)/mobile/shopping/page.tsx`
 
 ```tsx
 import { ShoppingView } from "@/components/mobile/ShoppingView";
@@ -1239,7 +1239,7 @@ export default async function MobileShoppingPage() {
 }
 ```
 
-- [ ] **Step 2: Build `ShoppingView`** (client) — checkable list with optimistic toggle, freshness correction on recipe items, plus the reused Bring + fresh-batch controls.
+- [x] **Step 2: Build `ShoppingView`** (client) — checkable list with optimistic toggle, freshness correction on recipe items, plus the reused Bring + fresh-batch controls.
 
 ```tsx
 // web/src/components/mobile/ShoppingView.tsx
@@ -1313,9 +1313,9 @@ export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: F
 }
 ```
 
-- [ ] **Step 3: Verify.** `npx tsc --noEmit`. User loads `/mobile/shopping`: items toggle optimistically; recipe items show frisch/haltbar toggle; "An Bring senden" + fresh-batch controls work.
+- [x] **Step 3: Verify.** `npx tsc --noEmit`. User loads `/mobile/shopping`: items toggle optimistically; recipe items show frisch/haltbar toggle; "An Bring senden" + fresh-batch controls work.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add "web/src/app/(mobile)/mobile/shopping/page.tsx" web/src/components/mobile/ShoppingView.tsx
@@ -1335,7 +1335,7 @@ git commit -m "feat(mobile): shopping page — checklist, freshness correction, 
 **Interfaces:**
 - Consumes: `getNotes` (with `pinned`), note CRUD actions (Task 4), `getActivePhase`, `PhaseSwitch`, `PushSetupControl`. Reuses `Card`, `PageHeader`.
 
-- [ ] **Step 1: Build `NotesEditor`** (client) — list with pin/edit/delete and an add field.
+- [x] **Step 1: Build `NotesEditor`** (client) — list with pin/edit/delete and an add field.
 
 ```tsx
 // web/src/components/mobile/NotesEditor.tsx
@@ -1435,7 +1435,7 @@ function NoteItem({ note }: { note: Note }) {
 }
 ```
 
-- [ ] **Step 2: Build `MoreView`** (server) and the page.
+- [x] **Step 2: Build `MoreView`** (server) and the page.
 
 `web/src/components/mobile/MoreView.tsx`:
 
@@ -1493,15 +1493,15 @@ export default async function MobileMorePage() {
 }
 ```
 
-- [ ] **Step 3: Delete the obsolete routes.**
+- [x] **Step 3: Delete the obsolete routes.**
 
 ```bash
 git rm "web/src/app/(mobile)/mobile/notes/page.tsx" "web/src/app/(mobile)/mobile/settings/page.tsx"
 ```
 
-- [ ] **Step 4: Verify.** `npx tsc --noEmit`. User loads `/mobile/more`: add/edit/pin/delete notes work and persist across reload; phase switch toggles Elternzeit; push enable works.
+- [x] **Step 4: Verify.** `npx tsc --noEmit`. User loads `/mobile/more`: add/edit/pin/delete notes work and persist across reload; phase switch toggles Elternzeit; push enable works.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add "web/src/app/(mobile)/mobile/more/page.tsx" web/src/components/mobile/MoreView.tsx web/src/components/mobile/NotesEditor.tsx
@@ -1515,7 +1515,7 @@ git commit -m "feat(mobile): Mehr page — notes CRUD, Elternzeit-Modus, push se
 **Files:**
 - Modify: `web/src/app/(mobile)/mobile/meals/page.tsx`
 
-- [ ] **Step 1: Swap the bare `<h1>` for `PageHeader`** in the meals page (keep the existing `MealDraftPanel` data loading untouched).
+- [x] **Step 1: Swap the bare `<h1>` for `PageHeader`** in the meals page (keep the existing `MealDraftPanel` data loading untouched).
 
 ```tsx
 import { MealDraftPanel } from "@/components/MealDraftPanel";
@@ -1540,9 +1540,9 @@ export default async function MobileMealsPage() {
 }
 ```
 
-- [ ] **Step 2: Full verification.** Run `npx tsc --noEmit && npm run lint && npm run build`. Expected: all pass. User then walks all five tabs in the browser/PWA, confirms: consistent cream/ink theme, no slate remnants, every control mutates and both phone + tablet refresh.
+- [x] **Step 2: Full verification.** Run `npx tsc --noEmit && npm run lint && npm run build`. Expected: all pass. User then walks all five tabs in the browser/PWA, confirms: consistent cream/ink theme, no slate remnants, every control mutates and both phone + tablet refresh.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add "web/src/app/(mobile)/mobile/meals/page.tsx"
