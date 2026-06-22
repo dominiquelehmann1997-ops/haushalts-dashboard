@@ -7,7 +7,12 @@
 import { revalidateDashboard } from "@/lib/revalidate";
 
 import { prisma } from "@/lib/db";
-import { setShoppingDone, getShoppingItems } from "@/lib/repositories/shopping";
+import {
+  setShoppingDone,
+  getShoppingItems,
+  deleteShoppingItem,
+  clearShoppingItems,
+} from "@/lib/repositories/shopping";
 import { toggleItemFreshness } from "@/lib/repositories/freshnessOverride";
 import { pushShoppingList, toBringItems, type BringPushResult } from "@/integrations/bring/client";
 
@@ -17,6 +22,18 @@ export async function toggleShoppingAction(id: string): Promise<void> {
 
   await setShoppingDone(id, !item.done);
 
+  revalidateDashboard();
+}
+
+/** Löscht ein einzelnes Einkaufs-Item. */
+export async function deleteShoppingAction(id: string): Promise<void> {
+  await deleteShoppingItem(id);
+  revalidateDashboard();
+}
+
+/** Leert die gesamte Einkaufsliste. */
+export async function clearShoppingAction(): Promise<void> {
+  await clearShoppingItems();
   revalidateDashboard();
 }
 

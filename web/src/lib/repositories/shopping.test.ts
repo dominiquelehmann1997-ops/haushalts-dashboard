@@ -5,7 +5,12 @@ import { PrismaClient } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
 import { syncIngredientsToShopping } from "@/lib/services/shoppingSync";
 
-import { getFreshShoppingState, getShoppingItems } from "./shopping";
+import {
+  clearShoppingItems,
+  deleteShoppingItem,
+  getFreshShoppingState,
+  getShoppingItems,
+} from "./shopping";
 
 describe("getFreshShoppingState", () => {
   let client: PrismaClient;
@@ -79,5 +84,52 @@ describe("getShoppingItems", () => {
 
     expect(tomaten?.category).toBe("frisch");
     expect(brot?.category).toBeNull();
+  });
+});
+
+describe("deleteShoppingItem", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+    await syncIngredientsToShopping(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("entfernt genau ein Item, lässt den Rest stehen", async () => {
+    const before = await getShoppingItems(client);
+    const tomaten = before.find((i) => i.text === "Tomaten")!;
+
+    await deleteShoppingItem(tomaten.id, client);
+
+    const after = await getShoppingItems(client);
+    expect(after.find((i) => i.id === tomaten.id)).toBeUndefined();
+    expect(after).toHaveLength(before.length - 1);
+  });
+});
+
+describe("clearShoppingItems", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+    await syncIngredientsToShopping(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("leert die gesamte Einkaufsliste", async () => {
+    expect((await getShoppingItems(client)).length).toBeGreaterThan(0);
+
+    await clearShoppingItems(client);
+
+    expect(await getShoppingItems(client)).toEqual([]);
   });
 });
