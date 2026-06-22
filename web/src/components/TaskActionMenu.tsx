@@ -44,8 +44,8 @@ export function TaskActionMenu({
   onDone: () => void;
   onDefer: () => void;
   onFail: () => void;
-  onTakeOver: () => void;
-  takeOverLabel: string;
+  onTakeOver?: () => void;
+  takeOverLabel?: string;
   onClose: () => void;
 }) {
   // Clamp so the popover never overflows the viewport's right/bottom edge.
@@ -78,7 +78,9 @@ export function TaskActionMenu({
         <MenuItem label="✓ Erledigt" run={onDone} onClose={onClose} />
         <MenuItem label="→ Aufschieben" run={onDefer} onClose={onClose} />
         <MenuItem label="✕ Geht heute nicht" run={onFail} onClose={onClose} />
-        <MenuItem label={takeOverLabel} run={onTakeOver} onClose={onClose} />
+        {onTakeOver != null && takeOverLabel != null && (
+          <MenuItem label={takeOverLabel} run={onTakeOver} onClose={onClose} />
+        )}
       </div>
     </>
   );

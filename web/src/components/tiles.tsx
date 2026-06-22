@@ -16,15 +16,16 @@ export function TaskRow({
   onTakeOver,
 }: {
   task: Task;
-  person: "dome" | "emely";
+  person: "dome" | "emely" | undefined;
   onToggle: (id: string) => void;
   onDefer: (id: string) => void;
   onFail: (id: string) => void;
   onTakeOver: (id: string, doerKey: "dome" | "emely") => void;
 }) {
   const p = PERSON[task.person];
+  const canTakeOver = person === "dome" || person === "emely";
   const otherKey: "dome" | "emely" = person === "dome" ? "emely" : "dome";
-  const otherName = PERSON[otherKey].name;
+  const otherName = canTakeOver ? PERSON[otherKey].name : "";
   const done = task.status === "done";
   const moved = task.status === "moved";
   const failed = task.status === "failed";
@@ -78,8 +79,12 @@ export function TaskRow({
           onDone={() => onToggle(task.id)}
           onDefer={() => onDefer(task.id)}
           onFail={() => onFail(task.id)}
-          onTakeOver={() => onTakeOver(task.id, otherKey)}
-          takeOverLabel={`✓ Von ${otherName} erledigt`}
+          {...(canTakeOver
+            ? {
+                onTakeOver: () => onTakeOver(task.id, otherKey),
+                takeOverLabel: `✓ Von ${otherName} erledigt`,
+              }
+            : {})}
           onClose={() => setMenuOpen(false)}
         />
       )}
