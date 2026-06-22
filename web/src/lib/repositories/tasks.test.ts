@@ -3,7 +3,7 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { deferTask, getOpenTaskCount, getTasksByPerson, getTasksForDay } from "./tasks";
+import { completeTaskBy, deferTask, getOpenTaskCount, getTasksByPerson, getTasksForDay } from "./tasks";
 
 /** Formats a Date as a local "YYYY-MM-DD" key, matching `DayForecast.date`. */
 function dateKey(date: Date): string {
@@ -113,5 +113,49 @@ describe("tasks repository", () => {
       expect(dateKey(after.dueDate)).toBe(dateKey(expected));
       expect(after.note).toBeTruthy();
     });
+  });
+});
+
+describe("completeTaskBy", () => {
+  let client: PrismaClient;
+  const today = new Date();
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("schreibt die Punkte dem Erlediger gut, nicht dem ursprünglich Zugewiesenen", async () => {
+    const emely = await client.person.findUniqueOrThrow({ where: { key: "emely" } });
+    const task = await client.task.create({
+      data: {
+        title: "Gassi gehen",
+        type: "routine",
+        effort: 45,
+        status: "open",
+        allowedPersons: "both",
+        outdoor: false,
+        rhythm: "daily",
+        assignedToId: emely.id,
+        dueDate: today,
+      },
+    });
+
+    await completeTaskBy(task.id, "dome", client);
+
+    const entries = await client.accountEntry.findMany({
+      where: { taskId: task.id },
+      include: { person: true },
+    });
+    expect(entries).toHaveLength(1);
+    expect(entries[0]!.person.key).toBe("dome");
+    expect(entries[0]!.points).toBe(45);
+
+    const updated = await client.task.findUniqueOrThrow({ where: { id: task.id } });
+    expect(updated.status).toBe("done");
   });
 });

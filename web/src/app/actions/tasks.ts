@@ -8,7 +8,7 @@
 import { revalidateDashboard } from "@/lib/revalidate";
 
 import { prisma } from "@/lib/db";
-import { deferTask, setTaskStatus, createTask, type CreateTaskInput } from "@/lib/repositories/tasks";
+import { deferTask, setTaskStatus, createTask, completeTaskBy, type CreateTaskInput } from "@/lib/repositories/tasks";
 
 /** Toggles a task between "open" and "done"; other statuses are a no-op. */
 export async function toggleTaskAction(id: string): Promise<void> {
@@ -46,6 +46,15 @@ export interface AddTaskInput {
   rhythm?: string | null;
   icon?: string | null;
   assignToKey?: "dome" | "emely" | null;
+}
+
+/** Schließt eine fremd zugewiesene Aufgabe als vom Erlediger erledigt ab. */
+export async function completeTaskByAction(
+  id: string,
+  doerKey: "dome" | "emely",
+): Promise<void> {
+  await completeTaskBy(id, doerKey);
+  revalidateDashboard();
 }
 
 /** Creates a new standalone task from the mobile quick-add form. */
