@@ -34,8 +34,12 @@ On the next reboot the script runs: wake-lock → dashboard → wait for `:3001`
    - **Web Content → Autoplay / fullscreen:** enable **Fullscreen**.
    - **Device Management → Keep Screen On:** ON.
    - **Device Management → Screen Off Timer:** 0 (never).
-   - **Advanced Web → Auto-Reload on Idle / on connection error:** enable, ~30s.
-   - **Universal Launcher / Start Automatically (on boot):** ON.
+   - **Web Auto Reload → Auto Reload after Page Error:** enable, ~30s (this is
+     the "on connection error" reload; Android 6+ also retries HTTP 40x/50x).
+     Optionally **Auto Reload on Idle** too. This is its *own* section, not under
+     Advanced Web.
+   - **Device Management → Launch on Boot:** ON. (Not "Universal Launcher" — that
+     is the app-grid home screen, a different feature.)
 3. Disable battery optimization for Fully Kiosk as well.
 
 ## Boot order race
