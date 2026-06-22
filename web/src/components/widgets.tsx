@@ -1,5 +1,6 @@
 import type { Meal, Note } from "@/lib/data";
 import { Card, CardHead } from "@/components/ui";
+import { MealPlanControl } from "@/components/MealPlanControl";
 
 export function MealReasonBadge({ reason, extraPortion }: { reason?: string | null; extraPortion?: boolean }) {
   if (!reason) return null;
@@ -21,7 +22,10 @@ export function MealReasonBadge({ reason, extraPortion }: { reason?: string | nu
 export function MealPlanWidget({ meals }: { meals: Meal[] }) {
   return (
     <Card className="h-full flex flex-col">
-      <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" />
+      <div className="flex items-start justify-between gap-2">
+        <CardHead eyebrow="Essensplan · Woche" title="Schnell & einfach" />
+        <MealPlanControl />
+      </div>
       <ul className="space-y-1.5 flex-1 min-h-0 overflow-y-auto">
         {meals.map((m) => (
           <li
