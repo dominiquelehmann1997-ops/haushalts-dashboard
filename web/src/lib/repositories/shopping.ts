@@ -34,6 +34,19 @@ export async function setShoppingDone(
   await client.shoppingItem.update({ where: { id }, data: { done } });
 }
 
+/** Removes a single shopping item by id. */
+export async function deleteShoppingItem(
+  id: string,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  await client.shoppingItem.delete({ where: { id } });
+}
+
+/** Clears the whole shopping list. */
+export async function clearShoppingItems(client: PrismaClient = prisma): Promise<void> {
+  await client.shoppingItem.deleteMany();
+}
+
 /**
  * Frische-Einkaufs-Zustand fürs Dashboard: die offenen, noch nicht gepushten
  * Frisch-Rezept-Items plus ein Vorschlagstag (Tag vor dem frühesten Verbrauch
