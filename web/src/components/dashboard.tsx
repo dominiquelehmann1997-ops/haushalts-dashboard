@@ -4,7 +4,7 @@ import { useEffect, useState, useOptimistic, startTransition } from "react";
 import type { Task, Appointment, Meal, Note } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ProjectProgress } from "@/lib/repositories/projects";
-import { toggleTaskAction, deferTaskAction, failTaskAction } from "@/app/actions/tasks";
+import { toggleTaskAction, deferTaskAction, failTaskAction, completeTaskByAction } from "@/app/actions/tasks";
 import { Header } from "@/components/header";
 import { TaskTile, AppointmentsTile } from "@/components/tiles";
 import { MealPlanWidget, NotesWidget } from "@/components/widgets";
@@ -80,6 +80,12 @@ export default function Dashboard({
       await failTaskAction(id, "geht heute nicht");
     });
   };
+  const takeOver = (id: string, doerKey: "dome" | "emely") => {
+    startTransition(async () => {
+      applyTaskOptimistic({ id, type: "toggle" });
+      await completeTaskByAction(id, doerKey);
+    });
+  };
 
   const domeTasks = tasks.filter((t) => t.person === "dome");
   const emelyTasks = tasks.filter((t) => t.person === "emely");
@@ -98,10 +104,10 @@ export default function Dashboard({
       {/* Zone 2 — Primär */}
       <section className="flex-1 min-h-0 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
         <div className="min-h-0 overflow-hidden">
-          <TaskTile person="dome" tasks={domeTasks} onToggle={toggleTask} onDefer={deferTask} onFail={failTask} />
+          <TaskTile person="dome" tasks={domeTasks} onToggle={toggleTask} onDefer={deferTask} onFail={failTask} onTakeOver={takeOver} />
         </div>
         <div className="min-h-0 overflow-hidden">
-          <TaskTile person="emely" tasks={emelyTasks} onToggle={toggleTask} onDefer={deferTask} onFail={failTask} />
+          <TaskTile person="emely" tasks={emelyTasks} onToggle={toggleTask} onDefer={deferTask} onFail={failTask} onTakeOver={takeOver} />
         </div>
         <div className="min-h-0 overflow-hidden">
           <AppointmentsTile appointments={appointments} />

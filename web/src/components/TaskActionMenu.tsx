@@ -1,7 +1,7 @@
 "use client";
 
 const MENU_WIDTH = 208; // w-52
-const MENU_HEIGHT = 123; // three menu items, ~41px each
+const MENU_HEIGHT = 164; // four menu items, ~41px each
 const MENU_MARGIN = 8;
 
 function MenuItem({
@@ -36,12 +36,16 @@ export function TaskActionMenu({
   onDone,
   onDefer,
   onFail,
+  onTakeOver,
+  takeOverLabel,
   onClose,
 }: {
   position: { x: number; y: number };
   onDone: () => void;
   onDefer: () => void;
   onFail: () => void;
+  onTakeOver: () => void;
+  takeOverLabel: string;
   onClose: () => void;
 }) {
   // Clamp so the popover never overflows the viewport's right/bottom edge.
@@ -74,6 +78,7 @@ export function TaskActionMenu({
         <MenuItem label="✓ Erledigt" run={onDone} onClose={onClose} />
         <MenuItem label="→ Aufschieben" run={onDefer} onClose={onClose} />
         <MenuItem label="✕ Geht heute nicht" run={onFail} onClose={onClose} />
+        <MenuItem label={takeOverLabel} run={onTakeOver} onClose={onClose} />
       </div>
     </>
   );

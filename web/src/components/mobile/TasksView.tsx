@@ -4,7 +4,7 @@
 import { useState, useOptimistic, startTransition } from "react";
 import type { Task } from "@/lib/data";
 import type { OpenTaskDTO } from "@/lib/repositories/tasks";
-import { toggleTaskAction, deferTaskAction, failTaskAction, addTaskAction } from "@/app/actions/tasks";
+import { toggleTaskAction, deferTaskAction, failTaskAction, addTaskAction, completeTaskByAction } from "@/app/actions/tasks";
 import { TaskRow } from "@/components/tiles";
 import { Card } from "@/components/ui";
 import { PageHeader } from "@/components/mobile/PageHeader";
@@ -55,9 +55,16 @@ export function TasksView({ todayTasks, allOpen }: { todayTasks: Task[]; allOpen
             <TaskRow
               key={t.id}
               task={t}
+              person={t.person}
               onToggle={(id) => run(id, "toggle", toggleTaskAction)}
               onDefer={(id) => run(id, "defer", deferTaskAction)}
               onFail={(id) => run(id, "fail", (taskId) => failTaskAction(taskId, "geht heute nicht"))}
+              onTakeOver={(id, doerKey) =>
+                startTransition(async () => {
+                  applyOpt({ id, type: "toggle" });
+                  await completeTaskByAction(id, doerKey);
+                })
+              }
             />
           ))}
           {tasks.length === 0 && <li className="py-6 text-center text-ink-faint text-[14px]">Heute nichts offen.</li>}
