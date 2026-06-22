@@ -245,6 +245,23 @@ export async function listOpenTasks(client: PrismaClient = prisma): Promise<Open
 }
 
 /**
+ * Schließt eine Aufgabe im Namen des *tatsächlichen* Erledigers ab: setzt
+ * `assignedToId` auf `doerKey` und ruft dann `setTaskStatus(…, "done")`. Da die
+ * Buchung in `setTaskStatus`/`recordCompletion` an `assignedTo` hängt, gehen die
+ * Fairness-Punkte an den Erlediger. Recurring spawnt die nächste Occurrence
+ * unassigned wie gehabt.
+ */
+export async function completeTaskBy(
+  id: string,
+  doerKey: "dome" | "emely",
+  client: PrismaClient = prisma,
+): Promise<void> {
+  const person = await client.person.findUniqueOrThrow({ where: { key: doerKey } });
+  await client.task.update({ where: { id }, data: { assignedToId: person.id } });
+  await setTaskStatus(id, "done", null, client);
+}
+
+/**
  * Schiebt eine Aufgabe auf den nächsten sinnvollen Tag (Rhythmus, sonst morgen)
  * und markiert sie als `moved`. `note` dokumentiert die Verschiebung in der UI.
  */

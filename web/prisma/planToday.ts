@@ -2,6 +2,7 @@ import "dotenv/config";
 
 import { prisma } from "../src/lib/db";
 import { planDueTasks } from "../src/lib/services/planning";
+import { rollOverdueRoutines } from "../src/lib/services/overdueCatchup";
 import { getBusyWindows } from "../src/lib/repositories/calendar";
 import { getForecast } from "../src/integrations/weather/openMeteo";
 import { dayBounds } from "../src/lib/dates";
@@ -39,6 +40,11 @@ async function main() {
       console.warn("Forecast konnte nicht geladen werden:", e);
     }
 
+    const caught = await rollOverdueRoutines(day);
+    console.log(
+      `Catch-up: ${caught.rolled} überfällige Routinen auf heute gezogen, ` +
+        `${caught.deletedDuplicates} Duplikate entfernt.`,
+    );
     const decisions = await planDueTasks(day, { busy, forecast });
     const count = (kind: string) => decisions.filter((d) => d.result.kind === kind).length;
     console.log(
