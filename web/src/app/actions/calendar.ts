@@ -3,6 +3,7 @@
 import { revalidateDashboard } from "@/lib/revalidate";
 import { configuredCalendars, syncCalendar } from "@/lib/services/calendarSync";
 import { planDueTasks } from "@/lib/services/planning";
+import { rollOverdueRoutines } from "@/lib/services/overdueCatchup";
 import { getBusyWindows } from "@/lib/repositories/calendar";
 import { getForecast } from "@/integrations/weather/openMeteo";
 import { dayBounds } from "@/lib/dates";
@@ -33,6 +34,7 @@ export async function syncCalendarAction(): Promise<
     } catch {
       forecast = [];
     }
+    await rollOverdueRoutines(day);
     await planDueTasks(day, { busy, forecast });
 
     revalidateDashboard();
