@@ -20,10 +20,11 @@ describe("mealPlanner service", () => {
   });
 
   /** Returns the entries' recipe names ordered Monday→Friday. */
-  async function orderedNames(entries: { date: Date; recipeId: string }[]): Promise<string[]> {
+  async function orderedNames(entries: { date: Date; recipeId: string | null }[]): Promise<string[]> {
     const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
     const names: string[] = [];
     for (const entry of sorted) {
+      if (entry.recipeId === null) continue; // übersprungener Tag → kein Gericht
       const recipe = await client.recipe.findUniqueOrThrow({ where: { id: entry.recipeId } });
       names.push(recipe.name);
     }
@@ -47,7 +48,7 @@ describe("mealPlanner service", () => {
     expect(weekdays).toEqual([1, 2, 3, 4, 5]);
 
     const monday = sorted[0];
-    const mondayRecipe = await client.recipe.findUniqueOrThrow({ where: { id: monday.recipeId } });
+    const mondayRecipe = await client.recipe.findUniqueOrThrow({ where: { id: monday.recipeId! } });
     expect(mondayRecipe.simple).toBe(true);
   });
 
@@ -71,7 +72,7 @@ describe("mealPlanner service", () => {
 
     const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
     const monday = sorted[0];
-    const mondayRecipe = await client.recipe.findUniqueOrThrow({ where: { id: monday.recipeId } });
+    const mondayRecipe = await client.recipe.findUniqueOrThrow({ where: { id: monday.recipeId! } });
 
     const allRecipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
     expect(mondayRecipe.name).toBe(allRecipes[0].name);
@@ -198,7 +199,7 @@ describe("generateWeekPlan — dienstbewusst", () => {
     );
     const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
     const monday = sorted[0];
-    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: monday.recipeId } });
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: monday.recipeId! } });
     expect(recipe.simple).toBe(true);
     expect(monday.reason).toBe("emely-allein");
     expect(monday.extraPortion).toBe(false);
@@ -216,7 +217,7 @@ describe("generateWeekPlan — dienstbewusst", () => {
     );
     const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
     const tuesday = sorted[1];
-    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: tuesday.recipeId } });
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: tuesday.recipeId! } });
     expect(recipe.reheatable).toBe(true);
     expect(tuesday.extraPortion).toBe(true);
     expect(tuesday.reason).toBe("aufwaermen-extra");
@@ -239,7 +240,7 @@ describe("generateWeekPlan — dienstbewusst", () => {
     );
     const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
     const wed = sorted[2];
-    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: wed.recipeId } });
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: wed.recipeId! } });
     expect(recipe.simple && recipe.reheatable).toBe(true);
     expect(recipe.name).toBe("Reste");
   });
@@ -276,7 +277,7 @@ describe("generateWeekPlan — dienstbewusst", () => {
     expect(monday.recipeId).toBeTruthy();
     expect(monday.reason).toBe("aufwaermen-extra");
     expect(monday.extraPortion).toBe(true);
-    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: monday.recipeId } });
+    const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: monday.recipeId! } });
     expect(recipe.reheatable).toBe(false); // proves the empty-pool → base fallback fired
   });
 });

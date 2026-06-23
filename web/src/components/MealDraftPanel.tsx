@@ -90,13 +90,14 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
               🎲
             </button>
             <select
-              key={m.recipeId}
-              defaultValue={m.recipeId}
+              key={m.recipeId ?? "skip"}
+              defaultValue={m.recipeId ?? ""}
               disabled={pending}
               onChange={(e) => run(() => setDraftDayRecipeAction(m.dateISO, e.target.value))}
               className="shrink-0 text-[12px] rounded-lg bg-white dark:bg-white/10 px-1.5 py-1 max-w-[120px]"
               aria-label={`${m.day} Gericht tauschen`}
             >
+              <option value="">— überspringen</option>
               {recipes.map((r) => (
                 <option key={r.id} value={r.id}>
                   {r.name}

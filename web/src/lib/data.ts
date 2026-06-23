@@ -52,7 +52,8 @@ export interface DraftMeal {
   dateISO: string;
   day: string; // "Mo".."Fr"
   dish: string;
-  recipeId: string;
+  /** `null` → Tag bewusst übersprungen ("frei", kein Rezept). */
+  recipeId: string | null;
   reason?: string | null;
   extraPortion?: boolean;
 }

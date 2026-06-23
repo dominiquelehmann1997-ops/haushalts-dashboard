@@ -37,6 +37,17 @@ describe("getFreshShoppingState", () => {
     expect(state.suggestedDayISO).toBe(sunday.toISOString());
   });
 
+  it("crasht nicht bei übersprungenen aktiven Tagen (recipe null)", async () => {
+    const { start } = currentWeekBounds();
+    await client.mealPlanEntry.create({
+      data: { date: new Date(start), recipeId: null, status: "active" },
+    });
+
+    const state = await getFreshShoppingState(client);
+    // Übersprungener Tag liefert keine Zutaten → bestehende Frisch-Items bleiben.
+    expect(state.pendingItems).toContain("Tomaten");
+  });
+
   it("has no pending items once fresh items are pushed", async () => {
     await client.shoppingItem.updateMany({
       where: { source: "recipe", category: "frisch" },
