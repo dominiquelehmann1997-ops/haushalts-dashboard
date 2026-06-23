@@ -168,3 +168,13 @@ export const PERSON: Record<PersonKey, PersonStyle> = {
     fill: "bg-ink-faint",
   },
 };
+
+/**
+ * Fill (background) class for a person's done-marker. Unassigned tasks
+ * (`person` undefined/null — e.g. "Beide"-Aufgaben or freshly spawned
+ * recurrences) have no PERSON entry; they get a neutral grey instead of
+ * crashing on `PERSON[undefined].fill`.
+ */
+export function personFill(person: PersonKey | undefined | null): string {
+  return (person ? PERSON[person]?.fill : undefined) ?? "bg-ink-faint";
+}
