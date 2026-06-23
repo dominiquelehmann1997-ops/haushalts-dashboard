@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { PERSON, type Task, type Appointment } from "@/lib/data";
+import { PERSON, personFill, type Task, type Appointment } from "@/lib/data";
 import { Card, CardHead, PersonBadge } from "@/components/ui";
 import { CheckIcon, CalendarGlyph } from "@/components/icons";
 import { TaskActionMenu } from "@/components/TaskActionMenu";
@@ -22,7 +22,6 @@ export function TaskRow({
   onFail: (id: string) => void;
   onTakeOver: (id: string, doerKey: "dome" | "emely") => void;
 }) {
-  const p = PERSON[task.person];
   const canTakeOver = person === "dome" || person === "emely";
   const otherKey: "dome" | "emely" = person === "dome" ? "emely" : "dome";
   const otherName = canTakeOver ? PERSON[otherKey].name : "";
@@ -100,7 +99,7 @@ export function TaskRow({
         <span
           className={`mt-0.5 shrink-0 w-[22px] h-[22px] rounded-full grid place-items-center border-2 transition-all ${
             done
-              ? `${p.fill} border-transparent text-white`
+              ? `${personFill(task.person)} border-transparent text-white`
               : "border-ink-faint/40 group-hover:border-ink-faint text-transparent"
           }`}
         >
