@@ -32,11 +32,13 @@ describe("mealDraft lifecycle", () => {
 
   it("approveDraft replaces the active plan with the draft and clears the draft", async () => {
     await generateWeekPlan(new Date(), { preferSimple: false }, client);
-    expect(await weekCounts()).toEqual({ active: 5, draft: 5 });
+    // Seed seeds 5 active (Mon–Fri); der Entwurf deckt jetzt Mo–So (7) ab.
+    expect(await weekCounts()).toEqual({ active: 5, draft: 7 });
 
     const ok = await approveDraft(new Date(), client);
     expect(ok).toBe(true);
-    expect(await weekCounts()).toEqual({ active: 5, draft: 0 });
+    // Abnicken ersetzt die aktive Woche komplett durch den 7-Tage-Entwurf.
+    expect(await weekCounts()).toEqual({ active: 7, draft: 0 });
   });
 
   it("approveDraft is a no-op (false) when there is no draft", async () => {

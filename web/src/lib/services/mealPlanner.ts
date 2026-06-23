@@ -1,4 +1,4 @@
-// Meal-plan generator — picks recipes from the curated recipe book for Mon–Fr
+// Meal-plan generator — picks recipes from the curated recipe book for Mon–Sun
 // of the week containing `weekStart`, respecting per-day shift constraints
 // (simple / reheatable requirements, extra-portion flag, reason label) derived
 // from Dome's shift schedule.
@@ -17,7 +17,7 @@ export interface GenerateWeekPlanOptions {
   /** When `true`, recipes flagged `simple` are preferred on unconstrained days. */
   preferSimple: boolean;
   /**
-   * Per-weekday (Mon–Fri) cooking constraints derived from Dome's shifts.
+   * Per-weekday (Mon–Sun) cooking constraints derived from Dome's shifts.
    * When omitted, every day is treated as unconstrained (no reason / no extra).
    */
   constraints?: DayConstraint[];
@@ -60,13 +60,13 @@ export function candidatesFor(
 }
 
 /**
- * Generates (and persists) the Mon–Fr meal plan for the week containing
+ * Generates (and persists) the Mon–Sun meal plan for the week containing
  * `weekStart` **as a draft** (`status: "draft"`), replacing any existing draft
  * entries for that week. The active plan and shopping list are untouched —
  * promotion to active happens via `approveDraft`.
  *
  * For each weekday the recipe is chosen from a candidate pool that satisfies
- * that day's shift constraints (`opts.constraints`, Mon–Fri; defaults to
+ * that day's shift constraints (`opts.constraints`, Mon–Sun; defaults to
  * unconstrained). `preferSimple` biases unconstrained days toward simple
  * recipes. Within the pool, a weighted roulette pick chooses the recipe: rating weights
  * (favorit 3× / ok 1× / selten 0.3×) times a recency damping for dishes cooked
@@ -92,12 +92,12 @@ export async function generateWeekPlan(
   // Recency-Dämpfung: was in den 21 Tagen VOR dieser Woche aktiv gekocht wurde.
   const recent = await recentRecipeUse(monday, client);
 
-  const weekdayDates = [0, 1, 2, 3, 4].map((offset) => addDays(monday, offset));
+  const weekdayDates = [0, 1, 2, 3, 4, 5, 6].map((offset) => addDays(monday, offset));
   const constraints = weekdayDates.map(
     (date, i) => opts.constraints?.[i] ?? noConstraint(date),
   );
 
-  // Replace: wipe only the draft entries for this week, then (re-)create 5 draft entries.
+  // Replace: wipe only the draft entries for this week, then (re-)create 7 draft entries.
   await client.mealPlanEntry.deleteMany({
     where: { date: { gte: monday, lte: sunday }, status: "draft" },
   });
