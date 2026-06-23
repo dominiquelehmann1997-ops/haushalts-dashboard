@@ -161,6 +161,7 @@ model ShoppingItem {
   source    String   @default("manual") // "manual" | "recipe"
   recipeRef String?
   category  String? // "frisch" | "haltbar" für Rezept-Items; null für manuelle
+  spec      String? // zusammengefasste Mengenangabe (z.B. "500 g") für Bring; null = keine Menge
   pushed    Boolean  @default(false) // schon auf Bring? (nur Rezept-Items)
   done      Boolean  @default(false)
   createdAt DateTime @default(now())

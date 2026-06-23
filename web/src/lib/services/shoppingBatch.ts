@@ -29,7 +29,7 @@ export async function pushRecipeBatch(
   const items = rows.map((r) => r.text);
   if (items.length === 0) return { bring: { ok: true, pushed: 0 }, items: [] };
 
-  const bring = await push(rows.map((r) => ({ name: r.text })));
+  const bring = await push(rows.map((r) => (r.spec ? { name: r.text, spec: r.spec } : { name: r.text })));
   if (bring.ok) {
     await client.shoppingItem.updateMany({
       where: { id: { in: rows.map((r) => r.id) } },

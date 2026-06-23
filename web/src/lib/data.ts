@@ -27,6 +27,8 @@ export interface ShoppingItem {
   done: boolean;
   /** "frisch" | "haltbar" für Rezept-Items (Korrektur-Toggle sichtbar); null für manuelle. */
   category?: "frisch" | "haltbar" | null;
+  /** Zusammengefasste Mengenangabe (z.B. "500 g") für Rezept-Items; null für manuelle/ohne Menge. */
+  spec?: string | null;
 }
 
 export interface FreshShoppingState {

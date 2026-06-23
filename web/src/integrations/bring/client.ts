@@ -26,8 +26,10 @@ export type BringPushResult = { ok: true; pushed: number } | { ok: false; error:
  * Only items still open (`done: false`) are pushed; items the household has
  * already checked off don't belong on Bring's list.
  */
-export function toBringItems(items: { text: string; done: boolean }[]): BringItem[] {
-  return items.filter((item) => !item.done).map((item) => ({ name: item.text }));
+export function toBringItems(items: { text: string; done: boolean; spec?: string | null }[]): BringItem[] {
+  return items
+    .filter((item) => !item.done)
+    .map((item) => (item.spec ? { name: item.text, spec: item.spec } : { name: item.text }));
 }
 
 /**

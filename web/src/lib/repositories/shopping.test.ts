@@ -96,6 +96,16 @@ describe("getShoppingItems", () => {
     expect(tomaten?.category).toBe("frisch");
     expect(brot?.category).toBeNull();
   });
+
+  it("liefert die Mengenangabe (spec) für Rezept-Items mit, null für manuelle", async () => {
+    const items = await getShoppingItems(client);
+
+    const nudeln = items.find((i) => i.text === "Nudeln"); // Rezept-Item mit Menge
+    const brot = items.find((i) => i.text === "Brot"); // manuell
+
+    expect(nudeln?.spec).toBe("500 g");
+    expect(brot?.spec).toBeNull();
+  });
 });
 
 describe("deleteShoppingItem", () => {
