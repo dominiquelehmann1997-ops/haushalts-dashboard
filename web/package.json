@@ -14,7 +14,8 @@
     "import:chores": "tsx prisma/importChores.ts",
     "import:recipes": "tsx prisma/ingestRecipes.ts",
     "plan:today": "tsx prisma/planToday.ts",
-    "sync:calendar": "tsx prisma/syncCalendar.ts"
+    "sync:calendar": "tsx prisma/syncCalendar.ts",
+    "sync:shopping": "tsx prisma/syncShopping.ts"
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.8.0",
