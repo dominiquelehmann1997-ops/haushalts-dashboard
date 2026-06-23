@@ -20,7 +20,7 @@ function isToday(date: Date): boolean {
 }
 
 /**
- * MealPlanEntries of the current ISO week joined to their Recipe, ordered Mon→Fri.
+ * MealPlanEntries of the current ISO week joined to their Recipe, ordered Mon→Sun.
  *
  * NOTE: `light` is intentionally left `undefined` — there is no DB source for
  * it yet (purely a visual/UI detail); a follow-up phase can add a schema field
@@ -78,24 +78,24 @@ export async function listRecipes(client: PrismaClient = prisma): Promise<Recipe
 }
 
 /**
- * Dome's shift class per local day for Mon–Sat of the week containing
- * `weekStart`, keyed by `localDateKey`. Saturday is included as a lookahead so
- * "day before Spätdienst" can be detected for Friday. Only `personKey: "dome"`
- * events whose title classifies to a `ShiftClass` are kept.
+ * Dome's shift class per local day for Mon–Sun of the week containing
+ * `weekStart`, keyed by `localDateKey`. The next Monday is included as a
+ * lookahead so "day before Spätdienst" can be detected for Sunday. Only
+ * `personKey: "dome"` events whose title classifies to a `ShiftClass` are kept.
  */
 export async function getDomeShiftsForWeek(
   weekStart: Date,
   client: PrismaClient = prisma,
 ): Promise<Map<string, ShiftClass>> {
   const monday = mondayOf(weekStart);
-  // Mon–Sat: Saturday is included as a lookahead so "day before Spätdienst"
-  // can be detected for Friday; Sunday is out of range.
-  const saturdayEnd = new Date(monday);
-  saturdayEnd.setDate(saturdayEnd.getDate() + 5);
-  saturdayEnd.setHours(23, 59, 59, 999);
+  // Mon–Sun + next Monday: the following Monday is included as a lookahead so
+  // "day before Spätdienst" can be detected for Sunday.
+  const lookaheadEnd = new Date(monday);
+  lookaheadEnd.setDate(lookaheadEnd.getDate() + 7);
+  lookaheadEnd.setHours(23, 59, 59, 999);
 
   const rows = await client.calendarEvent.findMany({
-    where: { personKey: "dome", start: { gte: monday, lte: saturdayEnd } },
+    where: { personKey: "dome", start: { gte: monday, lte: lookaheadEnd } },
     orderBy: { start: "asc" },
   });
 

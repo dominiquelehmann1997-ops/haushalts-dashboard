@@ -196,20 +196,35 @@ describe("getDomeShiftsForWeek", () => {
     });
   }
 
-  it("classifies Dome's Mon–Sat shifts into a date→class map", async () => {
+  it("classifies Dome's Mon–Sun shifts into a date→class map", async () => {
     const { start: monday } = currentWeekBounds();
     const tue = new Date(monday);
     tue.setDate(tue.getDate() + 1);
     const sat = new Date(monday);
     sat.setDate(sat.getDate() + 5);
+    const sun = new Date(monday);
+    sun.setDate(sun.getDate() + 6);
 
     await domeEvent(tue, "Spät");
     await domeEvent(sat, "Nacht");
+    await domeEvent(sun, "Spät");
 
     const map = await getDomeShiftsForWeek(monday, client);
 
     expect(map.get(localDateKey(tue))).toBe("spaet");
-    expect(map.get(localDateKey(sat))).toBe("nacht"); // Samstag-Lookahead enthalten
+    expect(map.get(localDateKey(sat))).toBe("nacht");
+    expect(map.get(localDateKey(sun))).toBe("spaet"); // Sonntag jetzt im Plan
+  });
+
+  it("includes the next Monday as lookahead so Sunday can detect a day-before-Spät", async () => {
+    const { start: monday } = currentWeekBounds();
+    const nextMon = new Date(monday);
+    nextMon.setDate(nextMon.getDate() + 7);
+
+    await domeEvent(nextMon, "Spät");
+
+    const map = await getDomeShiftsForWeek(monday, client);
+    expect(map.get(localDateKey(nextMon))).toBe("spaet");
   });
 
   it("ignores non-shift titles and other persons", async () => {

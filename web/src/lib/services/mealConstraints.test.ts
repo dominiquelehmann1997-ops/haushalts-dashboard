@@ -12,14 +12,15 @@ function lookupFrom(map: Record<string, ShiftClass>): (d: Date) => ShiftClass | 
   };
 }
 
-// Monday 2026-06-08 .. Saturday 2026-06-13 (month index 5 = June).
+// Monday 2026-06-08 .. Sunday 2026-06-14 (month index 5 = June).
 const MON = new Date(2026, 5, 8);
 
 describe("deriveDayConstraints", () => {
-  it("returns exactly Mon–Fri (5 entries) anchored to the week's Monday", () => {
+  it("returns exactly Mon–Sun (7 entries) anchored to the week's Monday", () => {
     const result = deriveDayConstraints(MON, () => null);
-    expect(result).toHaveLength(5);
-    expect(result.map((c) => c.date.getDay())).toEqual([1, 2, 3, 4, 5]);
+    expect(result).toHaveLength(7);
+    // Monday=1 .. Saturday=6, Sunday=0
+    expect(result.map((c) => c.date.getDay())).toEqual([1, 2, 3, 4, 5, 6, 0]);
     expect(result.every((c) => c.reason === null && !c.extraPortion)).toBe(true);
   });
 

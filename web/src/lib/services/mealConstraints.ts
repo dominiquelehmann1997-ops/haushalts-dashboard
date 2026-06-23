@@ -1,7 +1,7 @@
 // Reine Ableitung der dienstplan-bewussten Koch-Constraints je Wochentag.
 //
 // Eingabe: Domes Schicht-Klasse je lokalem Tag (via `shiftByDay`). Ausgabe:
-// genau Mo–Fr der Woche, die `weekStart` enthält. Regeln (siehe Spec
+// genau Mo–So der Woche, die `weekStart` enthält. Regeln (siehe Spec
 // 2026-06-09): Spät an D → einfaches Gericht (Emely allein); Spät an D+1 oder
 // Nacht an D → aufwärmbar + Extraportion. Pure (kein DB/Next/Prisma) — mirror
 // des "reiner Mapper + Unit-Test"-Musters.
@@ -21,10 +21,10 @@ export interface DayConstraint {
 }
 
 /**
- * Leitet die Koch-Constraints für Mo–Fr der Woche um `weekStart` ab.
+ * Leitet die Koch-Constraints für Mo–So der Woche um `weekStart` ab.
  * `shiftByDay(date)` liefert Domes Schicht-Klasse am lokalen Tag von `date`
- * (oder `null`). Für "Tag vor Spät" wird auch der Folgetag (bis Samstag)
- * abgefragt.
+ * (oder `null`). Für "Tag vor Spät" wird auch der Folgetag (für Sonntag der
+ * Montag der Folgewoche) abgefragt.
  */
 export function deriveDayConstraints(
   weekStart: Date,
@@ -32,7 +32,7 @@ export function deriveDayConstraints(
 ): DayConstraint[] {
   const monday = mondayOf(weekStart);
 
-  return [0, 1, 2, 3, 4].map((offset) => {
+  return [0, 1, 2, 3, 4, 5, 6].map((offset) => {
     const date = addDays(monday, offset);
     const today = shiftByDay(date);
     const tomorrow = shiftByDay(addDays(date, 1));
