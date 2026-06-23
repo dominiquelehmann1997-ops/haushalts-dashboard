@@ -110,3 +110,18 @@ export async function ingestVault(
 
   return { imported, archived, errors };
 }
+
+/**
+ * Spiegelt den Vault aus `RECIPE_VAULT_PATH` in die DB — aber nur, wenn die
+ * Variable gesetzt ist. Gibt `null` zurück, wenn kein Vault konfiguriert ist
+ * (No-op). Gedacht als Auto-Sync vor der Entwurfs-Erzeugung, damit neue
+ * Obsidian-Rezepte ohne manuellen "Rezepte einlesen"-Klick verfügbar sind.
+ * Wirft nicht (ingestVault fängt fehlende/unlesbare Ordner selbst ab).
+ */
+export async function ingestVaultIfConfigured(
+  client: PrismaClient = prisma,
+): Promise<IngestReport | null> {
+  const vaultPath = process.env.RECIPE_VAULT_PATH;
+  if (!vaultPath) return null;
+  return ingestVault(vaultPath, client);
+}

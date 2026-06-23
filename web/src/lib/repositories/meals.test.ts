@@ -104,6 +104,34 @@ describe("meals repository", () => {
     expect(draft[0].day).toBe("Mo");
   });
 
+  it("getWeekMealPlan zeigt übersprungene aktive Tage als 'frei' (recipeId null)", async () => {
+    const { start } = currentWeekBounds();
+    const monday = new Date(start);
+    const end = new Date(start);
+    end.setHours(23, 59, 59, 999);
+    const seeded = await client.mealPlanEntry.findFirstOrThrow({
+      where: { date: { gte: monday, lte: end }, status: "active" },
+      orderBy: { date: "asc" },
+    });
+    await client.mealPlanEntry.update({ where: { id: seeded.id }, data: { recipeId: null } });
+
+    const plan = await getWeekMealPlan(client);
+    const mondayMeal = plan.find((m) => m.day === "Mo");
+    expect(mondayMeal?.dish).toBe("frei");
+  });
+
+  it("getDraftMealPlan zeigt übersprungene Tage als 'frei' mit recipeId null", async () => {
+    const { start } = currentWeekBounds();
+    await client.mealPlanEntry.create({
+      data: { date: new Date(start), recipeId: null, status: "draft" },
+    });
+
+    const draft = await getDraftMealPlan(client);
+    const skipped = draft.find((d) => d.recipeId === null);
+    expect(skipped).toBeTruthy();
+    expect(skipped!.dish).toBe("frei");
+  });
+
   it("listRecipes returns id+name sorted by name", async () => {
     const recipes = await listRecipes(client);
     const names = recipes.map((r) => r.name);

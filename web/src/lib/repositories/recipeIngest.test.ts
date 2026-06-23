@@ -2,12 +2,12 @@ import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
-import { afterAll, beforeEach, describe, expect, it } from "vitest";
+import { afterAll, afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { ingestVault } from "./recipeIngest";
+import { ingestVault, ingestVaultIfConfigured } from "./recipeIngest";
 
 function writeVault(files: Record<string, string>): string {
   const dir = mkdtempSync(path.join(tmpdir(), "vault-"));
@@ -145,6 +145,44 @@ describe("ingestVault", () => {
       const report = await ingestVault(dir, client);
       expect(report.imported).toBe(0);
       expect(report.errors.some((e) => /broken\.md/.test(e))).toBe(true);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("ingestVaultIfConfigured", () => {
+  let client: PrismaClient;
+  const ORIG = process.env.RECIPE_VAULT_PATH;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterEach(() => {
+    if (ORIG === undefined) delete process.env.RECIPE_VAULT_PATH;
+    else process.env.RECIPE_VAULT_PATH = ORIG;
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("ist ein No-op (null) wenn RECIPE_VAULT_PATH nicht gesetzt ist", async () => {
+    delete process.env.RECIPE_VAULT_PATH;
+    const report = await ingestVaultIfConfigured(client);
+    expect(report).toBeNull();
+  });
+
+  it("liest den konfigurierten Vault ein wenn RECIPE_VAULT_PATH gesetzt ist", async () => {
+    const dir = writeVault({ "kokos-curry.md": CURRY });
+    try {
+      process.env.RECIPE_VAULT_PATH = dir;
+      const report = await ingestVaultIfConfigured(client);
+      expect(report?.imported).toBe(1);
+      const curry = await client.recipe.findUnique({ where: { slug: "kokos-curry" } });
+      expect(curry).toBeTruthy();
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }

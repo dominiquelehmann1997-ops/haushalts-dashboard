@@ -78,7 +78,8 @@ export async function getFreshShoppingState(
 
   let earliest: Date | null = null;
   for (const entry of entries) {
-    const hasFresh = entry.recipe.ingredients.some(
+    // Übersprungene Tage (recipeId null → recipe null) liefern keine Zutaten.
+    const hasFresh = (entry.recipe?.ingredients ?? []).some(
       (i) => (i.category ?? resolveFreshness(i.name, overrides)) === "frisch",
     );
     if (hasFresh) {

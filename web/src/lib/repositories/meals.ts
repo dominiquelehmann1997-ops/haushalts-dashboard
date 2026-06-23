@@ -37,7 +37,7 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
 
   return rows.map((row) => ({
     day: WEEKDAY_LABELS[row.date.getDay()],
-    dish: row.recipe.name,
+    dish: row.recipe?.name ?? "frei", // recipeId null → Tag bewusst übersprungen
     today: isToday(row.date),
     reason: row.reason,
     extraPortion: row.extraPortion,
@@ -61,7 +61,7 @@ export async function getDraftMealPlan(client: PrismaClient = prisma): Promise<D
   return rows.map((row) => ({
     dateISO: row.date.toISOString(),
     day: WEEKDAY_LABELS[row.date.getDay()],
-    dish: row.recipe.name,
+    dish: row.recipe?.name ?? "frei", // recipeId null → Tag bewusst übersprungen
     recipeId: row.recipeId,
     reason: row.reason,
     extraPortion: row.extraPortion,
@@ -130,6 +130,7 @@ export async function recentRecipeUse(
 
   const map = new Map<string, number>();
   for (const row of rows) {
+    if (row.recipeId === null) continue; // übersprungene Tage ("frei") zählen nicht
     if (map.has(row.recipeId)) continue; // desc sortiert → jüngste Verwendung gewinnt
     // round statt floor: robust gegen DST-bedingte 23/25-Stunden-Tage
     map.set(row.recipeId, Math.round((reference.getTime() - row.date.getTime()) / 86_400_000));

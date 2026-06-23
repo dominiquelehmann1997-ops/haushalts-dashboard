@@ -104,7 +104,7 @@ describe("mealDraft editing", () => {
     });
 
     const updated = await rerollDraftDay(monday.date, false, client, zeroRng);
-    const recipe = await client.recipe.findUniqueOrThrow({ where: { id: updated!.recipeId } });
+    const recipe = await client.recipe.findUniqueOrThrow({ where: { id: updated!.recipeId! } });
     expect(recipe.simple).toBe(true);
   });
 
@@ -119,7 +119,7 @@ describe("mealDraft editing", () => {
     // choices[Math.floor(0.6·4)] = choices[2] gewählt — der Test
     // unterscheidet also wirklich alten und neuen Mechanismus.)
     const others = await client.recipe.findMany({
-      where: { id: { not: monday.recipeId } },
+      where: { id: { not: monday.recipeId! } },
       orderBy: { name: "asc" },
     });
     await client.recipe.updateMany({ data: { rating: "selten" } });
@@ -136,6 +136,15 @@ describe("mealDraft editing", () => {
 
     const updated = await setDraftDayRecipe(monday.date, pizza.id, client);
     expect(updated!.recipeId).toBe(pizza.id);
+    expect(updated!.status).toBe("draft");
+  });
+
+  it("setDraftDayRecipe mit leerem Wert überspringt den Tag (recipeId null, kein Crash)", async () => {
+    await generateWeekPlan(new Date(), { preferSimple: false }, client);
+    const monday = await draftMondayEntry();
+
+    const updated = await setDraftDayRecipe(monday.date, "", client);
+    expect(updated!.recipeId).toBeNull();
     expect(updated!.status).toBe("draft");
   });
 

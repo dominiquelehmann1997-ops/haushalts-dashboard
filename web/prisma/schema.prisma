@@ -148,8 +148,9 @@ model MealPlanEntry {
   extraPortion Boolean  @default(false)
   status       String   @default("active") // "active" | "draft"
 
-  recipeId String
-  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  // recipeId nullable → ein Tag kann bewusst "frei" (übersprungen) sein.
+  recipeId String?
+  recipe   Recipe? @relation(fields: [recipeId], references: [id])
 }
 
 /// A shopping list item.

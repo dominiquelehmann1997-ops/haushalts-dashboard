@@ -22,6 +22,7 @@ import { pushRecipeBatch } from "@/lib/services/shoppingBatch";
 import { getFreshShoppingState } from "@/lib/repositories/shopping";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { getDomeShiftsForWeek } from "@/lib/repositories/meals";
+import { ingestVaultIfConfigured } from "@/lib/repositories/recipeIngest";
 import { localDateKey } from "@/lib/dates";
 import type { BringPushResult } from "@/integrations/bring/client";
 import type { FreshShoppingState } from "@/lib/domain";
@@ -41,6 +42,16 @@ export interface ApprovePlanResult {
 /** Generates the dienstbewusst DRAFT plan for the week (no shopping/Bring). */
 export async function generatePlanAction(weekStartISO: string): Promise<void> {
   const weekStart = new Date(weekStartISO);
+
+  // Auto-Sync: vor dem Entwurf den Rezepte-Vault (Obsidian) einlesen, damit
+  // neue Rezepte ohne manuellen "Rezepte einlesen"-Klick zur Auswahl stehen.
+  // Non-fatal — ein Vault-Fehler darf die Entwurfserzeugung nicht scheitern lassen.
+  try {
+    await ingestVaultIfConfigured();
+  } catch {
+    // Ingest-Fehler ignorieren; mit dem bestehenden Rezeptbuch weitermachen.
+  }
+
   const phase = await getActivePhase();
 
   const shifts = await getDomeShiftsForWeek(weekStart);

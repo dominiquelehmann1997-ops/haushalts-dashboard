@@ -39,7 +39,8 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
   // ingredient's freshness category (falls back to the name heuristic).
   const byKey = new Map<string, { name: string; category: string }>();
   for (const entry of entries) {
-    for (const ingredient of entry.recipe.ingredients) {
+    // Übersprungene Tage (recipeId null → recipe null) liefern keine Zutaten.
+    for (const ingredient of entry.recipe?.ingredients ?? []) {
       const key = ingredient.name.trim().toLowerCase();
       if (!byKey.has(key)) {
         byKey.set(key, {

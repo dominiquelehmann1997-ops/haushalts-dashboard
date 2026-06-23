@@ -105,17 +105,19 @@ export async function rerollDraftDay(
 
 /**
  * Setzt manuell das Rezept eines Entwurfs-Tages (Tausch aus dem Rezeptbuch).
+ * Ein leerer/null `recipeId` überspringt den Tag bewusst (recipeId null → "frei").
  * Gibt `null`, wenn es keinen Entwurfs-Eintrag für den Tag gibt.
  */
 export async function setDraftDayRecipe(
   date: Date,
-  recipeId: string,
+  recipeId: string | null,
   client: PrismaClient = prisma,
 ): Promise<MealPlanEntry | null> {
   const entry = await findDraftEntryForDay(date, client);
   if (!entry) return null;
   return client.mealPlanEntry.update({
     where: { id: entry.id },
-    data: { recipeId },
+    // Leerer Wert ("" aus dem Select) = Tag überspringen → recipeId null.
+    data: { recipeId: recipeId ? recipeId : null },
   });
 }

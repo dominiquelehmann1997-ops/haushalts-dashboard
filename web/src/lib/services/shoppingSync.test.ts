@@ -89,6 +89,25 @@ describe("shoppingSync service", () => {
     expect(names).not.toContain("Geheimzutat-XYZ");
   });
 
+  it("aktive Einträge ohne Rezept (übersprungen) liefern keine Zutaten und crashen nicht", async () => {
+    const { start } = (await import("@/lib/dates")).currentWeekBounds();
+    const recipe = await client.recipe.create({
+      data: {
+        name: "ZZZ Übersprungen",
+        simple: true,
+        ingredients: { create: [{ name: "Skip-Zutat-XYZ", amount: null, unit: null }] },
+      },
+    });
+    const entry = await client.mealPlanEntry.create({
+      data: { date: new Date(start), recipeId: recipe.id, status: "active" },
+    });
+    // Tag bewusst überspringen → Rezept entfernen (recipeId null).
+    await client.mealPlanEntry.update({ where: { id: entry.id }, data: { recipeId: null } });
+
+    const names = await syncIngredientsToShopping(client);
+    expect(names).not.toContain("Skip-Zutat-XYZ");
+  });
+
   it("tags recipe shopping items with a freshness category and pushed=false", async () => {
     await syncIngredientsToShopping(client);
 
