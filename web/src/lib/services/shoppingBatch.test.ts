@@ -46,6 +46,23 @@ describe("pushRecipeBatch", () => {
     expect(frisch.every((i) => !i.pushed)).toBe(true);
   });
 
+  it("passes each item's quantity (spec) through to the push", async () => {
+    const { calls, push } = fakePush();
+    await pushRecipeBatch("haltbar", client, push);
+
+    const rows = await client.shoppingItem.findMany({
+      where: { source: "recipe", category: "haltbar" },
+    });
+    const specByName = new Map(rows.map((r) => [r.text, r.spec]));
+    const pushed = calls[0];
+
+    for (const item of pushed) {
+      expect(item.spec ?? null).toBe(specByName.get(item.name) ?? null);
+    }
+    // At least one planned haltbar ingredient carries a real quantity.
+    expect(pushed.some((i) => typeof i.spec === "string" && i.spec.length > 0)).toBe(true);
+  });
+
   it("does not mark items pushed when the push fails", async () => {
     const failingPush = async (): Promise<BringPushResult> => ({ ok: false, error: "boom" });
     const res = await pushRecipeBatch("haltbar", client, failingPush);

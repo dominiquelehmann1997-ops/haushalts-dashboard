@@ -13,6 +13,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
 import { resolveFreshness } from "@/lib/services/freshness";
 import { getFreshnessOverrides } from "@/lib/repositories/freshnessOverride";
+import { combineAmounts, type AmountPart } from "@/lib/services/ingredientAmount";
 
 /**
  * Reads the current ISO week's meal plan, collects the unique (case-
@@ -37,15 +38,20 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
 
   // Case-insensitive dedupe, preserving first-seen casing for display and the
   // ingredient's freshness category (falls back to the name heuristic).
-  const byKey = new Map<string, { name: string; category: string }>();
+  const byKey = new Map<string, { name: string; category: string; amounts: AmountPart[] }>();
   for (const entry of entries) {
     // Übersprungene Tage (recipeId null → recipe null) liefern keine Zutaten.
     for (const ingredient of entry.recipe?.ingredients ?? []) {
       const key = ingredient.name.trim().toLowerCase();
-      if (!byKey.has(key)) {
+      const existing = byKey.get(key);
+      if (existing) {
+        // Gleiche Zutat in mehreren Rezepten → Mengen sammeln (später summiert).
+        existing.amounts.push({ amount: ingredient.amount, unit: ingredient.unit });
+      } else {
         byKey.set(key, {
           name: ingredient.name.trim(),
           category: ingredient.category ?? resolveFreshness(ingredient.name, overrides),
+          amounts: [{ amount: ingredient.amount, unit: ingredient.unit }],
         });
       }
     }
@@ -61,6 +67,7 @@ export async function syncIngredientsToShopping(client: PrismaClient = prisma): 
         meal: true,
         source: "recipe",
         category: item.category,
+        spec: combineAmounts(item.amounts),
         pushed: false,
         done: false,
       },

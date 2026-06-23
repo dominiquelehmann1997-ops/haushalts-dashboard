@@ -22,6 +22,7 @@ export async function getShoppingItems(client: PrismaClient = prisma): Promise<S
       row.source === "recipe" && (row.category === "frisch" || row.category === "haltbar")
         ? row.category
         : null,
+    spec: row.spec ?? null,
   }));
 }
 

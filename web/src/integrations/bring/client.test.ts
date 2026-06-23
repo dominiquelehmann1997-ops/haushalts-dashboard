@@ -12,6 +12,15 @@ describe("toBringItems", () => {
     expect(result).toEqual([{ name: "Tomaten" }, { name: "Milch" }]);
   });
 
+  it("carries the quantity as the Bring spec line when present", () => {
+    const result = toBringItems([
+      { text: "Mehl", done: false, spec: "500 g" },
+      { text: "Tomaten", done: false, spec: null },
+    ]);
+
+    expect(result).toEqual([{ name: "Mehl", spec: "500 g" }, { name: "Tomaten" }]);
+  });
+
   it("excludes items that are already done", () => {
     const result = toBringItems([
       { text: "Tomaten", done: false },

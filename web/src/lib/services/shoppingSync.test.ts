@@ -134,6 +134,49 @@ describe("shoppingSync service", () => {
     expect(tomaten.category).toBe("haltbar");
   });
 
+  it("schreibt die zusammengefasste Mengenangabe (spec) und summiert über Rezepte gleicher Einheit", async () => {
+    const { start } = (await import("@/lib/dates")).currentWeekBounds();
+    // Zwei aktive Rezepte mit derselben Zutat/Einheit an verschiedenen Tagen.
+    for (const [offset, gramm] of [[0, "200"], [1, "300"]] as const) {
+      const recipe = await client.recipe.create({
+        data: {
+          name: `ZZZ Mehl-Rezept ${offset}`,
+          simple: true,
+          ingredients: { create: [{ name: "ZZZ-Mehl", amount: gramm, unit: "g" }] },
+        },
+      });
+      const day = new Date(start);
+      day.setDate(day.getDate() + offset);
+      await client.mealPlanEntry.create({ data: { date: day, recipeId: recipe.id, status: "active" } });
+    }
+
+    await syncIngredientsToShopping(client);
+
+    const mehl = await client.shoppingItem.findFirstOrThrow({
+      where: { source: "recipe", text: "ZZZ-Mehl" },
+    });
+    expect(mehl.spec).toBe("500 g");
+  });
+
+  it("setzt spec auf null, wenn die Zutat keine Mengenangabe hat", async () => {
+    const { start } = (await import("@/lib/dates")).currentWeekBounds();
+    const recipe = await client.recipe.create({
+      data: {
+        name: "ZZZ Ohne-Menge",
+        simple: true,
+        ingredients: { create: [{ name: "ZZZ-Olivenöl", amount: null, unit: null }] },
+      },
+    });
+    await client.mealPlanEntry.create({ data: { date: new Date(start), recipeId: recipe.id, status: "active" } });
+
+    await syncIngredientsToShopping(client);
+
+    const oel = await client.shoppingItem.findFirstOrThrow({
+      where: { source: "recipe", text: "ZZZ-Olivenöl" },
+    });
+    expect(oel.spec).toBeNull();
+  });
+
   it("explizite Angabe (Ingredient.category) schlägt den Override", async () => {
     await client.ingredient.updateMany({ where: { name: "Nudeln" }, data: { category: "frisch" } });
     await client.freshnessOverride.create({ data: { name: "nudeln", freshness: "haltbar" } });
