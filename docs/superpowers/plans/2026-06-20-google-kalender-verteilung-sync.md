@@ -687,9 +687,15 @@ Am Tablet (Termux) einmalig — gehört in die Inbetriebnahme, nicht in den Test
 chmod +x scripts/tablet-sync.sh
 termux-job-scheduler \
   --script "$HOME/Dashboard/scripts/tablet-sync.sh" \
-  --period-ms 3600000 \
+  --period-ms 900000 \
   --persisted true
 ```
+
+> Hinweis: `--period-ms 900000` = alle 15 Minuten (vorher stündlich,
+> `3600000`). So verschwinden in Google gelöschte/verschobene Termine zeitnah
+> auch im Dashboard. Bei einem bereits laufenden Tablet das Kommando einmalig
+> neu ausführen, um die kürzere Periode zu übernehmen. Android kann die Periode
+> im Doze-Modus dehnen — der Wert ist eine Untergrenze, keine Garantie.
 
 - [ ] **Step 7: Commit**
 

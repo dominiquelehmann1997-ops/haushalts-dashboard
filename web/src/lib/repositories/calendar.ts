@@ -70,6 +70,45 @@ export async function upsertEvents(
 }
 
 /**
+ * Persists a freshly fetched sync window: upserts every event, then deletes
+ * any `CalendarEvent` overlapping `[from, to]` whose `externalId` was **not**
+ * in the fetched set.
+ *
+ * The delete is what makes removals/reschedules in Google Calendar actually
+ * propagate. `upsertEvents` alone only ever creates or updates rows, so an
+ * event deleted (or moved out of the window) upstream lingers in the DB
+ * forever and keeps showing on the dashboard. By treating each sync as the
+ * authoritative snapshot of its window, anything no longer present upstream is
+ * pruned.
+ *
+ * Scoped to `[from, to]` so events outside the synced range are untouched.
+ * Overlap (`start <= to AND end >= from`) mirrors Google's `timeMin`/`timeMax`
+ * semantics, so the kept set is exactly what the fetch could have returned.
+ *
+ * When `events` is empty (the window genuinely has no events upstream) the
+ * `notIn` filter is dropped so the whole window is cleared — `notIn: []` would
+ * otherwise match nothing in Prisma.
+ */
+export async function replaceWindowEvents(
+  events: CalendarEventInput[],
+  window: { from: Date; to: Date },
+  client: PrismaClient = prisma,
+): Promise<{ deleted: number }> {
+  await upsertEvents(events, client);
+
+  const keep = events.map((e) => e.externalId);
+  const { count } = await client.calendarEvent.deleteMany({
+    where: {
+      start: { lte: window.to },
+      end: { gte: window.from },
+      ...(keep.length > 0 ? { externalId: { notIn: keep } } : {}),
+    },
+  });
+
+  return { deleted: count };
+}
+
+/**
  * `CalendarEvent` rows in `[from, to]` (overlap, not containment — `start <=
  * to AND end >= from`) that constrain someone's availability, mapped to the
  * engine's `BusyWindow[]` (`@/lib/engine/types`):

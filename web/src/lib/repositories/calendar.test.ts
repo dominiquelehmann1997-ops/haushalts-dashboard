@@ -5,7 +5,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 
 import { dayBounds } from "@/lib/dates";
 
-import { getBusyWindows, getTodaysEvents, upsertEvents } from "./calendar";
+import { getBusyWindows, getTodaysEvents, replaceWindowEvents, upsertEvents } from "./calendar";
 
 describe("calendar repository", () => {
   let client: PrismaClient;
@@ -60,6 +60,62 @@ describe("calendar repository", () => {
       const rows = await client.calendarEvent.findMany({ where: { externalId: "dome:evt-001" } });
       expect(rows).toHaveLength(1);
       expect(rows[0]).toMatchObject({ title: "Sport (verschoben)", place: "Halle 2" });
+    });
+  });
+
+  describe("replaceWindowEvents", () => {
+    const at = (h: number, m: number, dayOffset = 0) => {
+      const d = new Date(today);
+      d.setDate(d.getDate() + dayOffset);
+      d.setHours(h, m, 0, 0);
+      return d;
+    };
+    const makeInput = (externalId: string, title: string, start: Date, end: Date) => ({
+      externalId,
+      calendarKey: "dome",
+      title,
+      start,
+      end,
+      personKey: "dome" as const,
+      kind: "termin" as const,
+      place: null,
+    });
+
+    it("upserts the snapshot and deletes window events no longer present", async () => {
+      const window = { from: at(0, 0), to: at(0, 0, 14) };
+
+      // First snapshot: two events.
+      await replaceWindowEvents(
+        [
+          makeInput("dome:keep", "Sport", at(18, 0), at(19, 0)),
+          makeInput("dome:gone", "AZT", at(9, 0), at(10, 0)),
+        ],
+        window,
+        client,
+      );
+
+      // Second snapshot drops "AZT" — it must be pruned.
+      const { deleted } = await replaceWindowEvents(
+        [makeInput("dome:keep", "Sport", at(18, 0), at(19, 0))],
+        window,
+        client,
+      );
+
+      expect(deleted).toBe(1);
+      expect(await client.calendarEvent.findUnique({ where: { externalId: "dome:gone" } })).toBeNull();
+      expect(await client.calendarEvent.findUnique({ where: { externalId: "dome:keep" } })).not.toBeNull();
+    });
+
+    it("leaves events outside the window untouched", async () => {
+      // Seed an event well outside the sync window, directly.
+      await client.calendarEvent.create({
+        data: makeInput("dome:far", "Weit weg", at(8, 0, 30), at(9, 0, 30)),
+      });
+
+      const window = { from: at(0, 0), to: at(0, 0, 14) };
+      await replaceWindowEvents([makeInput("dome:keep", "Sport", at(18, 0), at(19, 0))], window, client);
+
+      expect(await client.calendarEvent.findUnique({ where: { externalId: "dome:far" } })).not.toBeNull();
     });
   });
 

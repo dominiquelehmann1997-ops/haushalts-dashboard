@@ -5,7 +5,7 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import { fetchEvents, type CalendarEventInput } from "@/integrations/calendar/google";
-import { upsertEvents } from "@/lib/repositories/calendar";
+import { replaceWindowEvents } from "@/lib/repositories/calendar";
 
 const SYNC_WINDOW_DAYS = 14;
 
@@ -33,17 +33,29 @@ export function configuredCalendars(): { calendarId: string; calendarKey: string
 }
 
 /**
- * Zieht je Kalender die nächsten 14 Tage und upsertet sie. Wirft bei Netz-/
- * Auth-Fehlern (aus `fetchEvents`) — der Caller entscheidet über Status/Degradation.
- * `deps.fetch`/`deps.client` sind für Tests injizierbar.
+ * Zieht je Kalender das Sync-Fenster (ab Mitternacht heute bis +14 Tage) und
+ * schreibt es als maßgeblichen Snapshot in die DB: vorhandene Termine werden
+ * geupsertet, im Fenster gelöschte/verschobene Termine werden entfernt
+ * (`replaceWindowEvents`) — so verschwinden in Google gelöschte Termine auch
+ * im Dashboard, statt hängen zu bleiben.
+ *
+ * Das Fenster beginnt bewusst um Mitternacht (nicht „jetzt"), damit der ganze
+ * heutige Tag immer vollständig geholt und konsistent geprunt wird — sonst
+ * würden bereits vergangene Termine des Tages aus dem Fenster fallen und beim
+ * Pruning gelöscht.
+ *
+ * Wirft bei Netz-/Auth-Fehlern (aus `fetchEvents`) **bevor** gepruned wird —
+ * der Caller entscheidet über Status/Degradation; bei einem Teil-Fehler bleibt
+ * die DB unangetastet. `deps.fetch`/`deps.client` sind für Tests injizierbar.
  */
 export async function syncCalendar(
   calendars: { calendarId: string; calendarKey: string }[] = configuredCalendars(),
   deps: { fetch?: EventFetcher; client?: PrismaClient } = {},
-): Promise<{ synced: number }> {
+): Promise<{ synced: number; deleted: number }> {
   const { fetch = fetchEvents, client = prisma } = deps;
 
   const from = new Date();
+  from.setHours(0, 0, 0, 0);
   const to = new Date(from);
   to.setDate(to.getDate() + SYNC_WINDOW_DAYS);
 
@@ -53,6 +65,6 @@ export async function syncCalendar(
     all = all.concat(events);
   }
 
-  await upsertEvents(all, client);
-  return { synced: all.length };
+  const { deleted } = await replaceWindowEvents(all, { from, to }, client);
+  return { synced: all.length, deleted };
 }
