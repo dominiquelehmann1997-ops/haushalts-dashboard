@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { openMeteoFixture } from "./fixture";
-import { mapCurrent, mapForecast } from "./openMeteo";
+import { conditionForCode, mapCurrent, mapForecast } from "./openMeteo";
 
 describe("mapForecast", () => {
   const days = mapForecast(openMeteoFixture);
@@ -43,7 +43,20 @@ describe("mapCurrent", () => {
       rainFrom: "08:00",
       uvIndex: 4,
       wind: 12,
+      condition: "rain",
     });
+  });
+
+  it("derives the condition from the current weather_code (61 → rain)", () => {
+    expect(current.condition).toBe("rain");
+  });
+
+  it("derives a clear condition for a clear-sky code", () => {
+    const clearFixture = {
+      ...openMeteoFixture,
+      current: { time: "2026-06-07T14:00", temperature_2m: 31, weather_code: 0, uv_index: 7 },
+    };
+    expect(mapCurrent(clearFixture).condition).toBe("clear");
   });
 
   it("derives rainFrom as the first rainy hour of today, formatted HH:MM", () => {
@@ -59,6 +72,7 @@ describe("mapCurrent", () => {
     expect(dryCurrent.rainFrom).toBe("");
     expect(dryCurrent.detail).toBe(dryCurrent.label);
     expect(dryCurrent.label).toBe("Bewölkt");
+    expect(dryCurrent.condition).toBe("cloudy");
   });
 
   it("maps the current UV index, rounded", () => {
@@ -73,5 +87,24 @@ describe("mapCurrent", () => {
   it("mapCurrent liest die Windgeschwindigkeit aus current", () => {
     const result = mapCurrent(openMeteoFixture);
     expect(result.wind).toBe(12);
+  });
+});
+
+describe("conditionForCode", () => {
+  it("maps each WMO band to its icon condition", () => {
+    expect(conditionForCode(0)).toBe("clear");
+    expect(conditionForCode(1)).toBe("partly");
+    expect(conditionForCode(2)).toBe("cloudy");
+    expect(conditionForCode(3)).toBe("cloudy");
+    expect(conditionForCode(45)).toBe("fog");
+    expect(conditionForCode(48)).toBe("fog");
+    expect(conditionForCode(61)).toBe("rain");
+    expect(conditionForCode(80)).toBe("rain");
+    expect(conditionForCode(71)).toBe("snow");
+    expect(conditionForCode(95)).toBe("thunder");
+  });
+
+  it("falls back to cloudy for unknown codes", () => {
+    expect(conditionForCode(999)).toBe("cloudy");
   });
 });

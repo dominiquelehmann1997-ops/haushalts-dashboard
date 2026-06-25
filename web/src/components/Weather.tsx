@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui";
-import { CloudRainGlyph } from "@/components/icons";
+import { WeatherGlyph } from "@/components/icons";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 
 export function Weather({ weather }: { weather: CurrentWeather }) {
@@ -20,7 +20,7 @@ export function Weather({ weather }: { weather: CurrentWeather }) {
             {weather.hi}° / {weather.lo}°
           </div>
         </div>
-        <CloudRainGlyph />
+        <WeatherGlyph condition={weather.condition} />
       </div>
       <div className="mt-2 flex flex-wrap gap-1.5 text-[12px] font-medium">
         {weather.rainFrom && (
