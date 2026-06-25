@@ -1,3 +1,5 @@
+import type { CurrentWeather } from "@/integrations/weather/openMeteo";
+
 export type PersonKey = "dome" | "emely" | "baby";
 export type TaskStatus = "open" | "done" | "moved" | "failed";
 
@@ -81,15 +83,19 @@ export interface PersonStyle {
   fill: string;
 }
 
-export const weather = {
+// Neutral fallback shown only when the live Open-Meteo fetch fails. Must not
+// claim rain (no `rainFrom`/"Regen ab …"): a stale offline tile inventing rain
+// on a clear day was the original bug. "Bewölkt"/cloudy is the safe default.
+export const weather: CurrentWeather = {
   temp: 18,
   label: "Bewölkt",
-  detail: "Regen ab 16 Uhr",
+  detail: "Bewölkt",
   hi: 19,
   lo: 12,
-  rainFrom: "16:00",
+  rainFrom: "",
   uvIndex: 3,
   wind: 10,
+  condition: "cloudy",
 };
 
 export const initialTasks: Task[] = [

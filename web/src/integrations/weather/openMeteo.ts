@@ -39,6 +39,16 @@ export interface OpenMeteoResponse {
   };
 }
 
+/** Coarse condition buckets the tile icon picks from (one glyph per bucket). */
+export type WeatherCondition =
+  | "clear"
+  | "partly"
+  | "cloudy"
+  | "fog"
+  | "rain"
+  | "snow"
+  | "thunder";
+
 export interface CurrentWeather {
   temp: number;
   label: string;
@@ -48,6 +58,7 @@ export interface CurrentWeather {
   rainFrom: string;
   uvIndex: number;
   wind: number;
+  condition: WeatherCondition;
 }
 
 /** Splits a local "YYYY-MM-DDTHH:MM" hourly timestamp into its date key and "HH:MM" time. */
@@ -137,6 +148,24 @@ function labelForCode(code: number): string {
 }
 
 /**
+ * Maps a WMO weather code to the coarse `WeatherCondition` bucket the tile icon
+ * renders. Mirrors `labelForCode`'s bands but collapses them to icon-relevant
+ * groups. Unknown codes fall back to `"cloudy"` (a neutral, never-misleading
+ * glyph — notably *not* rain, which is what the old fixed icon always showed).
+ */
+export function conditionForCode(code: number): WeatherCondition {
+  if (code === 0) return "clear";
+  if (code === 1) return "partly";
+  if (code === 2 || code === 3) return "cloudy";
+  if (code === 45 || code === 48) return "fog";
+  if (code >= 51 && code <= 67) return "rain";
+  if (code >= 71 && code <= 77) return "snow";
+  if (code >= 80 && code <= 82) return "rain";
+  if (code >= 95 && code <= 99) return "thunder";
+  return "cloudy";
+}
+
+/**
  * Maps a raw Open-Meteo response into the `weather` tile shape (see
  * `@/lib/data`'s `weather` export) — pure, no network/env access.
  *
@@ -157,7 +186,9 @@ export function mapCurrent(raw: OpenMeteoResponse): CurrentWeather {
   const firstRain = todayHours.find((h) => h.precipitation > 0);
   const rainFrom = firstRain?.time ?? "";
 
-  const label = current ? labelForCode(current.weather_code) : labelForCode(raw.daily.weather_code[dailyIndex]);
+  const code = current ? current.weather_code : raw.daily.weather_code[dailyIndex];
+  const label = labelForCode(code);
+  const condition = conditionForCode(code);
   const detail = rainFrom ? `Regen ab ${rainFrom} Uhr` : label;
 
   const uvIndex = Math.round(
@@ -175,6 +206,7 @@ export function mapCurrent(raw: OpenMeteoResponse): CurrentWeather {
     rainFrom,
     uvIndex,
     wind,
+    condition,
   };
 }
 
