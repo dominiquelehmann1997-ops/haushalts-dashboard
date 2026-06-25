@@ -31,6 +31,27 @@ describe("calendar repository", () => {
     expect(paket.who).toEqual([]);
   });
 
+  it('getTodaysEvents shows all-day events as "ganztägig" instead of 00:00', async () => {
+    const { start } = dayBounds(today);
+    await client.calendarEvent.create({
+      data: {
+        externalId: "family:allday-1",
+        calendarKey: "family",
+        title: "Müllabfuhr",
+        start,
+        end: new Date(start.getFullYear(), start.getMonth(), start.getDate() + 1),
+        personKey: null,
+        kind: "termin",
+        place: null,
+        allDay: true,
+      },
+    });
+
+    const events = await getTodaysEvents(today, client);
+    const muell = events.find((e) => e.title === "Müllabfuhr");
+    expect(muell?.time).toBe("ganztägig");
+  });
+
   describe("upsertEvents", () => {
     function makeInput(overrides: Partial<Parameters<typeof upsertEvents>[0][number]> = {}) {
       return {
@@ -42,6 +63,7 @@ describe("calendar repository", () => {
         personKey: "dome" as const,
         kind: "termin" as const,
         place: "Verein",
+        allDay: false,
         ...overrides,
       };
     }
@@ -79,6 +101,7 @@ describe("calendar repository", () => {
       personKey: "dome" as const,
       kind: "termin" as const,
       place: null,
+      allDay: false,
     });
 
     it("upserts the snapshot and deletes window events no longer present", async () => {
@@ -164,6 +187,75 @@ describe("calendar repository", () => {
 
       expect(windows.some((w) => (w as { person: string }).person === "baby")).toBe(false);
       expect(windows).toHaveLength(4);
+    });
+
+    describe("all-day Urlaub exception", () => {
+      const allDayToday = (title: string, personKey: "dome" | "emely" | null, calendarKey: string) => {
+        const { start } = dayBounds(today);
+        return client.calendarEvent.create({
+          data: {
+            externalId: `urlaub-${title}`,
+            calendarKey,
+            title,
+            start,
+            end: new Date(start.getFullYear(), start.getMonth(), start.getDate() + 1),
+            personKey,
+            kind: "termin",
+            place: null,
+            allDay: true,
+          },
+        });
+      };
+
+      it('does NOT create a busy window for an all-day event titled exactly "Urlaub" (dienstfrei, zuhause)', async () => {
+        await allDayToday("Urlaub", "dome", "dome");
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows.some((w) => w.person === "dome" && w.start.getTime() === start.getTime())).toBe(
+          false,
+        );
+      });
+
+      it('still blocks for "Urlaub Pinnow" (verreist) — only the exact title is exempt', async () => {
+        await allDayToday("Urlaub Pinnow", "dome", "dome");
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows.some((w) => w.person === "dome" && w.start.getTime() === start.getTime())).toBe(
+          true,
+        );
+      });
+
+      it("does not exempt a timed (non-all-day) event titled \"Urlaub\"", async () => {
+        const { start, end } = dayBounds(today);
+        await client.calendarEvent.create({
+          data: {
+            externalId: "urlaub-timed",
+            calendarKey: "dome",
+            title: "Urlaub",
+            start: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 0),
+            end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 10, 0),
+            personKey: "dome",
+            kind: "termin",
+            place: null,
+            allDay: false,
+          },
+        });
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(
+          windows.some(
+            (w) =>
+              w.person === "dome" &&
+              w.start.getTime() ===
+                new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 0).getTime(),
+          ),
+        ).toBe(true);
+      });
     });
 
     describe("overnight shifts (Nacht/LN)", () => {

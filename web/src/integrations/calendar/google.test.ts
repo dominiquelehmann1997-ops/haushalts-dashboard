@@ -23,6 +23,7 @@ describe("mapGoogleEvents", () => {
     expect(sport.end).toEqual(new Date("2026-06-07T20:00:00+02:00"));
     expect(sport.place).toBe("Verein");
     expect(sport.kind).toBe("termin");
+    expect(sport.allDay).toBe(false);
   });
 
   it("maps an all-day event's start/end from start.date/end.date as local-midnight dates", () => {
@@ -33,6 +34,7 @@ describe("mapGoogleEvents", () => {
     expect(birthday?.start).toEqual(new Date(2026, 5, 10));
     expect(birthday?.end).toEqual(new Date(2026, 5, 11));
     expect(birthday?.place).toBeNull();
+    expect(birthday?.allDay).toBe(true);
   });
 
   it('classifies "U4-Untersuchung" as kind "baby-arzt" via the medical/baby heuristic', () => {

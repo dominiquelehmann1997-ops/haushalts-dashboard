@@ -9,6 +9,15 @@ import { correctedBusyEnd, isOvernightShift } from "@/lib/calendar/shifts";
 import { dayBounds, formatTime } from "@/lib/dates";
 
 /**
+ * `true` nur für den exakten Titel "Urlaub" (getrimmt, Groß-/Kleinschreibung
+ * egal) — bedeutet dienstfrei, aber zuhause. Bewusst KEIN Präfix-/Teilmatch:
+ * "Urlaub Pinnow" (verreist) ist absichtlich `false`.
+ */
+function isUrlaubFrei(title: string): boolean {
+  return title.trim().toLowerCase() === "urlaub";
+}
+
+/**
  * CalendarEvents whose `start` falls on the given local day, ordered by start time.
  *
  * `who` is derived as `personKey ? [personKey] : []`, with `"baby"` appended
@@ -32,7 +41,7 @@ export async function getTodaysEvents(
 
     return {
       id: row.id,
-      time: formatTime(row.start),
+      time: row.allDay ? "ganztägig" : formatTime(row.start),
       title: row.title,
       place: row.place ?? "",
       who,
@@ -59,6 +68,7 @@ export async function upsertEvents(
       personKey: event.personKey,
       kind: event.kind,
       place: event.place,
+      allDay: event.allDay,
     };
 
     await client.calendarEvent.upsert({
@@ -148,6 +158,11 @@ export async function getBusyWindows(
 
   const windows: BusyWindow[] = [];
   for (const row of rows) {
+    // Ganztägiger "Urlaub" (genau dieser Titel) = dienstfrei, aber zuhause →
+    // blockiert NICHT die Aufgabenverteilung. "Urlaub Pinnow" o.Ä. (verreist)
+    // bleibt ein normaler ganztägiger Block.
+    if (row.allDay && isUrlaubFrei(row.title)) continue;
+
     if (row.personKey === "dome" || row.personKey === "emely") {
       const end =
         row.personKey === "dome" && isOvernightShift(row.title)

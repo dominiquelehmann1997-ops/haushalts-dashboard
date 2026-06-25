@@ -20,6 +20,7 @@ export interface CalendarEventInput {
   personKey: string | null;
   kind: "termin" | "baby-arzt";
   place: string | null;
+  allDay: boolean;
 }
 
 /** Shape of a single raw Google Calendar `events.list` `items[]` entry (the fields we use). */
@@ -91,6 +92,8 @@ function deriveKind(title: string): "termin" | "baby-arzt" {
  *   heuristic (case-insensitive `U\d`, `Kinderarzt`, `Hebamme`,
  *   `U-Untersuchung`, `Vorsorge`, `Impf`), else `"termin"`.
  * - `place` is Google's `location`, or `null`.
+ * - `allDay` is `true` for all-day events (Google carries `start.date`, not
+ *   `start.dateTime`).
  * - Cancelled events (`status === "cancelled"`) are skipped entirely.
  */
 export function mapGoogleEvents(rawItems: unknown[], calendarKey: string): CalendarEventInput[] {
@@ -113,6 +116,7 @@ export function mapGoogleEvents(rawItems: unknown[], calendarKey: string): Calen
       personKey: derivePersonKey(calendarKey),
       kind: deriveKind(title),
       place: item.location ?? null,
+      allDay: item.start?.date != null,
     });
   }
 
