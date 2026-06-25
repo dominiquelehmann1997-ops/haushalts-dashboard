@@ -29,6 +29,7 @@ describe("calendarSync service", () => {
         personKey: "dome" as const,
         kind: "termin" as const,
         place: null,
+        allDay: false,
       },
     ];
 
@@ -50,6 +51,7 @@ describe("calendarSync service", () => {
       personKey: "dome" as const,
       kind: "termin" as const,
       place: null,
+      allDay: false,
     });
 
     // First sync brings in two events.
@@ -81,6 +83,7 @@ describe("calendarSync service", () => {
         personKey: "dome" as const,
         kind: "termin" as const,
         place: null,
+        allDay: false,
       },
     ];
     await syncCalendar([{ calendarId: "cid", calendarKey: "dome" }], { fetch: seedFetch, client });

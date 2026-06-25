@@ -80,6 +80,7 @@ model CalendarEvent {
   personKey   String? // "dome" | "emely" | "baby"
   kind        String   @default("termin") // "termin" | "baby-arzt"
   place       String?
+  allDay      Boolean  @default(false) // ganztägiger Termin (Google `start.date` statt `dateTime`)
   updatedAt   DateTime @updatedAt
 }
 
