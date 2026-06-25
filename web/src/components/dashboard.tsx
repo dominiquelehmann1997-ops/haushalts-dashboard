@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useOptimistic, startTransition } from "react";
+import { useRouter } from "next/navigation";
 import type { Task, Appointment, Meal, Note } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ProjectProgress } from "@/lib/repositories/projects";
@@ -34,6 +35,7 @@ export default function Dashboard({
   todayLabel,
 }: DashboardProps) {
   const [dark, setDark] = useState(false);
+  const router = useRouter();
 
   // `useOptimistic` keeps the server prop (`initialTasks`) as the source of
   // truth — so when a Server Action revalidates the route, the new server
@@ -61,6 +63,24 @@ export default function Dashboard({
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
+
+  // Kiosk-Auto-Refresh: Das Tablet bleibt dauerhaft auf dieser Seite, ohne
+  // Interaktion lädt sie nie neu. `router.refresh()` holt die Server-Komponenten
+  // (inkl. der frisch gesynct/geprunten Termine) periodisch nach, sodass z.B.
+  // ein in Google gelöschter Termin auch ohne Tippen vom Bildschirm verschwindet.
+  // Zusätzlich beim Zurückkehren auf den Tab (Display wieder an).
+  useEffect(() => {
+    const REFRESH_MS = 5 * 60 * 1000;
+    const interval = setInterval(() => router.refresh(), REFRESH_MS);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") router.refresh();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [router]);
 
   const toggleTask = (id: string) => {
     startTransition(async () => {
