@@ -24,23 +24,6 @@
   --shadow-lift: 0 2px 4px rgba(44, 41, 37, 0.05), 0 18px 40px -16px rgba(44, 41, 37, 0.18);
 
   --radius-xl2: 1.75rem;
-
-  --animate-pulse-slow: pulse-slow 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse-slow {
-  0%,
-  100% {
-    box-shadow: 0 10px 30px -8px rgba(244, 63, 94, 0.55);
-  }
-  50% {
-    box-shadow: 0 10px 38px -6px rgba(244, 63, 94, 0.25);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-pulse-slow {
-    animation: none;
-  }
 }
 
 @theme inline {

@@ -65,27 +65,20 @@ export function NotesWidget({ notes }: { notes: Note[] }) {
   return (
     <Card className="h-full flex flex-col">
       <CardHead eyebrow="Schwarzes Brett" title="Nachrichten" />
-      <ul className="space-y-3 flex-1 min-h-0 overflow-y-auto">
+      <ul className="flex flex-wrap content-start gap-2.5 flex-1 min-h-0 overflow-y-auto">
         {notes.map((n) => (
           <li
             key={n.id}
-            className={
-              n.pinned
-                ? "relative flex items-center gap-3.5 p-3.5 rounded-2xl bg-rose-500 text-white shadow-lg shadow-rose-500/30 ring-2 ring-rose-300/60 dark:bg-rose-600 dark:ring-rose-400/40 animate-pulse-slow"
-                : "flex items-center gap-3.5 p-3.5 rounded-2xl bg-amber-300 text-amber-950 shadow-md shadow-amber-500/20 ring-2 ring-amber-400/70 dark:bg-amber-400 dark:text-amber-950"
-            }
+            className={`inline-flex items-center gap-2 self-start max-w-full px-3.5 py-2 rounded-xl bg-cream dark:bg-white/[0.05] ${
+              n.pinned ? "text-rose-600 dark:text-rose-400" : "text-emely-deep dark:text-emely"
+            }`}
           >
-            <span className="shrink-0 text-[26px] leading-none">{n.icon}</span>
-            <span className="flex-1 text-[17px] font-bold leading-snug tracking-tight">{n.text}</span>
-            {n.pinned && (
-              <span className="shrink-0 text-[10px] font-extrabold uppercase tracking-widest bg-white/25 px-2 py-1 rounded-full">
-                Wichtig
-              </span>
-            )}
+            <span className="shrink-0 text-[17px] leading-none">{n.icon}</span>
+            <span className="text-[15px] font-extrabold uppercase tracking-wide leading-snug">{n.text}</span>
           </li>
         ))}
         {notes.length === 0 && (
-          <li className="py-6 text-center text-ink-faint dark:text-cream/40 text-[13px]">Keine Nachrichten.</li>
+          <li className="py-6 w-full text-center text-ink-faint dark:text-cream/40 text-[13px]">Keine Nachrichten.</li>
         )}
       </ul>
     </Card>
