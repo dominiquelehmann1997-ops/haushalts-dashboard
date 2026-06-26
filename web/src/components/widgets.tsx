@@ -64,17 +64,29 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
 export function NotesWidget({ notes }: { notes: Note[] }) {
   return (
     <Card className="h-full flex flex-col">
-      <CardHead eyebrow="Schwarzes Brett" title="Notizen" />
-      <ul className="space-y-2.5 flex-1 min-h-0 overflow-y-auto">
+      <CardHead eyebrow="Schwarzes Brett" title="Nachrichten" />
+      <ul className="space-y-3 flex-1 min-h-0 overflow-y-auto">
         {notes.map((n) => (
           <li
             key={n.id}
-            className="flex items-start gap-3 p-3 rounded-2xl bg-amber-50/70 dark:bg-amber-500/[0.07] ring-1 ring-amber-200/50 dark:ring-amber-500/10"
+            className={
+              n.pinned
+                ? "relative flex items-center gap-3.5 p-3.5 rounded-2xl bg-rose-500 text-white shadow-lg shadow-rose-500/30 ring-2 ring-rose-300/60 dark:bg-rose-600 dark:ring-rose-400/40 animate-pulse-slow"
+                : "flex items-center gap-3.5 p-3.5 rounded-2xl bg-amber-300 text-amber-950 shadow-md shadow-amber-500/20 ring-2 ring-amber-400/70 dark:bg-amber-400 dark:text-amber-950"
+            }
           >
-            <span className="text-[16px] leading-none mt-0.5">{n.icon}</span>
-            <span className="text-[14px] text-ink dark:text-cream/85 leading-snug">{n.text}</span>
+            <span className="shrink-0 text-[26px] leading-none">{n.icon}</span>
+            <span className="flex-1 text-[17px] font-bold leading-snug tracking-tight">{n.text}</span>
+            {n.pinned && (
+              <span className="shrink-0 text-[10px] font-extrabold uppercase tracking-widest bg-white/25 px-2 py-1 rounded-full">
+                Wichtig
+              </span>
+            )}
           </li>
         ))}
+        {notes.length === 0 && (
+          <li className="py-6 text-center text-ink-faint dark:text-cream/40 text-[13px]">Keine Nachrichten.</li>
+        )}
       </ul>
     </Card>
   );
