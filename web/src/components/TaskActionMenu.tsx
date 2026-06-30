@@ -38,6 +38,7 @@ export function TaskActionMenu({
   onFail,
   onTakeOver,
   takeOverLabel,
+  onCompleteBoth,
   onClose,
 }: {
   position: { x: number; y: number };
@@ -46,8 +47,14 @@ export function TaskActionMenu({
   onFail: () => void;
   onTakeOver?: () => void;
   takeOverLabel?: string;
+  onCompleteBoth?: () => void;
   onClose: () => void;
 }) {
+  let itemCount = 3;
+  if (onCompleteBoth != null) itemCount++;
+  if (onTakeOver != null && takeOverLabel != null) itemCount++;
+  const menuHeight = itemCount * 41;
+
   // Clamp so the popover never overflows the viewport's right/bottom edge.
   const left =
     typeof window !== "undefined"
@@ -55,7 +62,7 @@ export function TaskActionMenu({
       : position.x;
   const top =
     typeof window !== "undefined"
-      ? Math.max(MENU_MARGIN, Math.min(position.y, window.innerHeight - MENU_HEIGHT - MENU_MARGIN))
+      ? Math.max(MENU_MARGIN, Math.min(position.y, window.innerHeight - menuHeight - MENU_MARGIN))
       : position.y;
 
   return (
@@ -78,6 +85,9 @@ export function TaskActionMenu({
         <MenuItem label="✓ Erledigt" run={onDone} onClose={onClose} />
         <MenuItem label="→ Aufschieben" run={onDefer} onClose={onClose} />
         <MenuItem label="✕ Geht heute nicht" run={onFail} onClose={onClose} />
+        {onCompleteBoth != null && (
+          <MenuItem label="✓ Durch beide erledigt" run={onCompleteBoth} onClose={onClose} />
+        )}
         {onTakeOver != null && takeOverLabel != null && (
           <MenuItem label={takeOverLabel} run={onTakeOver} onClose={onClose} />
         )}

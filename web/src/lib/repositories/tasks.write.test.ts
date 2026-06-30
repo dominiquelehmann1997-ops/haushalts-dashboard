@@ -4,7 +4,7 @@ import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
 import { getWeeklyBalances } from "./accounts";
-import { assignTask, setTaskStatus, createTask, listOpenTasks } from "./tasks";
+import { assignTask, setTaskStatus, createTask, listOpenTasks, completeTaskByBoth } from "./tasks";
 
 describe("tasks repository (writes)", () => {
   let client: PrismaClient;
@@ -96,6 +96,36 @@ describe("tasks repository (writes)", () => {
       });
       expect(entries).toHaveLength(1);
       expect(entries[0]?.points).toBe(25);
+    });
+
+    it("marking completed by both creates two planned entries (one for each person)", async () => {
+      const task = await findTaskByTitle("Bad putzen"); // effort 25
+
+      await completeTaskByBoth(task.id, client);
+
+      const updated = await client.task.findUniqueOrThrow({ where: { id: task.id } });
+      expect(updated.status).toBe("done");
+      expect(updated.reason).toBe("both");
+
+      const entries = await client.accountEntry.findMany({
+        where: { taskId: task.id, source: "planned" },
+        include: { person: true },
+      });
+      expect(entries).toHaveLength(2);
+      
+      const persons = entries.map((e) => e.person.key);
+      expect(persons).toContain("dome");
+      expect(persons).toContain("emely");
+      expect(entries[0]?.points).toBe(25);
+      expect(entries[1]?.points).toBe(25);
+
+      // Verify toggling it back to open removes both planned entries
+      await setTaskStatus(task.id, "open", null, client);
+      
+      const afterEntries = await client.accountEntry.findMany({
+        where: { taskId: task.id, source: "planned" },
+      });
+      expect(afterEntries).toHaveLength(0);
     });
   });
 

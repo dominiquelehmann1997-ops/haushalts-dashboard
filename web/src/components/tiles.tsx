@@ -14,6 +14,7 @@ export function TaskRow({
   onDefer,
   onFail,
   onTakeOver,
+  onCompleteBoth,
 }: {
   task: Task;
   person: "dome" | "emely" | undefined;
@@ -21,6 +22,7 @@ export function TaskRow({
   onDefer: (id: string) => void;
   onFail: (id: string) => void;
   onTakeOver: (id: string, doerKey: "dome" | "emely") => void;
+  onCompleteBoth?: (id: string) => void;
 }) {
   const canTakeOver = person === "dome" || person === "emely";
   const otherKey: "dome" | "emely" = person === "dome" ? "emely" : "dome";
@@ -78,6 +80,7 @@ export function TaskRow({
           onDone={() => onToggle(task.id)}
           onDefer={() => onDefer(task.id)}
           onFail={() => onFail(task.id)}
+          onCompleteBoth={onCompleteBoth ? () => onCompleteBoth(task.id) : undefined}
           {...(canTakeOver
             ? {
                 onTakeOver: () => onTakeOver(task.id, otherKey),
@@ -152,6 +155,7 @@ export function TaskTile({
   onDefer,
   onFail,
   onTakeOver,
+  onCompleteBoth,
 }: {
   person: "dome" | "emely";
   tasks: Task[];
@@ -160,6 +164,7 @@ export function TaskTile({
   onDefer: (id: string) => void;
   onFail: (id: string) => void;
   onTakeOver: (id: string, doerKey: "dome" | "emely") => void;
+  onCompleteBoth?: (id: string) => void;
 }) {
   const p = PERSON[person];
   const openCount = tasks.filter((t) => t.status === "open").length;
@@ -183,7 +188,16 @@ export function TaskTile({
       />
       <ul className="-my-1 flex-1 min-h-0 overflow-y-auto">
         {tasks.map((t) => (
-          <TaskRow key={t.id} task={t} person={person} onToggle={onToggle} onDefer={onDefer} onFail={onFail} onTakeOver={onTakeOver} />
+          <TaskRow
+            key={t.id}
+            task={t}
+            person={person}
+            onToggle={onToggle}
+            onDefer={onDefer}
+            onFail={onFail}
+            onTakeOver={onTakeOver}
+            onCompleteBoth={onCompleteBoth}
+          />
         ))}
       </ul>
       {doneCount > 0 && (

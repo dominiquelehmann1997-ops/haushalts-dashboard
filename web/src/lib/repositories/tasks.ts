@@ -125,33 +125,59 @@ export async function setTaskStatus(
       include: { assignedTo: true },
     });
 
-    const assignedKey = task.assignedTo?.key;
-    const assignedTo: PersonKey | null =
-      assignedKey === "dome" || assignedKey === "emely" ? assignedKey : null;
+    if (task.reason === "both") {
+      const domePerson = await client.person.findUniqueOrThrow({ where: { key: "dome" } });
+      const emelyPerson = await client.person.findUniqueOrThrow({ where: { key: "emely" } });
 
-    const entryInput = recordCompletion({
-      id: task.id,
-      title: task.title,
-      status: "done",
-      effort: task.effort,
-      assignedTo,
-    });
+      await client.accountEntry.createMany({
+        data: [
+          {
+            personId: domePerson.id,
+            label: task.title,
+            points: task.effort,
+            source: "planned",
+            taskId: task.id,
+            occurredAt: new Date(),
+          },
+          {
+            personId: emelyPerson.id,
+            label: task.title,
+            points: task.effort,
+            source: "planned",
+            taskId: task.id,
+            occurredAt: new Date(),
+          },
+        ],
+      });
+    } else {
+      const assignedKey = task.assignedTo?.key;
+      const assignedTo: PersonKey | null =
+        assignedKey === "dome" || assignedKey === "emely" ? assignedKey : null;
 
-    if (entryInput) {
-      const person = await client.person.findUniqueOrThrow({
-        where: { key: entryInput.personKey },
+      const entryInput = recordCompletion({
+        id: task.id,
+        title: task.title,
+        status: "done",
+        effort: task.effort,
+        assignedTo,
       });
 
-      await client.accountEntry.create({
-        data: {
-          personId: person.id,
-          label: entryInput.label,
-          points: entryInput.points,
-          source: entryInput.source,
-          taskId: entryInput.taskId,
-          occurredAt: new Date(),
-        },
-      });
+      if (entryInput) {
+        const person = await client.person.findUniqueOrThrow({
+          where: { key: entryInput.personKey },
+        });
+
+        await client.accountEntry.create({
+          data: {
+            personId: person.id,
+            label: entryInput.label,
+            points: entryInput.points,
+            source: entryInput.source,
+            taskId: entryInput.taskId,
+            occurredAt: new Date(),
+          },
+        });
+      }
     }
   }
 
@@ -259,6 +285,18 @@ export async function completeTaskBy(
   const person = await client.person.findUniqueOrThrow({ where: { key: doerKey } });
   await client.task.update({ where: { id }, data: { assignedToId: person.id } });
   await setTaskStatus(id, "done", null, client);
+}
+
+/**
+ * Schließt eine Aufgabe im Namen von BEIDEN ab: setzt
+ * status auf "done" und reason auf "both". setTaskStatus rechnet die Punkte
+ * dann beiden Personen an.
+ */
+export async function completeTaskByBoth(
+  id: string,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  await setTaskStatus(id, "done", "both", client);
 }
 
 /**

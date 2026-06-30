@@ -5,7 +5,7 @@ import { useOptimistic, startTransition } from "react";
 import type { Task, Appointment } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ActivePhase } from "@/lib/repositories/phase";
-import { toggleTaskAction, deferTaskAction, failTaskAction, completeTaskByAction } from "@/app/actions/tasks";
+import { toggleTaskAction, deferTaskAction, failTaskAction, completeTaskByAction, completeTaskByBothAction } from "@/app/actions/tasks";
 import { TaskTile, AppointmentsTile } from "@/components/tiles";
 import { Weather } from "@/components/Weather";
 import { PhaseSwitch } from "@/components/PhaseSwitch";
@@ -56,6 +56,11 @@ export function TodayView({
       applyOpt({ id, type: "toggle" });
       await completeTaskByAction(id, doerKey);
     });
+  const onCompleteBoth = (id: string) =>
+    startTransition(async () => {
+      applyOpt({ id, type: "toggle" });
+      await completeTaskByBothAction(id);
+    });
 
   const dome = tasks.filter((t) => t.person === "dome");
   const emely = tasks.filter((t) => t.person === "emely");
@@ -66,8 +71,8 @@ export function TodayView({
 
       <Weather weather={weather} />
 
-      <TaskTile person="dome" tasks={dome} onToggle={onToggle} onDefer={onDefer} onFail={onFail} onTakeOver={onTakeOver} />
-      <TaskTile person="emely" tasks={emely} onToggle={onToggle} onDefer={onDefer} onFail={onFail} onTakeOver={onTakeOver} />
+      <TaskTile person="dome" tasks={dome} onToggle={onToggle} onDefer={onDefer} onFail={onFail} onTakeOver={onTakeOver} onCompleteBoth={onCompleteBoth} />
+      <TaskTile person="emely" tasks={emely} onToggle={onToggle} onDefer={onDefer} onFail={onFail} onTakeOver={onTakeOver} onCompleteBoth={onCompleteBoth} />
 
       <AppointmentsTile appointments={appointments} />
 

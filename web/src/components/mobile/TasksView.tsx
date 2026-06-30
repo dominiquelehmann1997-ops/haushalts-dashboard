@@ -4,7 +4,7 @@
 import { useState, useOptimistic, startTransition } from "react";
 import type { Task } from "@/lib/data";
 import type { OpenTaskDTO } from "@/lib/repositories/tasks";
-import { toggleTaskAction, deferTaskAction, failTaskAction, addTaskAction, completeTaskByAction } from "@/app/actions/tasks";
+import { toggleTaskAction, deferTaskAction, failTaskAction, addTaskAction, completeTaskByAction, completeTaskByBothAction } from "@/app/actions/tasks";
 import { TaskRow } from "@/components/tiles";
 import { Card } from "@/components/ui";
 import { PageHeader } from "@/components/mobile/PageHeader";
@@ -63,6 +63,12 @@ export function TasksView({ todayTasks, allOpen }: { todayTasks: Task[]; allOpen
                 startTransition(async () => {
                   applyOpt({ id, type: "toggle" });
                   await completeTaskByAction(id, doerKey);
+                })
+              }
+              onCompleteBoth={(id) =>
+                startTransition(async () => {
+                  applyOpt({ id, type: "toggle" });
+                  await completeTaskByBothAction(id);
                 })
               }
             />

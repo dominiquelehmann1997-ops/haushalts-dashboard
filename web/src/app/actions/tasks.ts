@@ -8,7 +8,7 @@
 import { revalidateDashboard } from "@/lib/revalidate";
 
 import { prisma } from "@/lib/db";
-import { deferTask, setTaskStatus, createTask, completeTaskBy, type CreateTaskInput } from "@/lib/repositories/tasks";
+import { deferTask, setTaskStatus, createTask, completeTaskBy, completeTaskByBoth, type CreateTaskInput } from "@/lib/repositories/tasks";
 
 /** Toggles a task between "open" and "done"; other statuses are a no-op. */
 export async function toggleTaskAction(id: string): Promise<void> {
@@ -54,6 +54,12 @@ export async function completeTaskByAction(
   doerKey: "dome" | "emely",
 ): Promise<void> {
   await completeTaskBy(id, doerKey);
+  revalidateDashboard();
+}
+
+/** Schließt eine Aufgabe als von beiden erledigt ab. */
+export async function completeTaskByBothAction(id: string): Promise<void> {
+  await completeTaskByBoth(id);
   revalidateDashboard();
 }
 
