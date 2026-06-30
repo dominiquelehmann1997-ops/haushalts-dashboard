@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState, useOptimistic, startTransition } from "react";
+import { useEffect, useRef, useState, useOptimistic, startTransition } from "react";
 import { useRouter } from "next/navigation";
+import { isDarkBySun } from "@/lib/sunTheme";
 import type { Task, Appointment, Meal, Note } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ProjectProgress } from "@/lib/repositories/projects";
@@ -12,6 +13,31 @@ import { MealPlanWidget, NotesWidget } from "@/components/widgets";
 import { Weather } from "@/components/Weather";
 import { TopbarStats } from "@/components/TopbarStats";
 import { PushSetupControl } from "@/components/PushSetupControl";
+
+/**
+ * Tablet-Auto-Theme: folgt Sonnenauf-/untergang (aus dem Wetter). Startet
+ * SSR-sicher hell (`false`) und übernimmt beim Mount den Sonnenstand. Ein
+ * manueller Toggle (Header) setzt `dark` direkt; zwischen zwei Sonnen-Übergängen
+ * tut der Minuten-Tick nichts, also bleibt die manuelle Wahl bestehen — beim
+ * nächsten Auf-/Untergang setzt sich der Automatik-Wert wieder durch.
+ */
+function useSunTheme(sunrise: string, sunset: string) {
+  const [dark, setDark] = useState(false);
+  const lastSun = useRef<boolean | null>(null);
+  useEffect(() => {
+    const apply = () => {
+      const sun = isDarkBySun(new Date(), sunrise, sunset);
+      if (lastSun.current !== sun) {
+        lastSun.current = sun;
+        setDark(sun);
+      }
+    };
+    apply();
+    const id = setInterval(apply, 60_000);
+    return () => clearInterval(id);
+  }, [sunrise, sunset]);
+  return [dark, setDark] as const;
+}
 
 export interface DashboardProps {
   initialTasks: Task[];
@@ -34,7 +60,7 @@ export default function Dashboard({
   openTaskCount,
   todayLabel,
 }: DashboardProps) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useSunTheme(weather.sunrise, weather.sunset);
   const router = useRouter();
 
   // `useOptimistic` keeps the server prop (`initialTasks`) as the source of

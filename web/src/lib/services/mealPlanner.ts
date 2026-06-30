@@ -10,7 +10,7 @@ import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { MealPlanEntry, Recipe } from "@/generated/prisma/client";
 import type { DayConstraint } from "@/lib/services/mealConstraints";
-import { weightedPick } from "./mealWeights";
+import { weightedPick, varietyFactor, parseTags } from "./mealWeights";
 import { recentRecipeUse } from "@/lib/repositories/meals";
 
 export interface GenerateWeekPlanOptions {
@@ -103,14 +103,24 @@ export async function generateWeekPlan(
   });
 
   const used = new Set<string>();
+  // Vielfalt über die Woche: zählt, wie oft jeder Tag schon gewählt wurde, und
+  // dämpft Rezepte mit denselben Tags an den Folgetagen (kein 3× Pasta).
+  const usedTagCounts = new Map<string, number>();
   const created: MealPlanEntry[] = [];
   for (let i = 0; i < weekdayDates.length; i++) {
     const c = constraints[i];
     const pool = candidatesFor(c, recipes, opts.preferSimple);
     const fresh = pool.filter((r) => !used.has(r.id));
     // Pool ist nie leer (recipes.length > 0 + base-Fallback in candidatesFor) → `!` sicher.
-    const pick = weightedPick(fresh.length > 0 ? fresh : pool, recent, rng)!;
+    const choices = fresh.length > 0 ? fresh : pool;
+    const varietyFactors = new Map(
+      choices.map((r) => [r.id, varietyFactor(parseTags(r.tags), usedTagCounts)] as const),
+    );
+    const pick = weightedPick(choices, recent, rng, varietyFactors)!;
     used.add(pick.id);
+    for (const tag of parseTags(pick.tags)) {
+      usedTagCounts.set(tag, (usedTagCounts.get(tag) ?? 0) + 1);
+    }
 
     const entry = await client.mealPlanEntry.create({
       data: {

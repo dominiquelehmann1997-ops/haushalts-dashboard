@@ -109,6 +109,8 @@ export const openMeteoFixture = {
     temperature_2m_min: [10.1, 10.2],
     weather_code: [61, 2],
     uv_index_max: [5.4, 6.8],
+    sunrise: ["2026-06-07T04:45", "2026-06-08T04:44"],
+    sunset: ["2026-06-07T21:28", "2026-06-08T21:29"],
   },
 };
 

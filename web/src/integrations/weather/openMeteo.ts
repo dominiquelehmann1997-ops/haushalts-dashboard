@@ -36,6 +36,8 @@ export interface OpenMeteoResponse {
     temperature_2m_min: number[];
     weather_code: number[];
     uv_index_max: number[];
+    sunrise?: string[]; // local "YYYY-MM-DDTHH:MM"
+    sunset?: string[]; // local "YYYY-MM-DDTHH:MM"
   };
 }
 
@@ -59,6 +61,9 @@ export interface CurrentWeather {
   uvIndex: number;
   wind: number;
   condition: WeatherCondition;
+  /** Today's sunrise/sunset as local "HH:MM" (""→ unknown; drives the tablet auto-theme). */
+  sunrise: string;
+  sunset: string;
 }
 
 /** Splits a local "YYYY-MM-DDTHH:MM" hourly timestamp into its date key and "HH:MM" time. */
@@ -197,6 +202,11 @@ export function mapCurrent(raw: OpenMeteoResponse): CurrentWeather {
 
   const wind = Math.round(current?.wind_speed_10m ?? 0);
 
+  // Sunrise/Sunset kommen als lokale "YYYY-MM-DDTHH:MM" — nur die Uhrzeit (HH:MM)
+  // interessiert die Auto-Theme-Logik; fehlend → "" (Theme bleibt dann hell).
+  const sunrise = raw.daily.sunrise?.[dailyIndex]?.split("T")[1] ?? "";
+  const sunset = raw.daily.sunset?.[dailyIndex]?.split("T")[1] ?? "";
+
   return {
     temp: current ? Math.round(current.temperature_2m) : Math.round(raw.daily.temperature_2m_max[dailyIndex]),
     label,
@@ -207,6 +217,8 @@ export function mapCurrent(raw: OpenMeteoResponse): CurrentWeather {
     uvIndex,
     wind,
     condition,
+    sunrise,
+    sunset,
   };
 }
 
@@ -226,7 +238,7 @@ function buildUrl(days: number): string {
     latitude: String(lat),
     longitude: String(lon),
     hourly: "precipitation,temperature_2m",
-    daily: "temperature_2m_max,temperature_2m_min,weather_code,uv_index_max",
+    daily: "temperature_2m_max,temperature_2m_min,weather_code,uv_index_max,sunrise,sunset",
     current: "temperature_2m,weather_code,uv_index,wind_speed_10m",
     timezone: "auto",
     forecast_days: String(days),

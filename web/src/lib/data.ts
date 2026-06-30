@@ -96,6 +96,9 @@ export const weather: CurrentWeather = {
   uvIndex: 3,
   wind: 10,
   condition: "cloudy",
+  // Leer → Auto-Theme bleibt hell, falls die Wetter-Abfrage scheitert.
+  sunrise: "",
+  sunset: "",
 };
 
 export const initialTasks: Task[] = [

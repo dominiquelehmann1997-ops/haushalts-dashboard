@@ -2,9 +2,12 @@ import { describe, expect, it } from "vitest";
 
 import {
   RECENCY_FLOOR,
+  VARIETY_FLOOR,
+  parseTags,
   ratingWeight,
   recencyFactor,
   recipeWeight,
+  varietyFactor,
   weightedPick,
 } from "./mealWeights";
 
@@ -87,5 +90,50 @@ describe("weightedPick", () => {
     expect(weightedPick(pool, noRecent, () => 0.3)?.id).toBe("recent");
     // mit Dämpfung: Summe 1.15; rng 0.3 → 0.345 > 0.15 → "other"
     expect(weightedPick(pool, recent, () => 0.3)?.id).toBe("other");
+  });
+
+  it("varietyFactors dämpfen ein Rezept mit schon genutztem Tag", () => {
+    const pool = [r("pasta"), r("other")];
+    // Variety: "pasta" auf 0.5 gedämpft, "other" neutral (1).
+    const variety = new Map([["pasta", 0.5]]);
+    // ohne Dämpfung: Gewichte [1,1] Summe 2; rng 0.4 → 0.8 < 1 → "pasta"
+    expect(weightedPick(pool, noRecent, () => 0.4)?.id).toBe("pasta");
+    // mit Dämpfung: Gewichte [0.5,1] Summe 1.5; rng 0.4 → 0.6 > 0.5 → "other"
+    expect(weightedPick(pool, noRecent, () => 0.4, variety)?.id).toBe("other");
+  });
+});
+
+describe("parseTags", () => {
+  it("parst einen JSON-Array-String zu string[]", () => {
+    expect(parseTags('["pasta","vegan"]')).toEqual(["pasta", "vegan"]);
+  });
+
+  it("liefert [] für null, leer oder ungültiges JSON", () => {
+    expect(parseTags(null)).toEqual([]);
+    expect(parseTags("")).toEqual([]);
+    expect(parseTags("kein json")).toEqual([]);
+    expect(parseTags('{"a":1}')).toEqual([]); // kein Array
+  });
+
+  it("filtert Nicht-Strings aus dem Array", () => {
+    expect(parseTags('["ok",1,null,"gut"]')).toEqual(["ok", "gut"]);
+  });
+});
+
+describe("varietyFactor", () => {
+  it("ist 1 ohne Tags oder ohne Überschneidung (neutral)", () => {
+    expect(varietyFactor([], new Map())).toBe(1);
+    expect(varietyFactor(["pasta"], new Map([["asiatisch", 2]]))).toBe(1);
+  });
+
+  it("halbiert pro Überschneidung (0.5^overlap)", () => {
+    expect(varietyFactor(["pasta"], new Map([["pasta", 1]]))).toBeCloseTo(0.5);
+    expect(varietyFactor(["pasta"], new Map([["pasta", 2]]))).toBeCloseTo(0.25);
+    // Summe über mehrere Tags: pasta(1) + teig(1) = overlap 2 → 0.25
+    expect(varietyFactor(["pasta", "teig"], new Map([["pasta", 1], ["teig", 1]]))).toBeCloseTo(0.25);
+  });
+
+  it("fällt nie unter den Floor", () => {
+    expect(varietyFactor(["pasta"], new Map([["pasta", 99]]))).toBe(VARIETY_FLOOR);
   });
 });

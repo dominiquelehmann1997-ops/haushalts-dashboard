@@ -159,6 +159,38 @@ describe("mealPlanner service", () => {
     const afterMonday = [...after].sort((a, b) => a.date.getTime() - b.date.getTime())[0];
     expect(afterMonday.recipeId).toBe(all[1].id);
   });
+
+  it("verteilt gleiche Tags über die Woche (Vielfalt-Dämpfung)", async () => {
+    // Seed-Rezepte aus dem Pool nehmen, eigenes kontrolliertes Trio anlegen:
+    // zwei „pasta"-Rezepte + ein tagloses. Alle rating "ok", keine Recency.
+    await client.recipe.updateMany({ data: { archived: true } });
+    const mk = (name: string, tags: string[] | null) =>
+      client.recipe.create({
+        data: {
+          name,
+          rating: "ok",
+          simple: false,
+          reheatable: false,
+          archived: false,
+          tags: tags ? JSON.stringify(tags) : null,
+        },
+      });
+    await mk("Aaa", ["pasta"]);
+    await mk("Bbb", ["pasta"]);
+    await mk("Ccc", null);
+
+    // rng 0.4 über den alphabetischen Pool [Aaa,Bbb,Ccc]:
+    //  Mo: Gewichte [1,1,1] Summe 3 → 1.2 → Bbb (pasta). usedTags{pasta:1}.
+    //  Di: fresh [Aaa,Ccc]; Aaa pasta→0.5, Ccc→1; Summe 1.5 → 0.6 → Ccc.
+    //  (ohne Dämpfung käme Di Aaa → zweimal pasta in Folge.)
+    const entries = await generateWeekPlan(new Date(), { preferSimple: false }, client, () => 0.4);
+    const sorted = [...entries].sort((a, b) => a.date.getTime() - b.date.getTime());
+    const nameOf = async (e: { recipeId: string | null }) =>
+      (await client.recipe.findUniqueOrThrow({ where: { id: e.recipeId! } })).name;
+
+    expect(await nameOf(sorted[0])).toBe("Bbb");
+    expect(await nameOf(sorted[1])).toBe("Ccc");
+  });
 });
 
 describe("generateWeekPlan — dienstbewusst", () => {

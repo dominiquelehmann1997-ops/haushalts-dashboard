@@ -44,7 +44,21 @@ describe("mapCurrent", () => {
       uvIndex: 4,
       wind: 12,
       condition: "rain",
+      sunrise: "04:45",
+      sunset: "21:28",
     });
+  });
+
+  it("liest Sonnenauf-/untergang als HH:MM aus dem daily-Block des heutigen Tages", () => {
+    expect(current.sunrise).toBe("04:45");
+    expect(current.sunset).toBe("21:28");
+  });
+
+  it("liefert leere Sonnenzeiten, wenn die API sunrise/sunset weglässt", () => {
+    const noSun = { ...openMeteoFixture, daily: { ...openMeteoFixture.daily, sunrise: undefined, sunset: undefined } };
+    const result = mapCurrent(noSun);
+    expect(result.sunrise).toBe("");
+    expect(result.sunset).toBe("");
   });
 
   it("derives the condition from the current weather_code (61 → rain)", () => {

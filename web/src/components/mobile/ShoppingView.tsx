@@ -29,8 +29,16 @@ function reduce(state: ShoppingItem[], action: Action): ShoppingItem[] {
   }
 }
 
+// Anzeige-Sortierung: offene vor erledigten, dann frisch → haltbar → manuell.
+// Array.sort ist stabil → gleiche Schlüssel behalten die Eingangsreihenfolge.
+const categoryRank = (c?: "frisch" | "haltbar" | null) =>
+  c === "frisch" ? 0 : c === "haltbar" ? 1 : 2;
+
 export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: FreshShoppingState }) {
   const [list, dispatch] = useOptimistic(items, reduce);
+  const sorted = [...list].sort(
+    (a, b) => Number(a.done) - Number(b.done) || categoryRank(a.category) - categoryRank(b.category),
+  );
 
   const toggle = (id: string) =>
     startTransition(async () => {
@@ -65,7 +73,7 @@ export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: F
 
       <Card>
         <ul className="-my-0.5">
-          {list.map((i) => (
+          {sorted.map((i) => (
             <li key={i.id} className="flex items-center gap-3 py-2.5">
               <button
                 type="button"

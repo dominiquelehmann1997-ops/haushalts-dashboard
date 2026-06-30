@@ -221,10 +221,12 @@ export function AppointmentsTile({ appointments }: { appointments: Appointment[]
         {appointments.map((a, i) => (
           <li
             key={a.id}
-            className={`flex items-start gap-3 py-2.5 ${
+            className={`flex items-stretch gap-3 py-2.5 ${
               i !== 0 ? "border-t border-black/5 dark:border-white/5" : ""
             }`}
           >
+            {/* Akzent-Balken in der Personenfarbe — schnelles Scannen, wer den Termin hat. */}
+            <span className={`shrink-0 w-1 rounded-full ${personFill(a.who[0])}`} />
             <div className="shrink-0 text-right">
               <div className="font-display font-semibold text-[15px] text-ink dark:text-cream tabular-nums leading-tight">
                 {a.time}
