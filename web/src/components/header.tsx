@@ -1,6 +1,27 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import { SunIcon, MoonIcon } from "@/components/icons";
 import { SyncButton } from "@/components/SyncButton";
+
+function useClock() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const tick = () =>
+      setTime(
+        new Date().toLocaleTimeString("de-DE", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        }),
+      );
+    tick();
+    const id = setInterval(tick, 1000); // ponytail: 1s tick keeps minute flip prompt across sleep/wake
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
 
 export function Header({
   dark,
@@ -11,19 +32,15 @@ export function Header({
   setDark: Dispatch<SetStateAction<boolean>>;
   todayLabel: { weekday: string; date: string };
 }) {
+  const time = useClock();
   return (
     <header className="flex items-center justify-between gap-4">
       <div>
-        <div className="flex items-center gap-2.5">
-          <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-ink-faint">
-            Unser Zuhause
-          </span>
-        </div>
-        <h1 className="font-display font-bold text-ink dark:text-cream tracking-tight leading-none text-[26px] sm:text-[32px] mt-0.5">
-          Heute<span className="text-emely">.</span>
+        <h1 className="font-display font-bold text-ink dark:text-cream tracking-tight leading-none text-[26px] sm:text-[32px] tabular-nums">
+          {time || " "}
         </h1>
         <p className="text-[13px] text-ink-soft dark:text-cream/55 mt-1">
-          {todayLabel.weekday}, {todayLabel.date} · Was ist dran — und wer macht was?
+          {todayLabel.weekday}, {todayLabel.date}
         </p>
       </div>
       <div className="flex items-center gap-2 shrink-0">
