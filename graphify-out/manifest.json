@@ -1,0 +1,1337 @@
+{
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\.claude\\settings.local.json": {
+    "mtime": 1782224568.9777532,
+    "ast_hash": "d2de1b46ea423dd6c1dbf8ea04d4208e",
+    "semantic_hash": "d2de1b46ea423dd6c1dbf8ea04d4208e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\scripts\\tablet-boot.sh": {
+    "mtime": 1781617704.730815,
+    "ast_hash": "053e021e68321439674484f130c64c07",
+    "semantic_hash": "053e021e68321439674484f130c64c07"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\scripts\\tablet-start.sh": {
+    "mtime": 1781938204.962787,
+    "ast_hash": "e213d07c4f8c68fae5b15850735bdb5b",
+    "semantic_hash": "e213d07c4f8c68fae5b15850735bdb5b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\scripts\\tablet-sync.sh": {
+    "mtime": 1782379951.2860572,
+    "ast_hash": "b57b32387ac14d99280299d596379750",
+    "semantic_hash": "b57b32387ac14d99280299d596379750"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\eslint.config.mjs": {
+    "mtime": 1780799018.6683822,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\next-env.d.ts": {
+    "mtime": 1781294303.5426834,
+    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
+    "semantic_hash": "2a74d3909800ca5467fa83b0ab4a4890"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\next.config.ts": {
+    "mtime": 1781729741.097008,
+    "ast_hash": "733c4fb373a6c1f685d2ea9706eec78b",
+    "semantic_hash": "733c4fb373a6c1f685d2ea9706eec78b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\package.json": {
+    "mtime": 1782226089.2379704,
+    "ast_hash": "aa7cc70f0437373af0ff5b08e8307fa5",
+    "semantic_hash": "aa7cc70f0437373af0ff5b08e8307fa5"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\postcss.config.mjs": {
+    "mtime": 1780799018.7322986,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma.config.ts": {
+    "mtime": 1781044342.6230104,
+    "ast_hash": "2135644a8f9df87abbb46988ee4e71bd",
+    "semantic_hash": "2135644a8f9df87abbb46988ee4e71bd"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\importChores.ts": {
+    "mtime": 1781295133.8549378,
+    "ast_hash": "4afd26aa1d08a08738fcec994c9daa59",
+    "semantic_hash": "4afd26aa1d08a08738fcec994c9daa59"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\ingestRecipes.ts": {
+    "mtime": 1781442361.9726617,
+    "ast_hash": "cee10c5d7c1c9075ea3f5b7a593dbcd1",
+    "semantic_hash": "cee10c5d7c1c9075ea3f5b7a593dbcd1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260607132832_init\\migration.sql": {
+    "mtime": 1781044342.6250083,
+    "ast_hash": "3785be3e293fc891aa7b3f889daee7e7",
+    "semantic_hash": "3785be3e293fc891aa7b3f889daee7e7"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260607203534_oauth_token\\migration.sql": {
+    "mtime": 1781044342.6272683,
+    "ast_hash": "0e38555b437ad9b58b451a2ec69de916",
+    "semantic_hash": "0e38555b437ad9b58b451a2ec69de916"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260609094348_dienstbewusster_essensplan\\migration.sql": {
+    "mtime": 1781044342.628268,
+    "ast_hash": "6fa083f2c7fb678738f299fa898fe8e8",
+    "semantic_hash": "6fa083f2c7fb678738f299fa898fe8e8"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260609162627_meal_plan_status\\migration.sql": {
+    "mtime": 1781044342.629264,
+    "ast_hash": "c72e917d338053b1cb66870cce3e52b2",
+    "semantic_hash": "c72e917d338053b1cb66870cce3e52b2"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260609213531_shopping_freshness\\migration.sql": {
+    "mtime": 1781044342.6302655,
+    "ast_hash": "190ccef8cd8ad23722392dd555f054b5",
+    "semantic_hash": "190ccef8cd8ad23722392dd555f054b5"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260610091646_recipe_vault_fields\\migration.sql": {
+    "mtime": 1781085600.35717,
+    "ast_hash": "fe1387c3b9980889c2ae8a6faef50aa1",
+    "semantic_hash": "fe1387c3b9980889c2ae8a6faef50aa1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260610153236_freshness_override\\migration.sql": {
+    "mtime": 1781123679.9503887,
+    "ast_hash": "0396eaa5519d26fc7080100181e3fefd",
+    "semantic_hash": "0396eaa5519d26fc7080100181e3fefd"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260617204439_push_subscription\\migration.sql": {
+    "mtime": 1781731827.5924098,
+    "ast_hash": "446306d5c953a78df45ddbfd472cd59c",
+    "semantic_hash": "446306d5c953a78df45ddbfd472cd59c"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260623130810_meal_skip_day_nullable_recipe\\migration.sql": {
+    "mtime": 1782220981.7880635,
+    "ast_hash": "6fdf4e6f72db4f4a5268c86964b92006",
+    "semantic_hash": "6fdf4e6f72db4f4a5268c86964b92006"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260623163000_shopping_item_spec\\migration.sql": {
+    "mtime": 1782225801.1145303,
+    "ast_hash": "b908a35c2376aa6ec8f2323f0ab6378f",
+    "semantic_hash": "b908a35c2376aa6ec8f2323f0ab6378f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\migrations\\20260625120000_calendar_event_all_day\\migration.sql": {
+    "mtime": 1782399703.0071907,
+    "ast_hash": "8941024ff49e181eebcbfa40a5ae284a",
+    "semantic_hash": "8941024ff49e181eebcbfa40a5ae284a"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\planToday.ts": {
+    "mtime": 1782135156.081229,
+    "ast_hash": "a96f1c133faa667f2aabca4971a09bb5",
+    "semantic_hash": "a96f1c133faa667f2aabca4971a09bb5"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\seed.ts": {
+    "mtime": 1781731827.5924098,
+    "ast_hash": "f9f924f586e85509e554236035ba1253",
+    "semantic_hash": "f9f924f586e85509e554236035ba1253"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\syncCalendar.ts": {
+    "mtime": 1781938204.965789,
+    "ast_hash": "62fb9472e9d0b877e6be2568374642da",
+    "semantic_hash": "62fb9472e9d0b877e6be2568374642da"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\prisma\\syncShopping.ts": {
+    "mtime": 1782226089.239048,
+    "ast_hash": "77f77f382f87bf1a0c357d7078b65821",
+    "semantic_hash": "77f77f382f87bf1a0c357d7078b65821"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\sw.js": {
+    "mtime": 1781731827.5924098,
+    "ast_hash": "12fe2514bf892df1ef31e6244ff0b70b",
+    "semantic_hash": "12fe2514bf892df1ef31e6244ff0b70b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\scripts\\bring-list-uuids.mjs": {
+    "mtime": 1781044342.6365454,
+    "ast_hash": "dc0f275b29c8e369a1f790b3e77758d9",
+    "semantic_hash": "dc0f275b29c8e369a1f790b3e77758d9"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\scripts\\bring-read-list.mjs": {
+    "mtime": 1781044342.6375446,
+    "ast_hash": "4e64d6e2f400170cad46fbc175be1ca9",
+    "semantic_hash": "4e64d6e2f400170cad46fbc175be1ca9"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\scripts\\gen-icons.mjs": {
+    "mtime": 1781543798.8151808,
+    "ast_hash": "9b63840ef1fb46a6cf4d3d77792e7673",
+    "semantic_hash": "9b63840ef1fb46a6cf4d3d77792e7673"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\(mobile)\\layout.tsx": {
+    "mtime": 1781875940.7998545,
+    "ast_hash": "648ec350b81d950817ba27e220b488c7",
+    "semantic_hash": "648ec350b81d950817ba27e220b488c7"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\(mobile)\\mobile\\meals\\page.tsx": {
+    "mtime": 1782333387.913761,
+    "ast_hash": "1f174a23d7983b5932ce8980ac75b9a8",
+    "semantic_hash": "1f174a23d7983b5932ce8980ac75b9a8"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\(mobile)\\mobile\\more\\page.tsx": {
+    "mtime": 1781873120.015497,
+    "ast_hash": "13fb2c207db75abc01c1899922987941",
+    "semantic_hash": "13fb2c207db75abc01c1899922987941"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\(mobile)\\mobile\\page.tsx": {
+    "mtime": 1781873120.015497,
+    "ast_hash": "1aef24a33ca77d852aa18b7417936576",
+    "semantic_hash": "1aef24a33ca77d852aa18b7417936576"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\(mobile)\\mobile\\shopping\\page.tsx": {
+    "mtime": 1781873120.015497,
+    "ast_hash": "e9af05e0e1c8122e22db787564d06fff",
+    "semantic_hash": "e9af05e0e1c8122e22db787564d06fff"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\(mobile)\\mobile\\tasks\\page.tsx": {
+    "mtime": 1781873120.015497,
+    "ast_hash": "e9f188083fe42b6a16b79de9dd2ea17e",
+    "semantic_hash": "e9f188083fe42b6a16b79de9dd2ea17e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\accounts.ts": {
+    "mtime": 1781873120.020451,
+    "ast_hash": "6f8e68c2836999c3c52cd8095ea95145",
+    "semantic_hash": "6f8e68c2836999c3c52cd8095ea95145"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\calendar.ts": {
+    "mtime": 1782135156.081229,
+    "ast_hash": "29f8eb1972a94b54305c7b735420fc02",
+    "semantic_hash": "29f8eb1972a94b54305c7b735420fc02"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\meals.ts": {
+    "mtime": 1782220981.7940464,
+    "ast_hash": "208eeffd0235d23789e52b9d8c83ab96",
+    "semantic_hash": "208eeffd0235d23789e52b9d8c83ab96"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\notes.ts": {
+    "mtime": 1781873120.020451,
+    "ast_hash": "45174de4d5d175d6c72d3a7db9270209",
+    "semantic_hash": "45174de4d5d175d6c72d3a7db9270209"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\phase.ts": {
+    "mtime": 1781873120.020451,
+    "ast_hash": "70352370352e4bd0742b93c45db31b85",
+    "semantic_hash": "70352370352e4bd0742b93c45db31b85"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\push.ts": {
+    "mtime": 1781731827.5924098,
+    "ast_hash": "2a137b6634389d959e58dff78ea4e2f6",
+    "semantic_hash": "2a137b6634389d959e58dff78ea4e2f6"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\recipes.ts": {
+    "mtime": 1781873120.0234575,
+    "ast_hash": "cc2194ad6ea6446237c43a2503162fc5",
+    "semantic_hash": "cc2194ad6ea6446237c43a2503162fc5"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\shopping.ts": {
+    "mtime": 1782147362.0829587,
+    "ast_hash": "c8b4a08d8de78b253572cddf9f80043e",
+    "semantic_hash": "c8b4a08d8de78b253572cddf9f80043e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\actions\\tasks.ts": {
+    "mtime": 1782135156.0832381,
+    "ast_hash": "4fbe5aea299eef7a77081cfcd905f4eb",
+    "semantic_hash": "4fbe5aea299eef7a77081cfcd905f4eb"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\api\\auth\\google\\callback\\route.ts": {
+    "mtime": 1781044342.6478863,
+    "ast_hash": "408aa360434fdedf134b02a8ef88e5f1",
+    "semantic_hash": "408aa360434fdedf134b02a8ef88e5f1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\api\\auth\\google\\route.ts": {
+    "mtime": 1781044342.6488855,
+    "ast_hash": "5c11d0a611c08b32fe0d51b07a25c5f6",
+    "semantic_hash": "5c11d0a611c08b32fe0d51b07a25c5f6"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\api\\sync\\calendar\\route.ts": {
+    "mtime": 1781938204.9677882,
+    "ast_hash": "5e5bf412ba83e1118e66198786825ce3",
+    "semantic_hash": "5e5bf412ba83e1118e66198786825ce3"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\layout.tsx": {
+    "mtime": 1781928921.0305984,
+    "ast_hash": "94170934d4205f3013e288ed14c4c73d",
+    "semantic_hash": "94170934d4205f3013e288ed14c4c73d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\manifest.test.ts": {
+    "mtime": 1781543798.8171775,
+    "ast_hash": "74b2e50d2b44ac8ece3cc89101f025ae",
+    "semantic_hash": "74b2e50d2b44ac8ece3cc89101f025ae"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\page.tsx": {
+    "mtime": 1781540314.397805,
+    "ast_hash": "dcb99cd6cc0a1c997947cfe42183afa1",
+    "semantic_hash": "dcb99cd6cc0a1c997947cfe42183afa1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\sw-register.tsx": {
+    "mtime": 1781543798.8171775,
+    "ast_hash": "b1cbb44383cd97a0f4578c5b67698081",
+    "semantic_hash": "b1cbb44383cd97a0f4578c5b67698081"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\app\\sw.test.ts": {
+    "mtime": 1781731827.6005232,
+    "ast_hash": "81d57139325ca5eeea56e4d359fb430b",
+    "semantic_hash": "81d57139325ca5eeea56e4d359fb430b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\AddDoneEntry.tsx": {
+    "mtime": 1781044342.6538885,
+    "ast_hash": "76dc603963fb6bfe8a244207fd68b02c",
+    "semantic_hash": "76dc603963fb6bfe8a244207fd68b02c"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\AddDoneInline.tsx": {
+    "mtime": 1781540314.3983393,
+    "ast_hash": "4db86dcb96284cf5b85eb45275da56da",
+    "semantic_hash": "4db86dcb96284cf5b85eb45275da56da"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\BringSyncControl.tsx": {
+    "mtime": 1781044342.6558883,
+    "ast_hash": "25adfbada24123a645112284703d8286",
+    "semantic_hash": "25adfbada24123a645112284703d8286"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\FreshShoppingControl.tsx": {
+    "mtime": 1781044342.6568892,
+    "ast_hash": "1341d6ae1e0bdbaa29ba1c3ad51c013e",
+    "semantic_hash": "1341d6ae1e0bdbaa29ba1c3ad51c013e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\MealDraftPanel.tsx": {
+    "mtime": 1782220981.7940464,
+    "ast_hash": "c5112ca738e81eec2ec4601a0fa21cd1",
+    "semantic_hash": "c5112ca738e81eec2ec4601a0fa21cd1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\MealPlanControl.tsx": {
+    "mtime": 1781044342.6588886,
+    "ast_hash": "ff2da2f0b2520a3da22ef2698feec6cd",
+    "semantic_hash": "ff2da2f0b2520a3da22ef2698feec6cd"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\PhaseSwitch.tsx": {
+    "mtime": 1781044342.6608865,
+    "ast_hash": "c43f46831fba905556952fa143ea832e",
+    "semantic_hash": "c43f46831fba905556952fa143ea832e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\PushSetupControl.tsx": {
+    "mtime": 1781731827.6005232,
+    "ast_hash": "3b36c21c98192e8a7a4d5a7ff611bc37",
+    "semantic_hash": "3b36c21c98192e8a7a4d5a7ff611bc37"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\SyncButton.tsx": {
+    "mtime": 1781938204.9677882,
+    "ast_hash": "b2aba7f7ea1d9d0bf692b352cdb2153f",
+    "semantic_hash": "b2aba7f7ea1d9d0bf692b352cdb2153f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\TaskActionMenu.tsx": {
+    "mtime": 1782135156.0832381,
+    "ast_hash": "58dba7f1d16c31f53d34effef2f813f1",
+    "semantic_hash": "58dba7f1d16c31f53d34effef2f813f1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\TopbarStats.tsx": {
+    "mtime": 1781540314.3999293,
+    "ast_hash": "cc0ec80b6ff63d0583456b8829e60031",
+    "semantic_hash": "cc0ec80b6ff63d0583456b8829e60031"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\VaultIngestControl.tsx": {
+    "mtime": 1781085600.3620434,
+    "ast_hash": "66833f6db4aa16b625d85491bcb8d293",
+    "semantic_hash": "66833f6db4aa16b625d85491bcb8d293"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\Weather.tsx": {
+    "mtime": 1782381402.0794358,
+    "ast_hash": "2fd7878aeae4bf5acdd0d1483d7849e0",
+    "semantic_hash": "2fd7878aeae4bf5acdd0d1483d7849e0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\WeatherBabyTile.tsx": {
+    "mtime": 1781044342.6628897,
+    "ast_hash": "272cad3043ad6464928acd2f4b792d9d",
+    "semantic_hash": "272cad3043ad6464928acd2f4b792d9d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\dashboard.tsx": {
+    "mtime": 1782379951.2871394,
+    "ast_hash": "9e08febe3cc27ce828d7437a5ff0fcf4",
+    "semantic_hash": "9e08febe3cc27ce828d7437a5ff0fcf4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\header.tsx": {
+    "mtime": 1781938204.9687932,
+    "ast_hash": "fb3912842143c6b8520fa78cfa2eca1b",
+    "semantic_hash": "fb3912842143c6b8520fa78cfa2eca1b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\icons.tsx": {
+    "mtime": 1782381402.0805216,
+    "ast_hash": "2b992ebccfdf1510b7f95488fec86c95",
+    "semantic_hash": "2b992ebccfdf1510b7f95488fec86c95"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\MealWeekList.tsx": {
+    "mtime": 1782333387.9143653,
+    "ast_hash": "879e856b6973c3c4da5f6483c61c7cff",
+    "semantic_hash": "879e856b6973c3c4da5f6483c61c7cff"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\MobileNavBar.tsx": {
+    "mtime": 1781875926.1328948,
+    "ast_hash": "b1beba38e8fbfeb35cca989507d75a44",
+    "semantic_hash": "b1beba38e8fbfeb35cca989507d75a44"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\MoreView.tsx": {
+    "mtime": 1781873120.027471,
+    "ast_hash": "06935201bd37da18b2baf9a5b5ce85fa",
+    "semantic_hash": "06935201bd37da18b2baf9a5b5ce85fa"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\NotesEditor.tsx": {
+    "mtime": 1781873120.027471,
+    "ast_hash": "cb88a72ec66c6d1feccfe2f4973c00db",
+    "semantic_hash": "cb88a72ec66c6d1feccfe2f4973c00db"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\PageHeader.tsx": {
+    "mtime": 1781873120.028935,
+    "ast_hash": "69e0fd058a15d868259b548eed9a74d1",
+    "semantic_hash": "69e0fd058a15d868259b548eed9a74d1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\ShoppingView.tsx": {
+    "mtime": 1782147362.0835316,
+    "ast_hash": "5e7f4a00b79e67338437d4d5a2a4756f",
+    "semantic_hash": "5e7f4a00b79e67338437d4d5a2a4756f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\TasksView.tsx": {
+    "mtime": 1782135156.085246,
+    "ast_hash": "17d6bb829612b621cec13196b9ea2ed1",
+    "semantic_hash": "17d6bb829612b621cec13196b9ea2ed1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\mobile\\TodayView.tsx": {
+    "mtime": 1782135156.085246,
+    "ast_hash": "d36e458e2de8e402ae012734a91456db",
+    "semantic_hash": "d36e458e2de8e402ae012734a91456db"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\tiles.tsx": {
+    "mtime": 1782246971.9843476,
+    "ast_hash": "b90269f4bf4fa9d5d465334133af43e1",
+    "semantic_hash": "b90269f4bf4fa9d5d465334133af43e1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\ui.tsx": {
+    "mtime": 1780799474.5376825,
+    "ast_hash": "ffc3ea20e5b5b15f9fbd87e500074a6d",
+    "semantic_hash": "ffc3ea20e5b5b15f9fbd87e500074a6d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\components\\widgets.tsx": {
+    "mtime": 1782505416.3350568,
+    "ast_hash": "05c96c21cbb6488e1f0c0a2f3dd01cfb",
+    "semantic_hash": "05c96c21cbb6488e1f0c0a2f3dd01cfb"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\browser.ts": {
+    "mtime": 1782380066.5121565,
+    "ast_hash": "e11d429d0956dc373f25956c0789b761",
+    "semantic_hash": "e11d429d0956dc373f25956c0789b761"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\client.ts": {
+    "mtime": 1782380066.5036807,
+    "ast_hash": "f250e74269c40b31373fa8f148065fe4",
+    "semantic_hash": "f250e74269c40b31373fa8f148065fe4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\commonInputTypes.ts": {
+    "mtime": 1782380066.5121565,
+    "ast_hash": "d95fa234f23227e86921f85f360e9e55",
+    "semantic_hash": "d95fa234f23227e86921f85f360e9e55"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\enums.ts": {
+    "mtime": 1782380066.5121565,
+    "ast_hash": "fa6c58ad2d5526df3ff4f7e351d5f2f2",
+    "semantic_hash": "fa6c58ad2d5526df3ff4f7e351d5f2f2"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\internal\\class.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "1cc38c481f31df74ed3e5ee64391caa3",
+    "semantic_hash": "1cc38c481f31df74ed3e5ee64391caa3"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\internal\\prismaNamespace.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "422e54106d6e645a8d34b102cbcb9bc0",
+    "semantic_hash": "422e54106d6e645a8d34b102cbcb9bc0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "3f83f83a6e3b71b37dfe8cc7aa68d064",
+    "semantic_hash": "3f83f83a6e3b71b37dfe8cc7aa68d064"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models.ts": {
+    "mtime": 1782380066.5121565,
+    "ast_hash": "2dfe4bbdc501ab4d6769efb377d984f2",
+    "semantic_hash": "2dfe4bbdc501ab4d6769efb377d984f2"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\AccountEntry.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "2645b51e9e6d49c1975d8608ec1ee28f",
+    "semantic_hash": "2645b51e9e6d49c1975d8608ec1ee28f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\CalendarEvent.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "28f940f5bac60bc05d91d377f2bd33d0",
+    "semantic_hash": "28f940f5bac60bc05d91d377f2bd33d0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\FreshnessOverride.ts": {
+    "mtime": 1782380066.5246263,
+    "ast_hash": "6f83b4ee500961bfbb0f64d2db509dd1",
+    "semantic_hash": "6f83b4ee500961bfbb0f64d2db509dd1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\Ingredient.ts": {
+    "mtime": 1782380066.5246263,
+    "ast_hash": "4fcf88431983d703682accecf9023a04",
+    "semantic_hash": "4fcf88431983d703682accecf9023a04"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\MealPlanEntry.ts": {
+    "mtime": 1782380066.5246263,
+    "ast_hash": "d76f5d7a0bab920ace60635bd2f3a712",
+    "semantic_hash": "d76f5d7a0bab920ace60635bd2f3a712"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\Note.ts": {
+    "mtime": 1782380066.5246263,
+    "ast_hash": "c52fdcdcb0f0198dc2929a7ac300b0a9",
+    "semantic_hash": "c52fdcdcb0f0198dc2929a7ac300b0a9"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\OAuthToken.ts": {
+    "mtime": 1782380066.5246263,
+    "ast_hash": "9b01ba21a2f08bdf092a717ce8c906b7",
+    "semantic_hash": "9b01ba21a2f08bdf092a717ce8c906b7"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\Person.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "79524cd2409f70815b5ddc076128e010",
+    "semantic_hash": "79524cd2409f70815b5ddc076128e010"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\PhaseSetting.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "9ee737cb66a8448952905b00e92cb29d",
+    "semantic_hash": "9ee737cb66a8448952905b00e92cb29d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\Project.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "e6104f576760bd0c1594f5cfc58d0b59",
+    "semantic_hash": "e6104f576760bd0c1594f5cfc58d0b59"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\PushSubscription.ts": {
+    "mtime": 1782380066.5246263,
+    "ast_hash": "b3e46ed070f5df7c6008f7f95d790819",
+    "semantic_hash": "b3e46ed070f5df7c6008f7f95d790819"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\Recipe.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "0f349fff22ac0257fe2c56e1dc0e7e6c",
+    "semantic_hash": "0f349fff22ac0257fe2c56e1dc0e7e6c"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\ShoppingItem.ts": {
+    "mtime": 1782380066.5246263,
+    "ast_hash": "176db61a1c0afe9d39d5b93824dbe16e",
+    "semantic_hash": "176db61a1c0afe9d39d5b93824dbe16e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\generated\\prisma\\models\\Task.ts": {
+    "mtime": 1782380066.520555,
+    "ast_hash": "a095a1815f91f9d71444fa834d197b98",
+    "semantic_hash": "a095a1815f91f9d71444fa834d197b98"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\bring\\client.test.ts": {
+    "mtime": 1782225801.1172607,
+    "ast_hash": "38ad925458542bedde0e1984af2fe37c",
+    "semantic_hash": "38ad925458542bedde0e1984af2fe37c"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\bring\\client.ts": {
+    "mtime": 1782225801.1177945,
+    "ast_hash": "1f11c82afd7f6d5a366184ef2dd0ced4",
+    "semantic_hash": "1f11c82afd7f6d5a366184ef2dd0ced4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\calendar\\fixture.ts": {
+    "mtime": 1781044342.67389,
+    "ast_hash": "51aeeac6c891b97fd2a1ecfbf33e6c45",
+    "semantic_hash": "51aeeac6c891b97fd2a1ecfbf33e6c45"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\calendar\\google.test.ts": {
+    "mtime": 1782399703.0087874,
+    "ast_hash": "28d47f84043338200aebb08b23942884",
+    "semantic_hash": "28d47f84043338200aebb08b23942884"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\calendar\\google.ts": {
+    "mtime": 1782399703.009938,
+    "ast_hash": "6dabd21b47d1acf96488b364a10abc01",
+    "semantic_hash": "6dabd21b47d1acf96488b364a10abc01"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\calendar\\googleAuth.ts": {
+    "mtime": 1781044342.6778874,
+    "ast_hash": "4c2aea767545c460e3f8076d0c1793e0",
+    "semantic_hash": "4c2aea767545c460e3f8076d0c1793e0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\weather\\fixture.ts": {
+    "mtime": 1781540314.4054615,
+    "ast_hash": "028aad9bd0b960ebf41bbceee9ac2f90",
+    "semantic_hash": "028aad9bd0b960ebf41bbceee9ac2f90"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\weather\\openMeteo.test.ts": {
+    "mtime": 1782381402.0816097,
+    "ast_hash": "a70ea362775211b2e6249a8c06a69652",
+    "semantic_hash": "a70ea362775211b2e6249a8c06a69652"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\integrations\\weather\\openMeteo.ts": {
+    "mtime": 1782381402.0821588,
+    "ast_hash": "9af1dc93a3402b01996548adcd089393",
+    "semantic_hash": "9af1dc93a3402b01996548adcd089393"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\age.test.ts": {
+    "mtime": 1781044342.6848977,
+    "ast_hash": "283815dca8661cd7fcbd75204e67a1af",
+    "semantic_hash": "283815dca8661cd7fcbd75204e67a1af"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\age.ts": {
+    "mtime": 1781044342.6858861,
+    "ast_hash": "0c19339ebc8867a8e3321d0dfc1790c7",
+    "semantic_hash": "0c19339ebc8867a8e3321d0dfc1790c7"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\clothing.test.ts": {
+    "mtime": 1781044342.6868868,
+    "ast_hash": "8d65efe1df25628a8603a81f537ab02c",
+    "semantic_hash": "8d65efe1df25628a8603a81f537ab02c"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\clothing.ts": {
+    "mtime": 1781044342.6888938,
+    "ast_hash": "a4f511e98a7b33bedaba7decf2eb30c3",
+    "semantic_hash": "a4f511e98a7b33bedaba7decf2eb30c3"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\profile.ts": {
+    "mtime": 1781044342.689889,
+    "ast_hash": "ed56e871098191c76b43cddd99afee7b",
+    "semantic_hash": "ed56e871098191c76b43cddd99afee7b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\types.ts": {
+    "mtime": 1781044342.689889,
+    "ast_hash": "a6023fd069bde25640869c332c3c7f1e",
+    "semantic_hash": "a6023fd069bde25640869c332c3c7f1e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\uv.test.ts": {
+    "mtime": 1781044342.690886,
+    "ast_hash": "130e4e1923e35ebd1f0b0ceae8b8742a",
+    "semantic_hash": "130e4e1923e35ebd1f0b0ceae8b8742a"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\baby\\uv.ts": {
+    "mtime": 1781044342.6918886,
+    "ast_hash": "db7c87b7efaaeac335627237a9410903",
+    "semantic_hash": "db7c87b7efaaeac335627237a9410903"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\calendar\\shifts.test.ts": {
+    "mtime": 1781044342.6938872,
+    "ast_hash": "5b7f5ea155eff62a17c75bc3ed3b4842",
+    "semantic_hash": "5b7f5ea155eff62a17c75bc3ed3b4842"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\calendar\\shifts.ts": {
+    "mtime": 1781044342.6948855,
+    "ast_hash": "ae6413eaa72233bef24f854b09ee01bc",
+    "semantic_hash": "ae6413eaa72233bef24f854b09ee01bc"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\data.test.ts": {
+    "mtime": 1782246971.9849792,
+    "ast_hash": "5ec96c577e738aa7d236ee8545baecf4",
+    "semantic_hash": "5ec96c577e738aa7d236ee8545baecf4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\data.ts": {
+    "mtime": 1782381402.0826967,
+    "ast_hash": "d600aff8d79e739912a61cc4d862ca87",
+    "semantic_hash": "d600aff8d79e739912a61cc4d862ca87"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\dates.ts": {
+    "mtime": 1781044342.697148,
+    "ast_hash": "19db63f989aa37a2aa5b4187789de329",
+    "semantic_hash": "19db63f989aa37a2aa5b4187789de329"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\db.ts": {
+    "mtime": 1781044342.6981497,
+    "ast_hash": "734fc68696dbcde229a861e87fe0e584",
+    "semantic_hash": "734fc68696dbcde229a861e87fe0e584"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\domain.ts": {
+    "mtime": 1781044342.6991534,
+    "ast_hash": "d15ae029e521a05758e020f02c050dad",
+    "semantic_hash": "d15ae029e521a05758e020f02c050dad"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\availability.test.ts": {
+    "mtime": 1781044342.7001505,
+    "ast_hash": "87b808d3d639e4728ea90679a184f902",
+    "semantic_hash": "87b808d3d639e4728ea90679a184f902"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\availability.ts": {
+    "mtime": 1781044342.7011502,
+    "ast_hash": "7ed97ca08178831d6d96f9219065b744",
+    "semantic_hash": "7ed97ca08178831d6d96f9219065b744"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\capacity.test.ts": {
+    "mtime": 1781938204.9717915,
+    "ast_hash": "99a603c78ee2f5b17c1966797e2d7050",
+    "semantic_hash": "99a603c78ee2f5b17c1966797e2d7050"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\capacity.ts": {
+    "mtime": 1781938204.9727871,
+    "ast_hash": "5450f92c5daa8dcf88b03a713dc1d43c",
+    "semantic_hash": "5450f92c5daa8dcf88b03a713dc1d43c"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\completion.test.ts": {
+    "mtime": 1781044342.7021503,
+    "ast_hash": "d47fddb027b1da8a5f717ac18cb27078",
+    "semantic_hash": "d47fddb027b1da8a5f717ac18cb27078"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\completion.ts": {
+    "mtime": 1781044342.7031536,
+    "ast_hash": "8b330ce1493432a0e2950094a233aeb0",
+    "semantic_hash": "8b330ce1493432a0e2950094a233aeb0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\fairness.test.ts": {
+    "mtime": 1781938204.9727871,
+    "ast_hash": "30d300a4d3b946363305b9b719c80dc6",
+    "semantic_hash": "30d300a4d3b946363305b9b719c80dc6"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\fairness.ts": {
+    "mtime": 1781938204.9737923,
+    "ast_hash": "13b4da0aa395e67de3184481a56ab9ff",
+    "semantic_hash": "13b4da0aa395e67de3184481a56ab9ff"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\index.test.ts": {
+    "mtime": 1781938204.974786,
+    "ast_hash": "9c624d3be2a500f15ef1e090e4cff248",
+    "semantic_hash": "9c624d3be2a500f15ef1e090e4cff248"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\index.ts": {
+    "mtime": 1781938204.9757879,
+    "ast_hash": "4d9be0ea91f164671211582579194e45",
+    "semantic_hash": "4d9be0ea91f164671211582579194e45"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\personFilter.test.ts": {
+    "mtime": 1781044342.7084029,
+    "ast_hash": "9bbbd47e88d6506ac841a49b3b5d0750",
+    "semantic_hash": "9bbbd47e88d6506ac841a49b3b5d0750"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\personFilter.ts": {
+    "mtime": 1781044342.7094042,
+    "ast_hash": "5251692595a2395adb6dff12890a53bc",
+    "semantic_hash": "5251692595a2395adb6dff12890a53bc"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\types.ts": {
+    "mtime": 1781938204.9767902,
+    "ast_hash": "4fd664a30edc28c3428a0d1b5ab93cb0",
+    "semantic_hash": "4fd664a30edc28c3428a0d1b5ab93cb0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\weatherCheck.test.ts": {
+    "mtime": 1781044342.7124066,
+    "ast_hash": "564c8f0b83fbd07dac4dde6e7be00c7f",
+    "semantic_hash": "564c8f0b83fbd07dac4dde6e7be00c7f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\engine\\weatherCheck.ts": {
+    "mtime": 1781044342.7134042,
+    "ast_hash": "3b0787857ffb6651bc3fbfa871a6706b",
+    "semantic_hash": "3b0787857ffb6651bc3fbfa871a6706b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\accounts.test.ts": {
+    "mtime": 1781044342.7148364,
+    "ast_hash": "b887244d5c760354be297dcd9d903029",
+    "semantic_hash": "b887244d5c760354be297dcd9d903029"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\accounts.ts": {
+    "mtime": 1781044342.7158344,
+    "ast_hash": "9ab753003328d80ba1da33f1ffee94a1",
+    "semantic_hash": "9ab753003328d80ba1da33f1ffee94a1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\calendar.test.ts": {
+    "mtime": 1782399703.0112157,
+    "ast_hash": "5ea94cde22a0f660ef519235631fde55",
+    "semantic_hash": "5ea94cde22a0f660ef519235631fde55"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\calendar.ts": {
+    "mtime": 1782399703.0117464,
+    "ast_hash": "8d8b86c684f6cd14787e4f08c42f90a6",
+    "semantic_hash": "8d8b86c684f6cd14787e4f08c42f90a6"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\choreImport.test.ts": {
+    "mtime": 1781295133.8646953,
+    "ast_hash": "aa8842c828bf39b35f35abc0d68bc7e8",
+    "semantic_hash": "aa8842c828bf39b35f35abc0d68bc7e8"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\choreImport.ts": {
+    "mtime": 1781295133.8646953,
+    "ast_hash": "9186bd33acc17d7730897791c87f85c9",
+    "semantic_hash": "9186bd33acc17d7730897791c87f85c9"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\freshnessOverride.test.ts": {
+    "mtime": 1781123679.957409,
+    "ast_hash": "f425fc5b7cef47f9d9e6ea06616b7c71",
+    "semantic_hash": "f425fc5b7cef47f9d9e6ea06616b7c71"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\freshnessOverride.ts": {
+    "mtime": 1781123679.9583828,
+    "ast_hash": "2db6ae3073f8a9b095f08860f8105f94",
+    "semantic_hash": "2db6ae3073f8a9b095f08860f8105f94"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\meals.test.ts": {
+    "mtime": 1782223388.5544667,
+    "ast_hash": "5b2c864a6bab663f60a7874baf1b6d40",
+    "semantic_hash": "5b2c864a6bab663f60a7874baf1b6d40"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\meals.ts": {
+    "mtime": 1782223388.555569,
+    "ast_hash": "574510657cf56836ee603f3ed9df6134",
+    "semantic_hash": "574510657cf56836ee603f3ed9df6134"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\notes.test.ts": {
+    "mtime": 1781873120.028935,
+    "ast_hash": "008573a50f46a6b21b9d4f04692ce245",
+    "semantic_hash": "008573a50f46a6b21b9d4f04692ce245"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\notes.ts": {
+    "mtime": 1781873120.0337026,
+    "ast_hash": "33ebd327ab8a54c68783b60466452272",
+    "semantic_hash": "33ebd327ab8a54c68783b60466452272"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\phase.test.ts": {
+    "mtime": 1781044342.7228389,
+    "ast_hash": "4d4bdbe8182fb9455492c66d25199954",
+    "semantic_hash": "4d4bdbe8182fb9455492c66d25199954"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\phase.ts": {
+    "mtime": 1781044342.723838,
+    "ast_hash": "7859a35f397e53170981b11d1f6f310f",
+    "semantic_hash": "7859a35f397e53170981b11d1f6f310f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\projects.test.ts": {
+    "mtime": 1781044342.724835,
+    "ast_hash": "bf45b65940fa806ec6d53dca4b47837e",
+    "semantic_hash": "bf45b65940fa806ec6d53dca4b47837e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\projects.ts": {
+    "mtime": 1781044342.7258344,
+    "ast_hash": "d974ee336bf44a1d3a6f19c1c902a621",
+    "semantic_hash": "d974ee336bf44a1d3a6f19c1c902a621"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\pushSubscriptions.test.ts": {
+    "mtime": 1781731827.603826,
+    "ast_hash": "6c542f71a39043d5290c574a01994e8e",
+    "semantic_hash": "6c542f71a39043d5290c574a01994e8e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\pushSubscriptions.ts": {
+    "mtime": 1781731827.603826,
+    "ast_hash": "4188cebe2786f1850bb88b11d966ad15",
+    "semantic_hash": "4188cebe2786f1850bb88b11d966ad15"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\recipeIngest.test.ts": {
+    "mtime": 1782220981.7940464,
+    "ast_hash": "b1f148803b091f582e43a4139c699329",
+    "semantic_hash": "b1f148803b091f582e43a4139c699329"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\recipeIngest.ts": {
+    "mtime": 1782220981.8023963,
+    "ast_hash": "1e23a6af20c03ab7e054c3094b2dd54e",
+    "semantic_hash": "1e23a6af20c03ab7e054c3094b2dd54e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\shopping.test.ts": {
+    "mtime": 1782225801.1183665,
+    "ast_hash": "e6909be70ea4f87712118fc10e86d56e",
+    "semantic_hash": "e6909be70ea4f87712118fc10e86d56e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\shopping.ts": {
+    "mtime": 1782225801.1183665,
+    "ast_hash": "353b905de6dc78ca650c8bd7a6c86980",
+    "semantic_hash": "353b905de6dc78ca650c8bd7a6c86980"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\tasks.test.ts": {
+    "mtime": 1782135156.085246,
+    "ast_hash": "952fe2c800c3943bd59c0bd9ba4c2dcb",
+    "semantic_hash": "952fe2c800c3943bd59c0bd9ba4c2dcb"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\tasks.ts": {
+    "mtime": 1782135156.085246,
+    "ast_hash": "777ce8f175b340cd15d498f0ed150af0",
+    "semantic_hash": "777ce8f175b340cd15d498f0ed150af0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\repositories\\tasks.write.test.ts": {
+    "mtime": 1781873120.0357087,
+    "ast_hash": "45a4f6f5225e84db2fc4cc40aeb91eb8",
+    "semantic_hash": "45a4f6f5225e84db2fc4cc40aeb91eb8"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\revalidate.ts": {
+    "mtime": 1781873120.0367146,
+    "ast_hash": "a4d84b5ed5b066be0da2a05791f44ed6",
+    "semantic_hash": "a4d84b5ed5b066be0da2a05791f44ed6"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\calendarSync.test.ts": {
+    "mtime": 1782399703.0122871,
+    "ast_hash": "dec5920ab1cc017b9874b39a6889fc76",
+    "semantic_hash": "dec5920ab1cc017b9874b39a6889fc76"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\calendarSync.ts": {
+    "mtime": 1782379951.2899683,
+    "ast_hash": "52d24942f92e6eb6cee7d355e1884b25",
+    "semantic_hash": "52d24942f92e6eb6cee7d355e1884b25"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\chores.test.ts": {
+    "mtime": 1781295133.8646953,
+    "ast_hash": "9755c98ebc015e8c1f016b2c4c45ea78",
+    "semantic_hash": "9755c98ebc015e8c1f016b2c4c45ea78"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\chores.ts": {
+    "mtime": 1781295133.8646953,
+    "ast_hash": "0dc6e0e194301d031bebd65d0039e597",
+    "semantic_hash": "0dc6e0e194301d031bebd65d0039e597"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\freshness.test.ts": {
+    "mtime": 1781123679.9613843,
+    "ast_hash": "79343d1a68980f1e78d664367307a6aa",
+    "semantic_hash": "79343d1a68980f1e78d664367307a6aa"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\freshness.ts": {
+    "mtime": 1781123679.9623895,
+    "ast_hash": "aac5a4c301c3a4705ce8eef37ec73f93",
+    "semantic_hash": "aac5a4c301c3a4705ce8eef37ec73f93"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\ingredientAmount.test.ts": {
+    "mtime": 1782225801.1372747,
+    "ast_hash": "296f3ce1bf6d06551f03c12ebc22e2dd",
+    "semantic_hash": "296f3ce1bf6d06551f03c12ebc22e2dd"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\ingredientAmount.ts": {
+    "mtime": 1782225801.1396852,
+    "ast_hash": "24efa6011b1f64347c67d36fbea8a7b2",
+    "semantic_hash": "24efa6011b1f64347c67d36fbea8a7b2"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\learnedInterval.test.ts": {
+    "mtime": 1781873120.0367146,
+    "ast_hash": "cd4676cecc73b92c9c8ff259ba5545ba",
+    "semantic_hash": "cd4676cecc73b92c9c8ff259ba5545ba"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\learnedInterval.ts": {
+    "mtime": 1781873120.0367146,
+    "ast_hash": "26eca64a552686cf6f7fe7d9103e646b",
+    "semantic_hash": "26eca64a552686cf6f7fe7d9103e646b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealConstraints.test.ts": {
+    "mtime": 1782223388.5572095,
+    "ast_hash": "e8d66be4476f886c7bb7f556a3d0d9fa",
+    "semantic_hash": "e8d66be4476f886c7bb7f556a3d0d9fa"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealConstraints.ts": {
+    "mtime": 1782223388.5577445,
+    "ast_hash": "82a531d7e0b588f98ea0a9725ebab2e4",
+    "semantic_hash": "82a531d7e0b588f98ea0a9725ebab2e4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealDraft.test.ts": {
+    "mtime": 1782223388.558856,
+    "ast_hash": "33dd7fc33e0de816070e209ac42df03a",
+    "semantic_hash": "33dd7fc33e0de816070e209ac42df03a"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealDraft.ts": {
+    "mtime": 1782220981.8023963,
+    "ast_hash": "c40b34a4699243b900e68433077244ac",
+    "semantic_hash": "c40b34a4699243b900e68433077244ac"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealPlanner.test.ts": {
+    "mtime": 1782223388.5599616,
+    "ast_hash": "2fcd1cb025c50b4cc0c39a8b0fa89dea",
+    "semantic_hash": "2fcd1cb025c50b4cc0c39a8b0fa89dea"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealPlanner.ts": {
+    "mtime": 1782223388.561186,
+    "ast_hash": "23330c4d5ca86c46c41908989301111b",
+    "semantic_hash": "23330c4d5ca86c46c41908989301111b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealWeights.test.ts": {
+    "mtime": 1781104752.38817,
+    "ast_hash": "62a42ff87986c6450857cb46e61da884",
+    "semantic_hash": "62a42ff87986c6450857cb46e61da884"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\mealWeights.ts": {
+    "mtime": 1781104752.3891706,
+    "ast_hash": "b46a83d05ebf387a976ad70009ac3470",
+    "semantic_hash": "b46a83d05ebf387a976ad70009ac3470"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\overdueCatchup.test.ts": {
+    "mtime": 1782135156.085246,
+    "ast_hash": "5589d18ece7536790602d13c4d43afc9",
+    "semantic_hash": "5589d18ece7536790602d13c4d43afc9"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\overdueCatchup.ts": {
+    "mtime": 1782135156.085246,
+    "ast_hash": "1a611fd47eb2d76ac525b36ae364ccec",
+    "semantic_hash": "1a611fd47eb2d76ac525b36ae364ccec"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\planning.test.ts": {
+    "mtime": 1781938204.978792,
+    "ast_hash": "7a34083d434ab7d2941d0c0ba27d9f2f",
+    "semantic_hash": "7a34083d434ab7d2941d0c0ba27d9f2f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\planning.ts": {
+    "mtime": 1781938204.9797885,
+    "ast_hash": "a8413047f44fd121b9731f8ae9ab80bd",
+    "semantic_hash": "a8413047f44fd121b9731f8ae9ab80bd"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\pushNotify.test.ts": {
+    "mtime": 1781731827.603826,
+    "ast_hash": "5db1a1f3b96faf1df457c34440b7cbd6",
+    "semantic_hash": "5db1a1f3b96faf1df457c34440b7cbd6"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\pushNotify.ts": {
+    "mtime": 1781731827.603826,
+    "ast_hash": "9c576a338ec5ad3efd4808ede0cee1a1",
+    "semantic_hash": "9c576a338ec5ad3efd4808ede0cee1a1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\recipeVault.test.ts": {
+    "mtime": 1781085600.3729236,
+    "ast_hash": "bae8ec7cb29d99aac470b1680ecce228",
+    "semantic_hash": "bae8ec7cb29d99aac470b1680ecce228"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\recipeVault.ts": {
+    "mtime": 1781085600.3739262,
+    "ast_hash": "31e00824d2e0465007c1656a2c03b45a",
+    "semantic_hash": "31e00824d2e0465007c1656a2c03b45a"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\recurrence.test.ts": {
+    "mtime": 1781873120.039107,
+    "ast_hash": "58a571fe419b8934a7a3e39b57bb8320",
+    "semantic_hash": "58a571fe419b8934a7a3e39b57bb8320"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\recurrence.ts": {
+    "mtime": 1781873120.039107,
+    "ast_hash": "cba5de9beb6a5439e288ad5deb9d776f",
+    "semantic_hash": "cba5de9beb6a5439e288ad5deb9d776f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\rollover.test.ts": {
+    "mtime": 1781044342.7532203,
+    "ast_hash": "ed409350189285ef0591a57f26bdc2c4",
+    "semantic_hash": "ed409350189285ef0591a57f26bdc2c4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\rollover.ts": {
+    "mtime": 1781044342.7542229,
+    "ast_hash": "ae7b79a445de01ea4d78882d1238ac7b",
+    "semantic_hash": "ae7b79a445de01ea4d78882d1238ac7b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\shoppingBatch.test.ts": {
+    "mtime": 1782225801.140136,
+    "ast_hash": "b0a80a202d1180426edebd653dad99fc",
+    "semantic_hash": "b0a80a202d1180426edebd653dad99fc"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\shoppingBatch.ts": {
+    "mtime": 1782225801.140136,
+    "ast_hash": "4ae7e2f81c018452c74d3eabf1567dd4",
+    "semantic_hash": "4ae7e2f81c018452c74d3eabf1567dd4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\shoppingSync.test.ts": {
+    "mtime": 1782225801.1420374,
+    "ast_hash": "9d9930b6d27f9cbeaff058ba41b4da14",
+    "semantic_hash": "9d9930b6d27f9cbeaff058ba41b4da14"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\shoppingSync.ts": {
+    "mtime": 1782225801.1420374,
+    "ast_hash": "0ad0903e73d609f28a1cd2b12f5b8edc",
+    "semantic_hash": "0ad0903e73d609f28a1cd2b12f5b8edc"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\taskDefer.test.ts": {
+    "mtime": 1781540314.4114113,
+    "ast_hash": "11c2551a0fa62f24b98499052b097f43",
+    "semantic_hash": "11c2551a0fa62f24b98499052b097f43"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\lib\\services\\taskDefer.ts": {
+    "mtime": 1781540314.4119248,
+    "ast_hash": "0bbfd818bb96d6661abab79524445835",
+    "semantic_hash": "0bbfd818bb96d6661abab79524445835"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\test\\db.ts": {
+    "mtime": 1781044342.7605174,
+    "ast_hash": "53aa77e766f7a93e35813696a0c7ac8f",
+    "semantic_hash": "53aa77e766f7a93e35813696a0c7ac8f"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\src\\test\\globalSetup.ts": {
+    "mtime": 1781044342.7615178,
+    "ast_hash": "2719562e1e009e1ec0566765a725c313",
+    "semantic_hash": "2719562e1e009e1ec0566765a725c313"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\tsconfig.json": {
+    "mtime": 1780799019.4458225,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\vitest.config.ts": {
+    "mtime": 1781044342.7625186,
+    "ast_hash": "b5eaebfdf2e3eb3a85418dfeb90569c0",
+    "semantic_hash": "b5eaebfdf2e3eb3a85418dfeb90569c0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\README.md": {
+    "mtime": 1781295133.849267,
+    "ast_hash": "fecb5d341a2e5e9905135aa87229363b",
+    "semantic_hash": "fecb5d341a2e5e9905135aa87229363b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\claude-design-prompt.md": {
+    "mtime": 1780797790.9837258,
+    "ast_hash": "5aab7db935130c9a3e7e56436d6b3694",
+    "semantic_hash": "5aab7db935130c9a3e7e56436d6b3694"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\handoff-prompt.md": {
+    "mtime": 1781730142.0501583,
+    "ast_hash": "8bb30f6f3dca2d5aed09148e435eb74b",
+    "semantic_hash": "8bb30f6f3dca2d5aed09148e435eb74b"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\recipe-importer-init-prompt.md": {
+    "mtime": 1781125214.8752842,
+    "ast_hash": "a66e7c0f13ede7962c2a74c2cdd01153",
+    "semantic_hash": "a66e7c0f13ede7962c2a74c2cdd01153"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\recipe-vault-import-contract.md": {
+    "mtime": 1781124108.86869,
+    "ast_hash": "f887226049bc7ca6822894b7b85db2b7",
+    "semantic_hash": "f887226049bc7ca6822894b7b85db2b7"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\recipe-vault-schema.md": {
+    "mtime": 1781125196.976087,
+    "ast_hash": "328ff98e518ac77c7799a8adcc21bec0",
+    "semantic_hash": "328ff98e518ac77c7799a8adcc21bec0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\recipe-vault-template.md": {
+    "mtime": 1781085600.3441718,
+    "ast_hash": "178ccb47c456bcc568fc7b92a0576a50",
+    "semantic_hash": "178ccb47c456bcc568fc7b92a0576a50"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\setup\\google-calendar.md": {
+    "mtime": 1781044342.600489,
+    "ast_hash": "9be33b99964c70fd7a5ace807603c493",
+    "semantic_hash": "9be33b99964c70fd7a5ace807603c493"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\spikes\\2026-06-07-bring-machbarkeit.md": {
+    "mtime": 1781044342.6024911,
+    "ast_hash": "41ce8cbb59c6ba872e4cc976faac9bb4",
+    "semantic_hash": "41ce8cbb59c6ba872e4cc976faac9bb4"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-07-haushalts-dashboard-umsetzung.md": {
+    "mtime": 1781044342.603495,
+    "ast_hash": "c1e5df1cdd7a7c08fc54e6eb53129bf0",
+    "semantic_hash": "c1e5df1cdd7a7c08fc54e6eb53129bf0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-08-baby-wetter-kleidungsempfehlung.md": {
+    "mtime": 1781044342.6057668,
+    "ast_hash": "66b97f4e7efe0e42179c58d65b6bec5e",
+    "semantic_hash": "66b97f4e7efe0e42179c58d65b6bec5e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md": {
+    "mtime": 1781768361.3431075,
+    "ast_hash": "3afbe661c237cfaef5f33d0e2c2c4cdb",
+    "semantic_hash": "3afbe661c237cfaef5f33d0e2c2c4cdb"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-09-dienstplan-bewusster-essensplan.md": {
+    "mtime": 1781044342.6077592,
+    "ast_hash": "bdcfe46abde7d6d55abbc2cf22f064f9",
+    "semantic_hash": "bdcfe46abde7d6d55abbc2cf22f064f9"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-09-einkauf-haltbarkeit-batching.md": {
+    "mtime": 1781044342.6097617,
+    "ast_hash": "218f398a5a64f36d2bc99acb78ed3558",
+    "semantic_hash": "218f398a5a64f36d2bc99acb78ed3558"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-09-essensplan-entwurf-freigabe.md": {
+    "mtime": 1781044342.611761,
+    "ast_hash": "1707665e157b4933b20d5e9e3ddf6007",
+    "semantic_hash": "1707665e157b4933b20d5e9e3ddf6007"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-10-essensplan-gewichtung.md": {
+    "mtime": 1781101553.4470835,
+    "ast_hash": "09da9fc6fe5f1d147fa1766b692d8861",
+    "semantic_hash": "09da9fc6fe5f1d147fa1766b692d8861"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-10-freshness-override.md": {
+    "mtime": 1781105465.820697,
+    "ast_hash": "a7a3e8dda4067b27ad0528fd7cca5741",
+    "semantic_hash": "a7a3e8dda4067b27ad0528fd7cca5741"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-10-rezepte-vault-v1.md": {
+    "mtime": 1781082329.1991916,
+    "ast_hash": "a93b4acf2d9e51f72446de2bcc99f049",
+    "semantic_hash": "a93b4acf2d9e51f72446de2bcc99f049"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-12-tablet-betrieb-chore-import.md": {
+    "mtime": 1781295133.8524091,
+    "ast_hash": "f6208f3472cdd097b426f22adacd477e",
+    "semantic_hash": "f6208f3472cdd097b426f22adacd477e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-14-kompakt-dashboard-tablet.md": {
+    "mtime": 1781523372.3465817,
+    "ast_hash": "d4f11a279adaa0a9f246c36219dd3f41",
+    "semantic_hash": "d4f11a279adaa0a9f246c36219dd3f41"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-15-pwa-tailscale-kiosk.md": {
+    "mtime": 1781542027.2092216,
+    "ast_hash": "7b8dd92a83fda38ee8d44218368617ad",
+    "semantic_hash": "7b8dd92a83fda38ee8d44218368617ad"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-17-c2-handy-push-essensplan.md": {
+    "mtime": 1781728559.937883,
+    "ast_hash": "0a9d22f0b07f575e6c69c2206eaeb3fe",
+    "semantic_hash": "0a9d22f0b07f575e6c69c2206eaeb3fe"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-17-handy-steuerung.md": {
+    "mtime": 1781730156.5048015,
+    "ast_hash": "6057a816fbaa01649855ba7fa138b981",
+    "semantic_hash": "6057a816fbaa01649855ba7fa138b981"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-18-handy-vollsteuerung.md": {
+    "mtime": 1781873120.0045993,
+    "ast_hash": "9ab3e55d1902627d62418b5cd6f3c58a",
+    "semantic_hash": "9ab3e55d1902627d62418b5cd6f3c58a"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-20-google-kalender-verteilung-sync.md": {
+    "mtime": 1782379951.2843273,
+    "ast_hash": "771c2cde166d654235adb0784c6f85d1",
+    "semantic_hash": "771c2cde166d654235adb0784c6f85d1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\plans\\2026-06-22-catchup-uebernahme.md": {
+    "mtime": 1782133189.5899527,
+    "ast_hash": "93c993f971c142c1de3e29e53c49f59d",
+    "semantic_hash": "93c993f971c142c1de3e29e53c49f59d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-07-haushalts-dashboard-design.md": {
+    "mtime": 1780798034.7583182,
+    "ast_hash": "bf2704e4ee527896ab073adefd5ec78d",
+    "semantic_hash": "bf2704e4ee527896ab073adefd5ec78d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-09-dienstplan-bewusster-essensplan-design.md": {
+    "mtime": 1781044342.6127617,
+    "ast_hash": "713f6df70e176b0b8048652bc8a50013",
+    "semantic_hash": "713f6df70e176b0b8048652bc8a50013"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-09-einkauf-haltbarkeit-batching-design.md": {
+    "mtime": 1781044342.6137614,
+    "ast_hash": "941ef5309e33a4a060881d38af08a0c0",
+    "semantic_hash": "941ef5309e33a4a060881d38af08a0c0"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-09-essensplan-entwurf-freigabe-design.md": {
+    "mtime": 1781044342.6147616,
+    "ast_hash": "65e30cf0a94c53179a203d2f6da04075",
+    "semantic_hash": "65e30cf0a94c53179a203d2f6da04075"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-10-rezepte-vault-design.md": {
+    "mtime": 1781081921.9680393,
+    "ast_hash": "4141fbbb810171fb3baf93e94fce7a48",
+    "semantic_hash": "4141fbbb810171fb3baf93e94fce7a48"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-10-sanftes-lernen-design.md": {
+    "mtime": 1781048896.0097408,
+    "ast_hash": "e89371fba2b8bfa59d61bf444b85e1fe",
+    "semantic_hash": "e89371fba2b8bfa59d61bf444b85e1fe"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-12-tablet-betrieb-chore-import-design.md": {
+    "mtime": 1781295133.8524091,
+    "ast_hash": "4b8ef78a5e1bb6f67a17c63e950041cd",
+    "semantic_hash": "4b8ef78a5e1bb6f67a17c63e950041cd"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-14-kompakt-dashboard-tablet-design.md": {
+    "mtime": 1781523072.26694,
+    "ast_hash": "a593fddf79b3977d73b854b8b4e350a1",
+    "semantic_hash": "a593fddf79b3977d73b854b8b4e350a1"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-15-pwa-tailscale-kiosk-design.md": {
+    "mtime": 1781541300.5578625,
+    "ast_hash": "adde681d33a59212461632fa5c9020ac",
+    "semantic_hash": "adde681d33a59212461632fa5c9020ac"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-17-c2-handy-push-essensplan-design.md": {
+    "mtime": 1781728083.710266,
+    "ast_hash": "3f7ee94fe172cdc6a4e65d7b9885c417",
+    "semantic_hash": "3f7ee94fe172cdc6a4e65d7b9885c417"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-17-handy-steuerung-design.md": {
+    "mtime": 1781729463.2951603,
+    "ast_hash": "f53c3179f96d0d27979c3183af60dedb",
+    "semantic_hash": "f53c3179f96d0d27979c3183af60dedb"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-18-handy-vollsteuerung-design.md": {
+    "mtime": 1781873120.0045993,
+    "ast_hash": "992a7349a08874f59793383012deff0a",
+    "semantic_hash": "992a7349a08874f59793383012deff0a"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-20-google-kalender-verteilung-sync-design.md": {
+    "mtime": 1781930206.8245203,
+    "ast_hash": "ba0bc3f7e272d7be1f3b9711413cb68e",
+    "semantic_hash": "ba0bc3f7e272d7be1f3b9711413cb68e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\superpowers\\specs\\2026-06-22-catchup-uebernahme-design.md": {
+    "mtime": 1782132901.6212192,
+    "ast_hash": "022f966b98b6ef0c55e63f6bff8365a7",
+    "semantic_hash": "022f966b98b6ef0c55e63f6bff8365a7"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\tablet-kiosk-setup.md": {
+    "mtime": 1782131386.5969586,
+    "ast_hash": "2dd05d26e098cdd2a330b29b15686b8e",
+    "semantic_hash": "2dd05d26e098cdd2a330b29b15686b8e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\tablet-remote-access.md": {
+    "mtime": 1781617734.483982,
+    "ast_hash": "84dc66dbdc91a75bac4bb607fd4a7c29",
+    "semantic_hash": "84dc66dbdc91a75bac4bb607fd4a7c29"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\docs\\tablet-termux-setup.md": {
+    "mtime": 1781295133.8549378,
+    "ast_hash": "7a5d17bfb3438d1c5c3b53d64919fc63",
+    "semantic_hash": "7a5d17bfb3438d1c5c3b53d64919fc63"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\AGENTS.md": {
+    "mtime": 1781728044.8033888,
+    "ast_hash": "af36457aa5323f4642f10ae789a33aab",
+    "semantic_hash": "af36457aa5323f4642f10ae789a33aab"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\CLAUDE.md": {
+    "mtime": 1780799107.8622828,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\README.md": {
+    "mtime": 1781123679.9493837,
+    "ast_hash": "480e34c9b65da79dc9f05b670bf86456",
+    "semantic_hash": "480e34c9b65da79dc9f05b670bf86456"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\docs\\push-setup.md": {
+    "mtime": 1781768402.7124648,
+    "ast_hash": "c13c2b8fed80394f6560deaf3a04504d",
+    "semantic_hash": "c13c2b8fed80394f6560deaf3a04504d"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\offline.html": {
+    "mtime": 1781543798.8141806,
+    "ast_hash": "e13ccdb9cdab3703821a3cf76f77f183",
+    "semantic_hash": "e13ccdb9cdab3703821a3cf76f77f183"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\apple-icon-180.png": {
+    "mtime": 1781543798.8101773,
+    "ast_hash": "04dce93d46e341788ed9aa2387118a31",
+    "semantic_hash": "04dce93d46e341788ed9aa2387118a31"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\file.svg": {
+    "mtime": 1780799018.7465172,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\globe.svg": {
+    "mtime": 1780799018.7959745,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\icon-192.png": {
+    "mtime": 1781543798.8111765,
+    "ast_hash": "bfbb9a97825f02f2cc452378fc9ea1b8",
+    "semantic_hash": "bfbb9a97825f02f2cc452378fc9ea1b8"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\icon-512-maskable.png": {
+    "mtime": 1781543798.8111765,
+    "ast_hash": "8e04d44d4192621b47d12a3c961eee25",
+    "semantic_hash": "8e04d44d4192621b47d12a3c961eee25"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\icon-512.png": {
+    "mtime": 1781543798.8121815,
+    "ast_hash": "8e04d44d4192621b47d12a3c961eee25",
+    "semantic_hash": "8e04d44d4192621b47d12a3c961eee25"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\icon.svg": {
+    "mtime": 1781295133.8549378,
+    "ast_hash": "c53145dbb89f5b45ccedcd62957b6794",
+    "semantic_hash": "c53145dbb89f5b45ccedcd62957b6794"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\next.svg": {
+    "mtime": 1780799018.8288186,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\vercel.svg": {
+    "mtime": 1780799018.8623002,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "C:\\Users\\ThinkPad\\Documents\\Claude\\Dashboard\\web\\public\\window.svg": {
+    "mtime": 1780799018.886688,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}

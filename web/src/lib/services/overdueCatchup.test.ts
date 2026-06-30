@@ -42,7 +42,7 @@ describe("rollOverdueRoutines", () => {
     });
   }
 
-  it("zieht eine überfällige Routine auf heute und macht sie neu zuweisbar", async () => {
+  it("zieht eine überfällige Routine auf heute und behält die Zuweisung bei", async () => {
     const dome = await client.person.findUniqueOrThrow({ where: { key: "dome" } });
     const t = await makeRoutine({ title: "Treppe saugen", dueDate: addDays(today, -3) });
     await client.task.update({ where: { id: t.id }, data: { assignedToId: dome.id } });
@@ -52,7 +52,7 @@ describe("rollOverdueRoutines", () => {
     const updated = await client.task.findUniqueOrThrow({ where: { id: t.id } });
     const { start, end } = dayBounds(today);
     expect(updated.dueDate >= start && updated.dueDate <= end).toBe(true);
-    expect(updated.assignedToId).toBeNull();
+    expect(updated.assignedToId).toBe(dome.id);
     expect(result.rolled).toBe(1);
   });
 

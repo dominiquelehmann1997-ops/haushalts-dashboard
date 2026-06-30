@@ -14,16 +14,25 @@ import { dayBounds } from "@/lib/dates";
  * Fehler werden als Ergebnis zurückgegeben (kein Throw über die UI-Grenze).
  */
 export async function syncCalendarAction(): Promise<
-  { ok: true; synced: number } | { ok: false; error: string }
+  { ok: true; synced: number; syncError?: string } | { ok: false; error: string }
 > {
   const calendars = configuredCalendars();
   if (calendars.length === 0) {
     return { ok: false, error: "Keine Kalender konfiguriert." };
   }
 
-  try {
-    const { synced } = await syncCalendar(calendars);
+  let synced = 0;
+  let syncError: string | undefined = undefined;
 
+  try {
+    const res = await syncCalendar(calendars);
+    synced = res.synced;
+  } catch (error) {
+    console.warn("Kalender-Synchronisierung fehlgeschlagen (fahre mit Aufgabenplanung fort):", error);
+    syncError = error instanceof Error ? error.message : "Fehler beim Kalender-Abgleich";
+  }
+
+  try {
     const day = new Date();
     day.setHours(0, 0, 0, 0);
     const { start, end } = dayBounds(day);
@@ -38,8 +47,8 @@ export async function syncCalendarAction(): Promise<
     await planDueTasks(day, { busy, forecast });
 
     revalidateDashboard();
-    return { ok: true, synced };
+    return { ok: true, synced, syncError };
   } catch (error) {
-    return { ok: false, error: error instanceof Error ? error.message : "Sync fehlgeschlagen" };
+    return { ok: false, error: error instanceof Error ? error.message : "Planung fehlgeschlagen" };
   }
 }

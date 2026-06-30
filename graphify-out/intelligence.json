@@ -1,0 +1,36 @@
+{
+  "hotspots": [
+    {
+      "label": "seedDatabase()",
+      "risk": 0.512,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "PushSetupControl()",
+      "risk": 0.43,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "conditionForCode()",
+      "risk": 0.347,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "labelForCode()",
+      "risk": 0.335,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "Dashboard()",
+      "risk": 0.289,
+      "type": "FUNCTION"
+    }
+  ],
+  "blast_radius": {
+    "map": 37,
+    "revalidateDashboard()": 24,
+    "GET()": 12,
+    "dayBounds()": 12,
+    "rerollDraftDay()": 11
+  }
+}

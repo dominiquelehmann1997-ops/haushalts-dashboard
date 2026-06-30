@@ -50,7 +50,7 @@ export async function rollOverdueRoutines(
     if (keep.dueDate < start) {
       await client.task.update({
         where: { id: keep.id },
-        data: { dueDate: start, assignedToId: null },
+        data: { dueDate: start },
       });
       rolled += 1;
     }

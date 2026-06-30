@@ -1,0 +1,159 @@
+0	119	web	Task.ts | AggregateTask | BoolFieldUpdateOperationsInput | DateTimeFieldUpdateOperationsInput | GetTaskAggregateType | GetTaskGroupByPayload
+1	110	web	prismaNamespace.ts | AccountEntryScalarFieldEnum | Args | At | AtLeast | AtLoose
+2	98	web	AccountEntry.ts | AccountEntry$taskArgs | AccountEntryAggregateArgs | AccountEntryAvgAggregateInputType | AccountEntryAvgAggregateOutputType | AccountEntryAvgOrderByAggregateInput
+3	86	web	Person.ts | AggregatePerson | GetPersonAggregateType | GetPersonGroupByPayload | Person$accountEntriesArgs | Person$assignedTasksArgs
+4	85	web	Recipe.ts | AggregateRecipe | GetRecipeAggregateType | GetRecipeGroupByPayload | Prisma__RecipeClient | Recipe$ingredientsArgs
+5	77	web	MealPlanEntry.ts | AggregateMealPlanEntry | GetMealPlanEntryAggregateType | GetMealPlanEntryGroupByPayload | MealPlanEntry$recipeArgs | MealPlanEntryAggregateArgs
+6	76	web	Ingredient.ts | AggregateIngredient | GetIngredientAggregateType | GetIngredientGroupByPayload | IngredientAggregateArgs | IngredientCountAggregateInputType
+7	73	web	Project.ts | AggregateProject | GetProjectAggregateType | GetProjectGroupByPayload | Prisma__ProjectClient | Project$tasksArgs
+8	61	web	PhaseSetting.ts | AggregatePhaseSetting | GetPhaseSettingAggregateType | GetPhaseSettingGroupByPayload | PhaseSettingAggregateArgs | PhaseSettingAvgAggregateInputType
+9	56	web	availability.ts | filterByAvailability() | overlaps() | availability.test.ts | persons | win()
+10	55	web	FreshnessOverride.ts | AggregateFreshnessOverride | FreshnessOverrideAggregateArgs | FreshnessOverrideCountAggregateInputType | FreshnessOverrideCountAggregateOutputType | FreshnessOverrideCountArgs
+11	55	web	CalendarEvent.ts | AggregateCalendarEvent | CalendarEventAggregateArgs | CalendarEventCountAggregateInputType | CalendarEventCountAggregateOutputType | CalendarEventCountArgs
+12	55	web	Note.ts | AggregateNote | GetNoteAggregateType | GetNoteGroupByPayload | NoteAggregateArgs | NoteCountAggregateInputType
+13	55	web	OAuthToken.ts | AggregateOAuthToken | GetOAuthTokenAggregateType | GetOAuthTokenGroupByPayload | OAuthTokenAggregateArgs | OAuthTokenCountAggregateInputType
+14	55	web	PushSubscription.ts | AggregatePushSubscription | GetPushSubscriptionAggregateType | GetPushSubscriptionGroupByPayload | Prisma__PushSubscriptionClient | PushSubscriptionAggregateArgs
+15	55	web	ShoppingItem.ts | AggregateShoppingItem | GetShoppingItemAggregateType | GetShoppingItemGroupByPayload | Prisma__ShoppingItemClient | ShoppingItemAggregateArgs
+16	50	web	client.ts | AccountEntry | CalendarEvent | FreshnessOverride | Ingredient | Note
+17	46	web	dashboard.tsx | Dashboard() | DashboardProps | TaskActionMenu.tsx | MenuItem() | TaskActionMenu()
+18	44	web	MealWeekList | MoreView | NoteItem | NotesEditor | add (NotesEditor) | PageHeader
+19	44	web	package.json | dependencies | better-sqlite3 | bring-shopping | google-auth-library | gray-matter
+20	42	docs	completeTaskByAction(id, doerKey) | generateNextOccurrence | getTasksByPerson (dueDate==heute Filter-Bug) | planDueTasks | recordCompletion (AccountEntry Punkte) | rollOverdueRoutines(day, client) (overdueCatchup.ts)
+21	40	web	calendar.ts | syncCalendarAction() | CalendarEventInput | route.ts | GET() | POST()
+22	37	web	meals.ts | approveDraftAction() | ApprovePlanResult | pushFreshBatchAction() | client.ts | BringItem
+23	37	web	importChores() (choreImport repository function) | importChores.ts main() | importChores.ts CLI | ingestRecipes.ts main() | ingestRecipes.ts CLI | Migration: dienstbewusster_essensplan (MealPlanEntry.reason/extraPortion, Recipe.reheatable)
+24	34	web	MenuItem | TaskActionMenu | addManualEntryAction() | addManualEntry() (accounts repository) | discardDraft() (mealDraft service) | discardDraftAction()
+25	33	docs	classifyShift(title): ShiftClass | null | Konfliktauflösung simple vs reheatable | deriveDayConstraints(weekMonday, shiftByDay) | Design — Dienstplan-bewusster Essensplan | generateWeekPlan(weekStart, opts, client, rng) [+constraints] | getDomeShiftsForWeek(weekStart)
+26	32	web	ShiftClass | dates.ts | addDays() | formatTime() | mondayOf() | weekBoundsOf()
+27	30	web	age.ts | babyAge | completedMonths() | age.test.ts | clothing.ts | Band
+28	29	web	recipes.ts | ingestVaultAction() | VaultIngestControl.tsx | VaultIngestControl() | ingestRecipes.ts | main()
+29	29	web	discardDraftAction() | generatePlanAction() | rerollDraftDayAction() | setDraftDayRecipeAction() | MealDraftPanel.tsx | MealDraftPanel()
+30	28	web	tasks.ts | addTaskAction() | AddTaskInput | completeTaskByAction() | deferTaskAction() | failTaskAction()
+31	28	web	commonInputTypes.ts | BoolFilter | BoolWithAggregatesFilter | DateTimeFilter | DateTimeNullableFilter | DateTimeNullableWithAggregatesFilter
+32	25	docs,web	VaultIngestControl | Orphan-Archivierung statt Löschung | Slug/id als Identitäts-Anker | Vault = Wahrheit, DB = Cache | Rezept-Importer Init-Prompt (ReciMe-Klon) | Rezept-Vault Import-Contract
+33	24	web	page.tsx | Home() | weather | page.tsx | MobileTodayPage() | TodayView()
+34	24	web	AddDoneEntry | AddDoneInline | addManualEntryAction | Logging invisible work (Betreuung) to make it visible, not to add to-dos | Appointment | DraftMeal
+35	22	docs,web	engine availability | recommendClothing | uvAdvice | Elternzeit-Modus (Fairness-Ziel-Verschiebung) | Emely bleibt verfügbar (Abweichung von Spec §9) | Engine-Reinheit (kein I/O in engine/*)
+36	22	web	shopping.ts | clearShoppingAction() | deleteShoppingAction() | pushToBringAction() | toggleFreshnessAction() | toggleShoppingAction()
+37	21	web	prismaNamespaceBrowser.ts | AccountEntryScalarFieldEnum | CalendarEventScalarFieldEnum | FreshnessOverrideScalarFieldEnum | IngredientScalarFieldEnum | MealPlanEntryScalarFieldEnum
+38	21	web	currentWeekBounds | DraftMeal | Meal | classifyFreshness | normalizeIngredientName | resolveFreshness
+39	21	web	BabyAge | age.test.ts (babyAge tests) | babyAge | completedMonths | Band | ClothingInput
+40	20	web	fixture.ts | googleEventsFixture | google.ts | deriveKind() | derivePersonKey() | fetchEvents()
+41	20	web	addDays | weekBoundsOf | DayConstraint | MealReason | constraintFromEntry | deriveDayConstraints() (mealConstraints service)
+42	20	web	tsconfig.json | compilerOptions | allowJs | esModuleInterop | incremental | isolatedModules
+43	19	web	SyncButton | fetchEvents | EventFetcher (type) | Sync-Fenster ab Mitternacht (nicht 'jetzt') fürs konsistente Pruning | configuredCalendars() (calendarSync service) | syncCalendar() (calendarSync service)
+44	19	web	TopbarStats | getComputedSplit() (accounts repository) | getTodaysEvents() (calendar repository) | getTodaysEvents (repository) | Dashboard component | weather fallback constant (lib/data)
+45	19	web	Prisma browser entry (browser.ts) | PrismaClient (generated) | Prisma enums module (empty) | Prisma internal class.ts (generated) | Prisma internal namespace (generated) | Prisma Model: AccountEntry
+46	19	web	push.ts | subscribePushAction() | unsubscribePushAction() | WebPushSubscriptionJSON | pushSubscriptions.ts | deleteSubscription()
+47	17	docs	TaskActionMenu Übernahme-Eintrag | completeTaskBy(id, doerKey, client) | completeTaskByAction(id, doerKey) | plan:today CLI (planToday.ts) | Catch-up überfälliger Routinen + Aufgaben-Übernahme Plan | rollOverdueRoutines(day, client)
+48	17	web	phase.ts | setPhaseAction() | PhaseSwitch.tsx | PhaseSwitch() | PRESETS | PushSetupControl.tsx
+49	17	web	notes.ts | createNoteAction() | deleteNoteAction() | togglePinNoteAction() | updateNoteAction() | MoreView()
+50	17	web	FULL_THRESHOLD | planTask | PlanInput | PlanResult | PlanInput.dayLoad (capacity injection) | Pure type contract (no db/prisma/next imports)
+51	16	docs	calendarSync.ts syncCalendar (extracted, shared by route/CLI/action) | choreImport.ts importChores (idempotent upsert by title) | chores.ts CHORES catalogue + buildChoreTasks | prisma/importChores.ts CLI + npm run import:chores | tablet-boot.sh + docs/tablet-kiosk-setup.md (Termux:Boot + Fully Kiosk) | planning.ts planDueTasks wires busy→dayLoad + forecast into planTask
+52	16	web	browser.ts | AccountEntry | CalendarEvent | FreshnessOverride | Ingredient | MealPlanEntry
+53	16	web	getBusyWindows | isUrlaubFrei | Overnight shift busy-window correction (lookback day) | localDateKey() (dates lib) | mondayOf | BusyWindow
+54	16	web	importChores.ts | main() | choreImport.ts | ensurePeople() | importChores() | PEOPLE
+55	15	web	Regenerate, not merge (Shopping-Sync-Strategie) | FreshShoppingState (domain type) | TEST_DATABASE_URL | globalSetup (Vitest) | approveDraft() (mealDraft service) | approveDraftAction()
+56	14	web	filterByAvailability | overlaps | availability.test.ts (filterByAvailability tests) | activeDayWindow | coveredMs | dayLoad
+57	14	web	layout.tsx | body | display | metadata | RootLayout() | viewport
+58	14	web	Task | learnedInterval.ts | learnedInterval() | learnedInterval.test.ts | recurrence.ts | chainCompletionGaps()
+59	13	web	AccountEntry Model (Prisma) | FreshnessOverride Model (Prisma) | Ingredient Model (Prisma) | MealPlanEntry Model (Prisma) | Note Model (Prisma) | Person Model (Prisma)
+60	13	web	header.tsx | Header() | icons.tsx | CalendarGlyph() | CheckIcon() | CloudRainGlyph()
+61	13	web	weather (fallback CurrentWeather) | openMeteoFixture | CurrentWeather | DayForecast (engine type) | OpenMeteoResponse | WeatherCondition
+62	13	web	bring-list-uuids.mjs | bring-read-list.mjs | bring-shopping (npm dependency) | BringPushResult / Bring client integration | manifest-mobile.webmanifest | MobileLayout
+63	12	web	CalendarEventInput interface | BABY_ARZT_PATTERN regex heuristic | deriveKind() | derivePersonKey() | googleEventsFixture | mapGoogleEvents()
+64	12	docs,web	createOAuth2Client() | exchangeCode | getAccessToken() | getAuthUrl | google-auth-library OAuth2Client (npm package) | fetchEvents()
+65	12	web	addManualEntry | getComputedSplit | getWeeklyBalances | AccountEntryInput | CompletableTask | recordCompletion
+66	12	web	MealReasonBadge component | candidatesFor() | constraintFromEntry() | generateWeekPlan() | mealDraft service (approveDraft/discardDraft/rerollDraftDay/setDraftDayRecipe) | MealPlanEntry.reason/extraPortion fields
+67	12	docs,web	VaultIngestControl component | Freshness resolution order: Frontmatter → Override → Heuristik | gray-matter (npm dependency) | ingestVault() | ingestVaultAction() | Ingredient.category field ('frisch'|'haltbar')
+68	12	docs,web	tasks.ts createTask + listOpenTasks + addTaskAction | MobileShoppingPage | MobileTasksPage | MoreView.tsx + NotesEditor.tsx (notes CRUD, Elternzeit, push setup) | notes.ts createNote/updateNote/deleteNote/togglePinNote + actions | revalidate.ts revalidateDashboard() (covers / and /mobile/*)
+69	11	docs,web	BringItem interface | getSession() | pushShoppingList (Bring client) | client.test.ts | toBringItems | bring-shopping (npm package)
+70	11	docs,web	PEOPLE | ensurePeople | importChores | choreImport requires explicit client (no prisma singleton) | CHORES | addDays (local helper)
+71	11	web	learnedInterval | Sanftes Lernen: EWMA-Intervall mit Mindestbeobachtungen | RHYTHM_MONTHS | RHYTHM_OFFSET_DAYS | chainCompletionGaps | generateNextOccurrence
+72	11	docs,web	FreshShoppingControl component | FreshnessOverride DB model | classifyFreshness() | getFreshShoppingState() | getFreshnessOverrides() | normalizeIngredientName()
+73	11	docs	C2 Handy-Push (Essensplan-Entwurf) Plan | generatePlanAction push trigger (Essensplan-Entwurf bereit) | pushNotify.ts sendToAdults (web-push, non-fatal, self-healing 410/404) | PushSetupControl.tsx per-device enable with person picker | actions/push.ts subscribePushAction/unsubscribePushAction | PushSubscription Prisma model + pushSubscriptions.ts repository
+74	11	docs	AddDoneInline.tsx compact per-person nachtragen | tasks.ts deferTask (status moved + dueDate shift) | recurrence.ts generateNextOccurrence (restart-from-completion + learned interval) | Handy-Vollsteuerung Plan (/mobile full control) | Kompakt-Dashboard fürs Tablet Plan | learnedInterval.ts EWMA pure function (Feature B)
+75	10	docs	Plan: Einkauf nach Haltbarkeit, gestaffelt auf Bring (D1) | Dashboard Roadmap: Handy-Steuerung, Essensplan, Einkauf | Step A: Dienst-Zeiten + Schlaf (erledigt) | Step B: Dienstplan-bewusster Essensplan (erledigt) | Step C1: Essensplan-Entwurf + Abnicken/Ändern (erledigt) | Step C2: Benachrichtigung aufs Handy / Web-Push (erledigt)
+76	10	docs,web	public/sw.js push/notificationclick handlers (cockpit-v2) | public/offline.html | web/scripts/gen-icons.mjs | web/src/app/layout.tsx | web/src/app/manifest.test.ts | web/public/manifest.webmanifest
+77	10	docs	PWA + Tailscale-Fernzugriff + Tablet-Kiosk-Autostart Design | docs/tablet-kiosk-setup.md | docs/tablet-remote-access.md | scripts/tablet-start.sh | tailscale serve HTTPS-Proxy (verworfen zugunsten Cloudflare) | Tablet Kiosk Autostart Runbook
+78	9	web	MealDraftPanel | MealPlanControl | Draft week plan separated from active plan, approve promotes draft and pushes durable ingredients to Bring (Roadmap C1) | approveDraftAction | discardDraftAction | generatePlanAction
+79	9	web	accounts.ts | addManualEntryAction() | AddDoneEntry.tsx | AddDoneEntry() | LoggablePerson | PEOPLE
+80	9	web	PrismaBetterSqlite3 adapter | Prisma generated client (PrismaClient) | unsubscribePushAction() | deleteSubscription() (pushSubscriptions repository) | Idempotent seed = single source of truth for fixtures (CLI + test harness) | seed.ts main() CLI entrypoint
+81	9	web	PushPayload | ensureVapid | isPushConfigured | sendToAdults() (pushNotify service) | deleteSubscription | getAllSubscriptions
+82	9	docs	Cloudflare-Tunnel (Voraussetzung für public HTTPS Push) | Keine Action-Buttons in Notification (YAGNI, weniger Angriffsfläche) | dashboard-roadmap-handy-steuerung-essensplan.md (Roadmap C2) | C2 · Web-Push für Essensplan-Entwurf Design | https://cockpit.domelehmann.org | Fully Kiosk Browser
+83	9	web	PushSetupControl | urlBase64ToUint8Array | RootLayout | phone-to-/mobile redirect inline script | subscribePushAction | unsubscribePushAction
+84	8	docs,web	BringSyncControl | FreshShoppingControl | Bring has no official API — manual push-on-request with clipboard fallback | docs/spikes/2026-06-07-bring-machbarkeit.md (Push mit Fallback) | Staggered second grocery run timed close to consumption (Roadmap D1) | pushFreshBatchAction
+85	8	web	syncCalendarAction() | getBusyWindows() (calendar repository) | dayBounds() (dates lib) | getForecast() (openMeteo integration) | Catch-up fuer ueberfaellige Routinen vor planDueTasks | rollOverdueRoutines() (overdueCatchup service)
+86	8	docs,web	Handy-Steuerungsoberfläche Plan (/mobile MVP) | MobileNavBar.tsx 4-tab bottom nav (slate, Essen/Aufgaben/Notizen/Setup) | MobileNavBar.tsx 5-tab cream nav (Heute/Aufgaben/Essen/Einkauf/Mehr) | /mobile/meals page reusing MealDraftPanel | /mobile/tasks,notes,settings placeholder pages | (mobile)/layout.tsx cream/ink re-skin + OS dark + PageHeader
+87	8	docs	Bottom-Navigation-Bar (4 Bereiche: Essen/Aufgaben/Notizen/Einstellungen) | app/(mobile)/layout.tsx | Handy-Steuerungsoberfläche (Mobile Control) Design | web/src/lib/data.ts (PERSON Stile) | web/src/app/globals.css (Design Tokens) | Handy-Vollsteuerung (Mobile Control v2) Design
+88	8	web	MealDraftPanel | MealPlanControl | MealWeekList (mobile) | getDraftMealPlan() (meals repository) | getWeekMealPlan() (meals repository) | listRecipes() (meals repository)
+89	7	web	completeTaskBy: Punkte gehen an tatsächlichen Erlediger, nicht Zugewiesenen | completeTaskBy | getOpenTaskCount | getTasksByPerson | getTasksForDay | tasks.test.ts
+90	7	web	MealDraftPanel component | approveDraftAction() | getDraftMealPlan() | listRecipes() | planShoppingBatches() (C1 placeholder, later removed) | pushRecipeBatch(category)
+91	7	web	class.ts | config | decodeBase64AsWasm() | getPrismaClientClass() | LogOptions | PrismaClient
+92	7	web	ingredientAmount.ts | AmountPart | combineAmounts() | formatNumber() | parseAmount() | ingredientAmount.test.ts
+93	7	docs,web	generatePlanAction (app/actions/meals.ts) | lib/services/pushNotify.ts (sendToAdults, isPushConfigured) | web-push npm library | Haltbarkeits-Korrektur (gemerkte Zutaten-Klassifikation) | web/README.md (Next.js project + Rezepte-Vault) | Rezepte-Vault (Obsidian Markdown, Vault=Wahrheit/DB=Cache)
+94	7	docs,web	@prisma/adapter-better-sqlite3 | scripts/tablet-boot.sh | Prisma better-sqlite3 Driver-Adapter | Dashboard am Pixel Tablet (Termux) betreiben Runbook | npm run import:chores | ~/.termux/boot/start-dashboard.sh
+95	6	web	ActivePhase (interface) | getActivePhase | setActivePhase | phase.test.ts | DEFAULT_PHASE | loadPhaseConfig
+96	6	web	getFreshnessOverrides | toggleItemFreshness | Freshness type | ParsedIngredient | parseIngredients | toggleFreshnessAction
+97	6	docs	app/actions/push.ts (subscribePushAction, unsubscribePushAction) | components/PushSetupControl.tsx | PushSubscription (Prisma Model) | MoreView (Notizen-CRUD, PhaseSwitch, PushSetupControl) | Note Model + getNotes/createNote/updateNote/deleteNote/togglePinNote | ShoppingView (neu)
+98	6	web	Manuelle SQL-Migration via better-sqlite3 (PushSubscription Tabelle) | Web Push / VAPID — Setup & Operations | next build --webpack (Turbopack scheitert auf android/arm64) | Prisma migrate-engine läuft nicht auf Android (unknown OS) | ~/restart-dashboard.sh | VAPID Key Pair (PUBLIC/PRIVATE/SUBJECT)
+99	5	docs,web	classifyShift() | deriveDayConstraints() | getDomeShiftsForWeek() | localDateKey() | Plan: Dienstplan-bewusster Essensplan
+100	5	web	rerollDraftDayAction() | MobileMorePage | MoreView (mobile) | getNotes() (notes repository) | getActivePhase() (phase repository)
+101	5	web	bring-list-uuids.mjs | Bring | env | envPath | require
+102	5	web	bring-read-list.mjs | Bring | env | envPath | require
+103	5	web	gen-icons.mjs | here | pub | src | targets
+104	4	web	ElternzeitStripe | PhaseSwitch | setPhaseAction | ActivePhase (repository type)
+105	4	web	replaceWindowEvents | Sync-as-snapshot pruning rationale | upsertEvents | CalendarEventInput
+106	4	docs,web	Plan: Essensplan-Gewichtung (Feature A, sanftes Lernen) | ratingWeight() | recencyFactor() | weightedPick()
+107	4	web	PrismaBetterSqlite3 adapter | createPrismaClient | globalForPrisma | prisma (singleton)
+108	4	docs	FreshShoppingControl (Client-Component) | getFreshShoppingState(client) | suggestFreshShoppingDay(earliestFreshUse) | learnedLeadTime(history, ingredient, category)
+109	4	web	createNote | getNotes | togglePinNote | updateNote
+110	4	web	globalSetup.ts | globalSetup() | removeIfExists() | TEST_DB_PATH
+111	3	.claude	settings.local.json | permissions | allow
+112	3	docs	classifyFreshness(name): frisch|haltbar | FreshnessOverride table | resolveFreshness(name, overrides)
+113	3	docs	Zwei Rutschen statt Tages-Mikrobatches | pushRecipeBatch(category, client) | ShoppingItem.category / pushed
+114	3	docs	TodayView (Server-Component) | Weather (neue schlanke Wetter-Komponente) | WeatherBabyTile (entfällt aus Tablet-Ansicht)
+115	3	web	prisma/schema.prisma | prisma/seed.ts | prisma.config.ts
+116	3	web	ProjectProgress (interface) | getActiveProjectProgress | projects.test.ts
+117	2	scripts	tablet-boot.sh script | tablet-boot.sh
+118	2	web	CalendarEvent (Prisma model) | CalendarEvent allDay Migration
+119	2	web	eslint.config.mjs | web/package.json
+120	2	web	gen-icons.mjs | public/icon.svg (source icon)
+121	2	docs	Einkauf & Bring!-Sync (Push) | Essensplan stufenweise (Rezeptbuch → präferenz-lernend)
+122	2	web	PWA manifest test suite | public/manifest.webmanifest
+123	2	web	RecipeOption | listRecipes
+124	2	web	Migration: freshness_override (FreshnessOverride table) | FreshnessOverride table
+125	2	web	Migration: oauth_token (OAuthToken table) | OAuthToken table
+126	2	web	Migration: push_subscription (PushSubscription table) | PushSubscription table
+127	2	web	next.config.ts | next.config.ts ignores TypeScript build errors
+128	2	scripts	tablet-start.sh script | tablet-start.sh
+129	2	scripts	tablet-sync.sh script | tablet-sync.sh
+130	2	web	eslint.config.mjs | eslintConfig
+131	2	web	next.config.ts | nextConfig
+132	2	web	postcss.config.mjs | config
+133	1	web	next-env.d.ts
+134	1	web	prisma.config.ts
+135	1	web	sw.js
+136	1	web	manifest.test.ts
+137	1	web	sw.test.ts
+138	1	web	vitest.config.ts
+139	1	.claude	Claude Settings Local Permissions
+140	1	web	next-env.d.ts
+141	1	web	postcss.config.mjs
+142	1	web	DashboardProps
+143	1	web	RefreshIcon
+144	1	web	MobileNavBar
+145	1	web	TABS
+146	1	web	flipFresh (ShoppingView)
+147	1	web	Prisma common input types (generated)
+148	1	web	split
+149	1	web	PersonKey
+150	1	web	EngineTask
+151	1	web	DayForecast
+152	1	web	PhaseConfig
+153	1	web	Balances
+154	1	web	deleteNote
+155	1	web	createTestClient
+156	1	web	resetDatabase
+157	1	web	setShoppingDone
+158	1	web	tsconfig.json

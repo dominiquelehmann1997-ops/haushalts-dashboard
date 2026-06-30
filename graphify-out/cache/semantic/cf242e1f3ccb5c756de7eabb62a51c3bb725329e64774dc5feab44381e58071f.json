@@ -1,0 +1,1 @@
+{"nodes": [{"id": "fixture_openMeteoFixture", "label": "openMeteoFixture", "file_type": "code", "source_file": "web/src/integrations/weather/fixture.ts", "source_location": "L14", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}

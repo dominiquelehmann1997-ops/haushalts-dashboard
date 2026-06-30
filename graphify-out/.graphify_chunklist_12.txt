@@ -1,0 +1,15 @@
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\superpowers\specs\2026-06-14-kompakt-dashboard-tablet-design.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\superpowers\specs\2026-06-15-pwa-tailscale-kiosk-design.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\superpowers\specs\2026-06-17-c2-handy-push-essensplan-design.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\superpowers\specs\2026-06-17-handy-steuerung-design.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\superpowers\specs\2026-06-18-handy-vollsteuerung-design.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\superpowers\specs\2026-06-20-google-kalender-verteilung-sync-design.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\superpowers\specs\2026-06-22-catchup-uebernahme-design.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\tablet-kiosk-setup.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\tablet-remote-access.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\docs\tablet-termux-setup.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\web\AGENTS.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\web\CLAUDE.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\web\README.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\web\docs\push-setup.md
+C:\Users\ThinkPad\Documents\Claude\Dashboard\web\public\offline.html
