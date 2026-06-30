@@ -24,6 +24,16 @@
   --shadow-lift: 0 2px 4px rgba(44, 41, 37, 0.05), 0 18px 40px -16px rgba(44, 41, 37, 0.18);
 
   --radius-xl2: 1.75rem;
+
+  --animate-clock-blink: clock-blink 2s ease-in-out infinite;
+}
+
+@keyframes clock-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-clock-blink { animation: none; }
 }
 
 @theme inline {

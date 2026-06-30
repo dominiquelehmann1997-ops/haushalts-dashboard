@@ -33,15 +33,28 @@ export function Header({
   todayLabel: { weekday: string; date: string };
 }) {
   const time = useClock();
+  const [hh, mm] = (time || "00:00").split(":");
   return (
     <header className="flex items-center justify-between gap-4">
-      <div>
-        <h1 className="font-display font-bold text-ink dark:text-cream tracking-tight leading-none text-[26px] sm:text-[32px] tabular-nums">
-          {time || " "}
-        </h1>
-        <p className="text-[13px] text-ink-soft dark:text-cream/55 mt-1">
-          {todayLabel.weekday}, {todayLabel.date}
-        </p>
+      <div className="flex items-center gap-3 sm:gap-4">
+        <div
+          className={`font-display font-bold text-ink dark:text-cream tracking-tight leading-none text-[44px] sm:text-[58px] tabular-nums transition-opacity ${
+            time ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {hh}
+          <span className="text-emely animate-clock-blink">:</span>
+          {mm}
+        </div>
+        <div className="h-10 sm:h-12 w-px bg-ink/10 dark:bg-cream/15" />
+        <div className="leading-none">
+          <div className="text-[11px] font-semibold tracking-[0.2em] uppercase text-ink-faint">
+            {todayLabel.weekday}
+          </div>
+          <div className="text-[15px] sm:text-[17px] font-semibold text-ink dark:text-cream mt-1.5">
+            {todayLabel.date}
+          </div>
+        </div>
       </div>
       <div className="flex items-center gap-2 shrink-0">
         <div className="hidden sm:flex items-center gap-2 mr-1">
