@@ -4,17 +4,16 @@
 
 ## Key Concepts
 
-- [Design — Essensplan-Entwurf + Abnicken/Ändern (C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md) (1 connections)
-- [Design — Einkauf nach Haltbarkeit gestaffelt auf Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md) (1 connections)
+- [Kompakt-Dashboard fürs Tablet — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md) (1 connections)
+- [Viewport-fixes CSS-Grid (eine Screen, kein Scroll)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md) (1 connections)
 
 ## Relationships
 
-- [[Community 25]] (2 shared connections)
+- [[Community 109]] (2 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md)
-- [docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md)
+- [docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md)
 
 ## Audit Trail
 

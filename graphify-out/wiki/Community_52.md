@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- [PushSetupControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L1) (4 connections)
-- [getInitialStatus()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L22) (1 connections)
-- [PushSetupControl()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L35) (1 connections)
-- [urlBase64ToUint8Array()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L12) (1 connections)
-- [VAPID_PUBLIC_KEY](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L9) (1 connections)
+- [notes.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L1) (4 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L9) (1 connections)
+- [{ id }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L29) (1 connections)
+- [note](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L30) (1 connections)
+- [notes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L21) (1 connections)
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\PushSetupControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\notes.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts)
 
 ## Audit Trail
 

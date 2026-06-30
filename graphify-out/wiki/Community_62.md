@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- [PhaseSwitch.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PhaseSwitch.tsx#L1) (3 connections)
-- [active](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PhaseSwitch.tsx#L67) (1 connections)
-- [PhaseSwitch()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PhaseSwitch.tsx#L18) (1 connections)
-- [PRESETS](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PhaseSwitch.tsx#L12) (1 connections)
+- [freshness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L1) (3 connections)
+- [first](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L37) (1 connections)
+- [overrides](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L55) (1 connections)
+- [thu](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L32) (1 connections)
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\PhaseSwitch.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PhaseSwitch.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\freshness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts)
 
 ## Audit Trail
 

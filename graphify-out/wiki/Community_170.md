@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [PlanInput.dayLoad (capacity injection)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts) (0 connections)
+- [Pure type contract (no db/prisma/next imports)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts) (0 connections)
 
 ## Relationships
 

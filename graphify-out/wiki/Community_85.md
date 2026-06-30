@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [sw.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw.test.ts#L1) (1 connections)
-- [sw](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw.test.ts#L7) (1 connections)
+- [AddDoneInline()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneInline.tsx#L7) (1 connections)
+- [AddDoneInline.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneInline.tsx#L1) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\sw.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\AddDoneInline.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneInline.tsx)
 
 ## Audit Trail
 

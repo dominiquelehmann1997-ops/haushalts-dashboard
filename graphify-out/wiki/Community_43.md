@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- [gen-icons.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L1) (5 connections)
-- [here](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L9) (1 connections)
-- [pub](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L10) (1 connections)
-- [src](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L11) (1 connections)
-- [targets](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L14) (1 connections)
-- [TEAL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L12) (1 connections)
+- [TasksView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L1) (5 connections)
+- [[addOpen, setAddOpen]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L30) (1 connections)
+- [complete()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L174) (1 connections)
+- [[pickOpen, setPickOpen]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L31) (1 connections)
+- [run()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L24) (1 connections)
+- [[tasks, applyOpt]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L15) (1 connections)
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\gen-icons.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\mobile\TasksView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx)
 
 ## Audit Trail
 

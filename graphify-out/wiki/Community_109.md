@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- [Kompakt-Dashboard fürs Tablet — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md) (1 connections)
-- [Viewport-fixes CSS-Grid (eine Screen, kein Scroll)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md) (1 connections)
+- [Prisma better-sqlite3 Driver-Adapter](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md) (1 connections)
+- [Dashboard am Pixel Tablet (Termux) betreiben Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md) (1 connections)
 
 ## Relationships
 
-- [[Community 20]] (2 shared connections)
+- [[Community 110]] (2 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md)
+- [docs/tablet-termux-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md)
 
 ## Audit Trail
 

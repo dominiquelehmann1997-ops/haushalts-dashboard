@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Idempotente Status-Buchung (delete-then-recreate planned entries)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts) (0 connections)
+- [completeTaskBy: Punkte gehen an tatsächlichen Erlediger, nicht Zugewiesenen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts) (0 connections)
 
 ## Relationships
 

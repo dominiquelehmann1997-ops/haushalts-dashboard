@@ -1,32 +1,30 @@
 # Community 37
 
-> 8 nodes · cohesion 0.25
+> 7 nodes · cohesion 0.38
 
 ## Key Concepts
 
-- [PWA + Tailscale-Fernzugriff + Tablet-Kiosk-Autostart Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (3 connections)
-- [Tablet Remote Access via Cloudflare Tunnel Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (3 connections)
-- [tailscale serve HTTPS-Proxy (verworfen zugunsten Cloudflare)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (2 connections)
-- [Tailscale verworfen (Android 16 netlink permission denied)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (2 connections)
-- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (1 connections)
-- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (1 connections)
-- [Tablet Kiosk Autostart Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md) (1 connections)
-- [Cloudflare Access (Zero Trust Gate)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (1 connections)
+- [pushSubscriptions.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L1) (3 connections)
+- [getAllSubscriptions()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L38) (3 connections)
+- [upsertSubscription()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L19) (3 connections)
+- [push.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts#L1) (2 connections)
+- [subscribePushAction()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts#L16) (2 connections)
+- [unsubscribePushAction()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts#L29) (2 connections)
+- [deleteSubscription()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L31) (2 connections)
 
 ## Relationships
 
-- [[Community 76]] (14 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md)
-- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md)
-- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\actions\push.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\pushSubscriptions.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (86%)
-- INFERRED: 2 (14%)
+- EXTRACTED: 10 (59%)
+- INFERRED: 7 (41%)
 - AMBIGUOUS: 0 (0%)
 
 ---

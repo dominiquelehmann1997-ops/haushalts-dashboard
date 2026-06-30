@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Regenerate, not merge (Shopping-Sync-Strategie)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.ts) (0 connections)
+- [Plan: Haltbarkeits-Korrektur-Gedächtnis (FreshnessOverride, C1 Sanftes Lernen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/shoppingSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.ts)
+- [docs/superpowers/plans/2026-06-10-freshness-override.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md)
 
 ## Audit Trail
 

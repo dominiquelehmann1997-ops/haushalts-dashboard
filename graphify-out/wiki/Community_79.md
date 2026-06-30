@@ -4,22 +4,22 @@
 
 ## Key Concepts
 
-- [Prisma Model: Recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (2 connections)
-- [Prisma Model: Ingredient](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
-- [Prisma Model: MealPlanEntry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
+- [Recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (2 connections)
+- [Ingredient](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (1 connections)
+- [MealPlanEntry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (1 connections)
 
 ## Relationships
 
-- [[Community 45]] (4 shared connections)
+- [[Community 999]] (4 shared connections)
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
-- INFERRED: 4 (100%)
+- EXTRACTED: 4 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Google Kalender — Termine, Verteilung & Sync Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md) (0 connections)
+- [Single-sourced Booking via setTaskStatus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md)
+- [docs/superpowers/plans/2026-06-22-catchup-uebernahme.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md)
 
 ## Audit Trail
 

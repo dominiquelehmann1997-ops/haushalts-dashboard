@@ -1,16 +1,15 @@
 # Community 40
 
-> 7 nodes · cohesion 0.29
+> 6 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- [TaskActionMenu.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L1) (6 connections)
-- [left](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L52) (1 connections)
-- [MENU_HEIGHT](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L4) (1 connections)
-- [MENU_MARGIN](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L5) (1 connections)
-- [MENU_WIDTH](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L3) (1 connections)
-- [MenuItem()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L7) (1 connections)
-- [top](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L56) (1 connections)
+- [gen-icons.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L1) (5 connections)
+- [here](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L9) (1 connections)
+- [pub](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L10) (1 connections)
+- [src](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L11) (1 connections)
+- [targets](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L14) (1 connections)
+- [TEAL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L12) (1 connections)
 
 ## Relationships
 
@@ -18,11 +17,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\TaskActionMenu.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\gen-icons.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

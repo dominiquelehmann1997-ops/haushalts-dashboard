@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Pure type contract (no db/prisma/next imports)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts) (0 connections)
+- [Sync-as-snapshot pruning rationale](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/engine/types.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts)
+- [web/src/lib/repositories/calendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts)
 
 ## Audit Trail
 

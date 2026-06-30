@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [client.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts#L1) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts#L7) (1 connections)
+- [fixture.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/fixture.ts#L1) (1 connections)
+- [googleEventsFixture](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/fixture.ts#L13) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\bring\client.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\fixture.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/fixture.ts)
 
 ## Audit Trail
 

@@ -1,15 +1,14 @@
 # Community 49
 
-> 6 nodes · cohesion 0.33
+> 5 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- [weatherCheck.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/weatherCheck.test.ts#L1) (5 connections)
-- [BASE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/weatherCheck.test.ts#L6) (1 connections)
-- [day()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/weatherCheck.test.ts#L8) (1 connections)
-- [forecast](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/weatherCheck.test.ts#L25) (1 connections)
-- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/weatherCheck.test.ts#L14) (1 connections)
-- [window](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/weatherCheck.test.ts#L63) (1 connections)
+- [PushSetupControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L1) (4 connections)
+- [getInitialStatus()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L22) (1 connections)
+- [PushSetupControl()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L35) (1 connections)
+- [urlBase64ToUint8Array()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L12) (1 connections)
+- [VAPID_PUBLIC_KEY](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx#L9) (1 connections)
 
 ## Relationships
 
@@ -17,11 +16,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\weatherCheck.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/weatherCheck.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\PushSetupControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/PushSetupControl.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

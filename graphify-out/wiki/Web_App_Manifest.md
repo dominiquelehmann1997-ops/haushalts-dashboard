@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [public/manifest.webmanifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/manifest.webmanifest) (0 connections)
+- [force-dynamic rendering for date-dependent dashboard](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/page.tsx#L10-13) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/manifest.webmanifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/manifest.webmanifest)
+- [web/src/app/page.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/page.tsx)
 
 ## Audit Trail
 

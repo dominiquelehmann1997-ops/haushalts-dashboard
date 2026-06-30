@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [https://cockpit.domelehmann.org](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md) (0 connections)
+- [Project](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md)
+- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
 
 ## Audit Trail
 

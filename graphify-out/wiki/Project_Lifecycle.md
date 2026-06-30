@@ -4,22 +4,24 @@
 
 ## Key Concepts
 
-- [phase.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L1) (2 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L9) (1 connections)
-- [phase](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L21) (1 connections)
+- [Freshness resolution order: Frontmatter → Override → Heuristik](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md) (2 connections)
+- [Sanftes Lernen (gewichtete Auswahl statt Zufall)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md) (1 connections)
+- [Vault = Wahrheit, DB = Cache (mirroring pattern)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 80]] (4 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\phase.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts)
+- [docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md)
+- [docs/superpowers/plans/2026-06-10-freshness-override.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md)
+- [docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md)
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 0 (0%)
+- INFERRED: 4 (100%)
 - AMBIGUOUS: 0 (0%)
 
 ---

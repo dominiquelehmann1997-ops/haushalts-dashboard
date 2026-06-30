@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [public/icon.svg (source icon)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/icon.svg) (0 connections)
+- [Offline-first minimal SW design (no data caching, only shell)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/icon.svg](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/icon.svg)
+- [web/public/sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js)
 
 ## Audit Trail
 

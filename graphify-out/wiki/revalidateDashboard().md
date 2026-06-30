@@ -1,6 +1,6 @@
 # revalidateDashboard()
 
-> God node · 24 connections · [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\revalidate.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/revalidate.ts#L17)
+> God node · 25 connections · [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\revalidate.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/revalidate.ts#L17)
 
 ## Call Trace Diagram
 
@@ -44,7 +44,8 @@ sequenceDiagram
     participant P35 as deferTaskAction()
     participant P36 as failTaskAction()
     participant P37 as completeTaskByAction()
-    participant P38 as addTaskAction()
+    participant P38 as completeTaskByBothAction()
+    participant P39 as addTaskAction()
     P0->>+ P1: calls
     P1-->>- P0: return
     P1->>+ P0: calls
@@ -129,6 +130,8 @@ sequenceDiagram
     P37-->>- P0: return
     P0->>+ P38: calls
     P38-->>- P0: return
+    P0->>+ P39: calls
+    P39-->>- P0: return
 ```
 
 ## Connections by Relation

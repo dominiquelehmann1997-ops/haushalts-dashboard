@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Prisma Model: PhaseSetting](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
+- [Prisma Model: Note](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
 
 ## Relationships
 

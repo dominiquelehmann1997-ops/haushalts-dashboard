@@ -1,28 +1,26 @@
 # Community 17
 
-> 19 nodes · cohesion 0.11
+> 17 nodes · cohesion 0.12
 
 ## Key Concepts
 
-- [shoppingSync.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L1) (18 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L12) (1 connections)
-- [day](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L148) (1 connections)
-- [entry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L101) (1 connections)
-- [firstCount](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L62) (1 connections)
-- [items](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L28) (1 connections)
-- [MANUAL_SEED_ITEMS](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L9) (1 connections)
-- [manualItems](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L52) (1 connections)
-- [manualTexts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L53) (1 connections)
-- [mehl](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L155) (1 connections)
-- [names](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L38) (1 connections)
-- [nudeln](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L120) (1 connections)
-- [oel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L174) (1 connections)
-- [recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L77) (1 connections)
-- [recipeItems](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L40) (1 connections)
-- [recipeTexts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L41) (1 connections)
-- [secondCount](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L65) (1 connections)
-- [{ start }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L76) (1 connections)
-- [tomaten](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts#L29) (1 connections)
+- [tasks.write.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L1) (16 connections)
+- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L48) (1 connections)
+- [afterEntries](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L125) (1 connections)
+- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L34) (1 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L10) (1 connections)
+- [due](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L134) (1 connections)
+- [dues](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L162) (1 connections)
+- [entries](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L42) (1 connections)
+- [findTaskByTitle()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L22) (1 connections)
+- [{ id }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L135) (1 connections)
+- [open](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L159) (1 connections)
+- [persons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L116) (1 connections)
+- [row](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L139) (1 connections)
+- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L32) (1 connections)
+- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L11) (1 connections)
+- [tomorrow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L170) (1 connections)
+- [updated](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L38) (1 connections)
 
 ## Relationships
 
@@ -30,11 +28,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\shoppingSync.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\tasks.write.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 36 (100%)
+- EXTRACTED: 32 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

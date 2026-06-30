@@ -4,23 +4,23 @@
 
 ## Key Concepts
 
-- [db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L1) (3 connections)
-- [createPrismaClient()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L13) (1 connections)
-- [globalForPrisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L9) (1 connections)
-- [prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L21) (1 connections)
+- [Prisma Model: Person](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (2 connections)
+- [Prisma Model: Task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (2 connections)
+- [Prisma Model: AccountEntry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
+- [Prisma Model: Project](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 66]] (6 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts)
+- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 0 (0%)
+- INFERRED: 6 (100%)
 - AMBIGUOUS: 0 (0%)
 
 ---

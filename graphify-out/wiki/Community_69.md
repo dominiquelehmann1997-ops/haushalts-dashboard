@@ -1,25 +1,24 @@
 # Community 69
 
-> 4 nodes · cohesion 0.50
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [C2 · Web-Push für Essensplan-Entwurf Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (3 connections)
-- [Cloudflare-Tunnel (Voraussetzung für public HTTPS Push)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (1 connections)
-- [Keine Action-Buttons in Notification (YAGNI, weniger Angriffsfläche)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (1 connections)
-- [dashboard-roadmap-handy-steuerung-essensplan.md (Roadmap C2)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (1 connections)
+- [MealPlanControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx#L1) (2 connections)
+- [MealPlanControl()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx#L13) (1 connections)
+- [PILL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx#L11) (1 connections)
 
 ## Relationships
 
-- [[Linting config]] (6 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\MealPlanControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

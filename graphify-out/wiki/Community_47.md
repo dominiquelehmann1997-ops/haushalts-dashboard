@@ -4,25 +4,26 @@
 
 ## Key Concepts
 
-- [clothing.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L1) (5 connections)
-- [advice](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L7) (1 connections)
-- [allgemein](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L55) (1 connections)
-- [older](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L62) (1 connections)
-- [trage](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L54) (1 connections)
-- [young](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L61) (1 connections)
+- [Haushalts-Dashboard Design-Spezifikation](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (3 connections)
+- [Elternzeit-/Phasen-Modus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (2 connections)
+- [Verteil-Engine Fairness-Konto](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (2 connections)
+- [Design — Dienstplan-bewusster Essensplan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md) (1 connections)
+- [Konzeptionelles Datenmodell (Person/Aufgabe/Projekt/Konto-Buchung/Rezept/...)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
+- [Spontan-Nachtrag erledigter Aufgaben](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 50]] (10 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\clothing.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts)
+- [docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md)
+- [docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 8 (80%)
+- INFERRED: 2 (20%)
 - AMBIGUOUS: 0 (0%)
 
 ---

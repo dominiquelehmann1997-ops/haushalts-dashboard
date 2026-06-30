@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Claude-Skill 'Rezept → Vault-Markdown' (Stufe 1.5)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md) (0 connections)
+- [Termux-Runbook + tablet-start.sh](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-10-rezepte-vault-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md)
+- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
 
 ## Audit Trail
 

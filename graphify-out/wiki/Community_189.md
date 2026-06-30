@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Handy-Vollsteuerung Plan (/mobile full control)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md) (0 connections)
+- [Google Kalender — Termine, Verteilung & Sync Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md)
+- [docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md)
 
 ## Audit Trail
 

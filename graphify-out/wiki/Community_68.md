@@ -4,24 +4,23 @@
 
 ## Key Concepts
 
-- [Design: Tablet-Betrieb + Chore-Import](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (2 connections)
-- [Path A: Termux-Node-Server am Tablet](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (2 connections)
-- [Catch-up überfälliger Routinen + Aufgaben-Übernahme Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md) (1 connections)
-- [Hundefutter-Vorrats-Rechner (Follow-up)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (1 connections)
+- [Rezepte-Vault (Obsidian Markdown, Vault=Wahrheit/DB=Cache)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (3 connections)
+- [Haltbarkeits-Korrektur (gemerkte Zutaten-Klassifikation)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
+- [web/README.md (Next.js project + Rezepte-Vault)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
+- [Gewichtete Essensplan-Auswahl (rating: favorit/ok/selten)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
 
 ## Relationships
 
-- [[Community 47]] (6 shared connections)
+- [[Community 71]] (6 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-22-catchup-uebernahme.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md)
-- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
+- [web/README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md)
 
 ## Audit Trail
 
-- EXTRACTED: 4 (67%)
-- INFERRED: 2 (33%)
+- EXTRACTED: 6 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

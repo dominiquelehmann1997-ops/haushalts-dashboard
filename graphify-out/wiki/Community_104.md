@@ -4,21 +4,22 @@
 
 ## Key Concepts
 
-- [Prisma Model: FreshnessOverride](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
-- [Prisma Model: ShoppingItem](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
+- [Plan: Essensplan-Gewichtung (Feature A, sanftes Lernen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md) (1 connections)
+- [Plan: Rezepte-Vault V1](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md) (1 connections)
 
 ## Relationships
 
-- [[Community 45]] (2 shared connections)
+- [[Community 105]] (2 shared connections)
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md)
+- [docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
-- INFERRED: 2 (100%)
+- EXTRACTED: 2 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

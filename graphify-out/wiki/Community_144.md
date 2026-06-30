@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [MealPlanEntry.recipeId made nullable to support skip-day (no meal, no ingredients)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql) (0 connections)
+- [ShoppingItem.spec added to carry quantity for Bring shopping list integration](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623163000_shopping_item_spec/migration.sql) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql)
+- [web/prisma/migrations/20260623163000_shopping_item_spec/migration.sql](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623163000_shopping_item_spec/migration.sql)
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [public/offline.html](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/offline.html) (0 connections)
+- [Logging invisible work (Betreuung) to make it visible, not to add to-dos](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L3-6) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/offline.html](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/offline.html)
+- [web/src/components/AddDoneEntry.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx)
 
 ## Audit Trail
 

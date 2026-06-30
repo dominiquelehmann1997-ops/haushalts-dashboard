@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Service worker registration guarded on secure context (Tailscale HTTPS)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx#L5-8) (0 connections)
+- [public/offline.html](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/offline.html) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/sw-register.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx)
+- [web/public/offline.html](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/offline.html)
 
 ## Audit Trail
 

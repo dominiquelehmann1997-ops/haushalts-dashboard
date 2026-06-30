@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Interval restart bei Completion + gelerntes Intervall ersetzt Rhythmus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L106-113) (0 connections)
+- [Regenerate, not merge (Shopping-Sync-Strategie)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/recurrence.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts)
+- [web/src/lib/services/shoppingSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.ts)
 
 ## Audit Trail
 

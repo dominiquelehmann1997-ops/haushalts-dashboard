@@ -1,17 +1,16 @@
 # Community 35
 
-> 8 nodes · cohesion 0.36
+> 7 nodes · cohesion 0.29
 
 ## Key Concepts
 
-- [clothing.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L1) (4 connections)
-- [recommendClothing()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L56) (4 connections)
-- [uvAdvice()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L20) (3 connections)
-- [uv.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L1) (2 connections)
-- [bandFor()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L22) (2 connections)
-- [removeOneLayer()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L41) (2 connections)
-- [levelFor()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L7) (2 connections)
-- [PROTECTED](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L38) (1 connections)
+- [sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L1) (6 connections)
+- [CACHE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L5) (1 connections)
+- [data](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L34) (1 connections)
+- [OFFLINE_URL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L6) (1 connections)
+- [open](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L52) (1 connections)
+- [{ request }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L25) (1 connections)
+- [url](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L47) (1 connections)
 
 ## Relationships
 
@@ -19,13 +18,12 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\clothing.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\uv.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\public\sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js)
 
 ## Audit Trail
 
-- EXTRACTED: 18 (90%)
-- INFERRED: 2 (10%)
+- EXTRACTED: 12 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

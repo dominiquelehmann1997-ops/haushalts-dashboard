@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- ["Aufschieben" = nächster sinnvoller Tag](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md) (0 connections)
+- [2026-06-10-sanftes-lernen-design.md (Feature B Referenz)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md)
+- [docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md)
 
 ## Audit Trail
 

@@ -1,14 +1,14 @@
 # Community 56
 
-> 5 nodes · cohesion 0.40
+> 5 nodes · cohesion 0.50
 
 ## Key Concepts
 
-- [mealWeights.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.test.ts#L1) (4 connections)
-- [noRecent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.test.ts#L57) (1 connections)
-- [pool](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.test.ts#L64) (1 connections)
-- [r()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.test.ts#L15) (1 connections)
-- [recent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.test.ts#L85) (1 connections)
+- [globalSetup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L1) (4 connections)
+- [globalSetup()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L22) (2 connections)
+- [removeIfExists()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L16) (2 connections)
+- [TEST_DATABASE_URL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L14) (1 connections)
+- [TEST_DB_PATH](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L13) (1 connections)
 
 ## Relationships
 
@@ -16,11 +16,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\mealWeights.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\test\globalSetup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Kompakt-Dashboard fürs Tablet Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md) (0 connections)
+- [Handy-Steuerungsoberfläche Plan (/mobile MVP)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md)
+- [docs/superpowers/plans/2026-06-17-handy-steuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md)
 
 ## Audit Trail
 

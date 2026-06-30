@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- [AddDoneEntry.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L1) (4 connections)
-- [active](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L96) (1 connections)
-- [AddDoneEntry()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L16) (1 connections)
-- [p](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L95) (1 connections)
-- [PEOPLE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L14) (1 connections)
+- [availability.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L1) (4 connections)
+- [busy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L17) (1 connections)
+- [persons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L6) (1 connections)
+- [win()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L8) (1 connections)
+- [window](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L24) (1 connections)
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\AddDoneEntry.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\availability.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts)
 
 ## Audit Trail
 

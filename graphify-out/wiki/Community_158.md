@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Staggered second grocery run timed close to consumption (Roadmap D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L3-5) (0 connections)
+- [Draft week plan separated from active plan, approve promotes draft and pushes durable ingredients to Bring (Roadmap C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L3-6) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/FreshShoppingControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx)
+- [web/src/components/MealDraftPanel.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx)
 
 ## Audit Trail
 

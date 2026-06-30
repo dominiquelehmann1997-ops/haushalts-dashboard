@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [postcss.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs#L1) (1 connections)
-- [config](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs#L1) (1 connections)
+- [sw-register.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx#L1) (1 connections)
+- [ServiceWorkerRegister()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx#L9) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\postcss.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\sw-register.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx)
 
 ## Audit Trail
 

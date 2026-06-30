@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Plan: Haltbarkeits-Korrektur-Gedächtnis (FreshnessOverride, C1 Sanftes Lernen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md) (0 connections)
+- [Kompakt-Dashboard fürs Tablet Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-10-freshness-override.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md)
+- [docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md)
 
 ## Audit Trail
 

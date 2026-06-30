@@ -200,7 +200,14 @@
     "196": "Community 196",
     "197": "Community 197",
     "198": "Community 198",
-    "199": "Community 199"
+    "199": "Community 199",
+    "200": "Calendar Events",
+    "201": "Phase Configuration",
+    "202": "Community 202",
+    "203": "Community 203",
+    "204": "OAuth Token",
+    "205": "Community 205",
+    "206": "Push Notification"
   },
   "communitySummaries": {
     "0": "Manages grocery shopping lists by classifying ingredient freshness, suggesting optimal shopping days, and handling session and UI interactions.",
@@ -402,60 +409,66 @@
     "196": "",
     "197": "",
     "198": "",
-    "199": ""
+    "199": "",
+    "200": "Represents the core domain model for calendar events, enabling scheduling, recurrence, and event lifecycle management.",
+    "201": "Defines configuration for distinct phases within an operational workflow, enabling tailored behavior during each stage.",
+    "202": "",
+    "203": "",
+    "204": "Represents OAuth\u00a02.0 access tokens for authenticating API requests.",
+    "205": "",
+    "206": "Handles storing and managing client push subscription details for delivering targeted push messages."
   },
   "communityLinks": {
     "0": {
-      "8": 3,
-      "1": 3,
-      "2": 12,
+      "20": 2,
       "4": 1,
-      "9": 2,
-      "3": 3,
-      "15": 1
+      "3": 4,
+      "1": 9,
+      "9": 3,
+      "2": 3,
+      "7": 1
     },
-    "8": {
-      "2": 1,
-      "1": 2,
-      "0": 3
-    },
-    "1": {
-      "5": 3,
-      "9": 1,
-      "3": 5,
-      "2": 6,
-      "0": 4,
-      "8": 3,
-      "15": 1
-    },
-    "5": {
-      "0": 5,
-      "8": 2
-    },
-    "9": {
-      "8": 1,
-      "1": 1
+    "20": {
+      "1": 1,
+      "7": 1
     },
     "3": {
+      "5": 4,
+      "9": 1,
       "1": 3,
-      "2": 6,
+      "7": 3,
+      "2": 4,
+      "0": 6
+    },
+    "5": {
+      "0": 4,
+      "7": 1
+    },
+    "9": {
+      "7": 1,
+      "1": 1,
+      "0": 1
+    },
+    "7": {
+      "3": 2,
+      "0": 3,
+      "1": 2,
+      "5": 2,
+      "13": 1
+    },
+    "1": {
+      "20": 1,
+      "0": 10,
+      "9": 1,
+      "7": 1,
+      "3": 1
+    },
+    "2": {
+      "1": 10,
+      "3": 3,
       "9": 1,
       "0": 1,
       "13": 1
-    },
-    "2": {
-      "8": 1,
-      "1": 4,
-      "15": 1,
-      "0": 7,
-      "9": 1
-    },
-    "15": {},
-    "30": {
-      "0": 1
-    },
-    "34": {
-      "0": 1
     },
     "6": {
       "0": 1
@@ -464,21 +477,15 @@
       "1": 1,
       "0": 1
     },
-    "22": {
-      "1": 2,
-      "5": 1
-    },
+    "13": {},
     "14": {
-      "1": 1
+      "3": 1
     },
-    "7": {
+    "8": {
       "0": 1
     },
-    "24": {
-      "5": 1
-    },
-    "13": {
-      "5": 1
+    "37": {
+      "1": 1
     }
   }
 }

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Cloudflare named tunnel chosen over Tailscale (Android 16 blocks netlink for non-root)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/scripts/tablet-boot.sh) (0 connections)
+- [next.config.ts ignores TypeScript build errors](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [scripts/tablet-boot.sh](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/scripts/tablet-boot.sh)
+- [web/next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts)
 
 ## Audit Trail
 

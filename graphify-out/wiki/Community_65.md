@@ -4,23 +4,24 @@
 
 ## Key Concepts
 
-- [freshness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L1) (3 connections)
-- [first](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L37) (1 connections)
-- [overrides](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L55) (1 connections)
-- [thu](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts#L32) (1 connections)
+- [Design: Tablet-Betrieb + Chore-Import](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (2 connections)
+- [Path A: Termux-Node-Server am Tablet](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (2 connections)
+- [Catch-up überfälliger Routinen + Aufgaben-Übernahme Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md) (1 connections)
+- [Hundefutter-Vorrats-Rechner (Follow-up)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 68]] (6 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\freshness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.test.ts)
+- [docs/superpowers/plans/2026-06-22-catchup-uebernahme.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md)
+- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 4 (67%)
+- INFERRED: 2 (33%)
 - AMBIGUOUS: 0 (0%)
 
 ---

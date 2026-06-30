@@ -4,18 +4,19 @@
 
 ## Key Concepts
 
-- [pushSubscriptions.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.test.ts#L1) (3 connections)
-- [all](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.test.ts#L28) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.test.ts#L13) (1 connections)
-- [sub](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.test.ts#L24) (1 connections)
+- [Sanftes Lernen Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md) (2 connections)
+- [Rezepte-Vault (Obsidian) Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md) (2 connections)
+- [Tragendes Prinzip 'Sanftes Lernen'](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md) (1 connections)
+- [Vault = Wahrheit, DB = Cache](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 67]] (6 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\pushSubscriptions.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.test.ts)
+- [docs/superpowers/specs/2026-06-10-rezepte-vault-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md)
+- [docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md)
 
 ## Audit Trail
 

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [a](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.test.ts#L7) (1 connections)
-- [age.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.test.ts#L1) (1 connections)
+- [profile.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/profile.ts#L1) (1 connections)
+- [BABY](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/profile.ts#L4) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\age.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\profile.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/profile.ts)
 
 ## Audit Trail
 

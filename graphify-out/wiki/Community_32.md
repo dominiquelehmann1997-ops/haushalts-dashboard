@@ -1,18 +1,17 @@
 # Community 32
 
-> 9 nodes · cohesion 0.25
+> 8 nodes · cohesion 0.36
 
 ## Key Concepts
 
-- [index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L1) (8 connections)
-- [baseInput()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L12) (2 connections)
-- [day()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L8) (2 connections)
-- [busy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L58) (1 connections)
-- [forecast](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L34) (1 connections)
-- [PHASE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L6) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L39) (1 connections)
-- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L27) (1 connections)
-- [window](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L57) (1 connections)
+- [clothing.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L1) (4 connections)
+- [recommendClothing()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L56) (4 connections)
+- [uvAdvice()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L20) (3 connections)
+- [uv.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L1) (2 connections)
+- [bandFor()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L22) (2 connections)
+- [removeOneLayer()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L41) (2 connections)
+- [levelFor()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L7) (2 connections)
+- [PROTECTED](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L38) (1 connections)
 
 ## Relationships
 
@@ -20,12 +19,13 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\clothing.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\uv.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 18 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 18 (90%)
+- INFERRED: 2 (10%)
 - AMBIGUOUS: 0 (0%)
 
 ---

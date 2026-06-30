@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Prisma Model: PushSubscription](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
+- [Bring Machbarkeit Spike (2026-06-07)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
 
 ## Audit Trail
 

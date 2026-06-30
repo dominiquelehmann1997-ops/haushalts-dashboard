@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Recency damping for meal plan weighting (Feature A)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts) (0 connections)
+- [First-classifiable-shift-wins per day (calendar noise resilience)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts) (0 connections)
 
 ## Relationships
 

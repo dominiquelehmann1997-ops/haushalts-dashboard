@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [choreImport requires explicit client (no prisma singleton)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.ts) (0 connections)
+- [Recency damping for meal plan weighting (Feature A)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/choreImport.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.ts)
+- [web/src/lib/repositories/meals.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts)
 
 ## Audit Trail
 

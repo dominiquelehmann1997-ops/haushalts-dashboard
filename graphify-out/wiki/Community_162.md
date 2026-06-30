@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Prisma Model: CalendarEvent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
+- [Prisma Model: PhaseSetting](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
 
 ## Relationships
 

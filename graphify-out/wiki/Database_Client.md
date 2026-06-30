@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [client.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/client.ts#L1) (1 connections)
-- [PrismaClient](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/client.ts#L40) (1 connections)
+- [client.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts#L1) (1 connections)
+- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts#L7) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\client.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/client.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\bring\client.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts)
 
 ## Audit Trail
 

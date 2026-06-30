@@ -4,22 +4,22 @@
 
 ## Key Concepts
 
-- [personFilter.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/personFilter.test.ts#L1) (2 connections)
-- [persons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/personFilter.test.ts#L6) (1 connections)
-- [task()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/personFilter.test.ts#L8) (1 connections)
+- [Prisma Model: Recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (2 connections)
+- [Prisma Model: Ingredient](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
+- [Prisma Model: MealPlanEntry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 79]] (4 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\personFilter.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/personFilter.test.ts)
+- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 0 (0%)
+- INFERRED: 4 (100%)
 - AMBIGUOUS: 0 (0%)
 
 ---

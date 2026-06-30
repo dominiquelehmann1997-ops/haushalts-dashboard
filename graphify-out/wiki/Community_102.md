@@ -4,16 +4,17 @@
 
 ## Key Concepts
 
-- [learnedInterval.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.test.ts#L1) (1 connections)
-- [learned](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.test.ts#L17) (1 connections)
+- [Bring has no official API — manual push-on-request with clipboard fallback](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/BringSyncControl.tsx#L3-6) (1 connections)
+- [docs/spikes/2026-06-07-bring-machbarkeit.md (Push mit Fallback)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 103]] (2 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\learnedInterval.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.test.ts)
+- [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
+- [web/src/components/BringSyncControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/BringSyncControl.tsx)
 
 ## Audit Trail
 

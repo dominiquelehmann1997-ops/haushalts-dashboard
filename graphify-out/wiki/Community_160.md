@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Kiosk Auto-Refresh effect](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx) (0 connections)
+- [WeatherGlyph condition coupling fix](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/dashboard.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx)
+- [web/src/components/icons.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx)
 
 ## Audit Trail
 

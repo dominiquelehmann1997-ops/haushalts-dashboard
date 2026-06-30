@@ -1,31 +1,27 @@
 # Community 42
 
-> 7 nodes · cohesion 0.29
+> 6 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- [Isolierte Entwicklung via git-Worktree (niemals main+Prod-DB direkt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md) (3 connections)
-- [Catch-up überfälliger Chores + Aufgaben-Übernahme Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md) (2 connections)
-- [Google Kalender — Termine, Verteilung & Sync Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md) (2 connections)
-- [web/AGENTS.md — Safe Development Workflow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md) (2 connections)
-- [Aufgaben-Übernahme: Gutschrift an Erlediger statt Zugewiesenem](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md) (1 connections)
-- [Hybrid Tageskapazität (08:00-22:00 statt Zeitfenster pro Task)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md) (1 connections)
-- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md) (1 connections)
+- [manifest.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L1) (5 connections)
+- [icons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L11) (1 connections)
+- [manifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L8) (1 connections)
+- [maskable](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L37) (1 connections)
+- [png192](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L26) (1 connections)
+- [png512](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L29) (1 connections)
 
 ## Relationships
 
-- [[Community 20]] (12 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md)
-- [docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md)
-- [web/AGENTS.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md)
-- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\manifest.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

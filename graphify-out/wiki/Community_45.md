@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- [manifest.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L1) (5 connections)
-- [icons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L11) (1 connections)
-- [manifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L8) (1 connections)
-- [maskable](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L37) (1 connections)
-- [png192](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L26) (1 connections)
-- [png512](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts#L29) (1 connections)
+- [capacity.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/capacity.test.ts#L1) (5 connections)
+- [all](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/capacity.test.ts#L47) (1 connections)
+- [at()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/capacity.test.ts#L8) (1 connections)
+- [busy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/capacity.test.ts#L25) (1 connections)
+- [load](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/capacity.test.ts#L26) (1 connections)
+- [W](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/capacity.test.ts#L6) (1 connections)
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\manifest.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/manifest.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\capacity.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/capacity.test.ts)
 
 ## Audit Trail
 

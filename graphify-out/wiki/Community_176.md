@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [First-classifiable-shift-wins per day (calendar noise resilience)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts) (0 connections)
+- [Idempotente Status-Buchung (delete-then-recreate planned entries)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/meals.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts)
+- [web/src/lib/repositories/tasks.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts)
 
 ## Audit Trail
 

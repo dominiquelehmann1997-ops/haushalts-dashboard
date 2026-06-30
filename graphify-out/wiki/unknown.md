@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [ingredientAmount.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/ingredientAmount.test.ts#L1) (0 connections)
+- [Cloudflare named tunnel chosen over Tailscale (Android 16 blocks netlink for non-root)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/scripts/tablet-boot.sh) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\ingredientAmount.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/ingredientAmount.test.ts)
+- [scripts/tablet-boot.sh](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/scripts/tablet-boot.sh)
 
 ## Audit Trail
 

@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- [openMeteo.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L1) (9 connections)
-- [clearFixture](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L55) (1 connections)
-- [current](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L34) (1 connections)
-- [days](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L7) (1 connections)
-- [dry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L23) (1 connections)
-- [dryCurrent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L71) (1 connections)
-- [dryFixture](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L67) (1 connections)
-- [noCurrent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L83) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L88) (1 connections)
-- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts#L15) (1 connections)
+- [choreImport.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L1) (9 connections)
+- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L65) (1 connections)
+- [after1](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L43) (1 connections)
+- [after2](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L46) (1 connections)
+- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L57) (1 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L12) (1 connections)
+- [count](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L27) (1 connections)
+- [dome](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L78) (1 connections)
+- [rasen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L35) (1 connections)
+- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L9) (1 connections)
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\weather\openMeteo.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/openMeteo.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\choreImport.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts)
 
 ## Audit Trail
 

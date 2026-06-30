@@ -1,26 +1,24 @@
 # Community 70
 
-> 4 nodes · cohesion 0.50
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [Handy-Steuerungsoberfläche (Mobile Control) Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md) (2 connections)
-- [Handy-Vollsteuerung (Mobile Control v2) Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md) (2 connections)
-- [Bottom-Navigation-Bar (4 Bereiche: Essen/Aufgaben/Notizen/Einstellungen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md) (1 connections)
-- [Vitest hängt unter Windows (manuell testen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md) (1 connections)
+- [ui.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx#L1) (2 connections)
+- [Card()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx#L4) (1 connections)
+- [p](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx#L57) (1 connections)
 
 ## Relationships
 
-- [[unknown]] (6 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-17-handy-steuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md)
-- [docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\ui.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

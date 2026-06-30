@@ -39,14 +39,15 @@ sequenceDiagram
     participant P30 as deferTaskAction()
     participant P31 as failTaskAction()
     participant P32 as completeTaskByAction()
-    participant P33 as addTaskAction()
-    participant P34 as dayBounds()
-    participant P35 as planDueTasks()
-    participant P36 as syncCalendar()
-    participant P37 as getBusyWindows()
-    participant P38 as rollOverdueRoutines()
-    participant P39 as getForecast()
-    participant P40 as configuredCalendars()
+    participant P33 as completeTaskByBothAction()
+    participant P34 as addTaskAction()
+    participant P35 as dayBounds()
+    participant P36 as planDueTasks()
+    participant P37 as syncCalendar()
+    participant P38 as getBusyWindows()
+    participant P39 as rollOverdueRoutines()
+    participant P40 as getForecast()
+    participant P41 as configuredCalendars()
     P0->>+ P1: calls
     P1-->>- P0: return
     P1->>+ P0: calls
@@ -119,8 +120,8 @@ sequenceDiagram
     P32-->>- P1: return
     P1->>+ P33: calls
     P33-->>- P1: return
-    P0->>+ P34: calls
-    P34-->>- P0: return
+    P1->>+ P34: calls
+    P34-->>- P1: return
     P0->>+ P35: calls
     P35-->>- P0: return
     P0->>+ P36: calls
@@ -133,6 +134,8 @@ sequenceDiagram
     P39-->>- P0: return
     P0->>+ P40: calls
     P40-->>- P0: return
+    P0->>+ P41: calls
+    P41-->>- P0: return
 ```
 
 ## Connections by Relation

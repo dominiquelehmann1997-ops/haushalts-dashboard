@@ -1,20 +1,20 @@
 # Community 22
 
-> 11 nodes · cohesion 0.20
+> 11 nodes · cohesion 0.18
 
 ## Key Concepts
 
-- [planTask()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.ts#L16) (6 connections)
-- [fairness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts#L1) (3 connections)
-- [selectByFairness()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts#L26) (3 connections)
-- [filterByAvailability()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.ts#L11) (2 connections)
-- [availability.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.ts#L1) (2 connections)
-- [index.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.ts#L1) (2 connections)
-- [computeShare()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts#L6) (2 connections)
-- [filterByPerson()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/personFilter.ts#L4) (2 connections)
-- [personFilter.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/personFilter.ts#L1) (1 connections)
-- [PERSON_ORDER](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts#L3) (1 connections)
-- [FULL_THRESHOLD](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.ts#L8) (1 connections)
+- [shopping.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L1) (10 connections)
+- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L130) (1 connections)
+- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L125) (1 connections)
+- [brot](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L94) (1 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L16) (1 connections)
+- [items](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L91) (1 connections)
+- [nudeln](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L103) (1 connections)
+- [{ start }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L34) (1 connections)
+- [state](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L29) (1 connections)
+- [sunday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L35) (1 connections)
+- [tomaten](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts#L93) (1 connections)
 
 ## Relationships
 
@@ -22,15 +22,12 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\availability.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\fairness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\index.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\personFilter.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/personFilter.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\shopping.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/shopping.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 17 (68%)
-- INFERRED: 8 (32%)
+- EXTRACTED: 20 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

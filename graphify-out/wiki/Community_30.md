@@ -1,18 +1,18 @@
 # Community 30
 
-> 9 nodes · cohesion 0.22
+> 9 nodes · cohesion 0.25
 
 ## Key Concepts
 
-- [FreshShoppingControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L1) (9 connections)
-- [bringFailed](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L38) (1 connections)
-- [[copied, setCopied]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L20) (1 connections)
-- [dayLabel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L24) (1 connections)
-- [handlePush()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L26) (1 connections)
-- [[pending, startTransition]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L18) (1 connections)
-- [PILL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L13) (1 connections)
-- [[result, setResult]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L19) (1 connections)
-- [WEEKDAYS](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L15) (1 connections)
+- [index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L1) (8 connections)
+- [baseInput()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L12) (2 connections)
+- [day()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L8) (2 connections)
+- [busy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L58) (1 connections)
+- [forecast](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L34) (1 connections)
+- [PHASE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L6) (1 connections)
+- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L39) (1 connections)
+- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L27) (1 connections)
+- [window](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L57) (1 connections)
 
 ## Relationships
 
@@ -20,11 +20,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\FreshShoppingControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 17 (100%)
+- EXTRACTED: 18 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

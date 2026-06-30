@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md) (0 connections)
+- [phone-to-/mobile redirect inline script](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L51-56) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md)
+- [web/src/app/layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx)
 
 ## Audit Trail
 

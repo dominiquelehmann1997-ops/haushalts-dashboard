@@ -1,29 +1,27 @@
 # Community 50
 
-> 6 nodes · cohesion 0.33
+> 5 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- [Haushalts-Dashboard Design-Spezifikation](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (3 connections)
-- [Elternzeit-/Phasen-Modus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (2 connections)
-- [Verteil-Engine Fairness-Konto](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (2 connections)
-- [Design — Dienstplan-bewusster Essensplan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md) (1 connections)
-- [Konzeptionelles Datenmodell (Person/Aufgabe/Projekt/Konto-Buchung/Rezept/...)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
-- [Spontan-Nachtrag erledigter Aufgaben](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
+- [tiles.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx#L1) (4 connections)
+- [doneCount](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx#L171) (1 connections)
+- [openCount](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx#L170) (1 connections)
+- [p](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx#L169) (1 connections)
+- [TaskRow()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx#L10) (1 connections)
 
 ## Relationships
 
-- [[Community 25]] (10 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md)
-- [docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\tiles.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (80%)
-- INFERRED: 2 (20%)
+- EXTRACTED: 8 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

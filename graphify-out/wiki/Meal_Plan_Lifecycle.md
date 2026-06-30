@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [MealPlanEntry.status Ansatz A (active|draft)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md) (0 connections)
+- [Claude-Skill 'Rezept → Vault-Markdown' (Stufe 1.5)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md)
+- [docs/superpowers/specs/2026-06-10-rezepte-vault-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md)
 
 ## Audit Trail
 

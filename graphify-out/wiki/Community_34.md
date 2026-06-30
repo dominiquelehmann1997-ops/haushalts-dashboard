@@ -4,27 +4,29 @@
 
 ## Key Concepts
 
-- [MealDraftPanel.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L1) (8 connections)
-- [bringFailed](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L47) (1 connections)
-- [[copied, setCopied]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L25) (1 connections)
-- [handleApprove()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L33) (1 connections)
-- [[pending, startTransition]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L23) (1 connections)
-- [PILL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L20) (1 connections)
-- [[result, setResult]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L24) (1 connections)
-- [run()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L27) (1 connections)
+- [PWA + Tailscale-Fernzugriff + Tablet-Kiosk-Autostart Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (3 connections)
+- [Tablet Remote Access via Cloudflare Tunnel Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (3 connections)
+- [tailscale serve HTTPS-Proxy (verworfen zugunsten Cloudflare)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (2 connections)
+- [Tailscale verworfen (Android 16 netlink permission denied)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (2 connections)
+- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (1 connections)
+- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (1 connections)
+- [Tablet Kiosk Autostart Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md) (1 connections)
+- [Cloudflare Access (Zero Trust Gate)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (14 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\MealDraftPanel.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx)
+- [docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md)
+- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md)
+- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md)
 
 ## Audit Trail
 
-- EXTRACTED: 15 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 12 (86%)
+- INFERRED: 2 (14%)
 - AMBIGUOUS: 0 (0%)
 
 ---

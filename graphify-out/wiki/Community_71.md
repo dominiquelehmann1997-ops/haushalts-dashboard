@@ -1,21 +1,20 @@
 # Community 71
 
-> 4 nodes · cohesion 0.50
+> 3 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Rezepte-Vault (Obsidian Markdown, Vault=Wahrheit/DB=Cache)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (3 connections)
-- [Haltbarkeits-Korrektur (gemerkte Zutaten-Klassifikation)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
-- [web/README.md (Next.js project + Rezepte-Vault)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
-- [Gewichtete Essensplan-Auswahl (rating: favorit/ok/selten)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
+- [babyAge()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L23) (2 connections)
+- [completedMonths()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L7) (2 connections)
+- [age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L1) (2 connections)
 
 ## Relationships
 
-- [[Result Handling]] (6 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [web/README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts)
 
 ## Audit Trail
 

@@ -1,48 +1,55 @@
 # Community 7
 
-> 31 nodes · cohesion 0.06
+> 33 nodes · cohesion 0.09
 
 ## Key Concepts
 
-- [meals.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L1) (31 connections)
-- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L162) (1 connections)
-- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L157) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L17) (1 connections)
-- [dayOfWeek](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L39) (1 connections)
-- [domeEvent()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L181) (1 connections)
-- [draft](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L99) (1 connections)
-- [earlyEnd](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L269) (1 connections)
-- [earlyStart](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L267) (1 connections)
-- [end](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L68) (1 connections)
-- [entry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L50) (1 connections)
-- [isWeekday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L40) (1 connections)
-- [monday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L33) (1 connections)
-- [mondayMeal](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L60) (1 connections)
-- [names](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L137) (1 connections)
-- [nextMon](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L221) (1 connections)
-- [plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L29) (1 connections)
-- [recipes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L136) (1 connections)
-- [sat](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L203) (1 connections)
-- [seeded](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L70) (1 connections)
-- [skipped](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L130) (1 connections)
-- [{ start }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L47) (1 connections)
-- [{ start: monday }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L200) (1 connections)
-- [sun](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L205) (1 connections)
-- [target](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L159) (1 connections)
-- *... and 6 more nodes in this community*
+- [GET()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L31) (12 connections)
+- [google.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L1) (8 connections)
+- [syncCalendar()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts#L51) (7 connections)
+- [googleAuth.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L1) (6 connections)
+- [fetchEvents()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L145) (6 connections)
+- [freshness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L1) (5 connections)
+- [configuredCalendars()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts#L20) (5 connections)
+- [resolveFreshness()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L56) (5 connections)
+- [mapGoogleEvents()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L99) (5 connections)
+- [runSync()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L10) (5 connections)
+- [parseEventTime()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L53) (4 connections)
+- [createOAuth2Client()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L24) (4 connections)
+- [route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L1) (3 connections)
+- [calendarSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts#L1) (3 connections)
+- [normalizeIngredientName()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L47) (3 connections)
+- [exchangeCode()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L63) (3 connections)
+- [getAccessToken()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L98) (3 connections)
+- [getAuthUrl()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L43) (3 connections)
+- [main()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/syncCalendar.ts#L8) (3 connections)
+- [classifyFreshness()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L41) (2 connections)
+- [deriveKind()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L76) (2 connections)
+- [derivePersonKey()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L69) (2 connections)
+- [toRfc3339()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L129) (2 connections)
+- [POST()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L35) (2 connections)
+- [syncCalendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/syncCalendar.ts#L1) (1 connections)
+- *... and 8 more nodes in this community*
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 5]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\meals.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\prisma\syncCalendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/syncCalendar.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\auth\google\callback\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/auth/google/callback/route.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\auth\google\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/auth/google/route.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\sync\calendar\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\google.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\googleAuth.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\calendarSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\freshness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 61 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 79 (71%)
+- INFERRED: 33 (29%)
 - AMBIGUOUS: 0 (0%)
 
 ---

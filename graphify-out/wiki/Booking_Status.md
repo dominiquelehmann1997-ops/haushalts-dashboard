@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Single-sourced Booking via setTaskStatus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md) (0 connections)
+- [Konfliktauflösung simple vs reheatable](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-22-catchup-uebernahme.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md)
+- [docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md)
 
 ## Audit Trail
 

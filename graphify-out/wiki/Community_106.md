@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- [C2 Handy-Push (Essensplan-Entwurf) Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md) (1 connections)
-- [VAPID key generation + push-setup.md operations doc](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md) (1 connections)
+- [Einkauf & Bring!-Sync (Push)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
+- [Essensplan stufenweise (Rezeptbuch → präferenz-lernend)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
 
 ## Relationships
 
-- [[Community 62]] (2 shared connections)
+- [[Community 107]] (2 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md)
+- [docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md)
 
 ## Audit Trail
 

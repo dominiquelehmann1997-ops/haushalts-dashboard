@@ -1,27 +1,27 @@
 # Community 58
 
-> 5 nodes · cohesion 0.40
+> 5 nodes · cohesion 0.50
 
 ## Key Concepts
 
-- [taskDefer.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L1) (4 connections)
-- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L28) (1 connections)
-- [dateKey()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L8) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L18) (1 connections)
-- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L17) (1 connections)
+- [Web Push / VAPID — Setup & Operations](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (3 connections)
+- [Prisma migrate-engine läuft nicht auf Android (unknown OS)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (3 connections)
+- [next build --webpack (Turbopack scheitert auf android/arm64)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (2 connections)
+- [Manuelle SQL-Migration via better-sqlite3 (PushSubscription Tabelle)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (1 connections)
+- [VAPID Key Pair (PUBLIC/PRIVATE/SUBJECT)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 61]] (10 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\taskDefer.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts)
+- [web/docs/push-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 8 (80%)
+- INFERRED: 2 (20%)
 - AMBIGUOUS: 0 (0%)
 
 ---

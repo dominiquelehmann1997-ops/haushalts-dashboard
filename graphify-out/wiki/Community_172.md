@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Sync-as-snapshot pruning rationale](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts) (0 connections)
+- [Overnight shift busy-window correction (lookback day)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts) (0 connections)
 
 ## Relationships
 

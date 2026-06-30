@@ -4,21 +4,24 @@
 
 ## Key Concepts
 
-- [bring-read-list.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L1) (6 connections)
-- [Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L11) (1 connections)
-- [env](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L14) (1 connections)
-- [envPath](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L13) (1 connections)
-- [items](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L24) (1 connections)
-- [m](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L16) (1 connections)
-- [require](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L10) (1 connections)
+- [Isolierte Entwicklung via git-Worktree (niemals main+Prod-DB direkt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md) (3 connections)
+- [Catch-up überfälliger Chores + Aufgaben-Übernahme Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md) (2 connections)
+- [Google Kalender — Termine, Verteilung & Sync Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md) (2 connections)
+- [web/AGENTS.md — Safe Development Workflow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md) (2 connections)
+- [Aufgaben-Übernahme: Gutschrift an Erlediger statt Zugewiesenem](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md) (1 connections)
+- [Hybrid Tageskapazität (08:00-22:00 statt Zeitfenster pro Task)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md) (1 connections)
+- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 42]] (12 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\bring-read-list.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs)
+- [docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md)
+- [docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md)
+- [web/AGENTS.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md)
+- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md)
 
 ## Audit Trail
 

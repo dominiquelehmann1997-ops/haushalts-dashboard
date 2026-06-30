@@ -1,27 +1,24 @@
 # Community 80
 
-> 3 nodes · cohesion 0.67
+> 2 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Freshness resolution order: Frontmatter → Override → Heuristik](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md) (2 connections)
-- [Sanftes Lernen (gewichtete Auswahl statt Zufall)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md) (1 connections)
-- [Vault = Wahrheit, DB = Cache (mirroring pattern)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md) (1 connections)
+- [eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L1) (1 connections)
+- [eslintConfig](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L5) (1 connections)
 
 ## Relationships
 
-- [[Community 67]] (4 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md)
-- [docs/superpowers/plans/2026-06-10-freshness-override.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md)
-- [docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
-- INFERRED: 4 (100%)
+- EXTRACTED: 2 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

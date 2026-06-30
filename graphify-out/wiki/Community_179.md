@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Sync-Fenster ab Mitternacht (nicht 'jetzt') fürs konsistente Pruning](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts) (0 connections)
+- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/calendarSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts)
+- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
 
 ## Audit Trail
 

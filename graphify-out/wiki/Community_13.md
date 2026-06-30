@@ -1,6 +1,6 @@
 # Community 13
 
-> 22 nodes · cohesion 0.12
+> 24 nodes · cohesion 0.11
 
 ## Key Concepts
 
@@ -16,7 +16,9 @@
 - [Elternzeit-Modus (Fairness-Ziel-Verschiebung)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md) (2 connections)
 - [Emely bleibt verfügbar (Abweichung von Spec §9)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md) (2 connections)
 - [Verteil-Engine "Fairness-Konto"](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md) (2 connections)
+- [Getrennte Google-Kalender pro Person](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md) (2 connections)
 - [Token-/Kosten-sparsame KI-Pipeline](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-importer-init-prompt.md) (2 connections)
+- [Google Calendar Setup (Phase 4)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md) (2 connections)
 - [Rezept-Vault Schema (TS-Interface + JSON-Schema)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-schema.md) (2 connections)
 - [Baby-Wetter / Kleidungsempfehlung Feature-Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md) (2 connections)
 - [Haushalts-Dashboard README](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md) (2 connections)
@@ -29,9 +31,7 @@
 
 ## Relationships
 
-- [[Community 35]] (33 shared connections)
-- [[Community 32]] (15 shared connections)
-- [[Community 68]] (7 shared connections)
+- [[Community 5]] (3 shared connections)
 
 ## Source Files
 
@@ -42,6 +42,7 @@
 - [docs/recipe-vault-import-contract.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-import-contract.md)
 - [docs/recipe-vault-schema.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-schema.md)
 - [docs/recipe-vault-template.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-template.md)
+- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md)
 - [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
 - [docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md)
 - [docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md)
@@ -49,8 +50,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 47 (84%)
-- INFERRED: 9 (16%)
+- EXTRACTED: 50 (83%)
+- INFERRED: 10 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---

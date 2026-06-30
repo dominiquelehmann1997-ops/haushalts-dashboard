@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Mobile safe-area-inset scroll container design for PWA standalone](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx) (0 connections)
+- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/(mobile)/layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx)
+- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md)
 
 ## Audit Trail
 

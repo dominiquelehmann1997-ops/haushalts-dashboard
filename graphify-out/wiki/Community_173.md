@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Overnight shift busy-window correction (lookback day)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts) (0 connections)
+- [choreImport requires explicit client (no prisma singleton)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/calendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts)
+- [web/src/lib/repositories/choreImport.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.ts)
 
 ## Audit Trail
 

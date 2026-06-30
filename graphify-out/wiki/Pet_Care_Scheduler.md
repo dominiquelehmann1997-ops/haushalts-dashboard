@@ -1,19 +1,18 @@
 # Pet Care Scheduler
 
-> 10 nodes · cohesion 0.20
+> 9 nodes · cohesion 0.22
 
 ## Key Concepts
 
-- [chores.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L1) (9 connections)
-- [einkauf](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L26) (1 connections)
-- [futter](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L27) (1 connections)
-- [gassi](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L20) (1 connections)
-- [gross](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L54) (1 connections)
-- [klein](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L55) (1 connections)
-- [original](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L60) (1 connections)
-- [rasen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L13) (1 connections)
-- [tasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L45) (1 connections)
-- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L5) (1 connections)
+- [TaskActionMenu.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L1) (8 connections)
+- [itemCount](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L53) (1 connections)
+- [left](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L59) (1 connections)
+- [MENU_HEIGHT](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L4) (1 connections)
+- [MENU_MARGIN](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L5) (1 connections)
+- [MENU_WIDTH](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L3) (1 connections)
+- [menuHeight](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L56) (1 connections)
+- [MenuItem()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L7) (1 connections)
+- [top](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L63) (1 connections)
 
 ## Relationships
 
@@ -21,11 +20,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\chores.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\TaskActionMenu.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 18 (100%)
+- EXTRACTED: 16 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

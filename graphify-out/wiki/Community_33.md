@@ -1,18 +1,17 @@
 # Community 33
 
-> 9 nodes · cohesion 0.22
+> 8 nodes · cohesion 0.25
 
 ## Key Concepts
 
-- [freshnessOverride.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L1) (8 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L9) (1 connections)
-- [item](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L21) (1 connections)
-- [manual](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L54) (1 connections)
-- [map](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L68) (1 connections)
-- [next](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L25) (1 connections)
-- [override](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L30) (1 connections)
-- [uncategorized](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L55) (1 connections)
-- [updated](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L28) (1 connections)
+- [mealConstraints.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L1) (7 connections)
+- [fri](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L46) (1 connections)
+- [lookupFrom()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L8) (1 connections)
+- [MON](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L16) (1 connections)
+- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L20) (1 connections)
+- [thursday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L85) (1 connections)
+- [tue](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L37) (1 connections)
+- [wed](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L29) (1 connections)
 
 ## Relationships
 
@@ -20,11 +19,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\freshnessOverride.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\mealConstraints.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 16 (100%)
+- EXTRACTED: 14 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

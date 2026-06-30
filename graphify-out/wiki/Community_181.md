@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Sanftes Lernen: EWMA-Intervall mit Mindestbeobachtungen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts#L1-7) (0 connections)
+- [Feature A Sanftes Lernen: gewichtetes Roulette-Rad fuer Rezeptauswahl](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.ts#L1-4) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/learnedInterval.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts)
+- [web/src/lib/services/mealWeights.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.ts)
 
 ## Audit Trail
 

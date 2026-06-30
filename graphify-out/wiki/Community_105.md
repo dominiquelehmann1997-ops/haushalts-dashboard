@@ -4,18 +4,16 @@
 
 ## Key Concepts
 
-- [Plan: Essensplan-Gewichtung (Feature A, sanftes Lernen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md) (1 connections)
-- [Plan: Rezepte-Vault V1](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md) (1 connections)
+- [C2 Handy-Push (Essensplan-Entwurf) Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md) (1 connections)
+- [VAPID key generation + push-setup.md operations doc](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md) (1 connections)
 
 ## Relationships
 
-- [[Community 67]] (1 shared connections)
-- [[Community 74]] (1 shared connections)
+- [[Community 106]] (2 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md)
-- [docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md)
+- [docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md)
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Dienstbewusst Essensplan-Entwurf: haltbar sofort, frisch verzögert](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/meals.ts) (0 connections)
+- [Mobile safe-area-inset scroll container design for PWA standalone](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/actions/meals.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/meals.ts)
+- [web/src/app/(mobile)/layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx)
 
 ## Audit Trail
 

@@ -5,7 +5,7 @@
 
 ## Core Abstractions (God Nodes)
 1. `map` (37 edges)
-2. `revalidateDashboard()` (24 edges)
+2. `revalidateDashboard()` (25 edges)
 3. `GET()` (12 edges)
 4. `dayBounds()` (12 edges)
 5. `rerollDraftDay()` (11 edges)

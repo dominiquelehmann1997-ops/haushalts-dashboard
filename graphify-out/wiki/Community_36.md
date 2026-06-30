@@ -1,17 +1,16 @@
 # Community 36
 
-> 8 nodes · cohesion 0.25
+> 7 nodes · cohesion 0.29
 
 ## Key Concepts
 
-- [mealConstraints.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L1) (7 connections)
-- [fri](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L46) (1 connections)
-- [lookupFrom()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L8) (1 connections)
-- [MON](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L16) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L20) (1 connections)
-- [thursday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L85) (1 connections)
-- [tue](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L37) (1 connections)
-- [wed](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts#L29) (1 connections)
+- [bring-read-list.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L1) (6 connections)
+- [Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L11) (1 connections)
+- [env](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L14) (1 connections)
+- [envPath](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L13) (1 connections)
+- [items](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L24) (1 connections)
+- [m](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L16) (1 connections)
+- [require](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L10) (1 connections)
 
 ## Relationships
 
@@ -19,11 +18,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\mealConstraints.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealConstraints.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\bring-read-list.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs)
 
 ## Audit Trail
 
-- EXTRACTED: 14 (100%)
+- EXTRACTED: 12 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

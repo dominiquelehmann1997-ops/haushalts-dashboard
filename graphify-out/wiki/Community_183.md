@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Catch-up fuer ueberfaellige Routinen vor planDueTasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.ts#L1-4) (0 connections)
+- [Interval restart bei Completion + gelerntes Intervall ersetzt Rhythmus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L106-113) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/overdueCatchup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.ts)
+- [web/src/lib/services/recurrence.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts)
 
 ## Audit Trail
 

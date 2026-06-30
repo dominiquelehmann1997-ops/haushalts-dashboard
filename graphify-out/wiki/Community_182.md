@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Feature A Sanftes Lernen: gewichtetes Roulette-Rad fuer Rezeptauswahl](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.ts#L1-4) (0 connections)
+- [Catch-up fuer ueberfaellige Routinen vor planDueTasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.ts#L1-4) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/mealWeights.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.ts)
+- [web/src/lib/services/overdueCatchup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.ts)
 
 ## Audit Trail
 

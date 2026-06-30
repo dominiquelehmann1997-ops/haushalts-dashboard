@@ -202,3 +202,10 @@
 | 197 | Community 197 |  |
 | 198 | Community 198 |  |
 | 199 | Community 199 |  |
+| 200 | Community 200 | Represents the core domain model for calendar events, enabling scheduling, recurrence, and event lifecycle management. |
+| 201 | Community 201 | Defines configuration for distinct phases within an operational workflow, enabling tailored behavior during each stage. |
+| 202 | Community 202 |  |
+| 203 | Community 203 |  |
+| 204 | Community 204 | Represents OAuth 2.0 access tokens for authenticating API requests. |
+| 205 | Community 205 |  |
+| 206 | Community 206 | Handles storing and managing client push subscription details for delivering targeted push messages. |

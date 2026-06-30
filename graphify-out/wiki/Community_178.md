@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [completeTaskBy: Punkte gehen an tatsächlichen Erlediger, nicht Zugewiesenen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts) (0 connections)
+- [Sync-Fenster ab Mitternacht (nicht 'jetzt') fürs konsistente Pruning](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/tasks.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts)
+- [web/src/lib/services/calendarSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts)
 
 ## Audit Trail
 

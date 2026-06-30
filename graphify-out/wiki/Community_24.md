@@ -1,20 +1,19 @@
 # Community 24
 
-> 11 nodes · cohesion 0.22
+> 10 nodes · cohesion 0.20
 
 ## Key Concepts
 
-- [calendarSync.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L1) (11 connections)
-- [event()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L45) (3 connections)
-- [firstFetch()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L58) (2 connections)
-- [secondFetch()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L65) (2 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L9) (1 connections)
-- [emptyFetch()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L91) (1 connections)
-- [events](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L39) (1 connections)
-- [now](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L21) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L36) (1 connections)
-- [seedFetch()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L76) (1 connections)
-- [titles](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts#L69) (1 connections)
+- [data.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L1) (9 connections)
+- [appointments](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L118) (1 connections)
+- [initialShopping](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L124) (1 connections)
+- [initialTasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L101) (1 connections)
+- [mealPlan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L135) (1 connections)
+- [notes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L143) (1 connections)
+- [PERSON](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L151) (1 connections)
+- [personFill()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L184) (1 connections)
+- [split](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L149) (1 connections)
+- [weather](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L89) (1 connections)
 
 ## Relationships
 
@@ -22,11 +21,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\calendarSync.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\data.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 25 (100%)
+- EXTRACTED: 18 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

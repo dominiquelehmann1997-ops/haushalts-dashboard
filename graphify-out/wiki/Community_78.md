@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- [projects.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts#L1) (2 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts#L9) (1 connections)
-- [progress](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts#L21) (1 connections)
+- [AccountEntry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (2 connections)
+- [Person](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (1 connections)
+- [Task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 999]] (4 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\projects.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts)
+- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
 
 ## Audit Trail
 

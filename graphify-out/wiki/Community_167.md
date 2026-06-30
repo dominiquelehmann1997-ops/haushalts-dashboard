@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Bring Machbarkeit Spike (2026-06-07)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md) (0 connections)
+- [Pure-mapper / thin-network-wrapper integration pattern](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
+- [web/src/integrations/calendar/google.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts)
 
 ## Audit Trail
 

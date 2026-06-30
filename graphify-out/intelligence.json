@@ -22,13 +22,13 @@
     },
     {
       "label": "Dashboard()",
-      "risk": 0.289,
+      "risk": 0.292,
       "type": "FUNCTION"
     }
   ],
   "blast_radius": {
     "map": 37,
-    "revalidateDashboard()": 24,
+    "revalidateDashboard()": 25,
     "GET()": 12,
     "dayBounds()": 12,
     "rerollDraftDay()": 11

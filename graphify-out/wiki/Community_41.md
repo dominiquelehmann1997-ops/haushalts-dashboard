@@ -1,16 +1,15 @@
 # Community 41
 
-> 7 nodes · cohesion 0.29
+> 6 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- [google.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L1) (6 connections)
-- [birthday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L31) (1 connections)
-- [birthdayEvents](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L62) (1 connections)
-- [events](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L8) (1 connections)
-- [familyEvents](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L54) (1 connections)
-- [[sport]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L19) (1 connections)
-- [u4](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L42) (1 connections)
+- [layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L1) (4 connections)
+- [viewport](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx#L9) (2 connections)
+- [layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx#L1) (1 connections)
+- [body](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L13) (1 connections)
+- [display](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L6) (1 connections)
+- [metadata](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L20) (1 connections)
 
 ## Relationships
 
@@ -18,11 +17,12 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\google.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\(mobile)\layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

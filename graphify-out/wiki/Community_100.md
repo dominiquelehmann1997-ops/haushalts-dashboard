@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [shifts.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/calendar/shifts.test.ts#L1) (1 connections)
-- [start](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/calendar/shifts.test.ts#L24) (1 connections)
+- [projects.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.ts#L1) (1 connections)
+- [getActiveProjectProgress()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.ts#L18) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\calendar\shifts.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/calendar/shifts.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\projects.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.ts)
 
 ## Audit Trail
 

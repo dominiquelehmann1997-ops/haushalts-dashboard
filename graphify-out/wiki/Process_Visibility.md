@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Logging invisible work (Betreuung) to make it visible, not to add to-dos](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L3-6) (0 connections)
+- [Staggered second grocery run timed close to consumption (Roadmap D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L3-5) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/AddDoneEntry.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx)
+- [web/src/components/FreshShoppingControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx)
 
 ## Audit Trail
 

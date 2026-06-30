@@ -1,23 +1,22 @@
 # Community 110
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Prisma better-sqlite3 Driver-Adapter](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md) (1 connections)
-- [Dashboard am Pixel Tablet (Termux) betreiben Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md) (1 connections)
+- [next-env.d.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next-env.d.ts#L1) (0 connections)
 
 ## Relationships
 
-- [[Calendar API Tests]] (2 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/tablet-termux-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\next-env.d.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next-env.d.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Draft week plan separated from active plan, approve promotes draft and pushes durable ingredients to Bring (Roadmap C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx#L3-6) (0 connections)
+- [Kiosk Auto-Refresh effect](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/MealDraftPanel.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealDraftPanel.tsx)
+- [web/src/components/dashboard.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx)
 
 ## Audit Trail
 

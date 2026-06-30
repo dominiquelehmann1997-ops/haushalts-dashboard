@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Offline-first minimal SW design (no data caching, only shell)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js) (0 connections)
+- [Idempotent seed = single source of truth for fixtures (CLI + test harness)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js)
+- [web/prisma/seed.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts)
 
 ## Audit Trail
 

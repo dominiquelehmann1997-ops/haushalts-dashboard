@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [fixture.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/fixture.ts#L1) (1 connections)
-- [googleEventsFixture](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/fixture.ts#L13) (1 connections)
+- [fixture.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/fixture.ts#L1) (1 connections)
+- [openMeteoFixture](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/fixture.ts#L14) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\fixture.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/fixture.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\weather\fixture.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/weather/fixture.ts)
 
 ## Audit Trail
 

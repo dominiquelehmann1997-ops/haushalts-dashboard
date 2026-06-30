@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [WeatherGlyph condition coupling fix](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx) (0 connections)
+- [Prisma Model: CalendarEvent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/icons.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx)
+- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
 
 ## Audit Trail
 

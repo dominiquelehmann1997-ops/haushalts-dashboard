@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- [sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L1) (6 connections)
-- [CACHE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L5) (1 connections)
-- [data](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L34) (1 connections)
-- [OFFLINE_URL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L6) (1 connections)
-- [open](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L52) (1 connections)
-- [{ request }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L25) (1 connections)
-- [url](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L47) (1 connections)
+- [google.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L1) (6 connections)
+- [birthday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L31) (1 connections)
+- [birthdayEvents](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L62) (1 connections)
+- [events](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L8) (1 connections)
+- [familyEvents](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L54) (1 connections)
+- [[sport]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L19) (1 connections)
+- [u4](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L42) (1 connections)
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\public\sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\google.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts)
 
 ## Audit Trail
 

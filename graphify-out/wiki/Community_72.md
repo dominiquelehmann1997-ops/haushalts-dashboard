@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- [MealPlanControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx#L1) (2 connections)
-- [MealPlanControl()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx#L13) (1 connections)
-- [PILL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx#L11) (1 connections)
+- [fairness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts#L1) (2 connections)
+- [balances](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts#L21) (1 connections)
+- [persons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts#L18) (1 connections)
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\MealPlanControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/MealPlanControl.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\fairness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts)
 
 ## Audit Trail
 

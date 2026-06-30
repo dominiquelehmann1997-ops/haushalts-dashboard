@@ -4,22 +4,21 @@
 
 ## Key Concepts
 
-- [Bring has no official API — manual push-on-request with clipboard fallback](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/BringSyncControl.tsx#L3-6) (1 connections)
-- [docs/spikes/2026-06-07-bring-machbarkeit.md (Push mit Fallback)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md) (1 connections)
+- [Prisma Model: FreshnessOverride](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
+- [Prisma Model: ShoppingItem](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
 
 ## Relationships
 
-- [[Next.js config]] (2 shared connections)
+- [[Community 104]] (2 shared connections)
 
 ## Source Files
 
-- [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
-- [web/src/components/BringSyncControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/BringSyncControl.tsx)
+- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 0 (0%)
+- INFERRED: 2 (100%)
 - AMBIGUOUS: 0 (0%)
 
 ---

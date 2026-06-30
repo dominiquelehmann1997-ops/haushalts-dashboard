@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (0 connections)
+- [Sanftes Lernen: EWMA-Intervall mit Mindestbeobachtungen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts#L1-7) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
+- [web/src/lib/services/learnedInterval.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts)
 
 ## Audit Trail
 

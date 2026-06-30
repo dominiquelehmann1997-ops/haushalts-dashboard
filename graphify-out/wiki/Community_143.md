@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [next.config.ts ignores TypeScript build errors](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts) (0 connections)
+- [MealPlanEntry.recipeId made nullable to support skip-day (no meal, no ingredients)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts)
+- [web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql)
 
 ## Audit Trail
 

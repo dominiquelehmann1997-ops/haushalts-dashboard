@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L1) (1 connections)
-- [eslintConfig](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L5) (1 connections)
+- [next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts#L1) (1 connections)
+- [nextConfig](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts#L3) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts)
 
 ## Audit Trail
 

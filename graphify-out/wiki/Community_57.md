@@ -4,24 +4,25 @@
 
 ## Key Concepts
 
-- [recipeVault.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L1) (4 connections)
-- [full](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L18) (1 connections)
-- [md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L58) (1 connections)
-- [{ recipe }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L49) (1 connections)
-- [{ recipe, errors }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L37) (1 connections)
+- [tablet-boot.sh + docs/tablet-kiosk-setup.md (Termux:Boot + Fully Kiosk)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md) (2 connections)
+- [docs/tablet-remote-access.md Tailscale HTTPS serve runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md) (2 connections)
+- [docs/tablet-termux-setup.md + tablet-start.sh](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md) (2 connections)
+- [PWA + Tailscale Remote Access + Tablet Kiosk Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md) (1 connections)
+- [Tablet-Betrieb + Chore-Import Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 60]] (8 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\recipeVault.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts)
+- [docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md)
+- [docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 6 (75%)
+- INFERRED: 2 (25%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [loadPenalty mechanism](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts) (0 connections)
+- [PlanInput.dayLoad (capacity injection)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/engine/fairness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts)
+- [web/src/lib/engine/types.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts)
 
 ## Audit Trail
 

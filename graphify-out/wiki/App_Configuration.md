@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- [bring-list-uuids.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L1) (8 connections)
-- [Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L13) (1 connections)
-- [env](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L17) (1 connections)
-- [envPath](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L16) (1 connections)
-- [{ lists }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L37) (1 connections)
-- [m](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L19) (1 connections)
-- [mail](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L23) (1 connections)
-- [password](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L24) (1 connections)
-- [require](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L12) (1 connections)
+- [WeatherBabyTile.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L1) (8 connections)
+- [Chip()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L38) (1 connections)
+- [clothing](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L73) (1 connections)
+- [showUv](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L75) (1 connections)
+- [[situation, setSituation]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L71) (1 connections)
+- [SITUATIONS](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L12) (1 connections)
+- [uv](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L74) (1 connections)
+- [UV_TINT](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L30) (1 connections)
+- [WARMTH_TINT](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx#L21) (1 connections)
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\bring-list-uuids.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\WeatherBabyTile.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/WeatherBabyTile.tsx)
 
 ## Audit Trail
 

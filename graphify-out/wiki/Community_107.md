@@ -4,16 +4,17 @@
 
 ## Key Concepts
 
-- [Einkauf & Bring!-Sync (Push)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
-- [Essensplan stufenweise (Rezeptbuch → präferenz-lernend)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
+- [Design — Essensplan-Entwurf + Abnicken/Ändern (C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md) (1 connections)
+- [Design — Einkauf nach Haltbarkeit gestaffelt auf Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md) (1 connections)
 
 ## Relationships
 
-- [[unknown]] (2 shared connections)
+- [[Community 108]] (2 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md)
+- [docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md)
+- [docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md)
 
 ## Audit Trail
 

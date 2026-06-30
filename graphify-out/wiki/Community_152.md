@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [phone-to-/mobile redirect inline script](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L51-56) (0 connections)
+- [public/manifest.webmanifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/manifest.webmanifest) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx)
+- [web/public/manifest.webmanifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/manifest.webmanifest)
 
 ## Audit Trail
 

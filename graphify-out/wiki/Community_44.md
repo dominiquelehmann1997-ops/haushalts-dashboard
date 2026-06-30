@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- [layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L1) (4 connections)
-- [viewport](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx#L9) (2 connections)
-- [layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx#L1) (1 connections)
-- [body](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L13) (1 connections)
-- [display](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L6) (1 connections)
-- [metadata](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L20) (1 connections)
+- [clothing.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L1) (5 connections)
+- [advice](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L7) (1 connections)
+- [allgemein](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L55) (1 connections)
+- [older](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L62) (1 connections)
+- [trage](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L54) (1 connections)
+- [young](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L61) (1 connections)
 
 ## Relationships
 
@@ -17,8 +17,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\(mobile)\layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\clothing.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts)
 
 ## Audit Trail
 

@@ -1,19 +1,18 @@
 # Community 27
 
-> 10 nodes · cohesion 0.20
+> 9 nodes · cohesion 0.22
 
 ## Key Concepts
 
-- [choreImport.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L1) (9 connections)
-- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L65) (1 connections)
-- [after1](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L43) (1 connections)
-- [after2](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L46) (1 connections)
-- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L57) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L12) (1 connections)
-- [count](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L27) (1 connections)
-- [dome](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L78) (1 connections)
-- [rasen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L35) (1 connections)
-- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts#L9) (1 connections)
+- [bring-list-uuids.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L1) (8 connections)
+- [Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L13) (1 connections)
+- [env](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L17) (1 connections)
+- [envPath](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L16) (1 connections)
+- [{ lists }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L37) (1 connections)
+- [m](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L19) (1 connections)
+- [mail](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L23) (1 connections)
+- [password](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L24) (1 connections)
+- [require](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L12) (1 connections)
 
 ## Relationships
 
@@ -21,11 +20,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\choreImport.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\bring-list-uuids.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs)
 
 ## Audit Trail
 
-- EXTRACTED: 18 (100%)
+- EXTRACTED: 16 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,12 +1,12 @@
 # Community 74
 
-> 3 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [babyAge()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L23) (2 connections)
-- [completedMonths()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L7) (2 connections)
-- [age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L1) (2 connections)
+- [phase.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L1) (2 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L9) (1 connections)
+- [phase](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L21) (1 connections)
 
 ## Relationships
 
@@ -14,11 +14,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\phase.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

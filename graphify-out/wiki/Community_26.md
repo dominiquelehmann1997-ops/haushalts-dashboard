@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- [data.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L1) (9 connections)
-- [appointments](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L118) (1 connections)
-- [initialShopping](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L124) (1 connections)
-- [initialTasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L101) (1 connections)
-- [mealPlan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L135) (1 connections)
-- [notes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L143) (1 connections)
-- [PERSON](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L151) (1 connections)
-- [personFill()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L184) (1 connections)
-- [split](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L149) (1 connections)
-- [weather](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L89) (1 connections)
+- [chores.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L1) (9 connections)
+- [einkauf](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L26) (1 connections)
+- [futter](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L27) (1 connections)
+- [gassi](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L20) (1 connections)
+- [gross](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L54) (1 connections)
+- [klein](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L55) (1 connections)
+- [original](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L60) (1 connections)
+- [rasen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L13) (1 connections)
+- [tasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L45) (1 connections)
+- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L5) (1 connections)
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\data.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\chores.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts)
 
 ## Audit Trail
 
