@@ -1,5 +1,6 @@
 import { MealDraftPanel } from "@/components/MealDraftPanel";
 import { MealPlanControl } from "@/components/MealPlanControl";
+import { RecipeIdeasControl } from "@/components/RecipeIdeasControl";
 import { getDraftMealPlan, getWeekMealPlan, listRecipes } from "@/lib/repositories/meals";
 import { PageHeader } from "@/components/mobile/PageHeader";
 import { MealWeekList } from "@/components/mobile/MealWeekList";
@@ -26,6 +27,8 @@ export default async function MobileMealsPage() {
       )}
 
       {draft && draft.length > 0 && <MealDraftPanel draft={draft} recipes={recipes} />}
+
+      <RecipeIdeasControl />
     </div>
   );
 }
