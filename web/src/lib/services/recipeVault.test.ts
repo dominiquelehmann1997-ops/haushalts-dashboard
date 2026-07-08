@@ -24,8 +24,8 @@ reheatable: true
 tags: [curry, vegan]
 servings: 4
 ingredients:
-  - { name: rote Linsen, amount: 200, unit: g, freshness: haltbar }
-  - { name: Spinat, amount: 100, unit: g, freshness: frisch }
+  - { name: rote Linsen, amount: 200, unit: g }
+  - { name: Spinat, amount: 100, unit: g }
   - { name: Salz }
 ---
 
@@ -45,12 +45,12 @@ ingredients:
     expect(recipe!.tags).toBe('["curry","vegan"]');
   });
 
-  it("coerces numeric amounts to strings and maps freshness to category", () => {
+  it("coerces numeric amounts to strings", () => {
     const { recipe } = parseRecipeMarkdown(full);
     expect(recipe!.ingredients).toEqual([
-      { name: "rote Linsen", amount: "200", unit: "g", category: "haltbar" },
-      { name: "Spinat", amount: "100", unit: "g", category: "frisch" },
-      { name: "Salz", amount: null, unit: null, category: null },
+      { name: "rote Linsen", amount: "200", unit: "g" },
+      { name: "Spinat", amount: "100", unit: "g" },
+      { name: "Salz", amount: null, unit: null },
     ]);
   });
 
@@ -80,7 +80,7 @@ ingredients:
   it("skips ingredient entries without a name but keeps the rest", () => {
     const md = `---\nname: X\ningredients:\n  - { amount: 1 }\n  - { name: Reis }\n---\n`;
     const { recipe, errors } = parseRecipeMarkdown(md);
-    expect(recipe!.ingredients).toEqual([{ name: "Reis", amount: null, unit: null, category: null }]);
+    expect(recipe!.ingredients).toEqual([{ name: "Reis", amount: null, unit: null }]);
     expect(errors.some((e) => /ingredient/i.test(e))).toBe(true);
   });
 });

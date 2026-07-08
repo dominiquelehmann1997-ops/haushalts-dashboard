@@ -24,8 +24,8 @@ rating: favorit
 simple: false
 reheatable: true
 ingredients:
-  - { name: Kokosmilch, amount: 400, unit: ml, freshness: haltbar }
-  - { name: Spinat, freshness: frisch }
+  - { name: Kokosmilch, amount: 400, unit: ml }
+  - { name: Spinat }
 ---
 ## Zubereitung
 1. Kochen.
@@ -63,10 +63,7 @@ describe("ingestVault", () => {
       expect(curry?.rating).toBe("favorit");
       expect(curry?.reheatable).toBe(true);
       expect(curry?.archived).toBe(false);
-      expect(curry?.ingredients.map((i) => [i.name, i.category]).sort()).toEqual([
-        ["Kokosmilch", "haltbar"],
-        ["Spinat", "frisch"],
-      ]);
+      expect(curry?.ingredients.map((i) => i.name).sort()).toEqual(["Kokosmilch", "Spinat"]);
 
       // slug fallback from filename when frontmatter has no id
       const suppe = await client.recipe.findUnique({ where: { slug: "m-hrensuppe" } });

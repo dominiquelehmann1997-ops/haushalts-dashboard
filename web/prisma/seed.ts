@@ -67,7 +67,6 @@ export async function seedDatabase(prisma: PrismaClient) {
   await prisma.project.deleteMany();
   await prisma.calendarEvent.deleteMany();
   await prisma.shoppingItem.deleteMany();
-  await prisma.freshnessOverride.deleteMany();
   await prisma.recipe.deleteMany();
   await prisma.note.deleteMany();
   await prisma.phaseSetting.deleteMany();
@@ -309,9 +308,6 @@ export async function seedDatabase(prisma: PrismaClient) {
           name: ingredient.name,
           amount: ingredient.amount,
           unit: ingredient.unit,
-          // null = keine explizite Angabe → Haltbarkeit wird beim Lesen aus
-          // Override/Heuristik aufgelöst (Sanftes Lernen C1).
-          category: null,
         },
       });
     }

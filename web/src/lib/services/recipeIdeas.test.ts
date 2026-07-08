@@ -15,9 +15,9 @@ const sampleIdea: RecipeIdea = {
   reheatable: true,
   tags: ["vegetarisch", "herbst"],
   ingredients: [
-    { name: "Hokkaido-Kürbis", amount: "500", unit: "g", category: "frisch" },
-    { name: "rote Linsen", amount: "200", unit: "g", category: "haltbar" },
-    { name: "Kokosmilch", amount: "1", unit: "Dose", category: "haltbar" },
+    { name: "Hokkaido-Kürbis", amount: "500", unit: "g" },
+    { name: "rote Linsen", amount: "200", unit: "g" },
+    { name: "Kokosmilch", amount: "1", unit: "Dose" },
   ],
   steps: "Kürbis würfeln, alles 20 Min köcheln.",
 };
@@ -72,7 +72,6 @@ describe("recipeIdeaToVaultMarkdown", () => {
       name: "rote Linsen",
       amount: "200",
       unit: "g",
-      category: "haltbar",
     });
   });
 

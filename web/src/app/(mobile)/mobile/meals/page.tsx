@@ -19,7 +19,7 @@ export default async function MobileMealsPage() {
       <PageHeader eyebrow="Steuerung" title="Essensplan" right={<MealPlanControl />} />
 
       {meals.length > 0 ? (
-        <MealWeekList meals={meals} />
+        <MealWeekList meals={meals} recipes={recipes} />
       ) : (
         <p className="text-ink-soft dark:text-cream/60 text-[14px]">
           Für diese Woche ist noch kein Essensplan abgenickt.

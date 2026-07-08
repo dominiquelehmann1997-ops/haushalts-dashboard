@@ -20,7 +20,10 @@ function isToday(date: Date): boolean {
 }
 
 /**
- * MealPlanEntries of the current ISO week joined to their Recipe, ordered Mon→Sun.
+ * MealPlanEntries of the current ISO week joined to their Recipe (+ dessen
+ * Zutaten), ordered Mon→Sun. Trägt außerdem `id`/`recipeId`/`pushed` für die
+ * aktive Wochenübersicht (mobil): Gericht tauschen + Zutaten pro Gericht auf
+ * Bring pushen.
  *
  * NOTE: `light` is intentionally left `undefined` — there is no DB source for
  * it yet (purely a visual/UI detail); a follow-up phase can add a schema field
@@ -31,16 +34,25 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
 
   const rows = await client.mealPlanEntry.findMany({
     where: { date: { gte: start, lte: end }, status: "active" },
-    include: { recipe: true },
+    include: { recipe: { include: { ingredients: true } } },
     orderBy: { date: "asc" },
   });
 
   return rows.map((row) => ({
+    id: row.id,
+    dateISO: row.date.toISOString(),
     day: WEEKDAY_LABELS[row.date.getDay()],
     dish: row.recipe?.name ?? "frei", // recipeId null → Tag bewusst übersprungen
     today: isToday(row.date),
     reason: row.reason,
     extraPortion: row.extraPortion,
+    recipeId: row.recipeId,
+    ingredients: (row.recipe?.ingredients ?? []).map((i) => ({
+      name: i.name,
+      amount: i.amount,
+      unit: i.unit,
+    })),
+    pushed: row.ingredientsPushedAt != null,
   }));
 }
 

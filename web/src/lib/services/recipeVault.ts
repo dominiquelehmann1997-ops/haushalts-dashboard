@@ -4,8 +4,6 @@
 
 import matter from "gray-matter";
 
-import type { Freshness } from "@/lib/services/freshness";
-
 export type Rating = "favorit" | "ok" | "selten";
 const RATINGS: Rating[] = ["favorit", "ok", "selten"];
 
@@ -13,7 +11,6 @@ export interface ParsedIngredient {
   name: string;
   amount: string | null;
   unit: string | null;
-  category: Freshness | null; // aus Frontmatter `freshness`; null → später Heuristik
 }
 
 export interface ParsedRecipe {
@@ -55,14 +52,10 @@ function parseIngredients(raw: unknown, errors: string[]): ParsedIngredient[] {
       continue;
     }
     const e = entry as Record<string, unknown>;
-    const freshness = e.freshness;
-    const category: Freshness | null =
-      freshness === "frisch" || freshness === "haltbar" ? freshness : null;
     out.push({
       name: name.trim(),
       amount: toStringOrNull(e.amount),
       unit: toStringOrNull(e.unit),
-      category,
     });
   }
   return out;

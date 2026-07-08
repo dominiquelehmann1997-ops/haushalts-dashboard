@@ -16,7 +16,6 @@ export interface RecipeIdeaIngredient {
   name: string;
   amount: string | null;
   unit: string | null;
-  category: "frisch" | "haltbar" | null;
 }
 
 export interface RecipeIdea {
@@ -53,11 +52,10 @@ export function buildIdeasPrompt(existingNames: string[], opts: BuildIdeasOption
     "Antworte mit NICHTS außer einem JSON-Array. Jedes Element:",
     '{ "name": string, "rating": "favorit"|"ok"|"selten", "simple": boolean,',
     '  "reheatable": boolean, "tags": string[],',
-    '  "ingredients": [{ "name": string, "amount": string|null, "unit": string|null,',
-    '    "freshness": "frisch"|"haltbar" }],',
+    '  "ingredients": [{ "name": string, "amount": string|null, "unit": string|null }],',
     '  "steps": string }',
     "",
-    'Mengen für 4 Personen. "freshness" = haltbar (Vorrat) oder frisch (kühl/Obst/Gemüse).',
+    "Mengen für 4 Personen.",
   ].join("\n");
 }
 
@@ -66,12 +64,10 @@ function coerceIngredient(raw: unknown): RecipeIdeaIngredient | null {
   const e = raw as Record<string, unknown>;
   const name = typeof e.name === "string" ? e.name.trim() : "";
   if (!name) return null;
-  const fresh = e.freshness ?? e.category;
   return {
     name,
     amount: e.amount == null ? null : String(e.amount),
     unit: e.unit == null ? null : String(e.unit),
-    category: fresh === "frisch" || fresh === "haltbar" ? fresh : null,
   };
 }
 
@@ -128,7 +124,6 @@ export function recipeIdeaToVaultMarkdown(idea: RecipeIdea): string {
     lines.push(`  - name: ${JSON.stringify(ing.name)}`);
     if (ing.amount != null) lines.push(`    amount: ${JSON.stringify(ing.amount)}`);
     if (ing.unit != null) lines.push(`    unit: ${JSON.stringify(ing.unit)}`);
-    if (ing.category != null) lines.push(`    freshness: ${ing.category}`);
   }
   lines.push("---", "");
   if (idea.steps) lines.push(idea.steps, "");

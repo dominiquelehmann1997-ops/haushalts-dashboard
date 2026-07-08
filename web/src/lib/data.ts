@@ -27,17 +27,14 @@ export interface ShoppingItem {
   text: string;
   meal: boolean;
   done: boolean;
-  /** "frisch" | "haltbar" für Rezept-Items (Korrektur-Toggle sichtbar); null für manuelle. */
-  category?: "frisch" | "haltbar" | null;
   /** Zusammengefasste Mengenangabe (z.B. "500 g") für Rezept-Items; null für manuelle/ohne Menge. */
   spec?: string | null;
 }
 
-export interface FreshShoppingState {
-  /** Offene Frisch-Rezept-Items, die noch nicht auf Bring sind. */
-  pendingItems: string[];
-  /** Vorschlagstag (ISO) für den Frische-Einkauf, oder null. */
-  suggestedDayISO: string | null;
+export interface MealIngredient {
+  name: string;
+  amount: string | null;
+  unit: string | null;
 }
 
 export interface Meal {
@@ -49,6 +46,16 @@ export interface Meal {
   reason?: string | null;
   /** True when an extra portion is planned (Dome takes leftovers to work). */
   extraPortion?: boolean;
+  /** MealPlanEntry-Id — für Gericht-Tausch/Zutaten-Push (aktive Wochenübersicht, mobil). */
+  id?: string;
+  /** ISO-Datum des Tages — für den Server-Action-Aufruf beim Gericht-Tausch. */
+  dateISO?: string;
+  /** `null` → Tag bewusst übersprungen ("frei", kein Rezept). */
+  recipeId?: string | null;
+  /** Zutaten des Tages-Rezepts (leer bei übersprungenem Tag). */
+  ingredients?: MealIngredient[];
+  /** True, wenn die Zutaten dieses Gerichts schon auf Bring gepusht wurden. */
+  pushed?: boolean;
 }
 
 export interface DraftMeal {

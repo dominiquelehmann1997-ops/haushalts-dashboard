@@ -5,7 +5,13 @@ import { PrismaClient } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
 import { generateWeekPlan } from "./mealPlanner";
 
-import { approveDraft, discardDraft, rerollDraftDay, setDraftDayRecipe } from "./mealDraft";
+import {
+  approveDraft,
+  discardDraft,
+  rerollDraftDay,
+  setDraftDayRecipe,
+  setActiveDayRecipe,
+} from "./mealDraft";
 
 describe("mealDraft lifecycle", () => {
   let client: PrismaClient;
@@ -154,5 +160,64 @@ describe("mealDraft editing", () => {
     const { start } = currentWeekBounds();
     expect(await setDraftDayRecipe(new Date(start), "whatever", client)).toBeNull();
     expect(await rerollDraftDay(new Date(start), false, client, zeroRng)).toBeNull();
+  });
+});
+
+describe("setActiveDayRecipe", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  async function activeMondayEntry() {
+    const { start } = currentWeekBounds();
+    const monday = new Date(start);
+    const end = new Date(start);
+    end.setHours(23, 59, 59, 999);
+    return client.mealPlanEntry.findFirstOrThrow({
+      where: { date: { gte: monday, lte: end }, status: "active" },
+      orderBy: { date: "asc" },
+    });
+  }
+
+  it("swaps the recipe of an active day and keeps status active", async () => {
+    const before = await activeMondayEntry(); // seed: Pasta al Pomodoro
+    const pizza = await client.recipe.findFirstOrThrow({ where: { name: "Pizzaabend" } });
+
+    const updated = await setActiveDayRecipe(before.date, pizza.id, client);
+    expect(updated!.recipeId).toBe(pizza.id);
+    expect(updated!.status).toBe("active");
+  });
+
+  it("resets ingredientsPushedAt when the recipe changes", async () => {
+    const before = await activeMondayEntry();
+    await client.mealPlanEntry.update({
+      where: { id: before.id },
+      data: { ingredientsPushedAt: new Date() },
+    });
+    const pizza = await client.recipe.findFirstOrThrow({ where: { name: "Pizzaabend" } });
+
+    const updated = await setActiveDayRecipe(before.date, pizza.id, client);
+    expect(updated!.ingredientsPushedAt).toBeNull();
+  });
+
+  it("mit leerem Wert überspringt den Tag (recipeId null, kein Crash)", async () => {
+    const before = await activeMondayEntry();
+    const updated = await setActiveDayRecipe(before.date, "", client);
+    expect(updated!.recipeId).toBeNull();
+    expect(updated!.status).toBe("active");
+  });
+
+  it("returns null when there is no active entry for the day", async () => {
+    const { start } = currentWeekBounds();
+    const nextWeek = new Date(start);
+    nextWeek.setDate(nextWeek.getDate() + 14);
+    expect(await setActiveDayRecipe(nextWeek, "whatever", client)).toBeNull();
   });
 });

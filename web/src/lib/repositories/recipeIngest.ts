@@ -85,7 +85,6 @@ export async function ingestVault(
           name: ing.name,
           amount: ing.amount,
           unit: ing.unit,
-          category: ing.category,
         },
       });
     }

@@ -104,6 +104,35 @@ describe("meals repository", () => {
     expect(draft[0].day).toBe("Mo");
   });
 
+  it("getWeekMealPlan trägt id/recipeId/ingredients/pushed für die aktive Wochenübersicht", async () => {
+    const plan = await getWeekMealPlan(client);
+    const monday = plan.find((m) => m.day === "Mo")!;
+
+    expect(typeof monday.id).toBe("string");
+    expect(typeof monday.recipeId).toBe("string");
+    expect(monday.pushed).toBe(false); // seed: noch nicht gepusht
+    const names = monday.ingredients?.map((i) => i.name);
+    expect(names).toEqual(expect.arrayContaining(["Nudeln", "Tomaten", "Basilikum", "Parmesan"]));
+  });
+
+  it("getWeekMealPlan meldet pushed=true, wenn ingredientsPushedAt gesetzt ist", async () => {
+    const { start } = currentWeekBounds();
+    const monday = new Date(start);
+    const end = new Date(start);
+    end.setHours(23, 59, 59, 999);
+    const seeded = await client.mealPlanEntry.findFirstOrThrow({
+      where: { date: { gte: monday, lte: end }, status: "active" },
+      orderBy: { date: "asc" },
+    });
+    await client.mealPlanEntry.update({
+      where: { id: seeded.id },
+      data: { ingredientsPushedAt: new Date() },
+    });
+
+    const plan = await getWeekMealPlan(client);
+    expect(plan.find((m) => m.day === "Mo")?.pushed).toBe(true);
+  });
+
   it("getWeekMealPlan zeigt übersprungene aktive Tage als 'frei' (recipeId null)", async () => {
     const { start } = currentWeekBounds();
     const monday = new Date(start);

@@ -1,15 +1,9 @@
 "use client";
 
 import { useOptimistic, startTransition } from "react";
-import type { ShoppingItem, FreshShoppingState } from "@/lib/data";
-import {
-  toggleShoppingAction,
-  toggleFreshnessAction,
-  deleteShoppingAction,
-  clearShoppingAction,
-} from "@/app/actions/shopping";
+import type { ShoppingItem } from "@/lib/data";
+import { toggleShoppingAction, deleteShoppingAction, clearShoppingAction } from "@/app/actions/shopping";
 import { BringSyncControl } from "@/components/BringSyncControl";
-import { FreshShoppingControl } from "@/components/FreshShoppingControl";
 import { Card } from "@/components/ui";
 import { PageHeader } from "@/components/mobile/PageHeader";
 
@@ -29,16 +23,11 @@ function reduce(state: ShoppingItem[], action: Action): ShoppingItem[] {
   }
 }
 
-// Anzeige-Sortierung: offene vor erledigten, dann frisch → haltbar → manuell.
-// Array.sort ist stabil → gleiche Schlüssel behalten die Eingangsreihenfolge.
-const categoryRank = (c?: "frisch" | "haltbar" | null) =>
-  c === "frisch" ? 0 : c === "haltbar" ? 1 : 2;
-
-export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: FreshShoppingState }) {
+export function ShoppingView({ items }: { items: ShoppingItem[] }) {
   const [list, dispatch] = useOptimistic(items, reduce);
-  const sorted = [...list].sort(
-    (a, b) => Number(a.done) - Number(b.done) || categoryRank(a.category) - categoryRank(b.category),
-  );
+  // Anzeige-Sortierung: offene vor erledigten. Array.sort ist stabil → gleiche
+  // Schlüssel behalten die Eingangsreihenfolge.
+  const sorted = [...list].sort((a, b) => Number(a.done) - Number(b.done));
 
   const toggle = (id: string) =>
     startTransition(async () => {
@@ -60,16 +49,9 @@ export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: F
     });
   };
 
-  const flipFresh = (id: string) =>
-    startTransition(async () => {
-      await toggleFreshnessAction(id);
-    });
-
   return (
     <div className="space-y-4">
       <PageHeader eyebrow="Steuerung" title="Einkauf" right={<BringSyncControl items={list} />} />
-
-      <FreshShoppingControl fresh={fresh} />
 
       <Card>
         <ul className="-my-0.5">
@@ -93,15 +75,6 @@ export function ShoppingView({ items, fresh }: { items: ShoppingItem[]; fresh: F
                 {i.meal && <span className="mr-1.5">🍽️</span>}
                 {i.text}
               </span>
-              {i.category && (
-                <button
-                  type="button"
-                  onClick={() => flipFresh(i.id)}
-                  className="shrink-0 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-cream/70 dark:bg-white/[0.05] text-ink-soft"
-                >
-                  {i.category === "frisch" ? "frisch" : "haltbar"}
-                </button>
-              )}
               <button
                 type="button"
                 onClick={() => remove(i.id)}

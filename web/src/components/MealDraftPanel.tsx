@@ -2,8 +2,9 @@
 
 // Entwurfs-Ansicht des Wochenplans (Roadmap C1): zeigt den Pending-Entwurf
 // separat von der (aktiven) Essensplan-Kachel. Pro Tag: Gericht + dienstbewusstes
-// Badge, "neu würfeln" und "tauschen". Abnicken befördert den Entwurf zum
-// aktiven Plan und pusht die Zutaten auf Bring (mit manuellem Kopier-Fallback).
+// Badge, "neu würfeln" und "tauschen". Abnicken befördert den Entwurf nur zum
+// aktiven Plan — Bring wird bewusst NICHT berührt; das passiert erst später,
+// pro Gericht, aus der aktiven Wochenübersicht.
 
 import { useState, useTransition } from "react";
 
@@ -14,37 +15,24 @@ import {
   discardDraftAction,
   rerollDraftDayAction,
   setDraftDayRecipeAction,
-  type ApprovePlanResult,
 } from "@/app/actions/meals";
 
 const PILL = "inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full transition-colors";
 
 export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes: RecipeOption[] }) {
   const [pending, startTransition] = useTransition();
-  const [result, setResult] = useState<ApprovePlanResult | null>(null);
-  const [copied, setCopied] = useState(false);
+  const [approved, setApproved] = useState(false);
 
   const run = (fn: () => Promise<void>) => {
-    setResult(null);
-    setCopied(false);
     startTransition(fn);
   };
 
   const handleApprove = () => {
-    setResult(null);
-    setCopied(false);
     startTransition(async () => {
-      setResult(await approveDraftAction(new Date().toISOString()));
+      const result = await approveDraftAction(new Date().toISOString());
+      setApproved(result.approved);
     });
   };
-
-  const handleCopy = () => {
-    if (!result) return;
-    const text = result.ingredients.map((name) => `• ${name}`).join("\n");
-    navigator.clipboard.writeText(text).then(() => setCopied(true));
-  };
-
-  const bringFailed = result?.approved === true && !result.bring.ok;
 
   return (
     <div className="rounded-3xl bg-white/80 dark:bg-white/[0.04] ring-1 ring-amber-300/40 p-4 sm:p-5">
@@ -67,7 +55,7 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
             disabled={pending}
             className={`${PILL} text-emerald-700 bg-emerald-50 dark:bg-emerald-500/15 dark:text-emerald-300 hover:bg-emerald-100 disabled:cursor-wait`}
           >
-            {pending ? "…" : result?.approved ? `✓ Abgenickt · ${result.bring.ok ? result.bring.pushed : 0} haltbar an Bring` : "Abnicken"}
+            {pending ? "…" : approved ? "✓ Abgenickt" : "Abnicken"}
           </button>
         </div>
       </div>
@@ -107,16 +95,6 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
           </li>
         ))}
       </ul>
-
-      {bringFailed && (
-        <button
-          type="button"
-          onClick={handleCopy}
-          className="mt-2 text-[11px] font-semibold text-ink-faint hover:text-ink-soft underline decoration-dotted underline-offset-2"
-        >
-          {copied ? "Zutaten kopiert ✓" : "Bring fehlte — Zutaten zum Einfügen kopieren"}
-        </button>
-      )}
     </div>
   );
 }

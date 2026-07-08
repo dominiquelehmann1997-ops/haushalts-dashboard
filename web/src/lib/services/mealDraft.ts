@@ -49,11 +49,11 @@ export async function discardDraft(
   });
 }
 
-/** Findet den Entwurfs-Eintrag (`status:"draft"`) am lokalen Tag von `date`. */
-async function findDraftEntryForDay(date: Date, client: PrismaClient) {
+/** Findet den Eintrag mit `status` am lokalen Tag von `date`. */
+async function findEntryForDay(date: Date, status: "draft" | "active", client: PrismaClient) {
   const { start, end } = dayBounds(date);
   return client.mealPlanEntry.findFirst({
-    where: { date: { gte: start, lte: end }, status: "draft" },
+    where: { date: { gte: start, lte: end }, status },
   });
 }
 
@@ -70,7 +70,7 @@ export async function rerollDraftDay(
   client: PrismaClient = prisma,
   rng: () => number = Math.random,
 ): Promise<MealPlanEntry | null> {
-  const entry = await findDraftEntryForDay(date, client);
+  const entry = await findEntryForDay(date, "draft", client);
   if (!entry) return null;
 
   const recipes: Recipe[] = await client.recipe.findMany({
@@ -113,11 +113,32 @@ export async function setDraftDayRecipe(
   recipeId: string | null,
   client: PrismaClient = prisma,
 ): Promise<MealPlanEntry | null> {
-  const entry = await findDraftEntryForDay(date, client);
+  const entry = await findEntryForDay(date, "draft", client);
   if (!entry) return null;
   return client.mealPlanEntry.update({
     where: { id: entry.id },
     // Leerer Wert ("" aus dem Select) = Tag überspringen → recipeId null.
     data: { recipeId: recipeId ? recipeId : null },
+  });
+}
+
+/**
+ * Setzt manuell das Rezept eines Tages im AKTIVEN Plan (Tausch aus dem
+ * Rezeptbuch, z.B. wenn sich während der Woche noch etwas ändert). Setzt
+ * `ingredientsPushedAt` zurück, weil sich die Zutaten des Tages geändert
+ * haben — ein vorheriger Bring-Push gilt nicht mehr für das neue Gericht.
+ * Ein leerer/null `recipeId` überspringt den Tag bewusst ("frei").
+ * Gibt `null`, wenn es keinen aktiven Eintrag für den Tag gibt.
+ */
+export async function setActiveDayRecipe(
+  date: Date,
+  recipeId: string | null,
+  client: PrismaClient = prisma,
+): Promise<MealPlanEntry | null> {
+  const entry = await findEntryForDay(date, "active", client);
+  if (!entry) return null;
+  return client.mealPlanEntry.update({
+    where: { id: entry.id },
+    data: { recipeId: recipeId ? recipeId : null, ingredientsPushedAt: null },
   });
 }

@@ -13,7 +13,6 @@ import {
   deleteShoppingItem,
   clearShoppingItems,
 } from "@/lib/repositories/shopping";
-import { toggleItemFreshness } from "@/lib/repositories/freshnessOverride";
 import { pushShoppingList, toBringItems, type BringPushResult } from "@/integrations/bring/client";
 
 /** Toggles a shopping item's `done` flag. */
@@ -34,16 +33,6 @@ export async function deleteShoppingAction(id: string): Promise<void> {
 /** Leert die gesamte Einkaufsliste. */
 export async function clearShoppingAction(): Promise<void> {
   await clearShoppingItems();
-  revalidateDashboard();
-}
-
-/**
- * Korrigiert die Haltbarkeit eines Rezept-Einkaufs-Items (frisch ↔ haltbar).
- * Schreibt das Korrektur-Gedächtnis (`FreshnessOverride`), sodass die Zutat
- * künftig direkt richtig eingestuft wird (Sanftes Lernen C1).
- */
-export async function toggleFreshnessAction(id: string): Promise<void> {
-  await toggleItemFreshness(id);
   revalidateDashboard();
 }
 
