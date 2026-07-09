@@ -320,3 +320,117 @@ export async function deferTask(
     },
   });
 }
+
+// ─── Aufgaben-Vorlagen (Einstellungen) ──────────────────────────────────────
+//
+// Wiederkehrende Routinen bestehen aus einer Kette einzelner Task-Zeilen, die
+// über `recurringParentId ?? id` (die "chainId") verbunden sind. Für die
+// Einstellungen fassen wir jede Kette zu EINER bearbeitbaren Vorlage zusammen:
+// ändert man Dauer/Rhythmus/Zuständigkeit, schreiben wir den Wert auf alle
+// Zeilen der Kette. Neue Occurrences erben ihn von der zuletzt erledigten Zeile
+// (siehe `generateNextOccurrence`), sodass die Änderung dauerhaft greift.
+
+export type AllowedPersons = "both" | "dome" | "emely";
+
+/** Erlaubte Rhythmen mit deutschen Labels — deckt sich mit `recurrence.ts`. */
+export const RHYTHM_OPTIONS: { value: string; label: string }[] = [
+  { value: "daily", label: "Täglich" },
+  { value: "2x-week", label: "2× pro Woche" },
+  { value: "3-day", label: "Alle 3 Tage" },
+  { value: "5-day", label: "Alle 5 Tage" },
+  { value: "weekly", label: "Wöchentlich" },
+  { value: "biweekly", label: "Alle 2 Wochen" },
+  { value: "monthly", label: "Monatlich" },
+  { value: "halfyearly", label: "Halbjährlich" },
+];
+
+const RHYTHM_VALUES = new Set(RHYTHM_OPTIONS.map((r) => r.value));
+
+export interface RoutineTemplateDTO {
+  /** `recurringParentId ?? id` der Kette — Ziel für Updates. */
+  chainId: string;
+  title: string;
+  icon: string;
+  effort: number;
+  rhythm: string | null;
+  allowedPersons: AllowedPersons;
+}
+
+/**
+ * Eine Zeile pro wiederkehrender Routine (Kette zusammengefasst), alphabetisch.
+ * Repräsentant je Kette ist die zuletzt fällige Zeile — sie trägt die aktuell
+ * gültigen Werte.
+ */
+export async function listRoutineTemplates(
+  client: PrismaClient = prisma,
+): Promise<RoutineTemplateDTO[]> {
+  const rows = await client.task.findMany({
+    where: { type: "routine", projectId: null },
+    orderBy: { dueDate: "desc" },
+    select: {
+      id: true,
+      recurringParentId: true,
+      title: true,
+      icon: true,
+      effort: true,
+      rhythm: true,
+      allowedPersons: true,
+    },
+  });
+
+  const byChain = new Map<string, RoutineTemplateDTO>();
+  for (const r of rows) {
+    const chainId = r.recurringParentId ?? r.id;
+    // Erste Begegnung gewinnt = spätestes dueDate (Query ist desc sortiert).
+    if (byChain.has(chainId)) continue;
+    const allowed: AllowedPersons =
+      r.allowedPersons === "dome" || r.allowedPersons === "emely" ? r.allowedPersons : "both";
+    byChain.set(chainId, {
+      chainId,
+      title: r.title,
+      icon: r.icon ?? "",
+      effort: r.effort,
+      rhythm: r.rhythm ?? null,
+      allowedPersons: allowed,
+    });
+  }
+
+  return [...byChain.values()].sort((a, b) => a.title.localeCompare(b.title, "de"));
+}
+
+export interface UpdateRoutineTemplateInput {
+  effort: number;
+  rhythm: string | null;
+  allowedPersons: AllowedPersons;
+}
+
+/**
+ * Schreibt Dauer/Rhythmus/Zuständigkeit auf ALLE Zeilen der Kette `chainId`,
+ * sodass die Änderung auch für künftige Occurrences gilt. Validiert Eingaben;
+ * wirft bei ungültigem Rhythmus oder negativer Dauer.
+ */
+export async function updateRoutineTemplate(
+  chainId: string,
+  input: UpdateRoutineTemplateInput,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  const effort = Math.round(input.effort);
+  if (!Number.isFinite(effort) || effort < 0 || effort > 1440) {
+    throw new Error(`Ungültige Dauer: ${input.effort}`);
+  }
+  if (input.rhythm !== null && !RHYTHM_VALUES.has(input.rhythm)) {
+    throw new Error(`Unbekannter Rhythmus: ${input.rhythm}`);
+  }
+  if (!["both", "dome", "emely"].includes(input.allowedPersons)) {
+    throw new Error(`Ungültige Zuständigkeit: ${input.allowedPersons}`);
+  }
+
+  await client.task.updateMany({
+    where: { OR: [{ id: chainId }, { recurringParentId: chainId }] },
+    data: {
+      effort,
+      rhythm: input.rhythm,
+      allowedPersons: input.allowedPersons,
+    },
+  });
+}

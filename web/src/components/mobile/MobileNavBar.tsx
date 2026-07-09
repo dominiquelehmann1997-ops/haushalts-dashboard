@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Sun, CheckSquare, Utensils, ShoppingCart, Menu } from "lucide-react";
+import { Sun, CheckSquare, Utensils, StickyNote, Settings } from "lucide-react";
 
 const TABS = [
   { href: "/mobile", label: "Heute", Icon: Sun, exact: true },
   { href: "/mobile/tasks", label: "Aufgaben", Icon: CheckSquare, exact: false },
   { href: "/mobile/meals", label: "Essen", Icon: Utensils, exact: false },
-  { href: "/mobile/shopping", label: "Einkauf", Icon: ShoppingCart, exact: false },
-  { href: "/mobile/more", label: "Mehr", Icon: Menu, exact: false },
+  { href: "/mobile/notes", label: "Notizen", Icon: StickyNote, exact: false },
+  { href: "/mobile/settings", label: "Einstellungen", Icon: Settings, exact: false },
 ] as const;
 
 export function MobileNavBar() {

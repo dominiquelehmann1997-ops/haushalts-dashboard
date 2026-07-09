@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ServiceWorkerRegister } from "./sw-register";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -42,8 +43,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={`${display.variable} ${body.variable}`}>
+    <html lang="de" suppressHydrationWarning className={`${display.variable} ${body.variable}`}>
       <head>
+        {/* Vor dem ersten Paint: richtiges Design (hell/dunkel) direkt aus dem
+            gespeicherten Wert setzen — verhindert das kurze Aufblitzen im
+            Tag-Design beim Refresh im Nachtmodus. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <link rel="manifest" href="/manifest.webmanifest" crossOrigin="use-credentials" />
         {/* Phones land on the dedicated /mobile control UI even if the PWA was
             installed with start_url "/". Runs before paint; only on the root

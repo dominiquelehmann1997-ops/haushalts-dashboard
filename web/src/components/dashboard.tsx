@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useOptimistic, startTransition } from "react";
 import { useRouter } from "next/navigation";
 import { isDarkBySun } from "@/lib/sunTheme";
+import { THEME_KEY } from "@/lib/theme";
 import type { Task, Appointment, Meal, Note } from "@/lib/data";
 import type { CurrentWeather } from "@/integrations/weather/openMeteo";
 import type { ProjectProgress } from "@/lib/repositories/projects";
@@ -22,7 +23,13 @@ import { PushSetupControl } from "@/components/PushSetupControl";
  * nächsten Auf-/Untergang setzt sich der Automatik-Wert wieder durch.
  */
 function useSunTheme(sunrise: string, sunset: string) {
-  const [dark, setDark] = useState(false);
+  // Startwert aus der bereits vor dem Paint gesetzten `.dark`-Klasse übernehmen
+  // (Inline-Skript in `layout.tsx`), damit der erste Render dasselbe Design
+  // zeigt wie der gemalte Screen — sonst würde die Automatik kurz auf hell
+  // zurückschalten (das war das Flackern beim Refresh).
+  const [dark, setDark] = useState(
+    () => typeof document !== "undefined" && document.documentElement.classList.contains("dark"),
+  );
   const lastSun = useRef<boolean | null>(null);
   useEffect(() => {
     const apply = () => {
@@ -88,6 +95,14 @@ export default function Dashboard({
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    // Aufgelösten Wert cachen, damit das Inline-Skript beim nächsten Refresh
+    // sofort das richtige Design malt (kein Flackern).
+    try {
+      localStorage.setItem(THEME_KEY, dark ? "dark" : "light");
+    } catch {
+      /* localStorage kann im Kiosk-Modus blockiert sein — dann kein Cache. */
+    }
   }, [dark]);
 
   // Kiosk-Auto-Refresh: Das Tablet bleibt dauerhaft auf dieser Seite, ohne

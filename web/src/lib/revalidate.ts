@@ -6,8 +6,8 @@ const DASHBOARD_PATHS = [
   "/mobile",
   "/mobile/tasks",
   "/mobile/meals",
-  "/mobile/shopping",
-  "/mobile/more",
+  "/mobile/notes",
+  "/mobile/settings",
 ] as const;
 
 /**
