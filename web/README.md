@@ -49,6 +49,25 @@ RECIPE_VAULT_PATH="C:/Users/<user>/Obsidian/Haushalt/Rezepte"
 Vorlage: `docs/recipe-vault-template.md` als `_template.md` in den Ordner kopieren.
 Einlesen über den Button „Rezepte einlesen" im Dashboard.
 
+### Rezept-Links (Obsidian öffnen)
+
+Im Essensplan (Tablet-Widget & Handy-Übersicht) lässt sich jedes Gericht antippen,
+um das Rezept direkt in Obsidian zu öffnen (`obsidian://open?...`) — funktioniert
+auf Desktop, Tablet und Handy, sofern dort die Obsidian-App installiert ist und
+denselben Vault synchronisiert.
+
+Dafür zusätzlich `OBSIDIAN_VAULT_NAME` in `web/.env` auf den Anzeigenamen des
+Vaults setzen, z.B.:
+
+```
+OBSIDIAN_VAULT_NAME="Haushalt"
+```
+
+Voraussetzung: `RECIPE_VAULT_PATH` zeigt auf einen Ordner **direkt unter dem
+Vault-Root** (z.B. `.../Haushalt/Rezepte`, Vault-Name `Haushalt`) — der Link
+wird beim nächsten „Rezepte einlesen" aus dem Ordnernamen + Dateinamen gebaut.
+Ohne `OBSIDIAN_VAULT_NAME` bleiben Gerichte unverlinkt (reiner Text wie bisher).
+
 ### Gewichtete Essensplan-Auswahl
 
 Das Frontmatter-`rating` steuert, wie oft ein Rezept im Wochenplan landet:

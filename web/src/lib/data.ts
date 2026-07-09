@@ -56,6 +56,8 @@ export interface Meal {
   ingredients?: MealIngredient[];
   /** True, wenn die Zutaten dieses Gerichts schon auf Bring gepusht wurden. */
   pushed?: boolean;
+  /** Obsidian-Deeplink zum Rezept; `null` ohne Vault-Anker oder ohne `OBSIDIAN_VAULT_NAME`. */
+  obsidianUrl?: string | null;
 }
 
 export interface DraftMeal {

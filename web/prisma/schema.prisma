@@ -123,6 +123,7 @@ model Recipe {
   rating     String  @default("ok") // "favorit" | "ok" | "selten" (aus Vault-Frontmatter; Feature A)
   slug       String? @unique // stabiler Vault-Anker (Frontmatter `id`); null für Nicht-Vault-Rezepte
   archived   Boolean @default(false) // true, wenn das Rezept nicht mehr im Vault liegt
+  vaultFile  String? // Pfad relativ zum Obsidian-Vault-Root (ohne .md), z.B. "Rezepte/Kokos-Curry" — für Obsidian-Deeplinks
 
   ingredients     Ingredient[]
   mealPlanEntries MealPlanEntry[]

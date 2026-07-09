@@ -75,10 +75,17 @@ export function MealWeekList({ meals, recipes }: { meals: Meal[]; recipes: Recip
                 m.today ? "bg-emely-tint dark:bg-emely/12 ring-1 ring-emely/25" : "bg-cream/60 dark:bg-white/[0.03]"
               }`}
             >
-              <button
-                type="button"
+              <div
+                role="button"
+                tabIndex={0}
                 onClick={() => toggle(m.day)}
-                className="w-full flex items-center gap-3 px-3 py-2.5 text-left"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    toggle(m.day);
+                  }
+                }}
+                className="w-full flex items-center gap-3 px-3 py-2.5 text-left cursor-pointer"
                 aria-expanded={open}
               >
                 <span
@@ -88,13 +95,26 @@ export function MealWeekList({ meals, recipes }: { meals: Meal[]; recipes: Recip
                 >
                   {m.day}
                 </span>
-                <span
-                  className={`flex-1 min-w-0 text-[14.5px] ${
-                    m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
-                  } ${m.light ? "italic" : ""}`}
-                >
-                  {m.dish}
-                </span>
+                {m.obsidianUrl ? (
+                  <a
+                    href={m.obsidianUrl}
+                    onClick={(e) => e.stopPropagation()}
+                    className={`flex-1 min-w-0 text-[14.5px] underline decoration-dotted underline-offset-2 ${
+                      m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
+                    } ${m.light ? "italic" : ""}`}
+                    title="Rezept in Obsidian öffnen"
+                  >
+                    {m.dish}
+                  </a>
+                ) : (
+                  <span
+                    className={`flex-1 min-w-0 text-[14.5px] ${
+                      m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
+                    } ${m.light ? "italic" : ""}`}
+                  >
+                    {m.dish}
+                  </span>
+                )}
                 <MealReasonBadge reason={m.reason} extraPortion={m.extraPortion} />
                 {m.today && !open && (
                   <span className="text-[10.5px] font-bold tracking-wide uppercase text-emely-deep dark:text-emely">
@@ -102,7 +122,7 @@ export function MealWeekList({ meals, recipes }: { meals: Meal[]; recipes: Recip
                   </span>
                 )}
                 <span className="shrink-0 text-ink-faint text-[12px]">{open ? "▲" : "▼"}</span>
-              </button>
+              </div>
 
               {open && (
                 <div className="px-3 pb-3 space-y-3">

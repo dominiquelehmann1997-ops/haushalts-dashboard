@@ -39,6 +39,9 @@ export async function ingestVault(
 
   const seenSlugs: string[] = [];
   let imported = 0;
+  // Vault-Ordnername (letztes Pfadsegment), z.B. "Rezepte" — Annahme: dieser
+  // Ordner liegt direkt unter dem Obsidian-Vault-Root (siehe README).
+  const vaultFolder = path.basename(vaultPath);
 
   for (const file of files) {
     let content: string;
@@ -55,6 +58,10 @@ export async function ingestVault(
 
     const slug = recipe.id ?? slugFromFilename(file);
     seenSlugs.push(slug);
+    // Vault-relativer Pfad zur Original-Datei (ohne .md) — für Obsidian-Deeplinks.
+    // Bewusst der echte Dateiname, nicht der Slug: Obsidian öffnet Notizen über
+    // ihren Dateinamen, der vom Frontmatter-`id` abweichen kann.
+    const vaultFile = `${vaultFolder}/${file.replace(/\.md$/i, "")}`;
 
     const saved = await client.recipe.upsert({
       where: { slug },
@@ -66,6 +73,7 @@ export async function ingestVault(
         reheatable: recipe.reheatable,
         tags: recipe.tags,
         archived: false,
+        vaultFile,
       },
       update: {
         name: recipe.name,
@@ -74,6 +82,7 @@ export async function ingestVault(
         reheatable: recipe.reheatable,
         tags: recipe.tags,
         archived: false,
+        vaultFile,
       },
     });
 
