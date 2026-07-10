@@ -24,7 +24,7 @@ describe("rollOverdueRoutines", () => {
     dueDate: Date;
     rhythm?: string | null;
     recurringParentId?: string | null;
-    status?: "open" | "done";
+    status?: "open" | "done" | "moved";
   }) {
     return client.task.create({
       data: {
@@ -87,6 +87,54 @@ describe("rollOverdueRoutines", () => {
     expect(s.dueDate.getTime()).toBe(addDays(today, -4).getTime()); // unberührt
     expect(fu.dueDate.getTime()).toBe(addDays(today, 5).getTime()); // unberührt
     await client.task.findUniqueOrThrow({ where: { id: todayTask.id } }); // existiert noch
+  });
+
+  it("öffnet verschobene Aufgaben wieder, sobald ihr Zieltag erreicht ist", async () => {
+    const routine = await makeRoutine({ title: "Monty bürsten", dueDate: today, status: "moved" });
+    const todo = await client.task.create({
+      data: {
+        title: "Pfand wegbringen",
+        type: "todo",
+        effort: 5,
+        status: "moved",
+        allowedPersons: "both",
+        outdoor: false,
+        dueDate: today,
+      },
+    });
+    const future = await makeRoutine({
+      title: "Fenster putzen",
+      dueDate: addDays(today, 3),
+      status: "moved",
+    });
+
+    const result = await rollOverdueRoutines(today, client);
+
+    expect((await client.task.findUniqueOrThrow({ where: { id: routine.id } })).status).toBe("open");
+    expect((await client.task.findUniqueOrThrow({ where: { id: todo.id } })).status).toBe("open");
+    expect((await client.task.findUniqueOrThrow({ where: { id: future.id } })).status).toBe("moved");
+    // Seed enthält selbst eine verschobene Aufgabe → mindestens unsere zwei.
+    expect(result.reopened).toBeGreaterThanOrEqual(2);
+  });
+
+  it("bereinigt Duplikate aus verschobener + offener Occurrence derselben Kette", async () => {
+    const movedParent = await makeRoutine({
+      title: "Monty bürsten",
+      dueDate: addDays(today, -1),
+      status: "moved",
+    });
+    const openChild = await makeRoutine({
+      title: "Monty bürsten",
+      dueDate: today,
+      recurringParentId: movedParent.id,
+    });
+
+    await rollOverdueRoutines(today, client);
+
+    const rows = await client.task.findMany({ where: { title: "Monty bürsten" } });
+    expect(rows).toHaveLength(1);
+    expect(rows[0]!.id).toBe(openChild.id);
+    expect(rows[0]!.status).toBe("open");
   });
 
   it("ist idempotent: zweiter Lauf am selben Tag ändert nichts mehr", async () => {

@@ -42,7 +42,8 @@ async function main() {
 
     const caught = await rollOverdueRoutines(day);
     console.log(
-      `Catch-up: ${caught.rolled} überfällige Routinen auf heute gezogen, ` +
+      `Catch-up: ${caught.reopened} verschobene Aufgaben wieder geöffnet, ` +
+        `${caught.rolled} überfällige Routinen auf heute gezogen, ` +
         `${caught.deletedDuplicates} Duplikate entfernt.`,
     );
     const decisions = await planDueTasks(day, { busy, forecast });

@@ -10,8 +10,16 @@ import { dayBounds } from "@/lib/dates";
 export async function rollOverdueRoutines(
   day: Date,
   client: PrismaClient = prisma,
-): Promise<{ deletedDuplicates: number; rolled: number }> {
-  const { start } = dayBounds(day);
+): Promise<{ deletedDuplicates: number; rolled: number; reopened: number }> {
+  const { start, end } = dayBounds(day);
+
+  // Verschobene Aufgaben, deren Zieltag erreicht ist, wieder öffnen — sonst
+  // bleiben sie dauerhaft "moved" (nicht abhakbar) und unsichtbar für die
+  // Ketten-Deduplizierung unten.
+  const { count: reopened } = await client.task.updateMany({
+    where: { projectId: null, status: "moved", dueDate: { lte: end } },
+    data: { status: "open" },
+  });
 
   const open = await client.task.findMany({
     where: {
@@ -56,5 +64,5 @@ export async function rollOverdueRoutines(
     }
   }
 
-  return { deletedDuplicates, rolled };
+  return { deletedDuplicates, rolled, reopened };
 }
