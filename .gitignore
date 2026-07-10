@@ -27,7 +27,8 @@ Thumbs.db
 .firecrawl/
 .playwright-cli/
 web/Kalender_IDs.txt
-graphify-out/cache/
+**/graphify-out/cache/
+**/graphify-out/.graphify_*
 
 # isolierte Feature-Worktrees
 .worktrees/
