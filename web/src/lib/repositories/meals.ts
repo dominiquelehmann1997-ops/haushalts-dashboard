@@ -5,6 +5,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 import type { Meal, DraftMeal, RecipeOption } from "@/lib/domain";
 import { addDays, currentWeekBounds, localDateKey, mondayOf } from "@/lib/dates";
 import { classifyShift, type ShiftClass } from "@/lib/calendar/shifts";
+import { obsidianUrl } from "@/lib/services/obsidian";
 
 // German short weekday labels, indexed by `Date#getDay()` (0 = Sunday).
 const WEEKDAY_LABELS = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"] as const;
@@ -23,7 +24,8 @@ function isToday(date: Date): boolean {
  * MealPlanEntries of the current ISO week joined to their Recipe (+ dessen
  * Zutaten), ordered Mon→Sun. Trägt außerdem `id`/`recipeId`/`pushed` für die
  * aktive Wochenübersicht (mobil): Gericht tauschen + Zutaten pro Gericht auf
- * Bring pushen.
+ * Bring pushen. `obsidianUrl` verlinkt direkt ins Rezept im Obsidian-Vault
+ * (null ohne Vault-Anker oder ohne `OBSIDIAN_VAULT_NAME`).
  *
  * NOTE: `light` is intentionally left `undefined` — there is no DB source for
  * it yet (purely a visual/UI detail); a follow-up phase can add a schema field
@@ -53,6 +55,7 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
       unit: i.unit,
     })),
     pushed: row.ingredientsPushedAt != null,
+    obsidianUrl: obsidianUrl(row.recipe?.vaultFile),
   }));
 }
 

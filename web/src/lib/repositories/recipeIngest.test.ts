@@ -64,10 +64,13 @@ describe("ingestVault", () => {
       expect(curry?.reheatable).toBe(true);
       expect(curry?.archived).toBe(false);
       expect(curry?.ingredients.map((i) => i.name).sort()).toEqual(["Kokosmilch", "Spinat"]);
+      // vaultFile folgt dem echten Dateinamen (nicht dem Slug) — Obsidian öffnet nach Dateiname.
+      expect(curry?.vaultFile).toBe(`${path.basename(dir)}/kokos-curry`);
 
       // slug fallback from filename when frontmatter has no id
       const suppe = await client.recipe.findUnique({ where: { slug: "m-hrensuppe" } });
       expect(suppe?.name).toBe("Möhrensuppe");
+      expect(suppe?.vaultFile).toBe(`${path.basename(dir)}/Möhrensuppe`);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
