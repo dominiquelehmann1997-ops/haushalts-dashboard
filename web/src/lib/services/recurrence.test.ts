@@ -133,6 +133,25 @@ describe("generateNextOccurrence", () => {
     expect(successors).toHaveLength(1);
   });
 
+  it("does not create a successor when a moved successor already exists", async () => {
+    const task = await makeRoutineTask();
+    await client.task.create({
+      data: {
+        title: task.title,
+        type: "routine",
+        effort: task.effort,
+        rhythm: task.rhythm,
+        allowedPersons: "both",
+        status: "moved",
+        recurringParentId: task.id,
+        dueDate: new Date(task.dueDate.getTime() + 2 * 24 * 60 * 60 * 1000),
+      },
+    });
+
+    const created = await generateNextOccurrence(task.id, client);
+    expect(created).toBeNull();
+  });
+
   it("returns null for a non-routine task", async () => {
     const dome = await client.person.findFirstOrThrow({ where: { key: "dome" } });
     const dueDate = new Date();

@@ -97,7 +97,9 @@ export async function generateNextOccurrence(
   const existingSuccessor = await client.task.findFirst({
     where: {
       recurringParentId: chainId,
-      status: "open",
+      // "moved" zählt mit — eine verschobene Occurrence ist derselbe Auftrag,
+      // sonst entstehen Duplikate in der Kette.
+      status: { in: ["open", "moved"] },
       dueDate: { gt: task.dueDate },
     },
   });
