@@ -41,13 +41,25 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
             >
               {m.day}
             </span>
-            <span
-              className={`flex-1 min-w-0 text-[14.5px] ${
-                m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
-              } ${m.light ? "italic" : ""}`}
-            >
-              {m.dish}
-            </span>
+            {m.obsidianUrl ? (
+              <a
+                href={m.obsidianUrl}
+                className={`flex-1 min-w-0 text-[14.5px] underline decoration-dotted underline-offset-2 ${
+                  m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
+                } ${m.light ? "italic" : ""}`}
+                title="Rezept in Obsidian öffnen"
+              >
+                {m.dish}
+              </a>
+            ) : (
+              <span
+                className={`flex-1 min-w-0 text-[14.5px] ${
+                  m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
+                } ${m.light ? "italic" : ""}`}
+              >
+                {m.dish}
+              </span>
+            )}
             <MealReasonBadge reason={m.reason} extraPortion={m.extraPortion} />
             {m.today && (
               <span className="ml-auto text-[10.5px] font-bold tracking-wide uppercase text-emely-deep dark:text-emely">
