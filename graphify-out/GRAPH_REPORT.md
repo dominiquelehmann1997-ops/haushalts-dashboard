@@ -1,237 +1,494 @@
-# Graph Report - .  (2026-07-10)
+# Graph Report - haushalts-dashboard  (2026-07-24)
 
 ## Corpus Check
-- 252 files · ~371,702 words
+- 243 files · ~140,828 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1443 nodes · 1954 edges · 190 communities detected
-- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 285 edges (avg confidence: 0.8)
-- Token cost: 921,689 input · 0 output
+- 2043 nodes · 2778 edges · 519 communities (183 shown, 336 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.67)
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `8429bd9f`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Core Date & Task-Rollover Utilities|Core Date & Task-Rollover Utilities]]
-- [[_COMMUNITY_Handy-Steuerung & Push Roadmap Docs|Handy-Steuerung & Push Roadmap Docs]]
-- [[_COMMUNITY_Mobile Pages & Server Actions|Mobile Pages & Server Actions]]
-- [[_COMMUNITY_Recipe Vault & Bring Sync Controls|Recipe Vault & Bring Sync Controls]]
-- [[_COMMUNITY_Calendar Sync & Account Balances|Calendar Sync & Account Balances]]
-- [[_COMMUNITY_Google Calendar Sync Pipeline|Google Calendar Sync Pipeline]]
-- [[_COMMUNITY_Meal Planner Test Fixtures|Meal Planner Test Fixtures]]
-- [[_COMMUNITY_Meal Plan & Recipe Server Actions|Meal Plan & Recipe Server Actions]]
-- [[_COMMUNITY_Generated Prisma Enums (internal)|Generated Prisma Enums (internal)]]
-- [[_COMMUNITY_Meal Repository Test Fixtures|Meal Repository Test Fixtures]]
-- [[_COMMUNITY_Recurrence Test + Prisma WASM Internals|Recurrence Test + Prisma WASM Internals]]
-- [[_COMMUNITY_Task Planning Test Fixtures|Task Planning Test Fixtures]]
-- [[_COMMUNITY_Sanftes Lernen & Recipe Vault Docs|Sanftes Lernen & Recipe Vault Docs]]
-- [[_COMMUNITY_Task Distribution Engine (FairnessWeather)|Task Distribution Engine (Fairness/Weather)]]
-- [[_COMMUNITY_Generated Prisma Enums (browser)|Generated Prisma Enums (browser)]]
-- [[_COMMUNITY_Fairness Accounts & Capacity Planning|Fairness Accounts & Capacity Planning]]
-- [[_COMMUNITY_Web Push Subscription Pipeline|Web Push Subscription Pipeline]]
-- [[_COMMUNITY_Dashboard Foundations & Ops Docs|Dashboard Foundations & Ops Docs]]
-- [[_COMMUNITY_Calendar Repository Test Fixtures|Calendar Repository Test Fixtures]]
-- [[_COMMUNITY_Overdue Catchup Test Fixtures|Overdue Catchup Test Fixtures]]
-- [[_COMMUNITY_Adaptive Recurrence & Task Defer|Adaptive Recurrence & Task Defer]]
-- [[_COMMUNITY_Task Write Repository Tests|Task Write Repository Tests]]
-- [[_COMMUNITY_Bring Shopping Sync|Bring Shopping Sync]]
-- [[_COMMUNITY_Task Repository Test Fixtures|Task Repository Test Fixtures]]
-- [[_COMMUNITY_Chore Import Pipeline|Chore Import Pipeline]]
-- [[_COMMUNITY_Weather & Theme Data Types|Weather & Theme Data Types]]
-- [[_COMMUNITY_Test DB Seeding Helpers|Test DB Seeding Helpers]]
-- [[_COMMUNITY_Tablet Dashboard & Theme Components|Tablet Dashboard & Theme Components]]
-- [[_COMMUNITY_Weather Fetch Test Fixtures|Weather Fetch Test Fixtures]]
-- [[_COMMUNITY_Chore Import Test Fixtures|Chore Import Test Fixtures]]
-- [[_COMMUNITY_Chore Definitions Test Fixtures|Chore Definitions Test Fixtures]]
-- [[_COMMUNITY_Bring List UUID Script|Bring List UUID Script]]
-- [[_COMMUNITY_Recipe Ideas UI Control|Recipe Ideas UI Control]]
-- [[_COMMUNITY_Task Action Menu UI|Task Action Menu UI]]
-- [[_COMMUNITY_Baby Weather Tile UI|Baby Weather Tile UI]]
-- [[_COMMUNITY_Distribution Engine Integration Tests|Distribution Engine Integration Tests]]
-- [[_COMMUNITY_Meal Constraints Test Fixtures|Meal Constraints Test Fixtures]]
-- [[_COMMUNITY_Meal Plan Generation Core|Meal Plan Generation Core]]
-- [[_COMMUNITY_Bring Read-List Script|Bring Read-List Script]]
-- [[_COMMUNITY_Shopping Repository Test Fixtures|Shopping Repository Test Fixtures]]
-- [[_COMMUNITY_PWA Service Worker|PWA Service Worker]]
-- [[_COMMUNITY_Google Calendar Test Fixtures|Google Calendar Test Fixtures]]
-- [[_COMMUNITY_Icon Generation Script|Icon Generation Script]]
-- [[_COMMUNITY_App Layout Shells|App Layout Shells]]
-- [[_COMMUNITY_PWA Manifest Test|PWA Manifest Test]]
-- [[_COMMUNITY_Mobile Tasks View UI|Mobile Tasks View UI]]
-- [[_COMMUNITY_Baby Clothing Test Fixtures|Baby Clothing Test Fixtures]]
-- [[_COMMUNITY_Capacity Engine Test Fixtures|Capacity Engine Test Fixtures]]
-- [[_COMMUNITY_Weather Check Test Fixtures|Weather Check Test Fixtures]]
-- [[_COMMUNITY_Routine Templates Test (naming mismatch)|Routine Templates Test (naming mismatch)]]
-- [[_COMMUNITY_Recipe Ideas Test Fixtures|Recipe Ideas Test Fixtures]]
-- [[_COMMUNITY_Add Done Entry UI|Add Done Entry UI]]
-- [[_COMMUNITY_Meal Draft Panel UI|Meal Draft Panel UI]]
-- [[_COMMUNITY_Push Setup UI Control|Push Setup UI Control]]
-- [[_COMMUNITY_Baby Clothing Recommendation Logic|Baby Clothing Recommendation Logic]]
-- [[_COMMUNITY_Availability Engine Test Fixtures|Availability Engine Test Fixtures]]
-- [[_COMMUNITY_Notes Repository Test Fixtures|Notes Repository Test Fixtures]]
-- [[_COMMUNITY_Meal Weighting Test Fixtures|Meal Weighting Test Fixtures]]
-- [[_COMMUNITY_Task Defer Test Fixtures|Task Defer Test Fixtures]]
-- [[_COMMUNITY_Test Global Setup|Test Global Setup]]
-- [[_COMMUNITY_Recipe Vault Ingest Pipeline|Recipe Vault Ingest Pipeline]]
-- [[_COMMUNITY_Phase Switch UI|Phase Switch UI]]
-- [[_COMMUNITY_Dashboard Tiles UI|Dashboard Tiles UI]]
-- [[_COMMUNITY_Prisma Client Singleton|Prisma Client Singleton]]
-- [[_COMMUNITY_Push Subscriptions Test Fixtures|Push Subscriptions Test Fixtures]]
-- [[_COMMUNITY_Recipe Vault Test Fixtures|Recipe Vault Test Fixtures]]
-- [[_COMMUNITY_Community 66|Community 66]]
-- [[_COMMUNITY_Community 67|Community 67]]
-- [[_COMMUNITY_Community 68|Community 68]]
-- [[_COMMUNITY_Community 69|Community 69]]
-- [[_COMMUNITY_Community 70|Community 70]]
-- [[_COMMUNITY_Community 71|Community 71]]
-- [[_COMMUNITY_Community 72|Community 72]]
-- [[_COMMUNITY_Community 73|Community 73]]
-- [[_COMMUNITY_Community 74|Community 74]]
-- [[_COMMUNITY_Community 75|Community 75]]
-- [[_COMMUNITY_Community 76|Community 76]]
-- [[_COMMUNITY_Community 77|Community 77]]
-- [[_COMMUNITY_Community 78|Community 78]]
-- [[_COMMUNITY_Community 79|Community 79]]
-- [[_COMMUNITY_Community 80|Community 80]]
-- [[_COMMUNITY_Community 81|Community 81]]
-- [[_COMMUNITY_Community 82|Community 82]]
-- [[_COMMUNITY_Community 83|Community 83]]
-- [[_COMMUNITY_Community 84|Community 84]]
-- [[_COMMUNITY_Community 85|Community 85]]
-- [[_COMMUNITY_Community 86|Community 86]]
-- [[_COMMUNITY_Community 87|Community 87]]
-- [[_COMMUNITY_Community 88|Community 88]]
-- [[_COMMUNITY_Community 89|Community 89]]
-- [[_COMMUNITY_Community 90|Community 90]]
-- [[_COMMUNITY_Community 91|Community 91]]
-- [[_COMMUNITY_Community 92|Community 92]]
-- [[_COMMUNITY_Community 93|Community 93]]
-- [[_COMMUNITY_Community 94|Community 94]]
-- [[_COMMUNITY_Community 95|Community 95]]
-- [[_COMMUNITY_Community 96|Community 96]]
-- [[_COMMUNITY_Community 97|Community 97]]
-- [[_COMMUNITY_Community 98|Community 98]]
-- [[_COMMUNITY_Community 99|Community 99]]
-- [[_COMMUNITY_Community 100|Community 100]]
-- [[_COMMUNITY_Community 101|Community 101]]
-- [[_COMMUNITY_Community 102|Community 102]]
-- [[_COMMUNITY_Community 103|Community 103]]
-- [[_COMMUNITY_Community 104|Community 104]]
-- [[_COMMUNITY_Community 105|Community 105]]
-- [[_COMMUNITY_Community 106|Community 106]]
-- [[_COMMUNITY_Community 107|Community 107]]
-- [[_COMMUNITY_Community 108|Community 108]]
-- [[_COMMUNITY_Community 109|Community 109]]
-- [[_COMMUNITY_Community 110|Community 110]]
-- [[_COMMUNITY_Community 111|Community 111]]
-- [[_COMMUNITY_Community 112|Community 112]]
-- [[_COMMUNITY_Community 113|Community 113]]
-- [[_COMMUNITY_Community 114|Community 114]]
-- [[_COMMUNITY_Community 115|Community 115]]
-- [[_COMMUNITY_Community 116|Community 116]]
-- [[_COMMUNITY_Community 117|Community 117]]
-- [[_COMMUNITY_Community 118|Community 118]]
-- [[_COMMUNITY_Community 119|Community 119]]
-- [[_COMMUNITY_Community 120|Community 120]]
-- [[_COMMUNITY_Community 121|Community 121]]
-- [[_COMMUNITY_Community 122|Community 122]]
-- [[_COMMUNITY_Community 123|Community 123]]
-- [[_COMMUNITY_Community 124|Community 124]]
-- [[_COMMUNITY_Community 125|Community 125]]
-- [[_COMMUNITY_Community 126|Community 126]]
-- [[_COMMUNITY_Community 127|Community 127]]
-- [[_COMMUNITY_Community 128|Community 128]]
-- [[_COMMUNITY_Community 129|Community 129]]
-- [[_COMMUNITY_Community 130|Community 130]]
-- [[_COMMUNITY_Community 131|Community 131]]
-- [[_COMMUNITY_Community 132|Community 132]]
-- [[_COMMUNITY_Community 133|Community 133]]
-- [[_COMMUNITY_Community 134|Community 134]]
-- [[_COMMUNITY_Community 135|Community 135]]
-- [[_COMMUNITY_Community 136|Community 136]]
-- [[_COMMUNITY_Community 137|Community 137]]
-- [[_COMMUNITY_Community 138|Community 138]]
-- [[_COMMUNITY_Community 139|Community 139]]
-- [[_COMMUNITY_Community 140|Community 140]]
-- [[_COMMUNITY_Community 141|Community 141]]
-- [[_COMMUNITY_Community 142|Community 142]]
-- [[_COMMUNITY_Community 143|Community 143]]
-- [[_COMMUNITY_Community 144|Community 144]]
-- [[_COMMUNITY_Community 145|Community 145]]
-- [[_COMMUNITY_Community 146|Community 146]]
-- [[_COMMUNITY_Community 147|Community 147]]
-- [[_COMMUNITY_Community 148|Community 148]]
-- [[_COMMUNITY_Community 149|Community 149]]
-- [[_COMMUNITY_Community 150|Community 150]]
-- [[_COMMUNITY_Community 151|Community 151]]
-- [[_COMMUNITY_Community 152|Community 152]]
-- [[_COMMUNITY_Community 153|Community 153]]
-- [[_COMMUNITY_Community 154|Community 154]]
-- [[_COMMUNITY_Community 155|Community 155]]
-- [[_COMMUNITY_Community 156|Community 156]]
-- [[_COMMUNITY_Community 157|Community 157]]
-- [[_COMMUNITY_Community 158|Community 158]]
-- [[_COMMUNITY_Community 159|Community 159]]
-- [[_COMMUNITY_Community 160|Community 160]]
-- [[_COMMUNITY_Community 161|Community 161]]
-- [[_COMMUNITY_Community 162|Community 162]]
-- [[_COMMUNITY_Community 163|Community 163]]
-- [[_COMMUNITY_Community 164|Community 164]]
-- [[_COMMUNITY_Community 165|Community 165]]
-- [[_COMMUNITY_Community 166|Community 166]]
-- [[_COMMUNITY_Community 167|Community 167]]
-- [[_COMMUNITY_Community 168|Community 168]]
-- [[_COMMUNITY_Community 169|Community 169]]
-- [[_COMMUNITY_Community 170|Community 170]]
-- [[_COMMUNITY_Community 171|Community 171]]
-- [[_COMMUNITY_Community 172|Community 172]]
-- [[_COMMUNITY_Community 173|Community 173]]
-- [[_COMMUNITY_Community 174|Community 174]]
-- [[_COMMUNITY_Community 175|Community 175]]
-- [[_COMMUNITY_Community 176|Community 176]]
-- [[_COMMUNITY_Community 177|Community 177]]
-- [[_COMMUNITY_Community 178|Community 178]]
-- [[_COMMUNITY_Community 179|Community 179]]
-- [[_COMMUNITY_Community 180|Community 180]]
-- [[_COMMUNITY_Community 181|Community 181]]
-- [[_COMMUNITY_Community 182|Community 182]]
-- [[_COMMUNITY_Community 183|Community 183]]
-- [[_COMMUNITY_Community 184|Community 184]]
-- [[_COMMUNITY_Community 185|Community 185]]
-- [[_COMMUNITY_Community 186|Community 186]]
-- [[_COMMUNITY_Community 187|Community 187]]
-- [[_COMMUNITY_Community 188|Community 188]]
-- [[_COMMUNITY_Community 189|Community 189]]
+- meals.ts
+- Kalender_IDs.txt — Google Calendar IDs
+- notes.ts
+- recipeIdeas.ts
+- calendarSync.test.ts
+- db.ts
+- client
+- TaskDurationsControl.tsx
+- Haushalts-Dashboard — Design-Spezifikation
+- after
+- recurrence.test.ts
+- planning.test.ts
+- Einkaufs-Rutschen / Batch-Push an Bring (D-Naht)
+- weatherCheck.ts
+- compilerOptions
+- capacity.ts
+- pushNotify.test.ts
+- Baby-Wetter / Kleidungsempfehlung Plan
+- calendar.test.ts
+- overdueCatchup.test.ts
+- C2 · Benachrichtigung aufs Handy — Web-Push für den Essensplan-Entwurf
+- tasks.write.test.ts
+- shopping.ts
+- tasks.test.ts
+- chores.test.ts
+- data.ts
+- db.ts
+- icons.tsx
+- clearFixture
+- choreImport.test.ts
+- dependencies
+- bring-list-uuids.mjs
+- TaskActionMenu.tsx
+- WeatherBabyTile.tsx
+- index.test.ts
+- Design: Tablet-Betrieb + Chore-Import
+- devDependencies
+- bring-read-list.mjs
+- after
+- sw.js
+- google.test.ts
+- gen-icons.mjs
+- layout.tsx
+- manifest.test.ts
+- TasksView.tsx
+- clothing.test.ts
+- Haushalts-Dashboard: PWA + Tailscale-Fernzugriff + Tablet-Kiosk-Autostart
+- Haushalts-Dashboard — Umsetzungsplan
+- child
+- ideas
+- addManualEntryAction
+- [approved, setApproved]
+- PWA + Tailscale Remote Access + Tablet Kiosk Autostart — Implementation Plan
+- Handy-Vollsteuerung Implementation Plan
+- BusyWindow
+- notes.test.ts
+- noRecent
+- Design — Essensplan-Entwurf + Abnicken/Ändern (Roadmap-Schritt C1)
+- globalSetup.ts
+- Tablet Remote Access via Cloudflare Tunnel
+- TodayView.tsx
+- doneCount
+- pushSubscriptions.test.ts
+- full
+- MealWeekList.tsx
+- active
+- dashboard.tsx
+- Design — Dienstplan-bewusster Essensplan (Roadmap-Schritt B)
+- Essensplan-Entwurf + Abnicken/Ändern (Roadmap C1) — Implementation Plan
+- types.ts
+- phase.test.ts
+- projects.test.ts
+- Design — Einkauf nach Haltbarkeit, gestaffelt auf Bring (Roadmap-Schritt D1)
+- fairness.test.ts
+- pushToBringAction
+- Google Kalender — Termine, intelligente Verteilung & Sync — Design
+- Einkauf nach Haltbarkeit, gestaffelt auf Bring (Roadmap D1) — Implementation Plan
+- eslintConfig
+- nextConfig
+- config
+- File Structure
+- sw.test.ts
+- Global Constraints
+- Rezepte-Vault (Obsidian) — Design
+- Sanftes Lernen — Design
+- scripts
+- Rezept-Vault Import-Contract
+- Google Calendar Setup (Phase 4 — read-only sync)
+- Kompakt-Dashboard fürs Tablet — Implementation Plan
+- client.test.ts
+- google.ts
+- Global Constraints
+- THEME_INIT_SCRIPT
+- age.test.ts
+- Kompakt-Dashboard fürs Tablet — Design
+- uv.test.ts
+- shifts.test.ts
+- page.tsx
+- learnedInterval.test.ts
+- THEME_INIT_SCRIPT (pre-paint theme script)
+- tasks.ts
+- revalidateDashboard
+- Catch-up überfälliger Chores + Aufgaben-Übernahme — Design
+- planning.test.ts
+- MobileNotesPage
+- deleteShoppingAction
+- clearShoppingAction
+- toggleShoppingAction
+- Dienstplan-bewusster Essensplan — Implementation Plan
+- domain.ts (re-exports UI DTOs from data.ts)
+- Rezepte-Vault V1 Implementation Plan
+- Handy-Vollsteuerung (Mobile Control v2)
+- Web Push / VAPID — Setup & Operations
+- Prompt für Claude — Visuelles Design „Haushalts-Dashboard"
+- Baby-Wetter / Kleidungsempfehlung — Feature-Plan
+- Catch-up überfälliger Routinen + Aufgaben-Übernahme — Implementation Plan
+- BringSyncControl.tsx
+- Spike: Bring!-Integration – Machbarkeit eines inoffiziellen API-Push (2026-06-07)
+- page.tsx
+- planning.ts
+- Essensplan-Gewichtung (Feature A) — Implementierungsplan
+- README.md
+- PersonKey
+- accounts.test.ts
+- accounts.ts
+- rollover.test.ts
+- Handoff-Prompt — Haushalts-Dashboard in neuem Chat weiterführen
+- NotesEditor.tsx
+- Initialisierungs-Prompt — Rezept-Importer (ReciMe-Klon → Obsidian)
+- Handy-Steuerungsoberfläche (Mobile Control)
+- Rezept-Vault Schema (TS-Interface + JSON-Schema)
+- Handy-Steuerungsoberfläche Implementation Plan
+- Komponenten
+- Neues Backend
+- package.json
+- seedDatabase
+- AGENTS.md
+- graphify.md
+- tiles.tsx
+- graphify.md
+- CLAUDE.md
+- recipe-vault-template.md
+- tablet-boot.sh
+- tablet-start.sh
+- tablet-sync.sh
+- tailwindcss
+- @tailwindcss/postcss
+- vitest
+- approveDraftAction
+- discardDraftAction
+- generatePlanAction
+- pushMealIngredientsAction
+- rerollDraftDayAction
+- setActiveDayRecipeAction
+- setDraftDayRecipeAction
+- acceptRecipeIdeaAction
+- generateRecipeIdeasAction
+- updateRoutineTemplateAction
+- completeTaskByAction
+- completeTaskByBothAction
+- deferTaskAction
+- App Icon / Brand Mark (Home glyph)
+- failTaskAction
+- toggleTaskAction
+- web/AGENTS.md — Safe Development Workflow
+- Next.js-Breaking-Changes-Leseregel (node_modules/next/dist/docs)
+- Safe Development Workflow (isolierter Worktree + getrennte DB)
+- better-sqlite3 Driver-Adapter umgeht Rust-Query-Engine auf Android
+- Bring! inoffizielle REST-API (Push mit Fallback-Pflicht)
+- Spike: Bring!-Integration Machbarkeit
+- buildChoreTasks (17 Haushalts-Chores, gestaffelt)
+- subscribePushAction / unsubscribePushAction
+- pushNotify-Service (sendToAdults, web-push)
+- PushSetupControl (Client-Komponente)
+- PushSubscription Prisma-Modell + Repository
+- C2 · Benachrichtigung aufs Handy — Web-Push Design
+- VAPID-Keypaar (Web-Push-Auth)
+- completeTaskBy / completeTaskByAction
+- rollOverdueRoutines Service
+- classifyFreshness (Keyword-Heuristik Haltbarkeit)
+- classifyShift (reine Schicht-Klassifizierung)
+- Claude Design-Prompt (Visuelles Design)
+- web/CLAUDE.md
+- Cloudflare Named Tunnel (userspace, kein root)
+- Elternzeit-/Phasen-Modus (Fairness-Ziel je Lebensphase)
+- Verteil-Engine „Fairness-Konto"
+- Nordstern: Mental Load reduzieren
+- Haushalts-Dashboard Umsetzungsplan
+- deriveDayConstraints (Koch-Constraints aus Schichten)
+- Dienstplan-bewusster Essensplan Plan
+- Design — Dienstplan-bewusster Essensplan
+- classifyShift (Schicht-Klassifizierung)
+- deriveDayConstraints (needsSimple/needsReheatable)
+- Design — Einkauf nach Haltbarkeit, gestaffelt auf Bring (D1)
+- classifyFreshness (Frisch/Haltbar-Heuristik)
+- FreshShoppingControl (manueller Frisch-Push)
+- pushRecipeBatch(category) — gestaffelter Bring-Push
+- Elternzeit-Modus (Aufgabenverteilung zugunsten Emely)
+- Design — Essensplan-Entwurf + Abnicken/Ändern (C1)
+- approveDraft (Entwurf → aktiver Plan)
+- discardDraft (Entwurf verwerfen)
+- MealDraftPanel (Entwurfs-Karte)
+- rerollDraftDay (Tag neu würfeln)
+- Essensplan-Entwurf + Abnicken/Ändern Plan (C1)
+- Essensplan-Gewichtung Plan (Feature A)
+- Verteil-Engine „Fairness-Konto"
+- Haltbarkeits-Korrektur-Gedächtnis Plan (FreshnessOverride, C1 sanftes Lernen)
+- Google Calendar Read-Only OAuth Sync (getrennte Kalender pro Person)
+- Google Calendar Setup (Phase 4)
+- Einkauf Haltbarkeit-Batching Plan (D1)
+- Handoff-Prompt (Dashboard weiterführen)
+- MobileNavBar (Bottom-Navigation)
+- Route Group (mobile) + eigenes Layout
+- Handy-Steuerungsoberfläche (Mobile Control) — Design
+- createTask Repository + addTaskAction
+- generateNextOccurrence (Recurrence-Restart + EWMA)
+- learnedInterval EWMA (pure function)
+- listOpenTasks Repository
+- MoreView (Handy Mehr-Seite)
+- Notes CRUD Repository + Actions
+- PageHeader (Mobile CardHead-Stil)
+- revalidateDashboard() Helper
+- ShoppingView (Handy Einkauf-Seite)
+- TasksView (Handy Aufgaben-Seite)
+- TodayView (Handy „Heute"-Seite)
+- Handy-Vollsteuerung (Mobile Control v2) — Design
+- importChores (idempotenter Chore-Upsert)
+- ingestVault (Vault → DB Spiegelung, Upsert/Archiv)
+- capacity.ts dayLoad/activeDayWindow
+- planTask (harte Sperre ≥80% + weicher Bias)
+- selectByFairness mit loadPenalty
+- SyncButton (Tablet + Handy)
+- syncCalendarAction (Sync+Re-Plan+Revalidate)
+- Google Kalender — Termine, Verteilung & Sync — Design
+- TaskActionMenu (Long-Press-Popover)
+- taskDefer-Service (nextSensibleDay + deferTask)
+- TopbarStats (Kennzahl-Chips)
+- Weather-Komponente (baby-frei)
+- Viewport-fixes CSS-Grid (3 Höhenzonen, kein Seiten-Scroll)
+- FreshnessOverride-Tabelle
+- learnedLeadTime (Feature C2: gelernter Einkaufs-Vorlauf)
+- resolveFreshness (Feature C1: Override-Gedächtnis)
+- Prinzip „Sanftes Lernen" (gedämpft, Heuristik-Fallback)
+- weightedPick (Feature A: Essensplan-Gewichtung)
+- Meal (type)
+- Note (type)
+- Task (type)
+- THEME_KEY (localStorage key)
+- MealPlanEntry.status (active/draft Koexistenz)
+- MobileMealsPage
+- Mental-Load-Reduktion (Leitprinzip)
+- MobileLayout
+- parseRecipeMarkdown (reine Vault-Parsing-Logik)
+- PWA-Manifest (installierbare Vollbild-App)
+- PWA + Tailscale + Kiosk Autostart — Implementation Plan
+- manifest.webmanifest (PNG-Icons)
+- public/sw.js (Service Worker)
+- Haushalts-Dashboard: PWA + Tailscale + Kiosk-Autostart — Design
+- Fully Kiosk Browser Autostart
+- tailscale serve HTTPS-Proxy (MagicDNS)
+- Termux:Boot Autostart-Flow
+- README.md — Haushalts-Dashboard
+- ReciMe-Klon Konzept (Share-Intent → KI-Rezept → Obsidian)
+- Rezept-Importer Init-Prompt (ReciMe-Klon)
+- Rezept-Vault Schema (TS + JSON-Schema)
+- Rezept-Vorlage (_template.md)
+- resolveFreshness (Override schlägt Heuristik)
+- Dashboard-Roadmap: Handy-Steuerung & Essensplan (Roadmap-Quelle)
+- Backlog: Handy-Steuerung/Essensplan/Einkauf Roadmap
+- RootLayout
+- Spec: 2026-06-10-sanftes-lernen-design.md
+- MobileSettingsPage
+- Slug/ID als Identitäts-Anker
+- generateRecipeIdeas() [Claude CLI OAuth]
+- Tablet-Betrieb + Chore-Import Plan
+- Chore-Import-Skript (17 Tasks, idempotent)
+- Recurrence-Engine (nextDueDate, RHYTHM_OFFSET_DAYS)
+- Warum nicht Tailscale — Android 16 netlink-Blocker
+- Token-/Kosten-sparsame KI-Nutzung (Deterministisch vor LLM)
+- „Vault = Wahrheit, DB = Cache"
+- Claude-Skill „Rezept → Vault-Markdown" (Stufe 1.5)
+- parseRecipeMarkdown (Ingest)
+- Rezept-Markdown-Schema (Frontmatter)
+- isMainModule
+- [meals, draft, recipes]
+- [pending, startTransition]
+- PILL
+- alreadyPushed
+- bringFailed
+- [copied, setCopied]
+- open
+- [openDay, setOpenDay]
+- [pending, startTransition]
+- PILL
+- [pushResult, setPushResult]
+- result
+- payload
+- [acceptingId, setAcceptingId]
+- [error, setError]
+- [ideas, setIdeas]
+- [pending, startTransition]
+- PILL
+- st
+- [status, setStatus]
+- openCount
+- p
+- DEFAULT_LAT
+- DEFAULT_LON
+- FORECAST_URL
+- current
+- days
+- dry
+- dryCurrent
+- dryFixture
+- noCurrent
+- noSun
+- result
+- today
+- before
+- client
+- dayOfWeek
+- draft
+- earlyEnd
+- earlyStart
+- end
+- entry
+- isWeekday
+- map
+- monday
+- mondayMeal
+- names
+- nextMon
+- plan
+- recipes
+- sat
+- seeded
+- skipped
+- { start }
+- { start: monday }
+- sun
+- target
+- thu
+- thuEnd
+- thuStart
+- todays
+- tue
+- wed
+- CURRY
+- dir
+- dir2
+- emptyDir
+- ORIG
+- report
+- seed
+- SUPPE
+- client
+- mine
+- parent
+- rows
+- templates
+- before
+- brot
+- client
+- items
+- mehl
+- tomaten
+- allRecipes
+- before
+- client
+- monday
+- nextWeek
+- ok
+- others
+- pizza
+- recipe
+- { start }
+- updated
+- { calls, push }
+- client
+- end
+- entry
+- names
+- nudeln
+- recipe
+- res
+- { start }
+- updated
+- wednesday
+- active
+- after
+- afterMonday
+- all
+- allRecipes
+- before
+- beforeMonday
+- cclient
+- client
+- constraints
+- drafts
+- entries
+- entries2
+- identityNames
+- identityPlan
+- monday
+- monday2
+- mondayRecipe
+- names
+- recipe
+- second
+- shuffledNames
+- shuffledPlan
+- sorted
+- { start, end }
+- { start: monday }
+- today
+- tuesday
+- wed
+- weekdays
+- RATING_WEIGHTS
+- RECENCY_FLOOR
+- RECENCY_RAMP_DAYS
+- pool
+- recent
+- variety
+- VARIETY_DECAY
+- VARIETY_FLOOR
+- md
+- prompt
+- raw
+- { recipe, errors }
+- md
+- { recipe }
+- { recipe, errors }
+- sunrise
+- sunset
+- THEME_KEY
+- THEME_KEY / ThemePref / THEME_INIT_SCRIPT
+- weightedPick (gewichtetes Roulette-Rad, Rating+Recency)
+- Zwiebelprinzip (Baby-Kleidungsschichten)
 
 ## God Nodes (most connected - your core abstractions)
-1. `map` - 37 edges
-2. `revalidateDashboard()` - 27 edges
-3. `GET()` - 15 edges
-4. `Handy-Vollsteuerung Implementation Plan` - 14 edges
-5. `join` - 12 edges
-6. `dayBounds()` - 12 edges
-7. `currentWeekBounds()` - 11 edges
-8. `planDueTasks()` - 11 edges
-9. `Haushalts-Dashboard Umsetzungsplan` - 11 edges
-10. `Sanftes Lernen — Design` - 11 edges
+1. `revalidateDashboard()` - 37 edges
+2. `resetDatabase()` - 25 edges
+3. `createTestClient()` - 24 edges
+4. `dayBounds()` - 22 edges
+5. `currentWeekBounds()` - 17 edges
+6. `compilerOptions` - 16 edges
+7. `Haushalts-Dashboard — Umsetzungsplan` - 16 edges
+8. `Handy-Vollsteuerung Implementation Plan` - 16 edges
+9. `PersonKey` - 14 edges
+10. `meals.test.ts (repository tests)` - 14 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `planDueTasks()` --calls--> `assignTask()`  [INFERRED]
-  web\src\lib\services\planning.ts → web\src\lib\repositories\tasks.ts
-- `Mental-Load-Reduktion (Leitprinzip)` --semantically_similar_to--> `Elternzeit-Modus (Aufgabenverteilung zugunsten Emely)`  [INFERRED] [semantically similar]
-  README.md → docs/claude-design-prompt.md
-- `main()` --calls--> `getBusyWindows()`  [INFERRED]
-  web\prisma\planToday.ts → web\src\lib\repositories\calendar.ts
-- `main()` --calls--> `getForecast()`  [INFERRED]
-  web\prisma\planToday.ts → web\src\integrations\weather\openMeteo.ts
-- `main()` --calls--> `rollOverdueRoutines()`  [INFERRED]
-  web\prisma\planToday.ts → web\src\lib\services\overdueCatchup.ts
+- `Kalender_IDs.txt — Google Calendar IDs` --shares_data_with--> `calendarSync-Service (syncCalendar)`  [INFERRED]
+  web/Kalender_IDs.txt → docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md
+- `mondayEntry()` --calls--> `currentWeekBounds()`  [EXTRACTED]
+  web/src/lib/services/mealIngredientPush.test.ts → web/src/lib/dates.ts
+- `rollOverdueRoutines()` --indirect_call--> `task()`  [INFERRED]
+  web/src/lib/services/overdueCatchup.ts → web/src/lib/engine/personFilter.test.ts
+- `main()` --references--> `@prisma/client`  [EXTRACTED]
+  web/prisma/importChores.ts → web/package.json
+- `main()` --references--> `@prisma/client`  [EXTRACTED]
+  web/prisma/seed.ts → web/package.json
+
+## Import Cycles
+- None detected.
 
 ## Hyperedges (group relationships)
-- **Essensplan: Entwurf generieren -> Abnicken -> pro Gericht auf Bring pushen** — mealspage_MobileMealsPage, mealdraftpanel_MealDraftPanel, actionsMeals_generatePlanAction, actionsMeals_approveDraftAction, mealweeklist_MealWeekList, actionsMeals_pushMealIngredientsAction [INFERRED 0.85]
-- **Handy-Einstellungen-Tab: Design, Aufgaben-Dauer/Rhythmus, Elternzeit-Modus, Push** — settingspage_MobileSettingsPage, settingsview_SettingsView, themetoggle_ThemeToggle, taskdurationscontrol_TaskDurationsControl [EXTRACTED 1.00]
-- **Design-Flackern verhindern: Pre-Paint-Skript + gecachter Wert (Tablet-Auto + Handy-Toggle)** — rootlayout_RootLayout, mobilelayout_MobileLayout, dashboard_useSunTheme, themetoggle_ThemeToggle, libTheme_THEME_INIT_SCRIPT, libTheme_THEME_KEY [INFERRED 0.85]
-- **Weighted recipe-selection subsystem (rating + recency + variety roulette)** — mealPlanner_generateWeekPlan, mealDraft_rerollDraftDay, mealWeights_weightedPick, meals_recentRecipeUse [INFERRED 0.90]
-- **Shared vault Markdown recipe format (read + generate paths)** — recipeVault_parseRecipeMarkdown, recipeIngest_ingestVault, recipeIdeas_recipeIdeaToVaultMarkdown [INFERRED 0.90]
-- **Weather-driven tablet dark/light auto-theme** — openMeteo_mapCurrent, sunTheme_isDarkBySun, theme_themeConstants [INFERRED 0.85]
+- **Essensplan: Entwurf generieren -> Abnicken -> pro Gericht auf Bring pushen** — mealspage_MobileMealsPage, web_src_components_mealdraftpanel_mealdraftpanel, actionsMeals_generatePlanAction, actionsMeals_approveDraftAction, web_src_components_mobile_mealweeklist_mealweeklist, actionsMeals_pushMealIngredientsAction [INFERRED 0.85]
+- **Handy-Einstellungen-Tab: Design, Aufgaben-Dauer/Rhythmus, Elternzeit-Modus, Push** — settingspage_MobileSettingsPage, web_src_components_mobile_settingsview_settingsview, web_src_components_mobile_themetoggle_themetoggle, web_src_components_mobile_taskdurationscontrol_taskdurationscontrol [EXTRACTED 1.00]
+- **Design-Flackern verhindern: Pre-Paint-Skript + gecachter Wert (Tablet-Auto + Handy-Toggle)** — rootlayout_RootLayout, mobilelayout_MobileLayout, web_src_components_dashboard_usesuntheme, web_src_components_mobile_themetoggle_themetoggle, libTheme_THEME_INIT_SCRIPT, libTheme_THEME_KEY [INFERRED 0.85]
+- **Weighted recipe-selection subsystem (rating + recency + variety roulette)** — web_src_lib_services_mealplanner_generateweekplan, web_src_lib_services_mealdraft_rerolldraftday, web_src_lib_services_mealweights_weightedpick, web_src_lib_repositories_meals_recentrecipeuse [INFERRED 0.90]
+- **Shared vault Markdown recipe format (read + generate paths)** — web_src_lib_services_recipevault_parserecipemarkdown, web_src_lib_repositories_recipeingest_ingestvault, web_src_lib_services_recipeideas_recipeideatovaultmarkdown [INFERRED 0.90]
+- **Weather-driven tablet dark/light auto-theme** — web_src_integrations_weather_openmeteo_mapcurrent, web_src_lib_suntheme_isdarkbysun, web_src_lib_theme_themeconstants [INFERRED 0.85]
 - **„Sanftes Lernen" Feature-Gruppe (Gewichtung + Freshness-Override + Vault-Rating)** — essensplangewichtung_plan, freshnessoverride_plan, rezeptevaultv1_plan, sanftlernendesign_spec [INFERRED 0.85]
 - **Essensplan-Pipeline Evolution (Schicht-Constraints → Entwurf/Freigabe → Haltbarkeit-Batching → Gewichtung)** — dienstplanessensplan_plan, essensplanentwurf_plan, haltbarkeitbatching_plan, essensplangewichtung_plan [INFERRED 0.85]
 - **Tablet-Betriebs-Stack (Termux-Server, Kiosk-Autostart, Cloudflare-Zugriff, Chore-Import)** — tablettermuxsetup_doc, tabletkiosksetup_doc, tabletremoteaccess_doc, tabletchoreimport_plan [INFERRED 0.80]
@@ -239,1156 +496,439 @@
 - **Hybrid-Tageskapazität: dayLoad + planTask + selectByFairness** — kalendersyncplan_capacitydayload, kalendersyncplan_plantask, kalendersyncplan_selectbyfairness [EXTRACTED 1.00]
 - **Handy-Vollsteuerung: Heute/Aufgaben/Einkauf/Mehr-Seiten** — handyvollplan_todayview, handyvollplan_tasksview, handyvollplan_shoppingview, handyvollplan_moreview [EXTRACTED 1.00]
 
-## Communities
+## Communities (519 total, 336 thin omitted)
 
-### Community 0 - "Core Date & Task-Rollover Utilities"
-
-Cohesion: 0.03
-Nodes (73): addDays(), currentWeekBounds(), dayBounds(), formatTime(), localDateKey(), mondayOf(), weekBoundsOf(), constraintFromEntry() (+65 more)
-
-### Community 1 - "Handy-Steuerung & Push Roadmap Docs"
-
-Cohesion: 0.04
-Nodes (87): web/AGENTS.md — Safe Development Workflow, Next.js-Breaking-Changes-Leseregel (node_modules/next/dist/docs), Safe Development Workflow (isolierter Worktree + getrennte DB), C2 Handy-Push (Essensplan-Entwurf) Implementation Plan, subscribePushAction / unsubscribePushAction, pushNotify-Service (sendToAdults, web-push), PushSetupControl (Client-Komponente), PushSubscription Prisma-Modell + Repository (+79 more)
-
-### Community 2 - "Mobile Pages & Server Actions"
-
-Cohesion: 0.04
-Nodes (53): recordCompletion(), all, approveDraftAction(), discardDraftAction(), generatePlanAction(), pushMealIngredientsAction(), rerollDraftDayAction(), setActiveDayRecipeAction() (+45 more)
-
-### Community 3 - "Recipe Vault & Bring Sync Controls"
-
-Cohesion: 0.04
-Nodes (53): [copied, setCopied], handleCopy(), handlePush(), label, [pending, startTransition], PILL, [result, setResult], tone (+45 more)
-
-### Community 4 - "Calendar Sync & Account Balances"
-
-Cohesion: 0.08
-Nodes (39): after, balances, before, client, created, split, client, emptyFetch() (+31 more)
-
-### Community 5 - "Google Calendar Sync Pipeline"
-
+### Community 0 - "meals.ts"
 Cohesion: 0.07
-Nodes (26): getBusyWindows(), getTodaysEvents(), isUrlaubFrei(), replaceWindowEvents(), syncCalendarAction(), upsertEvents(), configuredCalendars(), SYNC_WINDOW_DAYS (+18 more)
+Nodes (59): approveDraftAction(), discardDraftAction(), generatePlanAction(), rerollDraftDayAction(), setActiveDayRecipeAction(), setDraftDayRecipeAction(), MobileMealsPage(), MealDraftPanel (+51 more)
 
-### Community 6 - "Meal Planner Test Fixtures"
+### Community 2 - "notes.ts"
+Cohesion: 0.25
+Nodes (13): createNoteAction(), deleteNoteAction(), togglePinNoteAction(), updateNoteAction(), MobileNotesPage(), NoteItem(), NotesEditor(), NotesView (+5 more)
 
-Cohesion: 0.04
-Nodes (39): active, after, afterMonday, allRecipes, before, beforeMonday, cclient, client (+31 more)
+### Community 3 - "recipeIdeas.ts"
+Cohesion: 0.08
+Nodes (35): main(), acceptRecipeIdeaAction(), generateRecipeIdeasAction(), IdeasResult, ingestVaultAction(), RecipeIdeasControl, Status, PILL (+27 more)
 
-### Community 7 - "Meal Plan & Recipe Server Actions"
+### Community 4 - "calendarSync.test.ts"
+Cohesion: 0.20
+Nodes (8): client, event(), events, firstFetch(), now, result, secondFetch(), titles
 
-Cohesion: 0.05
-Nodes (19): approveDraftAction, discardDraftAction, generatePlanAction, pushMealIngredientsAction, rerollDraftDayAction, setActiveDayRecipeAction, setDraftDayRecipeAction, acceptRecipeIdeaAction (+11 more)
+### Community 5 - "db.ts"
+Cohesion: 0.07
+Nodes (40): main(), main(), syncCalendarAction(), GET(), POST(), runSync(), CalendarEventInput, openMeteoFixture (captured API fixture) (+32 more)
 
-### Community 8 - "Generated Prisma Enums (internal)"
+### Community 7 - "TaskDurationsControl.tsx"
+Cohesion: 0.22
+Nodes (11): UpdateRoutineInput, updateRoutineTemplateAction(), PERSON_OPTIONS, RhythmOption, TaskDurationsControl, TemplateRow, AllowedPersons, RHYTHM_VALUES (+3 more)
 
+### Community 8 - "Haushalts-Dashboard — Design-Spezifikation"
 Cohesion: 0.06
-Nodes (33): AccountEntryScalarFieldEnum, AnyNull, CalendarEventScalarFieldEnum, DbNull, Decimal, defineExtension, empty, getExtensionContext (+25 more)
+Nodes (31): 10 · Spätere Ausbaustufen (nicht jetzt), 1 · Ziel & Leitprinzip, 2 · Umfang & Nicht-Ziele, 3 · Nutzerkontext, 4 · Layout & Bildschirmbereiche (Layout C — „Heute" im Fokus), 5.1 Aufgaben, 5.2 Verteil-Engine „Fairness-Konto" (Herzstück), 5.2a Elternzeit-/Phasen-Modus (+23 more)
 
-### Community 9 - "Meal Repository Test Fixtures"
-
+### Community 10 - "recurrence.test.ts"
 Cohesion: 0.06
-Nodes (29): after, before, client, dayOfWeek, draft, earlyEnd, earlyStart, end (+21 more)
+Nodes (36): ALPHA, learnedInterval(), MIN_INTERVALS, chainCompletionGaps(), DAY_MS, DAY_MS_LOCAL, DEFAULT_OFFSET_DAYS, generateNextOccurrence() (+28 more)
 
-### Community 10 - "Recurrence Test + Prisma WASM Internals"
-
-Cohesion: 0.13
-Nodes (23): config, decodeBase64AsWasm(), { wasm }, chainBase, client, completedAt, created, days (+15 more)
-
-### Community 11 - "Task Planning Test Fixtures"
-
-Cohesion: 0.15
-Nodes (24): balances, both, busy, client, createOpenOutdoorTask(), createOpenStandaloneTask(), d, dateKey() (+16 more)
-
-### Community 12 - "Sanftes Lernen & Recipe Vault Docs"
-
-Cohesion: 0.13
-Nodes (25): Einkaufs-Rutschen / Batch-Push an Bring (D-Naht), classifyFreshness (Keyword-Heuristik Haltbarkeit), classifyShift (reine Schicht-Klassifizierung), deriveDayConstraints (Koch-Constraints aus Schichten), Dienstplan-bewusster Essensplan Plan, Essensplan-Entwurf + Abnicken/Ändern Plan (C1), Essensplan-Gewichtung Plan (Feature A), Haltbarkeits-Korrektur-Gedächtnis Plan (FreshnessOverride, C1 sanftes Lernen) (+17 more)
-
-### Community 13 - "Task Distribution Engine (Fairness/Weather)"
-
-Cohesion: 0.13
-Nodes (14): filterByAvailability(), overlaps(), computeShare(), PERSON_ORDER, selectByFairness(), FULL_THRESHOLD, planTask(), filterByPerson() (+6 more)
-
-### Community 14 - "Generated Prisma Enums (browser)"
-
+### Community 11 - "planning.test.ts"
 Cohesion: 0.09
-Nodes (22): AccountEntryScalarFieldEnum, AnyNull, CalendarEventScalarFieldEnum, DbNull, Decimal, IngredientScalarFieldEnum, JsonNull, MealPlanEntryScalarFieldEnum (+14 more)
+Nodes (21): balances, both, busy, client, d, decisions, dryDay, effortFirst (+13 more)
 
-### Community 15 - "Fairness Accounts & Capacity Planning"
+### Community 13 - "weatherCheck.ts"
+Cohesion: 0.22
+Nodes (13): DayForecast, checkWeather(), fromLocalDateKey(), hasConflictingRain(), satisfies(), BASE, day(), forecast (+5 more)
 
-Cohesion: 0.15
-Nodes (15): addManualEntry(), addManualEntryAction(), getComputedSplit(), getWeeklyBalances(), ACTIVE_END_HOUR, ACTIVE_START_HOUR, activeDayWindow(), coveredMs() (+7 more)
+### Community 14 - "compilerOptions"
+Cohesion: 0.06
+Nodes (30): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+22 more)
 
-### Community 16 - "Web Push Subscription Pipeline"
+### Community 15 - "capacity.ts"
+Cohesion: 0.20
+Nodes (11): ACTIVE_END_HOUR, ACTIVE_START_HOUR, activeDayWindow(), coveredMs(), dayLoad(), PERSONS, all, at() (+3 more)
 
-Cohesion: 0.14
-Nodes (15): subscribePushAction(), unsubscribePushAction(), ensureVapid(), isPushConfigured(), sendToAdults(), brokenClient, client, payload (+7 more)
+### Community 16 - "pushNotify.test.ts"
+Cohesion: 0.11
+Nodes (24): subscribePushAction(), unsubscribePushAction(), WebPushSubscriptionJSON, getInitialStatus(), PushSetupControl(), Status, urlBase64ToUint8Array(), VAPID_PUBLIC_KEY (+16 more)
 
-### Community 17 - "Dashboard Foundations & Ops Docs"
+### Community 18 - "calendar.test.ts"
+Cohesion: 0.10
+Nodes (18): addShift(), client, dayAt(), { deleted }, domeWindows, emelyWindows, events, makeInput() (+10 more)
 
-Cohesion: 0.13
-Nodes (23): Baby-Wetter / Kleidungsempfehlung Plan, better-sqlite3 Driver-Adapter umgeht Rust-Query-Engine auf Android, Bring! inoffizielle REST-API (Push mit Fallback-Pflicht), Spike: Bring!-Integration Machbarkeit, buildChoreTasks (17 Haushalts-Chores, gestaffelt), Claude Design-Prompt (Visuelles Design), Cloudflare Named Tunnel (userspace, kein root), Haushalts-Dashboard Umsetzungsplan (+15 more)
-
-### Community 18 - "Calendar Repository Test Fixtures"
-
-Cohesion: 0.18
-Nodes (20): addShift(), allDayToday(), at(), client, dayAt(), { deleted }, domeWindows, emelyWindows (+12 more)
-
-### Community 19 - "Overdue Catchup Test Fixtures"
-
-Cohesion: 0.19
+### Community 19 - "overdueCatchup.test.ts"
+Cohesion: 0.11
 Nodes (18): client, dome, fu, future, makeRoutine(), newer, newerRow, parent (+10 more)
 
-### Community 20 - "Adaptive Recurrence & Task Defer"
+### Community 20 - "C2 · Benachrichtigung aufs Handy — Web-Push für den Essensplan-Entwurf"
+Cohesion: 0.07
+Nodes (27): A · Dienst-Zeiten + Schlaf — ✅ ERLEDIGT (2026-06-08), B · Dienstplan-bewusster Essensplan — ✅ ERLEDIGT (2026-06-09), Backlog / Roadmap — Handy-Steuerung, dienstplan-bewusster Essensplan & Einkauf, C1 · Entwurfs-Zustand + Abnicken/Ändern — ✅ ERLEDIGT (2026-06-09), C2 · Benachrichtigung aufs Handy — ✅ ERLEDIGT (2026-06-18), C3 · Automatischer Auslöser „wenn beide zuhause" — offen, C · Essensplan-Entwurf → Push an beide Handys → abnicken/ändern, D1 · Haltbarkeits-Batching, gestaffelt auf Bring — ✅ ERLEDIGT (2026-06-09) (+19 more)
 
-Cohesion: 0.18
-Nodes (12): ALPHA, learnedInterval(), MIN_INTERVALS, chainCompletionGaps(), DAY_MS, DAY_MS_LOCAL, DEFAULT_OFFSET_DAYS, generateNextOccurrence() (+4 more)
-
-### Community 21 - "Task Write Repository Tests"
-
-Cohesion: 0.21
+### Community 21 - "tasks.write.test.ts"
+Cohesion: 0.12
 Nodes (16): after, afterEntries, before, client, due, dues, entries, findTaskByTitle() (+8 more)
 
-### Community 22 - "Bring Shopping Sync"
+### Community 22 - "shopping.ts"
+Cohesion: 0.13
+Nodes (22): clearShoppingAction(), deleteShoppingAction(), pushToBringAction(), toggleShoppingAction(), BringSyncControl(), BringItem, BringPushResult, getSession() (+14 more)
 
-Cohesion: 0.19
-Nodes (12): getSession(), pushShoppingList(), session, toBringItems(), clearShoppingAction(), clearShoppingItems(), deleteShoppingAction(), deleteShoppingItem() (+4 more)
-
-### Community 23 - "Task Repository Test Fixtures"
-
-Cohesion: 0.23
+### Community 23 - "tasks.test.ts"
+Cohesion: 0.13
 Nodes (14): after, byText, client, count, dateKey(), dayStart, emely, entries (+6 more)
 
-### Community 24 - "Chore Import Pipeline"
+### Community 24 - "chores.test.ts"
+Cohesion: 0.10
+Nodes (21): main(), ensurePeople(), importChores(), PEOPLE, Summary, addDays(), buildChoreTasks(), ChoreInput (+13 more)
 
-Cohesion: 0.2
-Nodes (9): ensurePeople(), importChores(), PEOPLE, addDays(), buildChoreTasks(), CHORES, NO_RAIN, staggerWindow() (+1 more)
-
-### Community 25 - "Weather & Theme Data Types"
-
-Cohesion: 0.14
-Nodes (11): appointments, initialShopping, initialTasks, mealPlan, notes, PERSON, split, weather (+3 more)
-
-### Community 26 - "Test DB Seeding Helpers"
-
+### Community 25 - "data.ts"
 Cohesion: 0.19
-Nodes (10): createTestClient(), resetDatabase(), Meal (type), Note (type), Task (type), addDays(), isMainModule, main() (+2 more)
+Nodes (14): appointments, DraftMeal, initialShopping, initialTasks, MealIngredient, mealPlan, Note, notes (+6 more)
 
-### Community 27 - "Tablet Dashboard & Theme Components"
-
-Cohesion: 0.17
-Nodes (12): completeTaskByAction, completeTaskByBothAction, deferTaskAction, failTaskAction, toggleTaskAction, Dashboard (tablet root component), useSunTheme() [tablet auto dark/light hook], Header (tablet topbar) (+4 more)
-
-### Community 28 - "Weather Fetch Test Fixtures"
-
-Cohesion: 0.18
-Nodes (10): clearFixture, current, days, dry, dryCurrent, dryFixture, noCurrent, noSun (+2 more)
-
-### Community 29 - "Chore Import Test Fixtures"
-
+### Community 26 - "db.ts"
 Cohesion: 0.33
+Nodes (3): routineTemplates.test.ts (tests tasks.ts routine-template fns), createTestClient(), resetDatabase()
+
+### Community 27 - "icons.tsx"
+Cohesion: 0.18
+Nodes (11): Header (tablet topbar), useClock() hook, CalendarGlyph(), CheckIcon(), CloudRainGlyph(), MoonIcon(), RefreshIcon(), SunIcon() (+3 more)
+
+### Community 29 - "choreImport.test.ts"
+Cohesion: 0.20
 Nodes (9): after, after1, after2, before, client, count, dome, rasen (+1 more)
 
-### Community 30 - "Chore Definitions Test Fixtures"
+### Community 30 - "dependencies"
+Cohesion: 0.09
+Nodes (23): better-sqlite3, bring-shopping, google-auth-library, gray-matter, lucide-react, next, @prisma/adapter-better-sqlite3, @prisma/client (+15 more)
 
-Cohesion: 0.33
-Nodes (9): einkauf, futter, gassi, gross, klein, original, rasen, tasks (+1 more)
-
-### Community 31 - "Bring List UUID Script"
-
-Cohesion: 0.36
+### Community 31 - "bring-list-uuids.mjs"
+Cohesion: 0.27
 Nodes (8): Bring, env, envPath, { lists }, m, mail, password, require
 
-### Community 32 - "Recipe Ideas UI Control"
+### Community 33 - "TaskActionMenu.tsx"
+Cohesion: 0.25
+Nodes (7): itemCount, left, MENU_HEIGHT, MENU_MARGIN, MENU_WIDTH, menuHeight, top
 
-Cohesion: 0.2
-Nodes (7): [acceptingId, setAcceptingId], [error, setError], [ideas, setIdeas], [pending, startTransition], PILL, st, [status, setStatus]
+### Community 34 - "WeatherBabyTile.tsx"
+Cohesion: 0.10
+Nodes (26): Chip(), clothing, showUv, [situation, setSituation], SITUATIONS, uv, UV_TINT, WARMTH_TINT (+18 more)
 
-### Community 33 - "Task Action Menu UI"
-
-Cohesion: 0.36
-Nodes (8): itemCount, left, MENU_HEIGHT, MENU_MARGIN, MENU_WIDTH, menuHeight, MenuItem(), top
-
-### Community 34 - "Baby Weather Tile UI"
-
-Cohesion: 0.36
-Nodes (8): Chip(), clothing, showUv, [situation, setSituation], SITUATIONS, uv, UV_TINT, WARMTH_TINT
-
-### Community 35 - "Distribution Engine Integration Tests"
-
-Cohesion: 0.38
+### Community 35 - "index.test.ts"
+Cohesion: 0.25
 Nodes (8): baseInput(), busy, day(), forecast, PHASE, result, task, window
 
-### Community 36 - "Meal Constraints Test Fixtures"
+### Community 36 - "Design: Tablet-Betrieb + Chore-Import"
+Cohesion: 0.09
+Nodes (21): Self-Review-Notiz (vom Plan-Autor), Tablet-Betrieb + Chore-Import Implementation Plan, Task 1: Recurrence-Engine um neue Rhythmen erweitern, Task 2: Chore-Definitionen + Mapping (pure), Task 3: Import-Repository (idempotenter Upsert nach Titel), Task 4: CLI-Entrypoint + npm-Script, Task 5: PWA-Manifest + Icon + Layout-Metadata, Task 6: Termux-Runbook + Start-Skript + .env-Vorlage (+13 more)
 
-Cohesion: 0.39
-Nodes (7): fri, lookupFrom(), MON, result, thursday, tue, wed
+### Community 37 - "devDependencies"
+Cohesion: 0.10
+Nodes (21): eslint, eslint-config-next, prisma, sharp, tsx, @types/node, @types/react, @types/react-dom (+13 more)
 
-### Community 37 - "Meal Plan Generation Core"
-
-Cohesion: 0.25
-Nodes (4): rerollDraftDay(), generateWeekPlan(), weightedPick(), recentRecipeUse()
-
-### Community 38 - "Bring Read-List Script"
-
-Cohesion: 0.43
+### Community 38 - "bring-read-list.mjs"
+Cohesion: 0.36
 Nodes (6): Bring, env, envPath, items, m, require
 
-### Community 39 - "Shopping Repository Test Fixtures"
-
-Cohesion: 0.25
-Nodes (7): after, before, brot, client, items, mehl, tomaten
-
-### Community 40 - "PWA Service Worker"
-
-Cohesion: 0.43
+### Community 40 - "sw.js"
+Cohesion: 0.29
 Nodes (6): CACHE, data, OFFLINE_URL, open, { request }, url
 
-### Community 41 - "Google Calendar Test Fixtures"
-
-Cohesion: 0.43
+### Community 41 - "google.test.ts"
+Cohesion: 0.29
 Nodes (6): birthday, birthdayEvents, events, familyEvents, [sport], u4
 
-### Community 42 - "Icon Generation Script"
-
-Cohesion: 0.48
+### Community 42 - "gen-icons.mjs"
+Cohesion: 0.43
 Nodes (5): here, pub, src, targets, TEAL
 
-### Community 43 - "App Layout Shells"
+### Community 43 - "layout.tsx"
+Cohesion: 0.12
+Nodes (12): body, display, metadata, viewport, viewport, ServiceWorkerRegister(), MobileNavBar, TABS (+4 more)
 
-Cohesion: 0.29
-Nodes (4): body, display, metadata, viewport
-
-### Community 44 - "PWA Manifest Test"
-
-Cohesion: 0.48
+### Community 44 - "manifest.test.ts"
+Cohesion: 0.33
 Nodes (5): icons, manifest, maskable, png192, png512
 
-### Community 45 - "Mobile Tasks View UI"
+### Community 45 - "TasksView.tsx"
+Cohesion: 0.33
+Nodes (3): [addOpen, setAddOpen], [pickOpen, setPickOpen], [tasks, applyOpt]
 
-Cohesion: 0.48
-Nodes (5): [addOpen, setAddOpen], complete(), [pickOpen, setPickOpen], run(), [tasks, applyOpt]
-
-### Community 46 - "Baby Clothing Test Fixtures"
-
-Cohesion: 0.48
+### Community 46 - "clothing.test.ts"
+Cohesion: 0.33
 Nodes (5): advice, allgemein, older, trage, young
 
-### Community 47 - "Capacity Engine Test Fixtures"
+### Community 47 - "Haushalts-Dashboard: PWA + Tailscale-Fernzugriff + Tablet-Kiosk-Autostart"
+Cohesion: 0.10
+Nodes (19): Architektur, Boot-Flow (Termux:Boot), Deliverables, Detail, Display bleibt an, Eigenschaften, Entscheidungen (aus Brainstorming), Fully Kiosk Browser (Gratis-Tier) (+11 more)
 
-Cohesion: 0.48
-Nodes (5): all, at(), busy, load, W
+### Community 48 - "Haushalts-Dashboard — Umsetzungsplan"
+Cohesion: 0.11
+Nodes (18): Datei-Struktur (Zielbild), Getroffene Grundsatz-Entscheidungen (mit Begründung), Haushalts-Dashboard — Umsetzungsplan, Phase 0 — Tooling & Gerüst, Phase 1 — Datenmodell & Persistenz, Phase 2 — Verteil-Engine „Fairness-Konto" (reine Logik, TDD), Phase 3 — Aufgaben-Domäne & Planungs-Service, Phase 4 — Integration: Google Calendar (read-only, OAuth, getrennte Kalender) (+10 more)
 
-### Community 48 - "Weather Check Test Fixtures"
+### Community 51 - "addManualEntryAction"
+Cohesion: 0.20
+Nodes (8): addManualEntryAction(), active, AddDoneEntry(), LoggablePerson, p, PEOPLE, AddDoneInline(), PERSON
 
-Cohesion: 0.48
-Nodes (5): BASE, day(), forecast, task, window
+### Community 53 - "PWA + Tailscale Remote Access + Tablet Kiosk Autostart — Implementation Plan"
+Cohesion: 0.12
+Nodes (16): Authorize this device — prints a login URL. Open it, sign in with the SAME, background; on real use this is launched from the boot script (see kiosk doc)., Confirm the tablet's MagicDNS name (e.g. tablet.tail1234.ts.net):, File Structure, Google account, approve the tablet., PWA + Tailscale Remote Access + Tablet Kiosk Autostart — Implementation Plan, Self-Review Notes, Start the daemon in userspace mode (no root). Keep it running in the (+8 more)
 
-### Community 49 - "Routine Templates Test (naming mismatch)"
+### Community 54 - "Handy-Vollsteuerung Implementation Plan"
+Cohesion: 0.12
+Nodes (16): File Structure, Global Constraints, Handy-Vollsteuerung Implementation Plan, Self-Review, Task 10: Einkauf page (`ShoppingView`), Task 11: Mehr page (`MoreView` + `NotesEditor`), Task 12: Re-skin the Essen page header + final sweep, Task 1: `learnedInterval` pure function (+8 more)
 
-Cohesion: 0.29
-Nodes (6): child, client, mine, parent, rows, templates
+### Community 55 - "BusyWindow"
+Cohesion: 0.26
+Nodes (8): filterByAvailability(), overlaps(), busy, persons, win(), window, BusyWindow, PlanDueTasksOptions
 
-### Community 50 - "Recipe Ideas Test Fixtures"
-
-Cohesion: 0.29
-Nodes (6): ideas, md, prompt, raw, { recipe, errors }, sampleIdea
-
-### Community 51 - "Add Done Entry UI"
-
-Cohesion: 0.53
-Nodes (3): active, AddDoneEntry(), PEOPLE
-
-### Community 52 - "Meal Draft Panel UI"
-
-Cohesion: 0.33
-Nodes (3): [approved, setApproved], [pending, startTransition], PILL
-
-### Community 53 - "Push Setup UI Control"
-
-Cohesion: 0.53
-Nodes (4): getInitialStatus(), PushSetupControl(), urlBase64ToUint8Array(), VAPID_PUBLIC_KEY
-
-### Community 54 - "Baby Clothing Recommendation Logic"
-
-Cohesion: 0.67
-Nodes (4): bandFor(), PROTECTED, recommendClothing(), removeOneLayer()
-
-### Community 55 - "Availability Engine Test Fixtures"
-
-Cohesion: 0.53
-Nodes (4): busy, persons, win(), window
-
-### Community 56 - "Notes Repository Test Fixtures"
-
-Cohesion: 0.53
+### Community 56 - "notes.test.ts"
+Cohesion: 0.40
 Nodes (4): client, { id }, note, notes
 
-### Community 57 - "Meal Weighting Test Fixtures"
+### Community 58 - "Design — Essensplan-Entwurf + Abnicken/Ändern (Roadmap-Schritt C1)"
+Cohesion: 0.12
+Nodes (15): Architektur, Bewusst außerhalb des Scopes (YAGNI für C1), Datenmodell (Ansatz A — `status`-Feld), Design — Essensplan-Entwurf + Abnicken/Ändern (Roadmap-Schritt C1), Einkaufs-/Push-Naht (batch-vorbereitet), Fehlerfälle, Festgelegte Entscheidungen (aus Brainstorming), Pure Logik (+7 more)
 
-Cohesion: 0.33
-Nodes (4): noRecent, pool, recent, variety
+### Community 59 - "globalSetup.ts"
+Cohesion: 0.43
+Nodes (5): globalSetup(), IMPORTANT: this must never touch `dev.db` — it always points `DATABASE_URL`, removeIfExists(), TEST_DATABASE_URL, TEST_DB_PATH
 
-### Community 58 - "Task Defer Test Fixtures"
+### Community 60 - "Tablet Remote Access via Cloudflare Tunnel"
+Cohesion: 0.12
+Nodes (14): 1. Server autostart (Termux:Boot), 2. Display autostart (Fully Kiosk Browser), Boot order race, Tablet Kiosk Autostart, Troubleshooting, Verify, Lock it down — Cloudflare Access (mandatory), Notes (+6 more)
 
-Cohesion: 0.53
-Nodes (4): before, dateKey(), result, today
+### Community 61 - "TodayView.tsx"
+Cohesion: 0.22
+Nodes (9): setPhaseAction(), PageHeader(), Opt, active, PhaseSwitch(), PRESETS, TaskTile, ActivePhase (+1 more)
 
-### Community 59 - "Test Global Setup"
-
-Cohesion: 0.6
-Nodes (4): globalSetup(), removeIfExists(), TEST_DATABASE_URL, TEST_DB_PATH
-
-### Community 60 - "Recipe Vault Ingest Pipeline"
-
-Cohesion: 0.4
-Nodes (5): recipeIdeaToVaultMarkdown(), saveRecipeIdeaToVault(), ingestVault(), parseRecipeMarkdown(), slugFromFilename()
-
-### Community 61 - "Phase Switch UI"
-
-Cohesion: 0.6
-Nodes (3): active, PhaseSwitch(), PRESETS
-
-### Community 62 - "Dashboard Tiles UI"
-
-Cohesion: 0.4
-Nodes (2): doneCount, openCount
-
-### Community 63 - "Prisma Client Singleton"
-
-Cohesion: 0.6
-Nodes (3): createPrismaClient(), globalForPrisma, prisma
-
-### Community 64 - "Push Subscriptions Test Fixtures"
-
-Cohesion: 0.6
+### Community 64 - "pushSubscriptions.test.ts"
+Cohesion: 0.50
 Nodes (3): all, client, sub
 
-### Community 65 - "Recipe Vault Test Fixtures"
+### Community 66 - "MealWeekList.tsx"
+Cohesion: 0.22
+Nodes (9): pushMealIngredientsAction(), ingredientLabel(), MealWeekList (mobile active meal-plan list), Card(), CardHead(), p, MealPlanWidget(), MealReasonBadge() (+1 more)
 
-Cohesion: 0.4
-Nodes (4): full, md, { recipe }, { recipe, errors }
+### Community 68 - "dashboard.tsx"
+Cohesion: 0.19
+Nodes (13): DashboardProps, useSunTheme() [tablet auto dark/light hook], WeatherGlyph(), TopbarStats(), Weather(), CurrentWeather, Appointment, Meal/DraftMeal/MealIngredient DTO types (+5 more)
 
-### Community 66 - "Community 66"
+### Community 69 - "Design — Dienstplan-bewusster Essensplan (Roadmap-Schritt B)"
+Cohesion: 0.13
+Nodes (14): 1 · `web/src/lib/calendar/shifts.ts` (rein, erweitern), 2 · `web/src/lib/services/mealConstraints.ts` (rein, neu), 3 · Schema (`web/prisma/schema.prisma`) + Migration, 4 · `web/src/lib/services/mealPlanner.ts` (erweitern), 5 · Anbindung & Anzeige, Architektur, Bewusst außerhalb des Scopes (YAGNI), Design — Dienstplan-bewusster Essensplan (Roadmap-Schritt B) (+6 more)
 
-Cohesion: 0.67
-Nodes (1): Card()
+### Community 70 - "Essensplan-Entwurf + Abnicken/Ändern (Roadmap C1) — Implementation Plan"
+Cohesion: 0.14
+Nodes (13): Essensplan-Entwurf + Abnicken/Ändern (Roadmap C1) — Implementation Plan, File Structure, Self-Review (durch den Plan-Autor bereits erfolgt), Task 10: Manuelle Verifikation im laufenden Dashboard, Task 1: Schema — `MealPlanEntry.status`, Task 2: Pure `constraintFromEntry`, Task 3: Pure `planShoppingBatches` (D-Naht), Task 4: Planner schreibt Entwurf + `candidatesFor` exportieren (+5 more)
 
-### Community 67 - "Community 67"
+### Community 71 - "types.ts"
+Cohesion: 0.24
+Nodes (8): FULL_THRESHOLD, planTask(), filterByPerson(), persons, task(), EngineTask, PhaseConfig, PlanInput
 
-Cohesion: 0.5
-Nodes (3): active, payload, PERSON_OPTIONS
+### Community 74 - "Design — Einkauf nach Haltbarkeit, gestaffelt auf Bring (Roadmap-Schritt D1)"
+Cohesion: 0.14
+Nodes (13): Architektur, Bewusst außerhalb des Scopes (YAGNI für D1), Datenmodell, Design — Einkauf nach Haltbarkeit, gestaffelt auf Bring (Roadmap-Schritt D1), Fehlerfälle, Festgelegte Entscheidungen (aus Brainstorming), Reine Logik, Schritt D2/D3 — Anforderung & Naht (bewusst außerhalb D1) (+5 more)
 
-### Community 68 - "Community 68"
+### Community 77 - "Google Kalender — Termine, intelligente Verteilung & Sync — Design"
+Cohesion: 0.14
+Nodes (13): A) Auto-Sync, B1 — Neues pures Modul `src/lib/engine/capacity.ts`, B2 — `planTask` erweitern, B3 — `selectByFairness` erweitern, B4 — Wire-up, B) Termine in die Verteilung verdrahten (Hybrid Tageskapazität), Bestandsaufnahme (was schon da ist), C) Manueller Sync-Button (Handy + Tablet) (+5 more)
 
-Cohesion: 0.5
-Nodes (2): sunrise, sunset
+### Community 78 - "Einkauf nach Haltbarkeit, gestaffelt auf Bring (Roadmap D1) — Implementation Plan"
+Cohesion: 0.15
+Nodes (12): Einkauf nach Haltbarkeit, gestaffelt auf Bring (Roadmap D1) — Implementation Plan, File Structure, Self-Review (durch den Plan-Autor bereits erfolgt), Task 1: Schema — Kategorien + pushed, Task 2: Reine `classifyFreshness` + `suggestFreshShoppingDay`, Task 3: Seed setzt Zutaten-Kategorien, Task 4: `syncIngredientsToShopping` taggt Kategorie + pushed, Task 5: `pushRecipeBatch(category)` (+4 more)
 
-### Community 69 - "Community 69"
+### Community 82 - "File Structure"
+Cohesion: 0.15
+Nodes (12): Bekannte, bewusste Grenzen (nicht „fixen"), Design-Entscheidung: `Ingredient.category` = nur noch explizite Angabe, File Structure, Haltbarkeits-Korrektur-Gedächtnis (FreshnessOverride) Implementation Plan, Task 0: Feature-Branch, Task 1: Schema, Migration, Seed-Anpassung, Task 2: Reine Funktionen `normalizeIngredientName` + `resolveFreshness`, Task 3: Repository `freshnessOverride.ts` (Lesen + Toggle) (+4 more)
 
+### Community 84 - "Global Constraints"
+Cohesion: 0.15
+Nodes (12): Abschluss, Global Constraints, Google Kalender — Termine, Verteilung & Sync — Implementation Plan, Spec-Coverage-Check, Task 1: Fairness — weicher Last-Bias (`loadPenalty`), Task 2: Tageskapazität — pures `capacity.ts`, Task 3: `planTask` — Hybrid-Kapazität (harte Sperre + weicher Bias), Task 4: `calendarSync`-Service extrahieren + Route refactoren (+4 more)
+
+### Community 85 - "Rezepte-Vault (Obsidian) — Design"
+Cohesion: 0.15
+Nodes (13): Abschnitt 1 — Markdown-Schema, Abschnitt 2 — Identität & Ingest, Abschnitt 3 — Import-Weg (drei Stufen, nach Aufwand/Kosten gestaffelt), Build-Reihenfolge (Teilprojekt), Motivation, Nicht-Ziele, Reine Funktionen & Tests, Rezepte-Vault (Obsidian) — Design (+5 more)
+
+### Community 86 - "Sanftes Lernen — Design"
+Cohesion: 0.15
+Nodes (13): Architektur, Build-Reihenfolge (3 Phasen), C1 — Haltbarkeits-Korrektur-Gedächtnis, C2 — Gelernter Einkaufs-Vorlauf, Feature A — Essensplan-Gewichtung, Feature B — Adaptives Aufgaben-Intervall, Feature C — Frische/Einkauf, Motivation (+5 more)
+
+### Community 87 - "scripts"
+Cohesion: 0.15
+Nodes (13): scripts, build, dev, gen:icons, import:chores, import:recipes, lint, plan:today (+5 more)
+
+### Community 88 - "Rezept-Vault Import-Contract"
+Cohesion: 0.17
+Nodes (11): 1. Datei-Regeln (Ingest-Ordnerscan), 2. Frontmatter-Felder, die der App tatsächlich etwas bedeuten, 3. Der `slug` / `id` — das Wichtigste für den Importer, 4. Felder, die NICHT eingelesen werden (aber erlaubt sind), 5. Ingest-Verhalten (damit der Importer keine Überraschungen baut), 6. YAML-Fallstricke für den generierenden Code, 7. Minimal gültiges Rezept, 8. Voll ausgestattetes Rezept (Referenz) (+3 more)
+
+### Community 89 - "Google Calendar Setup (Phase 4 — read-only sync)"
+Cohesion: 0.17
+Nodes (11): 1. Create a Google Cloud project + enable the Calendar API, 2. Configure the OAuth consent screen, 3. Create an OAuth Client ID, 4. Fill in `web/.env`, 5. Connect the dashboard to Google, 6. Find your calendar IDs, 7. Fill in the calendar IDs in `web/.env`, 8. Trigger the sync (+3 more)
+
+### Community 90 - "Kompakt-Dashboard fürs Tablet — Implementation Plan"
+Cohesion: 0.17
+Nodes (11): File Structure, Kompakt-Dashboard fürs Tablet — Implementation Plan, Self-Review (durchgeführt), Task 1: Wind in die Wetter-Daten, Task 2: Reines Wetter-Widget `Weather`, Task 3: „Aufschieben"-Logik (nächster sinnvoller Tag) + `deferTask`, Task 4: Nachtragen pro Person — `addTaskDoneAction` + `AddDoneInline`, Task 5: Long-Press-Menü an der Aufgabe (+3 more)
+
+### Community 92 - "google.ts"
+Cohesion: 0.13
+Nodes (20): RFC-3339, GET(), GET(), googleEventsFixture, BABY_ARZT_PATTERN, CALENDAR_API_BASE, deriveKind(), derivePersonKey() (+12 more)
+
+### Community 93 - "Global Constraints"
+Cohesion: 0.17
+Nodes (11): C2 Handy-Push (Essensplan-Entwurf) Implementation Plan, Global Constraints, Manuelle End-to-End-Verifikation (nach allen Tasks), Self-Review (vom Plan-Autor durchgeführt), Task 1: `PushSubscription`-Modell, Migration & Repository, Task 2: `web-push`-Dependency + `pushNotify`-Service, Task 3: Server Actions (subscribe/unsubscribe), Task 4: Service Worker — `push` + `notificationclick` (+3 more)
+
+### Community 96 - "Kompakt-Dashboard fürs Tablet — Design"
+Cohesion: 0.17
+Nodes (11): Aufgaben-Interaktion (einziger Schreibpfad am Tablet), „Aufschieben" = automatisch sinnvoller Tag, Entfällt aus der Tablet-Ansicht, Kompakt-Dashboard fürs Tablet — Design, Komponenten-Schnitt, Layout (Querformat, 3 Zonen), Out of Scope (Folge-Projekt Handy-App), Technischer Ansatz (+3 more)
+
+### Community 99 - "page.tsx"
+Cohesion: 0.38
+Nodes (8): MobileTodayPage(), Home(), getCurrent(), weather, getTodaysEvents(), getActiveProjectProgress(), getOpenTaskCount(), getTasksByPerson()
+
+### Community 102 - "tasks.ts"
+Cohesion: 0.20
+Nodes (12): MobileSettingsPage(), MobileTasksPage(), SettingsView, assignTask(), CreateTaskInput, getTasksForDay(), listOpenTasks(), listRoutineTemplates() (+4 more)
+
+### Community 103 - "revalidateDashboard"
+Cohesion: 0.22
+Nodes (20): addTaskAction(), AddTaskInput, completeTaskByAction(), completeTaskByBothAction(), deferTaskAction(), failTaskAction(), toggleTaskAction(), Dashboard (tablet root component) (+12 more)
+
+### Community 104 - "Catch-up überfälliger Chores + Aufgaben-Übernahme — Design"
+Cohesion: 0.17
+Nodes (11): Action `completeTaskByAction(id, doerKey)`, Bewusst ausgeklammert (YAGNI), Catch-up überfälliger Chores + Aufgaben-Übernahme — Design, Deploy, Feature 1 — Catch-up überfälliger Routinen, Feature 2 — Aufgaben-Übernahme, Problem, Service `rollOverdueRoutines(day, client)` (+3 more)
+
+### Community 105 - "planning.test.ts"
+Cohesion: 0.33
+Nodes (7): computeShare(), PERSON_ORDER, selectByFairness(), Balances, createOpenOutdoorTask(), createOpenStandaloneTask(), dateKey()
+
+### Community 111 - "Dienstplan-bewusster Essensplan — Implementation Plan"
+Cohesion: 0.18
+Nodes (10): Dienstplan-bewusster Essensplan — Implementation Plan, File Structure, Self-Review (durch den Plan-Autor bereits erfolgt), Task 1: `classifyShift` (reine Schicht-Klassifizierung), Task 2: `deriveDayConstraints` + Date-Helfer, Task 3: Schema-Migration (reheatable / reason / extraPortion) + Seed, Task 4: Constraint-bewusster `generateWeekPlan`, Task 5: `getDomeShiftsForWeek` Repository + `localDateKey` (+2 more)
+
+### Community 113 - "Rezepte-Vault V1 Implementation Plan"
+Cohesion: 0.18
+Nodes (11): Rezepte-Vault V1 Implementation Plan, Self-Review (vom Plan-Autor durchgeführt), Task 1: `gray-matter`-Abhängigkeit hinzufügen, Task 2: Schema-Felder `slug`, `archived`, `rating` am `Recipe`-Cache, Task 3: Reine Parse-Funktionen `slugFromFilename` + `parseRecipeMarkdown`, Task 4: Ingest-Repository `ingestVault`, Task 5: Server-Action `ingestVaultAction`, Task 6: UI — `VaultIngestControl` + Einbau ins Dashboard (+3 more)
+
+### Community 114 - "Handy-Vollsteuerung (Mobile Control v2)"
+Cohesion: 0.18
+Nodes (11): Architektur & Routing, Datenfluss & Echtzeit, Design-Shell (Re-Skin), Designkonzept (Quelle), Entscheidungen (Brainstorming 2026-06-18), Fehlerbehandlung, Handy-Vollsteuerung (Mobile Control v2), Out of Scope (Später-TODO) (+3 more)
+
+### Community 115 - "Web Push / VAPID — Setup & Operations"
+Cohesion: 0.18
+Nodes (10): Environment Variables, Example `.env` block, Generating a VAPID Key Pair, iOS Note, Localhost vs. Cloudflare Tunnel, Overview, Production Deployment (Railway / Vercel), Revoking / Rotating Keys (+2 more)
+
+### Community 116 - "Prompt für Claude — Visuelles Design „Haushalts-Dashboard""
+Cohesion: 0.20
+Nodes (9): Aufgaben-Status (visuell unterscheidbar), Konkrete Beispieldaten (Heute = Montag, 7. Juni), Layout — „Heute im Fokus", Nicht tun, Personen-Farbcodierung, Produkt, Prompt für Claude — Visuelles Design „Haushalts-Dashboard", Stil (+1 more)
+
+### Community 117 - "Baby-Wetter / Kleidungsempfehlung — Feature-Plan"
+Cohesion: 0.20
+Nodes (9): Baby-Wetter / Kleidungsempfehlung — Feature-Plan, Datei-Struktur, Self-Review (Abdeckung), Spätere Ausbaustufen (nicht jetzt), Task 1 — Open-Meteo um UV-Index erweitern, Task 2 — Kleidungs-Empfehlung (reine Logik, TDD), Task 3 — UV-Schutz-Empfehlung (reine Logik, TDD), Task 4 — UI-Karte „Baby-Wetter" (+1 more)
+
+### Community 118 - "Catch-up überfälliger Routinen + Aufgaben-Übernahme — Implementation Plan"
+Cohesion: 0.20
+Nodes (9): Catch-up überfälliger Routinen + Aufgaben-Übernahme — Implementation Plan, Global Constraints, Self-Review-Ergebnis, Task 0: Worktree-Setup, Task 1: Service `rollOverdueRoutines`, Task 2: Catch-up in `plan:today` + `syncCalendarAction` verdrahten, Task 3: Repo `completeTaskBy` + Server-Action `completeTaskByAction`, Task 4: UI — Übernahme-Eintrag im TaskActionMenu (+1 more)
+
+### Community 119 - "BringSyncControl.tsx"
+Cohesion: 0.22
+Nodes (6): [copied, setCopied], label, [pending, startTransition], PILL, [result, setResult], tone
+
+### Community 120 - "Spike: Bring!-Integration – Machbarkeit eines inoffiziellen API-Push (2026-06-07)"
+Cohesion: 0.22
+Nodes (8): Client-Bibliotheken, Ergebnis / Empfehlung, Fallback-Optionen, Inoffizielle API: Endpoints & Auth-Flow, Integrations-Skizze (Empfehlung: Push umsetzen), Quellen, Risiken, Spike: Bring!-Integration – Machbarkeit eines inoffiziellen API-Push (2026-06-07)
+
+### Community 121 - "page.tsx"
+Cohesion: 0.25
+Nodes (5): dynamic, [domeTasks, emelyTasks, appointments, meals, notes, project, openTaskCount], today, todayLabel, weather
+
+### Community 122 - "planning.ts"
+Cohesion: 0.43
+Nodes (6): PlanResult, DEFAULT_PHASE, loadPhaseConfig(), parseWeatherCondition(), PlanDecision, toEngineTask()
+
+### Community 123 - "Essensplan-Gewichtung (Feature A) — Implementierungsplan"
+Cohesion: 0.25
+Nodes (7): Essensplan-Gewichtung (Feature A) — Implementierungsplan, Task 0: Feature-Branch, Task 1: Reine Gewichtungs-Funktionen `mealWeights.ts`, Task 2: Repository-Funktion `recentRecipeUse`, Task 3: `generateWeekPlan` wählt gewichtet, Task 4: `rerollDraftDay` würfelt gewichtet, Task 5: Doku + Abschluss-Verifikation
+
+### Community 124 - "README.md"
+Cohesion: 0.25
+Nodes (7): Deploy on Vercel, Getting Started, Gewichtete Essensplan-Auswahl, Haltbarkeits-Korrektur, Learn More, Rezept-Links (Obsidian öffnen), Rezepte-Vault
+
+### Community 125 - "PersonKey"
+Cohesion: 0.43
+Nodes (4): AccountEntryInput, CompletableTask, recordCompletion(), PersonKey
+
+### Community 126 - "accounts.test.ts"
+Cohesion: 0.29
+Nodes (6): after, balances, before, client, created, split
+
+### Community 127 - "accounts.ts"
+Cohesion: 0.62
+Nodes (3): addManualEntry(), getComputedSplit(), getWeeklyBalances()
+
+### Community 128 - "rollover.test.ts"
+Cohesion: 0.29
+Nodes (6): client, count, fromDay, task, toDay, updated
+
+### Community 129 - "Handoff-Prompt — Haushalts-Dashboard in neuem Chat weiterführen"
+Cohesion: 0.29
+Nodes (6): Arbeitsweise / Regeln, Dein erster Schritt (jetzt), Handoff-Prompt — Haushalts-Dashboard in neuem Chat weiterführen, Was noch fehlt (Umfang der echten Umsetzung — aus der Spec), Was schon existiert (bitte zuerst lesen), Ziel & Kontext
+
+### Community 130 - "NotesEditor.tsx"
+Cohesion: 0.33
+Nodes (3): [draft, setDraft], [editing, setEditing], [text, setText]
+
+### Community 131 - "Initialisierungs-Prompt — Rezept-Importer (ReciMe-Klon → Obsidian)"
+Cohesion: 0.33
+Nodes (5): Arbeitsweise, Harte Rahmenbedingungen, Initialisierungs-Prompt — Rezept-Importer (ReciMe-Klon → Obsidian), Projektauftrag, Wie du (Claude) starten sollst
+
+### Community 132 - "Handy-Steuerungsoberfläche (Mobile Control)"
+Cohesion: 0.33
+Nodes (6): Architektur & Routing, Datenfluss & Synchronisation, Handy-Steuerungsoberfläche (Mobile Control), Navigation & Aufbau, Out of Scope (Vorerst), Ziel
+
+### Community 133 - "Rezept-Vault Schema (TS-Interface + JSON-Schema)"
+Cohesion: 0.40
+Nodes (4): JSON-Schema (Draft 2020-12) — Validierungsziel für die emittierte YAML, Rezept-Vault Schema (TS-Interface + JSON-Schema), TypeScript, Validierungs-Hinweise für den Importer
+
+### Community 135 - "Handy-Steuerungsoberfläche Implementation Plan"
+Cohesion: 0.40
+Nodes (4): Handy-Steuerungsoberfläche Implementation Plan, Task 1: Route Group & Mobile Layout Setup, Task 2: Mobile Root Redirect & Meals Page, Task 3: Placeholder Pages for Tasks, Notes & Settings
+
+### Community 136 - "Komponenten"
+Cohesion: 0.40
+Nodes (5): Aufgaben (`TasksView`, Client-Component), Einkauf (`ShoppingView`, neu), Heute (`TodayView`, Server-Component), Komponenten, Mehr (`MoreView`, neu)
+
+### Community 137 - "Neues Backend"
+Cohesion: 0.50
+Nodes (4): Adaptives Intervall (Feature B aus „Sanftes Lernen"), Neues Backend, Notizen, Tasks
+
+### Community 138 - "package.json"
+Cohesion: 0.50
+Nodes (3): name, private, version
+
+### Community 140 - "seedDatabase"
 Cohesion: 0.83
-Nodes (2): babyAge(), completedMonths()
-
-### Community 70 - "Community 70"
-
-Cohesion: 0.83
-Nodes (2): levelFor(), uvAdvice()
-
-### Community 71 - "Community 71"
-
-Cohesion: 0.67
-Nodes (2): persons, task()
-
-### Community 72 - "Community 72"
-
-Cohesion: 0.67
-Nodes (2): client, phase
-
-### Community 73 - "Community 73"
-
-Cohesion: 0.67
-Nodes (2): client, progress
-
-### Community 74 - "Community 74"
-
-Cohesion: 0.67
-Nodes (2): MealPlanControl(), PILL
-
-### Community 75 - "Community 75"
-
-Cohesion: 0.67
-Nodes (2): balances, persons
-
-### Community 76 - "Community 76"
-
-Cohesion: 0.5
-Nodes (1): pushToBringAction
-
-### Community 77 - "Community 77"
-
-Cohesion: 0.67
-Nodes (3): setActiveDayRecipe(), pushMealIngredients(), getWeekMealPlan()
-
-### Community 78 - "Community 78"
-
-Cohesion: 0.5
-Nodes (2): generateRecipeIdeas(), runClaude() (spawns `claude` CLI via stdin)
-
-### Community 79 - "Community 79"
-
-Cohesion: 0.67
-Nodes (1): eslintConfig
-
-### Community 80 - "Community 80"
-
-Cohesion: 0.67
-Nodes (1): nextConfig
-
-### Community 81 - "Community 81"
-
-Cohesion: 0.67
-Nodes (1): config
-
-### Community 82 - "Community 82"
-
-Cohesion: 0.67
-Nodes (1): ServiceWorkerRegister()
-
-### Community 83 - "Community 83"
-
-Cohesion: 0.67
-Nodes (1): sw
-
-### Community 84 - "Community 84"
-
-Cohesion: 0.67
-Nodes (1): AddDoneInline()
-
-### Community 85 - "Community 85"
-
-Cohesion: 1.0
-Nodes (2): Dashboard(), useSunTheme()
-
-### Community 86 - "Community 86"
-
-Cohesion: 0.67
-Nodes (1): CheckIcon()
-
-### Community 87 - "Community 87"
-
-Cohesion: 0.67
-Nodes (1): SyncButton()
-
-### Community 88 - "Community 88"
-
-Cohesion: 0.67
-Nodes (1): MealReasonBadge()
-
-### Community 89 - "Community 89"
-
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 90 - "Community 90"
-
-Cohesion: 0.67
-Nodes (1): TodayView()
-
-### Community 91 - "Community 91"
-
-Cohesion: 0.67
-Nodes (1): result
-
-### Community 92 - "Community 92"
-
-Cohesion: 0.67
-Nodes (1): googleEventsFixture
-
-### Community 93 - "Community 93"
-
-Cohesion: 1.0
-Nodes (2): isDarkBySun(), toMinutes()
-
-### Community 94 - "Community 94"
-
-Cohesion: 0.67
-Nodes (2): THEME_INIT_SCRIPT, THEME_KEY
-
-### Community 95 - "Community 95"
-
-Cohesion: 0.67
-Nodes (1): a
-
-### Community 96 - "Community 96"
-
-Cohesion: 0.67
-Nodes (1): BABY
-
-### Community 97 - "Community 97"
-
-Cohesion: 0.67
-Nodes (1): a
-
-### Community 98 - "Community 98"
-
-Cohesion: 0.67
-Nodes (1): start
-
-### Community 99 - "Community 99"
-
-Cohesion: 0.67
-Nodes (1): getActiveProjectProgress()
-
-### Community 100 - "Community 100"
-
-Cohesion: 0.67
-Nodes (1): learned
-
-### Community 101 - "Community 101"
-
-Cohesion: 0.67
-Nodes (3): THEME_INIT_SCRIPT (pre-paint theme script), MobileLayout, RootLayout
-
-### Community 102 - "Community 102"
-
-Cohesion: 0.67
-Nodes (1): routineTemplates.test.ts (tests tasks.ts routine-template fns)
-
-### Community 103 - "Community 103"
-
-Cohesion: 0.67
-Nodes (1): setTaskStatus()
-
-### Community 104 - "Community 104"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 105 - "Community 105"
-
-Cohesion: 1.0
-Nodes (1): PrismaClient
-
-### Community 106 - "Community 106"
-
-Cohesion: 1.0
-Nodes (1): openMeteoFixture
-
-### Community 107 - "Community 107"
-
-Cohesion: 1.0
-Nodes (1): MobileNotesPage
-
-### Community 108 - "Community 108"
-
-Cohesion: 1.0
-Nodes (1): deleteShoppingAction
-
-### Community 109 - "Community 109"
-
-Cohesion: 1.0
-Nodes (1): clearShoppingAction
-
-### Community 110 - "Community 110"
-
-Cohesion: 1.0
-Nodes (1): toggleShoppingAction
-
-### Community 111 - "Community 111"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 112 - "Community 112"
-
-Cohesion: 1.0
-Nodes (2): Meal/DraftMeal/MealIngredient DTO types, domain.ts (re-exports UI DTOs from data.ts)
-
-### Community 113 - "Community 113"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 114 - "Community 114"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 115 - "Community 115"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 116 - "Community 116"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 117 - "Community 117"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 118 - "Community 118"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 119 - "Community 119"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 120 - "Community 120"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 121 - "Community 121"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 122 - "Community 122"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 123 - "Community 123"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 124 - "Community 124"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 125 - "Community 125"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 126 - "Community 126"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 127 - "Community 127"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 128 - "Community 128"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 129 - "Community 129"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 130 - "Community 130"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 131 - "Community 131"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 132 - "Community 132"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 133 - "Community 133"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 134 - "Community 134"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 135 - "Community 135"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 136 - "Community 136"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 137 - "Community 137"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 138 - "Community 138"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 139 - "Community 139"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 140 - "Community 140"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 141 - "Community 141"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 142 - "Community 142"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 143 - "Community 143"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 144 - "Community 144"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 145 - "Community 145"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 146 - "Community 146"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 147 - "Community 147"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 148 - "Community 148"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 149 - "Community 149"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 150 - "Community 150"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 151 - "Community 151"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 152 - "Community 152"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 153 - "Community 153"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 154 - "Community 154"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 155 - "Community 155"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 156 - "Community 156"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 157 - "Community 157"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 158 - "Community 158"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 159 - "Community 159"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 160 - "Community 160"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 161 - "Community 161"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 162 - "Community 162"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 163 - "Community 163"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 164 - "Community 164"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 165 - "Community 165"
-
-Cohesion: 1.0
-Nodes (1): TaskTile
-
-### Community 166 - "Community 166"
-
-Cohesion: 1.0
-Nodes (1): AppointmentsTile
-
-### Community 167 - "Community 167"
-
-Cohesion: 1.0
-Nodes (1): MobileNavBar
-
-### Community 168 - "Community 168"
-
-Cohesion: 1.0
-Nodes (1): NotesView
-
-### Community 169 - "Community 169"
-
-Cohesion: 1.0
-Nodes (1): SettingsView
-
-### Community 170 - "Community 170"
-
-Cohesion: 1.0
-Nodes (1): TaskDurationsControl
-
-### Community 171 - "Community 171"
-
-Cohesion: 1.0
-Nodes (1): openMeteoFixture (captured API fixture)
-
-### Community 172 - "Community 172"
-
-Cohesion: 1.0
-Nodes (1): openMeteo.test.ts (mapForecast/mapCurrent/conditionForCode tests)
-
-### Community 173 - "Community 173"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 174 - "Community 174"
-
-Cohesion: 1.0
-Nodes (1): sunTheme.test.ts (isDarkBySun tests)
-
-### Community 175 - "Community 175"
-
-Cohesion: 1.0
-Nodes (1): meals.test.ts (repository tests)
-
-### Community 176 - "Community 176"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 177 - "Community 177"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 178 - "Community 178"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 179 - "Community 179"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 180 - "Community 180"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 181 - "Community 181"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 182 - "Community 182"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 183 - "Community 183"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 184 - "Community 184"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 185 - "Community 185"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 186 - "Community 186"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 187 - "Community 187"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 188 - "Community 188"
-
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 189 - "Community 189"
-
-Cohesion: 1.0
-Nodes (1): App Icon / Brand Mark (Home glyph)
-
-## Ambiguous Edges - Review These
-- `revalidateDashboard()` → `approveDraft()`  [AMBIGUOUS]
-  web\src\lib\revalidate.ts · relation: conceptually_related_to
-- `routineTemplates.test.ts (tests tasks.ts routine-template fns)` → `listRoutineTemplates()`  [AMBIGUOUS]
-  web\src\lib\repositories\routineTemplates.test.ts · relation: conceptually_related_to
-- `routineTemplates.test.ts (tests tasks.ts routine-template fns)` → `updateRoutineTemplate()`  [AMBIGUOUS]
-  web\src\lib\repositories\routineTemplates.test.ts · relation: conceptually_related_to
+Nodes (3): addDays(), main(), seedDatabase()
+
+### Community 166 - "tiles.tsx"
+Cohesion: 0.31
+Nodes (6): MenuItem(), TaskActionMenu(), AppointmentsTile, TaskRow, PersonBadge(), personFill()
 
 ## Knowledge Gaps
-- **301 isolated node(s):** `isMainModule`, `display`, `body`, `metadata`, `[meals, draft, recipes]` (+296 more)
+- **1074 isolated node(s):** `tablet-boot.sh script`, `tablet-start.sh script`, `tablet-sync.sh script`, `name`, `version` (+1069 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 104`** (2 nodes): `NotesView()`, `NotesView.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 105`** (2 nodes): `PrismaClient`, `client.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 106`** (2 nodes): `openMeteoFixture`, `fixture.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 107`** (2 nodes): `MobileNotesPage`, `getNotes()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 108`** (2 nodes): `deleteShoppingAction`, `deleteShoppingItem()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 109`** (2 nodes): `clearShoppingAction`, `clearShoppingItems()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 110`** (2 nodes): `toggleShoppingAction`, `setShoppingDone()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 111`** (2 nodes): `getForecast()`, `mapForecast()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 112`** (2 nodes): `Meal/DraftMeal/MealIngredient DTO types`, `domain.ts (re-exports UI DTOs from data.ts)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 113`** (2 nodes): `approveDraft()`, `revalidateDashboard()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 114`** (2 nodes): `setDraftDayRecipe()`, `getDraftMealPlan()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 115`** (1 nodes): `next-env.d.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 116`** (1 nodes): `prisma.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 117`** (1 nodes): `vitest.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 118`** (1 nodes): `TopbarStats.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 119`** (1 nodes): `Weather.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 120`** (1 nodes): `PageHeader.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 121`** (1 nodes): `browser.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 122`** (1 nodes): `commonInputTypes.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 123`** (1 nodes): `enums.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 124`** (1 nodes): `models.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 125`** (1 nodes): `AccountEntry.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 126`** (1 nodes): `CalendarEvent.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 127`** (1 nodes): `Ingredient.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 128`** (1 nodes): `MealPlanEntry.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 129`** (1 nodes): `Note.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 130`** (1 nodes): `Person.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 131`** (1 nodes): `PhaseSetting.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 132`** (1 nodes): `Project.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 133`** (1 nodes): `PushSubscription.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 134`** (1 nodes): `Recipe.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 135`** (1 nodes): `ShoppingItem.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 136`** (1 nodes): `Task.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 137`** (1 nodes): `data.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 138`** (1 nodes): `domain.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 139`** (1 nodes): `types.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 140`** (1 nodes): `completion.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 141`** (1 nodes): `types.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 142`** (1 nodes): `ingredientAmount.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 143`** (1 nodes): `next-env.d.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 144`** (1 nodes): `prisma.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 145`** (1 nodes): `vitest.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 146`** (1 nodes): `TopbarStats.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 147`** (1 nodes): `Weather.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 148`** (1 nodes): `PageHeader.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 149`** (1 nodes): `commonInputTypes.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 150`** (1 nodes): `enums.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 151`** (1 nodes): `AccountEntry.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 152`** (1 nodes): `CalendarEvent.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 153`** (1 nodes): `Note.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 154`** (1 nodes): `Person.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 155`** (1 nodes): `PhaseSetting.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 156`** (1 nodes): `Project.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 157`** (1 nodes): `PushSubscription.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 158`** (1 nodes): `Recipe.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 159`** (1 nodes): `Task.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 160`** (1 nodes): `data.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 161`** (1 nodes): `types.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 162`** (1 nodes): `completion.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 163`** (1 nodes): `types.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 164`** (1 nodes): `ingredientAmount.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 165`** (1 nodes): `TaskTile`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 166`** (1 nodes): `AppointmentsTile`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 167`** (1 nodes): `MobileNavBar`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 168`** (1 nodes): `NotesView`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 169`** (1 nodes): `SettingsView`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 170`** (1 nodes): `TaskDurationsControl`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 171`** (1 nodes): `openMeteoFixture (captured API fixture)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 172`** (1 nodes): `openMeteo.test.ts (mapForecast/mapCurrent/conditionForCode tests)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 173`** (1 nodes): `conditionForCode()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 174`** (1 nodes): `sunTheme.test.ts (isDarkBySun tests)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 175`** (1 nodes): `meals.test.ts (repository tests)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 176`** (1 nodes): `listRecipes()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 177`** (1 nodes): `recipeIngest.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 178`** (1 nodes): `shopping.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 179`** (1 nodes): `clearShoppingItems()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 180`** (1 nodes): `mealDraft.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 181`** (1 nodes): `discardDraft()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 182`** (1 nodes): `mealIngredientPush.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 183`** (1 nodes): `mealPlanner.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 184`** (1 nodes): `mealWeights.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 185`** (1 nodes): `ratingWeight()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 186`** (1 nodes): `recencyFactor()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 187`** (1 nodes): `recipeIdeas.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 188`** (1 nodes): `recipeVault.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 189`** (1 nodes): `App Icon / Brand Mark (Home glyph)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **336 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What is the exact relationship between `revalidateDashboard()` and `approveDraft()`?**
-  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
-- **What is the exact relationship between `routineTemplates.test.ts (tests tasks.ts routine-template fns)` and `listRoutineTemplates()`?**
-  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
-- **What is the exact relationship between `routineTemplates.test.ts (tests tasks.ts routine-template fns)` and `updateRoutineTemplate()`?**
-  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
-- **Why does `map` connect `Recipe Vault & Bring Sync Controls` to `Core Date & Task-Rollover Utilities`, `Mobile Pages & Server Actions`, `Calendar Sync & Account Balances`, `Google Calendar Sync Pipeline`, `Meal Repository Test Fixtures`, `Task Distribution Engine (Fairness/Weather)`, `Fairness Accounts & Capacity Planning`, `Web Push Subscription Pipeline`, `Bring Shopping Sync`, `Chore Import Pipeline`?**
-  _High betweenness centrality (0.104) - this node is a cross-community bridge._
-- **Why does `join` connect `Recipe Vault & Bring Sync Controls` to `Generated Prisma Enums (internal)`, `Meal Planner Test Fixtures`?**
+- **Why does `@prisma/client` connect `dependencies` to `chores.test.ts`, `meals.ts`, `seedDatabase`, `google.ts`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `package.json`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+- **Why does `approveDraft()` connect `meals.ts` to `dependencies`?**
   _High betweenness centrality (0.029) - this node is a cross-community bridge._
-- **Why does `revalidateDashboard()` connect `Mobile Pages & Server Actions` to `Recipe Vault & Bring Sync Controls`, `Google Calendar Sync Pipeline`, `Bring Shopping Sync`, `Fairness Accounts & Capacity Planning`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Are the 36 inferred relationships involving `map` (e.g. with `main()` and `generateRecipeIdeasAction()`) actually correct?**
-  _`map` has 36 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `tablet-boot.sh script`, `tablet-start.sh script`, `tablet-sync.sh script` to the rest of the system?**
+  _1074 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `meals.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.06925624811803674 - nodes in this community are weakly interconnected._
+- **Should `recipeIdeas.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.08418367346938775 - nodes in this community are weakly interconnected._
+- **Should `db.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.07019230769230769 - nodes in this community are weakly interconnected._
