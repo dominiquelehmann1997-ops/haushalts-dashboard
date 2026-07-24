@@ -237,4 +237,61 @@ describe("generateNextOccurrence — restart + learned interval", () => {
     expect(offsetDays).toBeLessThan(7);
     expect(offsetDays).toBeGreaterThan(0);
   });
+
+  it('keeps a "daily" routine daily even after a sloppy history (Gassi gehen)', async () => {
+    // Reale Kette aus der Produktion: anfangs täglich, dann driftend, mit einer
+    // Urlaubslücke am Ende. Ohne FIXED_RHYTHMS lernte das ~3 Tage.
+    const chainBase = await client.task.create({
+      data: {
+        title: "Gassi gehen", type: "routine", effort: 45, allowedPersons: "both",
+        rhythm: "daily", status: "done",
+        dueDate: new Date("2026-03-01"), completedAt: new Date("2026-03-01"),
+      },
+    });
+    let last = chainBase;
+    for (const d of ["2026-03-03", "2026-03-05", "2026-03-07", "2026-03-13"]) {
+      last = await client.task.create({
+        data: {
+          title: "Gassi gehen", type: "routine", effort: 45, allowedPersons: "both",
+          rhythm: "daily", status: "done", recurringParentId: chainBase.id,
+          dueDate: new Date(d), completedAt: new Date(d),
+        },
+      });
+    }
+
+    const next = await generateNextOccurrence(last.id, client);
+
+    expect(next).not.toBeNull();
+    const offsetDays =
+      (next!.dueDate.getTime() - new Date("2026-03-13").getTime()) / 86_400_000;
+    expect(offsetDays).toBe(1);
+  });
+
+  it("caps a learned interval at twice the configured rhythm", async () => {
+    // 3-day-Routine, real alle ~9 Tage erledigt -> gelernt wäre 9, Deckel ist 6.
+    const chainBase = await client.task.create({
+      data: {
+        title: "Treppe saugen", type: "routine", effort: 5, allowedPersons: "both",
+        rhythm: "3-day", status: "done",
+        dueDate: new Date("2026-04-01"), completedAt: new Date("2026-04-01"),
+      },
+    });
+    let last = chainBase;
+    for (const d of ["2026-04-10", "2026-04-19", "2026-04-28"]) {
+      last = await client.task.create({
+        data: {
+          title: "Treppe saugen", type: "routine", effort: 5, allowedPersons: "both",
+          rhythm: "3-day", status: "done", recurringParentId: chainBase.id,
+          dueDate: new Date(d), completedAt: new Date(d),
+        },
+      });
+    }
+
+    const next = await generateNextOccurrence(last.id, client);
+
+    expect(next).not.toBeNull();
+    const offsetDays =
+      (next!.dueDate.getTime() - new Date("2026-04-28").getTime()) / 86_400_000;
+    expect(offsetDays).toBe(6); // 2 x 3, nicht 9
+  });
 });
