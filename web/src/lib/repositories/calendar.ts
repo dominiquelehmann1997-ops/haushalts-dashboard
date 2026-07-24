@@ -17,6 +17,21 @@ function isUrlaubFrei(title: string): boolean {
   return title.trim().toLowerCase() === "urlaub";
 }
 
+/** `calendarKey` des eigenen Geburtstagskalenders (siehe `configuredCalendars`). */
+const BIRTHDAY_CALENDAR_KEY = "geburtstage";
+
+/** Kuchen-Emoji am Titelanfang — die Markierung für Geburtstage außerhalb des Geburtstagskalenders. */
+const BIRTHDAY_MARKER = "🎂";
+
+/**
+ * `true` für Geburtstage — entweder aus dem eigenen Geburtstagskalender
+ * (dort zählt *jeder* Eintrag) oder mit einem Kuchen-Emoji am Titelanfang
+ * markiert.
+ */
+function isBirthday(title: string, calendarKey: string): boolean {
+  return calendarKey === BIRTHDAY_CALENDAR_KEY || title.trimStart().startsWith(BIRTHDAY_MARKER);
+}
+
 /**
  * CalendarEvents whose `start` falls on the given local day, ordered by start time.
  *
@@ -128,8 +143,15 @@ export async function replaceWindowEvents(
  *   entered there apply to both) become one window each for `"dome"` and
  *   `"emely"`.
  *
- * Other events without a person (e.g. birthdays) and baby events
- * (`personKey: "baby"`) are excluded — they don't constrain availability.
+ * Other events without a person and baby events (`personKey: "baby"`) are
+ * excluded — they don't constrain availability.
+ *
+ * Geburtstage sind ebenfalls ausgenommen, auch wenn sie in einem persönlichen
+ * oder im Familienkalender stehen: Einträge aus dem Geburtstagskalender
+ * (`calendarKey: "geburtstage"`) sowie alles mit Kuchen-Emoji am Titelanfang.
+ * Sie stehen ganztägig im Kalender, kosten aber keine Zeit — sonst wäre der
+ * ganze Tag als belegt gewertet und es würden keine Aufgaben verteilt.
+ * Angezeigt werden sie trotzdem (`getTodaysEvents` filtert nicht).
  *
  * Dome's overnight shifts ("Nacht"/"LN") are entered ending 23:59 on their
  * start day but actually keep Dome busy (shift + following sleep) until 14:00
@@ -162,6 +184,11 @@ export async function getBusyWindows(
     // blockiert NICHT die Aufgabenverteilung. "Urlaub Pinnow" o.Ä. (verreist)
     // bleibt ein normaler ganztägiger Block.
     if (row.allDay && isUrlaubFrei(row.title)) continue;
+
+    // Geburtstage stehen ganztägig im Kalender, kosten aber keine Zeit →
+    // blockieren NICHT die Aufgabenverteilung. Sie bleiben auf dem Dashboard
+    // sichtbar, weil `getTodaysEvents` alle Events unverändert anzeigt.
+    if (isBirthday(row.title, row.calendarKey)) continue;
 
     if (row.personKey === "dome" || row.personKey === "emely") {
       const end =

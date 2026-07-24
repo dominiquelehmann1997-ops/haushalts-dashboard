@@ -258,6 +258,76 @@ describe("calendar repository", () => {
       });
     });
 
+    describe("Geburtstage", () => {
+      const addBirthday = (
+        externalId: string,
+        title: string,
+        personKey: "dome" | "emely" | null,
+        calendarKey: string,
+      ) => {
+        const { start } = dayBounds(today);
+        return client.calendarEvent.create({
+          data: {
+            externalId,
+            calendarKey,
+            title,
+            start,
+            end: new Date(start.getFullYear(), start.getMonth(), start.getDate() + 1),
+            personKey,
+            kind: "termin",
+            place: null,
+            allDay: true,
+          },
+        });
+      };
+
+      it("does NOT create a busy window for a 🎂-marked all-day event in a personal calendar", async () => {
+        await addBirthday("bday-dome", "🎂 Oma", "dome", "dome");
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows.some((w) => w.start.getTime() === start.getTime())).toBe(false);
+      });
+
+      it("does NOT create busy windows for a 🎂-marked all-day event in the family calendar", async () => {
+        await addBirthday("bday-family", "🎂 Papa", null, "family");
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows.some((w) => w.start.getTime() === start.getTime())).toBe(false);
+      });
+
+      it("ignores every event from the birthday calendar, even without the 🎂 marker", async () => {
+        await addBirthday("bday-cal", "Omas Geburtstag", null, "geburtstage");
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows.some((w) => w.start.getTime() === start.getTime())).toBe(false);
+      });
+
+      it("still blocks for an all-day event without the 🎂 marker", async () => {
+        await addBirthday("allday-plain", "Umzug", "dome", "dome");
+        const { start, end } = dayBounds(today);
+
+        const windows = await getBusyWindows(start, end, client);
+
+        expect(windows.some((w) => w.person === "dome" && w.start.getTime() === start.getTime())).toBe(
+          true,
+        );
+      });
+
+      it("keeps showing the birthday on the dashboard (getTodaysEvents does not filter)", async () => {
+        await addBirthday("bday-visible", "🎂 Oma", null, "family");
+
+        const events = await getTodaysEvents(today, client);
+
+        expect(events.find((e) => e.title === "🎂 Oma")?.time).toBe("ganztägig");
+      });
+    });
+
     describe("overnight shifts (Nacht/LN)", () => {
       const dayAt = (base: Date, dayOffset: number, hours: number, minutes: number) => {
         const d = new Date(base);

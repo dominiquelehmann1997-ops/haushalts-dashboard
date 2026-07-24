@@ -1,254 +1,1272 @@
 {
-  "web\\eslint.config.mjs": 1780799018.6683822,
-  "web\\next-env.d.ts": 1781294303.5426834,
-  "web\\next.config.ts": 1781729741.097008,
-  "web\\postcss.config.mjs": 1780799018.7322986,
-  "web\\prisma.config.ts": 1781044342.6230104,
-  "web\\vitest.config.ts": 1781044342.7625186,
-  "web\\prisma\\importChores.ts": 1781295133.8549378,
-  "web\\prisma\\ingestRecipes.ts": 1781442361.9726617,
-  "web\\prisma\\planToday.ts": 1782135156.081229,
-  "web\\prisma\\seed.ts": 1783528226.4497821,
-  "web\\prisma\\syncCalendar.ts": 1781938204.965789,
-  "web\\public\\sw.js": 1781731827.5924098,
-  "web\\scripts\\bring-list-uuids.mjs": 1781044342.6365454,
-  "web\\scripts\\bring-read-list.mjs": 1781044342.6375446,
-  "web\\scripts\\gen-icons.mjs": 1781543798.8151808,
-  "web\\src\\app\\layout.tsx": 1783600603.641055,
-  "web\\src\\app\\manifest.test.ts": 1781543798.8171775,
-  "web\\src\\app\\page.tsx": 1781540314.397805,
-  "web\\src\\app\\sw-register.tsx": 1781543798.8171775,
-  "web\\src\\app\\sw.test.ts": 1781731827.6005232,
-  "web\\src\\app\\(mobile)\\layout.tsx": 1783600603.6383502,
-  "web\\src\\app\\(mobile)\\mobile\\page.tsx": 1781873120.015497,
-  "web\\src\\app\\(mobile)\\mobile\\meals\\page.tsx": 1783528226.450789,
-  "web\\src\\app\\(mobile)\\mobile\\notes\\page.tsx": 1783600603.6388874,
-  "web\\src\\app\\(mobile)\\mobile\\settings\\page.tsx": 1783600603.6400015,
-  "web\\src\\app\\(mobile)\\mobile\\tasks\\page.tsx": 1781873120.015497,
-  "web\\src\\app\\actions\\accounts.ts": 1781873120.020451,
-  "web\\src\\app\\actions\\calendar.ts": 1782816133.1726809,
-  "web\\src\\app\\actions\\meals.ts": 1783528226.4527893,
-  "web\\src\\app\\actions\\notes.ts": 1781873120.020451,
-  "web\\src\\app\\actions\\phase.ts": 1781873120.020451,
-  "web\\src\\app\\actions\\push.ts": 1781731827.5924098,
-  "web\\src\\app\\actions\\recipeIdeas.ts": 1782851974.1634014,
-  "web\\src\\app\\actions\\recipes.ts": 1781873120.0234575,
-  "web\\src\\app\\actions\\settings.ts": 1783600603.6405246,
-  "web\\src\\app\\actions\\shopping.ts": 1783528226.4537902,
-  "web\\src\\app\\actions\\tasks.ts": 1782822086.0709338,
-  "web\\src\\app\\api\\auth\\google\\route.ts": 1781044342.6488855,
-  "web\\src\\app\\api\\auth\\google\\callback\\route.ts": 1781044342.6478863,
-  "web\\src\\app\\api\\sync\\calendar\\route.ts": 1781938204.9677882,
-  "web\\src\\components\\AddDoneEntry.tsx": 1781044342.6538885,
-  "web\\src\\components\\AddDoneInline.tsx": 1781540314.3983393,
-  "web\\src\\components\\BringSyncControl.tsx": 1781044342.6558883,
-  "web\\src\\components\\dashboard.tsx": 1783600603.6416001,
-  "web\\src\\components\\header.tsx": 1782846068.0053525,
-  "web\\src\\components\\icons.tsx": 1782381402.0805216,
-  "web\\src\\components\\MealDraftPanel.tsx": 1783528226.454789,
-  "web\\src\\components\\MealPlanControl.tsx": 1781044342.6588886,
-  "web\\src\\components\\PhaseSwitch.tsx": 1781044342.6608865,
-  "web\\src\\components\\PushSetupControl.tsx": 1781731827.6005232,
-  "web\\src\\components\\RecipeIdeasControl.tsx": 1782851974.1644824,
-  "web\\src\\components\\SyncButton.tsx": 1781938204.9677882,
-  "web\\src\\components\\TaskActionMenu.tsx": 1782822096.5281837,
-  "web\\src\\components\\tiles.tsx": 1782850246.5118418,
-  "web\\src\\components\\TopbarStats.tsx": 1781540314.3999293,
-  "web\\src\\components\\ui.tsx": 1780799474.5376825,
-  "web\\src\\components\\VaultIngestControl.tsx": 1781085600.3620434,
-  "web\\src\\components\\Weather.tsx": 1782381402.0794358,
-  "web\\src\\components\\WeatherBabyTile.tsx": 1781044342.6628897,
-  "web\\src\\components\\widgets.tsx": 1782505416.3350568,
-  "web\\src\\components\\mobile\\MealWeekList.tsx": 1783528226.4557908,
-  "web\\src\\components\\mobile\\MobileNavBar.tsx": 1783600603.6427839,
-  "web\\src\\components\\mobile\\NotesEditor.tsx": 1781873120.027471,
-  "web\\src\\components\\mobile\\NotesView.tsx": 1783600603.6427839,
-  "web\\src\\components\\mobile\\PageHeader.tsx": 1781873120.028935,
-  "web\\src\\components\\mobile\\SettingsView.tsx": 1783600603.6433218,
-  "web\\src\\components\\mobile\\TaskDurationsControl.tsx": 1783600603.6438835,
-  "web\\src\\components\\mobile\\TasksView.tsx": 1782822131.987229,
-  "web\\src\\components\\mobile\\ThemeToggle.tsx": 1783600603.6444116,
-  "web\\src\\components\\mobile\\TodayView.tsx": 1782822124.378759,
-  "web\\src\\generated\\prisma\\browser.ts": 1783528361.894049,
-  "web\\src\\generated\\prisma\\client.ts": 1783528361.892093,
-  "web\\src\\generated\\prisma\\commonInputTypes.ts": 1783528361.8950565,
-  "web\\src\\generated\\prisma\\enums.ts": 1783528361.8915212,
-  "web\\src\\generated\\prisma\\models.ts": 1783528361.8950565,
-  "web\\src\\generated\\prisma\\internal\\class.ts": 1783528361.9073153,
-  "web\\src\\generated\\prisma\\internal\\prismaNamespace.ts": 1783528361.9073153,
-  "web\\src\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts": 1783528361.9073153,
-  "web\\src\\generated\\prisma\\models\\AccountEntry.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\CalendarEvent.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\Ingredient.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\MealPlanEntry.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\Note.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\Person.ts": 1783528361.9073153,
-  "web\\src\\generated\\prisma\\models\\PhaseSetting.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\Project.ts": 1783528361.9073153,
-  "web\\src\\generated\\prisma\\models\\PushSubscription.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\Recipe.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\ShoppingItem.ts": 1783528361.9076624,
-  "web\\src\\generated\\prisma\\models\\Task.ts": 1783528361.9073153,
-  "web\\src\\integrations\\bring\\client.test.ts": 1782225801.1172607,
-  "web\\src\\integrations\\bring\\client.ts": 1782225801.1177945,
-  "web\\src\\integrations\\calendar\\fixture.ts": 1781044342.67389,
-  "web\\src\\integrations\\calendar\\google.test.ts": 1782399703.0087874,
-  "web\\src\\integrations\\calendar\\google.ts": 1782399703.009938,
-  "web\\src\\integrations\\calendar\\googleAuth.ts": 1781044342.6778874,
-  "web\\src\\integrations\\weather\\fixture.ts": 1782850246.5118418,
-  "web\\src\\integrations\\weather\\openMeteo.test.ts": 1782850246.5138502,
-  "web\\src\\integrations\\weather\\openMeteo.ts": 1782850246.5158587,
-  "web\\src\\lib\\data.test.ts": 1782246971.9849792,
-  "web\\src\\lib\\data.ts": 1783528226.4567897,
-  "web\\src\\lib\\dates.ts": 1781044342.697148,
-  "web\\src\\lib\\db.ts": 1781044342.6981497,
-  "web\\src\\lib\\domain.ts": 1783528226.4577894,
-  "web\\src\\lib\\revalidate.ts": 1783600603.6469567,
-  "web\\src\\lib\\sunTheme.test.ts": 1782850246.5173688,
-  "web\\src\\lib\\sunTheme.ts": 1782850246.5242412,
-  "web\\src\\lib\\theme.ts": 1783600603.6469567,
-  "web\\src\\lib\\baby\\age.test.ts": 1781044342.6848977,
-  "web\\src\\lib\\baby\\age.ts": 1781044342.6858861,
-  "web\\src\\lib\\baby\\clothing.test.ts": 1781044342.6868868,
-  "web\\src\\lib\\baby\\clothing.ts": 1781044342.6888938,
-  "web\\src\\lib\\baby\\profile.ts": 1781044342.689889,
-  "web\\src\\lib\\baby\\types.ts": 1781044342.689889,
-  "web\\src\\lib\\baby\\uv.test.ts": 1781044342.690886,
-  "web\\src\\lib\\baby\\uv.ts": 1781044342.6918886,
-  "web\\src\\lib\\calendar\\shifts.test.ts": 1781044342.6938872,
-  "web\\src\\lib\\calendar\\shifts.ts": 1781044342.6948855,
-  "web\\src\\lib\\engine\\availability.test.ts": 1781044342.7001505,
-  "web\\src\\lib\\engine\\availability.ts": 1781044342.7011502,
-  "web\\src\\lib\\engine\\capacity.test.ts": 1781938204.9717915,
-  "web\\src\\lib\\engine\\capacity.ts": 1781938204.9727871,
-  "web\\src\\lib\\engine\\completion.test.ts": 1781044342.7021503,
-  "web\\src\\lib\\engine\\completion.ts": 1781044342.7031536,
-  "web\\src\\lib\\engine\\fairness.test.ts": 1781938204.9727871,
-  "web\\src\\lib\\engine\\fairness.ts": 1781938204.9737923,
-  "web\\src\\lib\\engine\\index.test.ts": 1781938204.974786,
-  "web\\src\\lib\\engine\\index.ts": 1781938204.9757879,
-  "web\\src\\lib\\engine\\personFilter.test.ts": 1781044342.7084029,
-  "web\\src\\lib\\engine\\personFilter.ts": 1781044342.7094042,
-  "web\\src\\lib\\engine\\types.ts": 1781938204.9767902,
-  "web\\src\\lib\\engine\\weatherCheck.test.ts": 1781044342.7124066,
-  "web\\src\\lib\\engine\\weatherCheck.ts": 1781044342.7134042,
-  "web\\src\\lib\\repositories\\accounts.test.ts": 1781044342.7148364,
-  "web\\src\\lib\\repositories\\accounts.ts": 1781044342.7158344,
-  "web\\src\\lib\\repositories\\calendar.test.ts": 1782399703.0112157,
-  "web\\src\\lib\\repositories\\calendar.ts": 1782399703.0117464,
-  "web\\src\\lib\\repositories\\choreImport.test.ts": 1781295133.8646953,
-  "web\\src\\lib\\repositories\\choreImport.ts": 1781295133.8646953,
-  "web\\src\\lib\\repositories\\meals.test.ts": 1783528226.4587939,
-  "web\\src\\lib\\repositories\\meals.ts": 1783528226.4597895,
-  "web\\src\\lib\\repositories\\notes.test.ts": 1781873120.028935,
-  "web\\src\\lib\\repositories\\notes.ts": 1781873120.0337026,
-  "web\\src\\lib\\repositories\\phase.test.ts": 1781044342.7228389,
-  "web\\src\\lib\\repositories\\phase.ts": 1781044342.723838,
-  "web\\src\\lib\\repositories\\projects.test.ts": 1781044342.724835,
-  "web\\src\\lib\\repositories\\projects.ts": 1781044342.7258344,
-  "web\\src\\lib\\repositories\\pushSubscriptions.test.ts": 1781731827.603826,
-  "web\\src\\lib\\repositories\\pushSubscriptions.ts": 1781731827.603826,
-  "web\\src\\lib\\repositories\\recipeIngest.test.ts": 1783528226.4607909,
-  "web\\src\\lib\\repositories\\recipeIngest.ts": 1783528226.4617887,
-  "web\\src\\lib\\repositories\\routineTemplates.test.ts": 1783600603.6449451,
-  "web\\src\\lib\\repositories\\shopping.test.ts": 1783528226.4617887,
-  "web\\src\\lib\\repositories\\shopping.ts": 1783528226.4627936,
-  "web\\src\\lib\\repositories\\tasks.test.ts": 1782135156.085246,
-  "web\\src\\lib\\repositories\\tasks.ts": 1783600603.6459572,
-  "web\\src\\lib\\repositories\\tasks.write.test.ts": 1782822138.5132327,
-  "web\\src\\lib\\services\\calendarSync.test.ts": 1782399703.0122871,
-  "web\\src\\lib\\services\\calendarSync.ts": 1782379951.2899683,
-  "web\\src\\lib\\services\\chores.test.ts": 1781295133.8646953,
-  "web\\src\\lib\\services\\chores.ts": 1781295133.8646953,
-  "web\\src\\lib\\services\\ingredientAmount.test.ts": 1782225801.1372747,
-  "web\\src\\lib\\services\\ingredientAmount.ts": 1782225801.1396852,
-  "web\\src\\lib\\services\\learnedInterval.test.ts": 1781873120.0367146,
-  "web\\src\\lib\\services\\learnedInterval.ts": 1781873120.0367146,
-  "web\\src\\lib\\services\\mealConstraints.test.ts": 1782223388.5572095,
-  "web\\src\\lib\\services\\mealConstraints.ts": 1782223388.5577445,
-  "web\\src\\lib\\services\\mealDraft.test.ts": 1783528226.463789,
-  "web\\src\\lib\\services\\mealDraft.ts": 1783528226.4647937,
-  "web\\src\\lib\\services\\mealIngredientPush.test.ts": 1783528226.4647937,
-  "web\\src\\lib\\services\\mealIngredientPush.ts": 1783528226.465794,
-  "web\\src\\lib\\services\\mealPlanner.test.ts": 1782850246.5173688,
-  "web\\src\\lib\\services\\mealPlanner.ts": 1782850246.5173688,
-  "web\\src\\lib\\services\\mealWeights.test.ts": 1782850246.5173688,
-  "web\\src\\lib\\services\\mealWeights.ts": 1782850246.5173688,
-  "web\\src\\lib\\services\\overdueCatchup.test.ts": 1782818118.277584,
-  "web\\src\\lib\\services\\overdueCatchup.ts": 1782818111.5940597,
-  "web\\src\\lib\\services\\planning.test.ts": 1781938204.978792,
-  "web\\src\\lib\\services\\planning.ts": 1781938204.9797885,
-  "web\\src\\lib\\services\\pushNotify.test.ts": 1781731827.603826,
-  "web\\src\\lib\\services\\pushNotify.ts": 1781731827.603826,
-  "web\\src\\lib\\services\\recipeIdeas.test.ts": 1783528226.4667912,
-  "web\\src\\lib\\services\\recipeIdeas.ts": 1783528226.4667912,
-  "web\\src\\lib\\services\\recipeVault.test.ts": 1783528226.4677882,
-  "web\\src\\lib\\services\\recipeVault.ts": 1783528226.4687908,
-  "web\\src\\lib\\services\\recurrence.test.ts": 1781873120.039107,
-  "web\\src\\lib\\services\\recurrence.ts": 1781873120.039107,
-  "web\\src\\lib\\services\\rollover.test.ts": 1781044342.7532203,
-  "web\\src\\lib\\services\\rollover.ts": 1781044342.7542229,
-  "web\\src\\lib\\services\\taskDefer.test.ts": 1781540314.4114113,
-  "web\\src\\lib\\services\\taskDefer.ts": 1781540314.4119248,
-  "web\\src\\test\\db.ts": 1781044342.7605174,
-  "web\\src\\test\\globalSetup.ts": 1781044342.7615178,
-  "README.md": 1781295133.849267,
-  "docs\\claude-design-prompt.md": 1780797790.9837258,
-  "docs\\handoff-prompt.md": 1781730142.0501583,
-  "docs\\recipe-importer-init-prompt.md": 1781125214.8752842,
-  "docs\\recipe-vault-import-contract.md": 1781124108.86869,
-  "docs\\recipe-vault-schema.md": 1781125196.976087,
-  "docs\\recipe-vault-template.md": 1781085600.3441718,
-  "docs\\tablet-kiosk-setup.md": 1782131386.5969586,
-  "docs\\tablet-remote-access.md": 1781617734.483982,
-  "docs\\tablet-termux-setup.md": 1781295133.8549378,
-  "docs\\setup\\google-calendar.md": 1781044342.600489,
-  "docs\\spikes\\2026-06-07-bring-machbarkeit.md": 1781044342.6024911,
-  "docs\\superpowers\\plans\\2026-06-07-haushalts-dashboard-umsetzung.md": 1781044342.603495,
-  "docs\\superpowers\\plans\\2026-06-08-baby-wetter-kleidungsempfehlung.md": 1781044342.6057668,
-  "docs\\superpowers\\plans\\2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md": 1781768361.3431075,
-  "docs\\superpowers\\plans\\2026-06-09-dienstplan-bewusster-essensplan.md": 1781044342.6077592,
-  "docs\\superpowers\\plans\\2026-06-09-einkauf-haltbarkeit-batching.md": 1781044342.6097617,
-  "docs\\superpowers\\plans\\2026-06-09-essensplan-entwurf-freigabe.md": 1781044342.611761,
-  "docs\\superpowers\\plans\\2026-06-10-essensplan-gewichtung.md": 1781101553.4470835,
-  "docs\\superpowers\\plans\\2026-06-10-freshness-override.md": 1781105465.820697,
-  "docs\\superpowers\\plans\\2026-06-10-rezepte-vault-v1.md": 1781082329.1991916,
-  "docs\\superpowers\\plans\\2026-06-12-tablet-betrieb-chore-import.md": 1781295133.8524091,
-  "docs\\superpowers\\plans\\2026-06-14-kompakt-dashboard-tablet.md": 1781523372.3465817,
-  "docs\\superpowers\\plans\\2026-06-15-pwa-tailscale-kiosk.md": 1781542027.2092216,
-  "docs\\superpowers\\plans\\2026-06-17-c2-handy-push-essensplan.md": 1781728559.937883,
-  "docs\\superpowers\\plans\\2026-06-17-handy-steuerung.md": 1781730156.5048015,
-  "docs\\superpowers\\plans\\2026-06-18-handy-vollsteuerung.md": 1781873120.0045993,
-  "docs\\superpowers\\plans\\2026-06-20-google-kalender-verteilung-sync.md": 1782379951.2843273,
-  "docs\\superpowers\\plans\\2026-06-22-catchup-uebernahme.md": 1782133189.5899527,
-  "docs\\superpowers\\specs\\2026-06-07-haushalts-dashboard-design.md": 1780798034.7583182,
-  "docs\\superpowers\\specs\\2026-06-09-dienstplan-bewusster-essensplan-design.md": 1781044342.6127617,
-  "docs\\superpowers\\specs\\2026-06-09-einkauf-haltbarkeit-batching-design.md": 1781044342.6137614,
-  "docs\\superpowers\\specs\\2026-06-09-essensplan-entwurf-freigabe-design.md": 1781044342.6147616,
-  "docs\\superpowers\\specs\\2026-06-10-rezepte-vault-design.md": 1781081921.9680393,
-  "docs\\superpowers\\specs\\2026-06-10-sanftes-lernen-design.md": 1781048896.0097408,
-  "docs\\superpowers\\specs\\2026-06-12-tablet-betrieb-chore-import-design.md": 1781295133.8524091,
-  "docs\\superpowers\\specs\\2026-06-14-kompakt-dashboard-tablet-design.md": 1781523072.26694,
-  "docs\\superpowers\\specs\\2026-06-15-pwa-tailscale-kiosk-design.md": 1781541300.5578625,
-  "docs\\superpowers\\specs\\2026-06-17-c2-handy-push-essensplan-design.md": 1781728083.710266,
-  "docs\\superpowers\\specs\\2026-06-17-handy-steuerung-design.md": 1781729463.2951603,
-  "docs\\superpowers\\specs\\2026-06-18-handy-vollsteuerung-design.md": 1781873120.0045993,
-  "docs\\superpowers\\specs\\2026-06-20-google-kalender-verteilung-sync-design.md": 1781930206.8245203,
-  "docs\\superpowers\\specs\\2026-06-22-catchup-uebernahme-design.md": 1782132901.6212192,
-  "web\\AGENTS.md": 1781728044.8033888,
-  "web\\CLAUDE.md": 1780799107.8622828,
-  "web\\Kalender_IDs.txt": 1780876874.20563,
-  "web\\README.md": 1781123679.9493837,
-  "web\\docs\\push-setup.md": 1781768402.7124648,
-  "web\\public\\offline.html": 1781543798.8141806,
-  "web\\public\\apple-icon-180.png": 1781543798.8101773,
-  "web\\public\\file.svg": 1780799018.7465172,
-  "web\\public\\globe.svg": 1780799018.7959745,
-  "web\\public\\icon-192.png": 1781543798.8111765,
-  "web\\public\\icon-512-maskable.png": 1781543798.8111765,
-  "web\\public\\icon-512.png": 1781543798.8121815,
-  "web\\public\\icon.svg": 1781295133.8549378,
-  "web\\public\\next.svg": 1780799018.8288186,
-  "web\\public\\vercel.svg": 1780799018.8623002,
-  "web\\public\\window.svg": 1780799018.886688
+  "web/eslint.config.mjs": {
+    "mtime": 1783712733.6588807,
+    "ast_hash": "6c4307ffa009658f5c97f5629094c0c2",
+    "semantic_hash": ""
+  },
+  "web/next.config.ts": {
+    "mtime": 1783712733.7379658,
+    "ast_hash": "733c4fb373a6c1f685d2ea9706eec78b",
+    "semantic_hash": ""
+  },
+  "web/postcss.config.mjs": {
+    "mtime": 1783712733.7409873,
+    "ast_hash": "481fac0fdecd70e1821cc30b86030c1a",
+    "semantic_hash": ""
+  },
+  "web/prisma.config.ts": {
+    "mtime": 1783712733.7414987,
+    "ast_hash": "2135644a8f9df87abbb46988ee4e71bd",
+    "semantic_hash": ""
+  },
+  "web/vitest.config.ts": {
+    "mtime": 1783712733.842902,
+    "ast_hash": "b5eaebfdf2e3eb3a85418dfeb90569c0",
+    "semantic_hash": ""
+  },
+  "web/prisma/importChores.ts": {
+    "mtime": 1783712733.742,
+    "ast_hash": "4afd26aa1d08a08738fcec994c9daa59",
+    "semantic_hash": ""
+  },
+  "web/prisma/ingestRecipes.ts": {
+    "mtime": 1783712733.7425117,
+    "ast_hash": "0505559b61fcd9049e55f737a48df1f4",
+    "semantic_hash": ""
+  },
+  "web/prisma/planToday.ts": {
+    "mtime": 1783712733.7531073,
+    "ast_hash": "87b9a2e1fff522d3bb5488c7774d276c",
+    "semantic_hash": ""
+  },
+  "web/prisma/seed.ts": {
+    "mtime": 1783712733.7538674,
+    "ast_hash": "c7d103c1044e946de1ae6735a8175036",
+    "semantic_hash": ""
+  },
+  "web/prisma/syncCalendar.ts": {
+    "mtime": 1783712733.754761,
+    "ast_hash": "62fb9472e9d0b877e6be2568374642da",
+    "semantic_hash": ""
+  },
+  "web/public/sw.js": {
+    "mtime": 1783712733.75945,
+    "ast_hash": "12fe2514bf892df1ef31e6244ff0b70b",
+    "semantic_hash": ""
+  },
+  "web/scripts/bring-list-uuids.mjs": {
+    "mtime": 1783712733.760954,
+    "ast_hash": "dc0f275b29c8e369a1f790b3e77758d9",
+    "semantic_hash": ""
+  },
+  "web/scripts/bring-read-list.mjs": {
+    "mtime": 1783712733.7614937,
+    "ast_hash": "4e64d6e2f400170cad46fbc175be1ca9",
+    "semantic_hash": ""
+  },
+  "web/scripts/gen-icons.mjs": {
+    "mtime": 1783712733.7614937,
+    "ast_hash": "9b63840ef1fb46a6cf4d3d77792e7673",
+    "semantic_hash": ""
+  },
+  "web/src/app/layout.tsx": {
+    "mtime": 1783712733.7756379,
+    "ast_hash": "aa82d9e50b1ff52611138f596d7ff585",
+    "semantic_hash": ""
+  },
+  "web/src/app/manifest.test.ts": {
+    "mtime": 1783712733.7761383,
+    "ast_hash": "74b2e50d2b44ac8ece3cc89101f025ae",
+    "semantic_hash": ""
+  },
+  "web/src/app/page.tsx": {
+    "mtime": 1783712733.776787,
+    "ast_hash": "dcb99cd6cc0a1c997947cfe42183afa1",
+    "semantic_hash": ""
+  },
+  "web/src/app/sw-register.tsx": {
+    "mtime": 1783712733.7773328,
+    "ast_hash": "b1cbb44383cd97a0f4578c5b67698081",
+    "semantic_hash": ""
+  },
+  "web/src/app/sw.test.ts": {
+    "mtime": 1783712733.777835,
+    "ast_hash": "81d57139325ca5eeea56e4d359fb430b",
+    "semantic_hash": ""
+  },
+  "web/src/app/(mobile)/layout.tsx": {
+    "mtime": 1783712733.7635136,
+    "ast_hash": "3528d975bc82a6bfb19cba623a95fb64",
+    "semantic_hash": ""
+  },
+  "web/src/app/(mobile)/mobile/page.tsx": {
+    "mtime": 1783712733.7654493,
+    "ast_hash": "1aef24a33ca77d852aa18b7417936576",
+    "semantic_hash": ""
+  },
+  "web/src/app/(mobile)/mobile/meals/page.tsx": {
+    "mtime": 1783712733.764014,
+    "ast_hash": "06f2b0034608bf28b4d672e0a8d03f4e",
+    "semantic_hash": ""
+  },
+  "web/src/app/(mobile)/mobile/notes/page.tsx": {
+    "mtime": 1783712733.7649488,
+    "ast_hash": "42b89af1312d067ce35fb28b86d9c80f",
+    "semantic_hash": ""
+  },
+  "web/src/app/(mobile)/mobile/settings/page.tsx": {
+    "mtime": 1783712733.766375,
+    "ast_hash": "52f7127d83cbf354b3a0fb62d999e096",
+    "semantic_hash": ""
+  },
+  "web/src/app/(mobile)/mobile/tasks/page.tsx": {
+    "mtime": 1783712733.7668793,
+    "ast_hash": "e9f188083fe42b6a16b79de9dd2ea17e",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/accounts.ts": {
+    "mtime": 1783712733.7678902,
+    "ast_hash": "6f8e68c2836999c3c52cd8095ea95145",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/calendar.ts": {
+    "mtime": 1783712733.7683907,
+    "ast_hash": "4100c561a63fa1910a09e9a31b28de83",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/meals.ts": {
+    "mtime": 1783712733.7688909,
+    "ast_hash": "f42d0829b80136b72a2c1521deef05df",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/notes.ts": {
+    "mtime": 1783712733.7692857,
+    "ast_hash": "45174de4d5d175d6c72d3a7db9270209",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/phase.ts": {
+    "mtime": 1783712733.7692857,
+    "ast_hash": "70352370352e4bd0742b93c45db31b85",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/push.ts": {
+    "mtime": 1783712733.7698927,
+    "ast_hash": "2a137b6634389d959e58dff78ea4e2f6",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/recipeIdeas.ts": {
+    "mtime": 1783712733.7698927,
+    "ast_hash": "49f6b40c6d62fc8a53b2b2dded2b026f",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/recipes.ts": {
+    "mtime": 1783712733.7708955,
+    "ast_hash": "cc2194ad6ea6446237c43a2503162fc5",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/settings.ts": {
+    "mtime": 1783712733.7708955,
+    "ast_hash": "eb6389656663cb98bbe39e04f9c1a572",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/shopping.ts": {
+    "mtime": 1783712733.771404,
+    "ast_hash": "da87af442ed9c75de0196d3efec0c988",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/tasks.ts": {
+    "mtime": 1783712733.7719045,
+    "ast_hash": "9ba86a151c71dfcf4c817f58064b6388",
+    "semantic_hash": ""
+  },
+  "web/src/app/api/auth/google/route.ts": {
+    "mtime": 1783712733.7732923,
+    "ast_hash": "5c11d0a611c08b32fe0d51b07a25c5f6",
+    "semantic_hash": ""
+  },
+  "web/src/app/api/auth/google/callback/route.ts": {
+    "mtime": 1783712733.7732923,
+    "ast_hash": "408aa360434fdedf134b02a8ef88e5f1",
+    "semantic_hash": ""
+  },
+  "web/src/app/api/sync/calendar/route.ts": {
+    "mtime": 1783712733.7744007,
+    "ast_hash": "5e5bf412ba83e1118e66198786825ce3",
+    "semantic_hash": ""
+  },
+  "web/src/components/AddDoneEntry.tsx": {
+    "mtime": 1783712733.7788465,
+    "ast_hash": "76dc603963fb6bfe8a244207fd68b02c",
+    "semantic_hash": ""
+  },
+  "web/src/components/AddDoneInline.tsx": {
+    "mtime": 1783712733.7788465,
+    "ast_hash": "4db86dcb96284cf5b85eb45275da56da",
+    "semantic_hash": ""
+  },
+  "web/src/components/BringSyncControl.tsx": {
+    "mtime": 1783712733.77985,
+    "ast_hash": "25adfbada24123a645112284703d8286",
+    "semantic_hash": ""
+  },
+  "web/src/components/dashboard.tsx": {
+    "mtime": 1783712733.7854092,
+    "ast_hash": "95908b25dccc84e49319a225d0bc5b49",
+    "semantic_hash": ""
+  },
+  "web/src/components/header.tsx": {
+    "mtime": 1783712733.7859132,
+    "ast_hash": "c825978640e7301b922db652cba7abc3",
+    "semantic_hash": ""
+  },
+  "web/src/components/icons.tsx": {
+    "mtime": 1783712733.7864177,
+    "ast_hash": "2b992ebccfdf1510b7f95488fec86c95",
+    "semantic_hash": ""
+  },
+  "web/src/components/MealDraftPanel.tsx": {
+    "mtime": 1783712733.77985,
+    "ast_hash": "f0d9ff8e569e7796c7a717201a7677bc",
+    "semantic_hash": ""
+  },
+  "web/src/components/MealPlanControl.tsx": {
+    "mtime": 1783712733.7808592,
+    "ast_hash": "ff2da2f0b2520a3da22ef2698feec6cd",
+    "semantic_hash": ""
+  },
+  "web/src/components/PhaseSwitch.tsx": {
+    "mtime": 1783712733.7813742,
+    "ast_hash": "c43f46831fba905556952fa143ea832e",
+    "semantic_hash": ""
+  },
+  "web/src/components/PushSetupControl.tsx": {
+    "mtime": 1783712733.7813742,
+    "ast_hash": "3b36c21c98192e8a7a4d5a7ff611bc37",
+    "semantic_hash": ""
+  },
+  "web/src/components/RecipeIdeasControl.tsx": {
+    "mtime": 1783712733.7823806,
+    "ast_hash": "1a78b943bfa453e2b6ce2c3479f43ef9",
+    "semantic_hash": ""
+  },
+  "web/src/components/SyncButton.tsx": {
+    "mtime": 1783712733.782884,
+    "ast_hash": "b2aba7f7ea1d9d0bf692b352cdb2153f",
+    "semantic_hash": ""
+  },
+  "web/src/components/TaskActionMenu.tsx": {
+    "mtime": 1783712733.7833872,
+    "ast_hash": "b399bc544b66bb91ef2432fabcf79143",
+    "semantic_hash": ""
+  },
+  "web/src/components/tiles.tsx": {
+    "mtime": 1783712733.7909548,
+    "ast_hash": "fb3727f0721b4ea5e793f14a00a8f209",
+    "semantic_hash": ""
+  },
+  "web/src/components/TopbarStats.tsx": {
+    "mtime": 1783712733.7833872,
+    "ast_hash": "cc0ec80b6ff63d0583456b8829e60031",
+    "semantic_hash": ""
+  },
+  "web/src/components/ui.tsx": {
+    "mtime": 1783712733.7919664,
+    "ast_hash": "65d90f252af2fc9abb241265dac26c41",
+    "semantic_hash": ""
+  },
+  "web/src/components/VaultIngestControl.tsx": {
+    "mtime": 1783712733.7843952,
+    "ast_hash": "66833f6db4aa16b625d85491bcb8d293",
+    "semantic_hash": ""
+  },
+  "web/src/components/Weather.tsx": {
+    "mtime": 1783712733.7843952,
+    "ast_hash": "2fd7878aeae4bf5acdd0d1483d7849e0",
+    "semantic_hash": ""
+  },
+  "web/src/components/WeatherBabyTile.tsx": {
+    "mtime": 1783712733.7854092,
+    "ast_hash": "272cad3043ad6464928acd2f4b792d9d",
+    "semantic_hash": ""
+  },
+  "web/src/components/widgets.tsx": {
+    "mtime": 1783712733.792537,
+    "ast_hash": "eb903fcf2d26b84bdcf8d4c1aae7c28b",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/MealWeekList.tsx": {
+    "mtime": 1783712733.7869225,
+    "ast_hash": "2e269965cf0103a725a749e040044329",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/MobileNavBar.tsx": {
+    "mtime": 1783712733.787927,
+    "ast_hash": "57f1fedcecb57968cabcdbe85622fee4",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/NotesEditor.tsx": {
+    "mtime": 1783712733.788443,
+    "ast_hash": "cb88a72ec66c6d1feccfe2f4973c00db",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/NotesView.tsx": {
+    "mtime": 1783712733.7889466,
+    "ast_hash": "34a3c843ff1a2ece14279f09933a4fb6",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/PageHeader.tsx": {
+    "mtime": 1783712733.7889466,
+    "ast_hash": "69e0fd058a15d868259b548eed9a74d1",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/SettingsView.tsx": {
+    "mtime": 1783712733.7894495,
+    "ast_hash": "aa2fad902ecfb93d916d28a11896042b",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/TaskDurationsControl.tsx": {
+    "mtime": 1783712733.7899518,
+    "ast_hash": "10a6179f27a76a268b3e5d9db598c6a6",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/TasksView.tsx": {
+    "mtime": 1783712733.7899518,
+    "ast_hash": "148cf75c36f1ce124ca82c215dc91f56",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/ThemeToggle.tsx": {
+    "mtime": 1783712733.7899518,
+    "ast_hash": "53a52be4a6788bb16ff91c89e48e05ea",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/TodayView.tsx": {
+    "mtime": 1783712733.7909548,
+    "ast_hash": "a70661d39c09dd2c0173eb1e6376bd8e",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/bring/client.test.ts": {
+    "mtime": 1783712733.7935355,
+    "ast_hash": "38ad925458542bedde0e1984af2fe37c",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/bring/client.ts": {
+    "mtime": 1783712733.7943995,
+    "ast_hash": "1f11c82afd7f6d5a366184ef2dd0ced4",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/calendar/fixture.ts": {
+    "mtime": 1783712733.794917,
+    "ast_hash": "51aeeac6c891b97fd2a1ecfbf33e6c45",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/calendar/google.test.ts": {
+    "mtime": 1783712733.7954202,
+    "ast_hash": "28d47f84043338200aebb08b23942884",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/calendar/google.ts": {
+    "mtime": 1783712733.795923,
+    "ast_hash": "6dabd21b47d1acf96488b364a10abc01",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/calendar/googleAuth.ts": {
+    "mtime": 1783712733.796426,
+    "ast_hash": "4c2aea767545c460e3f8076d0c1793e0",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/weather/fixture.ts": {
+    "mtime": 1783712733.796929,
+    "ast_hash": "c0c1b23b0897aa36348afb602b881c3a",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/weather/openMeteo.test.ts": {
+    "mtime": 1783712733.7974324,
+    "ast_hash": "7ea226e6d915ae3414088773f51829fb",
+    "semantic_hash": ""
+  },
+  "web/src/integrations/weather/openMeteo.ts": {
+    "mtime": 1783712733.7979975,
+    "ast_hash": "e18605696f7155e184cab6abb9fcdf14",
+    "semantic_hash": ""
+  },
+  "web/src/lib/data.test.ts": {
+    "mtime": 1783712733.8032482,
+    "ast_hash": "5ec96c577e738aa7d236ee8545baecf4",
+    "semantic_hash": ""
+  },
+  "web/src/lib/data.ts": {
+    "mtime": 1783712733.8037486,
+    "ast_hash": "32bdc80fb6e980205d7444c8ccddf098",
+    "semantic_hash": ""
+  },
+  "web/src/lib/dates.ts": {
+    "mtime": 1783712733.804249,
+    "ast_hash": "19db63f989aa37a2aa5b4187789de329",
+    "semantic_hash": ""
+  },
+  "web/src/lib/db.ts": {
+    "mtime": 1783712733.8049111,
+    "ast_hash": "734fc68696dbcde229a861e87fe0e584",
+    "semantic_hash": ""
+  },
+  "web/src/lib/domain.ts": {
+    "mtime": 1783712733.8054266,
+    "ast_hash": "d545f74a84d7bd16244b48fa5a085034",
+    "semantic_hash": ""
+  },
+  "web/src/lib/revalidate.ts": {
+    "mtime": 1783712733.8236895,
+    "ast_hash": "98af5b100c525458b8445694109db64c",
+    "semantic_hash": ""
+  },
+  "web/src/lib/sunTheme.test.ts": {
+    "mtime": 1783712733.8391912,
+    "ast_hash": "ccf8ec4cba52107f362466b83a07986f",
+    "semantic_hash": ""
+  },
+  "web/src/lib/sunTheme.ts": {
+    "mtime": 1783712733.8401942,
+    "ast_hash": "b647c505b9fb9b28caf7110f4fb20572",
+    "semantic_hash": ""
+  },
+  "web/src/lib/theme.ts": {
+    "mtime": 1783712733.8406963,
+    "ast_hash": "1411a3d70721be5d16aa07154f8e90bb",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/age.test.ts": {
+    "mtime": 1783712733.7984984,
+    "ast_hash": "283815dca8661cd7fcbd75204e67a1af",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/age.ts": {
+    "mtime": 1783712733.7989986,
+    "ast_hash": "0c19339ebc8867a8e3321d0dfc1790c7",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/clothing.test.ts": {
+    "mtime": 1783712733.7989986,
+    "ast_hash": "8d65efe1df25628a8603a81f537ab02c",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/clothing.ts": {
+    "mtime": 1783712733.8000023,
+    "ast_hash": "a4f511e98a7b33bedaba7decf2eb30c3",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/profile.ts": {
+    "mtime": 1783712733.801013,
+    "ast_hash": "ed56e871098191c76b43cddd99afee7b",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/types.ts": {
+    "mtime": 1783712733.801013,
+    "ast_hash": "a6023fd069bde25640869c332c3c7f1e",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/uv.test.ts": {
+    "mtime": 1783712733.801802,
+    "ast_hash": "130e4e1923e35ebd1f0b0ceae8b8742a",
+    "semantic_hash": ""
+  },
+  "web/src/lib/baby/uv.ts": {
+    "mtime": 1783712733.801802,
+    "ast_hash": "db7c87b7efaaeac335627237a9410903",
+    "semantic_hash": ""
+  },
+  "web/src/lib/calendar/shifts.test.ts": {
+    "mtime": 1783712733.8023026,
+    "ast_hash": "5b7f5ea155eff62a17c75bc3ed3b4842",
+    "semantic_hash": ""
+  },
+  "web/src/lib/calendar/shifts.ts": {
+    "mtime": 1783712733.8032482,
+    "ast_hash": "ae6413eaa72233bef24f854b09ee01bc",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/availability.test.ts": {
+    "mtime": 1783712733.8059273,
+    "ast_hash": "87b808d3d639e4728ea90679a184f902",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/availability.ts": {
+    "mtime": 1783712733.806443,
+    "ast_hash": "7ed97ca08178831d6d96f9219065b744",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/capacity.test.ts": {
+    "mtime": 1783712733.806443,
+    "ast_hash": "99a603c78ee2f5b17c1966797e2d7050",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/capacity.ts": {
+    "mtime": 1783712733.806443,
+    "ast_hash": "5450f92c5daa8dcf88b03a713dc1d43c",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/completion.test.ts": {
+    "mtime": 1783712733.807446,
+    "ast_hash": "d47fddb027b1da8a5f717ac18cb27078",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/completion.ts": {
+    "mtime": 1783712733.80808,
+    "ast_hash": "8b330ce1493432a0e2950094a233aeb0",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/fairness.test.ts": {
+    "mtime": 1783712733.80808,
+    "ast_hash": "30d300a4d3b946363305b9b719c80dc6",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/fairness.ts": {
+    "mtime": 1783712733.8085804,
+    "ast_hash": "13b4da0aa395e67de3184481a56ab9ff",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/index.test.ts": {
+    "mtime": 1783712733.809272,
+    "ast_hash": "9c624d3be2a500f15ef1e090e4cff248",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/index.ts": {
+    "mtime": 1783712733.809272,
+    "ast_hash": "4d9be0ea91f164671211582579194e45",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/personFilter.test.ts": {
+    "mtime": 1783712733.8097725,
+    "ast_hash": "9bbbd47e88d6506ac841a49b3b5d0750",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/personFilter.ts": {
+    "mtime": 1783712733.8097725,
+    "ast_hash": "5251692595a2395adb6dff12890a53bc",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/types.ts": {
+    "mtime": 1783712733.8107755,
+    "ast_hash": "4fd664a30edc28c3428a0d1b5ab93cb0",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/weatherCheck.test.ts": {
+    "mtime": 1783712733.8107755,
+    "ast_hash": "564c8f0b83fbd07dac4dde6e7be00c7f",
+    "semantic_hash": ""
+  },
+  "web/src/lib/engine/weatherCheck.ts": {
+    "mtime": 1783712733.8112805,
+    "ast_hash": "3b0787857ffb6651bc3fbfa871a6706b",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/accounts.test.ts": {
+    "mtime": 1783712733.811781,
+    "ast_hash": "b887244d5c760354be297dcd9d903029",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/accounts.ts": {
+    "mtime": 1783712733.8123643,
+    "ast_hash": "9ab753003328d80ba1da33f1ffee94a1",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/calendar.test.ts": {
+    "mtime": 1784923532.8991218,
+    "ast_hash": "fe82c3c2f6086561e31dd12fbce1b472",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/calendar.ts": {
+    "mtime": 1784923519.9225013,
+    "ast_hash": "754b091bbfb26c0d7435a1b85538eca5",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/choreImport.test.ts": {
+    "mtime": 1783712733.814229,
+    "ast_hash": "aa8842c828bf39b35f35abc0d68bc7e8",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/choreImport.ts": {
+    "mtime": 1783712733.814229,
+    "ast_hash": "9186bd33acc17d7730897791c87f85c9",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/meals.test.ts": {
+    "mtime": 1783712733.815231,
+    "ast_hash": "e5b2f799e5bae1077c25da4d8700275f",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/meals.ts": {
+    "mtime": 1783712733.81588,
+    "ast_hash": "acbc6b54d0c8a716486470ce75190bb2",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/notes.test.ts": {
+    "mtime": 1783712733.8164468,
+    "ast_hash": "008573a50f46a6b21b9d4f04692ce245",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/notes.ts": {
+    "mtime": 1783712733.8164468,
+    "ast_hash": "33ebd327ab8a54c68783b60466452272",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/phase.test.ts": {
+    "mtime": 1783712733.816952,
+    "ast_hash": "4d4bdbe8182fb9455492c66d25199954",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/phase.ts": {
+    "mtime": 1783712733.8174565,
+    "ast_hash": "7859a35f397e53170981b11d1f6f310f",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/projects.test.ts": {
+    "mtime": 1783712733.8179586,
+    "ast_hash": "bf45b65940fa806ec6d53dca4b47837e",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/projects.ts": {
+    "mtime": 1783712733.818459,
+    "ast_hash": "d974ee336bf44a1d3a6f19c1c902a621",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/pushSubscriptions.test.ts": {
+    "mtime": 1783712733.8189595,
+    "ast_hash": "6c542f71a39043d5290c574a01994e8e",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/pushSubscriptions.ts": {
+    "mtime": 1783712733.8189595,
+    "ast_hash": "4188cebe2786f1850bb88b11d966ad15",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/recipeIngest.test.ts": {
+    "mtime": 1783712733.819963,
+    "ast_hash": "f10511dfb3fae8a193766005347062ca",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/recipeIngest.ts": {
+    "mtime": 1783712733.819963,
+    "ast_hash": "1d971207bc8def8abaab27760404c24e",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/routineTemplates.test.ts": {
+    "mtime": 1783712733.819963,
+    "ast_hash": "4323f62402b2b3e1d7d55926939417a9",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/shopping.test.ts": {
+    "mtime": 1783712733.821213,
+    "ast_hash": "522959dc9aba941bc1f3957191c4dfb9",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/shopping.ts": {
+    "mtime": 1783712733.8217137,
+    "ast_hash": "40b3c64584880f93d6c2d39e92b94b0e",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/tasks.test.ts": {
+    "mtime": 1783712733.8217137,
+    "ast_hash": "952fe2c800c3943bd59c0bd9ba4c2dcb",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/tasks.ts": {
+    "mtime": 1783712733.822611,
+    "ast_hash": "88c31d5f67c7ebae3f644ff9ec0c9c22",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/tasks.write.test.ts": {
+    "mtime": 1783712733.8231115,
+    "ast_hash": "4f0e0b8b84472a7e7b3ae18bf8df21d1",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/calendarSync.test.ts": {
+    "mtime": 1783712733.82419,
+    "ast_hash": "dec5920ab1cc017b9874b39a6889fc76",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/calendarSync.ts": {
+    "mtime": 1783712733.8247192,
+    "ast_hash": "52d24942f92e6eb6cee7d355e1884b25",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/chores.test.ts": {
+    "mtime": 1783712733.8247192,
+    "ast_hash": "9755c98ebc015e8c1f016b2c4c45ea78",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/chores.ts": {
+    "mtime": 1783712733.825676,
+    "ast_hash": "0dc6e0e194301d031bebd65d0039e597",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/ingredientAmount.test.ts": {
+    "mtime": 1783712733.8261764,
+    "ast_hash": "296f3ce1bf6d06551f03c12ebc22e2dd",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/ingredientAmount.ts": {
+    "mtime": 1783712733.8261764,
+    "ast_hash": "24efa6011b1f64347c67d36fbea8a7b2",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/learnedInterval.test.ts": {
+    "mtime": 1783712733.8269613,
+    "ast_hash": "cd4676cecc73b92c9c8ff259ba5545ba",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/learnedInterval.ts": {
+    "mtime": 1783712733.8269613,
+    "ast_hash": "26eca64a552686cf6f7fe7d9103e646b",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealConstraints.test.ts": {
+    "mtime": 1783712733.8274617,
+    "ast_hash": "e8d66be4476f886c7bb7f556a3d0d9fa",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealConstraints.ts": {
+    "mtime": 1783712733.828218,
+    "ast_hash": "82a531d7e0b588f98ea0a9725ebab2e4",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealDraft.test.ts": {
+    "mtime": 1783712733.828218,
+    "ast_hash": "f58b51e6f0c6f656fee24ba44dca3e05",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealDraft.ts": {
+    "mtime": 1783712733.8289638,
+    "ast_hash": "d7380e666356b6bf5ebb534fb118e691",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealIngredientPush.test.ts": {
+    "mtime": 1783712733.8294644,
+    "ast_hash": "6edfd3b61439ec1c5be7b688faefa2ef",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealIngredientPush.ts": {
+    "mtime": 1783712733.8298447,
+    "ast_hash": "f10b902aa29034170b189f842ba0001a",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealPlanner.test.ts": {
+    "mtime": 1783712733.8298447,
+    "ast_hash": "93982a025f51d7b08279d00285bddef8",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealPlanner.ts": {
+    "mtime": 1783712733.8298447,
+    "ast_hash": "14efa31801ddb0b5ed3ea91e9f188ce5",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealWeights.test.ts": {
+    "mtime": 1783712733.8307903,
+    "ast_hash": "35cb5333fb8bddebe7fae06b30f00c30",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/mealWeights.ts": {
+    "mtime": 1783712733.8313003,
+    "ast_hash": "85bf5636ba403b556b9e9dbcc169d239",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/overdueCatchup.test.ts": {
+    "mtime": 1783712733.832553,
+    "ast_hash": "44f58cb9f7b98285830d5a2cdd813839",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/overdueCatchup.ts": {
+    "mtime": 1783712733.8333256,
+    "ast_hash": "b9be4297491b055f1252f7c7eeeb50c6",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/planning.test.ts": {
+    "mtime": 1783712733.8338263,
+    "ast_hash": "7a34083d434ab7d2941d0c0ba27d9f2f",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/planning.ts": {
+    "mtime": 1783712733.8338263,
+    "ast_hash": "a8413047f44fd121b9731f8ae9ab80bd",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/pushNotify.test.ts": {
+    "mtime": 1783712733.8343265,
+    "ast_hash": "5db1a1f3b96faf1df457c34440b7cbd6",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/pushNotify.ts": {
+    "mtime": 1783712733.834827,
+    "ast_hash": "9c576a338ec5ad3efd4808ede0cee1a1",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeIdeas.test.ts": {
+    "mtime": 1783712733.834827,
+    "ast_hash": "e45acb18ae470123c23a6b56d1afa8f0",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeIdeas.ts": {
+    "mtime": 1783712733.8358302,
+    "ast_hash": "6fe0e6b4dfad95ee7938cf24fe1c072d",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeVault.test.ts": {
+    "mtime": 1783712733.8362126,
+    "ast_hash": "326bae72eb3b7a30f6e3e3a91e19ff59",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeVault.ts": {
+    "mtime": 1783712733.8362126,
+    "ast_hash": "dc27ba609eaefcd7fd3cf17b026b3699",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recurrence.test.ts": {
+    "mtime": 1783712733.8371103,
+    "ast_hash": "6bc0ef4d00b884637eafb1c50c451084",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recurrence.ts": {
+    "mtime": 1783712733.8371103,
+    "ast_hash": "94f581d71c6553a08f097d684f700ef6",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/rollover.test.ts": {
+    "mtime": 1783712733.8376107,
+    "ast_hash": "ed409350189285ef0591a57f26bdc2c4",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/rollover.ts": {
+    "mtime": 1783712733.8376107,
+    "ast_hash": "ae7b79a445de01ea4d78882d1238ac7b",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/taskDefer.test.ts": {
+    "mtime": 1783712733.8386137,
+    "ast_hash": "11c2551a0fa62f24b98499052b097f43",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/taskDefer.ts": {
+    "mtime": 1783712733.8391912,
+    "ast_hash": "0bbfd818bb96d6661abab79524445835",
+    "semantic_hash": ""
+  },
+  "web/src/test/db.ts": {
+    "mtime": 1783712733.8416972,
+    "ast_hash": "53aa77e766f7a93e35813696a0c7ac8f",
+    "semantic_hash": ""
+  },
+  "web/src/test/globalSetup.ts": {
+    "mtime": 1783712733.8416972,
+    "ast_hash": "2719562e1e009e1ec0566765a725c313",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1783712733.3556507,
+    "ast_hash": "fecb5d341a2e5e9905135aa87229363b",
+    "semantic_hash": ""
+  },
+  "docs/claude-design-prompt.md": {
+    "mtime": 1783712733.3566544,
+    "ast_hash": "818668a8b976982f0d4ece189a9d9285",
+    "semantic_hash": ""
+  },
+  "docs/handoff-prompt.md": {
+    "mtime": 1783712733.357172,
+    "ast_hash": "8bb30f6f3dca2d5aed09148e435eb74b",
+    "semantic_hash": ""
+  },
+  "docs/recipe-importer-init-prompt.md": {
+    "mtime": 1783712733.3576763,
+    "ast_hash": "79b470bee7a018635e447b7168d2df5d",
+    "semantic_hash": ""
+  },
+  "docs/recipe-vault-import-contract.md": {
+    "mtime": 1783712733.3583355,
+    "ast_hash": "c2e091f86c1c3684f187b3971d1e1b51",
+    "semantic_hash": ""
+  },
+  "docs/recipe-vault-schema.md": {
+    "mtime": 1783712733.3590033,
+    "ast_hash": "df18ac8e10931b135511c11eabae2878",
+    "semantic_hash": ""
+  },
+  "docs/recipe-vault-template.md": {
+    "mtime": 1783712733.3590033,
+    "ast_hash": "178ccb47c456bcc568fc7b92a0576a50",
+    "semantic_hash": ""
+  },
+  "docs/tablet-kiosk-setup.md": {
+    "mtime": 1783712733.378947,
+    "ast_hash": "2dd05d26e098cdd2a330b29b15686b8e",
+    "semantic_hash": ""
+  },
+  "docs/tablet-remote-access.md": {
+    "mtime": 1783712733.3794537,
+    "ast_hash": "70b194a8b934ca76980a02818991396f",
+    "semantic_hash": ""
+  },
+  "docs/tablet-termux-setup.md": {
+    "mtime": 1783712733.379956,
+    "ast_hash": "7a5d17bfb3438d1c5c3b53d64919fc63",
+    "semantic_hash": ""
+  },
+  "docs/setup/google-calendar.md": {
+    "mtime": 1783712733.3600063,
+    "ast_hash": "9be33b99964c70fd7a5ace807603c493",
+    "semantic_hash": ""
+  },
+  "docs/spikes/2026-06-07-bring-machbarkeit.md": {
+    "mtime": 1783712733.3610435,
+    "ast_hash": "41ce8cbb59c6ba872e4cc976faac9bb4",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md": {
+    "mtime": 1783712733.36206,
+    "ast_hash": "c1e5df1cdd7a7c08fc54e6eb53129bf0",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md": {
+    "mtime": 1783712733.3625607,
+    "ast_hash": "66b97f4e7efe0e42179c58d65b6bec5e",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md": {
+    "mtime": 1783712733.3625607,
+    "ast_hash": "3afbe661c237cfaef5f33d0e2c2c4cdb",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md": {
+    "mtime": 1783712733.3635602,
+    "ast_hash": "bdcfe46abde7d6d55abbc2cf22f064f9",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md": {
+    "mtime": 1783712733.3640604,
+    "ast_hash": "218f398a5a64f36d2bc99acb78ed3558",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md": {
+    "mtime": 1783712733.364561,
+    "ast_hash": "1707665e157b4933b20d5e9e3ddf6007",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md": {
+    "mtime": 1783712733.3650613,
+    "ast_hash": "3f3564296aacc6433ac2a0d8b13270e7",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-10-freshness-override.md": {
+    "mtime": 1783712733.3655622,
+    "ast_hash": "ce6a292c9742278c365edd8f690ab658",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md": {
+    "mtime": 1783712733.3660622,
+    "ast_hash": "e501d4791f44620279bc1fadba6296cf",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md": {
+    "mtime": 1783712733.3665626,
+    "ast_hash": "f6208f3472cdd097b426f22adacd477e",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md": {
+    "mtime": 1783712733.3670633,
+    "ast_hash": "f673a673e2d8af24fa8bcde90c33e1ea",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md": {
+    "mtime": 1783712733.3675635,
+    "ast_hash": "d1356ccdbd144b42bb94a156093fd4dd",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md": {
+    "mtime": 1783712733.368064,
+    "ast_hash": "6b73db38e53820b0c46c470ed97f9685",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-17-handy-steuerung.md": {
+    "mtime": 1783712733.3685644,
+    "ast_hash": "74dcf1524b31976e75d624dfb8ff808d",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md": {
+    "mtime": 1783712733.3690648,
+    "ast_hash": "9ab3e55d1902627d62418b5cd6f3c58a",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md": {
+    "mtime": 1783712733.3695652,
+    "ast_hash": "771c2cde166d654235adb0784c6f85d1",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-06-22-catchup-uebernahme.md": {
+    "mtime": 1783712733.3703306,
+    "ast_hash": "c055ace3c53f89c67eb1f665132d67d6",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md": {
+    "mtime": 1783712733.3708313,
+    "ast_hash": "9fc7904f65119716f5a48203940cf6d2",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md": {
+    "mtime": 1783712733.3713315,
+    "ast_hash": "713f6df70e176b0b8048652bc8a50013",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md": {
+    "mtime": 1783712733.3718324,
+    "ast_hash": "941ef5309e33a4a060881d38af08a0c0",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md": {
+    "mtime": 1783712733.3723817,
+    "ast_hash": "65e30cf0a94c53179a203d2f6da04075",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-10-rezepte-vault-design.md": {
+    "mtime": 1783712733.3728848,
+    "ast_hash": "0b9761b413f59739c79523a10893a6bd",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md": {
+    "mtime": 1783712733.3733907,
+    "ast_hash": "8ae441c7ad704550a38d4eae4e975b52",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md": {
+    "mtime": 1783712733.3738942,
+    "ast_hash": "4b8ef78a5e1bb6f67a17c63e950041cd",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md": {
+    "mtime": 1783712733.3743944,
+    "ast_hash": "6a1388784408ccc12b3237612b75c48e",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md": {
+    "mtime": 1783712733.3743944,
+    "ast_hash": "852d23926526494bd5b145cb85c1acc7",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md": {
+    "mtime": 1783712733.3748949,
+    "ast_hash": "7f73bea0b44ef16d1eff36c50ae95f87",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-17-handy-steuerung-design.md": {
+    "mtime": 1783712733.3768754,
+    "ast_hash": "26fdd66eab350fda644bc8e5b89ea4b6",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md": {
+    "mtime": 1783712733.3773854,
+    "ast_hash": "992a7349a08874f59793383012deff0a",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md": {
+    "mtime": 1783712733.3778887,
+    "ast_hash": "037ee66b11c4805e4becd92971fb3c52",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md": {
+    "mtime": 1783712733.3784423,
+    "ast_hash": "2869a0559362020ed4e19093ce0f0ba7",
+    "semantic_hash": ""
+  },
+  "web/AGENTS.md": {
+    "mtime": 1783712733.657178,
+    "ast_hash": "5d61e688f27cdb22d4eaea59766f531a",
+    "semantic_hash": ""
+  },
+  "web/CLAUDE.md": {
+    "mtime": 1783712733.657178,
+    "ast_hash": "771faa62feb60b7de901a397aebb29b0",
+    "semantic_hash": ""
+  },
+  "web/README.md": {
+    "mtime": 1783712733.6576784,
+    "ast_hash": "a4f47235be3c77b60d6e43f11c5f81f4",
+    "semantic_hash": ""
+  },
+  "web/docs/push-setup.md": {
+    "mtime": 1783712733.65838,
+    "ast_hash": "c13c2b8fed80394f6560deaf3a04504d",
+    "semantic_hash": ""
+  },
+  "web/public/offline.html": {
+    "mtime": 1783712733.75855,
+    "ast_hash": "e13ccdb9cdab3703821a3cf76f77f183",
+    "semantic_hash": ""
+  },
+  "web/public/apple-icon-180.png": {
+    "mtime": 1783712733.7555032,
+    "ast_hash": "04dce93d46e341788ed9aa2387118a31",
+    "semantic_hash": ""
+  },
+  "web/public/file.svg": {
+    "mtime": 1783712733.7555032,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "web/public/globe.svg": {
+    "mtime": 1783712733.7555032,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "web/public/icon-192.png": {
+    "mtime": 1783712733.756378,
+    "ast_hash": "bfbb9a97825f02f2cc452378fc9ea1b8",
+    "semantic_hash": ""
+  },
+  "web/public/icon-512-maskable.png": {
+    "mtime": 1783712733.7568786,
+    "ast_hash": "8e04d44d4192621b47d12a3c961eee25",
+    "semantic_hash": ""
+  },
+  "web/public/icon-512.png": {
+    "mtime": 1783712733.757549,
+    "ast_hash": "8e04d44d4192621b47d12a3c961eee25",
+    "semantic_hash": ""
+  },
+  "web/public/icon.svg": {
+    "mtime": 1783712733.757549,
+    "ast_hash": "c53145dbb89f5b45ccedcd62957b6794",
+    "semantic_hash": ""
+  },
+  "web/public/next.svg": {
+    "mtime": 1783712733.75855,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "web/public/vercel.svg": {
+    "mtime": 1783712733.7599504,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "web/public/window.svg": {
+    "mtime": 1783712733.760451,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  ".claude/settings.json": {
+    "mtime": 1783712733.3541362,
+    "ast_hash": "8eacf110a6a5036b0eff625fd81ffe73",
+    "semantic_hash": ""
+  },
+  "scripts/tablet-boot.sh": {
+    "mtime": 1783712733.6551762,
+    "ast_hash": "167593ee3792f3269f713c47e7d10770",
+    "semantic_hash": ""
+  },
+  "scripts/tablet-start.sh": {
+    "mtime": 1783712733.6551762,
+    "ast_hash": "e213d07c4f8c68fae5b15850735bdb5b",
+    "semantic_hash": ""
+  },
+  "scripts/tablet-sync.sh": {
+    "mtime": 1783712733.6556766,
+    "ast_hash": "b57b32387ac14d99280299d596379750",
+    "semantic_hash": ""
+  },
+  "web/package.json": {
+    "mtime": 1783712733.739977,
+    "ast_hash": "3c7b81d4fcac2c20a843f4b2d06fc927",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260607132832_init/migration.sql": {
+    "mtime": 1783712733.7440262,
+    "ast_hash": "3785be3e293fc891aa7b3f889daee7e7",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260607203534_oauth_token/migration.sql": {
+    "mtime": 1783712733.7445323,
+    "ast_hash": "0e38555b437ad9b58b451a2ec69de916",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260609094348_dienstbewusster_essensplan/migration.sql": {
+    "mtime": 1783712733.7452683,
+    "ast_hash": "6fa083f2c7fb678738f299fa898fe8e8",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260609162627_meal_plan_status/migration.sql": {
+    "mtime": 1783712733.7457693,
+    "ast_hash": "c72e917d338053b1cb66870cce3e52b2",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260609213531_shopping_freshness/migration.sql": {
+    "mtime": 1783712733.7462695,
+    "ast_hash": "190ccef8cd8ad23722392dd555f054b5",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260610091646_recipe_vault_fields/migration.sql": {
+    "mtime": 1783712733.747078,
+    "ast_hash": "fe1387c3b9980889c2ae8a6faef50aa1",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260610153236_freshness_override/migration.sql": {
+    "mtime": 1783712733.7481847,
+    "ast_hash": "0396eaa5519d26fc7080100181e3fefd",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260617204439_push_subscription/migration.sql": {
+    "mtime": 1783712733.748688,
+    "ast_hash": "446306d5c953a78df45ddbfd472cd59c",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql": {
+    "mtime": 1783712733.749953,
+    "ast_hash": "6fdf4e6f72db4f4a5268c86964b92006",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260623163000_shopping_item_spec/migration.sql": {
+    "mtime": 1783712733.749953,
+    "ast_hash": "b908a35c2376aa6ec8f2323f0ab6378f",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260625120000_calendar_event_all_day/migration.sql": {
+    "mtime": 1783712733.7513487,
+    "ast_hash": "8941024ff49e181eebcbfa40a5ae284a",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260708135316_meal_ingredients_pushed_and_drop_freshness/migration.sql": {
+    "mtime": 1783712733.7518497,
+    "ast_hash": "239b2675f83133c94d7fa71b9d18e595",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260709213745_recipe_vault_file/migration.sql": {
+    "mtime": 1783712733.75235,
+    "ast_hash": "96bbb42fcf5b759a336610e88f484892",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/obsidian.test.ts": {
+    "mtime": 1783712733.8320527,
+    "ast_hash": "d3a1336c2666efd0b1ceb2f0cd462a15",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/obsidian.ts": {
+    "mtime": 1783712733.832553,
+    "ast_hash": "b6ebc8ce1bb38464475dab1b33f08c52",
+    "semantic_hash": ""
+  },
+  "web/tsconfig.json": {
+    "mtime": 1783712733.8424015,
+    "ast_hash": "0a2f4ed9289b65cd3feb4fb4ab3a4fcd",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1783712733.3523571,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1783712733.352858,
+    "ast_hash": "637776aa6f7496d069afe7520c845c8a",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1783712733.3556507,
+    "ast_hash": "ab254d0a1c83f1f4813a79ddddbdf284",
+    "semantic_hash": ""
+  }
 }
