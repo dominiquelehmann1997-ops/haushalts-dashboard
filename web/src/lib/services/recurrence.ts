@@ -47,6 +47,28 @@ const RHYTHM_MONTHS: Record<string, number> = {
 const DEFAULT_OFFSET_DAYS = 7;
 
 /**
+ * Rhythmen, die eine harte Zusage sind und NIE vom Lernen aufgeweicht werden.
+ *
+ * "daily" heißt jeden Tag — bei "Gassi gehen" hängt ein Hund daran, nicht eine
+ * Statistik. Das Lernen (`@/lib/services/learnedInterval`) ist für Aufgaben
+ * gedacht, deren nötiger Takt sich erst im Alltag zeigt (putzen, waschen), und
+ * würde hier nur nachlässige Wochen zementieren.
+ */
+const FIXED_RHYTHMS = new Set(["daily"]);
+
+/**
+ * Der konfigurierte Abstand in Tagen — Bezugsgröße für Ausreißer-Filter und
+ * Deckel des gelernten Intervalls. Monatsrhythmen werden mit 30 Tagen je Monat
+ * genähert; das ist nur für diese beiden Schwellen relevant, der tatsächliche
+ * Termin läuft weiter über `nextDueDate`'s kalendergenaues `setMonth`.
+ */
+function configuredIntervalDays(rhythm: string): number {
+  const months = RHYTHM_MONTHS[rhythm];
+  if (months !== undefined) return months * 30;
+  return RHYTHM_OFFSET_DAYS[rhythm] ?? DEFAULT_OFFSET_DAYS;
+}
+
+/**
  * Returns a *new* `Date` advanced from `from` by the offset for `rhythm`.
  * Day-based rhythms (`daily`/`weekly`/`biweekly`/`2x-week`/`3-day`/`5-day`)
  * add a fixed number of days; month-based rhythms (`monthly`/`halfyearly`)
@@ -80,6 +102,11 @@ export function nextDueDate(rhythm: string, from: Date): Date {
  * The successor copies the routine's plan-relevant fields, resets
  * `assignedToId = null` (so the engine can re-plan it fairly), and is linked
  * via `recurringParentId = task.recurringParentId ?? task.id`.
+ *
+ * Der Termin kommt aus dem gelernten Intervall, sofern es eins gibt — gedeckelt
+ * und um Urlaubslücken bereinigt (`@/lib/services/learnedInterval`). Rhythmen
+ * aus `FIXED_RHYTHMS` (aktuell "daily") überspringen das Lernen komplett und
+ * folgen strikt `nextDueDate`.
  */
 export async function generateNextOccurrence(
   taskId: string,
@@ -108,7 +135,14 @@ export async function generateNextOccurrence(
   // Interval restart: count from when it was actually done, not the old plan date.
   const base = task.completedAt ?? task.dueDate;
 
-  const learned = learnedInterval(await chainCompletionGaps(chainId, client));
+  // Feste Rhythmen fragen die Historie gar nicht erst ab — sie sind gesetzt.
+  const learned = FIXED_RHYTHMS.has(task.rhythm)
+    ? null
+    : learnedInterval(
+        await chainCompletionGaps(chainId, client),
+        configuredIntervalDays(task.rhythm),
+      );
+
   const nextDue =
     learned != null
       ? new Date(base.getTime() + Math.round(learned) * DAY_MS_LOCAL)
