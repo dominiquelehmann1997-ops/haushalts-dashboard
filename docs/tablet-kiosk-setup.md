@@ -28,9 +28,21 @@ On the next reboot the script runs: wake-lock → dashboard → wait for `:3001`
 
 1. Install **Fully Kiosk Browser** (free tier is enough).
 2. Settings:
-   - **Start URL:** `https://cockpit.domelehmann.org` (the Cloudflare HTTPS URL
-     from the remote-access doc). First load passes the Cloudflare Access login
-     once; Fully keeps the session cookie afterwards.
+   - **Start URL:** `http://localhost:3001` — the local server, *not* the
+     Cloudflare URL. The tablet is the machine running the server, so routing its
+     own display through Cloudflare's edge only adds a dependency: when
+     `cloudflared` dies, the kiosk shows a Cloudflare **Error 1033** page even
+     though the dashboard is up and answering on `:3001`. Local also skips the
+     Access login entirely.
+
+     PWA/service worker still work: `http://localhost` is a
+     [secure context](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts)
+     by spec, same as HTTPS. The tunnel stays as-is for phone access from outside.
+
+     > Origin change: `localhost:3001` and `cockpit.domelehmann.org` are separate
+     > origins, so the kiosk starts with a fresh service-worker cache and no
+     > stored logins. Google-Kalender OAuth was already authorized against
+     > `localhost:3001` (see [deploy notes](./push-setup.md)), so nothing to redo.
    - **Web Content → Autoplay / fullscreen:** enable **Fullscreen**.
    - **Device Management → Keep Screen On:** ON.
    - **Device Management → Screen Off Timer:** 0 (never).
@@ -49,11 +61,29 @@ Fully Kiosk may launch before the server is ready. The boot script waits up to
 retries the URL until the server answers — so the dashboard appears once both
 are up. No manual intervention needed.
 
+## If the kiosk shows an error page
+
+Match the page to the layer that broke:
+
+| Kiosk shows | Meaning | Fix |
+| --- | --- | --- |
+| Connection refused / no connection | Next.js server down | `bash ~/.termux/boot/tablet-boot.sh` (idempotent, restores what died) |
+| Cloudflare **Error 1033** | Tunnel has no backend — only possible if Start URL still points at the Cloudflare hostname | Switch Start URL to `http://localhost:3001` (above), then same command |
+
+A Termux **app update** force-stops Termux and kills the whole process tree
+(server, tunnel, `sshd`) *without* rebooting, and `~/.termux/boot/` only fires on
+boot — so nothing comes back by itself. Check `uptime` first: a long uptime means
+this happened rather than a failed boot autostart.
+
 ## Verify
+
+Two independent paths — the tablet display goes straight to `:3001`, only the
+phone goes through the tunnel:
 
 1. Reboot the tablet.
 2. Within ~1 minute the dashboard should appear fullscreen (no browser toolbar),
-   screen staying on.
+   screen staying on. This must work even with `cloudflared` stopped — if it
+   does not, the Start URL is still the Cloudflare hostname.
 3. From the phone (anywhere), open `https://cockpit.domelehmann.org`, pass the
    Access login once, confirm it loads; install via **Add to Home Screen**.
 
