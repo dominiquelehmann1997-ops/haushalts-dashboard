@@ -3,7 +3,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 
 import { buildChoreTasks } from "@/lib/services/chores";
 
-type Summary = { created: number; updated: number };
+type Summary = { created: number; skipped: number };
 
 const PEOPLE = [
   { key: "dome", name: "Dome", role: "adult", colorAccent: "teal" },
@@ -22,12 +22,22 @@ async function ensurePeople(client: PrismaClient): Promise<void> {
 }
 
 /**
- * Imports the static chore catalogue into the Task table, anchored at `today`.
- * Upserts by `Task.title` (which is not unique, so we match the first row):
- * - missing title  -> create (open, unassigned, staggered dueDate)
- * - existing title -> update definition fields only; dueDate/status/assignedToId
- *   are left untouched so live progress is preserved.
- * Idempotent and non-destructive (touches no other tasks/tables).
+ * Legt den statischen Chore-Katalog als Task-Zeilen an, verankert an `today`.
+ * Erstanlage-Werkzeug, kein Abgleich: gematcht wird über `Task.title` (nicht
+ * unique, es zählt die erste Zeile), und
+ * - unbekannter Titel -> anlegen (offen, unzugewiesen, gestaffeltes dueDate)
+ * - bekannter Titel   -> überspringen.
+ *
+ * Bewusst KEIN Update mehr: Dauer, Rhythmus, Zuständigkeit und Wetter werden
+ * seit der Routinen-Verwaltung (`/mobile/routines`) in der App gepflegt. Ein
+ * Import, der den Katalog drüberschreibt, würde genau diese Eingaben
+ * stillschweigend zurücksetzen — die DB ist ab dem Erst-Import die Wahrheit.
+ *
+ * Zwei Folgen, die dazugehören:
+ * - Eine über die App beendete Katalog-Routine wird durch einen erneuten Import
+ *   nicht wiederbelebt, solange erledigte Zeilen mit dem Titel existieren.
+ * - Eine umbenannte Routine legt der Import unter dem alten Katalogtitel neu an.
+ *   Der Import ist Bootstrap, im laufenden Betrieb nicht erneut ausführen.
  *
  * Takes an explicit `client` (no `= prisma` default) on purpose: the standalone
  * CLI (`prisma/importChores.ts`) and the tests pass their own PrismaClient, so
@@ -36,7 +46,7 @@ async function ensurePeople(client: PrismaClient): Promise<void> {
 export async function importChores(client: PrismaClient, today: Date): Promise<Summary> {
   await ensurePeople(client);
 
-  const summary: Summary = { created: 0, updated: 0 };
+  const summary: Summary = { created: 0, skipped: 0 };
 
   for (const chore of buildChoreTasks(today)) {
     const definition = {
@@ -54,20 +64,20 @@ export async function importChores(client: PrismaClient, today: Date): Promise<S
     const existing = await client.task.findFirst({ where: { title: chore.title } });
 
     if (existing) {
-      await client.task.update({ where: { id: existing.id }, data: definition });
-      summary.updated += 1;
-    } else {
-      await client.task.create({
-        data: {
-          title: chore.title,
-          ...definition,
-          status: "open",
-          assignedToId: null,
-          dueDate: chore.dueDate,
-        },
-      });
-      summary.created += 1;
+      summary.skipped += 1;
+      continue;
     }
+
+    await client.task.create({
+      data: {
+        title: chore.title,
+        ...definition,
+        status: "open",
+        assignedToId: null,
+        dueDate: chore.dueDate,
+      },
+    });
+    summary.created += 1;
   }
 
   return summary;

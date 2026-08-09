@@ -3,7 +3,7 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { generateNextOccurrence, nextDueDate } from "./recurrence";
+import { generateNextOccurrence, nextDueDate, rescheduleOpenOccurrence } from "./recurrence";
 
 describe("nextDueDate (pure)", () => {
   const from = new Date(2026, 5, 7); // local date, arbitrary
@@ -52,8 +52,18 @@ describe("nextDueDate (pure)", () => {
     expect(result.getDate()).toBe(12);
   });
 
+  it("freies Intervall '10-day' -> +10 Tage", () => {
+    const result = nextDueDate("10-day", from);
+    expect(result.getTime() - from.getTime()).toBe(10 * 24 * 60 * 60 * 1000);
+  });
+
   it("unknown rhythm -> defaults to +7 days", () => {
     const result = nextDueDate("monthly-ish-nonsense", from);
+    expect(result.getTime() - from.getTime()).toBe(7 * 24 * 60 * 60 * 1000);
+  });
+
+  it("ungültiges freies Intervall ('0-day') fällt auf +7 Tage zurück", () => {
+    const result = nextDueDate("0-day", from);
     expect(result.getTime() - from.getTime()).toBe(7 * 24 * 60 * 60 * 1000);
   });
 
@@ -293,5 +303,155 @@ describe("generateNextOccurrence — restart + learned interval", () => {
     const offsetDays =
       (next!.dueDate.getTime() - new Date("2026-04-28").getTime()) / 86_400_000;
     expect(offsetDays).toBe(6); // 2 x 3, nicht 9
+  });
+
+  it('behandelt das freie Intervall "1-day" wie "daily" und lernt es nicht', async () => {
+    const chainBase = await client.task.create({
+      data: {
+        title: "Frei täglich", type: "routine", effort: 5, allowedPersons: "both",
+        rhythm: "1-day", status: "done",
+        dueDate: new Date("2026-05-01"), completedAt: new Date("2026-05-01"),
+      },
+    });
+    let last = chainBase;
+    for (const d of ["2026-05-04", "2026-05-07", "2026-05-10"]) {
+      last = await client.task.create({
+        data: {
+          title: "Frei täglich", type: "routine", effort: 5, allowedPersons: "both",
+          rhythm: "1-day", status: "done", recurringParentId: chainBase.id,
+          dueDate: new Date(d), completedAt: new Date(d),
+        },
+      });
+    }
+
+    const next = await generateNextOccurrence(last.id, client);
+
+    expect(next).not.toBeNull();
+    const offsetDays =
+      (next!.dueDate.getTime() - new Date("2026-05-10").getTime()) / 86_400_000;
+    expect(offsetDays).toBe(1);
+  });
+});
+
+describe("rescheduleOpenOccurrence", () => {
+  let client: PrismaClient;
+  const DAY_MS = 86_400_000;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  function daysAgo(n: number): Date {
+    const d = new Date();
+    d.setDate(d.getDate() - n);
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+
+  function today(): Date {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+
+  /** Kette mit einer erledigten und einer offenen Zeile. */
+  async function makeChain(
+    title: string,
+    completedAt: Date | null,
+    openOverrides: Record<string, unknown> = {},
+  ) {
+    const parent = await client.task.create({
+      data: {
+        title, type: "routine", effort: 10, allowedPersons: "both", rhythm: "weekly",
+        status: completedAt ? "done" : "open",
+        completedAt,
+        dueDate: completedAt ?? today(),
+      },
+    });
+    const open = await client.task.create({
+      data: {
+        title, type: "routine", effort: 10, allowedPersons: "both", rhythm: "weekly",
+        status: "open", dueDate: new Date(today().getTime() + 30 * DAY_MS),
+        recurringParentId: parent.id,
+        ...openOverrides,
+      },
+    });
+    return { parent, open };
+  }
+
+  it("rechnet ab der letzten Erledigung", async () => {
+    const done = daysAgo(1);
+    const { parent, open } = await makeChain("Ab Erledigung", done);
+
+    const result = await rescheduleOpenOccurrence(parent.id, "3-day", today(), client);
+
+    expect(result?.getTime()).toBe(done.getTime() + 3 * DAY_MS);
+    const row = await client.task.findUniqueOrThrow({ where: { id: open.id } });
+    expect(row.dueDate.getTime()).toBe(done.getTime() + 3 * DAY_MS);
+  });
+
+  it("rechnet ab heute, wenn die Kette nie erledigt wurde", async () => {
+    const parent = await client.task.create({
+      data: {
+        title: "Nie erledigt", type: "routine", effort: 10, allowedPersons: "both",
+        rhythm: "weekly", status: "open", dueDate: today(),
+      },
+    });
+
+    const result = await rescheduleOpenOccurrence(parent.id, "5-day", today(), client);
+
+    expect(result?.getTime()).toBe(today().getTime() + 5 * DAY_MS);
+  });
+
+  it("zieht höchstens auf heute vor, nie in die Vergangenheit", async () => {
+    const { parent, open } = await makeChain("Lange her", daysAgo(40));
+
+    const result = await rescheduleOpenOccurrence(parent.id, "daily", today(), client);
+
+    expect(result?.getTime()).toBe(today().getTime());
+    const row = await client.task.findUniqueOrThrow({ where: { id: open.id } });
+    expect(row.dueDate.getTime()).toBe(today().getTime());
+  });
+
+  it("versteht freie Intervalle", async () => {
+    const done = daysAgo(1);
+    const { parent } = await makeChain("Frei", done);
+
+    const result = await rescheduleOpenOccurrence(parent.id, "10-day", today(), client);
+
+    expect(result?.getTime()).toBe(done.getTime() + 10 * DAY_MS);
+  });
+
+  it("lässt eine verschobene Zeile in Ruhe — die Verschiebung war Absicht", async () => {
+    const movedDue = new Date(today().getTime() + 30 * DAY_MS);
+    const { parent, open } = await makeChain("Verschoben", daysAgo(1), {
+      status: "moved",
+      dueDate: movedDue,
+    });
+
+    const result = await rescheduleOpenOccurrence(parent.id, "daily", today(), client);
+
+    expect(result).toBeNull();
+    const row = await client.task.findUniqueOrThrow({ where: { id: open.id } });
+    expect(row.dueDate.getTime()).toBe(movedDue.getTime());
+  });
+
+  it("lässt eine bereits zugewiesene Aufgabe in Ruhe — sie steht im Tagesplan", async () => {
+    const dome = await client.person.findFirstOrThrow({ where: { key: "dome" } });
+    const assignedDue = new Date(today().getTime() + 30 * DAY_MS);
+    const { parent, open } = await makeChain("Zugewiesen", daysAgo(1), {
+      assignedToId: dome.id,
+      dueDate: assignedDue,
+    });
+
+    const result = await rescheduleOpenOccurrence(parent.id, "daily", today(), client);
+
+    expect(result).toBeNull();
+    const row = await client.task.findUniqueOrThrow({ where: { id: open.id } });
+    expect(row.dueDate.getTime()).toBe(assignedDue.getTime());
   });
 });
