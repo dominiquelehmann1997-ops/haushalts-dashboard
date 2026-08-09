@@ -1,0 +1,54 @@
+# Testsuite, Typecheck und Lint bei jedem Push.
+#
+# Warum CI und nicht lokal: Die Suite ist auf den beiden Geräten dieses
+# Projekts schlecht ausführbar — das Dashboard-Tablet läuft unter Termux/
+# Android, wo Prisma keine Schema-Engine hat (`prisma migrate deploy` scheitert
+# mit "unknown OS android"), und es ist gleichzeitig der Produktionsserver.
+# Auf Linux laufen Prisma und better-sqlite3 problemlos.
+#
+# Die Tests fassen keine echten Daten an: `src/test/globalSetup.ts` zeigt
+# DATABASE_URL hart auf eine eigene `test.db`, legt sie frisch an und räumt sie
+# hinterher weg.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    env:
+      # prisma.config.ts liest diese Variable. `generate` braucht keine echte
+      # Verbindung, und die Tests überschreiben sie ohnehin — gesetzt nur,
+      # damit nichts auf `undefined` läuft.
+      DATABASE_URL: "file:./ci.db"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Gleiche Major wie auf dem Tablet und dem Entwicklungsrechner.
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # npm ≥11 blockiert Install-Skripte, bis sie in package.json unter
+      # "allowScripts" freigegeben sind — ohne die Freigabe fehlen das native
+      # Binding von better-sqlite3 und die Prisma-Engines.
+      - run: npm ci
+
+      # src/generated/ ist gitignored, der Client muss hier erzeugt werden.
+      - run: npx prisma generate
+
+      - run: npm run typecheck
+
+      - run: npm run lint
+
+      - run: npm test
