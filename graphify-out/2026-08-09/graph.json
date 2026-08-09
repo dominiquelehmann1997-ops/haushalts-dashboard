@@ -20,6 +20,20 @@
         "source_file": "web/src/app/actions/meals.ts"
       },
       {
+        "id": "mobile_settings_tab_composition",
+        "label": "Handy-Einstellungen-Tab: Design, Aufgaben-Dauer/Rhythmus, Elternzeit-Modus, Push",
+        "nodes": [
+          "settingspage_MobileSettingsPage",
+          "web_src_components_mobile_settingsview_settingsview",
+          "web_src_components_mobile_themetoggle_themetoggle",
+          "web_src_components_mobile_taskdurationscontrol_taskdurationscontrol"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "web/src/components/mobile/SettingsView.tsx"
+      },
+      {
         "id": "theme_flicker_prevention_pattern",
         "label": "Design-Flackern verhindern: Pre-Paint-Skript + gecachter Wert (Tablet-Auto + Handy-Toggle)",
         "nodes": [
@@ -493,8 +507,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_package_dependencies_prisma_client",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 140,
+      "community_name": "seedDatabase",
       "norm_label": "@prisma/client"
     },
     {
@@ -504,8 +518,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "prisma_client",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 140,
+      "community_name": "seedDatabase",
       "norm_label": "@prisma/client"
     },
     {
@@ -1043,8 +1057,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_importchores",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "importchores.ts"
     },
     {
@@ -1054,8 +1068,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_prisma_importchores_main",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "main()"
     },
     {
@@ -1087,8 +1101,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_plantoday",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "plantoday.ts"
     },
     {
@@ -1098,8 +1112,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_prisma_plantoday_main",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "main()"
     },
     {
@@ -1109,8 +1123,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_seed",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 140,
+      "community_name": "seedDatabase",
       "norm_label": "seed.ts"
     },
     {
@@ -1120,8 +1134,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_prisma_seed_adddays",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 140,
+      "community_name": "seedDatabase",
       "norm_label": "adddays()"
     },
     {
@@ -1131,8 +1145,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "web_prisma_seed_seeddatabase",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 140,
+      "community_name": "seedDatabase",
       "norm_label": "seeddatabase()"
     },
     {
@@ -1142,8 +1156,8 @@
       "source_location": "L485",
       "_origin": "ast",
       "id": "web_prisma_seed_main",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 140,
+      "community_name": "seedDatabase",
       "norm_label": "main()"
     },
     {
@@ -1153,8 +1167,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_synccalendar",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendar.ts"
     },
     {
@@ -1164,8 +1178,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_prisma_synccalendar_main",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "main()"
     },
     {
@@ -1428,8 +1442,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_page",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "page.tsx"
     },
     {
@@ -1439,31 +1453,9 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_page_mobiletodaypage",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "mobiletodaypage()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_app_mobile_mobile_routines_page",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "MobileRoutinesPage()",
-      "file_type": "code",
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "web_src_app_mobile_mobile_routines_page_mobileroutinespage",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "mobileroutinespage()"
     },
     {
       "label": "page.tsx",
@@ -1472,19 +1464,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_settings_page",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "page.tsx"
     },
     {
       "label": "MobileSettingsPage()",
       "file_type": "code",
       "source_file": "web/src/app/(mobile)/mobile/settings/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_settings_page_mobilesettingspage",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "mobilesettingspage()"
     },
     {
@@ -1538,8 +1530,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_calendar",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendar.ts"
     },
     {
@@ -1549,8 +1541,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_app_actions_calendar_synccalendaraction",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendaraction()"
     },
     {
@@ -1626,8 +1618,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_setactivedayrecipeaction",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "setactivedayrecipeaction()"
     },
     {
@@ -1637,8 +1629,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_pushmealingredientsaction",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "pushmealingredientsaction()"
     },
     {
@@ -1703,8 +1695,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_phase",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "phase.ts"
     },
     {
@@ -1714,8 +1706,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_app_actions_phase_setphaseaction",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "setphaseaction()"
     },
     {
@@ -1829,70 +1821,37 @@
       "norm_label": "ingestvaultaction()"
     },
     {
-      "label": "routines.ts",
+      "label": "settings.ts",
       "file_type": "code",
-      "source_file": "web/src/app/actions/routines.ts",
+      "source_file": "web/src/app/actions/settings.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "web_src_app_actions_routines",
+      "id": "web_src_app_actions_settings",
       "community": 7,
       "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "routines.ts"
+      "norm_label": "settings.ts"
     },
     {
-      "label": "RoutineFieldsInput",
+      "label": "UpdateRoutineInput",
       "file_type": "code",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L17",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L14",
       "_origin": "ast",
-      "id": "web_src_app_actions_routines_routinefieldsinput",
+      "id": "web_src_app_actions_settings_updateroutineinput",
       "community": 7,
       "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "routinefieldsinput"
+      "norm_label": "updateroutineinput"
     },
     {
-      "label": "toWeatherCondition()",
+      "label": "updateRoutineTemplateAction()",
       "file_type": "code",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L35",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L22",
       "_origin": "ast",
-      "id": "web_src_app_actions_routines_toweathercondition",
+      "id": "web_src_app_actions_settings_updateroutinetemplateaction",
       "community": 7,
       "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "toweathercondition()"
-    },
-    {
-      "label": "updateRoutineAction()",
-      "file_type": "code",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L49",
-      "_origin": "ast",
-      "id": "web_src_app_actions_routines_updateroutineaction",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "updateroutineaction()"
-    },
-    {
-      "label": "createRoutineAction()",
-      "file_type": "code",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L65",
-      "_origin": "ast",
-      "id": "web_src_app_actions_routines_createroutineaction",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "createroutineaction()"
-    },
-    {
-      "label": "deleteRoutineAction()",
-      "file_type": "code",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L81",
-      "_origin": "ast",
-      "id": "web_src_app_actions_routines_deleteroutineaction",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "deleteroutineaction()"
+      "norm_label": "updateroutinetemplateaction()"
     },
     {
       "label": "shopping.ts",
@@ -2088,8 +2047,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "route.ts"
     },
     {
@@ -2099,8 +2058,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_runsync",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "runsync()"
     },
     {
@@ -2110,8 +2069,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_get",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "get()"
     },
     {
@@ -2121,8 +2080,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_post",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "post()"
     },
     {
@@ -2209,8 +2168,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_page",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "page.tsx"
     },
     {
@@ -2220,8 +2179,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_app_page_home",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "home()"
     },
     {
@@ -2396,8 +2355,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_phaseswitch",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "phaseswitch.tsx"
     },
     {
@@ -2407,8 +2366,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_components_phaseswitch_presets",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "presets"
     },
     {
@@ -2418,8 +2377,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_components_phaseswitch_phaseswitch",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "phaseswitch()"
     },
     {
@@ -2517,8 +2476,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_syncbutton",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "syncbutton.tsx"
     },
     {
@@ -2528,8 +2487,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_components_syncbutton_state",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "state"
     },
     {
@@ -2539,8 +2498,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_components_syncbutton_syncbutton",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "syncbutton()"
     },
     {
@@ -2550,8 +2509,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_taskactionmenu",
-      "community": 67,
-      "community_name": "active",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "taskactionmenu.tsx"
     },
     {
@@ -2561,8 +2520,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_components_taskactionmenu_menuitem",
-      "community": 67,
-      "community_name": "active",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "menuitem()"
     },
     {
@@ -2572,8 +2531,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_components_taskactionmenu_taskactionmenu",
-      "community": 67,
-      "community_name": "active",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "taskactionmenu()"
     },
     {
@@ -2583,7 +2542,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_topbarstats",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "topbarstats.tsx"
     },
@@ -2594,7 +2553,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_components_topbarstats_topbarstats",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "topbarstats()"
     },
@@ -2715,7 +2674,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_dashboard",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "dashboard.tsx"
     },
@@ -2726,7 +2685,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_components_dashboard_usesuntheme",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "usesuntheme()"
     },
@@ -2737,7 +2696,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "web_src_components_dashboard_dashboardprops",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "dashboardprops"
     },
@@ -2759,8 +2718,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_header",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "header.tsx"
     },
     {
@@ -2770,8 +2729,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_components_header_useclock",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "useclock()"
     },
     {
@@ -2781,8 +2740,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "web_src_components_header_header",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "header()"
     },
     {
@@ -2792,8 +2751,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_icons",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "icons.tsx"
     },
     {
@@ -2803,8 +2762,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_components_icons_checkicon",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "checkicon()"
     },
     {
@@ -2814,8 +2773,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_src_components_icons_cloudrainglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "cloudrainglyph()"
     },
     {
@@ -2825,8 +2784,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "web_src_components_icons_weatherglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "weatherglyph()"
     },
     {
@@ -2836,8 +2795,8 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "web_src_components_icons_calendarglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "calendarglyph()"
     },
     {
@@ -2847,8 +2806,8 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "web_src_components_icons_sunicon",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "sunicon()"
     },
     {
@@ -2858,8 +2817,8 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "web_src_components_icons_moonicon",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "moonicon()"
     },
     {
@@ -2869,8 +2828,8 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "web_src_components_icons_refreshicon",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "refreshicon()"
     },
     {
@@ -2880,8 +2839,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealweeklist.tsx"
     },
     {
@@ -2891,8 +2850,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_ingredientlabel",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "ingredientlabel()"
     },
     {
@@ -2902,8 +2861,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_mealweeklist",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealweeklist()"
     },
     {
@@ -2932,7 +2891,7 @@
       "label": "MobileNavBar()",
       "file_type": "code",
       "source_file": "web/src/components/mobile/MobileNavBar.tsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_components_mobile_mobilenavbar_mobilenavbar",
       "community": 43,
@@ -3001,8 +2960,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_pageheader",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "pageheader.tsx"
     },
     {
@@ -3012,141 +2971,9 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_components_mobile_pageheader_pageheader",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "pageheader()"
-    },
-    {
-      "label": "RoutinesView.tsx",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "routinesview.tsx"
-    },
-    {
-      "label": "PERSON_OPTIONS",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_person_options",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "person_options"
-    },
-    {
-      "label": "WeatherFields",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_weatherfields",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "weatherfields"
-    },
-    {
-      "label": "parseWeather()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L49",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_parseweather",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "parseweather()"
-    },
-    {
-      "label": "isPreset()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L62",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_ispreset",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "ispreset()"
-    },
-    {
-      "label": "formatDue()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L66",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_formatdue",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "formatdue()"
-    },
-    {
-      "label": "RoutinesView()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L79",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_routinesview",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "routinesview()"
-    },
-    {
-      "label": "RoutineEditorCard()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L120",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_routineeditorcard",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "routineeditorcard()"
-    },
-    {
-      "label": "RoutineCreateForm()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L317",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_routinecreateform",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "routinecreateform()"
-    },
-    {
-      "label": "RhythmPicker()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L429",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_rhythmpicker",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "rhythmpicker()"
-    },
-    {
-      "label": "PersonSegment()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L505",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_personsegment",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "personsegment()"
-    },
-    {
-      "label": "WeatherControls()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L540",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_routinesview_weathercontrols",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "weathercontrols()"
     },
     {
       "label": "SettingsView.tsx",
@@ -3155,31 +2982,86 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_settingsview",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "settingsview.tsx"
     },
     {
       "label": "SectionTitle()",
       "file_type": "code",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_components_mobile_settingsview_sectiontitle",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "sectiontitle()"
     },
     {
       "label": "SettingsView()",
       "file_type": "code",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "web_src_components_mobile_settingsview_settingsview",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "settingsview()"
+    },
+    {
+      "label": "TaskDurationsControl.tsx",
+      "file_type": "code",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "web_src_components_mobile_taskdurationscontrol",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
+      "norm_label": "taskdurationscontrol.tsx"
+    },
+    {
+      "label": "PERSON_OPTIONS",
+      "file_type": "code",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "web_src_components_mobile_taskdurationscontrol_person_options",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
+      "norm_label": "person_options"
+    },
+    {
+      "label": "RhythmOption",
+      "file_type": "code",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "web_src_components_mobile_taskdurationscontrol_rhythmoption",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
+      "norm_label": "rhythmoption"
+    },
+    {
+      "label": "TaskDurationsControl()",
+      "file_type": "code",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "web_src_components_mobile_taskdurationscontrol_taskdurationscontrol",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
+      "norm_label": "taskdurationscontrol()"
+    },
+    {
+      "label": "TemplateRow()",
+      "file_type": "code",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "web_src_components_mobile_taskdurationscontrol_templaterow",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
+      "norm_label": "templaterow()"
     },
     {
       "label": "TasksView.tsx",
@@ -3386,8 +3268,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_ui_cardhead",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "cardhead()"
     },
     {
@@ -3408,8 +3290,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_widgets",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "widgets.tsx"
     },
     {
@@ -3419,8 +3301,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealreasonbadge",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealreasonbadge()"
     },
     {
@@ -3430,8 +3312,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealplanwidget",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealplanwidget()"
     },
     {
@@ -3441,8 +3323,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "web_src_components_widgets_noteswidget",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "noteswidget()"
     },
     {
@@ -3573,8 +3455,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_calendareventinput",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendareventinput"
     },
     {
@@ -3738,8 +3620,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_fixture",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "fixture.ts"
     },
     {
@@ -3749,8 +3631,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "web_src_integrations_weather_fixture_openmeteofixture",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "openmeteofixture"
     },
     {
@@ -3760,8 +3642,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_test",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "openmeteo.test.ts"
     },
     {
@@ -3771,8 +3653,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "openmeteo.ts"
     },
     {
@@ -3782,8 +3664,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_openmeteoresponse",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "openmeteoresponse"
     },
     {
@@ -3793,8 +3675,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_weathercondition",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "weathercondition"
     },
     {
@@ -3815,8 +3697,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_splithourlytimestamp",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "splithourlytimestamp()"
     },
     {
@@ -3826,8 +3708,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_deriverainwindows",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "deriverainwindows()"
     },
     {
@@ -3837,8 +3719,8 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_mapforecast",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "mapforecast()"
     },
     {
@@ -3848,8 +3730,8 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_labelforcode",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "labelforcode()"
     },
     {
@@ -3859,8 +3741,8 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_conditionforcode",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "conditionforcode()"
     },
     {
@@ -3870,8 +3752,8 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_mapcurrent",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "mapcurrent()"
     },
     {
@@ -3881,8 +3763,8 @@
       "source_location": "L226",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_coordinates",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "coordinates()"
     },
     {
@@ -3892,8 +3774,8 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_buildurl",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "buildurl()"
     },
     {
@@ -3903,8 +3785,8 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_getforecast",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "getforecast()"
     },
     {
@@ -3914,8 +3796,8 @@
       "source_location": "L275",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_getcurrent",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "getcurrent()"
     },
     {
@@ -4189,8 +4071,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_test",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shifts.test.ts"
     },
     {
@@ -4200,8 +4082,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shifts.ts"
     },
     {
@@ -4211,8 +4093,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_isovernightshift",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isovernightshift()"
     },
     {
@@ -4222,8 +4104,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_correctedbusyend",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "correctedbusyend()"
     },
     {
@@ -4244,8 +4126,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_shift_titles",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shift_titles"
     },
     {
@@ -4255,8 +4137,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_classifyshift",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "classifyshift()"
     },
     {
@@ -4277,8 +4159,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_data",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "data.ts"
     },
     {
@@ -4288,8 +4170,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_data_personkey",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "personkey"
     },
     {
@@ -4299,8 +4181,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_data_taskstatus",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "taskstatus"
     },
     {
@@ -4310,7 +4192,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_data_task",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "task"
     },
@@ -4321,7 +4203,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_src_lib_data_appointment",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "appointment"
     },
@@ -4332,8 +4214,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_lib_data_shoppingitem",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "shoppingitem"
     },
     {
@@ -4343,8 +4225,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_lib_data_mealingredient",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealingredient"
     },
     {
@@ -4354,7 +4236,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "web_src_lib_data_meal",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "meal"
     },
@@ -4365,8 +4247,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "web_src_lib_data_draftmeal",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "draftmeal"
     },
     {
@@ -4376,8 +4258,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "web_src_lib_data_recipeoption",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "recipeoption"
     },
     {
@@ -4387,8 +4269,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "web_src_lib_data_note",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "note"
     },
     {
@@ -4398,8 +4280,8 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "web_src_lib_data_personstyle",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "personstyle"
     },
     {
@@ -4409,8 +4291,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "web_src_lib_data_weather",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "weather"
     },
     {
@@ -4420,8 +4302,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "web_src_lib_data_initialtasks",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "initialtasks"
     },
     {
@@ -4431,8 +4313,8 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "web_src_lib_data_appointments",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "appointments"
     },
     {
@@ -4442,8 +4324,8 @@
       "source_location": "L136",
       "_origin": "ast",
       "id": "web_src_lib_data_initialshopping",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "initialshopping"
     },
     {
@@ -4453,8 +4335,8 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "web_src_lib_data_mealplan",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealplan"
     },
     {
@@ -4464,8 +4346,8 @@
       "source_location": "L155",
       "_origin": "ast",
       "id": "web_src_lib_data_notes",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "notes"
     },
     {
@@ -4475,8 +4357,8 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "web_src_lib_data_split",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "split"
     },
     {
@@ -4508,8 +4390,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_dates",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "dates.ts"
     },
     {
@@ -4530,8 +4412,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_dates_daybounds",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "daybounds()"
     },
     {
@@ -4541,8 +4423,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_lib_dates_formattime",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "formattime()"
     },
     {
@@ -4596,8 +4478,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_db",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 22,
+      "community_name": "shopping.ts",
       "norm_label": "db.ts"
     },
     {
@@ -4607,8 +4489,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_db_globalforprisma",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 22,
+      "community_name": "shopping.ts",
       "norm_label": "globalforprisma"
     },
     {
@@ -4618,8 +4500,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_lib_db_createprismaclient",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 22,
+      "community_name": "shopping.ts",
       "norm_label": "createprismaclient()"
     },
     {
@@ -4629,8 +4511,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_domain",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "domain.ts"
     },
     {
@@ -4948,8 +4830,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_index",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "index.ts"
     },
     {
@@ -4959,8 +4841,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_plantask",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "plantask()"
     },
     {
@@ -4970,8 +4852,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "personfilter.test.ts"
     },
     {
@@ -4981,8 +4863,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test_persons",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "persons"
     },
     {
@@ -4992,8 +4874,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test_task",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "task()"
     },
     {
@@ -5003,8 +4885,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "personfilter.ts"
     },
     {
@@ -5014,8 +4896,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_filterbyperson",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "filterbyperson()"
     },
     {
@@ -5025,8 +4907,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_types",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "types.ts"
     },
     {
@@ -5047,8 +4929,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_enginetask",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "enginetask"
     },
     {
@@ -5102,8 +4984,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planinput",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "planinput"
     },
     {
@@ -5113,8 +4995,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planresult",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "planresult"
     },
     {
@@ -5245,8 +5127,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_test",
-      "community": 73,
-      "community_name": "accounts.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "accounts.test.ts"
     },
     {
@@ -5256,8 +5138,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "accounts.ts"
     },
     {
@@ -5267,8 +5149,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getweeklybalances",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "getweeklybalances()"
     },
     {
@@ -5278,8 +5160,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getcomputedsplit",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "getcomputedsplit()"
     },
     {
@@ -5333,8 +5215,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendar.ts"
     },
     {
@@ -5344,8 +5226,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_isurlaubfrei",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isurlaubfrei()"
     },
     {
@@ -5355,8 +5237,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_isbirthday",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isbirthday()"
     },
     {
@@ -5366,8 +5248,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_gettodaysevents",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "gettodaysevents()"
     },
     {
@@ -5377,8 +5259,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_upsertevents",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "upsertevents()"
     },
     {
@@ -5388,8 +5270,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_replacewindowevents",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "replacewindowevents()"
     },
     {
@@ -5399,8 +5281,8 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_getbusywindows",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "getbusywindows()"
     },
     {
@@ -5410,8 +5292,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_test",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "choreimport.test.ts"
     },
     {
@@ -5421,8 +5303,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_test_today",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "today"
     },
     {
@@ -5432,8 +5314,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "choreimport.ts"
     },
     {
@@ -5443,8 +5325,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_summary",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "summary"
     },
     {
@@ -5454,8 +5336,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_people",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "people"
     },
     {
@@ -5465,19 +5347,19 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_ensurepeople",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "ensurepeople()"
     },
     {
       "label": "importChores()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/choreImport.ts",
-      "source_location": "L46",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_importchores",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "importchores()"
     },
     {
@@ -5685,8 +5567,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase_test",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "phase.test.ts"
     },
     {
@@ -5696,8 +5578,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "phase.ts"
     },
     {
@@ -5707,8 +5589,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase_activephase",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "activephase"
     },
     {
@@ -5718,8 +5600,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase_getactivephase",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "getactivephase()"
     },
     {
@@ -5729,8 +5611,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase_setactivephase",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "setactivephase()"
     },
     {
@@ -5751,7 +5633,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_projects",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "projects.ts"
     },
@@ -5762,7 +5644,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_repositories_projects_projectprogress",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "projectprogress"
     },
@@ -5773,8 +5655,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_repositories_projects_getactiveprojectprogress",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "getactiveprojectprogress()"
     },
     {
@@ -5927,31 +5809,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "routinetemplates.test.ts"
-    },
-    {
-      "label": "todayMidnight()",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/routineTemplates.test.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_routinetemplates_test_todaymidnight",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "todaymidnight()"
-    },
-    {
-      "label": "makeChain()",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/routineTemplates.test.ts",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_routinetemplates_test_makechain",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "makechain()"
     },
     {
       "label": "shopping.test.ts",
@@ -6056,7 +5916,7 @@
       "label": "TaskRow",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L16",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_taskrow",
       "community": 102,
@@ -6067,7 +5927,7 @@
       "label": "toDomainTask()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L28",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_todomaintask",
       "community": 102,
@@ -6078,18 +5938,18 @@
       "label": "getTasksByPerson()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L45",
+      "source_location": "L44",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_gettasksbyperson",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "gettasksbyperson()"
     },
     {
       "label": "getTasksForDay()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L66",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_gettasksforday",
       "community": 102,
@@ -6100,18 +5960,18 @@
       "label": "getOpenTaskCount()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L82",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_getopentaskcount",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "getopentaskcount()"
     },
     {
       "label": "setTaskStatus()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L103",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_settaskstatus",
       "community": 103,
@@ -6122,7 +5982,7 @@
       "label": "assignTask()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L193",
+      "source_location": "L192",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_assigntask",
       "community": 122,
@@ -6133,7 +5993,7 @@
       "label": "CreateTaskInput",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L210",
+      "source_location": "L209",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createtaskinput",
       "community": 102,
@@ -6144,7 +6004,7 @@
       "label": "createTask()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L222",
+      "source_location": "L221",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createtask",
       "community": 103,
@@ -6155,7 +6015,7 @@
       "label": "OpenTaskDTO",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L248",
+      "source_location": "L247",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_opentaskdto",
       "community": 102,
@@ -6166,7 +6026,7 @@
       "label": "listOpenTasks()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L258",
+      "source_location": "L257",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_listopentasks",
       "community": 102,
@@ -6177,7 +6037,7 @@
       "label": "completeTaskBy()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L281",
+      "source_location": "L280",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_completetaskby",
       "community": 103,
@@ -6188,7 +6048,7 @@
       "label": "completeTaskByBoth()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L296",
+      "source_location": "L295",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_completetaskbyboth",
       "community": 103,
@@ -6199,18 +6059,18 @@
       "label": "deferTask()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L307",
+      "source_location": "L306",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_defertask",
-      "community": 103,
-      "community_name": "revalidateDashboard",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "defertask()"
     },
     {
       "label": "AllowedPersons",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L335",
+      "source_location": "L333",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_allowedpersons",
       "community": 7,
@@ -6218,21 +6078,32 @@
       "norm_label": "allowedpersons"
     },
     {
-      "label": "ALLOWED_PERSONS",
+      "label": "RHYTHM_OPTIONS",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L337",
+      "source_location": "L336",
       "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_allowed_persons",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "allowed_persons"
+      "id": "web_src_lib_repositories_tasks_rhythm_options",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
+      "norm_label": "rhythm_options"
+    },
+    {
+      "label": "RHYTHM_VALUES",
+      "file_type": "code",
+      "source_file": "web/src/lib/repositories/tasks.ts",
+      "source_location": "L347",
+      "_origin": "ast",
+      "id": "web_src_lib_repositories_tasks_rhythm_values",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
+      "norm_label": "rhythm_values"
     },
     {
       "label": "RoutineTemplateDTO",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L344",
+      "source_location": "L349",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_routinetemplatedto",
       "community": 7,
@@ -6243,100 +6114,34 @@
       "label": "listRoutineTemplates()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L370",
+      "source_location": "L364",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_listroutinetemplates",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 61,
+      "community_name": "TodayView.tsx",
       "norm_label": "listroutinetemplates()"
     },
     {
-      "label": "RoutineFields",
+      "label": "UpdateRoutineTemplateInput",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L425",
+      "source_location": "L401",
       "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_routinefields",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "routinefields"
-    },
-    {
-      "label": "validateRoutineFields()",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L440",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_validateroutinefields",
+      "id": "web_src_lib_repositories_tasks_updateroutinetemplateinput",
       "community": 7,
       "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "validateroutinefields()"
-    },
-    {
-      "label": "normalizeWeatherCondition()",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L499",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_normalizeweathercondition",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "normalizeweathercondition()"
-    },
-    {
-      "label": "UpdateRoutineTemplatePatch",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L529",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_updateroutinetemplatepatch",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "updateroutinetemplatepatch"
+      "norm_label": "updateroutinetemplateinput"
     },
     {
       "label": "updateRoutineTemplate()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L540",
+      "source_location": "L412",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_updateroutinetemplate",
       "community": 7,
       "community_name": "TaskDurationsControl.tsx",
       "norm_label": "updateroutinetemplate()"
-    },
-    {
-      "label": "CreateRoutineInput",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L570",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_createroutineinput",
-      "community": 102,
-      "community_name": "tasks.ts",
-      "norm_label": "createroutineinput"
-    },
-    {
-      "label": "createRoutineTemplate()",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L588",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_createroutinetemplate",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "createroutinetemplate()"
-    },
-    {
-      "label": "deleteRoutineTemplate()",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L639",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_tasks_deleteroutinetemplate",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
-      "norm_label": "deleteroutinetemplate()"
     },
     {
       "label": "tasks.write.test.ts",
@@ -6367,8 +6172,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_revalidate",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 2,
+      "community_name": "notes.ts",
       "norm_label": "revalidate.ts"
     },
     {
@@ -6378,108 +6183,20 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_dashboard_paths",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 2,
+      "community_name": "notes.ts",
       "norm_label": "dashboard_paths"
     },
     {
       "label": "revalidateDashboard()",
       "file_type": "code",
       "source_file": "web/src/lib/revalidate.ts",
-      "source_location": "L18",
-      "_origin": "ast",
-      "id": "web_src_lib_revalidate_revalidatedashboard",
-      "community": 103,
-      "community_name": "revalidateDashboard",
-      "norm_label": "revalidatedashboard()"
-    },
-    {
-      "label": "rhythm.test.ts",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_lib_rhythm_test",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "rhythm.test.ts"
-    },
-    {
-      "label": "rhythm.ts",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_lib_rhythm",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "rhythm.ts"
-    },
-    {
-      "label": "RHYTHM_OPTIONS",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "web_src_lib_rhythm_rhythm_options",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "rhythm_options"
-    },
-    {
-      "label": "PRESET_VALUES",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "web_src_lib_rhythm_preset_values",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "preset_values"
-    },
-    {
-      "label": "parseCustomRhythm()",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L40",
-      "_origin": "ast",
-      "id": "web_src_lib_rhythm_parsecustomrhythm",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "parsecustomrhythm()"
-    },
-    {
-      "label": "makeCustomRhythm()",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "web_src_lib_rhythm_makecustomrhythm",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "makecustomrhythm()"
-    },
-    {
-      "label": "isValidRhythm()",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L55",
-      "_origin": "ast",
-      "id": "web_src_lib_rhythm_isvalidrhythm",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "isvalidrhythm()"
-    },
-    {
-      "label": "rhythmLabel()",
-      "file_type": "code",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L60",
-      "_origin": "ast",
-      "id": "web_src_lib_rhythm_rhythmlabel",
-      "community": 66,
-      "community_name": "rhythm.ts",
-      "norm_label": "rhythmlabel()"
+      "id": "web_src_lib_revalidate_revalidatedashboard",
+      "community": 2,
+      "community_name": "notes.ts",
+      "norm_label": "revalidatedashboard()"
     },
     {
       "label": "calendarSync.test.ts",
@@ -6488,8 +6205,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_test",
-      "community": 61,
-      "community_name": "TodayView.tsx",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendarsync.test.ts"
     },
     {
@@ -6499,8 +6216,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendarsync.ts"
     },
     {
@@ -6510,8 +6227,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_eventfetcher",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "eventfetcher"
     },
     {
@@ -6521,8 +6238,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_configuredcalendars",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "configuredcalendars()"
     },
     {
@@ -6532,8 +6249,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_synccalendar",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendar()"
     },
     {
@@ -6719,8 +6436,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval_test",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "learnedinterval.test.ts"
     },
     {
@@ -6730,8 +6447,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "learnedinterval.ts"
     },
     {
@@ -6741,8 +6458,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval_learnedinterval",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "learnedinterval()"
     },
     {
@@ -7269,8 +6986,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_overduecatchup",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "overduecatchup.ts"
     },
     {
@@ -7280,8 +6997,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_lib_services_overduecatchup_rolloverdueroutines",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "rolloverdueroutines()"
     },
     {
@@ -7346,8 +7063,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_plandecision",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "plandecision"
     },
     {
@@ -7805,45 +7522,12 @@
       "label": "makeRoutineTask()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L95",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_test_makeroutinetask",
       "community": 10,
       "community_name": "recurrence.test.ts",
       "norm_label": "makeroutinetask()"
-    },
-    {
-      "label": "daysAgo()",
-      "file_type": "code",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L348",
-      "_origin": "ast",
-      "id": "web_src_lib_services_recurrence_test_daysago",
-      "community": 10,
-      "community_name": "recurrence.test.ts",
-      "norm_label": "daysago()"
-    },
-    {
-      "label": "today()",
-      "file_type": "code",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L355",
-      "_origin": "ast",
-      "id": "web_src_lib_services_recurrence_test_today",
-      "community": 10,
-      "community_name": "recurrence.test.ts",
-      "norm_label": "today()"
-    },
-    {
-      "label": "makeChain()",
-      "file_type": "code",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L362",
-      "_origin": "ast",
-      "id": "web_src_lib_services_recurrence_test_makechain",
-      "community": 10,
-      "community_name": "recurrence.test.ts",
-      "norm_label": "makechain()"
     },
     {
       "label": "recurrence.ts",
@@ -7852,119 +7536,86 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "recurrence.ts"
     },
     {
       "label": "chainCompletionGaps()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L13",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_chaincompletiongaps",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "chaincompletiongaps()"
     },
     {
       "label": "RHYTHM_OFFSET_DAYS",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L33",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_rhythm_offset_days",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "rhythm_offset_days"
     },
     {
       "label": "RHYTHM_MONTHS",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L43",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_rhythm_months",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "rhythm_months"
-    },
-    {
-      "label": "dayOffsetFor()",
-      "file_type": "code",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L55",
-      "_origin": "ast",
-      "id": "web_src_lib_services_recurrence_dayoffsetfor",
-      "community": 25,
-      "community_name": "recurrence.ts",
-      "norm_label": "dayoffsetfor()"
     },
     {
       "label": "FIXED_RHYTHMS",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L73",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_fixed_rhythms",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "fixed_rhythms"
-    },
-    {
-      "label": "isFixedRhythm()",
-      "file_type": "code",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L80",
-      "_origin": "ast",
-      "id": "web_src_lib_services_recurrence_isfixedrhythm",
-      "community": 25,
-      "community_name": "recurrence.ts",
-      "norm_label": "isfixedrhythm()"
     },
     {
       "label": "configuredIntervalDays()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L90",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_configuredintervaldays",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "configuredintervaldays()"
     },
     {
       "label": "nextDueDate()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L109",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_nextduedate",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "nextduedate()"
     },
     {
       "label": "generateNextOccurrence()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L136",
+      "source_location": "L111",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_generatenextoccurrence",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "generatenextoccurrence()"
-    },
-    {
-      "label": "rescheduleOpenOccurrence()",
-      "file_type": "code",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L216",
-      "_origin": "ast",
-      "id": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
-      "community": 25,
-      "community_name": "recurrence.ts",
-      "norm_label": "rescheduleopenoccurrence()"
     },
     {
       "label": "rollover.test.ts",
@@ -7984,8 +7635,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 128,
+      "community_name": "rollover.test.ts",
       "norm_label": "rollover.ts"
     },
     {
@@ -7995,8 +7646,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover_rolloveropentasks",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 128,
+      "community_name": "rollover.test.ts",
       "norm_label": "rolloveropentasks()"
     },
     {
@@ -8006,8 +7657,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_test",
-      "community": 91,
-      "community_name": "taskDefer.test.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "taskdefer.test.ts"
     },
     {
@@ -8017,8 +7668,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_test_datekey",
-      "community": 91,
-      "community_name": "taskDefer.test.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "datekey()"
     },
     {
@@ -8028,8 +7679,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "taskdefer.ts"
     },
     {
@@ -8039,8 +7690,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_nextsensibleday",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 10,
+      "community_name": "recurrence.test.ts",
       "norm_label": "nextsensibleday()"
     },
     {
@@ -8050,7 +7701,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_test",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "suntheme.test.ts"
     },
@@ -8061,7 +7712,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_test_at",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "at()"
     },
@@ -8072,7 +7723,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_suntheme",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "suntheme.ts"
     },
@@ -8083,7 +7734,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_tominutes",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "tominutes()"
     },
@@ -8094,7 +7745,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_isdarkbysun",
-      "community": 33,
+      "community": 68,
       "community_name": "dashboard.tsx",
       "norm_label": "isdarkbysun()"
     },
@@ -14020,7 +13671,7 @@
       "label": "Boot order race",
       "file_type": "document",
       "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L57",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "docs_tablet_kiosk_setup_boot_order_race",
       "community": 60,
@@ -14028,21 +13679,10 @@
       "norm_label": "boot order race"
     },
     {
-      "label": "If the kiosk shows an error page",
-      "file_type": "document",
-      "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L64",
-      "_origin": "ast",
-      "id": "docs_tablet_kiosk_setup_if_the_kiosk_shows_an_error_page",
-      "community": 60,
-      "community_name": "Tablet Remote Access via Cloudflare Tunnel",
-      "norm_label": "if the kiosk shows an error page"
-    },
-    {
       "label": "Verify",
       "file_type": "document",
       "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L78",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "docs_tablet_kiosk_setup_verify",
       "community": 60,
@@ -14053,7 +13693,7 @@
       "label": "Troubleshooting",
       "file_type": "document",
       "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L90",
+      "source_location": "L60",
       "_origin": "ast",
       "id": "docs_tablet_kiosk_setup_troubleshooting",
       "community": 60,
@@ -14781,9 +14421,9 @@
       "source_location": "L4",
       "complexity": 1,
       "loc": 1,
-      "community": 72,
+      "community": 51,
       "norm_label": "dynamic",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "web_src_app_mobile_mobile_tasks_page_dynamic"
     },
     {
@@ -14794,9 +14434,9 @@
       "source_location": "L16",
       "complexity": 1,
       "loc": 1,
-      "community": 72,
+      "community": 51,
       "norm_label": "today",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "web_src_app_page_today"
     },
     {
@@ -14807,9 +14447,9 @@
       "source_location": "L19",
       "complexity": 1,
       "loc": 4,
-      "community": 72,
+      "community": 51,
       "norm_label": "todaylabel",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "web_src_app_page_todaylabel"
     },
     {
@@ -14820,9 +14460,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 9,
-      "community": 72,
+      "community": 51,
       "norm_label": "[dometasks, emelytasks, appointments, meals, notes, project, opentaskcount]",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "web_src_app_page_dometasks_emelytasks_appointments_meals_notes_project_opentaskcount"
     },
     {
@@ -14833,9 +14473,9 @@
       "source_location": "L35",
       "complexity": 1,
       "loc": 1,
-      "community": 72,
+      "community": 51,
       "norm_label": "weather",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "web_src_app_page_weather"
     },
     {
@@ -15301,9 +14941,9 @@
       "source_location": "L67",
       "complexity": 2,
       "loc": 1,
-      "community": 43,
+      "community": 61,
       "norm_label": "active",
-      "community_name": "layout.tsx",
+      "community_name": "TodayView.tsx",
       "id": "web_src_components_phaseswitch_active"
     },
     {
@@ -15444,9 +15084,9 @@
       "source_location": "L3",
       "complexity": 1,
       "loc": 1,
-      "community": 67,
+      "community": 68,
       "norm_label": "menu_width",
-      "community_name": "active",
+      "community_name": "dashboard.tsx",
       "id": "web_src_components_taskactionmenu_menu_width"
     },
     {
@@ -15457,9 +15097,9 @@
       "source_location": "L4",
       "complexity": 1,
       "loc": 1,
-      "community": 67,
+      "community": 68,
       "norm_label": "menu_height",
-      "community_name": "active",
+      "community_name": "dashboard.tsx",
       "id": "web_src_components_taskactionmenu_menu_height"
     },
     {
@@ -15470,9 +15110,9 @@
       "source_location": "L5",
       "complexity": 1,
       "loc": 1,
-      "community": 67,
+      "community": 68,
       "norm_label": "menu_margin",
-      "community_name": "active",
+      "community_name": "dashboard.tsx",
       "id": "web_src_components_taskactionmenu_menu_margin"
     },
     {
@@ -15483,9 +15123,9 @@
       "source_location": "L53",
       "complexity": 1,
       "loc": 1,
-      "community": 67,
+      "community": 68,
       "norm_label": "itemcount",
-      "community_name": "active",
+      "community_name": "dashboard.tsx",
       "id": "web_src_components_taskactionmenu_itemcount"
     },
     {
@@ -15496,9 +15136,9 @@
       "source_location": "L56",
       "complexity": 2,
       "loc": 1,
-      "community": 67,
+      "community": 68,
       "norm_label": "menuheight",
-      "community_name": "active",
+      "community_name": "dashboard.tsx",
       "id": "web_src_components_taskactionmenu_menuheight"
     },
     {
@@ -15509,9 +15149,9 @@
       "source_location": "L59",
       "complexity": 4,
       "loc": 3,
-      "community": 67,
+      "community": 68,
       "norm_label": "left",
-      "community_name": "active",
+      "community_name": "dashboard.tsx",
       "id": "web_src_components_taskactionmenu_left"
     },
     {
@@ -15522,9 +15162,9 @@
       "source_location": "L63",
       "complexity": 4,
       "loc": 3,
-      "community": 67,
+      "community": 68,
       "norm_label": "top",
-      "community_name": "active",
+      "community_name": "dashboard.tsx",
       "id": "web_src_components_taskactionmenu_top"
     },
     {
@@ -15877,6 +15517,32 @@
       "norm_label": "save()",
       "community_name": "notes.ts",
       "id": "web_src_components_mobile_noteseditor_save"
+    },
+    {
+      "label": "payload",
+      "file_type": "code",
+      "type": "FUNCTION",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L56",
+      "complexity": 4,
+      "loc": 6,
+      "community": 354,
+      "norm_label": "payload",
+      "community_name": "payload",
+      "id": "web_src_components_mobile_taskdurationscontrol_payload"
+    },
+    {
+      "label": "active",
+      "file_type": "code",
+      "type": "FUNCTION",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L136",
+      "complexity": 2,
+      "loc": 1,
+      "community": 67,
+      "norm_label": "active",
+      "community_name": "active",
+      "id": "web_src_components_mobile_taskdurationscontrol_active"
     },
     {
       "label": "[tasks, applyOpt]",
@@ -16315,9 +15981,9 @@
       "source_location": "L21",
       "complexity": 2,
       "loc": 1,
-      "community": 75,
+      "community": 22,
       "norm_label": "prisma",
-      "community_name": "db.ts",
+      "community_name": "shopping.ts",
       "id": "web_src_lib_db_prisma"
     },
     {
@@ -16497,9 +16163,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 5,
       "norm_label": "start",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_calendar_shifts_test_start"
     },
     {
@@ -16510,9 +16176,9 @@
       "source_location": "L14",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 5,
       "norm_label": "wake_hour",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_calendar_shifts_wake_hour"
     },
     {
@@ -16705,9 +16371,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 35,
+      "community": 71,
       "norm_label": "full_threshold",
-      "community_name": "index.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_engine_index_full_threshold"
     },
     {
@@ -16770,9 +16436,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "client",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_client"
     },
     {
@@ -16783,9 +16449,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "balances",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_balances"
     },
     {
@@ -16796,9 +16462,9 @@
       "source_location": "L26",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "split",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_split"
     },
     {
@@ -16809,9 +16475,9 @@
       "source_location": "L31",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "before",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_before"
     },
     {
@@ -16822,9 +16488,9 @@
       "source_location": "L33",
       "complexity": 1,
       "loc": 4,
-      "community": 73,
+      "community": 51,
       "norm_label": "created",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_created"
     },
     {
@@ -16835,9 +16501,9 @@
       "source_location": "L42",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "after",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_after"
     },
     {
@@ -17108,9 +16774,9 @@
       "source_location": "L12",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "client",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_client"
     },
     {
@@ -17121,9 +16787,9 @@
       "source_location": "L27",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "count",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_count"
     },
     {
@@ -17134,9 +16800,9 @@
       "source_location": "L35",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "rasen",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_rasen"
     },
     {
@@ -17147,9 +16813,9 @@
       "source_location": "L43",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "after1",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_after1"
     },
     {
@@ -17160,9 +16826,9 @@
       "source_location": "L46",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "after2",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_after2"
     },
     {
@@ -17173,9 +16839,9 @@
       "source_location": "L57",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "before",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_before"
     },
     {
@@ -17186,9 +16852,9 @@
       "source_location": "L65",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "after",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_after"
     },
     {
@@ -17199,9 +16865,9 @@
       "source_location": "L78",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 29,
       "norm_label": "dome",
-      "community_name": "chores.test.ts",
+      "community_name": "choreImport.test.ts",
       "id": "web_src_lib_repositories_choreimport_test_dome"
     },
     {
@@ -17680,9 +17346,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 43,
+      "community": 26,
       "norm_label": "client",
-      "community_name": "layout.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_phase_test_client"
     },
     {
@@ -17693,9 +17359,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 43,
+      "community": 26,
       "norm_label": "phase",
-      "community_name": "layout.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_phase_test_phase"
     },
     {
@@ -18460,9 +18126,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "client",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_client"
     },
     {
@@ -18473,9 +18139,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "now",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_now"
     },
     {
@@ -18486,9 +18152,9 @@
       "source_location": "L22",
       "complexity": 1,
       "loc": 13,
-      "community": 61,
+      "community": 5,
       "norm_label": "fetch()",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_fetch"
     },
     {
@@ -18499,9 +18165,9 @@
       "source_location": "L36",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "result",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_result"
     },
     {
@@ -18512,9 +18178,9 @@
       "source_location": "L39",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "events",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_events"
     },
     {
@@ -18525,9 +18191,9 @@
       "source_location": "L45",
       "complexity": 1,
       "loc": 11,
-      "community": 61,
+      "community": 5,
       "norm_label": "event()",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_event"
     },
     {
@@ -18538,9 +18204,9 @@
       "source_location": "L58",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "firstfetch()",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_firstfetch"
     },
     {
@@ -18551,9 +18217,9 @@
       "source_location": "L65",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "secondfetch()",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_secondfetch"
     },
     {
@@ -18564,9 +18230,9 @@
       "source_location": "L69",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "titles",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_titles"
     },
     {
@@ -18577,9 +18243,9 @@
       "source_location": "L76",
       "complexity": 1,
       "loc": 13,
-      "community": 61,
+      "community": 5,
       "norm_label": "seedfetch()",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_seedfetch"
     },
     {
@@ -18590,9 +18256,9 @@
       "source_location": "L91",
       "complexity": 1,
       "loc": 1,
-      "community": 61,
+      "community": 5,
       "norm_label": "emptyfetch()",
-      "community_name": "TodayView.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_test_emptyfetch"
     },
     {
@@ -18603,9 +18269,9 @@
       "source_location": "L10",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "sync_window_days",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_sync_window_days"
     },
     {
@@ -18733,9 +18399,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 1,
-      "community": 25,
+      "community": 10,
       "norm_label": "learned",
-      "community_name": "recurrence.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_learnedinterval_test_learned"
     },
     {
@@ -18746,9 +18412,9 @@
       "source_location": "L6",
       "complexity": 1,
       "loc": 1,
-      "community": 25,
+      "community": 10,
       "norm_label": "alpha",
-      "community_name": "recurrence.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_learnedinterval_alpha"
     },
     {
@@ -18759,9 +18425,9 @@
       "source_location": "L7",
       "complexity": 1,
       "loc": 1,
-      "community": 25,
+      "community": 10,
       "norm_label": "min_intervals",
-      "community_name": "recurrence.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_learnedinterval_min_intervals"
     },
     {
@@ -20644,9 +20310,9 @@
       "source_location": "L8",
       "complexity": 4,
       "loc": 1,
-      "community": 25,
+      "community": 10,
       "norm_label": "day_ms",
-      "community_name": "recurrence.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_recurrence_day_ms"
     },
     {
@@ -20657,9 +20323,9 @@
       "source_location": "L9",
       "complexity": 4,
       "loc": 1,
-      "community": 25,
+      "community": 10,
       "norm_label": "day_ms_local",
-      "community_name": "recurrence.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_recurrence_day_ms_local"
     },
     {
@@ -20670,9 +20336,9 @@
       "source_location": "L47",
       "complexity": 1,
       "loc": 1,
-      "community": 25,
+      "community": 10,
       "norm_label": "default_offset_days",
-      "community_name": "recurrence.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_recurrence_default_offset_days"
     },
     {
@@ -20761,9 +20427,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 10,
       "norm_label": "today",
-      "community_name": "taskDefer.test.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_taskdefer_test_today"
     },
     {
@@ -20774,9 +20440,9 @@
       "source_location": "L18",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 10,
       "norm_label": "result",
-      "community_name": "taskDefer.test.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_taskdefer_test_result"
     },
     {
@@ -20787,9 +20453,9 @@
       "source_location": "L28",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 10,
       "norm_label": "before",
-      "community_name": "taskDefer.test.ts",
+      "community_name": "recurrence.test.ts",
       "id": "web_src_lib_services_taskdefer_test_before"
     },
     {
@@ -20839,9 +20505,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 72,
+      "community": 51,
       "norm_label": "page.tsx",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_page_tsx"
     },
     {
@@ -20852,9 +20518,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 72,
+      "community": 51,
       "norm_label": "page.tsx",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_mobile_mobile_page_tsx"
     },
     {
@@ -20865,9 +20531,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 72,
+      "community": 51,
       "norm_label": "page.tsx",
-      "community_name": "page.tsx",
+      "community_name": "addManualEntryAction",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_mobile_mobile_tasks_page_tsx"
     },
     {
@@ -20891,9 +20557,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 122,
+      "community": 5,
       "norm_label": "calendar.ts",
-      "community_name": "planning.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_actions_calendar_ts"
     },
     {
@@ -20917,9 +20583,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 43,
+      "community": 61,
       "norm_label": "phase.ts",
-      "community_name": "layout.tsx",
+      "community_name": "TodayView.tsx",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_actions_phase_ts"
     },
     {
@@ -20943,9 +20609,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_auth_google_route_ts"
     },
     {
@@ -20956,9 +20622,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_auth_google_callback_route_ts"
     },
     {
@@ -20969,9 +20635,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_sync_calendar_route_ts"
     },
     {
@@ -21138,9 +20804,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 75,
+      "community": 22,
       "norm_label": "db.ts",
-      "community_name": "db.ts",
+      "community_name": "shopping.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_db_ts"
     },
     {
@@ -21190,9 +20856,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 5,
       "norm_label": "calendar.ts",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_repositories_calendar_ts"
     },
     {
@@ -21216,9 +20882,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 43,
+      "community": 61,
       "norm_label": "phase.ts",
-      "community_name": "layout.tsx",
+      "community_name": "TodayView.tsx",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_repositories_phase_ts"
     },
     {
@@ -21429,6 +21095,20 @@
       "norm_label": "acceptrecipeideaaction",
       "community_name": "acceptRecipeIdeaAction",
       "id": "actionsRecipeIdeas_acceptRecipeIdeaAction"
+    },
+    {
+      "label": "updateRoutineTemplateAction",
+      "file_type": "code",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L22",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 185,
+      "norm_label": "updateroutinetemplateaction",
+      "community_name": "updateRoutineTemplateAction",
+      "id": "actionsSettings_updateRoutineTemplateAction"
     },
     {
       "label": "toggleShoppingAction",
@@ -23708,17 +23388,6 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L653",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks_deleteroutinetemplate",
-      "target": "web_package_dependencies_prisma_client"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "web/src/lib/services/mealDraft.ts",
       "source_location": "L29",
       "weight": 1.0,
@@ -25370,73 +25039,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_routines_page",
-      "target": "web_src_app_mobile_mobile_routines_page_mobileroutinespage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_routines_page",
-      "target": "web_src_components_mobile_routinesview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_routines_page",
-      "target": "web_src_components_mobile_routinesview_routinesview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_routines_page",
-      "target": "web_src_lib_repositories_tasks",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_routines_page",
-      "target": "web_src_lib_repositories_tasks_listroutinetemplates",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/(mobile)/mobile/routines/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_routines_page_mobileroutinespage",
-      "target": "web_src_lib_repositories_tasks_listroutinetemplates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "web/src/app/(mobile)/mobile/settings/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_settings_page",
       "target": "web_src_app_mobile_mobile_settings_page_mobilesettingspage",
@@ -25487,15 +25091,48 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/(mobile)/mobile/settings/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_app_mobile_mobile_settings_page",
+      "target": "web_src_lib_repositories_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/(mobile)/mobile/settings/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_app_mobile_mobile_settings_page",
+      "target": "web_src_lib_repositories_tasks_listroutinetemplates",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/(mobile)/mobile/settings/page.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_settings_page_mobilesettingspage",
       "target": "web_src_lib_repositories_phase_getactivephase"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/app/(mobile)/mobile/settings/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "web_src_app_mobile_mobile_settings_page_mobilesettingspage",
+      "target": "web_src_lib_repositories_tasks_listroutinetemplates"
     },
     {
       "relation": "contains",
@@ -27824,61 +27461,31 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L65",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L14",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines",
-      "target": "web_src_app_actions_routines_createroutineaction",
+      "source": "web_src_app_actions_settings",
+      "target": "web_src_app_actions_settings_updateroutineinput",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L81",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L22",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines",
-      "target": "web_src_app_actions_routines_deleteroutineaction",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines",
-      "target": "web_src_app_actions_routines_routinefieldsinput",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines",
-      "target": "web_src_app_actions_routines_toweathercondition",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L49",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines",
-      "target": "web_src_app_actions_routines_updateroutineaction",
+      "source": "web_src_app_actions_settings",
+      "target": "web_src_app_actions_settings_updateroutinetemplateaction",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L9",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L8",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines",
+      "source": "web_src_app_actions_settings",
       "target": "web_src_lib_repositories_tasks",
       "confidence_score": 1.0
     },
@@ -27886,10 +27493,10 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L9",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L8",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines",
+      "source": "web_src_app_actions_settings",
       "target": "web_src_lib_repositories_tasks_allowedpersons",
       "confidence_score": 1.0
     },
@@ -27897,43 +27504,32 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L9",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L8",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines",
-      "target": "web_src_lib_repositories_tasks_createroutinetemplate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines",
-      "target": "web_src_lib_repositories_tasks_deleteroutinetemplate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines",
+      "source": "web_src_app_actions_settings",
       "target": "web_src_lib_repositories_tasks_updateroutinetemplate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "web_src_app_actions_settings",
+      "target": "web_src_lib_repositories_tasks_updateroutinetemplateinput",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L8",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L7",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines",
+      "source": "web_src_app_actions_settings",
       "target": "web_src_lib_revalidate",
       "confidence_score": 1.0
     },
@@ -27941,10 +27537,10 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L8",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L7",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines",
+      "source": "web_src_app_actions_settings",
       "target": "web_src_lib_revalidate_revalidatedashboard",
       "confidence_score": 1.0
     },
@@ -27952,55 +27548,22 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L23",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L6",
       "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_app_actions_routines",
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_app_actions_settings",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "context": "field",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L22",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L18",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines_routinefieldsinput",
+      "source": "web_src_app_actions_settings_updateroutineinput",
       "target": "web_src_lib_repositories_tasks_allowedpersons",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_app_actions_routines_routinefieldsinput",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines_createroutineaction",
-      "target": "web_src_app_actions_routines_toweathercondition",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines_updateroutineaction",
-      "target": "web_src_app_actions_routines_toweathercondition",
       "confidence_score": 1.0
     },
     {
@@ -28008,10 +27571,10 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L52",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L28",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines_updateroutineaction",
+      "source": "web_src_app_actions_settings_updateroutinetemplateaction",
       "target": "web_src_lib_repositories_tasks_updateroutinetemplate"
     },
     {
@@ -28019,21 +27582,21 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L61",
+      "source_file": "web/src/app/actions/settings.ts",
+      "source_location": "L29",
       "weight": 1.0,
-      "source": "web_src_app_actions_routines_updateroutineaction",
+      "source": "web_src_app_actions_settings_updateroutinetemplateaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L23",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L6",
       "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_app_actions_routines_updateroutineaction",
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_app_actions_settings_updateroutinetemplateaction",
       "confidence_score": 1.0
     },
     {
@@ -28041,99 +27604,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L154",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L64",
       "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_routineeditorcard",
-      "target": "web_src_app_actions_routines_updateroutineaction"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L68",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines_createroutineaction",
-      "target": "web_src_lib_repositories_tasks_createroutinetemplate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L77",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines_createroutineaction",
-      "target": "web_src_lib_revalidate_revalidatedashboard"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_app_actions_routines_createroutineaction",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L341",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_routinecreateform",
-      "target": "web_src_app_actions_routines_createroutineaction"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L82",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines_deleteroutineaction",
-      "target": "web_src_lib_repositories_tasks_deleteroutinetemplate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/routines.ts",
-      "source_location": "L83",
-      "weight": 1.0,
-      "source": "web_src_app_actions_routines_deleteroutineaction",
-      "target": "web_src_lib_revalidate_revalidatedashboard"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_app_actions_routines_deleteroutineaction",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L191",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_routineeditorcard",
-      "target": "web_src_app_actions_routines_deleteroutineaction"
+      "source": "web_src_components_mobile_taskdurationscontrol_templaterow",
+      "target": "web_src_app_actions_settings_updateroutinetemplateaction"
     },
     {
       "relation": "contains",
@@ -30227,7 +29702,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L2",
+      "source_location": "L4",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_phaseswitch",
@@ -30301,7 +29776,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L2",
+      "source_location": "L4",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_phaseswitch_phaseswitch",
@@ -30334,7 +29809,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_pushsetupcontrol",
@@ -30417,7 +29892,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_pushsetupcontrol_pushsetupcontrol",
@@ -31861,7 +31336,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/MobileNavBar.tsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "web_src_components_mobile_mobilenavbar",
       "target": "web_src_components_mobile_mobilenavbar_mobilenavbar",
@@ -32081,19 +31556,8 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_pageheader",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_mobile_pageheader",
@@ -32125,19 +31589,8 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_pageheader_pageheader",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_mobile_pageheader_pageheader",
@@ -32168,305 +31621,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L66",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_formatdue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L62",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_ispreset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L49",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_parseweather",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_person_options",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L505",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_personsegment",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L429",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_rhythmpicker",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L317",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_routinecreateform",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L120",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_routineeditorcard",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L79",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_routinesview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L540",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_weathercontrols",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_mobile_routinesview_weatherfields",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_ui",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_components_ui_card",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_repositories_tasks",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_repositories_tasks_allowedpersons",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_repositories_tasks_routinetemplatedto",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_rhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_rhythm_makecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_rhythm_parsecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_rhythm_rhythm_options",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview",
-      "target": "web_src_lib_rhythm_rhythmlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L121",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_routineeditorcard",
-      "target": "web_src_components_mobile_routinesview_parseweather",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L63",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_ispreset",
-      "target": "web_src_lib_rhythm_rhythm_options"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L438",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_rhythmpicker",
-      "target": "web_src_components_mobile_routinesview_ispreset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L199",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_routineeditorcard",
-      "target": "web_src_components_mobile_routinesview_formatdue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L233",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_routineeditorcard",
-      "target": "web_src_lib_rhythm_rhythmlabel"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L455",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_rhythmpicker",
-      "target": "web_src_lib_rhythm_makecustomrhythm"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/RoutinesView.tsx",
-      "source_location": "L438",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_routinesview_rhythmpicker",
-      "target": "web_src_lib_rhythm_parsecustomrhythm"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_mobile_settingsview_sectiontitle",
@@ -32476,7 +31632,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_mobile_settingsview_settingsview",
@@ -32487,7 +31643,29 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L4",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_settingsview",
+      "target": "web_src_components_mobile_taskdurationscontrol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/SettingsView.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_settingsview",
+      "target": "web_src_components_mobile_taskdurationscontrol_taskdurationscontrol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/SettingsView.tsx",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_mobile_themetoggle",
@@ -32498,7 +31676,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_mobile_themetoggle_themetoggle",
@@ -32509,7 +31687,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L5",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_ui",
@@ -32520,7 +31698,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/mobile/SettingsView.tsx",
-      "source_location": "L5",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_components_ui_card",
@@ -32546,6 +31724,112 @@
       "weight": 1.0,
       "source": "web_src_components_mobile_settingsview",
       "target": "web_src_lib_repositories_phase_activephase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/SettingsView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_settingsview",
+      "target": "web_src_lib_repositories_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/SettingsView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_settingsview",
+      "target": "web_src_lib_repositories_tasks_rhythm_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/SettingsView.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_settingsview",
+      "target": "web_src_lib_repositories_tasks_routinetemplatedto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_components_mobile_taskdurationscontrol_person_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_components_mobile_taskdurationscontrol_rhythmoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_components_mobile_taskdurationscontrol_taskdurationscontrol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_components_mobile_taskdurationscontrol_templaterow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_lib_repositories_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_lib_repositories_tasks_allowedpersons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/components/mobile/TaskDurationsControl.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "web_src_components_mobile_taskdurationscontrol",
+      "target": "web_src_lib_repositories_tasks_routinetemplatedto",
       "confidence_score": 1.0
     },
     {
@@ -36014,7 +35298,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L50",
+      "source_location": "L49",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_gettasksbyperson",
       "target": "web_src_lib_dates_daybounds"
@@ -36025,7 +35309,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L67",
+      "source_location": "L66",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_gettasksforday",
       "target": "web_src_lib_dates_daybounds"
@@ -37307,7 +36591,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L158",
+      "source_location": "L157",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_settaskstatus",
       "target": "web_src_lib_engine_completion_recordcompletion"
@@ -39521,7 +38805,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/choreImport.ts",
-      "source_location": "L46",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "web_src_lib_repositories_choreimport",
       "target": "web_src_lib_repositories_choreimport_importchores",
@@ -39585,7 +38869,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/choreImport.ts",
-      "source_location": "L51",
+      "source_location": "L41",
       "weight": 1.0,
       "source": "web_src_lib_repositories_choreimport_importchores",
       "target": "web_src_lib_services_chores_buildchoretasks"
@@ -40810,26 +40094,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/routineTemplates.test.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_routinetemplates_test",
-      "target": "web_src_lib_repositories_routinetemplates_test_makechain",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/routineTemplates.test.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_routinetemplates_test",
-      "target": "web_src_lib_repositories_routinetemplates_test_todaymidnight",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -40838,28 +40102,6 @@
       "weight": 1.0,
       "source": "web_src_lib_repositories_routinetemplates_test",
       "target": "web_src_lib_repositories_tasks",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/routineTemplates.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_routinetemplates_test",
-      "target": "web_src_lib_repositories_tasks_createroutinetemplate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/routineTemplates.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_routinetemplates_test",
-      "target": "web_src_lib_repositories_tasks_deleteroutinetemplate",
       "confidence_score": 1.0
     },
     {
@@ -41277,17 +40519,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L337",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_allowed_persons",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L335",
+      "source_location": "L333",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_allowedpersons",
@@ -41297,7 +40529,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L193",
+      "source_location": "L192",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_assigntask",
@@ -41307,7 +40539,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L281",
+      "source_location": "L280",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_completetaskby",
@@ -41317,7 +40549,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L296",
+      "source_location": "L295",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_completetaskbyboth",
@@ -41327,27 +40559,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L570",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_createroutineinput",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L588",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_createroutinetemplate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L222",
+      "source_location": "L221",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_createtask",
@@ -41357,7 +40569,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L210",
+      "source_location": "L209",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_createtaskinput",
@@ -41367,7 +40579,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L307",
+      "source_location": "L306",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_defertask",
@@ -41377,17 +40589,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L639",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_deleteroutinetemplate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L82",
+      "source_location": "L81",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_getopentaskcount",
@@ -41397,7 +40599,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_gettasksbyperson",
@@ -41407,7 +40609,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L66",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_gettasksforday",
@@ -41417,7 +40619,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L258",
+      "source_location": "L257",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_listopentasks",
@@ -41427,7 +40629,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L370",
+      "source_location": "L364",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_listroutinetemplates",
@@ -41437,17 +40639,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L499",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_normalizeweathercondition",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L248",
+      "source_location": "L247",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_opentaskdto",
@@ -41457,17 +40649,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L425",
+      "source_location": "L336",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_routinefields",
+      "target": "web_src_lib_repositories_tasks_rhythm_options",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L344",
+      "source_location": "L347",
+      "weight": 1.0,
+      "source": "web_src_lib_repositories_tasks",
+      "target": "web_src_lib_repositories_tasks_rhythm_values",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/repositories/tasks.ts",
+      "source_location": "L349",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_routinetemplatedto",
@@ -41477,7 +40679,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L103",
+      "source_location": "L102",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_settaskstatus",
@@ -41487,7 +40689,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_taskrow",
@@ -41497,7 +40699,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L28",
+      "source_location": "L27",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_todomaintask",
@@ -41507,7 +40709,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L540",
+      "source_location": "L412",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_updateroutinetemplate",
@@ -41517,42 +40719,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L529",
+      "source_location": "L401",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_updateroutinetemplatepatch",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L440",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_repositories_tasks_validateroutinefields",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_rhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_rhythm_isvalidrhythm",
+      "target": "web_src_lib_repositories_tasks_updateroutinetemplateinput",
       "confidence_score": 1.0
     },
     {
@@ -41575,17 +40745,6 @@
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_services_recurrence_generatenextoccurrence",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks",
-      "target": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
       "confidence_score": 1.0
     },
     {
@@ -41637,7 +40796,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L62",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_gettasksbyperson",
       "target": "web_src_lib_repositories_tasks_todomaintask",
@@ -41648,7 +40807,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L78",
+      "source_location": "L77",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_gettasksforday",
       "target": "web_src_lib_repositories_tasks_todomaintask",
@@ -41659,7 +40818,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L288",
+      "source_location": "L287",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_completetaskby",
       "target": "web_src_lib_repositories_tasks_settaskstatus",
@@ -41670,7 +40829,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L300",
+      "source_location": "L299",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_completetaskbyboth",
       "target": "web_src_lib_repositories_tasks_settaskstatus",
@@ -41682,7 +40841,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L188",
+      "source_location": "L187",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_settaskstatus",
       "target": "web_src_lib_services_recurrence_generatenextoccurrence"
@@ -41770,65 +40929,21 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L313",
+      "source_location": "L312",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_defertask",
       "target": "web_src_lib_services_taskdefer_nextsensibleday"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L592",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks_createroutinetemplate",
-      "target": "web_src_lib_repositories_tasks_validateroutinefields",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L545",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks_updateroutinetemplate",
-      "target": "web_src_lib_repositories_tasks_validateroutinefields",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L482",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks_validateroutinefields",
-      "target": "web_src_lib_repositories_tasks_normalizeweathercondition",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L466",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_tasks_validateroutinefields",
-      "target": "web_src_lib_rhythm_isvalidrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
+      "relation": "references",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L566",
+      "source_location": "L421",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_updateroutinetemplate",
-      "target": "web_src_lib_services_recurrence_rescheduleopenoccurrence"
+      "target": "web_src_lib_repositories_tasks_rhythm_values"
     },
     {
       "relation": "contains",
@@ -42037,213 +41152,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/revalidate.ts",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0,
       "source": "web_src_lib_revalidate",
       "target": "web_src_lib_revalidate_revalidatedashboard",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_test",
-      "target": "web_src_lib_rhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_test",
-      "target": "web_src_lib_rhythm_isvalidrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_test",
-      "target": "web_src_lib_rhythm_makecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_test",
-      "target": "web_src_lib_rhythm_parsecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_test",
-      "target": "web_src_lib_rhythm_rhythm_options",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_test",
-      "target": "web_src_lib_rhythm_rhythmlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L55",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm",
-      "target": "web_src_lib_rhythm_isvalidrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm",
-      "target": "web_src_lib_rhythm_makecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L40",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm",
-      "target": "web_src_lib_rhythm_parsecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm",
-      "target": "web_src_lib_rhythm_preset_values",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm",
-      "target": "web_src_lib_rhythm_rhythm_options",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm",
-      "target": "web_src_lib_rhythm_rhythmlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence",
-      "target": "web_src_lib_rhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L63",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_rhythmlabel",
-      "target": "web_src_lib_rhythm_rhythm_options"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_isvalidrhythm",
-      "target": "web_src_lib_rhythm_preset_values"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_isvalidrhythm",
-      "target": "web_src_lib_rhythm_parsecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/rhythm.ts",
-      "source_location": "L66",
-      "weight": 1.0,
-      "source": "web_src_lib_rhythm_rhythmlabel",
-      "target": "web_src_lib_rhythm_parsecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence",
-      "target": "web_src_lib_rhythm_parsecustomrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_dayoffsetfor",
-      "target": "web_src_lib_rhythm_parsecustomrhythm",
       "confidence_score": 1.0
     },
     {
@@ -42905,7 +41817,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L166",
+      "source_location": "L141",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_generatenextoccurrence",
       "target": "web_src_lib_services_learnedinterval_learnedinterval"
@@ -45371,54 +44283,13 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_test",
-      "target": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L348",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_test",
-      "target": "web_src_lib_services_recurrence_test_daysago",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L362",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_test",
-      "target": "web_src_lib_services_recurrence_test_makechain",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L95",
+      "source_location": "L85",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_test",
       "target": "web_src_lib_services_recurrence_test_makeroutinetask",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L355",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_test",
-      "target": "web_src_lib_services_recurrence_test_today",
       "confidence_score": 1.0
     },
     {
@@ -45645,21 +44516,10 @@
       "target": "web_src_lib_services_recurrence_test"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L372",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_test_makechain",
-      "target": "web_src_lib_services_recurrence_test_today",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_chaincompletiongaps",
@@ -45669,7 +44529,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L90",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_configuredintervaldays",
@@ -45679,17 +44539,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L55",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence",
-      "target": "web_src_lib_services_recurrence_dayoffsetfor",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L73",
+      "source_location": "L57",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_fixed_rhythms",
@@ -45699,7 +44549,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L136",
+      "source_location": "L111",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_generatenextoccurrence",
@@ -45709,17 +44559,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L80",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence",
-      "target": "web_src_lib_services_recurrence_isfixedrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L109",
+      "source_location": "L83",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_nextduedate",
@@ -45729,17 +44569,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L216",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence",
-      "target": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L43",
+      "source_location": "L42",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_rhythm_months",
@@ -45749,7 +44579,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L33",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_rhythm_offset_days",
@@ -45807,47 +44637,14 @@
       "target": "web_src_lib_services_recurrence_generatenextoccurrence"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L93",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_configuredintervaldays",
-      "target": "web_src_lib_services_recurrence_dayoffsetfor",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L81",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_isfixedrhythm",
-      "target": "web_src_lib_services_recurrence_dayoffsetfor",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L117",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_nextduedate",
-      "target": "web_src_lib_services_recurrence_dayoffsetfor",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "references",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L81",
+      "source_location": "L139",
       "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_isfixedrhythm",
+      "source": "web_src_lib_services_recurrence_generatenextoccurrence",
       "target": "web_src_lib_services_recurrence_fixed_rhythms"
     },
     {
@@ -45855,18 +44652,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L164",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_generatenextoccurrence",
-      "target": "web_src_lib_services_recurrence_isfixedrhythm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L168",
+      "source_location": "L143",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_generatenextoccurrence",
       "target": "web_src_lib_services_recurrence_configuredintervaldays",
@@ -45877,20 +44663,9 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L174",
+      "source_location": "L149",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_generatenextoccurrence",
-      "target": "web_src_lib_services_recurrence_nextduedate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L233",
-      "weight": 1.0,
-      "source": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
       "target": "web_src_lib_services_recurrence_nextduedate",
       "confidence_score": 1.0
     },
@@ -51233,7 +50008,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L57",
+      "source_location": "L45",
       "weight": 1.0,
       "source": "docs_tablet_kiosk_setup_tablet_kiosk_autostart",
       "target": "docs_tablet_kiosk_setup_boot_order_race",
@@ -51243,17 +50018,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L64",
-      "weight": 1.0,
-      "source": "docs_tablet_kiosk_setup_tablet_kiosk_autostart",
-      "target": "docs_tablet_kiosk_setup_if_the_kiosk_shows_an_error_page",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L90",
+      "source_location": "L60",
       "weight": 1.0,
       "source": "docs_tablet_kiosk_setup_tablet_kiosk_autostart",
       "target": "docs_tablet_kiosk_setup_troubleshooting",
@@ -51263,7 +50028,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/tablet-kiosk-setup.md",
-      "source_location": "L78",
+      "source_location": "L52",
       "weight": 1.0,
       "source": "docs_tablet_kiosk_setup_tablet_kiosk_autostart",
       "target": "docs_tablet_kiosk_setup_verify",
@@ -51738,6 +50503,20 @@
       "source_file": "web/src/app/actions/meals.ts"
     },
     {
+      "id": "mobile_settings_tab_composition",
+      "label": "Handy-Einstellungen-Tab: Design, Aufgaben-Dauer/Rhythmus, Elternzeit-Modus, Push",
+      "nodes": [
+        "settingspage_MobileSettingsPage",
+        "web_src_components_mobile_settingsview_settingsview",
+        "web_src_components_mobile_themetoggle_themetoggle",
+        "web_src_components_mobile_taskdurationscontrol_taskdurationscontrol"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/components/mobile/SettingsView.tsx"
+    },
+    {
       "id": "theme_flicker_prevention_pattern",
       "label": "Design-Flackern verhindern: Pre-Paint-Skript + gecachter Wert (Tablet-Auto + Handy-Toggle)",
       "nodes": [
@@ -51848,5 +50627,5 @@
       "source_file": "docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md"
     }
   ],
-  "built_at_commit": "6c6d62bd0b3b45e86db1966d0d36441968237f32"
+  "built_at_commit": "b48ac73acaac815f1eed1e4ad7edcc5a8031c21d"
 }

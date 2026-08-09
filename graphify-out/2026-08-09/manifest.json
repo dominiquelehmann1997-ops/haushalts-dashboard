@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "web/prisma/importChores.ts": {
-    "mtime": 1786305388.6874568,
-    "ast_hash": "e91a6c6ea742e03aba260a96edbf3934",
+    "mtime": 1783712733.742,
+    "ast_hash": "4afd26aa1d08a08738fcec994c9daa59",
     "semantic_hash": ""
   },
   "web/prisma/ingestRecipes.ts": {
@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "web/src/app/(mobile)/mobile/settings/page.tsx": {
-    "mtime": 1786305388.6894596,
-    "ast_hash": "0eb7d3bc1f808598d83c1e7040e375f8",
+    "mtime": 1783712733.766375,
+    "ast_hash": "52f7127d83cbf354b3a0fb62d999e096",
     "semantic_hash": ""
   },
   "web/src/app/(mobile)/mobile/tasks/page.tsx": {
@@ -162,6 +162,11 @@
   "web/src/app/actions/recipes.ts": {
     "mtime": 1783712733.7708955,
     "ast_hash": "cc2194ad6ea6446237c43a2503162fc5",
+    "semantic_hash": ""
+  },
+  "web/src/app/actions/settings.ts": {
+    "mtime": 1783712733.7708955,
+    "ast_hash": "eb6389656663cb98bbe39e04f9c1a572",
     "semantic_hash": ""
   },
   "web/src/app/actions/shopping.ts": {
@@ -295,8 +300,8 @@
     "semantic_hash": ""
   },
   "web/src/components/mobile/MobileNavBar.tsx": {
-    "mtime": 1786305388.6909566,
-    "ast_hash": "4afe5ddfcdcdf5e987470605323c9fbc",
+    "mtime": 1783712733.787927,
+    "ast_hash": "57f1fedcecb57968cabcdbe85622fee4",
     "semantic_hash": ""
   },
   "web/src/components/mobile/NotesEditor.tsx": {
@@ -315,8 +320,13 @@
     "semantic_hash": ""
   },
   "web/src/components/mobile/SettingsView.tsx": {
-    "mtime": 1786305388.6924577,
-    "ast_hash": "1beb33f79431175fc2e74641fd44e4b7",
+    "mtime": 1783712733.7894495,
+    "ast_hash": "aa2fad902ecfb93d916d28a11896042b",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/TaskDurationsControl.tsx": {
+    "mtime": 1783712733.7899518,
+    "ast_hash": "10a6179f27a76a268b3e5d9db598c6a6",
     "semantic_hash": ""
   },
   "web/src/components/mobile/TasksView.tsx": {
@@ -405,8 +415,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/revalidate.ts": {
-    "mtime": 1786305388.6959624,
-    "ast_hash": "4056cacab984aaa419f70340a9093ea7",
+    "mtime": 1783712733.8236895,
+    "ast_hash": "98af5b100c525458b8445694109db64c",
     "semantic_hash": ""
   },
   "web/src/lib/sunTheme.test.ts": {
@@ -570,13 +580,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/choreImport.test.ts": {
-    "mtime": 1786305388.6929622,
-    "ast_hash": "6415b21707059b3a0058e1277ac12823",
+    "mtime": 1783712733.814229,
+    "ast_hash": "aa8842c828bf39b35f35abc0d68bc7e8",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/choreImport.ts": {
-    "mtime": 1786305388.6939626,
-    "ast_hash": "1f747292006f3d8e2c4070304e873b60",
+    "mtime": 1783712733.814229,
+    "ast_hash": "9186bd33acc17d7730897791c87f85c9",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/meals.test.ts": {
@@ -640,8 +650,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/routineTemplates.test.ts": {
-    "mtime": 1786305388.6944623,
-    "ast_hash": "b4a3b0c011680d55f99f9ef4377673e5",
+    "mtime": 1783712733.819963,
+    "ast_hash": "4323f62402b2b3e1d7d55926939417a9",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/shopping.test.ts": {
@@ -660,8 +670,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/tasks.ts": {
-    "mtime": 1786305388.6954618,
-    "ast_hash": "78ff7bde3f4c882618fc216a345c0c35",
+    "mtime": 1783712733.822611,
+    "ast_hash": "88c31d5f67c7ebae3f644ff9ec0c9c22",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/tasks.write.test.ts": {
@@ -810,13 +820,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/services/recurrence.test.ts": {
-    "mtime": 1786305388.697462,
-    "ast_hash": "8ca4ecae37fb4a475803c2dcc4c1e339",
+    "mtime": 1784926945.9808724,
+    "ast_hash": "d9e95a0d7d874354f4d78993698a128b",
     "semantic_hash": ""
   },
   "web/src/lib/services/recurrence.ts": {
-    "mtime": 1786305388.6984622,
-    "ast_hash": "d72f36e5af7bd9697739fd38b5ff6d8f",
+    "mtime": 1784926945.9818742,
+    "ast_hash": "fb177a4ada5fd187869811d081f9e952",
     "semantic_hash": ""
   },
   "web/src/lib/services/rollover.test.ts": {
@@ -885,8 +895,8 @@
     "semantic_hash": ""
   },
   "docs/tablet-kiosk-setup.md": {
-    "mtime": 1786305412.2151852,
-    "ast_hash": "fb0bb7db33143c94e0f760d8d130bae3",
+    "mtime": 1783712733.378947,
+    "ast_hash": "2dd05d26e098cdd2a330b29b15686b8e",
     "semantic_hash": ""
   },
   "docs/tablet-remote-access.md": {
@@ -1145,8 +1155,8 @@
     "semantic_hash": ""
   },
   "scripts/tablet-boot.sh": {
-    "mtime": 1786305412.216184,
-    "ast_hash": "4e00d53e414e4fb8dfe18a0a554edd21",
+    "mtime": 1783712733.6551762,
+    "ast_hash": "167593ee3792f3269f713c47e7d10770",
     "semantic_hash": ""
   },
   "scripts/tablet-start.sh": {
@@ -1257,31 +1267,6 @@
   "CLAUDE.md": {
     "mtime": 1783712733.3556507,
     "ast_hash": "ab254d0a1c83f1f4813a79ddddbdf284",
-    "semantic_hash": ""
-  },
-  "web/src/app/(mobile)/mobile/routines/page.tsx": {
-    "mtime": 1786305388.6889582,
-    "ast_hash": "5b24e9d6a979796e645e3312f377a5c1",
-    "semantic_hash": ""
-  },
-  "web/src/app/actions/routines.ts": {
-    "mtime": 1786305388.689962,
-    "ast_hash": "cca5a59cd1af01248ead0492d05f87c6",
-    "semantic_hash": ""
-  },
-  "web/src/components/mobile/RoutinesView.tsx": {
-    "mtime": 1786305388.69146,
-    "ast_hash": "15b89ba02dfbb607723b98e8f2ab0ab6",
-    "semantic_hash": ""
-  },
-  "web/src/lib/rhythm.test.ts": {
-    "mtime": 1786305388.6964624,
-    "ast_hash": "d8ee8e546b64b7bd0fc5e1cc0c3fda58",
-    "semantic_hash": ""
-  },
-  "web/src/lib/rhythm.ts": {
-    "mtime": 1786305388.696962,
-    "ast_hash": "3cb02f9981eef870385cfaffa9879b4a",
     "semantic_hash": ""
   }
 }
