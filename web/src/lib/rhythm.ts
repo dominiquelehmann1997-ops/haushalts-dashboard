@@ -64,6 +64,7 @@ export function rhythmLabel(rhythm: string | null): string {
   if (preset) return preset.label;
 
   const days = parseCustomRhythm(rhythm);
+  if (days === 1) return "Täglich";
   if (days !== null) return `Alle ${days} Tage`;
 
   return rhythm;

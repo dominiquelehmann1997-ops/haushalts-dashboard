@@ -76,6 +76,10 @@ describe("rhythmLabel", () => {
     expect(rhythmLabel("10-day")).toBe("Alle 10 Tage");
   });
 
+  it("nennt ein Ein-Tages-Intervall täglich, nicht 'Alle 1 Tage'", () => {
+    expect(rhythmLabel("1-day")).toBe("Täglich");
+  });
+
   it("benennt einen fehlenden Rhythmus, statt ihn zu verschweigen", () => {
     expect(rhythmLabel(null)).toBe("Kein Rhythmus");
     expect(rhythmLabel("")).toBe("Kein Rhythmus");
