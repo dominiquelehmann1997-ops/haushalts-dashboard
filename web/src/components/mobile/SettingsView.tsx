@@ -1,10 +1,7 @@
 import type { ActivePhase } from "@/lib/repositories/phase";
-import type { RoutineTemplateDTO } from "@/lib/repositories/tasks";
-import { RHYTHM_OPTIONS } from "@/lib/repositories/tasks";
 import { PhaseSwitch } from "@/components/PhaseSwitch";
 import { PushSetupControl } from "@/components/PushSetupControl";
 import { ThemeToggle } from "@/components/mobile/ThemeToggle";
-import { TaskDurationsControl } from "@/components/mobile/TaskDurationsControl";
 import { Card } from "@/components/ui";
 import { PageHeader } from "@/components/mobile/PageHeader";
 
@@ -16,13 +13,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function SettingsView({
-  phase,
-  templates,
-}: {
-  phase: ActivePhase | null;
-  templates: RoutineTemplateDTO[];
-}) {
+export function SettingsView({ phase }: { phase: ActivePhase | null }) {
   return (
     <div className="space-y-4">
       <PageHeader eyebrow="Verwalten" title="Einstellungen" />
@@ -33,15 +24,6 @@ export function SettingsView({
           Hell, dunkel oder automatisch nach Handy-Einstellung.
         </p>
         <ThemeToggle />
-      </Card>
-
-      <Card>
-        <SectionTitle>Aufgaben-Dauer & Rhythmus</SectionTitle>
-        <p className="text-[12.5px] text-ink-soft dark:text-cream/60 mb-3">
-          Dauer, Rhythmus und Zuständigkeit wiederkehrender Aufgaben — gilt
-          dauerhaft für alle künftigen Wiederholungen.
-        </p>
-        <TaskDurationsControl templates={templates} rhythmOptions={RHYTHM_OPTIONS} />
       </Card>
 
       <Card>

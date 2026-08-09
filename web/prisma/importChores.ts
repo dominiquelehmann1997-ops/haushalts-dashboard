@@ -16,7 +16,7 @@ async function main() {
 
   try {
     const summary = await importChores(prisma, today);
-    console.log(`Chore-Import fertig: ${summary.created} neu, ${summary.updated} aktualisiert.`);
+    console.log(`Chore-Import fertig: ${summary.created} neu, ${summary.skipped} übersprungen.`);
   } finally {
     await prisma.$disconnect();
   }

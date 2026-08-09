@@ -67,6 +67,24 @@ describe("importChores", () => {
     expect(after.dueDate.getTime()).toBe(new Date(2026, 0, 1).getTime());
   });
 
+  it("überschreibt in der App geänderte Werte NICHT (Import ist create-only)", async () => {
+    await importChores(client, today);
+    const before = await client.task.findFirstOrThrow({ where: { title: "Treppe saugen" } });
+    await client.task.update({
+      where: { id: before.id },
+      data: { effort: 99, rhythm: "10-day", allowedPersons: "emely", title: "Treppe saugen" },
+    });
+
+    const summary = await importChores(client, today);
+
+    const after = await client.task.findFirstOrThrow({ where: { title: "Treppe saugen" } });
+    expect(after.effort).toBe(99);
+    expect(after.rhythm).toBe("10-day");
+    expect(after.allowedPersons).toBe("emely");
+    expect(summary.created).toBe(0);
+    expect(summary.skipped).toBeGreaterThan(0);
+  });
+
   it("creates the household people when none exist", async () => {
     await client.accountEntry.deleteMany();
     await client.task.deleteMany();

@@ -10,7 +10,8 @@ import type { PersonKey } from "@/lib/engine/types";
 import { dayBounds } from "@/lib/dates";
 import { recordCompletion } from "@/lib/engine/completion";
 import { nextSensibleDay } from "@/lib/services/taskDefer";
-import { generateNextOccurrence } from "@/lib/services/recurrence";
+import { generateNextOccurrence, rescheduleOpenOccurrence } from "@/lib/services/recurrence";
+import { isValidRhythm } from "@/lib/rhythm";
 
 type TaskRow = {
   id: string;
@@ -321,30 +322,24 @@ export async function deferTask(
   });
 }
 
-// ─── Aufgaben-Vorlagen (Einstellungen) ──────────────────────────────────────
+// ─── Routinen-Vorlagen (Routinen-Verwaltung) ────────────────────────────────
 //
 // Wiederkehrende Routinen bestehen aus einer Kette einzelner Task-Zeilen, die
 // über `recurringParentId ?? id` (die "chainId") verbunden sind. Für die
-// Einstellungen fassen wir jede Kette zu EINER bearbeitbaren Vorlage zusammen:
-// ändert man Dauer/Rhythmus/Zuständigkeit, schreiben wir den Wert auf alle
-// Zeilen der Kette. Neue Occurrences erben ihn von der zuletzt erledigten Zeile
-// (siehe `generateNextOccurrence`), sodass die Änderung dauerhaft greift.
+// Verwaltung fassen wir jede Kette zu EINER bearbeitbaren Vorlage zusammen:
+// ändert man ein Feld, schreiben wir es auf alle Zeilen der Kette. Neue
+// Occurrences erben ihre Werte von der zuletzt erledigten Zeile (siehe
+// `generateNextOccurrence`) — deshalb reicht es NICHT, nur die offene Zeile zu
+// ändern; erledigt werden kann auch eine ältere (Picker "Erledigt nachtragen").
 
 export type AllowedPersons = "both" | "dome" | "emely";
 
-/** Erlaubte Rhythmen mit deutschen Labels — deckt sich mit `recurrence.ts`. */
-export const RHYTHM_OPTIONS: { value: string; label: string }[] = [
-  { value: "daily", label: "Täglich" },
-  { value: "2x-week", label: "2× pro Woche" },
-  { value: "3-day", label: "Alle 3 Tage" },
-  { value: "5-day", label: "Alle 5 Tage" },
-  { value: "weekly", label: "Wöchentlich" },
-  { value: "biweekly", label: "Alle 2 Wochen" },
-  { value: "monthly", label: "Monatlich" },
-  { value: "halfyearly", label: "Halbjährlich" },
-];
+const ALLOWED_PERSONS: AllowedPersons[] = ["both", "dome", "emely"];
 
-const RHYTHM_VALUES = new Set(RHYTHM_OPTIONS.map((r) => r.value));
+/** Obergrenze für die Dauer einer Aufgabe (24 h in Minuten). */
+const MAX_EFFORT_MINUTES = 1440;
+
+const MAX_TITLE_LENGTH = 120;
 
 export interface RoutineTemplateDTO {
   /** `recurringParentId ?? id` der Kette — Ziel für Updates. */
@@ -354,12 +349,23 @@ export interface RoutineTemplateDTO {
   effort: number;
   rhythm: string | null;
   allowedPersons: AllowedPersons;
+  outdoor: boolean;
+  /** Roh-JSON wie in der DB, z.B. `{"noRain":true}`. `null` = keine Bedingung. */
+  weatherCondition: string | null;
+  /** Termin der aktuellsten offenen/verschobenen Zeile der Kette. */
+  nextDueISO: string | null;
 }
 
 /**
- * Eine Zeile pro wiederkehrender Routine (Kette zusammengefasst), alphabetisch.
- * Repräsentant je Kette ist die zuletzt fällige Zeile — sie trägt die aktuell
- * gültigen Werte.
+ * Eine Zeile pro *aktiver* wiederkehrender Routine (Kette zusammengefasst),
+ * alphabetisch. Repräsentant je Kette ist die zuletzt fällige Zeile — sie trägt
+ * die aktuell gültigen Werte.
+ *
+ * Ausgegeben werden nur Ketten mit mindestens einer offenen oder verschobenen
+ * Zeile. Eine lebende Routine hat immer eine: `generateNextOccurrence` legt sie
+ * beim Abschließen an. Fehlt sie, ist die Kette beendet — entweder per
+ * `deleteRoutineTemplate` oder weil die letzte Occurrence auf `failed` steht
+ * (die spawnt schon immer keinen Nachfolger; der Filter macht das nur sichtbar).
  */
 export async function listRoutineTemplates(
   client: PrismaClient = prisma,
@@ -375,62 +381,284 @@ export async function listRoutineTemplates(
       effort: true,
       rhythm: true,
       allowedPersons: true,
+      outdoor: true,
+      weatherCondition: true,
+      status: true,
+      dueDate: true,
     },
   });
 
   const byChain = new Map<string, RoutineTemplateDTO>();
   for (const r of rows) {
     const chainId = r.recurringParentId ?? r.id;
-    // Erste Begegnung gewinnt = spätestes dueDate (Query ist desc sortiert).
-    if (byChain.has(chainId)) continue;
-    const allowed: AllowedPersons =
-      r.allowedPersons === "dome" || r.allowedPersons === "emely" ? r.allowedPersons : "both";
-    byChain.set(chainId, {
-      chainId,
-      title: r.title,
-      icon: r.icon ?? "",
-      effort: r.effort,
-      rhythm: r.rhythm ?? null,
-      allowedPersons: allowed,
-    });
+
+    if (!byChain.has(chainId)) {
+      // Erste Begegnung gewinnt = spätestes dueDate (Query ist desc sortiert).
+      const allowed: AllowedPersons =
+        r.allowedPersons === "dome" || r.allowedPersons === "emely" ? r.allowedPersons : "both";
+      byChain.set(chainId, {
+        chainId,
+        title: r.title,
+        icon: r.icon ?? "",
+        effort: r.effort,
+        rhythm: r.rhythm ?? null,
+        allowedPersons: allowed,
+        outdoor: r.outdoor,
+        weatherCondition: r.weatherCondition ?? null,
+        nextDueISO: null,
+      });
+    }
+
+    // Erste offene/verschobene Zeile der Kette = der nächste echte Termin.
+    const entry = byChain.get(chainId)!;
+    if (entry.nextDueISO === null && (r.status === "open" || r.status === "moved")) {
+      entry.nextDueISO = r.dueDate.toISOString();
+    }
   }
 
-  return [...byChain.values()].sort((a, b) => a.title.localeCompare(b.title, "de"));
+  return [...byChain.values()]
+    .filter((t) => t.nextDueISO !== null)
+    .sort((a, b) => a.title.localeCompare(b.title, "de"));
 }
 
-export interface UpdateRoutineTemplateInput {
+/** Gemeinsame Felder von Anlegen und Bearbeiten, nach der Validierung. */
+interface RoutineFields {
+  title: string;
+  icon: string | null;
   effort: number;
   rhythm: string | null;
   allowedPersons: AllowedPersons;
+  outdoor: boolean;
+  weatherCondition: string | null;
 }
 
 /**
- * Schreibt Dauer/Rhythmus/Zuständigkeit auf ALLE Zeilen der Kette `chainId`,
- * sodass die Änderung auch für künftige Occurrences gilt. Validiert Eingaben;
- * wirft bei ungültigem Rhythmus oder negativer Dauer.
+ * Prüft und normalisiert die übergebenen Felder. Nur gesetzte Schlüssel werden
+ * betrachtet, damit dieselbe Prüfung für Teil-Updates und fürs Anlegen gilt.
+ * Wirft mit deutscher Meldung — die Actions lassen sie zur UI durch.
+ */
+function validateRoutineFields(patch: Partial<RoutineFields>): Partial<RoutineFields> {
+  const out: Partial<RoutineFields> = {};
+
+  if (patch.title !== undefined) {
+    const title = patch.title.trim();
+    if (title.length === 0) throw new Error("Titel darf nicht leer sein.");
+    if (title.length > MAX_TITLE_LENGTH) {
+      throw new Error(`Titel ist zu lang (max. ${MAX_TITLE_LENGTH} Zeichen).`);
+    }
+    out.title = title;
+  }
+
+  if (patch.icon !== undefined) {
+    const icon = patch.icon?.trim() ?? "";
+    out.icon = icon.length > 0 ? icon : null;
+  }
+
+  if (patch.effort !== undefined) {
+    const effort = Math.round(patch.effort);
+    if (!Number.isFinite(effort) || effort < 0 || effort > MAX_EFFORT_MINUTES) {
+      throw new Error(`Ungültige Dauer: ${patch.effort}`);
+    }
+    out.effort = effort;
+  }
+
+  if (patch.rhythm !== undefined) {
+    if (patch.rhythm !== null && !isValidRhythm(patch.rhythm)) {
+      throw new Error(`Unbekannter Rhythmus: ${patch.rhythm}`);
+    }
+    out.rhythm = patch.rhythm;
+  }
+
+  if (patch.allowedPersons !== undefined) {
+    if (!ALLOWED_PERSONS.includes(patch.allowedPersons)) {
+      throw new Error(`Ungültige Zuständigkeit: ${patch.allowedPersons}`);
+    }
+    out.allowedPersons = patch.allowedPersons;
+  }
+
+  if (patch.outdoor !== undefined) out.outdoor = patch.outdoor;
+
+  if (patch.weatherCondition !== undefined) {
+    out.weatherCondition = normalizeWeatherCondition(patch.weatherCondition);
+  }
+
+  // Eine Wetterbedingung ohne `outdoor` ist tote Information: `planTask` prüft
+  // das Wetter nur für Outdoor-Aufgaben. Lieber gleich leeren, als sie später
+  // wirkungslos mitzuschleppen.
+  if (out.outdoor === false) out.weatherCondition = null;
+
+  return out;
+}
+
+/**
+ * Kanonisiert die Wetterbedingung auf genau das Format, das
+ * `@/lib/services/planning`'s `parseWeatherCondition` erwartet:
+ * `{"noRain":true}` / `{"minTemp":15}` / beides. Alles andere wirft, statt
+ * still als `undefined` zu verpuffen.
+ */
+function normalizeWeatherCondition(raw: string | null): string | null {
+  if (raw === null || raw.trim() === "") return null;
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    throw new Error(`Ungültige Wetterbedingung: ${raw}`);
+  }
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+    throw new Error(`Ungültige Wetterbedingung: ${raw}`);
+  }
+
+  const { noRain, minTemp } = parsed as { noRain?: unknown; minTemp?: unknown };
+  const out: { noRain?: boolean; minTemp?: number } = {};
+
+  if (noRain !== undefined) {
+    if (typeof noRain !== "boolean") throw new Error(`Ungültiges "noRain": ${String(noRain)}`);
+    if (noRain) out.noRain = true;
+  }
+  if (minTemp !== undefined && minTemp !== null) {
+    if (typeof minTemp !== "number" || !Number.isFinite(minTemp)) {
+      throw new Error(`Ungültiges "minTemp": ${String(minTemp)}`);
+    }
+    out.minTemp = minTemp;
+  }
+
+  return Object.keys(out).length > 0 ? JSON.stringify(out) : null;
+}
+
+export type UpdateRoutineTemplatePatch = Partial<RoutineFields>;
+
+/**
+ * Schreibt die übergebenen Felder auf ALLE Zeilen der Kette `chainId`, sodass
+ * sie auch für künftige Occurrences gelten. Nur gesetzte Felder werden
+ * angefasst.
+ *
+ * Ändert sich dabei der Rhythmus, wird die offene Occurrence sofort umgeplant
+ * (`rescheduleOpenOccurrence`) — sonst bliebe eine Intervall-Änderung bis zur
+ * nächsten Erledigung wirkungslos.
  */
 export async function updateRoutineTemplate(
   chainId: string,
-  input: UpdateRoutineTemplateInput,
+  patch: UpdateRoutineTemplatePatch,
   client: PrismaClient = prisma,
 ): Promise<void> {
-  const effort = Math.round(input.effort);
-  if (!Number.isFinite(effort) || effort < 0 || effort > 1440) {
-    throw new Error(`Ungültige Dauer: ${input.effort}`);
-  }
-  if (input.rhythm !== null && !RHYTHM_VALUES.has(input.rhythm)) {
-    throw new Error(`Unbekannter Rhythmus: ${input.rhythm}`);
-  }
-  if (!["both", "dome", "emely"].includes(input.allowedPersons)) {
-    throw new Error(`Ungültige Zuständigkeit: ${input.allowedPersons}`);
+  const data = validateRoutineFields(patch);
+
+  const current = await client.task.findFirst({
+    where: { OR: [{ id: chainId }, { recurringParentId: chainId }] },
+    orderBy: { dueDate: "desc" },
+    select: { rhythm: true },
+  });
+  if (!current) throw new Error(`Unbekannte Routine: ${chainId}`);
+
+  if (Object.keys(data).length > 0) {
+    await client.task.updateMany({
+      where: { OR: [{ id: chainId }, { recurringParentId: chainId }] },
+      data,
+    });
   }
 
-  await client.task.updateMany({
-    where: { OR: [{ id: chainId }, { recurringParentId: chainId }] },
+  const rhythmChanged =
+    data.rhythm !== undefined && data.rhythm !== null && data.rhythm !== current.rhythm;
+  if (rhythmChanged) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    await rescheduleOpenOccurrence(chainId, data.rhythm!, today, client);
+  }
+}
+
+export interface CreateRoutineInput {
+  title: string;
+  icon: string | null;
+  effort: number;
+  /** Pflicht — eine Routine ohne Rhythmus wäre ein einmaliges Todo. */
+  rhythm: string;
+  allowedPersons: AllowedPersons;
+  outdoor: boolean;
+  weatherCondition: string | null;
+}
+
+/**
+ * Legt eine neue Routine an: EINE offene, unzugewiesene Zeile, fällig heute.
+ * Sie ist die Wurzel ihrer Kette (`recurringParentId: null`, `chainId === id`).
+ *
+ * Der Planer nimmt sie beim nächsten Lauf auf (er sucht offene, unzugewiesene
+ * Aufgaben des Tages), danach trägt `generateNextOccurrence` die Kette weiter.
+ */
+export async function createRoutineTemplate(
+  input: CreateRoutineInput,
+  client: PrismaClient = prisma,
+): Promise<{ id: string }> {
+  const fields = validateRoutineFields(input);
+  if (fields.rhythm === null || fields.rhythm === undefined) {
+    throw new Error("Eine Routine braucht einen Rhythmus.");
+  }
+
+  const dueDate = new Date();
+  dueDate.setHours(0, 0, 0, 0);
+
+  const created = await client.task.create({
     data: {
-      effort,
-      rhythm: input.rhythm,
-      allowedPersons: input.allowedPersons,
+      title: fields.title!,
+      type: "routine",
+      effort: fields.effort!,
+      rhythm: fields.rhythm,
+      allowedPersons: fields.allowedPersons!,
+      outdoor: fields.outdoor ?? false,
+      weatherCondition: fields.weatherCondition ?? null,
+      icon: fields.icon ?? null,
+      status: "open",
+      assignedToId: null,
+      recurringParentId: null,
+      dueDate,
     },
+    select: { id: true },
   });
+
+  return created;
+}
+
+/**
+ * Beendet eine Routine: löscht die offenen und verschobenen Zeilen der Kette.
+ * Erledigte und gescheiterte Zeilen bleiben vollständig erhalten — sie sind
+ * Historie und hängen am Fairness-Konto.
+ *
+ * Danach hat die Kette keine offene Zeile mehr, verschwindet also aus
+ * `listRoutineTemplates` und aus dem "Erledigt nachtragen"-Picker. Ein
+ * Nachfolger kann nicht mehr entstehen, weil `generateNextOccurrence` nur beim
+ * Abschließen einer offenen Zeile feuert.
+ *
+ * Bewusst KEIN Hard-Delete der ganzen Kette: `AccountEntry.taskId` ist eine
+ * echte Relation ohne Cascade — das Löschen erledigter Zeilen liefe entweder in
+ * einen FK-Fehler oder würde die Punktehistorie umschreiben.
+ *
+ * Bekannte Kante: Wird eine bereits erledigte Zeile der beendeten Routine im
+ * Aufgaben-Tab zurück- und wieder vorgetoggelt, entsteht ein neuer Nachfolger —
+ * die Routine lebt wieder. Selbst ausgelöst, sichtbar, erneut beendbar.
+ */
+export async function deleteRoutineTemplate(
+  chainId: string,
+  client: PrismaClient = prisma,
+): Promise<{ deleted: number }> {
+  const rows = await client.task.findMany({
+    where: {
+      OR: [{ id: chainId }, { recurringParentId: chainId }],
+      status: { in: ["open", "moved"] },
+    },
+    select: { id: true },
+  });
+  const ids = rows.map((r) => r.id);
+  if (ids.length === 0) return { deleted: 0 };
+
+  await client.$transaction(async (tx) => {
+    // Per Invariante leer: geplante Buchungen entstehen erst beim Erledigen und
+    // `setTaskStatus` räumt sie bei jedem Statuswechsel ab. Nur der Randfall
+    // done → `deferTask` (räumt nicht auf) könnte eine hinterlassen. Bewusst
+    // ausschließlich `source: "planned"` — manuelle Einträge sind Konto-
+    // historie und sollen im Fehlerfall laut per FK scheitern.
+    await tx.accountEntry.deleteMany({ where: { taskId: { in: ids }, source: "planned" } });
+    await tx.task.deleteMany({ where: { id: { in: ids } } });
+  });
+
+  return { deleted: ids.length };
 }

@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Sun, CheckSquare, Utensils, StickyNote, Settings } from "lucide-react";
+import { Sun, CheckSquare, Repeat, Utensils, StickyNote, Settings } from "lucide-react";
 
 const TABS = [
   { href: "/mobile", label: "Heute", Icon: Sun, exact: true },
   { href: "/mobile/tasks", label: "Aufgaben", Icon: CheckSquare, exact: false },
+  { href: "/mobile/routines", label: "Routinen", Icon: Repeat, exact: false },
   { href: "/mobile/meals", label: "Essen", Icon: Utensils, exact: false },
   { href: "/mobile/notes", label: "Notizen", Icon: StickyNote, exact: false },
   { href: "/mobile/settings", label: "Einstellungen", Icon: Settings, exact: false },
@@ -22,12 +23,12 @@ export function MobileNavBar() {
           <Link
             key={href}
             href={href}
-            className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition-colors ${
+            className={`flex flex-col items-center gap-0.5 px-1.5 py-1 rounded-xl transition-colors ${
               active ? "text-dome-deep dark:text-dome" : "text-ink-faint hover:text-ink-soft dark:hover:text-cream/70"
             }`}
           >
             <Icon size={22} strokeWidth={active ? 2.4 : 1.9} />
-            <span className="text-[11px] font-semibold">{label}</span>
+            <span className="text-[10.5px] font-semibold whitespace-nowrap">{label}</span>
           </Link>
         );
       })}

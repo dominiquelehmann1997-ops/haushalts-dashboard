@@ -4,6 +4,7 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient, Task } from "@/generated/prisma/client";
 import { learnedInterval } from "@/lib/services/learnedInterval";
+import { parseCustomRhythm } from "@/lib/rhythm";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const DAY_MS_LOCAL = 24 * 60 * 60 * 1000;
@@ -47,6 +48,21 @@ const RHYTHM_MONTHS: Record<string, number> = {
 const DEFAULT_OFFSET_DAYS = 7;
 
 /**
+ * Tagesabstand eines tagesbasierten Rhythmus: erst die Presets, dann freie
+ * Intervalle ("10-day" → 10, siehe `@/lib/rhythm`), sonst der Wochen-Fallback.
+ * Monatsrhythmen laufen NICHT hierüber — die rechnet `nextDueDate` kalendarisch.
+ */
+function dayOffsetFor(rhythm: string): number {
+  const preset = RHYTHM_OFFSET_DAYS[rhythm];
+  if (preset !== undefined) return preset;
+
+  const custom = parseCustomRhythm(rhythm);
+  if (custom !== null) return custom;
+
+  return DEFAULT_OFFSET_DAYS;
+}
+
+/**
  * Rhythmen, die eine harte Zusage sind und NIE vom Lernen aufgeweicht werden.
  *
  * "daily" heißt jeden Tag — bei "Gassi gehen" hängt ein Hund daran, nicht eine
@@ -57,6 +73,15 @@ const DEFAULT_OFFSET_DAYS = 7;
 const FIXED_RHYTHMS = new Set(["daily"]);
 
 /**
+ * `true`, wenn `rhythm` nicht gelernt werden darf. Neben "daily" zählt auch ein
+ * freies Ein-Tages-Intervall ("1-day") dazu — es bedeutet dasselbe und soll
+ * nicht über den Umweg der Custom-Eingabe doch aufgeweicht werden.
+ */
+function isFixedRhythm(rhythm: string): boolean {
+  return FIXED_RHYTHMS.has(rhythm) || dayOffsetFor(rhythm) === 1;
+}
+
+/**
  * Der konfigurierte Abstand in Tagen — Bezugsgröße für Ausreißer-Filter und
  * Deckel des gelernten Intervalls. Monatsrhythmen werden mit 30 Tagen je Monat
  * genähert; das ist nur für diese beiden Schwellen relevant, der tatsächliche
@@ -65,15 +90,16 @@ const FIXED_RHYTHMS = new Set(["daily"]);
 function configuredIntervalDays(rhythm: string): number {
   const months = RHYTHM_MONTHS[rhythm];
   if (months !== undefined) return months * 30;
-  return RHYTHM_OFFSET_DAYS[rhythm] ?? DEFAULT_OFFSET_DAYS;
+  return dayOffsetFor(rhythm);
 }
 
 /**
  * Returns a *new* `Date` advanced from `from` by the offset for `rhythm`.
- * Day-based rhythms (`daily`/`weekly`/`biweekly`/`2x-week`/`3-day`/`5-day`)
- * add a fixed number of days; month-based rhythms (`monthly`/`halfyearly`)
- * advance whole calendar months via `setMonth` (so 12th -> 12th, no drift).
- * Unknown/unsupported rhythms default to +7 days (weekly).
+ * Day-based rhythms (`daily`/`weekly`/`biweekly`/`2x-week`/`3-day`/`5-day`
+ * sowie freie `"${n}-day"`-Intervalle) add a fixed number of days; month-based
+ * rhythms (`monthly`/`halfyearly`) advance whole calendar months via `setMonth`
+ * (so 12th -> 12th, no drift). Unknown/unsupported rhythms default to +7 days
+ * (weekly).
  *
  * Note: `setMonth` rolls over for shorter months (31 Jan + 1 month -> 3 Mar);
  * acceptable for household chores.
@@ -88,8 +114,7 @@ export function nextDueDate(rhythm: string, from: Date): Date {
     return result;
   }
 
-  const offsetDays = RHYTHM_OFFSET_DAYS[rhythm] ?? DEFAULT_OFFSET_DAYS;
-  return new Date(from.getTime() + offsetDays * DAY_MS);
+  return new Date(from.getTime() + dayOffsetFor(rhythm) * DAY_MS);
 }
 
 /**
@@ -136,7 +161,7 @@ export async function generateNextOccurrence(
   const base = task.completedAt ?? task.dueDate;
 
   // Feste Rhythmen fragen die Historie gar nicht erst ab — sie sind gesetzt.
-  const learned = FIXED_RHYTHMS.has(task.rhythm)
+  const learned = isFixedRhythm(task.rhythm)
     ? null
     : learnedInterval(
         await chainCompletionGaps(chainId, client),
@@ -165,4 +190,60 @@ export async function generateNextOccurrence(
       dueDate: nextDue,
     },
   });
+}
+
+/**
+ * Zieht die offene Occurrence der Kette `chainId` auf den Termin, der sich aus
+ * `rhythm` ergibt. Gedacht für den Moment, in dem jemand den Rhythmus in der
+ * Routinen-Verwaltung ändert: ohne das würde der neue Takt erst ab der nächsten
+ * Erledigung greifen und die Änderung wirkte folgenlos.
+ *
+ * Gerechnet wird ab der letzten echten Erledigung der Kette (sonst ab heute),
+ * bewusst über `nextDueDate` und damit OHNE gelerntes Intervall: wer gerade
+ * explizit einen Takt einstellt, meint diesen Takt. Das Lernen greift ab der
+ * nächsten Erledigung wieder.
+ *
+ * Angefasst werden nur Zeilen mit `status: "open"` UND ohne Zuweisung:
+ * - `"moved"` trägt eine bewusste Verschiebung (Wetter-Defer, manuelles
+ *   Schieben) samt Begründung in `note` — die zu überschreiben würde diese
+ *   Absicht stillschweigend verwerfen. `rollOverdueRoutines` holt solche Zeilen
+ *   am Zieltag ohnehin in den neuen Takt zurück.
+ * - Eine bereits zugewiesene Aufgabe steht in jemandes Tagesplan; eine
+ *   Einstellungs-Änderung darf sie da nicht herausreißen.
+ *
+ * Gibt den neuen Termin zurück, oder `null`, wenn keine Zeile betroffen war.
+ */
+export async function rescheduleOpenOccurrence(
+  chainId: string,
+  rhythm: string,
+  today: Date,
+  client: PrismaClient = prisma,
+): Promise<Date | null> {
+  const lastDone = await client.task.findFirst({
+    where: {
+      OR: [{ id: chainId }, { recurringParentId: chainId }],
+      status: "done",
+      completedAt: { not: null },
+    },
+    orderBy: { completedAt: "desc" },
+    select: { completedAt: true },
+  });
+
+  const base = lastDone?.completedAt ?? today;
+  let candidate = nextDueDate(rhythm, base);
+
+  // Ein verkürzter Rhythmus darf die Aufgabe höchstens auf heute vorziehen —
+  // ein Termin in der Vergangenheit wäre sofort überfällig.
+  if (candidate.getTime() < today.getTime()) candidate = new Date(today);
+
+  const { count } = await client.task.updateMany({
+    where: {
+      OR: [{ id: chainId }, { recurringParentId: chainId }],
+      status: "open",
+      assignedToId: null,
+    },
+    data: { dueDate: candidate },
+  });
+
+  return count > 0 ? candidate : null;
 }
