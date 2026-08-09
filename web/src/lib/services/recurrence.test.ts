@@ -182,11 +182,37 @@ describe("generateNextOccurrence", () => {
     expect(created).toBeNull();
   });
 
-  it("returns null for a routine task that is not done", async () => {
+  it("returns null for a routine task that is still open", async () => {
     const task = await makeRoutineTask({ status: "open" });
 
     const created = await generateNextOccurrence(task.id, client);
     expect(created).toBeNull();
+  });
+
+  it('legt auch nach "failed" einen Nachfolger an — eine verpasste Woche beendet keine Routine', async () => {
+    const task = await makeRoutineTask({ status: "failed" });
+    // setTaskStatus setzt completedAt bei "failed" auf null; hier nachstellen.
+    await client.task.update({ where: { id: task.id }, data: { completedAt: null } });
+
+    const created = await generateNextOccurrence(task.id, client);
+
+    expect(created).not.toBeNull();
+    expect(created?.status).toBe("open");
+    expect(created?.assignedToId).toBeNull();
+    expect(created?.recurringParentId).toBe(task.id);
+    // Ohne Erledigung zählt der Plantag: weekly = +7 Tage ab dueDate.
+    expect(created!.dueDate.getTime() - task.dueDate.getTime()).toBe(7 * 24 * 60 * 60 * 1000);
+  });
+
+  it('legt nach "failed" keinen zweiten Nachfolger an', async () => {
+    const task = await makeRoutineTask({ status: "failed" });
+    await client.task.update({ where: { id: task.id }, data: { completedAt: null } });
+
+    expect(await generateNextOccurrence(task.id, client)).not.toBeNull();
+    expect(await generateNextOccurrence(task.id, client)).toBeNull();
+
+    const successors = await client.task.findMany({ where: { recurringParentId: task.id } });
+    expect(successors).toHaveLength(1);
   });
 });
 

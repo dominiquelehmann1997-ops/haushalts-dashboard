@@ -3,7 +3,7 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { completeTaskBy, deferTask, getOpenTaskCount, getTasksByPerson, getTasksForDay } from "./tasks";
+import { completeTaskBy, deferTask, getOpenTaskCount, getTasksByPerson, getTasksForDay, listRoutineTemplates, setTaskStatus } from "./tasks";
 
 /** Formats a Date as a local "YYYY-MM-DD" key, matching `DayForecast.date`. */
 function dateKey(date: Date): string {
@@ -157,5 +157,66 @@ describe("completeTaskBy", () => {
 
     const updated = await client.task.findUniqueOrThrow({ where: { id: task.id } });
     expect(updated.status).toBe("done");
+  });
+});
+
+describe('setTaskStatus — "Geht heute nicht" beendet keine Routine', () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  async function makeRoutine() {
+    const due = new Date();
+    due.setHours(0, 0, 0, 0);
+    return client.task.create({
+      data: {
+        title: "Rasen mähen",
+        type: "routine",
+        effort: 60,
+        status: "open",
+        allowedPersons: "dome",
+        rhythm: "weekly",
+        dueDate: due,
+      },
+    });
+  }
+
+  it("legt nach failed eine offene Nachfolge-Occurrence an", async () => {
+    const task = await makeRoutine();
+
+    await setTaskStatus(task.id, "failed", "geht heute nicht", client);
+
+    const successors = await client.task.findMany({ where: { recurringParentId: task.id } });
+    expect(successors).toHaveLength(1);
+    expect(successors[0]!.status).toBe("open");
+    expect(successors[0]!.assignedToId).toBeNull();
+    expect(successors[0]!.dueDate.getTime() - task.dueDate.getTime()).toBe(
+      7 * 24 * 60 * 60 * 1000,
+    );
+  });
+
+  it("bucht dabei keine Fairness-Punkte", async () => {
+    const task = await makeRoutine();
+
+    await setTaskStatus(task.id, "failed", "geht heute nicht", client);
+
+    const entries = await client.accountEntry.findMany({ where: { taskId: task.id } });
+    expect(entries).toHaveLength(0);
+  });
+
+  it("bleibt selbst danach in der Routinen-Liste sichtbar", async () => {
+    const task = await makeRoutine();
+
+    await setTaskStatus(task.id, "failed", "geht heute nicht", client);
+
+    const titles = (await listRoutineTemplates(client)).map((t) => t.title);
+    expect(titles).toContain("Rasen mähen");
   });
 });
