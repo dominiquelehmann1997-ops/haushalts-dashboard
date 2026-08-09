@@ -655,13 +655,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/tasks.test.ts": {
-    "mtime": 1783712733.8217137,
-    "ast_hash": "952fe2c800c3943bd59c0bd9ba4c2dcb",
+    "mtime": 1786309342.471692,
+    "ast_hash": "37e4d6274de54df6747eff41fa9ea138",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/tasks.ts": {
-    "mtime": 1786305388.6954618,
-    "ast_hash": "78ff7bde3f4c882618fc216a345c0c35",
+    "mtime": 1786309342.4726915,
+    "ast_hash": "7478bc58e9d752e7c4ac535f895841b2",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/tasks.write.test.ts": {
@@ -810,13 +810,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/services/recurrence.test.ts": {
-    "mtime": 1786305388.697462,
-    "ast_hash": "8ca4ecae37fb4a475803c2dcc4c1e339",
+    "mtime": 1786309342.4736922,
+    "ast_hash": "bb17ef732ccac9535a9a9368b35f561d",
     "semantic_hash": ""
   },
   "web/src/lib/services/recurrence.ts": {
-    "mtime": 1786305388.6984622,
-    "ast_hash": "d72f36e5af7bd9697739fd38b5ff6d8f",
+    "mtime": 1786309342.474193,
+    "ast_hash": "055601c5b541b42f80f907e686d2f62c",
     "semantic_hash": ""
   },
   "web/src/lib/services/rollover.test.ts": {

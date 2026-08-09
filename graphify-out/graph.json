@@ -768,8 +768,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_react",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/react"
     },
     {
@@ -779,8 +779,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "types_react",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/react"
     },
     {
@@ -856,8 +856,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "web_package_devdependencies_eslint_config_next",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 73,
+      "community_name": "accounts.test.ts",
       "norm_label": "eslint-config-next"
     },
     {
@@ -867,8 +867,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "eslint_config_next",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 73,
+      "community_name": "accounts.test.ts",
       "norm_label": "eslint-config-next"
     },
     {
@@ -1087,8 +1087,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_plantoday",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "plantoday.ts"
     },
     {
@@ -1098,8 +1098,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_prisma_plantoday_main",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "main()"
     },
     {
@@ -1153,8 +1153,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_synccalendar",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendar.ts"
     },
     {
@@ -1164,8 +1164,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_prisma_synccalendar_main",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "main()"
     },
     {
@@ -1538,8 +1538,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_calendar",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendar.ts"
     },
     {
@@ -1549,8 +1549,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_app_actions_calendar_synccalendaraction",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendaraction()"
     },
     {
@@ -1626,8 +1626,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_setactivedayrecipeaction",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "setactivedayrecipeaction()"
     },
     {
@@ -1637,8 +1637,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_pushmealingredientsaction",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "pushmealingredientsaction()"
     },
     {
@@ -1725,8 +1725,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_push",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "push.ts"
     },
     {
@@ -1736,8 +1736,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_actions_push_webpushsubscriptionjson",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "webpushsubscriptionjson"
     },
     {
@@ -1747,8 +1747,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_app_actions_push_subscribepushaction",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "subscribepushaction()"
     },
     {
@@ -1758,8 +1758,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "web_src_app_actions_push_unsubscribepushaction",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "unsubscribepushaction()"
     },
     {
@@ -2088,8 +2088,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "route.ts"
     },
     {
@@ -2099,8 +2099,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_runsync",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "runsync()"
     },
     {
@@ -2110,8 +2110,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_get",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "get()"
     },
     {
@@ -2121,8 +2121,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_post",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "post()"
     },
     {
@@ -2429,8 +2429,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "pushsetupcontrol.tsx"
     },
     {
@@ -2440,8 +2440,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_status",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "status"
     },
     {
@@ -2451,8 +2451,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_urlbase64touint8array",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "urlbase64touint8array()"
     },
     {
@@ -2462,8 +2462,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_getinitialstatus",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "getinitialstatus()"
     },
     {
@@ -2473,8 +2473,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_pushsetupcontrol",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "pushsetupcontrol()"
     },
     {
@@ -2737,8 +2737,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "web_src_components_dashboard_dashboardprops",
-      "community": 33,
-      "community_name": "dashboard.tsx",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "dashboardprops"
     },
     {
@@ -2814,8 +2814,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_src_components_icons_cloudrainglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 34,
+      "community_name": "WeatherBabyTile.tsx",
       "norm_label": "cloudrainglyph()"
     },
     {
@@ -2836,8 +2836,8 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "web_src_components_icons_calendarglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "calendarglyph()"
     },
     {
@@ -2880,8 +2880,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist.tsx"
     },
     {
@@ -2891,8 +2891,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_ingredientlabel",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "ingredientlabel()"
     },
     {
@@ -2902,8 +2902,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_mealweeklist",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist()"
     },
     {
@@ -2979,8 +2979,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_notesview",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "notesview.tsx"
     },
     {
@@ -3001,8 +3001,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_pageheader",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "pageheader.tsx"
     },
     {
@@ -3012,8 +3012,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_components_mobile_pageheader_pageheader",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "pageheader()"
     },
     {
@@ -3023,8 +3023,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routinesview.tsx"
     },
     {
@@ -3034,8 +3034,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_person_options",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "person_options"
     },
     {
@@ -3045,8 +3045,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_weatherfields",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "weatherfields"
     },
     {
@@ -3056,8 +3056,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_parseweather",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "parseweather()"
     },
     {
@@ -3078,8 +3078,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_formatdue",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "formatdue()"
     },
     {
@@ -3100,8 +3100,8 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_routineeditorcard",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routineeditorcard()"
     },
     {
@@ -3133,8 +3133,8 @@
       "source_location": "L505",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_personsegment",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "personsegment()"
     },
     {
@@ -3144,8 +3144,8 @@
       "source_location": "L540",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_weathercontrols",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "weathercontrols()"
     },
     {
@@ -3386,8 +3386,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_ui_cardhead",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "cardhead()"
     },
     {
@@ -3408,8 +3408,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_widgets",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "widgets.tsx"
     },
     {
@@ -3419,8 +3419,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealreasonbadge",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealreasonbadge()"
     },
     {
@@ -3430,8 +3430,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealplanwidget",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealplanwidget()"
     },
     {
@@ -3441,8 +3441,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "web_src_components_widgets_noteswidget",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "noteswidget()"
     },
     {
@@ -3529,8 +3529,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_fixture",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 56,
+      "community_name": "openMeteo.ts",
       "norm_label": "fixture.ts"
     },
     {
@@ -3540,8 +3540,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_fixture_googleeventsfixture",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 56,
+      "community_name": "openMeteo.ts",
       "norm_label": "googleeventsfixture"
     },
     {
@@ -3551,8 +3551,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_test",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 56,
+      "community_name": "openMeteo.ts",
       "norm_label": "google.test.ts"
     },
     {
@@ -3562,8 +3562,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "google.ts"
     },
     {
@@ -3573,8 +3573,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_calendareventinput",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendareventinput"
     },
     {
@@ -3584,8 +3584,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_googleeventtime",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "googleeventtime"
     },
     {
@@ -3595,8 +3595,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_googleevent",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "googleevent"
     },
     {
@@ -3606,8 +3606,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_parseeventtime",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "parseeventtime()"
     },
     {
@@ -3617,8 +3617,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_derivepersonkey",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "derivepersonkey()"
     },
     {
@@ -3628,8 +3628,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_derivekind",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "derivekind()"
     },
     {
@@ -3639,8 +3639,8 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_mapgoogleevents",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "mapgoogleevents()"
     },
     {
@@ -3650,8 +3650,8 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_torfc3339",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "torfc3339()"
     },
     {
@@ -3661,8 +3661,8 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_fetchevents",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "fetchevents()"
     },
     {
@@ -3672,8 +3672,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "docref_rfc_3339",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 4,
+      "community_name": "calendarSync.test.ts",
       "norm_label": "rfc-3339"
     },
     {
@@ -3738,8 +3738,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_fixture",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "fixture.ts"
     },
     {
@@ -3749,8 +3749,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "web_src_integrations_weather_fixture_openmeteofixture",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteofixture"
     },
     {
@@ -3760,8 +3760,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_test",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteo.test.ts"
     },
     {
@@ -3771,8 +3771,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteo.ts"
     },
     {
@@ -3782,8 +3782,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_openmeteoresponse",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteoresponse"
     },
     {
@@ -3815,8 +3815,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_splithourlytimestamp",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "splithourlytimestamp()"
     },
     {
@@ -3826,8 +3826,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_deriverainwindows",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "deriverainwindows()"
     },
     {
@@ -3837,8 +3837,8 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_mapforecast",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "mapforecast()"
     },
     {
@@ -3848,8 +3848,8 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_labelforcode",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "labelforcode()"
     },
     {
@@ -3859,8 +3859,8 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_conditionforcode",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "conditionforcode()"
     },
     {
@@ -3870,8 +3870,8 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_mapcurrent",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "mapcurrent()"
     },
     {
@@ -3881,8 +3881,8 @@
       "source_location": "L226",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_coordinates",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "coordinates()"
     },
     {
@@ -3892,8 +3892,8 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_buildurl",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "buildurl()"
     },
     {
@@ -3903,8 +3903,8 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_getforecast",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "getforecast()"
     },
     {
@@ -4189,8 +4189,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_test",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shifts.test.ts"
     },
     {
@@ -4200,8 +4200,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shifts.ts"
     },
     {
@@ -4211,8 +4211,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_isovernightshift",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isovernightshift()"
     },
     {
@@ -4222,8 +4222,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_correctedbusyend",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "correctedbusyend()"
     },
     {
@@ -4244,8 +4244,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_shift_titles",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shift_titles"
     },
     {
@@ -4255,8 +4255,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_classifyshift",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "classifyshift()"
     },
     {
@@ -4266,8 +4266,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_data_test",
-      "community": 68,
-      "community_name": "dashboard.tsx",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "data.test.ts"
     },
     {
@@ -4288,8 +4288,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_data_personkey",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "personkey"
     },
     {
@@ -4310,8 +4310,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_data_task",
-      "community": 33,
-      "community_name": "dashboard.tsx",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "task"
     },
     {
@@ -4321,8 +4321,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_src_lib_data_appointment",
-      "community": 33,
-      "community_name": "dashboard.tsx",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "appointment"
     },
     {
@@ -4332,8 +4332,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_lib_data_shoppingitem",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 22,
+      "community_name": "shopping.ts",
       "norm_label": "shoppingitem"
     },
     {
@@ -4508,8 +4508,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_dates",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "dates.ts"
     },
     {
@@ -4530,8 +4530,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_dates_daybounds",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "daybounds()"
     },
     {
@@ -4541,8 +4541,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_lib_dates_formattime",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "formattime()"
     },
     {
@@ -4596,7 +4596,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_db",
-      "community": 75,
+      "community": 5,
       "community_name": "db.ts",
       "norm_label": "db.ts"
     },
@@ -4607,7 +4607,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_db_globalforprisma",
-      "community": 75,
+      "community": 5,
       "community_name": "db.ts",
       "norm_label": "globalforprisma"
     },
@@ -4618,7 +4618,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_lib_db_createprismaclient",
-      "community": 75,
+      "community": 5,
       "community_name": "db.ts",
       "norm_label": "createprismaclient()"
     },
@@ -4794,8 +4794,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_test",
-      "community": 71,
-      "community_name": "types.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "completion.test.ts"
     },
     {
@@ -4805,8 +4805,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion",
-      "community": 71,
-      "community_name": "types.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "completion.ts"
     },
     {
@@ -4816,8 +4816,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_completabletask",
-      "community": 71,
-      "community_name": "types.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "completabletask"
     },
     {
@@ -4827,8 +4827,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_accountentryinput",
-      "community": 71,
-      "community_name": "types.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "accountentryinput"
     },
     {
@@ -4838,8 +4838,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_recordcompletion",
-      "community": 71,
-      "community_name": "types.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "recordcompletion()"
     },
     {
@@ -4904,8 +4904,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "index.test.ts"
     },
     {
@@ -4915,8 +4915,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_phase",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "phase"
     },
     {
@@ -4926,8 +4926,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_day",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "day()"
     },
     {
@@ -4937,8 +4937,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_baseinput",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "baseinput()"
     },
     {
@@ -4959,8 +4959,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_plantask",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "plantask()"
     },
     {
@@ -5036,8 +5036,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_personkey",
-      "community": 71,
-      "community_name": "types.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "personkey"
     },
     {
@@ -5080,8 +5080,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_phaseconfig",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "phaseconfig"
     },
     {
@@ -5113,8 +5113,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planresult",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "planresult"
     },
     {
@@ -5245,8 +5245,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_test",
-      "community": 73,
-      "community_name": "accounts.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "accounts.test.ts"
     },
     {
@@ -5256,8 +5256,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "accounts.ts"
     },
     {
@@ -5267,8 +5267,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getweeklybalances",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "getweeklybalances()"
     },
     {
@@ -5278,8 +5278,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getcomputedsplit",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "getcomputedsplit()"
     },
     {
@@ -5333,8 +5333,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendar.ts"
     },
     {
@@ -5344,8 +5344,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_isurlaubfrei",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isurlaubfrei()"
     },
     {
@@ -5355,8 +5355,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_isbirthday",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isbirthday()"
     },
     {
@@ -5377,8 +5377,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_upsertevents",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "upsertevents()"
     },
     {
@@ -5388,8 +5388,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_replacewindowevents",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "replacewindowevents()"
     },
     {
@@ -5399,8 +5399,8 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_getbusywindows",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "getbusywindows()"
     },
     {
@@ -5410,8 +5410,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_test",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "choreimport.test.ts"
     },
     {
@@ -5421,8 +5421,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_test_today",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 71,
+      "community_name": "types.ts",
       "norm_label": "today"
     },
     {
@@ -5784,8 +5784,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_test",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "pushsubscriptions.test.ts"
     },
     {
@@ -5828,8 +5828,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_upsertsubscription",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 27,
+      "community_name": "calendar.ts",
       "norm_label": "upsertsubscription()"
     },
     {
@@ -5927,8 +5927,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "routinetemplates.test.ts"
     },
     {
@@ -5938,8 +5938,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_todaymidnight",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "todaymidnight()"
     },
     {
@@ -5949,8 +5949,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_makechain",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "makechain()"
     },
     {
@@ -6042,6 +6042,17 @@
       "norm_label": "datekey()"
     },
     {
+      "label": "makeRoutine()",
+      "file_type": "code",
+      "source_file": "web/src/lib/repositories/tasks.test.ts",
+      "source_location": "L175",
+      "_origin": "ast",
+      "id": "web_src_lib_repositories_tasks_test_makeroutine",
+      "community": 23,
+      "community_name": "tasks.test.ts",
+      "norm_label": "makeroutine()"
+    },
+    {
       "label": "tasks.ts",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
@@ -6122,7 +6133,7 @@
       "label": "assignTask()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L193",
+      "source_location": "L195",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_assigntask",
       "community": 122,
@@ -6133,7 +6144,7 @@
       "label": "CreateTaskInput",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L210",
+      "source_location": "L212",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createtaskinput",
       "community": 102,
@@ -6144,7 +6155,7 @@
       "label": "createTask()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L222",
+      "source_location": "L224",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createtask",
       "community": 103,
@@ -6155,7 +6166,7 @@
       "label": "OpenTaskDTO",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L248",
+      "source_location": "L250",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_opentaskdto",
       "community": 102,
@@ -6166,7 +6177,7 @@
       "label": "listOpenTasks()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L258",
+      "source_location": "L260",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_listopentasks",
       "community": 102,
@@ -6177,7 +6188,7 @@
       "label": "completeTaskBy()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L281",
+      "source_location": "L283",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_completetaskby",
       "community": 103,
@@ -6188,7 +6199,7 @@
       "label": "completeTaskByBoth()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L296",
+      "source_location": "L298",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_completetaskbyboth",
       "community": 103,
@@ -6199,7 +6210,7 @@
       "label": "deferTask()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L307",
+      "source_location": "L309",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_defertask",
       "community": 103,
@@ -6210,7 +6221,7 @@
       "label": "AllowedPersons",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L335",
+      "source_location": "L337",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_allowedpersons",
       "community": 7,
@@ -6221,7 +6232,7 @@
       "label": "ALLOWED_PERSONS",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L337",
+      "source_location": "L339",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_allowed_persons",
       "community": 102,
@@ -6232,18 +6243,18 @@
       "label": "RoutineTemplateDTO",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L344",
+      "source_location": "L346",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_routinetemplatedto",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routinetemplatedto"
     },
     {
       "label": "listRoutineTemplates()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L370",
+      "source_location": "L371",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_listroutinetemplates",
       "community": 102,
@@ -6254,7 +6265,7 @@
       "label": "RoutineFields",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L425",
+      "source_location": "L426",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_routinefields",
       "community": 102,
@@ -6265,7 +6276,7 @@
       "label": "validateRoutineFields()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L440",
+      "source_location": "L441",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_validateroutinefields",
       "community": 7,
@@ -6276,18 +6287,18 @@
       "label": "normalizeWeatherCondition()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L499",
+      "source_location": "L500",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_normalizeweathercondition",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "normalizeweathercondition()"
     },
     {
       "label": "UpdateRoutineTemplatePatch",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L529",
+      "source_location": "L530",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_updateroutinetemplatepatch",
       "community": 102,
@@ -6298,7 +6309,7 @@
       "label": "updateRoutineTemplate()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L540",
+      "source_location": "L541",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_updateroutinetemplate",
       "community": 7,
@@ -6309,7 +6320,7 @@
       "label": "CreateRoutineInput",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L570",
+      "source_location": "L571",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createroutineinput",
       "community": 102,
@@ -6320,7 +6331,7 @@
       "label": "createRoutineTemplate()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L588",
+      "source_location": "L589",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createroutinetemplate",
       "community": 7,
@@ -6331,7 +6342,7 @@
       "label": "deleteRoutineTemplate()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L639",
+      "source_location": "L640",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_deleteroutinetemplate",
       "community": 7,
@@ -6367,8 +6378,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_revalidate",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 3,
+      "community_name": "recipeIdeas.ts",
       "norm_label": "revalidate.ts"
     },
     {
@@ -6378,8 +6389,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_dashboard_paths",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 3,
+      "community_name": "recipeIdeas.ts",
       "norm_label": "dashboard_paths"
     },
     {
@@ -6389,8 +6400,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_revalidatedashboard",
-      "community": 103,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "revalidatedashboard()"
     },
     {
@@ -6499,8 +6510,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendarsync.ts"
     },
     {
@@ -6510,8 +6521,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_eventfetcher",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "eventfetcher"
     },
     {
@@ -6521,8 +6532,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_configuredcalendars",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "configuredcalendars()"
     },
     {
@@ -6532,8 +6543,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_synccalendar",
-      "community": 45,
-      "community_name": "calendarSync.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendar()"
     },
     {
@@ -6543,8 +6554,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_test",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 45,
+      "community_name": "calendarSync.ts",
       "norm_label": "chores.test.ts"
     },
     {
@@ -6554,8 +6565,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_test_today",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 45,
+      "community_name": "calendarSync.ts",
       "norm_label": "today"
     },
     {
@@ -6598,8 +6609,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_chores",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 45,
+      "community_name": "calendarSync.ts",
       "norm_label": "chores"
     },
     {
@@ -6983,8 +6994,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_lib_services_mealingredientpush_test_mondayentry",
-      "community": 22,
-      "community_name": "shopping.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mondayentry()"
     },
     {
@@ -7269,8 +7280,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_overduecatchup",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "overduecatchup.ts"
     },
     {
@@ -7280,8 +7291,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_lib_services_overduecatchup_rolloverdueroutines",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "rolloverdueroutines()"
     },
     {
@@ -7346,8 +7357,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_plandecision",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "plandecision"
     },
     {
@@ -7816,7 +7827,7 @@
       "label": "daysAgo()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L348",
+      "source_location": "L374",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_test_daysago",
       "community": 10,
@@ -7827,7 +7838,7 @@
       "label": "today()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L355",
+      "source_location": "L381",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_test_today",
       "community": 10,
@@ -7838,7 +7849,7 @@
       "label": "makeChain()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L362",
+      "source_location": "L388",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_test_makechain",
       "community": 10,
@@ -7959,11 +7970,11 @@
       "label": "rescheduleOpenOccurrence()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L216",
+      "source_location": "L223",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "rescheduleopenoccurrence()"
     },
     {
@@ -7984,8 +7995,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "rollover.ts"
     },
     {
@@ -7995,8 +8006,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover_rolloveropentasks",
-      "community": 122,
-      "community_name": "planning.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "rolloveropentasks()"
     },
     {
@@ -8006,8 +8017,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_test",
-      "community": 91,
-      "community_name": "taskDefer.test.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "taskdefer.test.ts"
     },
     {
@@ -8017,8 +8028,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_test_datekey",
-      "community": 91,
-      "community_name": "taskDefer.test.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "datekey()"
     },
     {
@@ -15314,9 +15325,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 27,
       "norm_label": "vapid_public_key",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "calendar.ts",
       "id": "web_src_components_pushsetupcontrol_vapid_public_key"
     },
     {
@@ -15990,9 +16001,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 92,
+      "community": 56,
       "norm_label": "events",
-      "community_name": "google.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_events"
     },
     {
@@ -16003,9 +16014,9 @@
       "source_location": "L19",
       "complexity": 1,
       "loc": 1,
-      "community": 92,
+      "community": 56,
       "norm_label": "[sport]",
-      "community_name": "google.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_sport"
     },
     {
@@ -16016,9 +16027,9 @@
       "source_location": "L31",
       "complexity": 2,
       "loc": 1,
-      "community": 92,
+      "community": 56,
       "norm_label": "birthday",
-      "community_name": "google.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_birthday"
     },
     {
@@ -16029,9 +16040,9 @@
       "source_location": "L42",
       "complexity": 2,
       "loc": 1,
-      "community": 92,
+      "community": 56,
       "norm_label": "u4",
-      "community_name": "google.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_u4"
     },
     {
@@ -16042,9 +16053,9 @@
       "source_location": "L54",
       "complexity": 1,
       "loc": 1,
-      "community": 92,
+      "community": 56,
       "norm_label": "familyevents",
-      "community_name": "google.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_familyevents"
     },
     {
@@ -16055,9 +16066,9 @@
       "source_location": "L62",
       "complexity": 1,
       "loc": 1,
-      "community": 92,
+      "community": 56,
       "norm_label": "birthdayevents",
-      "community_name": "google.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_birthdayevents"
     },
     {
@@ -16068,9 +16079,9 @@
       "source_location": "L42",
       "complexity": 1,
       "loc": 1,
-      "community": 92,
+      "community": 4,
       "norm_label": "baby_arzt_pattern",
-      "community_name": "google.ts",
+      "community_name": "calendarSync.test.ts",
       "id": "web_src_integrations_calendar_google_baby_arzt_pattern"
     },
     {
@@ -16081,9 +16092,9 @@
       "source_location": "L126",
       "complexity": 1,
       "loc": 1,
-      "community": 92,
+      "community": 4,
       "norm_label": "calendar_api_base",
-      "community_name": "google.ts",
+      "community_name": "calendarSync.test.ts",
       "id": "web_src_integrations_calendar_google_calendar_api_base"
     },
     {
@@ -16315,7 +16326,7 @@
       "source_location": "L21",
       "complexity": 2,
       "loc": 1,
-      "community": 75,
+      "community": 5,
       "norm_label": "prisma",
       "community_name": "db.ts",
       "id": "web_src_lib_db_prisma"
@@ -16497,9 +16508,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 5,
       "norm_label": "start",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_calendar_shifts_test_start"
     },
     {
@@ -16510,9 +16521,9 @@
       "source_location": "L14",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 5,
       "norm_label": "wake_hour",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_calendar_shifts_wake_hour"
     },
     {
@@ -16640,9 +16651,9 @@
       "source_location": "L27",
       "complexity": 1,
       "loc": 7,
-      "community": 35,
+      "community": 64,
       "norm_label": "task",
-      "community_name": "index.test.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_task"
     },
     {
@@ -16653,9 +16664,9 @@
       "source_location": "L34",
       "complexity": 1,
       "loc": 5,
-      "community": 35,
+      "community": 64,
       "norm_label": "forecast",
-      "community_name": "index.test.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_forecast"
     },
     {
@@ -16666,9 +16677,9 @@
       "source_location": "L39",
       "complexity": 1,
       "loc": 1,
-      "community": 35,
+      "community": 64,
       "norm_label": "result",
-      "community_name": "index.test.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_result"
     },
     {
@@ -16679,9 +16690,9 @@
       "source_location": "L57",
       "complexity": 1,
       "loc": 1,
-      "community": 35,
+      "community": 64,
       "norm_label": "window",
-      "community_name": "index.test.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_window"
     },
     {
@@ -16692,9 +16703,9 @@
       "source_location": "L58",
       "complexity": 1,
       "loc": 4,
-      "community": 35,
+      "community": 64,
       "norm_label": "busy",
-      "community_name": "index.test.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_busy"
     },
     {
@@ -16770,9 +16781,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "client",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_client"
     },
     {
@@ -16783,9 +16794,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "balances",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_balances"
     },
     {
@@ -16796,9 +16807,9 @@
       "source_location": "L26",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "split",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_split"
     },
     {
@@ -16809,9 +16820,9 @@
       "source_location": "L31",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "before",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_before"
     },
     {
@@ -16822,9 +16833,9 @@
       "source_location": "L33",
       "complexity": 1,
       "loc": 4,
-      "community": 73,
+      "community": 51,
       "norm_label": "created",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_created"
     },
     {
@@ -16835,9 +16846,9 @@
       "source_location": "L42",
       "complexity": 1,
       "loc": 1,
-      "community": 73,
+      "community": 51,
       "norm_label": "after",
-      "community_name": "accounts.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_after"
     },
     {
@@ -17108,9 +17119,9 @@
       "source_location": "L12",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "client",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_client"
     },
     {
@@ -17121,9 +17132,9 @@
       "source_location": "L27",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "count",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_count"
     },
     {
@@ -17134,9 +17145,9 @@
       "source_location": "L35",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "rasen",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_rasen"
     },
     {
@@ -17147,9 +17158,9 @@
       "source_location": "L43",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "after1",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_after1"
     },
     {
@@ -17160,9 +17171,9 @@
       "source_location": "L46",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "after2",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_after2"
     },
     {
@@ -17173,9 +17184,9 @@
       "source_location": "L57",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "before",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_before"
     },
     {
@@ -17186,9 +17197,9 @@
       "source_location": "L65",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "after",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_after"
     },
     {
@@ -17199,9 +17210,9 @@
       "source_location": "L78",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 71,
       "norm_label": "dome",
-      "community_name": "chores.test.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_repositories_choreimport_test_dome"
     },
     {
@@ -17745,9 +17756,9 @@
       "source_location": "L13",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 26,
       "norm_label": "client",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_client"
     },
     {
@@ -17758,9 +17769,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 26,
       "norm_label": "sub",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_sub"
     },
     {
@@ -17771,9 +17782,9 @@
       "source_location": "L28",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 26,
       "norm_label": "all",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_all"
     },
     {
@@ -18603,9 +18614,9 @@
       "source_location": "L10",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "sync_window_days",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_sync_window_days"
     },
     {
@@ -18616,9 +18627,9 @@
       "source_location": "L13",
       "complexity": 2,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "rasen",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_rasen"
     },
     {
@@ -18629,9 +18640,9 @@
       "source_location": "L20",
       "complexity": 2,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "gassi",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_gassi"
     },
     {
@@ -18642,9 +18653,9 @@
       "source_location": "L26",
       "complexity": 2,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "einkauf",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_einkauf"
     },
     {
@@ -18655,9 +18666,9 @@
       "source_location": "L27",
       "complexity": 2,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "futter",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_futter"
     },
     {
@@ -18668,9 +18679,9 @@
       "source_location": "L45",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "tasks",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_tasks"
     },
     {
@@ -18681,9 +18692,9 @@
       "source_location": "L54",
       "complexity": 2,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "gross",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_gross"
     },
     {
@@ -18694,9 +18705,9 @@
       "source_location": "L55",
       "complexity": 2,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "klein",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_klein"
     },
     {
@@ -18707,9 +18718,9 @@
       "source_location": "L60",
       "complexity": 1,
       "loc": 1,
-      "community": 24,
+      "community": 45,
       "norm_label": "original",
-      "community_name": "chores.test.ts",
+      "community_name": "calendarSync.ts",
       "id": "web_src_lib_services_chores_test_original"
     },
     {
@@ -20761,9 +20772,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 25,
       "norm_label": "today",
-      "community_name": "taskDefer.test.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_taskdefer_test_today"
     },
     {
@@ -20774,9 +20785,9 @@
       "source_location": "L18",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 25,
       "norm_label": "result",
-      "community_name": "taskDefer.test.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_taskdefer_test_result"
     },
     {
@@ -20787,9 +20798,9 @@
       "source_location": "L28",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 25,
       "norm_label": "before",
-      "community_name": "taskDefer.test.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_taskdefer_test_before"
     },
     {
@@ -20891,9 +20902,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 122,
+      "community": 5,
       "norm_label": "calendar.ts",
-      "community_name": "planning.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_actions_calendar_ts"
     },
     {
@@ -20943,9 +20954,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_auth_google_route_ts"
     },
     {
@@ -20956,9 +20967,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_auth_google_callback_route_ts"
     },
     {
@@ -20969,9 +20980,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 45,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "calendarSync.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_sync_calendar_route_ts"
     },
     {
@@ -21125,9 +21136,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 92,
+      "community": 56,
       "norm_label": "fixture.ts",
-      "community_name": "google.ts",
+      "community_name": "openMeteo.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_integrations_calendar_fixture_ts"
     },
     {
@@ -21138,7 +21149,7 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 75,
+      "community": 5,
       "norm_label": "db.ts",
       "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_db_ts"
@@ -21190,9 +21201,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 5,
       "norm_label": "calendar.ts",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_repositories_calendar_ts"
     },
     {
@@ -23709,7 +23720,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L653",
+      "source_location": "L654",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_deleteroutinetemplate",
       "target": "web_package_dependencies_prisma_client"
@@ -41101,6 +41112,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/repositories/tasks.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "web_src_lib_repositories_tasks_test",
+      "target": "web_src_lib_repositories_tasks_listroutinetemplates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/repositories/tasks.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "web_src_lib_repositories_tasks_test",
+      "target": "web_src_lib_repositories_tasks_settaskstatus",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.test.ts",
@@ -41108,6 +41141,16 @@
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_test",
       "target": "web_src_lib_repositories_tasks_test_datekey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/repositories/tasks.test.ts",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "web_src_lib_repositories_tasks_test",
+      "target": "web_src_lib_repositories_tasks_test_makeroutine",
       "confidence_score": 1.0
     },
     {
@@ -41277,7 +41320,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L337",
+      "source_location": "L339",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_allowed_persons",
@@ -41287,7 +41330,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L335",
+      "source_location": "L337",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_allowedpersons",
@@ -41297,7 +41340,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L193",
+      "source_location": "L195",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_assigntask",
@@ -41307,7 +41350,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L281",
+      "source_location": "L283",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_completetaskby",
@@ -41317,7 +41360,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L296",
+      "source_location": "L298",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_completetaskbyboth",
@@ -41327,7 +41370,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L570",
+      "source_location": "L571",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_createroutineinput",
@@ -41337,7 +41380,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L588",
+      "source_location": "L589",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_createroutinetemplate",
@@ -41347,7 +41390,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L222",
+      "source_location": "L224",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_createtask",
@@ -41357,7 +41400,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L210",
+      "source_location": "L212",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_createtaskinput",
@@ -41367,7 +41410,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L307",
+      "source_location": "L309",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_defertask",
@@ -41377,7 +41420,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L639",
+      "source_location": "L640",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_deleteroutinetemplate",
@@ -41417,7 +41460,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L258",
+      "source_location": "L260",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_listopentasks",
@@ -41427,7 +41470,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L370",
+      "source_location": "L371",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_listroutinetemplates",
@@ -41437,7 +41480,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L499",
+      "source_location": "L500",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_normalizeweathercondition",
@@ -41447,7 +41490,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L248",
+      "source_location": "L250",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_opentaskdto",
@@ -41457,7 +41500,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L425",
+      "source_location": "L426",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_routinefields",
@@ -41467,7 +41510,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L344",
+      "source_location": "L346",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_routinetemplatedto",
@@ -41507,7 +41550,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L540",
+      "source_location": "L541",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_updateroutinetemplate",
@@ -41517,7 +41560,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L529",
+      "source_location": "L530",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_updateroutinetemplatepatch",
@@ -41527,7 +41570,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L440",
+      "source_location": "L441",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks",
       "target": "web_src_lib_repositories_tasks_validateroutinefields",
@@ -41659,7 +41702,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L288",
+      "source_location": "L290",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_completetaskby",
       "target": "web_src_lib_repositories_tasks_settaskstatus",
@@ -41670,7 +41713,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L300",
+      "source_location": "L302",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_completetaskbyboth",
       "target": "web_src_lib_repositories_tasks_settaskstatus",
@@ -41682,7 +41725,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L188",
+      "source_location": "L190",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_settaskstatus",
       "target": "web_src_lib_services_recurrence_generatenextoccurrence"
@@ -41770,7 +41813,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L313",
+      "source_location": "L315",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_defertask",
       "target": "web_src_lib_services_taskdefer_nextsensibleday"
@@ -41780,7 +41823,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L592",
+      "source_location": "L593",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_createroutinetemplate",
       "target": "web_src_lib_repositories_tasks_validateroutinefields",
@@ -41791,7 +41834,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L545",
+      "source_location": "L546",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_updateroutinetemplate",
       "target": "web_src_lib_repositories_tasks_validateroutinefields",
@@ -41802,7 +41845,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L482",
+      "source_location": "L483",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_validateroutinefields",
       "target": "web_src_lib_repositories_tasks_normalizeweathercondition",
@@ -41813,7 +41856,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L466",
+      "source_location": "L467",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_validateroutinefields",
       "target": "web_src_lib_rhythm_isvalidrhythm",
@@ -41825,7 +41868,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/tasks.ts",
-      "source_location": "L566",
+      "source_location": "L567",
       "weight": 1.0,
       "source": "web_src_lib_repositories_tasks_updateroutinetemplate",
       "target": "web_src_lib_services_recurrence_rescheduleopenoccurrence"
@@ -42905,7 +42948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L166",
+      "source_location": "L173",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_generatenextoccurrence",
       "target": "web_src_lib_services_learnedinterval_learnedinterval"
@@ -45385,7 +45428,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L348",
+      "source_location": "L374",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_test",
       "target": "web_src_lib_services_recurrence_test_daysago",
@@ -45395,7 +45438,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L362",
+      "source_location": "L388",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_test",
       "target": "web_src_lib_services_recurrence_test_makechain",
@@ -45415,7 +45458,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L355",
+      "source_location": "L381",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_test",
       "target": "web_src_lib_services_recurrence_test_today",
@@ -45649,7 +45692,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.test.ts",
-      "source_location": "L372",
+      "source_location": "L398",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_test_makechain",
       "target": "web_src_lib_services_recurrence_test_today",
@@ -45729,7 +45772,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L216",
+      "source_location": "L223",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence",
       "target": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
@@ -45855,7 +45898,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L164",
+      "source_location": "L171",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_generatenextoccurrence",
       "target": "web_src_lib_services_recurrence_isfixedrhythm",
@@ -45866,7 +45909,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L168",
+      "source_location": "L175",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_generatenextoccurrence",
       "target": "web_src_lib_services_recurrence_configuredintervaldays",
@@ -45877,7 +45920,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L174",
+      "source_location": "L181",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_generatenextoccurrence",
       "target": "web_src_lib_services_recurrence_nextduedate",
@@ -45888,7 +45931,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recurrence.ts",
-      "source_location": "L233",
+      "source_location": "L240",
       "weight": 1.0,
       "source": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
       "target": "web_src_lib_services_recurrence_nextduedate",
@@ -51848,5 +51891,5 @@
       "source_file": "docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md"
     }
   ],
-  "built_at_commit": "6c6d62bd0b3b45e86db1966d0d36441968237f32"
+  "built_at_commit": "7c3642f03d331a6f77f09c5143c90be739540cb7"
 }
