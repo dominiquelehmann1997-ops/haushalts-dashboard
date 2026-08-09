@@ -118,9 +118,9 @@ export function nextDueDate(rhythm: string, from: Date): Date {
 }
 
 /**
- * Generates the next open occurrence of a done routine task, or `null` when:
+ * Generates the next open occurrence of a finished routine task, or `null` when:
  * - the task isn't a `"routine"` with a non-empty `rhythm`, or
- * - the task isn't `status === "done"`, or
+ * - the task is neither `"done"` noch `"failed"`, or
  * - a successor already exists (an open Task sharing the recurrence chain
  *   with a later `dueDate`) — preventing duplicates on repeated calls.
  *
@@ -140,9 +140,12 @@ export async function generateNextOccurrence(
   const task = await client.task.findUnique({ where: { id: taskId } });
   if (!task) return null;
 
-  if (task.type !== "routine" || !task.rhythm || task.status !== "done") {
-    return null;
-  }
+  // "failed" zählt bewusst mit: eine verpasste Woche beendet keine
+  // Haushaltsroutine. Wer "Geht heute nicht" tippt, meint diesen einen Tag —
+  // vorher endete die Kette dort für immer, und die Routine verschwand
+  // lautlos ("Rasen mähen" war so fünf Wochen weg).
+  if (task.type !== "routine" || !task.rhythm) return null;
+  if (task.status !== "done" && task.status !== "failed") return null;
 
   const chainId = task.recurringParentId ?? task.id;
 
@@ -157,7 +160,11 @@ export async function generateNextOccurrence(
   });
   if (existingSuccessor) return null;
 
-  // Interval restart: count from when it was actually done, not the old plan date.
+  // Interval restart: count from when it was actually done, not the old plan
+  // date. Bei "failed" gibt es keine Erledigung (`setTaskStatus` setzt
+  // `completedAt` auf null) — dann zählt der Plantag. Der Nachfolger kann
+  // dadurch in der Vergangenheit landen; `rollOverdueRoutines` zieht ihn beim
+  // nächsten Planungslauf auf heute, wie bei jeder überfälligen Occurrence.
   const base = task.completedAt ?? task.dueDate;
 
   // Feste Rhythmen fragen die Historie gar nicht erst ab — sie sind gesetzt.

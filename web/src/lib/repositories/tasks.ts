@@ -182,9 +182,11 @@ export async function setTaskStatus(
     }
   }
 
-  // Recurring routines spawn their next open occurrence once done (idempotent:
-  // generateNextOccurrence no-ops for non-routines and guards against duplicates).
-  if (status === "done") {
+  // Wiederkehrende Routinen legen ihre nächste Occurrence an, sobald die
+  // aktuelle abgeschlossen ist — erledigt ODER gescheitert. "Geht heute nicht"
+  // beendet die Routine nicht, es überspringt nur diesen Termin. (Idempotent:
+  // generateNextOccurrence ignoriert Nicht-Routinen und verhindert Duplikate.)
+  if (status === "done" || status === "failed") {
     await generateNextOccurrence(id, client);
   }
 }
@@ -363,9 +365,8 @@ export interface RoutineTemplateDTO {
  *
  * Ausgegeben werden nur Ketten mit mindestens einer offenen oder verschobenen
  * Zeile. Eine lebende Routine hat immer eine: `generateNextOccurrence` legt sie
- * beim Abschließen an. Fehlt sie, ist die Kette beendet — entweder per
- * `deleteRoutineTemplate` oder weil die letzte Occurrence auf `failed` steht
- * (die spawnt schon immer keinen Nachfolger; der Filter macht das nur sichtbar).
+ * beim Abschließen an — sowohl nach "done" als auch nach "failed". Fehlt sie,
+ * wurde die Routine bewusst über `deleteRoutineTemplate` beendet.
  */
 export async function listRoutineTemplates(
   client: PrismaClient = prisma,
