@@ -25,4 +25,11 @@ laufen — Node-Server in Termux, im Chrome als PWA installiert. Anleitung:
 Die echten Haushalts-Chores werden idempotent per `npm run import:chores`
 eingespielt (siehe `web/src/lib/services/chores.ts`).
 
+## Rezepte per Link übernehmen
+
+Rezeptseite raussuchen, Link im Dashboard unter *Essensplan → Rezept per Link*
+einfügen (oder `npm run import:recipe -- <url>`) — das Rezept landet als Notiz
+im Obsidian-Vault und ist sofort im Essensplan wählbar. Quellen-Empfehlungen und
+Details: [`docs/rezepte-quellen-und-import.md`](docs/rezepte-quellen-und-import.md).
+
 Der finale visuelle Look wird separat in Claude umgesetzt.
