@@ -1275,8 +1275,8 @@
     "semantic_hash": ""
   },
   "web/src/app/(mobile)/mobile/meals/rezepte/[id]/page.tsx": {
-    "mtime": 1787658337.3102117,
-    "ast_hash": "4b4387e5b3828f2c6e55601a71e7c09b",
+    "mtime": 1787691026.9112396,
+    "ast_hash": "fbaa8f2e9c291a0eb9b081c732c7346d",
     "semantic_hash": ""
   },
   "web/src/app/(mobile)/mobile/meals/rezepte/neu/page.tsx": {
@@ -1305,8 +1305,8 @@
     "semantic_hash": ""
   },
   "web/src/components/mobile/RecipeEditor.tsx": {
-    "mtime": 1787658312.8564706,
-    "ast_hash": "0269b456de613c1e208c9cd71a3d6acb",
+    "mtime": 1787690935.8520527,
+    "ast_hash": "24f6de62ee73da7554d5cbbcfb842df5",
     "semantic_hash": ""
   },
   "web/src/components/mobile/RecipeFilterChips.tsx": {
@@ -1452,6 +1452,16 @@
   "scripts/tablet-backup-loop.sh": {
     "mtime": 1787686272.66934,
     "ast_hash": "5e10f1f929d4f35f9d596ad6de6fe819",
+    "semantic_hash": ""
+  },
+  "web/src/app/(mobile)/mobile/meals/rezepte/[id]/kochen/page.tsx": {
+    "mtime": 1787691014.660952,
+    "ast_hash": "8d389c76c17d355985dd2381e1214230",
+    "semantic_hash": ""
+  },
+  "web/src/components/mobile/RecipeCookView.tsx": {
+    "mtime": 1787691002.8279915,
+    "ast_hash": "3bcec090d2f52ba21572374e0ff9a92b",
     "semantic_hash": ""
   }
 }
