@@ -12,7 +12,9 @@ import {
   listRecipes,
   setRecipeRating,
   updateRecipe,
+  upsertImportedRecipe,
 } from "./recipes";
+import type { ImportedRecipe } from "@/lib/services/recipeImport";
 
 describe("recipes repository", () => {
   let client: PrismaClient;
@@ -253,6 +255,143 @@ describe("recipes repository", () => {
       const saved = await getRecipe(id, client);
       expect(saved!.rating).toBe("selten");
       expect(saved!.name).toBe("Kokos-Curry");
+    });
+  });
+
+  describe("upsertImportedRecipe", () => {
+    /** Ein importiertes Rezept, wie es aus recipeImport/recipeIdeas kommt. */
+    function imported(overrides: Partial<ImportedRecipe> = {}): ImportedRecipe {
+      return {
+        slug: "kokos-curry",
+        name: "Kokos-Curry",
+        rating: "ok",
+        simple: true,
+        reheatable: false,
+        tags: ["curry"],
+        source: "https://example.org/curry",
+        servings: 4,
+        prepMinutes: 10,
+        cookMinutes: 20,
+        kcal: 480,
+        protein: 20,
+        ingredients: [{ name: "Kokosmilch", amount: "400", unit: "ml" }],
+        steps: ["Alles kochen."],
+        ...overrides,
+      };
+    }
+
+    it("legt ein neues Rezept samt Slug an", async () => {
+      const { id, updated } = await upsertImportedRecipe(imported(), client);
+
+      expect(updated).toBe(false);
+      const saved = await getRecipe(id, client);
+      expect(saved).toMatchObject({
+        name: "Kokos-Curry",
+        slug: "kokos-curry",
+        servings: 4,
+        kcal: 480,
+        sourceUrl: "https://example.org/curry",
+        steps: ["Alles kochen."],
+      });
+      expect(saved!.ingredients).toEqual([
+        expect.objectContaining({ name: "Kokosmilch", amount: "400", unit: "ml" }),
+      ]);
+    });
+
+    it("erkennt dasselbe Rezept an der Quell-URL wieder, auch nach Umbenennung", async () => {
+      const first = await upsertImportedRecipe(imported(), client);
+      const second = await upsertImportedRecipe(
+        imported({ name: "Kokos-Curry (neu)", slug: "kokos-curry-neu", kcal: 500 }),
+        client,
+      );
+
+      expect(second.updated).toBe(true);
+      expect(second.id).toBe(first.id);
+      expect(await client.recipe.count({ where: { slug: { startsWith: "kokos-curry" } } })).toBe(1);
+
+      const saved = await getRecipe(first.id, client);
+      expect(saved!.name).toBe("Kokos-Curry (neu)");
+      expect(saved!.kcal).toBe(500);
+      // Der Slug ist der Identitäts-Anker und wandert nicht mit dem Namen.
+      expect(saved!.slug).toBe("kokos-curry");
+    });
+
+    it("erkennt ein Rezept ohne Quell-URL am Slug wieder (Claude-Ideen)", async () => {
+      const idea = imported({ source: null, kcal: null });
+      const first = await upsertImportedRecipe(idea, client);
+      const second = await upsertImportedRecipe(idea, client);
+
+      expect(second.updated).toBe(true);
+      expect(second.id).toBe(first.id);
+      expect(await client.recipe.count({ where: { slug: { startsWith: "kokos-curry" } } })).toBe(1);
+    });
+
+    it("lässt Bewertung, Notizen und Bild des Haushalts in Ruhe", async () => {
+      const { id } = await upsertImportedRecipe(imported(), client);
+      await client.recipe.update({
+        where: { id },
+        data: { rating: "favorit", notes: "Mit Naan.", imagePath: "kokos-curry.jpg" },
+      });
+
+      await upsertImportedRecipe(imported({ rating: "ok" }), client);
+
+      const saved = await getRecipe(id, client);
+      expect(saved!.rating).toBe("favorit");
+      expect(saved!.notes).toBe("Mit Naan.");
+      expect(saved!.imageUrl).toContain("kokos-curry.jpg");
+    });
+
+    it("ersetzt die Zutaten, statt sie zu verdoppeln", async () => {
+      const { id } = await upsertImportedRecipe(imported(), client);
+      await upsertImportedRecipe(
+        imported({ ingredients: [{ name: "Reis", amount: "200", unit: "g" }] }),
+        client,
+      );
+
+      const saved = await getRecipe(id, client);
+      expect(saved!.ingredients.map((i) => i.name)).toEqual(["Reis"]);
+    });
+
+    it("holt ein archiviertes Rezept zurück, statt eine Dublette anzulegen", async () => {
+      const { id } = await upsertImportedRecipe(imported(), client);
+      await client.recipe.update({ where: { id }, data: { archived: true } });
+
+      const again = await upsertImportedRecipe(imported(), client);
+
+      expect(again.id).toBe(id);
+      expect((await getRecipe(id, client))!.archived).toBe(false);
+      expect(await client.recipe.count({ where: { slug: { startsWith: "kokos-curry" } } })).toBe(1);
+    });
+
+    it("landet über den Slug beim bestehenden Rezept, wenn die Quelle wechselt", async () => {
+      await upsertImportedRecipe(imported({ source: "https://example.org/a" }), client);
+      const { id, updated } = await upsertImportedRecipe(
+        imported({ source: "https://example.org/b" }),
+        client,
+      );
+
+      expect(updated).toBe(true);
+      expect(await client.recipe.count({ where: { slug: { startsWith: "kokos-curry" } } })).toBe(1);
+      expect((await getRecipe(id, client))!.sourceUrl).toBe("https://example.org/b");
+    });
+
+    it("nimmt einem anderen Rezept den Slug nicht weg", async () => {
+      // `slug` ist unique. Ein handangelegtes Rezept (Slug null) wird hier über
+      // seine Quell-URL getroffen, während den passenden Slug schon ein anderes
+      // Rezept trägt — ein blinder Schreibversuch würde die DB anfahren.
+      await upsertImportedRecipe(imported({ source: "https://example.org/a" }), client);
+      const handmade = await createRecipe(
+        { name: "Kokos-Curry", sourceUrl: "https://example.org/b" },
+        client,
+      );
+
+      const again = await upsertImportedRecipe(
+        imported({ source: "https://example.org/b" }),
+        client,
+      );
+
+      expect(again.id).toBe(handmade.id);
+      expect((await getRecipe(handmade.id, client))!.slug).toBeNull();
     });
   });
 });

@@ -15,6 +15,7 @@ import type {
   RecipeTagCount,
 } from "@/lib/domain";
 import { parseTags } from "@/lib/services/mealWeights";
+import type { ImportedRecipe } from "@/lib/services/recipeImport";
 import { applyFilters, collectTags } from "@/lib/services/recipeSearch";
 
 /** Eine Zutatenzeile, wie sie beim Anlegen/Bearbeiten hereinkommt. */
@@ -222,6 +223,97 @@ export async function updateRecipe(
   for (const row of ingredientRows(id, input.ingredients)) {
     await client.ingredient.create({ data: row });
   }
+}
+
+/** Ergebnis eines Imports — `updated` unterscheidet „neu" von „aktualisiert". */
+export interface RecipeUpsert {
+  id: string;
+  name: string;
+  updated: boolean;
+}
+
+/**
+ * Sucht das Rezept, das ein Import meint: zuerst über die Quell-URL, sonst
+ * über den Slug. Archivierte zählen mit — ein erneuter Import soll ein
+ * ausgemustertes Rezept wiederbeleben statt eine Dublette anzulegen.
+ */
+async function findImportMatch(recipe: ImportedRecipe, client: PrismaClient) {
+  if (recipe.source) {
+    const bySource = await client.recipe.findFirst({ where: { sourceUrl: recipe.source } });
+    if (bySource) return bySource;
+  }
+  return client.recipe.findFirst({ where: { slug: recipe.slug } });
+}
+
+/**
+ * Übernimmt ein importiertes Rezept (Link-Import oder Claude-Idee) in die DB.
+ *
+ * Beim Update überleben die Felder, die der Haushalt selbst pflegt:
+ * `rating`, `notes` und `imagePath`. Die Quelle weiß nichts davon, und ein
+ * erneuter Import darf einen Favoriten nicht auf „ok" zurücksetzen.
+ */
+export async function upsertImportedRecipe(
+  recipe: ImportedRecipe,
+  client: PrismaClient = prisma,
+): Promise<RecipeUpsert> {
+  const input: RecipeInput = {
+    name: recipe.name,
+    rating: recipe.rating,
+    simple: recipe.simple,
+    reheatable: recipe.reheatable,
+    tags: recipe.tags,
+    servings: recipe.servings,
+    prepMinutes: recipe.prepMinutes,
+    cookMinutes: recipe.cookMinutes,
+    kcal: recipe.kcal,
+    protein: recipe.protein,
+    steps: recipe.steps,
+    sourceUrl: recipe.source,
+    ingredients: recipe.ingredients.map((i) => ({
+      name: i.name,
+      amount: i.amount ?? null,
+      unit: i.unit ?? null,
+    })),
+  };
+
+  const existing = await findImportMatch(recipe, client);
+
+  // Der Slug bleibt, was er beim ersten Import war: die Quelle darf das Rezept
+  // umbenennen, ohne die Identität zu verschieben. Ein über die Quell-URL
+  // gefundenes Rezept ohne Slug bekommt einen — aber nur, wenn ihn nicht schon
+  // ein anderes Rezept trägt (`slug` ist unique).
+  const slug =
+    existing?.slug ??
+    ((await client.recipe.findFirst({ where: { slug: recipe.slug } })) ? null : recipe.slug);
+
+  const id = existing
+    ? (
+        await client.recipe.update({
+          where: { id: existing.id },
+          data: {
+            ...scalarFields(input),
+            rating: existing.rating,
+            notes: existing.notes,
+            imagePath: existing.imagePath,
+            slug,
+            archived: false,
+          },
+          select: { id: true },
+        })
+      ).id
+    : (
+        await client.recipe.create({
+          data: { ...scalarFields(input), slug },
+          select: { id: true },
+        })
+      ).id;
+
+  await client.ingredient.deleteMany({ where: { recipeId: id } });
+  for (const row of ingredientRows(id, input.ingredients)) {
+    await client.ingredient.create({ data: row });
+  }
+
+  return { id, name: input.name, updated: existing !== null };
 }
 
 export interface RecipeRemoval {

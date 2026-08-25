@@ -2,7 +2,7 @@
 
 **Datum:** 2026-08-25
 **Branch:** `feat/rezept-db` (Worktree `haushalts-dashboard-rezepte`)
-**Status:** Phasen 1–3 erledigt, Phasen 4–7 offen
+**Status:** Phasen 1–4 erledigt, Phasen 5–7 offen
 
 ## Ziel
 
@@ -80,37 +80,50 @@ die einzige Kopie — **also den Vault-Ordner bis dahin nicht löschen.**
 **Stand:** 544 Tests grün, `typecheck` und `lint` sauber (die eine
 `MENU_HEIGHT`-Warnung ist vorbestehend).
 
+### Phase 4 — Detailseite, Portionsrechner, Bearbeiten
+
+- Detailseite `rezepte/[id]` mit Kennzahlen-Chips, Bild, Zubereitung, Notizen
+  und Quelle. `RecipePortionList` (Client) skaliert die Zutaten über
+  `scaleIngredients`; **kcal bleibt kcal pro Portion und wird nicht
+  mitskaliert.** Ohne Portionsangabe bleibt der Regler weg, statt zu raten.
+- `RecipeDetailActions` — Bewertung (optimistisch) und Löschen in zwei
+  Schritten. Ist das Rezept noch verplant, wird es nur archiviert; die Seite
+  sagt das auch.
+- `RecipeEditor` für Anlegen (`rezepte/neu`) und Bearbeiten
+  (`rezepte/[id]/bearbeiten`), verdrahtet per `startTransition`. Der
+  Formularzustand ist ein `RecipeDraft` aus lauter Strings; die Umrechnerei
+  nach `RecipeInput` steht rein und getestet in `services/recipeForm.ts`
+  (`draftToInput`, `parseTagInput`, `splitSteps`, `moveItem`).
+- Actions: `createRecipeAction`, `updateRecipeAction`, `deleteRecipeAction`,
+  `setRecipeRatingAction`. `revalidateRecipes()` nimmt zusätzlich zum
+  Dashboard das dynamische Segment `rezepte/[id]` mit — in der festen Pfadliste
+  von `revalidateDashboard` ist es nicht abgedeckt.
+- **Ein Import-Weg für beides:** `upsertImportedRecipe(ImportedRecipe)` im
+  Repository. Dedupe über `sourceUrl`, sonst über `slug`; archivierte Rezepte
+  werden wiederbelebt statt dupliziert; `rating`, `notes` und `imagePath`
+  überleben den Re-Import (die Quelle weiß nichts davon). Der Slug bleibt, was
+  er beim ersten Import war, und wird nur vergeben, wenn ihn nicht schon ein
+  anderes Rezept trägt (`slug` ist unique).
+- `importRecipeUrlAction` schreibt darüber direkt in die DB;
+  `importRecipeFromUrl` holt nur noch und parst. `importedRecipeToVaultMarkdown`,
+  `findExistingRecipeFile` und `fileNameFromRecipe` sind raus, ebenso
+  `ImportedRecipe.id` → jetzt `slug`. `npm run import:recipe` läuft mit.
+- `acceptRecipeIdeaAction` nimmt denselben Weg über `recipeIdeaToImported`;
+  `saveRecipeIdeaToVault`/`recipeIdeaToVaultMarkdown` sind raus. Damit sind
+  auch die zwei Altlasten erledigt: kein bedingungsloses Überschreiben mehr,
+  und der Slug kommt aus `slugFromName` statt aus `slugFromFilename`
+  („Gemüse…" wurde dort zu `gem-se-…`).
+- Dish-Namen in `MealWeekList.tsx` und `widgets.tsx` verlinken auf
+  `/mobile/meals/rezepte/<recipeId>` statt auf `obsidian://`. `Meal.obsidianUrl`
+  wird nirgends mehr gelesen — das Feld selbst fliegt in Phase 7.
+
+**Stand:** 563 Tests grün, `typecheck`, `lint` und `next build` sauber.
+Detailseite, Editor und die Umlaut-Suche gegen den Dev-Server auf 3001
+gegengeprüft.
+
 ---
 
 ## Offen
-
-### Phase 4 — Detailseite, Portionsrechner, Bearbeiten
-
-- `src/app/(mobile)/mobile/meals/rezepte/[id]/page.tsx` — Zutaten, Schritte,
-  Zeiten, kcal, Quelle. `dynamic = "force-dynamic"`, `params` ist ein Promise
-  (Next 16).
-- Portionsregler als Client-Komponente über `scaleIngredients` aus
-  `portions.ts` (fertig und getestet). **kcal bleibt kcal *pro Portion* und
-  wird nicht mitskaliert.**
-- `RecipeEditor.tsx` (`"use client"`) — Formular für alle Felder, Zutatenzeilen
-  hinzufügen/entfernen/sortieren. Wiring per `startTransition` (Hausform, siehe
-  `NotesEditor.tsx`), nicht `useActionState`.
-- Actions in `src/app/actions/recipes.ts` ergänzen: `createRecipeAction`,
-  `updateRecipeAction`, `deleteRecipeAction`, `setRecipeRatingAction`.
-  Muster: Repository aufrufen → `revalidateDashboard()`. Keine Prisma-Queries
-  in Actions.
-- **Importer umhängen:** `importRecipeUrlAction` schreibt nicht mehr `.md` +
-  Ingest, sondern direkt in die DB (Dedupe über `sourceUrl`, sonst `slug`).
-  `ImportedRecipe` (`recipeImport.ts:25-40`) ist bereits exakt die Zielform;
-  `importedRecipeToVaultMarkdown` und `findExistingRecipeFile` entfallen.
-  → Bis das erledigt ist, verliert ein URL-Import die neuen Felder.
-- **Ideen-Generator umhängen:** `acceptRecipeIdeaAction`
-  (`src/app/actions/recipeIdeas.ts`) schreibt ebenfalls in die DB statt via
-  `saveRecipeIdeaToVault`. Erledigt nebenbei zwei Altlasten: das Ding
-  überschreibt Dateien bedingungslos und benutzt `slugFromFilename`, das
-  Umlaute zerlegt („Gemüse…" → `gem-se-…`).
-- Dish-Namen in `MealWeekList.tsx` und `widgets.tsx` auf
-  `/mobile/meals/rezepte/<id>` verlinken statt auf `obsidian://`.
 
 ### Phase 5 — Bilder
 
@@ -147,6 +160,10 @@ Löschen: `src/lib/services/recipeVault.ts` (+ Test),
 `src/components/VaultIngestControl.tsx` (schon heute nirgends importiert),
 `web/prisma/ingestRecipes.ts`, `web/prisma/migrateVaultToDb.ts`,
 `src/lib/repositories/vaultMigration.ts` (+ Test).
+
+**Achtung:** `recipeImport.ts` und `recipeIdeas.ts` schreiben zwar nichts mehr
+in den Vault, ziehen aber weiter den Typ `Rating` aus `recipeVault.ts`. Der
+muss beim Löschen mitumziehen (z.B. nach `domain.ts`).
 
 Entfernen: `ingestVaultAction`, die npm-Scripts `import:recipes` und
 `migrate:vault`, `Recipe.vaultFile` (Migration!), `Meal.obsidianUrl`, die Envs

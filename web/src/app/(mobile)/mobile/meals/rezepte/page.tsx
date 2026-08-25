@@ -32,14 +32,24 @@ export default async function MobileRecipesPage({
         eyebrow="Essen"
         title="Rezepte"
         right={
-          <Link
-            href="/mobile/meals"
-            className="shrink-0 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
-                       bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
-                       hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
-          >
-            Essensplan
-          </Link>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <Link
+              href={`${RECIPES_PATH}/neu`}
+              className="text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                         bg-ink text-cream dark:bg-cream dark:text-ink
+                         hover:opacity-90 transition-opacity"
+            >
+              + Neu
+            </Link>
+            <Link
+              href="/mobile/meals"
+              className="text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                         bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
+                         hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
+            >
+              Essensplan
+            </Link>
+          </div>
         }
       />
 
@@ -69,7 +79,7 @@ export default async function MobileRecipesPage({
         <p className="text-ink-soft dark:text-cream/60 text-[13.5px] py-6 text-center">
           {gefiltert
             ? "Kein Rezept passt zu diesen Filtern."
-            : "Noch keine Rezepte. Auf der Essensplan-Seite lässt sich eins per Link übernehmen."}
+            : "Noch keine Rezepte — oben rechts eins anlegen, oder auf der Essensplan-Seite eins per Link übernehmen."}
         </p>
       )}
     </div>

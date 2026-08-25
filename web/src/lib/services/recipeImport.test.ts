@@ -1,16 +1,9 @@
-import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
-import path from "node:path";
-
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { parseRecipeMarkdown } from "./recipeVault";
 import {
   collectSteps,
   collectTags,
   extractRecipeSchema,
-  fileNameFromRecipe,
-  importedRecipeToVaultMarkdown,
   importRecipeFromUrl,
   normalizeRecipeUrl,
   parseIngredientLine,
@@ -239,27 +232,18 @@ describe("collectTags", () => {
   });
 });
 
-describe("slugFromName / fileNameFromRecipe", () => {
+describe("slugFromName", () => {
   it("transliteriert Umlaute", () => {
     expect(slugFromName("Gemüse-Curry mit Kokosmilch")).toBe("gemuese-curry-mit-kokosmilch");
     expect(slugFromName("Käsespätzle & Röstzwiebeln")).toBe("kaesespaetzle-roestzwiebeln");
-  });
-
-  it("baut einen Obsidian-tauglichen Dateinamen", () => {
-    expect(fileNameFromRecipe("Pasta al Pomodoro", "pasta")).toBe("Pasta al Pomodoro.md");
-    expect(fileNameFromRecipe("Salat: Feta/Melone", "salat")).toBe("Salat Feta Melone.md");
-  });
-
-  it("entfernt den führenden Unterstrich (den der Ingest überspringen würde)", () => {
-    expect(fileNameFromRecipe("_Geheimrezept", "geheim")).toBe("Geheimrezept.md");
   });
 });
 
 describe("toImportedRecipe", () => {
   const recipe = toImportedRecipe(SCHEMA, "https://www.chefkoch.de/rezepte/1/Curry.html");
 
-  it("übernimmt Kern- und Obsidian-Felder", () => {
-    expect(recipe.id).toBe("gemuese-curry-mit-kokosmilch");
+  it("übernimmt alle Rezeptfelder", () => {
+    expect(recipe.slug).toBe("gemuese-curry-mit-kokosmilch");
     expect(recipe.name).toBe("Gemüse-Curry mit Kokosmilch");
     expect(recipe.rating).toBe("ok");
     expect(recipe.servings).toBe(4);
@@ -269,6 +253,8 @@ describe("toImportedRecipe", () => {
     expect(recipe.protein).toBe(18);
     expect(recipe.source).toBe("https://www.chefkoch.de/rezepte/1/Curry.html");
     expect(recipe.ingredients).toHaveLength(6);
+    expect(recipe.ingredients[0]).toEqual({ name: "Kokosmilch", amount: "400", unit: "ml" });
+    expect(recipe.ingredients.at(-1)).toEqual({ name: "Koriander", amount: null, unit: null });
     expect(recipe.steps).toHaveLength(2);
   });
 
@@ -285,131 +271,49 @@ describe("toImportedRecipe", () => {
     expect(aufwendig.simple).toBe(false);
   });
 
+  it("kommt ohne Nährwerte und Zutaten aus", () => {
+    const minimal = toImportedRecipe({ "@type": "Recipe", name: "Nudeln mit Butter" }, "https://example.com/n");
+    expect(minimal.kcal).toBeNull();
+    expect(minimal.servings).toBeNull();
+    expect(minimal.ingredients).toEqual([]);
+  });
+
   it("wirft ohne Rezeptnamen", () => {
     expect(() => toImportedRecipe({ "@type": "Recipe" }, "x")).toThrow();
   });
 });
 
-describe("importedRecipeToVaultMarkdown", () => {
-  const markdown = importedRecipeToVaultMarkdown(
-    toImportedRecipe(SCHEMA, "https://www.chefkoch.de/rezepte/1/Curry.html"),
-  );
-
-  it("läuft durch den Vault-Parser des Dashboards zurück (Contract-Round-Trip)", () => {
-    const { recipe, errors } = parseRecipeMarkdown(markdown);
-    expect(errors).toEqual([]);
-    expect(recipe).not.toBeNull();
-    expect(recipe!.id).toBe("gemuese-curry-mit-kokosmilch");
-    expect(recipe!.name).toBe("Gemüse-Curry mit Kokosmilch");
-    expect(recipe!.rating).toBe("ok");
-    expect(recipe!.simple).toBe(true);
-    expect(recipe!.reheatable).toBe(false);
-    expect(JSON.parse(recipe!.tags!)).toContain("kalorienarm");
-    expect(recipe!.ingredients[0]).toEqual({ name: "Kokosmilch", amount: "400", unit: "ml" });
-    expect(recipe!.ingredients.at(-1)).toEqual({ name: "Koriander", amount: null, unit: null });
-  });
-
-  it("schreibt Zubereitung und Quelle in den Body", () => {
-    expect(markdown).toContain("## Zubereitung");
-    expect(markdown).toContain("1. Süßkartoffel würfeln und anbraten.");
-    expect(markdown).toContain("## Quelle");
-    expect(markdown).toContain("https://www.chefkoch.de/rezepte/1/Curry.html");
-  });
-
-  it("kommt ohne Nährwerte/Portionen aus", () => {
-    const minimal = importedRecipeToVaultMarkdown(
-      toImportedRecipe({ "@type": "Recipe", name: "Nudeln mit Butter" }, "https://example.com/n"),
-    );
-    const { recipe, errors } = parseRecipeMarkdown(minimal);
-    expect(errors).toEqual([]);
-    expect(recipe!.name).toBe("Nudeln mit Butter");
-    expect(recipe!.ingredients).toEqual([]);
-    expect(minimal).not.toContain("nutrition");
-  });
-});
-
 describe("importRecipeFromUrl", () => {
-  const vaults: string[] = [];
-
-  function makeVault(files: Record<string, string> = {}): string {
-    const dir = mkdtempSync(path.join(tmpdir(), "recipe-import-"));
-    for (const [name, content] of Object.entries(files)) {
-      writeFileSync(path.join(dir, name), content);
-    }
-    vaults.push(dir);
-    return dir;
-  }
-
   function stubPage(html: string) {
     vi.stubGlobal("fetch", async () => new Response(html, { status: 200 }));
   }
 
   afterEach(() => {
     vi.unstubAllGlobals();
-    for (const dir of vaults.splice(0)) rmSync(dir, { recursive: true, force: true });
   });
 
   const URL_CURRY = "https://www.chefkoch.de/rezepte/1/Curry.html";
 
-  it("schreibt eine Notiz mit dem Rezeptnamen als Dateinamen", async () => {
-    const vault = makeVault();
+  it("holt die Seite und liefert das Rezept", async () => {
     stubPage(page(SCHEMA));
 
-    const { recipe, file, updated } = await importRecipeFromUrl(URL_CURRY, vault);
+    const recipe = await importRecipeFromUrl(URL_CURRY);
 
-    expect(updated).toBe(false);
-    expect(path.basename(file)).toBe("Gemüse-Curry mit Kokosmilch.md");
-    expect(readdirSync(vault)).toEqual(["Gemüse-Curry mit Kokosmilch.md"]);
-    expect(recipe.id).toBe("gemuese-curry-mit-kokosmilch");
-
-    const parsed = parseRecipeMarkdown(readFileSync(file, "utf8"));
-    expect(parsed.errors).toEqual([]);
-    expect(parsed.recipe!.ingredients).toHaveLength(6);
-  });
-
-  it("aktualisiert bei erneutem Import dieselbe Datei und behält die id", async () => {
-    const vault = makeVault();
-    stubPage(page(SCHEMA));
-    const first = await importRecipeFromUrl(URL_CURRY, vault);
-
-    // Die Seite benennt das Rezept um — Notiz und id müssen bleiben, sonst
-    // entstünde ein zweites Rezept und das alte würde archiviert (Contract §3).
-    stubPage(page({ ...SCHEMA, name: "Curry mit Kokos (neu)" }));
-    const second = await importRecipeFromUrl(URL_CURRY, vault);
-
-    expect(second.updated).toBe(true);
-    expect(second.file).toBe(first.file);
-    expect(second.recipe.id).toBe("gemuese-curry-mit-kokosmilch");
-    expect(readdirSync(vault)).toHaveLength(1);
-    expect(readFileSync(second.file, "utf8")).toContain("Curry mit Kokos (neu)");
-  });
-
-  it("erkennt ein bereits vorhandenes Rezept an gleicher id", async () => {
-    const vault = makeVault({
-      "Altes Curry.md": "---\nid: gemuese-curry-mit-kokosmilch\nname: Altes Curry\n---\n",
-    });
-    stubPage(page(SCHEMA));
-
-    const { file, updated } = await importRecipeFromUrl(URL_CURRY, vault);
-
-    expect(updated).toBe(true);
-    expect(path.basename(file)).toBe("Altes Curry.md");
-    expect(readdirSync(vault)).toHaveLength(1);
+    expect(recipe.slug).toBe("gemuese-curry-mit-kokosmilch");
+    expect(recipe.source).toBe(URL_CURRY);
+    expect(recipe.ingredients).toHaveLength(6);
   });
 
   it("meldet Seiten ohne schema.org-Rezeptdaten verständlich", async () => {
-    const vault = makeVault();
     stubPage("<html><body>nur ein Blogtext</body></html>");
 
-    await expect(importRecipeFromUrl(URL_CURRY, vault)).rejects.toThrow(/schema\.org/);
-    expect(readdirSync(vault)).toEqual([]);
+    await expect(importRecipeFromUrl(URL_CURRY)).rejects.toThrow(/schema\.org/);
   });
 
   it("meldet HTTP-Fehler", async () => {
-    const vault = makeVault();
     vi.stubGlobal("fetch", async () => new Response("nope", { status: 404 }));
 
-    await expect(importRecipeFromUrl(URL_CURRY, vault)).rejects.toThrow(/404/);
+    await expect(importRecipeFromUrl(URL_CURRY)).rejects.toThrow(/404/);
   });
 });
 

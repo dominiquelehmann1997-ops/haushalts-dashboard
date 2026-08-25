@@ -7,8 +7,10 @@
 // beim Abnicken (siehe MealDraftPanel).
 
 import { useState, useTransition } from "react";
+import Link from "next/link";
 
 import type { Meal, RecipeOption } from "@/lib/data";
+import { RECIPES_PATH } from "@/lib/recipeFilterParams";
 import { Card } from "@/components/ui";
 import { MealReasonBadge } from "@/components/widgets";
 import {
@@ -95,17 +97,17 @@ export function MealWeekList({ meals, recipes }: { meals: Meal[]; recipes: Recip
                 >
                   {m.day}
                 </span>
-                {m.obsidianUrl ? (
-                  <a
-                    href={m.obsidianUrl}
+                {m.recipeId ? (
+                  <Link
+                    href={`${RECIPES_PATH}/${m.recipeId}`}
                     onClick={(e) => e.stopPropagation()}
                     className={`flex-1 min-w-0 text-[14.5px] underline decoration-dotted underline-offset-2 ${
                       m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
                     } ${m.light ? "italic" : ""}`}
-                    title="Rezept in Obsidian öffnen"
+                    title="Rezept öffnen"
                   >
                     {m.dish}
-                  </a>
+                  </Link>
                 ) : (
                   <span
                     className={`flex-1 min-w-0 text-[14.5px] ${

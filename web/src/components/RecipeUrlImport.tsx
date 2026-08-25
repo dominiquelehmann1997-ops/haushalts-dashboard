@@ -1,12 +1,14 @@
 "use client";
 
-// Rezept per Link übernehmen: URL einfügen → das Rezept landet als Notiz im
-// Obsidian-Vault und ist sofort im Essensplan wählbar. Liest die schema.org-
-// Daten der Rezeptseite (kein LLM, keine Kosten) — siehe recipeImport.ts.
+// Rezept per Link übernehmen: URL einfügen → das Rezept landet direkt im
+// Rezeptbuch und ist sofort im Essensplan wählbar. Liest die schema.org-Daten
+// der Rezeptseite (kein LLM, keine Kosten) — siehe recipeImport.ts.
 
 import { useState, useTransition } from "react";
+import Link from "next/link";
 
 import { importRecipeUrlAction, type RecipeUrlImportResult } from "@/app/actions/recipes";
+import { RECIPES_PATH } from "@/lib/recipeFilterParams";
 
 const PILL =
   "inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full transition-colors";
@@ -75,7 +77,14 @@ export function RecipeUrlImport() {
           {result.updated ? "↻ aktualisiert" : "✓ übernommen"}: {result.name} —{" "}
           {result.ingredientCount} Zutaten
           {result.kcal !== null ? `, ${result.kcal} kcal/Portion` : ""}
-          {result.error ? ` (Hinweis: ${result.error})` : ""}
+          {result.id && (
+            <>
+              {" · "}
+              <Link href={`${RECIPES_PATH}/${result.id}`} className="font-semibold underline">
+                ansehen
+              </Link>
+            </>
+          )}
         </p>
       )}
       {result && !result.ok && (

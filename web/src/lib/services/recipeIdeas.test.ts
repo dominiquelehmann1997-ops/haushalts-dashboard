@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { parseRecipeMarkdown } from "@/lib/services/recipeVault";
 import {
   buildIdeasPrompt,
   parseIdeasResponse,
-  recipeIdeaToVaultMarkdown,
+  recipeIdeaToImported,
   type RecipeIdea,
 } from "@/lib/services/recipeIdeas";
 
@@ -57,32 +56,39 @@ describe("parseIdeasResponse", () => {
   });
 });
 
-describe("recipeIdeaToVaultMarkdown", () => {
-  it("round-trips through the vault parser", () => {
-    const md = recipeIdeaToVaultMarkdown(sampleIdea);
-    const { recipe, errors } = parseRecipeMarkdown(md);
-    expect(errors).toEqual([]);
-    expect(recipe).not.toBeNull();
-    expect(recipe!.name).toBe(sampleIdea.name);
-    expect(recipe!.rating).toBe("ok");
-    expect(recipe!.reheatable).toBe(true);
-    expect(recipe!.tags).toBe(JSON.stringify(sampleIdea.tags));
-    expect(recipe!.ingredients).toHaveLength(3);
-    expect(recipe!.ingredients[1]).toMatchObject({
-      name: "rote Linsen",
-      amount: "200",
-      unit: "g",
+describe("recipeIdeaToImported", () => {
+  it("übernimmt die Idee samt Zutaten in die Import-Form", () => {
+    const imported = recipeIdeaToImported(sampleIdea);
+
+    expect(imported.name).toBe("Kürbis-Linsen-Curry");
+    expect(imported.rating).toBe("ok");
+    expect(imported.reheatable).toBe(true);
+    expect(imported.tags).toEqual(["vegetarisch", "herbst"]);
+    expect(imported.ingredients).toHaveLength(3);
+    expect(imported.ingredients[1]).toEqual({ name: "rote Linsen", amount: "200", unit: "g" });
+  });
+
+  it("transliteriert Umlaute im Slug (statt sie zu zerlegen)", () => {
+    expect(recipeIdeaToImported(sampleIdea).slug).toBe("kuerbis-linsen-curry");
+  });
+
+  it("gibt Ideen keine Quell-URL", () => {
+    expect(recipeIdeaToImported(sampleIdea).source).toBeNull();
+  });
+
+  it("zerlegt die Zubereitung in Schritte und setzt die Portionen des Prompts", () => {
+    const imported = recipeIdeaToImported({
+      ...sampleIdea,
+      steps: "1. Kürbis würfeln.\n2. Alles 20 Min köcheln.",
     });
+    expect(imported.steps).toEqual(["Kürbis würfeln.", "Alles 20 Min köcheln."]);
+    expect(imported.servings).toBe(4);
   });
 
-  it("marks the source as claude so suggestions are identifiable in Obsidian", () => {
-    const md = recipeIdeaToVaultMarkdown(sampleIdea);
-    expect(md).toContain("source: claude");
-  });
-
-  it("includes the steps in the body", () => {
-    const md = recipeIdeaToVaultMarkdown(sampleIdea);
-    expect(md).toContain("Kürbis würfeln");
+  it("kommt ohne Zubereitung aus", () => {
+    const { steps, ...rest } = sampleIdea;
+    void steps;
+    expect(recipeIdeaToImported(rest).steps).toEqual([]);
   });
 });
 

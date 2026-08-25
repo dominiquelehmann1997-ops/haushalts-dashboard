@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 import type { Meal, Note } from "@/lib/data";
+import { RECIPES_PATH } from "@/lib/recipeFilterParams";
 import { Card, CardHead } from "@/components/ui";
 import { MealPlanControl } from "@/components/MealPlanControl";
 
@@ -41,16 +44,16 @@ export function MealPlanWidget({ meals }: { meals: Meal[] }) {
             >
               {m.day}
             </span>
-            {m.obsidianUrl ? (
-              <a
-                href={m.obsidianUrl}
+            {m.recipeId ? (
+              <Link
+                href={`${RECIPES_PATH}/${m.recipeId}`}
                 className={`flex-1 min-w-0 text-[14.5px] underline decoration-dotted underline-offset-2 ${
                   m.today ? "font-semibold text-ink dark:text-cream" : "text-ink-soft dark:text-cream/70"
                 } ${m.light ? "italic" : ""}`}
-                title="Rezept in Obsidian öffnen"
+                title="Rezept öffnen"
               >
                 {m.dish}
-              </a>
+              </Link>
             ) : (
               <span
                 className={`flex-1 min-w-0 text-[14.5px] ${
