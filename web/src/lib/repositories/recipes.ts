@@ -134,6 +134,20 @@ export async function listRecipes(
 }
 
 /**
+ * Alle Rezepte, auch archivierte, samt Zutaten — für den Export
+ * (`repositories/recipeExport.ts`). Bewusst inklusive der archivierten: ein
+ * Backup, das die ausgemusterten Rezepte weglässt, verliert genau das, was
+ * sonst nirgends mehr steht.
+ */
+export async function listAllRecipes(client: PrismaClient = prisma): Promise<Recipe[]> {
+  const rows = await client.recipe.findMany({
+    orderBy: { name: "asc" },
+    include: INCLUDE_INGREDIENTS,
+  });
+  return rows.map(toRecipe);
+}
+
+/**
  * Schlanke `{id, name}`-Liste für die Rezept-Auswahl im Essensplan. Bewusst
  * getrennt von `listRecipes`: die Dropdowns brauchen weder Zutaten noch Filter.
  */

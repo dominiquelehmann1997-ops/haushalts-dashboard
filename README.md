@@ -25,6 +25,21 @@ laufen — Node-Server in Termux, im Chrome als PWA installiert. Anleitung:
 Die echten Haushalts-Chores werden idempotent per `npm run import:chores`
 eingespielt (siehe `web/src/lib/services/chores.ts`).
 
+## Backup
+
+`scripts/tablet-backup.sh` legt zwei Sicherungen nebeneinander:
+
+- eine datierte Kopie der Produktionsdatenbank (`prod-<datum>.db`, die
+  neuesten 14 bleiben liegen) — das ist die vollständige, zurückspielbare
+  Sicherung;
+- den Rezept-Export als Markdown (`npm run export:recipes` → `RECIPE_EXPORT_PATH`)
+  — die menschenlesbare Hälfte. Zeigt der Pfad auf den alten Obsidian-Vault,
+  nimmt Obsidian Sync die Rezepte weiter mit in die Cloud, ohne dass die App je
+  von dort liest. Damit liegt eine Kopie außerhalb des Tablets.
+
+Eingehängt wird das Script per `termux-job-scheduler`; die Aufrufzeile steht im
+Kopf des Scripts. Ein Snapshot pro Tag, egal wie oft der Job feuert.
+
 ## Rezepte per Link übernehmen
 
 Rezeptseite raussuchen, Link im Dashboard unter *Essensplan → Rezept per Link*
