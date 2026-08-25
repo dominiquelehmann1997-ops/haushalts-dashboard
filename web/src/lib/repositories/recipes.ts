@@ -340,6 +340,19 @@ export async function deleteRecipe(
   return { deleted: true };
 }
 
+/**
+ * Bilddatei ans Rezept hängen. `imagePath` ist der Dateiname relativ zu
+ * `RECIPE_IMAGE_DIR` — geschrieben wird er nur von `recipeImage.ts`, das den
+ * Namen selbst vergibt und gegen Path-Traversal prüft.
+ */
+export async function setRecipeImage(
+  id: string,
+  imagePath: string | null,
+  client: PrismaClient = prisma,
+): Promise<void> {
+  await client.recipe.update({ where: { id }, data: { imagePath } });
+}
+
 /** Bewertung setzen — der häufigste Einzel-Edit, deshalb ein eigener Weg. */
 export async function setRecipeRating(
   id: string,

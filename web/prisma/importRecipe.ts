@@ -2,6 +2,7 @@ import "dotenv/config";
 
 import { prisma } from "../src/lib/db";
 import { upsertImportedRecipe } from "../src/lib/repositories/recipes";
+import { attachRecipeImage } from "../src/lib/services/recipeImage";
 import { importRecipeFromUrl } from "../src/lib/services/recipeImport";
 
 // Rezept-Import per Link: holt eine oder mehrere Rezeptseiten und legt sie im
@@ -26,10 +27,11 @@ async function main() {
       try {
         const recipe = await importRecipeFromUrl(url);
         const { id, updated } = await upsertImportedRecipe(recipe);
+        const image = await attachRecipeImage(id, recipe.imageUrl);
         const kcal = recipe.kcal !== null ? `, ${recipe.kcal} kcal/Portion` : "";
         console.log(
           `${updated ? "↻ aktualisiert" : "✓ neu"}: ${recipe.name} ` +
-            `(${recipe.ingredients.length} Zutaten${kcal}) → ${id}`,
+            `(${recipe.ingredients.length} Zutaten${kcal}${image ? ", Bild" : ""}) → ${id}`,
         );
       } catch (error) {
         console.error(`✗ ${url}: ${error instanceof Error ? error.message : error}`);

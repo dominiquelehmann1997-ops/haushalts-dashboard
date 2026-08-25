@@ -2,7 +2,7 @@
 
 **Datum:** 2026-08-25
 **Branch:** `feat/rezept-db` (Worktree `haushalts-dashboard-rezepte`)
-**Status:** Phasen 1–4 erledigt, Phasen 5–7 offen
+**Status:** Phasen 1–5 erledigt, Phasen 6–7 offen
 
 ## Ziel
 
@@ -121,22 +121,43 @@ die einzige Kopie — **also den Vault-Ordner bis dahin nicht löschen.**
 Detailseite, Editor und die Umlaut-Suche gegen den Dev-Server auf 3001
 gegengeprüft.
 
+### Phase 5 — Bilder
+
+- Env `RECIPE_IMAGE_DIR`, in `.env.example` dokumentiert. Muss außerhalb des
+  Repos liegen — ein Redeploy nähme die Bilder sonst mit. Ohne die Variable
+  bleiben Rezepte schlicht bildlos, nichts bricht.
+- `pickImageUrl` (rein, getestet) liest `schema.image` in allen Varianten:
+  String, Liste, `ImageObject` mit `url`/`contentUrl`, verschachtelt. Relative
+  Pfade werden gegen die Seiten-URL aufgelöst, `data:`-Platzhalter abgewiesen.
+  Landet als `ImportedRecipe.imageUrl`.
+- `src/lib/services/recipeImage.ts` lädt das Bild **einmalig** (ein erneuter
+  Import lässt ein vorhandenes Bild in Ruhe, wie Bewertung und Notizen) und
+  legt es unter `RECIPE_IMAGE_DIR` ab. Fehlschlag ist nie fatal.
+  - **Der Dateityp kommt aus den Magic Bytes, nicht aus `Content-Type`:**
+    Rezeptseiten liefern gerne eine HTML-Fehlerseite mit Status 200 und
+    falschem Header. Was sich nicht als jpg/png/gif/webp/avif lesen lässt,
+    wird nicht gespeichert.
+  - `readCapped` bricht bei 3 MB ab, statt erst alles in den Speicher zu laden
+    (`Content-Length` fehlt bei Chunked-Antworten oder lügt).
+  - **Der Dateiname kommt aus dem gespeicherten Slug, nicht aus dem der
+    Quelle** — der Upsert vergibt den Slug nur, wenn er frei ist; ein Rezept
+    ohne Slug bekommt seine id. Sonst könnten sich zwei Rezepte dieselbe
+    Bilddatei überschreiben.
+- `src/app/api/recipe-image/[file]/route.ts` liefert aus `RECIPE_IMAGE_DIR`
+  aus. `isSafeImageFile` lässt nur Namen durch, die der Downloader selbst
+  vergibt (`^[a-z0-9][a-z0-9-]*\.(jpg|png|gif|webp|avif)$`) — kein `..`, keine
+  Pfadtrenner. Alles Abgewiesene wird zu 404, nicht zu 403: ob eine Datei
+  existiert, geht den Aufrufer nichts an.
+- `setRecipeImage` im Repository; `imageUrlOf()` erzeugte die URLs schon.
+
+**Stand:** 587 Tests grün, `typecheck`, `lint` und `next build` sauber. Gegen
+den Dev-Server geprüft: Bild kommt byte-identisch mit `image/png` zurück,
+Detailseite und Liste zeigen es, und `..%2f..%2f.env`, `%2e%2e%2f…`,
+`.js`-Endungen sowie Großschreibung liefern alle 404.
+
 ---
 
 ## Offen
-
-### Phase 5 — Bilder
-
-- Env `RECIPE_IMAGE_DIR` (auf dem Tablet außerhalb des Repos, damit ein
-  `.next`-Redeploy die Bilder nicht mitnimmt).
-- `src/lib/services/recipeImage.ts` — Bild-URL aus den schema.org-Daten
-  (`schema.image`, in `extractRecipeSchema` bereits geparst), einmalig laden,
-  Größe begrenzen, als `<slug>.<ext>` ablegen, `imagePath` setzen.
-  Fehlschlag ist nicht fatal.
-- `src/app/api/recipe-image/[file]/route.ts` — Route-Handler, der aus
-  `RECIPE_IMAGE_DIR` ausliefert. **Nicht `public/`.** Dateinamen gegen
-  Path-Traversal prüfen (nur `[a-z0-9._-]`, kein `..`).
-  `imageUrlOf()` in `recipes.ts` erzeugt diese URLs bereits.
 
 ### Phase 6 — Backup (nicht optional, siehe Risiko oben)
 

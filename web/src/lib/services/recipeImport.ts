@@ -29,6 +29,8 @@ export interface ImportedRecipe {
   tags: string[];
   /** Quell-URL; `null` bei Rezepten ohne Webquelle (z.B. Claude-Ideen). */
   source: string | null;
+  /** Adresse des Titelbilds auf der Quellseite; geladen wird es in `recipeImage.ts`. */
+  imageUrl: string | null;
   servings: number | null;
   prepMinutes: number | null;
   cookMinutes: number | null;
@@ -355,6 +357,46 @@ export function collectSteps(value: unknown, depth = 0): string[] {
   return [];
 }
 
+/**
+ * `image` → absolute Bild-URL. schema.org erlaubt hier so ziemlich alles:
+ * einen String, eine Liste, ein `ImageObject` mit `url`, oder eine Liste davon
+ * (mehrere Seitenverhältnisse desselben Bilds). Genommen wird die erste
+ * brauchbare Adresse; relative Pfade werden gegen die Seiten-URL aufgelöst.
+ */
+export function pickImageUrl(value: unknown, pageUrl: string, depth = 0): string | null {
+  if (depth > 4 || value == null) return null;
+
+  if (typeof value === "string") {
+    const raw = stripHtml(value);
+    if (!raw) return null;
+    let resolved: URL;
+    try {
+      resolved = new URL(raw, pageUrl);
+    } catch {
+      return null;
+    }
+    // Nur http(s): `data:`-URLs sind Platzhalter-Pixel, alles andere holt der
+    // Downloader ohnehin nicht.
+    if (resolved.protocol !== "http:" && resolved.protocol !== "https:") return null;
+    return resolved.toString();
+  }
+
+  if (Array.isArray(value)) {
+    for (const entry of value) {
+      const hit = pickImageUrl(entry, pageUrl, depth + 1);
+      if (hit) return hit;
+    }
+    return null;
+  }
+
+  if (typeof value === "object") {
+    const node = value as Json;
+    return pickImageUrl(node.url ?? node.contentUrl, pageUrl, depth + 1);
+  }
+
+  return null;
+}
+
 /** `keywords`/`recipeCategory`/`recipeCuisine` → normalisierte Tag-Liste. */
 export function collectTags(schema: Json): string[] {
   const raw: string[] = [];
@@ -463,6 +505,7 @@ export function toImportedRecipe(schema: Json, sourceUrl: string): ImportedRecip
     reheatable: false,
     tags: tags.slice(0, 8),
     source: sourceUrl,
+    imageUrl: pickImageUrl(schema.image, sourceUrl),
     servings: parseServings(schema.recipeYield),
     prepMinutes,
     cookMinutes,

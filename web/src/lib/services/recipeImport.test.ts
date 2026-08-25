@@ -10,6 +10,7 @@ import {
   parseIsoDuration,
   parseNutritionNumber,
   parseServings,
+  pickImageUrl,
   slugFromName,
   toImportedRecipe,
 } from "./recipeImport";
@@ -29,6 +30,7 @@ const SCHEMA = {
   cookTime: "PT25M",
   keywords: "vegetarisch, Curry, schnell",
   recipeCategory: "Hauptgericht",
+  image: [{ "@type": "ImageObject", url: "https://img.chefkoch.de/curry.jpg" }],
   nutrition: { "@type": "NutritionInformation", calories: "420 kcal", proteinContent: "18 g" },
   recipeIngredient: [
     "400 ml Kokosmilch",
@@ -232,6 +234,48 @@ describe("collectTags", () => {
   });
 });
 
+describe("pickImageUrl", () => {
+  const PAGE = "https://www.chefkoch.de/rezepte/1/Curry.html";
+
+  it("nimmt einen einfachen String", () => {
+    expect(pickImageUrl("https://img.chefkoch.de/curry.jpg", PAGE)).toBe(
+      "https://img.chefkoch.de/curry.jpg",
+    );
+  });
+
+  it("nimmt das erste Bild einer Liste", () => {
+    expect(pickImageUrl(["https://img.example/a.jpg", "https://img.example/b.jpg"], PAGE)).toBe(
+      "https://img.example/a.jpg",
+    );
+  });
+
+  it("liest ImageObject-Knoten aus (auch verschachtelt in einer Liste)", () => {
+    expect(pickImageUrl({ "@type": "ImageObject", url: "https://img.example/c.jpg" }, PAGE)).toBe(
+      "https://img.example/c.jpg",
+    );
+    expect(pickImageUrl([{ contentUrl: "https://img.example/d.jpg" }], PAGE)).toBe(
+      "https://img.example/d.jpg",
+    );
+  });
+
+  it("löst relative Pfade gegen die Seiten-URL auf", () => {
+    expect(pickImageUrl("/bilder/curry.jpg", PAGE)).toBe("https://www.chefkoch.de/bilder/curry.jpg");
+  });
+
+  it("weist Platzhalter und Unsinn ab", () => {
+    expect(pickImageUrl("data:image/gif;base64,R0lGOD", PAGE)).toBeNull();
+    expect(pickImageUrl("", PAGE)).toBeNull();
+    expect(pickImageUrl(undefined, PAGE)).toBeNull();
+    expect(pickImageUrl({ width: 800 }, PAGE)).toBeNull();
+  });
+
+  it("hängt sich nicht in zyklischen Strukturen auf", () => {
+    const loop: Record<string, unknown> = {};
+    loop.url = loop;
+    expect(pickImageUrl(loop, PAGE)).toBeNull();
+  });
+});
+
 describe("slugFromName", () => {
   it("transliteriert Umlaute", () => {
     expect(slugFromName("Gemüse-Curry mit Kokosmilch")).toBe("gemuese-curry-mit-kokosmilch");
@@ -252,6 +296,7 @@ describe("toImportedRecipe", () => {
     expect(recipe.kcal).toBe(420);
     expect(recipe.protein).toBe(18);
     expect(recipe.source).toBe("https://www.chefkoch.de/rezepte/1/Curry.html");
+    expect(recipe.imageUrl).toBe("https://img.chefkoch.de/curry.jpg");
     expect(recipe.ingredients).toHaveLength(6);
     expect(recipe.ingredients[0]).toEqual({ name: "Kokosmilch", amount: "400", unit: "ml" });
     expect(recipe.ingredients.at(-1)).toEqual({ name: "Koriander", amount: null, unit: null });

@@ -10,6 +10,7 @@ import {
   listRecipeOptions,
   listRecipeTags,
   listRecipes,
+  setRecipeImage,
   setRecipeRating,
   updateRecipe,
   upsertImportedRecipe,
@@ -248,6 +249,24 @@ describe("recipes repository", () => {
     });
   });
 
+  describe("setRecipeImage", () => {
+    it("macht aus dem Dateinamen eine auslieferbare URL", async () => {
+      const { id } = await seedCurry();
+      expect((await getRecipe(id, client))!.imageUrl).toBeNull();
+
+      await setRecipeImage(id, "kokos-curry.jpg", client);
+
+      expect((await getRecipe(id, client))!.imageUrl).toBe("/api/recipe-image/kokos-curry.jpg");
+    });
+
+    it("nimmt das Bild mit null wieder weg", async () => {
+      const { id } = await seedCurry();
+      await setRecipeImage(id, "kokos-curry.jpg", client);
+      await setRecipeImage(id, null, client);
+      expect((await getRecipe(id, client))!.imageUrl).toBeNull();
+    });
+  });
+
   describe("setRecipeRating", () => {
     it("ändert nur die Bewertung", async () => {
       const { id } = await seedCurry();
@@ -269,6 +288,7 @@ describe("recipes repository", () => {
         reheatable: false,
         tags: ["curry"],
         source: "https://example.org/curry",
+        imageUrl: null,
         servings: 4,
         prepMinutes: 10,
         cookMinutes: 20,

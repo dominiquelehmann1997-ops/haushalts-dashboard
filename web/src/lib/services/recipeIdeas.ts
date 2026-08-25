@@ -127,6 +127,8 @@ export function recipeIdeaToImported(idea: RecipeIdea): ImportedRecipe {
     reheatable: idea.reheatable,
     tags: idea.tags,
     source: null,
+    imageUrl: null, // Claude liefert Text, kein Bild
+
     servings: IDEA_SERVINGS,
     prepMinutes: null,
     cookMinutes: null,

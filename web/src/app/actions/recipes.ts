@@ -21,6 +21,7 @@ import {
   type RecipeInput,
   type RecipeRemoval,
 } from "@/lib/repositories/recipes";
+import { attachRecipeImage } from "@/lib/services/recipeImage";
 import { importRecipeFromUrl } from "@/lib/services/recipeImport";
 
 /**
@@ -84,12 +85,14 @@ export interface RecipeUrlImportResult {
 /**
  * Importiert ein Rezept per Link direkt in die DB: Seite holen, schema.org
  * lesen, anlegen oder das bestehende Rezept aktualisieren (Dedupe über die
- * Quell-URL, sonst über den Slug).
+ * Quell-URL, sonst über den Slug). Das Titelbild kommt hinterher — ohne Bild
+ * ist der Import trotzdem gelungen.
  */
 export async function importRecipeUrlAction(url: string): Promise<RecipeUrlImportResult> {
   try {
     const recipe = await importRecipeFromUrl(url);
     const { id, updated } = await upsertImportedRecipe(recipe);
+    await attachRecipeImage(id, recipe.imageUrl);
     revalidateRecipes();
     return {
       ok: true,
