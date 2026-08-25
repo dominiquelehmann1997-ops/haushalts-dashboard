@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "web/src/app/(mobile)/mobile/meals/page.tsx": {
-    "mtime": 1787649451.7178721,
-    "ast_hash": "ad96adb9cde21cf3787af7430b38cab6",
+    "mtime": 1783712733.764014,
+    "ast_hash": "06f2b0034608bf28b4d672e0a8d03f4e",
     "semantic_hash": ""
   },
   "web/src/app/(mobile)/mobile/notes/page.tsx": {
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "web/src/app/actions/meals.ts": {
-    "mtime": 1787649342.2924278,
-    "ast_hash": "fa59c27f49fae703cc36f07426178038",
+    "mtime": 1783712733.7688909,
+    "ast_hash": "f42d0829b80136b72a2c1521deef05df",
     "semantic_hash": ""
   },
   "web/src/app/actions/notes.ts": {
@@ -220,13 +220,13 @@
     "semantic_hash": ""
   },
   "web/src/components/MealDraftPanel.tsx": {
-    "mtime": 1787649293.8689356,
-    "ast_hash": "7507d598921921ea2ee78576abb6b80c",
+    "mtime": 1783712733.77985,
+    "ast_hash": "f0d9ff8e569e7796c7a717201a7677bc",
     "semantic_hash": ""
   },
   "web/src/components/MealPlanControl.tsx": {
-    "mtime": 1787649272.6602068,
-    "ast_hash": "eb5a1f8077a7bcd21ee523e3b78609f0",
+    "mtime": 1783712733.7808592,
+    "ast_hash": "ff2da2f0b2520a3da22ef2698feec6cd",
     "semantic_hash": ""
   },
   "web/src/components/PhaseSwitch.tsx": {
@@ -390,8 +390,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/dates.ts": {
-    "mtime": 1787649213.8238428,
-    "ast_hash": "ba34e93deb6a65eb639f61b36d83ea17",
+    "mtime": 1783712733.804249,
+    "ast_hash": "19db63f989aa37a2aa5b4187789de329",
     "semantic_hash": ""
   },
   "web/src/lib/db.ts": {
@@ -560,13 +560,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/calendar.test.ts": {
-    "mtime": 1787649479.7661195,
-    "ast_hash": "24cf948fae8fbb4f01f117b516ae4ce8",
+    "mtime": 1784924048.0903559,
+    "ast_hash": "fe82c3c2f6086561e31dd12fbce1b472",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/calendar.ts": {
-    "mtime": 1787649261.9677453,
-    "ast_hash": "ab730ed1dcb981728a93d2cc8ec40e2c",
+    "mtime": 1784924048.091536,
+    "ast_hash": "754b091bbfb26c0d7435a1b85538eca5",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/choreImport.test.ts": {
@@ -580,13 +580,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/meals.test.ts": {
-    "mtime": 1787649422.1946418,
-    "ast_hash": "13ad0abe0ae2cb9e1bc201080895d450",
+    "mtime": 1783712733.815231,
+    "ast_hash": "e5b2f799e5bae1077c25da4d8700275f",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/meals.ts": {
-    "mtime": 1787649244.8918614,
-    "ast_hash": "f52a012cacf68efc88899e995aeb84a6",
+    "mtime": 1783712733.81588,
+    "ast_hash": "acbc6b54d0c8a716486470ce75190bb2",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/notes.test.ts": {
@@ -1160,8 +1160,8 @@
     "semantic_hash": ""
   },
   "web/package.json": {
-    "mtime": 1786313620.6757097,
-    "ast_hash": "efbaf6bf7f43b1a1db4238dbcbe42d39",
+    "mtime": 1783712733.739977,
+    "ast_hash": "3c7b81d4fcac2c20a843f4b2d06fc927",
     "semantic_hash": ""
   },
   "web/prisma/migrations/20260607132832_init/migration.sql": {
@@ -1282,31 +1282,6 @@
   "web/src/lib/rhythm.ts": {
     "mtime": 1786305388.696962,
     "ast_hash": "3cb02f9981eef870385cfaffa9879b4a",
-    "semantic_hash": ""
-  },
-  "web/src/components/mobile/MealWeekNav.tsx": {
-    "mtime": 1787649707.8523145,
-    "ast_hash": "5496c7f6f434d3e1bee0b03fd20f3be9",
-    "semantic_hash": ""
-  },
-  "web/src/lib/dates.test.ts": {
-    "mtime": 1787649392.3896973,
-    "ast_hash": "059b552f1bf0223d0573d4cb8e12d385",
-    "semantic_hash": ""
-  },
-  "web/src/lib/weekOffset.test.ts": {
-    "mtime": 1787649460.3802931,
-    "ast_hash": "19198409460338663c785fbcde1f6f26",
-    "semantic_hash": ""
-  },
-  "web/src/lib/weekOffset.ts": {
-    "mtime": 1787649537.2096536,
-    "ast_hash": "81664c201d36d478ddd0b1dcbc8f09b6",
-    "semantic_hash": ""
-  },
-  ".github/workflows/ci.yml": {
-    "mtime": 1786315063.1405058,
-    "ast_hash": "e7f3c9f7d7c66dcfa098f4f2834d763e",
     "semantic_hash": ""
   }
 }

@@ -493,8 +493,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_package_dependencies_prisma_client",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "@prisma/client"
     },
     {
@@ -504,8 +504,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "prisma_client",
-      "community": 24,
-      "community_name": "chores.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "@prisma/client"
     },
     {
@@ -724,8 +724,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "web_package_devdependencies_tailwindcss_postcss",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@tailwindcss/postcss"
     },
     {
@@ -735,8 +735,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tailwindcss_postcss",
-      "community": 92,
-      "community_name": "google.ts",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@tailwindcss/postcss"
     },
     {
@@ -746,8 +746,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_node",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/node"
     },
     {
@@ -757,8 +757,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "types_node",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/node"
     },
     {
@@ -768,8 +768,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_react",
-      "community": 98,
-      "community_name": "@types/react",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/react"
     },
     {
@@ -779,8 +779,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "types_react",
-      "community": 98,
-      "community_name": "@types/react",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/react"
     },
     {
@@ -790,8 +790,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_react_dom",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 18,
+      "community_name": "calendar.test.ts",
       "norm_label": "@types/react-dom"
     },
     {
@@ -801,8 +801,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "types_react_dom",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 18,
+      "community_name": "calendar.test.ts",
       "norm_label": "@types/react-dom"
     },
     {
@@ -856,8 +856,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "web_package_devdependencies_eslint_config_next",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 73,
+      "community_name": "accounts.test.ts",
       "norm_label": "eslint-config-next"
     },
     {
@@ -867,8 +867,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "eslint_config_next",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 73,
+      "community_name": "accounts.test.ts",
       "norm_label": "eslint-config-next"
     },
     {
@@ -878,8 +878,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "web_package_devdependencies_prisma",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "prisma"
     },
     {
@@ -889,8 +889,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "prisma",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "prisma"
     },
     {
@@ -922,8 +922,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "web_package_devdependencies_tailwindcss",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 173,
+      "community_name": "tailwindcss",
       "norm_label": "tailwindcss"
     },
     {
@@ -933,8 +933,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "tailwindcss",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 173,
+      "community_name": "tailwindcss",
       "norm_label": "tailwindcss"
     },
     {
@@ -944,8 +944,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "web_package_devdependencies_tsx",
-      "community": 95,
-      "community_name": "tsx",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "tsx"
     },
     {
@@ -955,8 +955,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tsx",
-      "community": 95,
-      "community_name": "tsx",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "tsx"
     },
     {
@@ -988,8 +988,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "web_package_devdependencies_vitest",
-      "community": 99,
-      "community_name": "vitest",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "vitest"
     },
     {
@@ -999,86 +999,9 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "vitest",
-      "community": 99,
-      "community_name": "vitest",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "vitest"
-    },
-    {
-      "label": "allowScripts",
-      "file_type": "code",
-      "source_file": "web/package.json",
-      "source_location": "L47",
-      "_origin": "ast",
-      "id": "web_package_allowscripts",
-      "community": 73,
-      "community_name": "accounts.test.ts",
-      "norm_label": "allowscripts"
-    },
-    {
-      "label": "@prisma/engines@7.8.0",
-      "file_type": "code",
-      "source_file": "web/package.json",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "web_package_allowscripts_prisma_engines_7_8_0",
-      "community": 73,
-      "community_name": "accounts.test.ts",
-      "norm_label": "@prisma/engines@7.8.0"
-    },
-    {
-      "label": "better-sqlite3@12.10.0",
-      "file_type": "code",
-      "source_file": "web/package.json",
-      "source_location": "L49",
-      "_origin": "ast",
-      "id": "web_package_allowscripts_better_sqlite3_12_10_0",
-      "community": 73,
-      "community_name": "accounts.test.ts",
-      "norm_label": "better-sqlite3@12.10.0"
-    },
-    {
-      "label": "esbuild@0.28.0",
-      "file_type": "code",
-      "source_file": "web/package.json",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "web_package_allowscripts_esbuild_0_28_0",
-      "community": 73,
-      "community_name": "accounts.test.ts",
-      "norm_label": "esbuild@0.28.0"
-    },
-    {
-      "label": "prisma@7.8.0",
-      "file_type": "code",
-      "source_file": "web/package.json",
-      "source_location": "L51",
-      "_origin": "ast",
-      "id": "web_package_allowscripts_prisma_7_8_0",
-      "community": 73,
-      "community_name": "accounts.test.ts",
-      "norm_label": "prisma@7.8.0"
-    },
-    {
-      "label": "sharp@0.34.5",
-      "file_type": "code",
-      "source_file": "web/package.json",
-      "source_location": "L52",
-      "_origin": "ast",
-      "id": "web_package_allowscripts_sharp_0_34_5",
-      "community": 73,
-      "community_name": "accounts.test.ts",
-      "norm_label": "sharp@0.34.5"
-    },
-    {
-      "label": "unrs-resolver@1.12.2",
-      "file_type": "code",
-      "source_file": "web/package.json",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "web_package_allowscripts_unrs_resolver_1_12_2",
-      "community": 73,
-      "community_name": "accounts.test.ts",
-      "norm_label": "unrs-resolver@1.12.2"
     },
     {
       "label": "postcss.config.mjs",
@@ -1164,8 +1087,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_plantoday",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "plantoday.ts"
     },
     {
@@ -1175,8 +1098,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_prisma_plantoday_main",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "main()"
     },
     {
@@ -1230,8 +1153,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_synccalendar",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendar.ts"
     },
     {
@@ -1241,8 +1164,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_prisma_synccalendar_main",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "main()"
     },
     {
@@ -1469,7 +1392,7 @@
       "label": "MobileMealsPage()",
       "file_type": "code",
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L14",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
       "community": 0,
@@ -1593,8 +1516,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_accounts",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "accounts.ts"
     },
     {
@@ -1604,8 +1527,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_actions_accounts_addmanualentryaction",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "addmanualentryaction()"
     },
     {
@@ -1615,8 +1538,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_calendar",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendar.ts"
     },
     {
@@ -1626,8 +1549,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_app_actions_calendar_synccalendaraction",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendaraction()"
     },
     {
@@ -1656,7 +1579,7 @@
       "label": "rerollDraftDayAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L69",
+      "source_location": "L66",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_rerolldraftdayaction",
       "community": 0,
@@ -1667,7 +1590,7 @@
       "label": "setDraftDayRecipeAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L76",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_setdraftdayrecipeaction",
       "community": 0,
@@ -1678,7 +1601,7 @@
       "label": "discardDraftAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L82",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_discarddraftaction",
       "community": 0,
@@ -1689,7 +1612,7 @@
       "label": "approveDraftAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L93",
+      "source_location": "L90",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_approvedraftaction",
       "community": 0,
@@ -1700,22 +1623,22 @@
       "label": "setActiveDayRecipeAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L101",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_setactivedayrecipeaction",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "setactivedayrecipeaction()"
     },
     {
       "label": "pushMealIngredientsAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L111",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_pushmealingredientsaction",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "pushmealingredientsaction()"
     },
     {
@@ -2121,8 +2044,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_api_auth_google_callback_route",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "route.ts"
     },
     {
@@ -2132,8 +2055,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_app_api_auth_google_callback_route_get",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "get()"
     },
     {
@@ -2143,8 +2066,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_api_auth_google_route",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "route.ts"
     },
     {
@@ -2154,8 +2077,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_app_api_auth_google_route_get",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "get()"
     },
     {
@@ -2165,8 +2088,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "route.ts"
     },
     {
@@ -2176,8 +2099,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_runsync",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "runsync()"
     },
     {
@@ -2187,8 +2110,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_get",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "get()"
     },
     {
@@ -2198,8 +2121,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_app_api_sync_calendar_route_post",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "post()"
     },
     {
@@ -2385,8 +2308,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_adddoneinline",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "adddoneinline.tsx"
     },
     {
@@ -2396,8 +2319,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_components_adddoneinline_adddoneinline",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "adddoneinline()"
     },
     {
@@ -2437,7 +2360,7 @@
       "label": "MealDraftPanel()",
       "file_type": "code",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L26",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_mealdraftpanel_mealdraftpanel",
       "community": 0,
@@ -2451,19 +2374,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mealplancontrol",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealplancontrol.tsx"
     },
     {
       "label": "MealPlanControl()",
       "file_type": "code",
       "source_file": "web/src/components/MealPlanControl.tsx",
-      "source_location": "L17",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_components_mealplancontrol_mealplancontrol",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealplancontrol()"
     },
     {
@@ -2891,8 +2814,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_src_components_icons_cloudrainglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 34,
+      "community_name": "WeatherBabyTile.tsx",
       "norm_label": "cloudrainglyph()"
     },
     {
@@ -2902,8 +2825,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "web_src_components_icons_weatherglyph",
-      "community": 68,
-      "community_name": "dashboard.tsx",
+      "community": 41,
+      "community_name": "icons.tsx",
       "norm_label": "weatherglyph()"
     },
     {
@@ -2913,8 +2836,8 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "web_src_components_icons_calendarglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "calendarglyph()"
     },
     {
@@ -2957,8 +2880,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist.tsx"
     },
     {
@@ -2968,8 +2891,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_ingredientlabel",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "ingredientlabel()"
     },
     {
@@ -2979,42 +2902,9 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_mealweeklist",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist()"
-    },
-    {
-      "label": "MealWeekNav.tsx",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_mealweeknav",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "mealweeknav.tsx"
-    },
-    {
-      "label": "Arrow()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_mealweeknav_arrow",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "arrow()"
-    },
-    {
-      "label": "MealWeekNav()",
-      "file_type": "code",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "web_src_components_mobile_mealweeknav_mealweeknav",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "mealweeknav()"
     },
     {
       "label": "MobileNavBar.tsx",
@@ -3089,8 +2979,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_notesview",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "notesview.tsx"
     },
     {
@@ -3111,8 +3001,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_pageheader",
-      "community": 103,
-      "community_name": "revalidateDashboard",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "pageheader.tsx"
     },
     {
@@ -3122,8 +3012,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_components_mobile_pageheader_pageheader",
-      "community": 103,
-      "community_name": "revalidateDashboard",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "pageheader()"
     },
     {
@@ -3133,8 +3023,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routinesview.tsx"
     },
     {
@@ -3144,8 +3034,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_person_options",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "person_options"
     },
     {
@@ -3155,8 +3045,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_weatherfields",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "weatherfields"
     },
     {
@@ -3166,8 +3056,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_parseweather",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "parseweather()"
     },
     {
@@ -3188,8 +3078,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_formatdue",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "formatdue()"
     },
     {
@@ -3210,8 +3100,8 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_routineeditorcard",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routineeditorcard()"
     },
     {
@@ -3243,8 +3133,8 @@
       "source_location": "L505",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_personsegment",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "personsegment()"
     },
     {
@@ -3254,8 +3144,8 @@
       "source_location": "L540",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_weathercontrols",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "weathercontrols()"
     },
     {
@@ -3496,7 +3386,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_ui_cardhead",
-      "community": 68,
+      "community": 33,
       "community_name": "dashboard.tsx",
       "norm_label": "cardhead()"
     },
@@ -3518,8 +3408,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_widgets",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "widgets.tsx"
     },
     {
@@ -3529,8 +3419,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealreasonbadge",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealreasonbadge()"
     },
     {
@@ -3540,8 +3430,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealplanwidget",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealplanwidget()"
     },
     {
@@ -3551,8 +3441,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "web_src_components_widgets_noteswidget",
-      "community": 56,
-      "community_name": "openMeteo.ts",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "noteswidget()"
     },
     {
@@ -3639,8 +3529,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_fixture",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 56,
+      "community_name": "openMeteo.ts",
       "norm_label": "fixture.ts"
     },
     {
@@ -3650,8 +3540,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_fixture_googleeventsfixture",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 56,
+      "community_name": "openMeteo.ts",
       "norm_label": "googleeventsfixture"
     },
     {
@@ -3661,8 +3551,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_test",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 56,
+      "community_name": "openMeteo.ts",
       "norm_label": "google.test.ts"
     },
     {
@@ -3683,8 +3573,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_calendareventinput",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendareventinput"
     },
     {
@@ -3793,8 +3683,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_googleauth",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "googleauth.ts"
     },
     {
@@ -3804,8 +3694,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_googleauth_createoauth2client",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "createoauth2client()"
     },
     {
@@ -3815,8 +3705,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_googleauth_getauthurl",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "getauthurl()"
     },
     {
@@ -3826,8 +3716,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_googleauth_exchangecode",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "exchangecode()"
     },
     {
@@ -3837,8 +3727,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_googleauth_getaccesstoken",
-      "community": 4,
-      "community_name": "calendarSync.test.ts",
+      "community": 92,
+      "community_name": "google.ts",
       "norm_label": "getaccesstoken()"
     },
     {
@@ -3848,8 +3738,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_fixture",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "fixture.ts"
     },
     {
@@ -3859,8 +3749,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "web_src_integrations_weather_fixture_openmeteofixture",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteofixture"
     },
     {
@@ -3870,8 +3760,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_test",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteo.test.ts"
     },
     {
@@ -3881,8 +3771,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteo.ts"
     },
     {
@@ -3892,8 +3782,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_openmeteoresponse",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "openmeteoresponse"
     },
     {
@@ -3914,8 +3804,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_currentweather",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "currentweather"
     },
     {
@@ -3925,8 +3815,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_splithourlytimestamp",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "splithourlytimestamp()"
     },
     {
@@ -3936,8 +3826,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_deriverainwindows",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "deriverainwindows()"
     },
     {
@@ -3947,8 +3837,8 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_mapforecast",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "mapforecast()"
     },
     {
@@ -3958,8 +3848,8 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_labelforcode",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "labelforcode()"
     },
     {
@@ -3969,8 +3859,8 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_conditionforcode",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "conditionforcode()"
     },
     {
@@ -3980,8 +3870,8 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_mapcurrent",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "mapcurrent()"
     },
     {
@@ -3991,8 +3881,8 @@
       "source_location": "L226",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_coordinates",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "coordinates()"
     },
     {
@@ -4002,8 +3892,8 @@
       "source_location": "L235",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_buildurl",
-      "community": 55,
-      "community_name": "BusyWindow",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "buildurl()"
     },
     {
@@ -4013,8 +3903,8 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_getforecast",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "getforecast()"
     },
     {
@@ -4299,8 +4189,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_test",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shifts.test.ts"
     },
     {
@@ -4310,8 +4200,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shifts.ts"
     },
     {
@@ -4321,8 +4211,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_isovernightshift",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isovernightshift()"
     },
     {
@@ -4332,8 +4222,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_correctedbusyend",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "correctedbusyend()"
     },
     {
@@ -4354,8 +4244,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_shift_titles",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "shift_titles"
     },
     {
@@ -4365,8 +4255,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_calendar_shifts_classifyshift",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "classifyshift()"
     },
     {
@@ -4376,8 +4266,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_data_test",
-      "community": 68,
-      "community_name": "dashboard.tsx",
+      "community": 29,
+      "community_name": "choreImport.test.ts",
       "norm_label": "data.test.ts"
     },
     {
@@ -4398,8 +4288,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_data_personkey",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 68,
+      "community_name": "dashboard.tsx",
       "norm_label": "personkey"
     },
     {
@@ -4464,8 +4354,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "web_src_lib_data_meal",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 33,
+      "community_name": "dashboard.tsx",
       "norm_label": "meal"
     },
     {
@@ -4519,8 +4409,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "web_src_lib_data_weather",
-      "community": 29,
-      "community_name": "choreImport.test.ts",
+      "community": 46,
+      "community_name": "page.tsx",
       "norm_label": "weather"
     },
     {
@@ -4612,36 +4502,14 @@
       "norm_label": "personfill()"
     },
     {
-      "label": "dates.test.ts",
-      "file_type": "code",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_lib_dates_test",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "dates.test.ts"
-    },
-    {
-      "label": "WEDNESDAY",
-      "file_type": "code",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "web_src_lib_dates_test_wednesday",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "wednesday"
-    },
-    {
       "label": "dates.ts",
       "file_type": "code",
       "source_file": "web/src/lib/dates.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_dates",
-      "community": 0,
-      "community_name": "meals.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "dates.ts"
     },
     {
@@ -4662,8 +4530,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_dates_daybounds",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "daybounds()"
     },
     {
@@ -4673,8 +4541,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_lib_dates_formattime",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "formattime()"
     },
     {
@@ -4722,57 +4590,13 @@
       "norm_label": "localdatekey()"
     },
     {
-      "label": "weekStartWithOffset()",
-      "file_type": "code",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L66",
-      "_origin": "ast",
-      "id": "web_src_lib_dates_weekstartwithoffset",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "weekstartwithoffset()"
-    },
-    {
-      "label": "weekOffsetOf()",
-      "file_type": "code",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L74",
-      "_origin": "ast",
-      "id": "web_src_lib_dates_weekoffsetof",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "weekoffsetof()"
-    },
-    {
-      "label": "formatWeekRange()",
-      "file_type": "code",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L81",
-      "_origin": "ast",
-      "id": "web_src_lib_dates_formatweekrange",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "formatweekrange()"
-    },
-    {
-      "label": "weekOffsetLabel()",
-      "file_type": "code",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L89",
-      "_origin": "ast",
-      "id": "web_src_lib_dates_weekoffsetlabel",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "weekoffsetlabel()"
-    },
-    {
       "label": "db.ts",
       "file_type": "code",
       "source_file": "web/src/lib/db.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_db",
-      "community": 75,
+      "community": 5,
       "community_name": "db.ts",
       "norm_label": "db.ts"
     },
@@ -4783,7 +4607,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_db_globalforprisma",
-      "community": 75,
+      "community": 5,
       "community_name": "db.ts",
       "norm_label": "globalforprisma"
     },
@@ -4794,7 +4618,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_lib_db_createprismaclient",
-      "community": 75,
+      "community": 5,
       "community_name": "db.ts",
       "norm_label": "createprismaclient()"
     },
@@ -4816,8 +4640,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "availability.test.ts"
     },
     {
@@ -4827,8 +4651,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_test_persons",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "persons"
     },
     {
@@ -4838,8 +4662,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_test_win",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "win()"
     },
     {
@@ -4849,8 +4673,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "availability.ts"
     },
     {
@@ -4860,8 +4684,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_overlaps",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "overlaps()"
     },
     {
@@ -4871,8 +4695,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_filterbyavailability",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "filterbyavailability()"
     },
     {
@@ -4882,8 +4706,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 15,
+      "community_name": "capacity.ts",
       "norm_label": "capacity.test.ts"
     },
     {
@@ -4893,8 +4717,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_test_w",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 15,
+      "community_name": "capacity.ts",
       "norm_label": "w"
     },
     {
@@ -4904,8 +4728,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_test_at",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 15,
+      "community_name": "capacity.ts",
       "norm_label": "at()"
     },
     {
@@ -4915,8 +4739,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 15,
+      "community_name": "capacity.ts",
       "norm_label": "capacity.ts"
     },
     {
@@ -4926,8 +4750,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_persons",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 15,
+      "community_name": "capacity.ts",
       "norm_label": "persons"
     },
     {
@@ -4937,8 +4761,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_activedaywindow",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "activedaywindow()"
     },
     {
@@ -4948,8 +4772,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_coveredms",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 15,
+      "community_name": "capacity.ts",
       "norm_label": "coveredms()"
     },
     {
@@ -4959,8 +4783,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_dayload",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 15,
+      "community_name": "capacity.ts",
       "norm_label": "dayload()"
     },
     {
@@ -4970,8 +4794,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "completion.test.ts"
     },
     {
@@ -4981,8 +4805,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "completion.ts"
     },
     {
@@ -4992,8 +4816,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_completabletask",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "completabletask"
     },
     {
@@ -5003,8 +4827,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_accountentryinput",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "accountentryinput"
     },
     {
@@ -5014,8 +4838,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_recordcompletion",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "recordcompletion()"
     },
     {
@@ -5025,8 +4849,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 105,
+      "community_name": "planning.test.ts",
       "norm_label": "fairness.test.ts"
     },
     {
@@ -5036,8 +4860,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 105,
+      "community_name": "planning.test.ts",
       "norm_label": "fairness.ts"
     },
     {
@@ -5047,8 +4871,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_person_order",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 105,
+      "community_name": "planning.test.ts",
       "norm_label": "person_order"
     },
     {
@@ -5058,8 +4882,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_computeshare",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 105,
+      "community_name": "planning.test.ts",
       "norm_label": "computeshare()"
     },
     {
@@ -5069,8 +4893,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_selectbyfairness",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 105,
+      "community_name": "planning.test.ts",
       "norm_label": "selectbyfairness()"
     },
     {
@@ -5080,8 +4904,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "index.test.ts"
     },
     {
@@ -5091,8 +4915,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_phase",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "phase"
     },
     {
@@ -5102,8 +4926,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_day",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "day()"
     },
     {
@@ -5113,8 +4937,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_baseinput",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "baseinput()"
     },
     {
@@ -5124,8 +4948,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_index",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "index.ts"
     },
     {
@@ -5135,8 +4959,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_plantask",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "plantask()"
     },
     {
@@ -5146,8 +4970,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "personfilter.test.ts"
     },
     {
@@ -5157,8 +4981,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test_persons",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "persons"
     },
     {
@@ -5179,8 +5003,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "personfilter.ts"
     },
     {
@@ -5190,8 +5014,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_filterbyperson",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "filterbyperson()"
     },
     {
@@ -5201,8 +5025,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_types",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "types.ts"
     },
     {
@@ -5212,8 +5036,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_personkey",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "personkey"
     },
     {
@@ -5223,8 +5047,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_enginetask",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "enginetask"
     },
     {
@@ -5234,8 +5058,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_busywindow",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "busywindow"
     },
     {
@@ -5256,8 +5080,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_phaseconfig",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 64,
+      "community_name": "MealWeekList.tsx",
       "norm_label": "phaseconfig"
     },
     {
@@ -5267,8 +5091,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_balances",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 105,
+      "community_name": "planning.test.ts",
       "norm_label": "balances"
     },
     {
@@ -5278,8 +5102,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planinput",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 35,
+      "community_name": "index.test.ts",
       "norm_label": "planinput"
     },
     {
@@ -5289,8 +5113,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planresult",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "planresult"
     },
     {
@@ -5421,8 +5245,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_test",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "accounts.test.ts"
     },
     {
@@ -5432,8 +5256,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "accounts.ts"
     },
     {
@@ -5443,8 +5267,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getweeklybalances",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "getweeklybalances()"
     },
     {
@@ -5454,8 +5278,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getcomputedsplit",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "getcomputedsplit()"
     },
     {
@@ -5465,8 +5289,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_addmanualentry",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 51,
+      "community_name": "addManualEntryAction",
       "norm_label": "addmanualentry()"
     },
     {
@@ -5484,7 +5308,7 @@
       "label": "makeInput()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/calendar.test.ts",
-      "source_location": "L62",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_test_makeinput",
       "community": 5,
@@ -5495,7 +5319,7 @@
       "label": "addShift()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/calendar.test.ts",
-      "source_location": "L345",
+      "source_location": "L339",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_test_addshift",
       "community": 5,
@@ -5509,8 +5333,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendar.ts"
     },
     {
@@ -5520,8 +5344,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_isurlaubfrei",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isurlaubfrei()"
     },
     {
@@ -5531,8 +5355,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_isbirthday",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "isbirthday()"
     },
     {
@@ -5553,8 +5377,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_upsertevents",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "upsertevents()"
     },
     {
@@ -5564,8 +5388,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_replacewindowevents",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "replacewindowevents()"
     },
     {
@@ -5575,20 +5399,9 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_getbusywindows",
-      "community": 18,
-      "community_name": "calendar.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "getbusywindows()"
-    },
-    {
-      "label": "hasCalendarDataForWeek()",
-      "file_type": "code",
-      "source_file": "web/src/lib/repositories/calendar.ts",
-      "source_location": "L214",
-      "_origin": "ast",
-      "id": "web_src_lib_repositories_calendar_hascalendardataforweek",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "hascalendardataforweek()"
     },
     {
       "label": "choreImport.test.ts",
@@ -5737,7 +5550,7 @@
       "label": "getDraftMealPlan()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L71",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "web_src_lib_repositories_meals_getdraftmealplan",
       "community": 0,
@@ -5748,7 +5561,7 @@
       "label": "listRecipes()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L94",
+      "source_location": "L87",
       "_origin": "ast",
       "id": "web_src_lib_repositories_meals_listrecipes",
       "community": 0,
@@ -5759,7 +5572,7 @@
       "label": "getDomeShiftsForWeek()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L108",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "web_src_lib_repositories_meals_getdomeshiftsforweek",
       "community": 0,
@@ -5770,7 +5583,7 @@
       "label": "recentRecipeUse()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L142",
+      "source_location": "L135",
       "_origin": "ast",
       "id": "web_src_lib_repositories_meals_recentrecipeuse",
       "community": 0,
@@ -5971,8 +5784,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_test",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "pushsubscriptions.test.ts"
     },
     {
@@ -5982,8 +5795,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "pushsubscriptions.ts"
     },
     {
@@ -5993,8 +5806,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_pushsubscriptioninput",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "pushsubscriptioninput"
     },
     {
@@ -6004,8 +5817,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_storedsubscription",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "storedsubscription"
     },
     {
@@ -6026,8 +5839,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_deletesubscription",
-      "community": 27,
-      "community_name": "calendar.ts",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "deletesubscription()"
     },
     {
@@ -6114,8 +5927,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "routinetemplates.test.ts"
     },
     {
@@ -6125,8 +5938,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_todaymidnight",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "todaymidnight()"
     },
     {
@@ -6136,8 +5949,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_makechain",
-      "community": 7,
-      "community_name": "TaskDurationsControl.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "makechain()"
     },
     {
@@ -6323,8 +6136,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_assigntask",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "assigntask()"
     },
     {
@@ -6334,8 +6147,8 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createtaskinput",
-      "community": 103,
-      "community_name": "revalidateDashboard",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "createtaskinput"
     },
     {
@@ -6356,8 +6169,8 @@
       "source_location": "L250",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_opentaskdto",
-      "community": 103,
-      "community_name": "revalidateDashboard",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "opentaskdto"
     },
     {
@@ -6433,8 +6246,8 @@
       "source_location": "L346",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_routinetemplatedto",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routinetemplatedto"
     },
     {
@@ -6477,8 +6290,8 @@
       "source_location": "L500",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_normalizeweathercondition",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "normalizeweathercondition()"
     },
     {
@@ -6565,8 +6378,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_revalidate",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 3,
+      "community_name": "recipeIdeas.ts",
       "norm_label": "revalidate.ts"
     },
     {
@@ -6576,8 +6389,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_dashboard_paths",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 3,
+      "community_name": "recipeIdeas.ts",
       "norm_label": "dashboard_paths"
     },
     {
@@ -6587,8 +6400,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_revalidatedashboard",
-      "community": 2,
-      "community_name": "notes.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "revalidatedashboard()"
     },
     {
@@ -6697,8 +6510,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "calendarsync.ts"
     },
     {
@@ -6708,8 +6521,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_eventfetcher",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "eventfetcher"
     },
     {
@@ -6719,8 +6532,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_configuredcalendars",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "configuredcalendars()"
     },
     {
@@ -6730,8 +6543,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "web_src_lib_services_calendarsync_synccalendar",
-      "community": 15,
-      "community_name": "capacity.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "synccalendar()"
     },
     {
@@ -6763,8 +6576,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_chores",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 24,
+      "community_name": "chores.test.ts",
       "norm_label": "chores.ts"
     },
     {
@@ -6774,8 +6587,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_choreinput",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 24,
+      "community_name": "chores.test.ts",
       "norm_label": "choreinput"
     },
     {
@@ -6785,8 +6598,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_choretaskdata",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 24,
+      "community_name": "chores.test.ts",
       "norm_label": "choretaskdata"
     },
     {
@@ -6796,8 +6609,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_chores",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 45,
+      "community_name": "calendarSync.ts",
       "norm_label": "chores"
     },
     {
@@ -6807,8 +6620,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_adddays",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 24,
+      "community_name": "chores.test.ts",
       "norm_label": "adddays()"
     },
     {
@@ -6818,8 +6631,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_staggerwindow",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 24,
+      "community_name": "chores.test.ts",
       "norm_label": "staggerwindow()"
     },
     {
@@ -6829,8 +6642,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_buildchoretasks",
-      "community": 64,
-      "community_name": "MealWeekList.tsx",
+      "community": 24,
+      "community_name": "chores.test.ts",
       "norm_label": "buildchoretasks()"
     },
     {
@@ -7181,8 +6994,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_lib_services_mealingredientpush_test_mondayentry",
-      "community": 22,
-      "community_name": "shopping.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mondayentry()"
     },
     {
@@ -7467,8 +7280,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_overduecatchup",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "overduecatchup.ts"
     },
     {
@@ -7478,8 +7291,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_lib_services_overduecatchup_rolloverdueroutines",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "rolloverdueroutines()"
     },
     {
@@ -7533,8 +7346,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_planning",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "planning.ts"
     },
     {
@@ -7544,8 +7357,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_plandecision",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "plandecision"
     },
     {
@@ -7555,8 +7368,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_planduetasksoptions",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 55,
+      "community_name": "BusyWindow",
       "norm_label": "planduetasksoptions"
     },
     {
@@ -7566,8 +7379,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_default_phase",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "default_phase"
     },
     {
@@ -7577,8 +7390,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_parseweathercondition",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "parseweathercondition()"
     },
     {
@@ -7588,8 +7401,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_toenginetask",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "toenginetask()"
     },
     {
@@ -7599,8 +7412,8 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_loadphaseconfig",
-      "community": 43,
-      "community_name": "layout.tsx",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "loadphaseconfig()"
     },
     {
@@ -7610,8 +7423,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_planduetasks",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 122,
+      "community_name": "planning.ts",
       "norm_label": "planduetasks()"
     },
     {
@@ -8160,8 +7973,8 @@
       "source_location": "L223",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 7,
+      "community_name": "TaskDurationsControl.tsx",
       "norm_label": "rescheduleopenoccurrence()"
     },
     {
@@ -8171,8 +7984,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover_test",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 128,
+      "community_name": "rollover.test.ts",
       "norm_label": "rollover.test.ts"
     },
     {
@@ -8182,8 +7995,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "rollover.ts"
     },
     {
@@ -8193,8 +8006,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover_rolloveropentasks",
-      "community": 35,
-      "community_name": "index.test.ts",
+      "community": 5,
+      "community_name": "db.ts",
       "norm_label": "rolloveropentasks()"
     },
     {
@@ -8317,39 +8130,6 @@
       "community": 43,
       "community_name": "layout.tsx",
       "norm_label": "themepref"
-    },
-    {
-      "label": "weekOffset.test.ts",
-      "file_type": "code",
-      "source_file": "web/src/lib/weekOffset.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_lib_weekoffset_test",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "weekoffset.test.ts"
-    },
-    {
-      "label": "weekOffset.ts",
-      "file_type": "code",
-      "source_file": "web/src/lib/weekOffset.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "web_src_lib_weekoffset",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "weekoffset.ts"
-    },
-    {
-      "label": "clampWeekOffset()",
-      "file_type": "code",
-      "source_file": "web/src/lib/weekOffset.ts",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "web_src_lib_weekoffset_clampweekoffset",
-      "community": 0,
-      "community_name": "meals.ts",
-      "norm_label": "clampweekoffset()"
     },
     {
       "label": "db.ts",
@@ -15519,9 +15299,9 @@
       "source_location": "L11",
       "complexity": 1,
       "loc": 1,
-      "community": 56,
+      "community": 0,
       "norm_label": "pill",
-      "community_name": "openMeteo.ts",
+      "community_name": "meals.ts",
       "id": "web_src_components_mealplancontrol_pill"
     },
     {
@@ -16221,9 +16001,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 4,
+      "community": 56,
       "norm_label": "events",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_events"
     },
     {
@@ -16234,9 +16014,9 @@
       "source_location": "L19",
       "complexity": 1,
       "loc": 1,
-      "community": 4,
+      "community": 56,
       "norm_label": "[sport]",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_sport"
     },
     {
@@ -16247,9 +16027,9 @@
       "source_location": "L31",
       "complexity": 2,
       "loc": 1,
-      "community": 4,
+      "community": 56,
       "norm_label": "birthday",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_birthday"
     },
     {
@@ -16260,9 +16040,9 @@
       "source_location": "L42",
       "complexity": 2,
       "loc": 1,
-      "community": 4,
+      "community": 56,
       "norm_label": "u4",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_u4"
     },
     {
@@ -16273,9 +16053,9 @@
       "source_location": "L54",
       "complexity": 1,
       "loc": 1,
-      "community": 4,
+      "community": 56,
       "norm_label": "familyevents",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_familyevents"
     },
     {
@@ -16286,9 +16066,9 @@
       "source_location": "L62",
       "complexity": 1,
       "loc": 1,
-      "community": 4,
+      "community": 56,
       "norm_label": "birthdayevents",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "openMeteo.ts",
       "id": "web_src_integrations_calendar_google_test_birthdayevents"
     },
     {
@@ -16325,9 +16105,9 @@
       "source_location": "L20",
       "complexity": 1,
       "loc": 1,
-      "community": 4,
+      "community": 92,
       "norm_label": "google_provider",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "google.ts",
       "id": "web_src_integrations_calendar_googleauth_google_provider"
     },
     {
@@ -16338,9 +16118,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 4,
+      "community": 92,
       "norm_label": "calendar_readonly_scope",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "google.ts",
       "id": "web_src_integrations_calendar_googleauth_calendar_readonly_scope"
     },
     {
@@ -16546,7 +16326,7 @@
       "source_location": "L21",
       "complexity": 2,
       "loc": 1,
-      "community": 75,
+      "community": 5,
       "norm_label": "prisma",
       "community_name": "db.ts",
       "id": "web_src_lib_db_prisma"
@@ -16728,9 +16508,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 18,
+      "community": 5,
       "norm_label": "start",
-      "community_name": "calendar.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_calendar_shifts_test_start"
     },
     {
@@ -16741,9 +16521,9 @@
       "source_location": "L14",
       "complexity": 1,
       "loc": 1,
-      "community": 18,
+      "community": 5,
       "norm_label": "wake_hour",
-      "community_name": "calendar.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_calendar_shifts_wake_hour"
     },
     {
@@ -16754,9 +16534,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 3,
-      "community": 13,
+      "community": 55,
       "norm_label": "busy",
-      "community_name": "weatherCheck.ts",
+      "community_name": "BusyWindow",
       "id": "web_src_lib_engine_availability_test_busy"
     },
     {
@@ -16767,9 +16547,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 55,
       "norm_label": "window",
-      "community_name": "weatherCheck.ts",
+      "community_name": "BusyWindow",
       "id": "web_src_lib_engine_availability_test_window"
     },
     {
@@ -16780,9 +16560,9 @@
       "source_location": "L25",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 15,
       "norm_label": "busy",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_capacity_test_busy"
     },
     {
@@ -16793,9 +16573,9 @@
       "source_location": "L26",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 15,
       "norm_label": "load",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_capacity_test_load"
     },
     {
@@ -16806,9 +16586,9 @@
       "source_location": "L47",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 15,
       "norm_label": "all",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_capacity_test_all"
     },
     {
@@ -16819,9 +16599,9 @@
       "source_location": "L7",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 15,
       "norm_label": "active_start_hour",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_capacity_active_start_hour"
     },
     {
@@ -16832,9 +16612,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 15,
       "norm_label": "active_end_hour",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_capacity_active_end_hour"
     },
     {
@@ -16845,9 +16625,9 @@
       "source_location": "L18",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 105,
       "norm_label": "persons",
-      "community_name": "weatherCheck.ts",
+      "community_name": "planning.test.ts",
       "id": "web_src_lib_engine_fairness_test_persons"
     },
     {
@@ -16858,9 +16638,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 105,
       "norm_label": "balances",
-      "community_name": "weatherCheck.ts",
+      "community_name": "planning.test.ts",
       "id": "web_src_lib_engine_fairness_test_balances"
     },
     {
@@ -16871,9 +16651,9 @@
       "source_location": "L27",
       "complexity": 1,
       "loc": 7,
-      "community": 13,
+      "community": 64,
       "norm_label": "task",
-      "community_name": "weatherCheck.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_task"
     },
     {
@@ -16884,9 +16664,9 @@
       "source_location": "L34",
       "complexity": 1,
       "loc": 5,
-      "community": 13,
+      "community": 64,
       "norm_label": "forecast",
-      "community_name": "weatherCheck.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_forecast"
     },
     {
@@ -16897,9 +16677,9 @@
       "source_location": "L39",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 64,
       "norm_label": "result",
-      "community_name": "weatherCheck.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_result"
     },
     {
@@ -16910,9 +16690,9 @@
       "source_location": "L57",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 64,
       "norm_label": "window",
-      "community_name": "weatherCheck.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_window"
     },
     {
@@ -16923,9 +16703,9 @@
       "source_location": "L58",
       "complexity": 1,
       "loc": 4,
-      "community": 13,
+      "community": 64,
       "norm_label": "busy",
-      "community_name": "weatherCheck.ts",
+      "community_name": "MealWeekList.tsx",
       "id": "web_src_lib_engine_index_test_busy"
     },
     {
@@ -16936,9 +16716,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 35,
       "norm_label": "full_threshold",
-      "community_name": "weatherCheck.ts",
+      "community_name": "index.test.ts",
       "id": "web_src_lib_engine_index_full_threshold"
     },
     {
@@ -17001,9 +16781,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 51,
       "norm_label": "client",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_client"
     },
     {
@@ -17014,9 +16794,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 51,
       "norm_label": "balances",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_balances"
     },
     {
@@ -17027,9 +16807,9 @@
       "source_location": "L26",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 51,
       "norm_label": "split",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_split"
     },
     {
@@ -17040,9 +16820,9 @@
       "source_location": "L31",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 51,
       "norm_label": "before",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_before"
     },
     {
@@ -17053,9 +16833,9 @@
       "source_location": "L33",
       "complexity": 1,
       "loc": 4,
-      "community": 11,
+      "community": 51,
       "norm_label": "created",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_created"
     },
     {
@@ -17066,9 +16846,9 @@
       "source_location": "L42",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 51,
       "norm_label": "after",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "web_src_lib_repositories_accounts_test_after"
     },
     {
@@ -17976,9 +17756,9 @@
       "source_location": "L13",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 26,
       "norm_label": "client",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_client"
     },
     {
@@ -17989,9 +17769,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 26,
       "norm_label": "sub",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_sub"
     },
     {
@@ -18002,9 +17782,9 @@
       "source_location": "L28",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 26,
       "norm_label": "all",
-      "community_name": "calendar.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_all"
     },
     {
@@ -18834,9 +18614,9 @@
       "source_location": "L10",
       "complexity": 1,
       "loc": 1,
-      "community": 15,
+      "community": 5,
       "norm_label": "sync_window_days",
-      "community_name": "capacity.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_calendarsync_sync_window_days"
     },
     {
@@ -18951,9 +18731,9 @@
       "source_location": "L20",
       "complexity": 1,
       "loc": 1,
-      "community": 64,
+      "community": 24,
       "norm_label": "no_rain",
-      "community_name": "MealWeekList.tsx",
+      "community_name": "chores.test.ts",
       "id": "web_src_lib_services_chores_no_rain"
     },
     {
@@ -20914,9 +20694,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 26,
+      "community": 128,
       "norm_label": "client",
-      "community_name": "db.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_lib_services_rollover_test_client"
     },
     {
@@ -20927,9 +20707,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 26,
+      "community": 128,
       "norm_label": "task",
-      "community_name": "db.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_lib_services_rollover_test_task"
     },
     {
@@ -20940,9 +20720,9 @@
       "source_location": "L23",
       "complexity": 1,
       "loc": 1,
-      "community": 26,
+      "community": 128,
       "norm_label": "fromday",
-      "community_name": "db.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_lib_services_rollover_test_fromday"
     },
     {
@@ -20953,9 +20733,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 26,
+      "community": 128,
       "norm_label": "today",
-      "community_name": "db.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_lib_services_rollover_test_today"
     },
     {
@@ -20966,9 +20746,9 @@
       "source_location": "L27",
       "complexity": 1,
       "loc": 1,
-      "community": 26,
+      "community": 128,
       "norm_label": "count",
-      "community_name": "db.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_lib_services_rollover_test_count"
     },
     {
@@ -20979,9 +20759,9 @@
       "source_location": "L30",
       "complexity": 1,
       "loc": 1,
-      "community": 26,
+      "community": 128,
       "norm_label": "updated",
-      "community_name": "db.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_lib_services_rollover_test_updated"
     },
     {
@@ -21109,9 +20889,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 51,
       "norm_label": "accounts.ts",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_actions_accounts_ts"
     },
     {
@@ -21122,9 +20902,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 35,
+      "community": 5,
       "norm_label": "calendar.ts",
-      "community_name": "index.test.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_actions_calendar_ts"
     },
     {
@@ -21174,9 +20954,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 15,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "capacity.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_auth_google_route_ts"
     },
     {
@@ -21187,9 +20967,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 15,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "capacity.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_auth_google_callback_route_ts"
     },
     {
@@ -21200,9 +20980,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 15,
+      "community": 5,
       "norm_label": "route.ts",
-      "community_name": "capacity.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_api_sync_calendar_route_ts"
     },
     {
@@ -21356,9 +21136,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 4,
+      "community": 56,
       "norm_label": "fixture.ts",
-      "community_name": "calendarSync.test.ts",
+      "community_name": "openMeteo.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_integrations_calendar_fixture_ts"
     },
     {
@@ -21369,7 +21149,7 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 75,
+      "community": 5,
       "norm_label": "db.ts",
       "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_db_ts"
@@ -21408,9 +21188,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 51,
       "norm_label": "accounts.ts",
-      "community_name": "planning.test.ts",
+      "community_name": "addManualEntryAction",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_repositories_accounts_ts"
     },
     {
@@ -21421,9 +21201,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 18,
+      "community": 5,
       "norm_label": "calendar.ts",
-      "community_name": "calendar.test.ts",
+      "community_name": "db.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_repositories_calendar_ts"
     },
     {
@@ -23593,16 +23373,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/package.json",
-      "source_location": "L47",
-      "weight": 1.0,
-      "source": "web_package",
-      "target": "web_package_allowscripts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/package.json",
       "source_location": "L19",
       "weight": 1.0,
       "source": "web_package",
@@ -24336,66 +24106,6 @@
       "context": "import",
       "source": "web_package_devdependencies_vitest",
       "target": "vitest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/package.json",
-      "source_location": "L49",
-      "weight": 1.0,
-      "source": "web_package_allowscripts",
-      "target": "web_package_allowscripts_better_sqlite3_12_10_0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/package.json",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "web_package_allowscripts",
-      "target": "web_package_allowscripts_esbuild_0_28_0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/package.json",
-      "source_location": "L51",
-      "weight": 1.0,
-      "source": "web_package_allowscripts",
-      "target": "web_package_allowscripts_prisma_7_8_0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/package.json",
-      "source_location": "L48",
-      "weight": 1.0,
-      "source": "web_package_allowscripts",
-      "target": "web_package_allowscripts_prisma_engines_7_8_0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/package.json",
-      "source_location": "L52",
-      "weight": 1.0,
-      "source": "web_package_allowscripts",
-      "target": "web_package_allowscripts_sharp_0_34_5",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/package.json",
-      "source_location": "L53",
-      "weight": 1.0,
-      "source": "web_package_allowscripts",
-      "target": "web_package_allowscripts_unrs_resolver_1_12_2",
       "confidence_score": 1.0
     },
     {
@@ -25181,7 +24891,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L14",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page",
       "target": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
@@ -25236,7 +24946,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page",
       "target": "web_src_components_mobile_mealweeklist",
@@ -25247,7 +24957,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page",
       "target": "web_src_components_mobile_mealweeklist_mealweeklist",
@@ -25258,29 +24968,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_components_mobile_mealweeknav",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_components_mobile_mealweeknav_mealweeknav",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page",
       "target": "web_src_components_mobile_pageheader",
@@ -25291,7 +24979,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page",
       "target": "web_src_components_mobile_pageheader_pageheader",
@@ -25317,61 +25005,6 @@
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page",
       "target": "web_src_components_recipeideascontrol_recipeideascontrol",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_lib_dates",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_lib_dates_weekoffsetlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_lib_dates_weekstartwithoffset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_lib_repositories_calendar",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_lib_repositories_calendar_hascalendardataforweek",
       "confidence_score": 1.0
     },
     {
@@ -25419,67 +25052,12 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_lib_weekoffset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page",
-      "target": "web_src_lib_weekoffset_clampweekoffset",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
-      "target": "web_src_lib_dates_weekoffsetlabel"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
-      "target": "web_src_lib_dates_weekstartwithoffset"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
-      "target": "web_src_lib_repositories_calendar_hascalendardataforweek"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L29",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
       "target": "web_src_lib_repositories_meals_getdraftmealplan"
@@ -25490,7 +25068,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L28",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
       "target": "web_src_lib_repositories_meals_getweekmealplan"
@@ -25501,21 +25079,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L30",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
       "target": "web_src_lib_repositories_meals_listrecipes"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/(mobile)/mobile/meals/page.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "web_src_app_mobile_mobile_meals_page_mobilemealspage",
-      "target": "web_src_lib_weekoffset_clampweekoffset"
     },
     {
       "relation": "contains",
@@ -26500,7 +26067,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L93",
+      "source_location": "L90",
       "weight": 1.0,
       "source": "web_src_app_actions_meals",
       "target": "web_src_app_actions_meals_approvedraftaction",
@@ -26510,7 +26077,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L82",
+      "source_location": "L79",
       "weight": 1.0,
       "source": "web_src_app_actions_meals",
       "target": "web_src_app_actions_meals_discarddraftaction",
@@ -26530,7 +26097,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L111",
+      "source_location": "L108",
       "weight": 1.0,
       "source": "web_src_app_actions_meals",
       "target": "web_src_app_actions_meals_pushmealingredientsaction",
@@ -26540,7 +26107,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L69",
+      "source_location": "L66",
       "weight": 1.0,
       "source": "web_src_app_actions_meals",
       "target": "web_src_app_actions_meals_rerolldraftdayaction",
@@ -26550,7 +26117,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L101",
+      "source_location": "L98",
       "weight": 1.0,
       "source": "web_src_app_actions_meals",
       "target": "web_src_app_actions_meals_setactivedayrecipeaction",
@@ -26560,7 +26127,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L76",
+      "source_location": "L73",
       "weight": 1.0,
       "source": "web_src_app_actions_meals",
       "target": "web_src_app_actions_meals_setdraftdayrecipeaction",
@@ -26607,40 +26174,7 @@
       "source_location": "L25",
       "weight": 1.0,
       "source": "web_src_app_actions_meals",
-      "target": "web_src_lib_dates_formatweekrange",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "web_src_app_actions_meals",
       "target": "web_src_lib_dates_localdatekey",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "web_src_app_actions_meals",
-      "target": "web_src_lib_dates_weekoffsetlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "web_src_app_actions_meals",
-      "target": "web_src_lib_dates_weekoffsetof",
       "confidence_score": 1.0
     },
     {
@@ -26890,7 +26424,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L17",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_app_actions_meals",
@@ -26901,7 +26435,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealPlanControl.tsx",
-      "source_location": "L13",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "web_src_components_mealplancontrol",
       "target": "web_src_app_actions_meals",
@@ -26924,43 +26458,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L61",
-      "weight": 1.0,
-      "source": "web_src_app_actions_meals_generateplanaction",
-      "target": "web_src_lib_dates_formatweekrange"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/meals.ts",
       "source_location": "L46",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_generateplanaction",
       "target": "web_src_lib_dates_localdatekey"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "web_src_app_actions_meals_generateplanaction",
-      "target": "web_src_lib_dates_weekoffsetlabel"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L58",
-      "weight": 1.0,
-      "source": "web_src_app_actions_meals_generateplanaction",
-      "target": "web_src_lib_dates_weekoffsetof"
     },
     {
       "relation": "calls",
@@ -27001,7 +26502,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L65",
+      "source_location": "L62",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_generateplanaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
@@ -27034,7 +26535,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L59",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_generateplanaction",
       "target": "web_src_lib_services_pushnotify_sendtoadults"
@@ -27044,7 +26545,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealPlanControl.tsx",
-      "source_location": "L13",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "web_src_components_mealplancontrol",
       "target": "web_src_app_actions_meals_generateplanaction",
@@ -27056,7 +26557,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/MealPlanControl.tsx",
-      "source_location": "L24",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "web_src_components_mealplancontrol_mealplancontrol",
       "target": "web_src_app_actions_meals_generateplanaction"
@@ -27067,7 +26568,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L70",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_rerolldraftdayaction",
       "target": "web_src_lib_repositories_phase_getactivephase"
@@ -27078,7 +26579,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L72",
+      "source_location": "L69",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_rerolldraftdayaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
@@ -27089,7 +26590,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L71",
+      "source_location": "L68",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_rerolldraftdayaction",
       "target": "web_src_lib_services_mealdraft_rerolldraftday"
@@ -27099,7 +26600,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L17",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_app_actions_meals_rerolldraftdayaction",
@@ -27111,7 +26612,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L89",
+      "source_location": "L73",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel_mealdraftpanel",
       "target": "web_src_app_actions_meals_rerolldraftdayaction"
@@ -27122,7 +26623,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L78",
+      "source_location": "L75",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_setdraftdayrecipeaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
@@ -27133,7 +26634,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L77",
+      "source_location": "L74",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_setdraftdayrecipeaction",
       "target": "web_src_lib_services_mealdraft_setdraftdayrecipe"
@@ -27143,7 +26644,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L17",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_app_actions_meals_setdraftdayrecipeaction",
@@ -27155,7 +26656,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L100",
+      "source_location": "L84",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel_mealdraftpanel",
       "target": "web_src_app_actions_meals_setdraftdayrecipeaction"
@@ -27166,7 +26667,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L85",
+      "source_location": "L82",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_discarddraftaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
@@ -27177,7 +26678,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L84",
+      "source_location": "L81",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_discarddraftaction",
       "target": "web_src_lib_services_mealdraft_discarddraft"
@@ -27187,7 +26688,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L17",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_app_actions_meals_discarddraftaction",
@@ -27199,7 +26700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L62",
+      "source_location": "L46",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel_mealdraftpanel",
       "target": "web_src_app_actions_meals_discarddraftaction"
@@ -27210,7 +26711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L96",
+      "source_location": "L93",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_approvedraftaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
@@ -27221,7 +26722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L95",
+      "source_location": "L92",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_approvedraftaction",
       "target": "web_src_lib_services_mealdraft_approvedraft"
@@ -27231,7 +26732,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L17",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_app_actions_meals_approvedraftaction",
@@ -27243,7 +26744,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L48",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel_mealdraftpanel",
       "target": "web_src_app_actions_meals_approvedraftaction"
@@ -27254,7 +26755,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L103",
+      "source_location": "L100",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_setactivedayrecipeaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
@@ -27265,7 +26766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L102",
+      "source_location": "L99",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_setactivedayrecipeaction",
       "target": "web_src_lib_services_mealdraft_setactivedayrecipe"
@@ -27298,7 +26799,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L115",
+      "source_location": "L112",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_pushmealingredientsaction",
       "target": "web_src_lib_revalidate_revalidatedashboard"
@@ -27309,7 +26810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/meals.ts",
-      "source_location": "L114",
+      "source_location": "L111",
       "weight": 1.0,
       "source": "web_src_app_actions_meals_pushmealingredientsaction",
       "target": "web_src_lib_services_mealingredientpush_pushmealingredients"
@@ -30629,7 +30130,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L26",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_components_mealdraftpanel_mealdraftpanel",
@@ -30640,7 +30141,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L16",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_components_widgets",
@@ -30651,7 +30152,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L16",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_components_widgets_mealreasonbadge",
@@ -30662,7 +30163,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L15",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_lib_data",
@@ -30673,7 +30174,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L15",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_lib_data_draftmeal",
@@ -30684,7 +30185,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealDraftPanel.tsx",
-      "source_location": "L15",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "web_src_components_mealdraftpanel",
       "target": "web_src_lib_data_recipeoption",
@@ -30694,7 +30195,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/components/MealPlanControl.tsx",
-      "source_location": "L17",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "web_src_components_mealplancontrol",
       "target": "web_src_components_mealplancontrol_mealplancontrol",
@@ -32366,114 +31867,6 @@
       "source": "web_src_components_mobile_mealweeklist_mealweeklist",
       "target": "web_src_components_mobile_mealweeklist_ingredientlabel",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav",
-      "target": "web_src_components_mobile_mealweeknav_arrow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L42",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav",
-      "target": "web_src_components_mobile_mealweeknav_mealweeknav",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav",
-      "target": "web_src_lib_dates",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav",
-      "target": "web_src_lib_dates_formatweekrange",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav",
-      "target": "web_src_lib_dates_weekoffsetlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav",
-      "target": "web_src_lib_dates_weekstartwithoffset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav",
-      "target": "web_src_lib_weekoffset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav_mealweeknav",
-      "target": "web_src_lib_dates_formatweekrange"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav_mealweeknav",
-      "target": "web_src_lib_dates_weekoffsetlabel"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/components/mobile/MealWeekNav.tsx",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "web_src_components_mobile_mealweeknav_mealweeknav",
-      "target": "web_src_lib_dates_weekstartwithoffset"
     },
     {
       "relation": "contains",
@@ -35702,7 +35095,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L130",
+      "source_location": "L123",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_getdomeshiftsforweek",
       "target": "web_src_lib_calendar_shifts_classifyshift"
@@ -36161,82 +35554,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_test",
-      "target": "web_src_lib_dates",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_test",
-      "target": "web_src_lib_dates_formatweekrange",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_test",
-      "target": "web_src_lib_dates_mondayof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_test",
-      "target": "web_src_lib_dates_test_wednesday",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_test",
-      "target": "web_src_lib_dates_weekoffsetlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_test",
-      "target": "web_src_lib_dates_weekoffsetof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_test",
-      "target": "web_src_lib_dates_weekstartwithoffset",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/dates.ts",
@@ -36280,16 +35597,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/dates.ts",
-      "source_location": "L81",
-      "weight": 1.0,
-      "source": "web_src_lib_dates",
-      "target": "web_src_lib_dates_formatweekrange",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
       "source_location": "L57",
       "weight": 1.0,
       "source": "web_src_lib_dates",
@@ -36314,36 +35621,6 @@
       "weight": 1.0,
       "source": "web_src_lib_dates",
       "target": "web_src_lib_dates_weekboundsof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L89",
-      "weight": 1.0,
-      "source": "web_src_lib_dates",
-      "target": "web_src_lib_dates_weekoffsetlabel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L74",
-      "weight": 1.0,
-      "source": "web_src_lib_dates",
-      "target": "web_src_lib_dates_weekoffsetof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L66",
-      "weight": 1.0,
-      "source": "web_src_lib_dates",
-      "target": "web_src_lib_dates_weekstartwithoffset",
       "confidence_score": 1.0
     },
     {
@@ -36583,7 +35860,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L75",
+      "source_location": "L68",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_getdraftmealplan",
       "target": "web_src_lib_dates_currentweekbounds"
@@ -36594,7 +35871,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L38",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_getweekmealplan",
       "target": "web_src_lib_dates_currentweekbounds"
@@ -36907,39 +36184,6 @@
       "target": "web_src_lib_dates_weekboundsof"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L83",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_formatweekrange",
-      "target": "web_src_lib_dates_adddays",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L67",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_weekstartwithoffset",
-      "target": "web_src_lib_dates_adddays",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/calendar.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_calendar_test",
-      "target": "web_src_lib_dates_adddays",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -36956,7 +36200,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L147",
+      "source_location": "L140",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_recentrecipeuse",
       "target": "web_src_lib_dates_adddays"
@@ -37049,28 +36293,6 @@
       "target": "web_src_lib_dates_weekboundsof"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_weekoffsetof",
-      "target": "web_src_lib_dates_mondayof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L67",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_weekstartwithoffset",
-      "target": "web_src_lib_dates_mondayof",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -37087,7 +36309,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L112",
+      "source_location": "L105",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_getdomeshiftsforweek",
       "target": "web_src_lib_dates_mondayof"
@@ -37113,72 +36335,6 @@
       "weight": 1.0,
       "source": "web_src_lib_services_mealconstraints_derivedayconstraints",
       "target": "web_src_lib_dates_mondayof"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/dates.ts",
-      "source_location": "L82",
-      "weight": 1.0,
-      "source": "web_src_lib_dates_formatweekrange",
-      "target": "web_src_lib_dates_weekboundsof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/calendar.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_calendar",
-      "target": "web_src_lib_dates_weekboundsof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/lib/repositories/calendar.ts",
-      "source_location": "L218",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_calendar_hascalendardataforweek",
-      "target": "web_src_lib_dates_weekboundsof"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_meals",
-      "target": "web_src_lib_dates_weekboundsof",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_meals_getdraftmealplan",
-      "target": "web_src_lib_dates_weekboundsof"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L38",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_meals_getweekmealplan",
-      "target": "web_src_lib_dates_weekboundsof"
     },
     {
       "relation": "imports",
@@ -37263,7 +36419,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L128",
+      "source_location": "L121",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_getdomeshiftsforweek",
       "target": "web_src_lib_dates_localdatekey"
@@ -37277,28 +36433,6 @@
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_test",
       "target": "web_src_lib_dates_localdatekey",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/calendar.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_calendar_test",
-      "target": "web_src_lib_dates_weekstartwithoffset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/meals.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_meals_test",
-      "target": "web_src_lib_dates_weekstartwithoffset",
       "confidence_score": 1.0
     },
     {
@@ -39762,17 +38896,6 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "web_src_lib_repositories_calendar_test",
-      "target": "web_src_lib_repositories_calendar_hascalendardataforweek",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/calendar.test.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_calendar_test",
       "target": "web_src_lib_repositories_calendar_replacewindowevents",
       "confidence_score": 1.0
     },
@@ -39780,7 +38903,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/calendar.test.ts",
-      "source_location": "L345",
+      "source_location": "L339",
       "weight": 1.0,
       "source": "web_src_lib_repositories_calendar_test",
       "target": "web_src_lib_repositories_calendar_test_addshift",
@@ -39790,7 +38913,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/calendar.test.ts",
-      "source_location": "L62",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "web_src_lib_repositories_calendar_test",
       "target": "web_src_lib_repositories_calendar_test_makeinput",
@@ -40048,16 +39171,6 @@
       "weight": 1.0,
       "source": "web_src_lib_repositories_calendar",
       "target": "web_src_lib_repositories_calendar_gettodaysevents",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/repositories/calendar.ts",
-      "source_location": "L214",
-      "weight": 1.0,
-      "source": "web_src_lib_repositories_calendar",
-      "target": "web_src_lib_repositories_calendar_hascalendardataforweek",
       "confidence_score": 1.0
     },
     {
@@ -40601,7 +39714,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L108",
+      "source_location": "L101",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals",
       "target": "web_src_lib_repositories_meals_getdomeshiftsforweek",
@@ -40611,7 +39724,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L71",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals",
       "target": "web_src_lib_repositories_meals_getdraftmealplan",
@@ -40641,7 +39754,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L94",
+      "source_location": "L87",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals",
       "target": "web_src_lib_repositories_meals_listrecipes",
@@ -40651,7 +39764,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L142",
+      "source_location": "L135",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals",
       "target": "web_src_lib_repositories_meals_recentrecipeuse",
@@ -40726,7 +39839,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L51",
+      "source_location": "L48",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_getweekmealplan",
       "target": "web_src_lib_repositories_meals_istoday",
@@ -40738,7 +39851,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/meals.ts",
-      "source_location": "L61",
+      "source_location": "L58",
       "weight": 1.0,
       "source": "web_src_lib_repositories_meals_getweekmealplan",
       "target": "web_src_lib_services_obsidian_obsidianurl"
@@ -47117,38 +46230,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/weekOffset.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_weekoffset_test",
-      "target": "web_src_lib_weekoffset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/weekOffset.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "web_src_lib_weekoffset_test",
-      "target": "web_src_lib_weekoffset_clampweekoffset",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/src/lib/weekOffset.ts",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "web_src_lib_weekoffset",
-      "target": "web_src_lib_weekoffset_clampweekoffset",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/test/db.ts",
@@ -52810,5 +51891,5 @@
       "source_file": "docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md"
     }
   ],
-  "built_at_commit": "9d809d475d7042cf02333cb7aec92a23e5b824f2"
+  "built_at_commit": "7c3642f03d331a6f77f09c5143c90be739540cb7"
 }
