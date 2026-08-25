@@ -9,7 +9,7 @@
 import { spawn } from "node:child_process";
 import { tmpdir } from "node:os";
 
-import type { Rating } from "@/lib/services/recipeVault";
+import type { Rating } from "@/lib/domain";
 import type { ImportedRecipe } from "@/lib/services/recipeImport";
 import { slugFromName } from "@/lib/services/recipeImport";
 import { splitSteps } from "@/lib/services/recipeForm";

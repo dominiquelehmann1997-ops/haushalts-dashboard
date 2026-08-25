@@ -56,8 +56,6 @@ export interface Meal {
   ingredients?: MealIngredient[];
   /** True, wenn die Zutaten dieses Gerichts schon auf Bring gepusht wurden. */
   pushed?: boolean;
-  /** Obsidian-Deeplink zum Rezept; `null` ohne Vault-Anker oder ohne `OBSIDIAN_VAULT_NAME`. */
-  obsidianUrl?: string | null;
 }
 
 export interface DraftMeal {
@@ -75,6 +73,16 @@ export interface RecipeOption {
   id: string;
   name: string;
 }
+
+/**
+ * Bewertung eines Rezepts. Steuert die Gewichtung in der Essensplan-Auswahl
+ * (`mealWeights.ts`) und wird beim Import vergeben.
+ *
+ * `Recipe.rating` ist bewusst nur `string`: in der DB steht eine Textspalte,
+ * und die App soll an einem unbekannten Wert nicht zerbrechen, sondern ihn
+ * anzeigen. Dieser Typ gilt für alles, was Bewertungen selbst *vergibt*.
+ */
+export type Rating = "favorit" | "ok" | "selten";
 
 /** Eine Zutatenzeile eines Rezepts, in der Reihenfolge des Rezepts. */
 export interface RecipeIngredient {

@@ -10,7 +10,7 @@
 // Geschrieben wird hier nichts: `ImportedRecipe` geht an
 // `upsertImportedRecipe` (repositories/recipes.ts) und landet in der DB.
 
-import type { Rating } from "@/lib/services/recipeVault";
+import type { Rating } from "@/lib/domain";
 
 /** Was aus der Seite geholt und in die DB übernommen wird. */
 export interface ImportedIngredient {

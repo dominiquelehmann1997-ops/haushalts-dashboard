@@ -1,5 +1,14 @@
 # Initialisierungs-Prompt — Rezept-Importer (ReciMe-Klon → Obsidian)
 
+> **ÜBERHOLT (2026-08-25).** Dieser Prompt baut einen Importer, der Notizen in
+> den Obsidian-Vault schreibt. Den Vault gibt es nicht mehr — Rezepte gehören
+> in die DB. Wer das Vorhaben (Instagram/TikTok-Rezepte) wieder aufnimmt, muss
+> das Ziel umstellen: statt einer `.md` im Vault ein `ImportedRecipe`, das
+> über `upsertImportedRecipe` in die DB geht (siehe
+> `web/src/lib/services/recipeImport.ts`). Bis dahin liegt der Prompt hier als
+> Entwurf, nicht als Anleitung. Die beiden Schema-Dokumente, die er unten
+> nennt, sind mit dem Vault-Ausbau entfallen.
+
 > Diesen Block in das **neue, leere Projekt** an Claude geben. Vorher diese zwei
 > Dateien ins neue Repo kopieren (die KI braucht sie):
 > `recipe-vault-import-contract.md` (Prosa-Vertrag) und `recipe-vault-schema.md`

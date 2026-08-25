@@ -114,44 +114,6 @@ describe("meals repository", () => {
     expect(names).toEqual(expect.arrayContaining(["Nudeln", "Tomaten", "Basilikum", "Parmesan"]));
   });
 
-  it("getWeekMealPlan liefert obsidianUrl aus Recipe.vaultFile + OBSIDIAN_VAULT_NAME", async () => {
-    const ORIG = process.env.OBSIDIAN_VAULT_NAME;
-    try {
-      const { start } = currentWeekBounds();
-      const monday = new Date(start);
-      const seeded = await client.mealPlanEntry.findFirstOrThrow({
-        where: { date: { gte: monday } },
-        orderBy: { date: "asc" },
-      });
-      await client.recipe.update({
-        where: { id: seeded.recipeId! },
-        data: { vaultFile: "Rezepte/Pasta al Pomodoro" },
-      });
-      process.env.OBSIDIAN_VAULT_NAME = "Haushalt";
-
-      const plan = await getWeekMealPlan(client);
-      const mondayMeal = plan.find((m) => m.day === "Mo");
-      expect(mondayMeal?.obsidianUrl).toBe(
-        "obsidian://open?vault=Haushalt&file=Rezepte%2FPasta%20al%20Pomodoro",
-      );
-    } finally {
-      if (ORIG === undefined) delete process.env.OBSIDIAN_VAULT_NAME;
-      else process.env.OBSIDIAN_VAULT_NAME = ORIG;
-    }
-  });
-
-  it("getWeekMealPlan liefert obsidianUrl=null ohne OBSIDIAN_VAULT_NAME", async () => {
-    const ORIG = process.env.OBSIDIAN_VAULT_NAME;
-    delete process.env.OBSIDIAN_VAULT_NAME;
-    try {
-      const plan = await getWeekMealPlan(client);
-      expect(plan.find((m) => m.day === "Mo")?.obsidianUrl).toBeNull();
-    } finally {
-      if (ORIG === undefined) delete process.env.OBSIDIAN_VAULT_NAME;
-      else process.env.OBSIDIAN_VAULT_NAME = ORIG;
-    }
-  });
-
   it("getWeekMealPlan meldet pushed=true, wenn ingredientsPushedAt gesetzt ist", async () => {
     const { start } = currentWeekBounds();
     const monday = new Date(start);

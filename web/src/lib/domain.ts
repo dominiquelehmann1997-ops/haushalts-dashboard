@@ -18,6 +18,7 @@ export type {
   MealIngredient,
   DraftMeal,
   RecipeOption,
+  Rating,
   Recipe,
   RecipeIngredient,
   RecipeFilter,

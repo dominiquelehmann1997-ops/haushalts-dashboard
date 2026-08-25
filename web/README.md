@@ -35,42 +35,37 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Rezepte-Vault
+## Rezepte
 
-Rezepte werden in einem Obsidian-Vault als Markdown gepflegt (Vault = Wahrheit,
-DB = Cache). Das Dashboard liest die lokal per Obsidian Sync gesyncte Kopie.
+Rezepte liegen in der DB und werden in der App gepflegt: *Essen → Rezepte* mit
+Suche, Filtern, Detailseite samt Portionsrechner, Anlegen und Bearbeiten.
+Übernehmen per Link geht über *Rezept per Link* im Essensplan oder
+`npm run import:recipe -- <url>` (siehe
+[`../docs/rezepte-quellen-und-import.md`](../docs/rezepte-quellen-und-import.md)).
 
-Setze `RECIPE_VAULT_PATH` in `web/.env` auf den Rezepte-Ordner, z.B.:
+Bis 2026-08 war das umgekehrt — ein Obsidian-Vault war die Wahrheit, die DB nur
+ein Cache. Der Vault ist abgelöst; die App liest nirgends mehr aus einem
+Vault-Ordner.
 
-```
-RECIPE_VAULT_PATH="C:/Users/<user>/Obsidian/Haushalt/Rezepte"
-```
+### Backup
 
-Vorlage: `docs/recipe-vault-template.md` als `_template.md` in den Ordner kopieren.
-Einlesen über den Button „Rezepte einlesen" im Dashboard.
+`npm run export:recipes` schreibt jedes Rezept als Markdown nach
+`RECIPE_EXPORT_PATH` — Format:
+[`../docs/rezept-export-format.md`](../docs/rezept-export-format.md). Zeigt der
+Pfad auf den alten Vault-Ordner, sichert Obsidian Sync die Exporte weiter mit,
+ohne dass die App je von dort liest. Nächtlich zusammen mit einer datierten
+Kopie der Produktionsdatenbank über `scripts/tablet-backup.sh`.
 
-### Rezept-Links (Obsidian öffnen)
+### Bilder
 
-Im Essensplan (Tablet-Widget & Handy-Übersicht) lässt sich jedes Gericht antippen,
-um das Rezept direkt in Obsidian zu öffnen (`obsidian://open?...`) — funktioniert
-auf Desktop, Tablet und Handy, sofern dort die Obsidian-App installiert ist und
-denselben Vault synchronisiert.
-
-Dafür zusätzlich `OBSIDIAN_VAULT_NAME` in `web/.env` auf den Anzeigenamen des
-Vaults setzen, z.B.:
-
-```
-OBSIDIAN_VAULT_NAME="Haushalt"
-```
-
-Voraussetzung: `RECIPE_VAULT_PATH` zeigt auf einen Ordner **direkt unter dem
-Vault-Root** (z.B. `.../Haushalt/Rezepte`, Vault-Name `Haushalt`) — der Link
-wird beim nächsten „Rezepte einlesen" aus dem Ordnernamen + Dateinamen gebaut.
-Ohne `OBSIDIAN_VAULT_NAME` bleiben Gerichte unverlinkt (reiner Text wie bisher).
+Der Link-Import lädt das Titelbild mit und legt es unter `RECIPE_IMAGE_DIR` ab
+(muss außerhalb des Repos liegen — ein Redeploy nähme es sonst mit).
+Ausgeliefert wird es über `/api/recipe-image/<datei>`. Ohne die Variable
+bleiben Rezepte schlicht bildlos.
 
 ### Gewichtete Essensplan-Auswahl
 
-Das Frontmatter-`rating` steuert, wie oft ein Rezept im Wochenplan landet:
+Die Bewertung eines Rezepts steuert, wie oft es im Wochenplan landet:
 `favorit` ≈ 3×, `ok` 1×, `selten` ≈ 0,3× Wahrscheinlichkeit — innerhalb der
 harten Dienstplan-Constraints. Zusätzlich werden Gerichte gedämpft, die in den
 letzten ~14 Tagen schon im aktiven Plan standen (nie ganz ausgeschlossen).
@@ -80,5 +75,5 @@ Ohne Bewertungen/Historie verhält sich der Planer wie vorher (Fallback).
 
 Stuft die Heuristik eine Zutat falsch ein (z.B. Kokosmilch als „frisch"), lässt
 sich das direkt am Einkaufs-Item umschalten — die Korrektur wird gemerkt und
-gilt für jedes künftige Auftauchen der Zutat. Reihenfolge: explizite
-`freshness`-Angabe im Rezept-Frontmatter → gemerkte Korrektur → Keyword-Heuristik.
+gilt für jedes künftige Auftauchen der Zutat. Reihenfolge: gemerkte Korrektur →
+Keyword-Heuristik.

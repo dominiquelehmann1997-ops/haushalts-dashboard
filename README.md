@@ -43,8 +43,8 @@ Kopf des Scripts. Ein Snapshot pro Tag, egal wie oft der Job feuert.
 ## Rezepte per Link übernehmen
 
 Rezeptseite raussuchen, Link im Dashboard unter *Essensplan → Rezept per Link*
-einfügen (oder `npm run import:recipe -- <url>`) — das Rezept landet als Notiz
-im Obsidian-Vault und ist sofort im Essensplan wählbar. Quellen-Empfehlungen und
-Details: [`docs/rezepte-quellen-und-import.md`](docs/rezepte-quellen-und-import.md).
+einfügen (oder `npm run import:recipe -- <url>`) — das Rezept steht danach im
+Rezeptbuch (*Essen → Rezepte*) und ist sofort im Essensplan wählbar.
+Quellen-Empfehlungen und Details: [`docs/rezepte-quellen-und-import.md`](docs/rezepte-quellen-und-import.md).
 
 Der finale visuelle Look wird separat in Claude umgesetzt.

@@ -125,7 +125,6 @@ model Recipe {
   rating     String  @default("ok") // "favorit" | "ok" | "selten" (Feature A: Essensplan-Gewichtung)
   slug       String? @unique // stabiler Identitäts-Anker; null für handangelegte Alt-Rezepte
   archived   Boolean @default(false) // ausgemustert, aber ggf. noch von MealPlanEntry referenziert
-  vaultFile  String? // DEPRECATED (Obsidian-Deeplink) — entfällt mit dem Vault-Ausbau
 
   // Kochansicht + Filter. Lagen bisher nur im Vault-Markdown und wurden beim
   // Ingest verworfen; der URL-Importer liefert sie längst mit.

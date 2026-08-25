@@ -3,15 +3,11 @@
 // Server-Actions rund um das Rezeptbuch: Anlegen, Bearbeiten, Löschen,
 // Bewerten und der Import per Link. Die DB ist die Wahrheit — geschrieben wird
 // ausschließlich über `repositories/recipes`, hier steht keine Prisma-Query.
-//
-// `ingestVaultAction` ist der letzte Rest des Obsidian-Wegs und fliegt mit dem
-// Vault-Ausbau raus (Phase 7 des Umsetzungsplans).
 
 import { revalidatePath } from "next/cache";
 
 import { revalidateDashboard } from "@/lib/revalidate";
 
-import { ingestVault, type IngestReport } from "@/lib/repositories/recipeIngest";
 import {
   createRecipe,
   deleteRecipe,
@@ -32,16 +28,6 @@ import { importRecipeFromUrl } from "@/lib/services/recipeImport";
 function revalidateRecipes(): void {
   revalidateDashboard();
   revalidatePath("/mobile/meals/rezepte/[id]", "page");
-}
-
-export async function ingestVaultAction(): Promise<IngestReport> {
-  const vaultPath = process.env.RECIPE_VAULT_PATH;
-  if (!vaultPath) {
-    return { imported: 0, archived: 0, errors: ["RECIPE_VAULT_PATH ist nicht gesetzt."] };
-  }
-  const report = await ingestVault(vaultPath);
-  revalidateRecipes();
-  return report;
 }
 
 /** Legt ein Rezept an und liefert seine id — die Detailseite wird danach angesteuert. */

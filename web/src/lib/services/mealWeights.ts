@@ -3,7 +3,7 @@
 // Roulette-Rad, der injizierte `rng` hält die Auswahl in Tests deterministisch.
 // Constraints bleiben harte Filter — gewichtet wird nur INNERHALB des Pools.
 
-import type { Rating } from "@/lib/services/recipeVault";
+import type { Rating } from "@/lib/domain";
 
 // `satisfies` sichert die Tabelle gegen den Domänen-Typ ab (alle Rating-Werte
 // abgedeckt, keine Tippfehler-Keys); die Funktionen nehmen bewusst `string`,

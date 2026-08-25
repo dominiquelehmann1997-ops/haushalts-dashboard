@@ -1,5 +1,19 @@
 # Rezept-Vault Import-Contract
 
+> **ÜBERHOLT (2026-08-25).** Dieser Vertrag beschreibt den Obsidian-Vault als
+> Wahrheit und die DB als Cache. Genau das ist seit dem Vault-Ausbau
+> umgekehrt: Rezepte liegen in der DB und werden in der App gepflegt; aus
+> einem Vault-Ordner liest das Dashboard nirgends mehr. Der Ingest, die
+> Orphan-Archivierung und `RECIPE_VAULT_PATH` sind entfallen.
+>
+> Aktuell gilt: [`rezept-export-format.md`](rezept-export-format.md) (was der
+> Export schreibt) und [`rezepte-quellen-und-import.md`](rezepte-quellen-und-import.md)
+> (wie Rezepte hereinkommen). Das Dokument bleibt als Beleg liegen, warum das
+> Format aussieht, wie es aussieht.
+>
+> Schon vor dem Ausbau falsch: das `freshness`-Feld pro Zutat wird seit der
+> Migration `20260708135316` nirgends mehr gelesen.
+
 Vertrag, den ein fertig exportiertes Rezept-Markdown erfüllen muss, damit der
 Haushalts-Dashboard-Ingest (`recipeIngest.ts` → `recipeVault.ts`) es korrekt
 einliest. Quelle der Wahrheit ist der Parser-Code, nicht das Template — diese
