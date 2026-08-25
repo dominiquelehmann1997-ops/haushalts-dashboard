@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
 import type { Meal, DraftMeal, RecipeOption } from "@/lib/domain";
-import { addDays, currentWeekBounds, localDateKey, mondayOf } from "@/lib/dates";
+import { addDays, currentWeekBounds, localDateKey, mondayOf, weekBoundsOf } from "@/lib/dates";
 import { classifyShift, type ShiftClass } from "@/lib/calendar/shifts";
 import { obsidianUrl } from "@/lib/services/obsidian";
 
@@ -21,8 +21,8 @@ function isToday(date: Date): boolean {
 }
 
 /**
- * MealPlanEntries of the current ISO week joined to their Recipe (+ dessen
- * Zutaten), ordered Mon→Sun. Trägt außerdem `id`/`recipeId`/`pushed` für die
+ * MealPlanEntries of the ISO week containing `weekStart` (default: current week)
+ * joined to their Recipe (+ dessen Zutaten), ordered Mon→Sun. Trägt außerdem `id`/`recipeId`/`pushed` für die
  * aktive Wochenübersicht (mobil): Gericht tauschen + Zutaten pro Gericht auf
  * Bring pushen. `obsidianUrl` verlinkt direkt ins Rezept im Obsidian-Vault
  * (null ohne Vault-Anker oder ohne `OBSIDIAN_VAULT_NAME`).
@@ -31,8 +31,11 @@ function isToday(date: Date): boolean {
  * it yet (purely a visual/UI detail); a follow-up phase can add a schema field
  * if needed.
  */
-export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Meal[]> {
-  const { start, end } = currentWeekBounds();
+export async function getWeekMealPlan(
+  client: PrismaClient = prisma,
+  weekStart?: Date,
+): Promise<Meal[]> {
+  const { start, end } = weekStart ? weekBoundsOf(weekStart) : currentWeekBounds();
 
   const rows = await client.mealPlanEntry.findMany({
     where: { date: { gte: start, lte: end }, status: "active" },
@@ -61,11 +64,15 @@ export async function getWeekMealPlan(client: PrismaClient = prisma): Promise<Me
 
 /**
  * Wie `getWeekMealPlan`, aber nur die Entwurfs-Einträge (`status:"draft"`) der
- * aktuellen Woche — inkl. `dateISO` und `recipeId`, damit die Entwurfs-Ansicht
- * einzelne Tage neu würfeln oder das Rezept tauschen kann.
+ * Woche um `weekStart` (default: aktuelle Woche) — inkl. `dateISO` und
+ * `recipeId`, damit die Entwurfs-Ansicht einzelne Tage neu würfeln oder das
+ * Rezept tauschen kann.
  */
-export async function getDraftMealPlan(client: PrismaClient = prisma): Promise<DraftMeal[]> {
-  const { start, end } = currentWeekBounds();
+export async function getDraftMealPlan(
+  client: PrismaClient = prisma,
+  weekStart?: Date,
+): Promise<DraftMeal[]> {
+  const { start, end } = weekStart ? weekBoundsOf(weekStart) : currentWeekBounds();
 
   const rows = await client.mealPlanEntry.findMany({
     where: { date: { gte: start, lte: end }, status: "draft" },

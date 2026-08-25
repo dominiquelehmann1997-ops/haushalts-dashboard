@@ -6,7 +6,7 @@ import type { Appointment, PersonKey } from "@/lib/domain";
 import type { BusyWindow } from "@/lib/engine/types";
 import type { CalendarEventInput } from "@/integrations/calendar/google";
 import { correctedBusyEnd, isOvernightShift } from "@/lib/calendar/shifts";
-import { dayBounds, formatTime } from "@/lib/dates";
+import { dayBounds, formatTime, weekBoundsOf } from "@/lib/dates";
 
 /**
  * `true` nur für den exakten Titel "Urlaub" (getrimmt, Groß-/Kleinschreibung
@@ -203,4 +203,21 @@ export async function getBusyWindows(
   }
 
   return windows.filter((w) => w.start <= to && w.end >= from);
+}
+
+/**
+ * True, wenn für die Woche um `weekStart` überhaupt Kalendertermine in der DB
+ * liegen. Der Sync holt nur ein 14-Tage-Fenster (siehe `calendarSync`) — bei der
+ * Vorausplanung weiter entfernter Wochen wäre der Dienstplan sonst unbemerkt
+ * blind, und der Essensplan verlöre seine dienstbewussten Constraints.
+ */
+export async function hasCalendarDataForWeek(
+  weekStart: Date,
+  client: PrismaClient = prisma,
+): Promise<boolean> {
+  const { start, end } = weekBoundsOf(weekStart);
+  const count = await client.calendarEvent.count({
+    where: { start: { gte: start, lte: end } },
+  });
+  return count > 0;
 }

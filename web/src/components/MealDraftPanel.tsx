@@ -5,6 +5,10 @@
 // Badge, "neu würfeln" und "tauschen". Abnicken befördert den Entwurf nur zum
 // aktiven Plan — Bring wird bewusst NICHT berührt; das passiert erst später,
 // pro Gericht, aus der aktiven Wochenübersicht.
+//
+// `weekStartISO`/`weekLabel` binden das Panel an eine bestimmte Woche — ohne
+// Angabe die laufende. So lässt sich ein Entwurf für eine kommende Woche
+// abnicken oder verwerfen, bevor sie beginnt.
 
 import { useState, useTransition } from "react";
 
@@ -19,9 +23,21 @@ import {
 
 const PILL = "inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full transition-colors";
 
-export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes: RecipeOption[] }) {
+export function MealDraftPanel({
+  draft,
+  recipes,
+  weekStartISO,
+  weekLabel,
+}: {
+  draft: DraftMeal[];
+  recipes: RecipeOption[];
+  weekStartISO?: string;
+  weekLabel?: string;
+}) {
   const [pending, startTransition] = useTransition();
   const [approved, setApproved] = useState(false);
+
+  const weekISO = () => weekStartISO ?? new Date().toISOString();
 
   const run = (fn: () => Promise<void>) => {
     startTransition(fn);
@@ -29,7 +45,7 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
 
   const handleApprove = () => {
     startTransition(async () => {
-      const result = await approveDraftAction(new Date().toISOString());
+      const result = await approveDraftAction(weekISO());
       setApproved(result.approved);
     });
   };
@@ -38,12 +54,12 @@ export function MealDraftPanel({ draft, recipes }: { draft: DraftMeal[]; recipes
     <div className="rounded-3xl bg-white/80 dark:bg-white/[0.04] ring-1 ring-amber-300/40 p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3 mb-3">
         <div className="text-[12.5px] font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-300">
-          Entwurf · Woche
+          Entwurf · {weekLabel ?? "Woche"}
         </div>
         <div className="flex items-center gap-2">
           <button
             type="button"
-            onClick={() => run(() => discardDraftAction(new Date().toISOString()))}
+            onClick={() => run(() => discardDraftAction(weekISO()))}
             disabled={pending}
             className={`${PILL} text-ink-faint bg-cream/60 dark:bg-white/[0.04] hover:bg-cream disabled:cursor-wait`}
           >

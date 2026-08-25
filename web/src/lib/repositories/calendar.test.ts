@@ -3,9 +3,15 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { dayBounds } from "@/lib/dates";
+import { addDays, dayBounds, weekStartWithOffset } from "@/lib/dates";
 
-import { getBusyWindows, getTodaysEvents, replaceWindowEvents, upsertEvents } from "./calendar";
+import {
+  getBusyWindows,
+  getTodaysEvents,
+  hasCalendarDataForWeek,
+  replaceWindowEvents,
+  upsertEvents,
+} from "./calendar";
 
 describe("calendar repository", () => {
   let client: PrismaClient;
@@ -412,5 +418,56 @@ describe("calendar repository", () => {
         );
       });
     });
+  });
+});
+
+describe("hasCalendarDataForWeek", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  const seedAt = (start: Date) =>
+    client.calendarEvent.create({
+      data: {
+        externalId: `dome:${start.toISOString()}`,
+        calendarKey: "dome_dienstplan",
+        title: "Spätdienst",
+        start,
+        end: addDays(start, 0),
+        personKey: "dome",
+        kind: "termin",
+        place: null,
+        allDay: false,
+      },
+    });
+
+  it("meldet true, sobald die Woche irgendeinen Termin enthält", async () => {
+    const nextMonday = weekStartWithOffset(1);
+    await seedAt(addDays(nextMonday, 3));
+
+    expect(await hasCalendarDataForWeek(nextMonday, client)).toBe(true);
+  });
+
+  it("meldet false für eine Woche jenseits des 14-Tage-Sync-Fensters", async () => {
+    await seedAt(addDays(weekStartWithOffset(0), 1));
+
+    // Vier Wochen voraus liegt garantiert außerhalb des Sync-Fensters — der
+    // Essensplan wäre dort blind für den Dienstplan.
+    expect(await hasCalendarDataForWeek(weekStartWithOffset(4), client)).toBe(false);
+  });
+
+  it("bewertet die Woche, nicht den übergebenen Tag", async () => {
+    const nextMonday = weekStartWithOffset(1);
+    await seedAt(nextMonday);
+
+    // Sonntag derselben Woche → dieselbe Antwort.
+    expect(await hasCalendarDataForWeek(addDays(nextMonday, 6), client)).toBe(true);
   });
 });

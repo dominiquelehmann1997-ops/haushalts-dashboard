@@ -3,6 +3,10 @@
 // "Woche neu planen" — erzeugt einen dienstbewussten ENTWURF des Wochenplans
 // (Roadmap C1). Der Entwurf erscheint danach im MealDraftPanel zum Abnicken
 // oder Ändern; Zutaten/Bring passieren erst beim Abnicken (dort).
+//
+// `weekStartISO` wählt die geplante Woche — ohne Angabe die laufende. So lässt
+// sich eine Woche vorausplanen, bevor sie beginnt (die Server-Action normalisiert
+// jedes Datum auf den Montag seiner ISO-Woche).
 
 import { useState, useTransition } from "react";
 
@@ -10,14 +14,14 @@ import { generatePlanAction } from "@/app/actions/meals";
 
 const PILL = "inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full transition-colors";
 
-export function MealPlanControl() {
+export function MealPlanControl({ weekStartISO }: { weekStartISO?: string } = {}) {
   const [pending, startTransition] = useTransition();
   const [done, setDone] = useState(false);
 
   const handleGenerate = () => {
     setDone(false);
     startTransition(async () => {
-      await generatePlanAction(new Date().toISOString());
+      await generatePlanAction(weekStartISO ?? new Date().toISOString());
       setDone(true);
     });
   };
