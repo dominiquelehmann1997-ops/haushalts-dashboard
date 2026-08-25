@@ -17,5 +17,13 @@ npm run sync:calendar || true
 # nicht blockieren.
 npm run plan:today || true
 
+# Nächtliches Backup als Schleife nebenher (DB-Snapshot + Rezept-Export).
+# termux-job-scheduler wäre der naheliegende Weg, hängt auf diesem Tablet aber
+# still — die Termux:API-App fehlt. Begründung im Kopf von tablet-backup-loop.sh.
+# Idempotent: ein zweiter Serverstart legt keine zweite Schleife an.
+if ! pgrep -f "[t]ablet-backup-loop.sh" >/dev/null 2>&1; then
+  bash ../scripts/tablet-backup-loop.sh &
+fi
+
 # Produktions-Server (vorher 'npm run build' ausfuehren).
 HOST=0.0.0.0 npm run start -- -H 0.0.0.0 -p 3001

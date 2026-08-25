@@ -37,8 +37,10 @@ eingespielt (siehe `web/src/lib/services/chores.ts`).
   nimmt Obsidian Sync die Rezepte weiter mit in die Cloud, ohne dass die App je
   von dort liest. Damit liegt eine Kopie außerhalb des Tablets.
 
-Eingehängt wird das Script per `termux-job-scheduler`; die Aufrufzeile steht im
-Kopf des Scripts. Ein Snapshot pro Tag, egal wie oft der Job feuert.
+Getaktet wird es von `scripts/tablet-backup-loop.sh`, das `tablet-start.sh` neben
+dem Server startet — alle 6 h, ein Snapshot pro Tag. Nicht per
+`termux-job-scheduler`: der braucht die Termux:API-App, die auf dem Tablet
+fehlt, und hängt ohne sie still, statt zu erroren.
 
 ## Rezepte per Link übernehmen
 

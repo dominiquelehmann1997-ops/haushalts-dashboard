@@ -14,10 +14,9 @@
 #     liegt eine Kopie außerhalb des Tablets, was ein Backup auf derselben
 #     SD-Karte nun mal nicht leistet.
 #
-# Einhängen (einmalig am Tablet, siehe Kommentar am Dateiende):
-#   chmod +x scripts/tablet-backup.sh
-#   termux-job-scheduler --script "$HOME/haushalts-dashboard/scripts/tablet-backup.sh" \
-#     --period-ms 21600000 --persisted true
+# Eingehängt über scripts/tablet-start.sh: das startet scripts/tablet-backup-loop.sh
+# nebenher, und die Schleife ruft dieses Script alle 6 h auf. NICHT über
+# termux-job-scheduler — Begründung am Dateiende.
 #
 # Manuell: bash scripts/tablet-backup.sh [--force]
 # Ohne --force passiert pro Tag nur ein DB-Snapshot (siehe unten).
@@ -120,17 +119,22 @@ echo "$EXPORT_OUT" | tee -a "$LOG"
 exit 1
 
 # ── Einhängen am Tablet ──────────────────────────────────────────────────────
-# Android-JobScheduler kennt nur Perioden, keine Uhrzeit — "jede Nacht um 3"
-# gibt es nicht. Deshalb alle 6 h anklopfen; der Tagesriegel oben sorgt dafür,
-# dass trotzdem genau ein Snapshot pro Tag entsteht.
+# Passiert automatisch: scripts/tablet-start.sh startet
+# scripts/tablet-backup-loop.sh nebenher, und das ruft dieses Script alle 6 h
+# auf. Der Tagesriegel oben lässt trotzdem nur einen Snapshot pro Tag durch.
+#
+# NICHT über termux-job-scheduler. Der wäre der naheliegende Weg, braucht aber
+# die Termux:API-**App** (nicht nur das Paket). Auf diesem Tablet ist sie nicht
+# installiert, und ohne sie hängt der Aufruf still, statt zu erroren — am
+# 25.08.2026 nachgemessen: `termux-job-scheduler --pending` läuft in den
+# Timeout. Wird die App später installiert, ist der Scheduler die robustere
+# Wahl (überlebt einen Termux-Force-Stop, die Schleife nicht):
 #
 #   termux-job-scheduler \
 #     --script "$HOME/haushalts-dashboard/scripts/tablet-backup.sh" \
 #     --period-ms 21600000 \
 #     --persisted true
 #
-# ACHTUNG: termux-job-scheduler braucht die Termux:API-App (nicht nur das
-# Paket). Fehlt sie, hängt der Aufruf still, statt zu meckern — siehe den
-# Kommentar in tablet-boot.sh. Nach dem Einhängen einmal `termux-job-scheduler
-# --pending` prüfen und am Folgetag in $BACKUP_DIR nachsehen, ob wirklich ein
-# Snapshot liegt. Ein Backup, von dem man nur glaubt, dass es läuft, ist keins.
+# So oder so gilt: nach dem Einrichten am Folgetag in $BACKUP_DIR nachsehen, ob
+# wirklich ein Snapshot liegt. Ein Backup, von dem man nur glaubt, dass es
+# läuft, ist keins.
