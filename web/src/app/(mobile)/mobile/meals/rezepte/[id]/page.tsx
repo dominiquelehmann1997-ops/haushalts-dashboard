@@ -22,43 +22,43 @@ export default async function MobileRecipePage({ params }: { params: Promise<{ i
 
   return (
     <div className="space-y-4">
-      <PageHeader
-        eyebrow="Rezept"
-        title={recipe.name}
-        right={
-          <div className="flex items-center gap-1.5 shrink-0">
-            {(recipe.ingredients.length > 0 || recipe.steps.length > 0) && (
-              <Link
-                href={`${RECIPES_PATH}/${recipe.id}/kochen`}
-                className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
-                           bg-dome-deep/10 dark:bg-dome/15 text-dome-deep dark:text-dome
-                           hover:bg-dome-deep/15 dark:hover:bg-dome/25 transition-colors"
-              >
-                <ChefHat size={11} strokeWidth={2.2} />
-                Kochen
-              </Link>
-            )}
-            <Link
-              href={`${RECIPES_PATH}/${recipe.id}/bearbeiten`}
-              aria-label="Rezept bearbeiten"
-              className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
-                         bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
-                         hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
-            >
-              <Pencil size={11} strokeWidth={2.2} />
-              Bearbeiten
-            </Link>
-            <Link
-              href={RECIPES_PATH}
-              className="text-[11.5px] font-semibold px-2.5 py-1 rounded-full
-                         bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
-                         hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
-            >
-              Rezepte
-            </Link>
-          </div>
-        }
-      />
+      {/* Aktionen bewusst UNTER dem Titel statt im `right`-Slot: dort ist der
+          Block shrink-0, und ein Rezeptname wie "Asia-Udon-Salat mit Mango,
+          Edamame & Chilioel-Joghurt" wurde dadurch auf ein bis zwei Woerter
+          pro Zeile zusammengequetscht -- elf Zeilen Ueberschrift. Der Titel
+          bekommt jetzt die volle Breite, die Knoepfe umbrechen selbst. */}
+      <PageHeader eyebrow="Rezept" title={recipe.name} />
+
+      <div className="flex flex-wrap items-center gap-1.5 -mt-2">
+        {(recipe.ingredients.length > 0 || recipe.steps.length > 0) && (
+          <Link
+            href={`${RECIPES_PATH}/${recipe.id}/kochen`}
+            className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                       bg-dome-deep/10 dark:bg-dome/15 text-dome-deep dark:text-dome
+                       hover:bg-dome-deep/15 dark:hover:bg-dome/25 transition-colors"
+          >
+            <ChefHat size={11} strokeWidth={2.2} />
+            Kochen
+          </Link>
+        )}
+        <Link
+          href={`${RECIPES_PATH}/${recipe.id}/bearbeiten`}
+          className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                     bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
+                     hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
+        >
+          <Pencil size={11} strokeWidth={2.2} />
+          Bearbeiten
+        </Link>
+        <Link
+          href={RECIPES_PATH}
+          className="text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                     bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
+                     hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
+        >
+          Rezepte
+        </Link>
+      </div>
 
       {recipe.imageUrl && (
         // eslint-disable-next-line @next/next/no-img-element -- lokale Datei, kein Optimierer nötig

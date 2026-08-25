@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { PageHeader } from "@/components/mobile/PageHeader";
 import { RecipeCookView } from "@/components/mobile/RecipeCookView";
 import { getRecipe } from "@/lib/repositories/recipes";
 import { RECIPES_PATH } from "@/lib/recipeFilterParams";
@@ -22,20 +21,28 @@ export default async function MobileRecipeCookPage({
 
   return (
     <div>
-      <PageHeader
-        eyebrow="Kochansicht"
-        title={recipe.name}
-        right={
-          <Link
-            href={`${RECIPES_PATH}/${recipe.id}`}
-            className="shrink-0 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
-                       bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
-                       hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
-          >
-            Zurück
-          </Link>
-        }
-      />
+      {/* Titel und Zurueck in einer Zeile, aber der Titel darf schrumpfen und
+          umbrechen -- im `right`-Slot ist der Nachbar shrink-0 und presst lange
+          Rezeptnamen auf ein Wort pro Zeile. Hier zaehlt jede Zeile doppelt:
+          was der Kopf frisst, fehlt den beiden Scrollspalten. */}
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div className="min-w-0">
+          <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-ink-faint">
+            Kochansicht
+          </span>
+          <h1 className="font-display font-semibold text-ink dark:text-cream leading-tight text-[19px] line-clamp-2">
+            {recipe.name}
+          </h1>
+        </div>
+        <Link
+          href={`${RECIPES_PATH}/${recipe.id}`}
+          className="shrink-0 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                     bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
+                     hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
+        >
+          Zurück
+        </Link>
+      </div>
       <RecipeCookView recipe={recipe} />
     </div>
   );

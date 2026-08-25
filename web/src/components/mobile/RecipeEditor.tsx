@@ -27,10 +27,19 @@ import {
   type RecipeDraftIngredient,
 } from "@/lib/services/recipeForm";
 
+// Ohne Breite und ohne Innenabstand! Tailwind gibt allen Utilities dieselbe
+// Spezifitaet, es entscheidet die Reihenfolge im Stylesheet — und dort stehen
+// `.w-full` und `.px-3` NACH `.w-14` bzw. `.px-2`. Solange beide hier
+// drinsteckten, war jedes Zutatenfeld 100 % breit, die Zeile damit rund
+// dreimal so breit wie der Bildschirm, und die Seite scrollte quer. Was eine
+// Verwendungsstelle ueberschreiben koennen muss, steht deshalb nicht hier.
 const FIELD =
-  "w-full rounded-xl border border-ink/10 dark:border-white/10 bg-white/70 dark:bg-white/[0.04] " +
-  "px-3 py-2 text-[13.5px] text-ink dark:text-cream/90 placeholder:text-ink-faint " +
+  "rounded-xl border border-ink/10 dark:border-white/10 bg-white/70 dark:bg-white/[0.04] " +
+  "py-2 text-[13.5px] text-ink dark:text-cream/90 placeholder:text-ink-faint " +
   "dark:placeholder:text-cream/40 outline-none focus:border-ink/25 dark:focus:border-white/25";
+/** Feld ueber die volle Breite seines Containers — der Normalfall im Formular. */
+const FIELD_WIDE = `${FIELD} w-full px-3`;
+
 const LABEL = "block text-[11px] font-semibold tracking-[0.1em] uppercase text-ink-faint mb-1";
 const ICON_BUTTON =
   "w-7 h-7 sm:w-6 sm:h-6 shrink-0 grid place-items-center rounded-lg text-ink-faint " +
@@ -60,7 +69,7 @@ function NumberField({
         min={0}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className={FIELD}
+        className={FIELD_WIDE}
       />
     </label>
   );
@@ -147,7 +156,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
           value={draft.name}
           onChange={(e) => set("name", e.target.value)}
           placeholder="Kokos-Curry"
-          className={FIELD}
+          className={FIELD_WIDE}
         />
       </label>
 
@@ -157,7 +166,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
           <select
             value={draft.rating}
             onChange={(e) => set("rating", e.target.value)}
-            className={FIELD}
+            className={FIELD_WIDE}
           >
             {RATINGS.map((r) => (
               <option key={r} value={r}>
@@ -212,7 +221,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
           value={draft.tags}
           onChange={(e) => set("tags", e.target.value)}
           placeholder="curry, vegetarisch"
-          className={FIELD}
+          className={FIELD_WIDE}
         />
       </label>
 
@@ -256,7 +265,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
                 onChange={(e) => editIngredient(index, { name: e.target.value })}
                 placeholder="Kokosmilch"
                 aria-label={`Name Zutat ${index + 1}`}
-                className={`${FIELD} flex-1 min-w-0`}
+                className={`${FIELD} flex-1 min-w-0 px-3`}
               />
               <button
                 type="button"
@@ -296,7 +305,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
           onChange={(e) => set("steps", e.target.value)}
           rows={7}
           placeholder={"Zwiebeln anschwitzen.\nKokosmilch zugeben und 20 Min köcheln."}
-          className={`${FIELD} resize-y`}
+          className={`${FIELD_WIDE} resize-y`}
         />
       </label>
 
@@ -307,7 +316,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
           onChange={(e) => set("notes", e.target.value)}
           rows={3}
           placeholder="Mit Naan servieren."
-          className={`${FIELD} resize-y`}
+          className={`${FIELD_WIDE} resize-y`}
         />
       </label>
 
@@ -319,7 +328,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
           value={draft.sourceUrl}
           onChange={(e) => set("sourceUrl", e.target.value)}
           placeholder="https://…"
-          className={FIELD}
+          className={FIELD_WIDE}
         />
       </label>
 
