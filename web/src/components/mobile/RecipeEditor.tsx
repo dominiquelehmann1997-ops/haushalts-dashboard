@@ -33,7 +33,7 @@ const FIELD =
   "dark:placeholder:text-cream/40 outline-none focus:border-ink/25 dark:focus:border-white/25";
 const LABEL = "block text-[11px] font-semibold tracking-[0.1em] uppercase text-ink-faint mb-1";
 const ICON_BUTTON =
-  "w-7 h-7 shrink-0 grid place-items-center rounded-lg text-ink-faint " +
+  "w-7 h-7 sm:w-6 sm:h-6 shrink-0 grid place-items-center rounded-lg text-ink-faint " +
   "hover:text-ink-soft dark:hover:text-cream/70 disabled:opacity-30 disabled:cursor-not-allowed";
 
 /** Ein Zahlenfeld der Kennzahlen-Reihe. */
@@ -135,7 +135,11 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
   const cancelHref = recipe ? `${RECIPES_PATH}/${recipe.id}` : RECIPES_PATH;
 
   return (
-    <div className="space-y-4">
+    // Formularbreite gedeckelt: das Tablet ist im Hochformat 800 CSS-px breit,
+    // ein w-full-Feld waere dort 768 px breit -- fuer "Kokos-Curry" absurd, und
+    // die Zutatenzeile behielte 536 px allein fuers Namensfeld. Auf dem Handy
+    // (328 px Inhalt) aendert der Deckel nichts.
+    <div className="mx-auto w-full max-w-xl space-y-4">
       <label className="block">
         <span className={LABEL}>Name</span>
         <input
@@ -236,7 +240,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
                 onChange={(e) => editIngredient(index, { amount: e.target.value })}
                 placeholder="400"
                 aria-label={`Menge Zutat ${index + 1}`}
-                className={`${FIELD} w-16 shrink-0 px-2`}
+                className={`${FIELD} w-14 shrink-0 px-2 text-center`}
               />
               <input
                 type="text"
@@ -244,7 +248,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
                 onChange={(e) => editIngredient(index, { unit: e.target.value })}
                 placeholder="ml"
                 aria-label={`Einheit Zutat ${index + 1}`}
-                className={`${FIELD} w-16 shrink-0 px-2`}
+                className={`${FIELD} w-14 shrink-0 px-2 text-center`}
               />
               <input
                 type="text"

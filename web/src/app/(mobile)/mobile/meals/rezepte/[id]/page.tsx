@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, Drumstick, Flame, Link2, Pencil, Users } from "lucide-react";
+import { ChefHat, Clock, Drumstick, Flame, Link2, Pencil, Users } from "lucide-react";
 
 import { PageHeader } from "@/components/mobile/PageHeader";
 import { formatMinutes } from "@/components/mobile/RecipeCard";
@@ -27,6 +27,17 @@ export default async function MobileRecipePage({ params }: { params: Promise<{ i
         title={recipe.name}
         right={
           <div className="flex items-center gap-1.5 shrink-0">
+            {(recipe.ingredients.length > 0 || recipe.steps.length > 0) && (
+              <Link
+                href={`${RECIPES_PATH}/${recipe.id}/kochen`}
+                className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                           bg-dome-deep/10 dark:bg-dome/15 text-dome-deep dark:text-dome
+                           hover:bg-dome-deep/15 dark:hover:bg-dome/25 transition-colors"
+              >
+                <ChefHat size={11} strokeWidth={2.2} />
+                Kochen
+              </Link>
+            )}
             <Link
               href={`${RECIPES_PATH}/${recipe.id}/bearbeiten`}
               aria-label="Rezept bearbeiten"
