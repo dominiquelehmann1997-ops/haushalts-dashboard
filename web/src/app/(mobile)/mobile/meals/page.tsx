@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { MealDraftPanel } from "@/components/MealDraftPanel";
 import { MealPlanControl } from "@/components/MealPlanControl";
 import { RecipeIdeasControl } from "@/components/RecipeIdeasControl";
@@ -38,7 +40,19 @@ export default async function MobileMealsPage({
       <PageHeader
         eyebrow="Steuerung"
         title="Essensplan"
-        right={<MealPlanControl weekStartISO={weekStartISO} />}
+        right={
+          <div className="flex items-center gap-1.5 shrink-0">
+            <Link
+              href="/mobile/meals/rezepte"
+              className="text-[11.5px] font-semibold px-2.5 py-1 rounded-full
+                         bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
+                         hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
+            >
+              Rezepte
+            </Link>
+            <MealPlanControl weekStartISO={weekStartISO} />
+          </div>
+        }
       />
 
       <MealWeekNav offset={offset} />

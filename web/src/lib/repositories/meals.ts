@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
-import type { Meal, DraftMeal, RecipeOption } from "@/lib/domain";
+import type { Meal, DraftMeal } from "@/lib/domain";
 import { addDays, currentWeekBounds, localDateKey, mondayOf, weekBoundsOf } from "@/lib/dates";
 import { classifyShift, type ShiftClass } from "@/lib/calendar/shifts";
 import { obsidianUrl } from "@/lib/services/obsidian";

@@ -12,13 +12,13 @@ export interface AmountPart {
 }
 
 /** Deutsche Dezimalzahl ("0,5") → number; null wenn nicht parsebar. */
-function parseAmount(amount: string): number | null {
+export function parseAmount(amount: string): number | null {
   const n = Number(amount.trim().replace(",", "."));
   return Number.isFinite(n) ? n : null;
 }
 
 /** number → deutsche Darstellung (Komma, max. 2 Nachkommastellen, keine Null-Endung). */
-function formatNumber(n: number): string {
+export function formatNumber(n: number): string {
   return (Number.isInteger(n) ? String(n) : n.toFixed(2).replace(/0+$/, "").replace(/\.$/, "")).replace(".", ",");
 }
 
