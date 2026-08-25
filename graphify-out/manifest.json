@@ -820,8 +820,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1787673076.112346,
-    "ast_hash": "13294fdd4aec20df4fd3ebba0f09c32d",
+    "mtime": 1787686359.03032,
+    "ast_hash": "a80f6709ce51973faf9ffef654ca862d",
     "semantic_hash": ""
   },
   "docs/claude-design-prompt.md": {
@@ -1110,8 +1110,8 @@
     "semantic_hash": ""
   },
   "scripts/tablet-start.sh": {
-    "mtime": 1787654312.2439759,
-    "ast_hash": "e213d07c4f8c68fae5b15850735bdb5b",
+    "mtime": 1787686283.1333888,
+    "ast_hash": "d1aee5c2bcc584bfe06a0cd05f1ce35d",
     "semantic_hash": ""
   },
   "scripts/tablet-sync.sh": {
@@ -1390,8 +1390,8 @@
     "semantic_hash": ""
   },
   "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md": {
-    "mtime": 1787673319.9078865,
-    "ast_hash": "b8fcd9acff9dccfdd12962a93586e771",
+    "mtime": 1787686877.3229585,
+    "ast_hash": "bf8d66bfbc7be0970c80aa198099ccde",
     "semantic_hash": ""
   },
   "web/src/app/api/recipe-image/[file]/route.ts": {
@@ -1410,8 +1410,8 @@
     "semantic_hash": ""
   },
   "scripts/tablet-backup.sh": {
-    "mtime": 1787672211.5753698,
-    "ast_hash": "0dcc909a71637fec19b7041e6f6f4422",
+    "mtime": 1787686349.8000011,
+    "ast_hash": "be6a82a835bb6c37e13f5c37becfb996",
     "semantic_hash": ""
   },
   "web/prisma/exportRecipes.ts": {
@@ -1447,6 +1447,11 @@
   "docs/rezept-export-format.md": {
     "mtime": 1787672954.2651074,
     "ast_hash": "5c3cbc3a74e793f644a0a69c9c863e55",
+    "semantic_hash": ""
+  },
+  "scripts/tablet-backup-loop.sh": {
+    "mtime": 1787686272.66934,
+    "ast_hash": "5e10f1f929d4f35f9d596ad6de6fe819",
     "semantic_hash": ""
   }
 }

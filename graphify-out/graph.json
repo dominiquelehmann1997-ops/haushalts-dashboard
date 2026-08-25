@@ -120,6 +120,36 @@
   },
   "nodes": [
     {
+      "label": "tablet-backup-loop.sh",
+      "file_type": "code",
+      "source_file": "scripts/tablet-backup-loop.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "scripts_tablet_backup_loop",
+      "community": 126,
+      "community_name": "planning.ts",
+      "norm_label": "tablet-backup-loop.sh"
+    },
+    {
+      "label": "tablet-backup-loop.sh script",
+      "file_type": "code",
+      "source_file": "scripts/tablet-backup-loop.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "scripts_tablet_backup_loop_sh__entry",
+      "community": 126,
+      "community_name": "planning.ts",
+      "norm_label": "tablet-backup-loop.sh script"
+    },
+    {
       "label": "tablet-backup.sh",
       "file_type": "code",
       "source_file": "scripts/tablet-backup.sh",
@@ -153,7 +183,7 @@
       "label": "log()",
       "file_type": "code",
       "source_file": "scripts/tablet-backup.sh",
-      "source_location": "L37",
+      "source_location": "L36",
       "metadata": {
         "language": "bash",
         "kind": "bash_function"
@@ -168,7 +198,7 @@
       "label": "fail()",
       "file_type": "code",
       "source_file": "scripts/tablet-backup.sh",
-      "source_location": "L41",
+      "source_location": "L40",
       "metadata": {
         "language": "bash",
         "kind": "bash_function"
@@ -220,8 +250,8 @@
       },
       "_origin": "ast",
       "id": "scripts_tablet_start",
-      "community": 171,
-      "community_name": "tablet-start.sh",
+      "community": 126,
+      "community_name": "planning.ts",
       "norm_label": "tablet-start.sh"
     },
     {
@@ -235,8 +265,8 @@
       },
       "_origin": "ast",
       "id": "scripts_tablet_start_sh__entry",
-      "community": 171,
-      "community_name": "tablet-start.sh",
+      "community": 126,
+      "community_name": "planning.ts",
       "norm_label": "tablet-start.sh script"
     },
     {
@@ -320,8 +350,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_package",
-      "community": 73,
-      "community_name": "allowScripts",
+      "community": 138,
+      "community_name": "package.json",
       "norm_label": "package.json"
     },
     {
@@ -331,8 +361,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "web_package_name",
-      "community": 73,
-      "community_name": "allowScripts",
+      "community": 138,
+      "community_name": "package.json",
       "norm_label": "name"
     },
     {
@@ -342,8 +372,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_package_version",
-      "community": 73,
-      "community_name": "allowScripts",
+      "community": 138,
+      "community_name": "package.json",
       "norm_label": "version"
     },
     {
@@ -353,8 +383,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_package_private",
-      "community": 73,
-      "community_name": "allowScripts",
+      "community": 138,
+      "community_name": "package.json",
       "norm_label": "private"
     },
     {
@@ -551,8 +581,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_package_dependencies_prisma_client",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "@prisma/client"
     },
     {
@@ -562,8 +592,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "prisma_client",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "@prisma/client"
     },
     {
@@ -782,8 +812,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_package_devdependencies_tailwindcss_postcss",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 147,
+      "community_name": "@tailwindcss/postcss",
       "norm_label": "@tailwindcss/postcss"
     },
     {
@@ -793,8 +823,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tailwindcss_postcss",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 147,
+      "community_name": "@tailwindcss/postcss",
       "norm_label": "@tailwindcss/postcss"
     },
     {
@@ -804,8 +834,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_node",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 160,
+      "community_name": "@types/node",
       "norm_label": "@types/node"
     },
     {
@@ -815,8 +845,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "types_node",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 160,
+      "community_name": "@types/node",
       "norm_label": "@types/node"
     },
     {
@@ -870,8 +900,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_web_push",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 162,
+      "community_name": "@types/web-push",
       "norm_label": "@types/web-push"
     },
     {
@@ -881,8 +911,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "types_web_push",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 162,
+      "community_name": "@types/web-push",
       "norm_label": "@types/web-push"
     },
     {
@@ -936,8 +966,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "web_package_devdependencies_prisma",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 145,
+      "community_name": "prisma",
       "norm_label": "prisma"
     },
     {
@@ -947,8 +977,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "prisma",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 145,
+      "community_name": "prisma",
       "norm_label": "prisma"
     },
     {
@@ -958,8 +988,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "web_package_devdependencies_sharp",
-      "community": 128,
-      "community_name": "sharp",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "sharp"
     },
     {
@@ -969,8 +999,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "sharp",
-      "community": 128,
-      "community_name": "sharp",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "sharp"
     },
     {
@@ -980,8 +1010,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "web_package_devdependencies_tailwindcss",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 146,
+      "community_name": "tailwindcss",
       "norm_label": "tailwindcss"
     },
     {
@@ -991,8 +1021,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tailwindcss",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 146,
+      "community_name": "tailwindcss",
       "norm_label": "tailwindcss"
     },
     {
@@ -1002,8 +1032,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "web_package_devdependencies_tsx",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 148,
+      "community_name": "tsx",
       "norm_label": "tsx"
     },
     {
@@ -1013,8 +1043,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tsx",
-      "community": 37,
-      "community_name": "devDependencies",
+      "community": 148,
+      "community_name": "tsx",
       "norm_label": "tsx"
     },
     {
@@ -1200,8 +1230,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_importchores",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "importchores.ts"
     },
     {
@@ -1211,8 +1241,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_prisma_importchores_main",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "main()"
     },
     {
@@ -1222,8 +1252,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_importrecipe",
-      "community": 3,
-      "community_name": "recipeImport.ts",
+      "community": 24,
+      "community_name": "recipes.ts",
       "norm_label": "importrecipe.ts"
     },
     {
@@ -1233,8 +1263,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_prisma_importrecipe_main",
-      "community": 3,
-      "community_name": "recipeImport.ts",
+      "community": 24,
+      "community_name": "recipes.ts",
       "norm_label": "main()"
     },
     {
@@ -1651,8 +1681,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_notes_page",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "page.tsx"
     },
     {
@@ -1662,8 +1692,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_notes_page_mobilenotespage",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "mobilenotespage()"
     },
     {
@@ -1695,8 +1725,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_routines_page",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 140,
+      "community_name": "page.tsx",
       "norm_label": "page.tsx"
     },
     {
@@ -1706,8 +1736,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_routines_page_mobileroutinespage",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 140,
+      "community_name": "page.tsx",
       "norm_label": "mobileroutinespage()"
     },
     {
@@ -1717,8 +1747,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_settings_page",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "page.tsx"
     },
     {
@@ -1728,8 +1758,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_settings_page_mobilesettingspage",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "mobilesettingspage()"
     },
     {
@@ -1761,8 +1791,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_accounts",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "accounts.ts"
     },
     {
@@ -1772,8 +1802,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_actions_accounts_addmanualentryaction",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "addmanualentryaction()"
     },
     {
@@ -1871,8 +1901,8 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_setactivedayrecipeaction",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "setactivedayrecipeaction()"
     },
     {
@@ -1882,8 +1912,8 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_pushmealingredientsaction",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "pushmealingredientsaction()"
     },
     {
@@ -1948,8 +1978,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_phase",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "phase.ts"
     },
     {
@@ -1959,8 +1989,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_app_actions_phase_setphaseaction",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "setphaseaction()"
     },
     {
@@ -1970,8 +2000,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_actions_push",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "push.ts"
     },
     {
@@ -1981,8 +2011,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "web_src_app_actions_push_webpushsubscriptionjson",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "webpushsubscriptionjson"
     },
     {
@@ -1992,8 +2022,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_app_actions_push_subscribepushaction",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "subscribepushaction()"
     },
     {
@@ -2003,8 +2033,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "web_src_app_actions_push_unsubscribepushaction",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "unsubscribepushaction()"
     },
     {
@@ -2619,8 +2649,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "adddoneentry.tsx"
     },
     {
@@ -2630,8 +2660,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry_loggableperson",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "loggableperson"
     },
     {
@@ -2641,8 +2671,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry_people",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "people"
     },
     {
@@ -2652,8 +2682,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry_adddoneentry",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "adddoneentry()"
     },
     {
@@ -2663,8 +2693,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_adddoneinline",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "adddoneinline.tsx"
     },
     {
@@ -2674,8 +2704,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_components_adddoneinline_adddoneinline",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "adddoneinline()"
     },
     {
@@ -2751,8 +2781,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_phaseswitch",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "phaseswitch.tsx"
     },
     {
@@ -2762,8 +2792,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_components_phaseswitch_presets",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "presets"
     },
     {
@@ -2773,8 +2803,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_components_phaseswitch_phaseswitch",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "phaseswitch()"
     },
     {
@@ -2784,8 +2814,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "pushsetupcontrol.tsx"
     },
     {
@@ -2795,8 +2825,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_status",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "status"
     },
     {
@@ -2806,8 +2836,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_urlbase64touint8array",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "urlbase64touint8array()"
     },
     {
@@ -2817,8 +2847,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_getinitialstatus",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "getinitialstatus()"
     },
     {
@@ -2828,8 +2858,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_components_pushsetupcontrol_pushsetupcontrol",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "pushsetupcontrol()"
     },
     {
@@ -2982,8 +3012,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_weather",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "weather.tsx"
     },
     {
@@ -2993,8 +3023,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_components_weather_weather",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "weather()"
     },
     {
@@ -3081,8 +3111,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_components_dashboard_usesuntheme",
-      "community": 103,
-      "community_name": "TasksView.tsx",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "usesuntheme()"
     },
     {
@@ -3235,8 +3265,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist.tsx"
     },
     {
@@ -3246,8 +3276,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_ingredientlabel",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "ingredientlabel()"
     },
     {
@@ -3257,8 +3287,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_mealweeklist",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist()"
     },
     {
@@ -3334,8 +3364,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_noteseditor",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "noteseditor.tsx"
     },
     {
@@ -3345,8 +3375,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_components_mobile_noteseditor_noteseditor",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "noteseditor()"
     },
     {
@@ -3367,8 +3397,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_notesview",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "notesview.tsx"
     },
     {
@@ -3378,8 +3408,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_components_mobile_notesview_notesview",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "notesview()"
     },
     {
@@ -3620,8 +3650,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routinesview.tsx"
     },
     {
@@ -3631,8 +3661,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_person_options",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "person_options"
     },
     {
@@ -3642,8 +3672,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_weatherfields",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "weatherfields"
     },
     {
@@ -3653,8 +3683,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_parseweather",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "parseweather()"
     },
     {
@@ -3675,8 +3705,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_formatdue",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "formatdue()"
     },
     {
@@ -3686,8 +3716,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_routinesview",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 140,
+      "community_name": "page.tsx",
       "norm_label": "routinesview()"
     },
     {
@@ -3697,8 +3727,8 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_routineeditorcard",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "routineeditorcard()"
     },
     {
@@ -3730,8 +3760,8 @@
       "source_location": "L505",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_personsegment",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "personsegment()"
     },
     {
@@ -3741,8 +3771,8 @@
       "source_location": "L540",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_weathercontrols",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 66,
+      "community_name": "rhythm.ts",
       "norm_label": "weathercontrols()"
     },
     {
@@ -3752,8 +3782,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_settingsview",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "settingsview.tsx"
     },
     {
@@ -3763,8 +3793,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_components_mobile_settingsview_sectiontitle",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "sectiontitle()"
     },
     {
@@ -3774,8 +3804,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_components_mobile_settingsview_settingsview",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "settingsview()"
     },
     {
@@ -3884,8 +3914,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_todayview",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 103,
+      "community_name": "TasksView.tsx",
       "norm_label": "todayview.tsx"
     },
     {
@@ -3895,8 +3925,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_src_components_mobile_todayview_opt",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 103,
+      "community_name": "TasksView.tsx",
       "norm_label": "opt"
     },
     {
@@ -3972,8 +4002,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_components_ui_card",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "card()"
     },
     {
@@ -3983,8 +4013,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_ui_cardhead",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "cardhead()"
     },
     {
@@ -4005,8 +4035,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_widgets",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "widgets.tsx"
     },
     {
@@ -4016,8 +4046,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealreasonbadge",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealreasonbadge()"
     },
     {
@@ -4027,8 +4057,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealplanwidget",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "mealplanwidget()"
     },
     {
@@ -4038,8 +4068,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "web_src_components_widgets_noteswidget",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "noteswidget()"
     },
     {
@@ -4170,8 +4200,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_calendareventinput",
-      "community": 15,
-      "community_name": "calendarSync.ts",
+      "community": 4,
+      "community_name": "google.ts",
       "norm_label": "calendareventinput"
     },
     {
@@ -4907,8 +4937,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_data_task",
-      "community": 98,
-      "community_name": "dashboard.tsx",
+      "community": 29,
+      "community_name": "data.ts",
       "norm_label": "task"
     },
     {
@@ -5017,8 +5047,8 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "web_src_lib_data_recipefilter",
-      "community": 29,
-      "community_name": "data.ts",
+      "community": 45,
+      "community_name": "recipeFilterParams.ts",
       "norm_label": "recipefilter"
     },
     {
@@ -5039,8 +5069,8 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "web_src_lib_data_note",
-      "community": 98,
-      "community_name": "dashboard.tsx",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "note"
     },
     {
@@ -5215,8 +5245,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_lib_dates_formattime",
-      "community": 18,
-      "community_name": "calendar.ts",
+      "community": 46,
+      "community_name": "page.tsx",
       "norm_label": "formattime()"
     },
     {
@@ -5314,8 +5344,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_db",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "db.ts"
     },
     {
@@ -5325,8 +5355,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_db_globalforprisma",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "globalforprisma"
     },
     {
@@ -5336,8 +5366,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_lib_db_createprismaclient",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "createprismaclient()"
     },
     {
@@ -5358,8 +5388,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 128,
+      "community_name": "sharp",
       "norm_label": "availability.test.ts"
     },
     {
@@ -5369,8 +5399,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_test_persons",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 128,
+      "community_name": "sharp",
       "norm_label": "persons"
     },
     {
@@ -5380,8 +5410,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_test_win",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 128,
+      "community_name": "sharp",
       "norm_label": "win()"
     },
     {
@@ -5391,8 +5421,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 128,
+      "community_name": "sharp",
       "norm_label": "availability.ts"
     },
     {
@@ -5402,8 +5432,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_overlaps",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 128,
+      "community_name": "sharp",
       "norm_label": "overlaps()"
     },
     {
@@ -5413,8 +5443,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_engine_availability_filterbyavailability",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 128,
+      "community_name": "sharp",
       "norm_label": "filterbyavailability()"
     },
     {
@@ -5424,8 +5454,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "capacity.test.ts"
     },
     {
@@ -5435,8 +5465,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_test_w",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "w"
     },
     {
@@ -5446,8 +5476,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_test_at",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "at()"
     },
     {
@@ -5457,8 +5487,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "capacity.ts"
     },
     {
@@ -5468,8 +5498,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_persons",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "persons"
     },
     {
@@ -5479,8 +5509,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_activedaywindow",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "activedaywindow()"
     },
     {
@@ -5490,8 +5520,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_coveredms",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "coveredms()"
     },
     {
@@ -5501,8 +5531,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_dayload",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "dayload()"
     },
     {
@@ -5512,8 +5542,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "completion.test.ts"
     },
     {
@@ -5523,8 +5553,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "completion.ts"
     },
     {
@@ -5534,8 +5564,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_completabletask",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "completabletask"
     },
     {
@@ -5545,8 +5575,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_accountentryinput",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "accountentryinput"
     },
     {
@@ -5556,8 +5586,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_lib_engine_completion_recordcompletion",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "recordcompletion()"
     },
     {
@@ -5567,8 +5597,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "fairness.test.ts"
     },
     {
@@ -5578,8 +5608,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "fairness.ts"
     },
     {
@@ -5589,8 +5619,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_person_order",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "person_order"
     },
     {
@@ -5600,8 +5630,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_computeshare",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "computeshare()"
     },
     {
@@ -5611,8 +5641,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "web_src_lib_engine_fairness_selectbyfairness",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "selectbyfairness()"
     },
     {
@@ -5622,8 +5652,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "index.test.ts"
     },
     {
@@ -5633,8 +5663,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_phase",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "phase"
     },
     {
@@ -5644,8 +5674,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_day",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "day()"
     },
     {
@@ -5655,8 +5685,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_test_baseinput",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "baseinput()"
     },
     {
@@ -5666,8 +5696,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_index",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "index.ts"
     },
     {
@@ -5677,8 +5707,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_plantask",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "plantask()"
     },
     {
@@ -5688,8 +5718,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "personfilter.test.ts"
     },
     {
@@ -5699,8 +5729,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test_persons",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "persons"
     },
     {
@@ -5710,8 +5740,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test_task",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "task()"
     },
     {
@@ -5721,8 +5751,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "personfilter.ts"
     },
     {
@@ -5732,8 +5762,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_filterbyperson",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "filterbyperson()"
     },
     {
@@ -5743,8 +5773,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_types",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "types.ts"
     },
     {
@@ -5754,8 +5784,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_personkey",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "personkey"
     },
     {
@@ -5765,8 +5795,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_enginetask",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "enginetask"
     },
     {
@@ -5776,8 +5806,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_busywindow",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 128,
+      "community_name": "sharp",
       "norm_label": "busywindow"
     },
     {
@@ -5787,8 +5817,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_dayforecast",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "dayforecast"
     },
     {
@@ -5798,8 +5828,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_phaseconfig",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "phaseconfig"
     },
     {
@@ -5809,8 +5839,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_balances",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 99,
+      "community_name": "capacity.ts",
       "norm_label": "balances"
     },
     {
@@ -5820,8 +5850,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planinput",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "planinput"
     },
     {
@@ -5831,8 +5861,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planresult",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "planresult"
     },
     {
@@ -6139,8 +6169,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_test",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "accounts.test.ts"
     },
     {
@@ -6150,8 +6180,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "accounts.ts"
     },
     {
@@ -6161,8 +6191,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getweeklybalances",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "getweeklybalances()"
     },
     {
@@ -6172,8 +6202,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_getcomputedsplit",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "getcomputedsplit()"
     },
     {
@@ -6183,8 +6213,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_repositories_accounts_addmanualentry",
-      "community": 11,
-      "community_name": "planning.test.ts",
+      "community": 21,
+      "community_name": "tasks.write.test.ts",
       "norm_label": "addmanualentry()"
     },
     {
@@ -6260,8 +6290,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "web_src_lib_repositories_calendar_gettodaysevents",
-      "community": 18,
-      "community_name": "calendar.ts",
+      "community": 46,
+      "community_name": "page.tsx",
       "norm_label": "gettodaysevents()"
     },
     {
@@ -6337,8 +6367,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "choreimport.ts"
     },
     {
@@ -6348,8 +6378,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_summary",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "summary"
     },
     {
@@ -6359,8 +6389,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_people",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "people"
     },
     {
@@ -6370,8 +6400,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_ensurepeople",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "ensurepeople()"
     },
     {
@@ -6381,8 +6411,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_importchores",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "importchores()"
     },
     {
@@ -6524,8 +6554,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_repositories_notes_getnotes",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 2,
+      "community_name": "NotesEditor.tsx",
       "norm_label": "getnotes()"
     },
     {
@@ -6590,8 +6620,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "phase.ts"
     },
     {
@@ -6601,8 +6631,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase_activephase",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "activephase"
     },
     {
@@ -6612,8 +6642,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase_getactivephase",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "getactivephase()"
     },
     {
@@ -6623,8 +6653,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "web_src_lib_repositories_phase_setactivephase",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "setactivephase()"
     },
     {
@@ -6678,8 +6708,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_test",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 144,
+      "community_name": "pushSubscriptions.test.ts",
       "norm_label": "pushsubscriptions.test.ts"
     },
     {
@@ -6722,8 +6752,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_upsertsubscription",
-      "community": 16,
-      "community_name": "pushNotify.test.ts",
+      "community": 121,
+      "community_name": "index.test.ts",
       "norm_label": "upsertsubscription()"
     },
     {
@@ -6854,8 +6884,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_test",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 24,
+      "community_name": "recipes.ts",
       "norm_label": "recipes.test.ts"
     },
     {
@@ -6876,8 +6906,8 @@
       "source_location": "L282",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_test_imported",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 24,
+      "community_name": "recipes.ts",
       "norm_label": "imported()"
     },
     {
@@ -6909,8 +6939,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_recipeinput",
-      "community": 64,
-      "community_name": "RecipeEditor.tsx",
+      "community": 24,
+      "community_name": "recipes.ts",
       "norm_label": "recipeinput"
     },
     {
@@ -7063,7 +7093,7 @@
       "source_location": "L230",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_updaterecipe",
-      "community": 51,
+      "community": 24,
       "community_name": "recipes.ts",
       "norm_label": "updaterecipe()"
     },
@@ -7151,8 +7181,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "routinetemplates.test.ts"
     },
     {
@@ -7162,8 +7192,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_todaymidnight",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "todaymidnight()"
     },
     {
@@ -7173,8 +7203,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_makechain",
-      "community": 26,
-      "community_name": "db.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "makechain()"
     },
     {
@@ -7360,8 +7390,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_assigntask",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "assigntask()"
     },
     {
@@ -7371,8 +7401,8 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createtaskinput",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 103,
+      "community_name": "TasksView.tsx",
       "norm_label": "createtaskinput"
     },
     {
@@ -7393,8 +7423,8 @@
       "source_location": "L250",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_opentaskdto",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 103,
+      "community_name": "TasksView.tsx",
       "norm_label": "opentaskdto"
     },
     {
@@ -7470,8 +7500,8 @@
       "source_location": "L346",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_routinetemplatedto",
-      "community": 7,
-      "community_name": "RoutinesView.tsx",
+      "community": 102,
+      "community_name": "tasks.ts",
       "norm_label": "routinetemplatedto"
     },
     {
@@ -7481,8 +7511,8 @@
       "source_location": "L371",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_listroutinetemplates",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 140,
+      "community_name": "page.tsx",
       "norm_label": "listroutinetemplates()"
     },
     {
@@ -7536,8 +7566,8 @@
       "source_location": "L541",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_updateroutinetemplate",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "updateroutinetemplate()"
     },
     {
@@ -7558,8 +7588,8 @@
       "source_location": "L589",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createroutinetemplate",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "createroutinetemplate()"
     },
     {
@@ -7602,8 +7632,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_revalidate",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "revalidate.ts"
     },
     {
@@ -7613,8 +7643,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_dashboard_paths",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "dashboard_paths"
     },
     {
@@ -7624,8 +7654,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_revalidatedashboard",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "revalidatedashboard()"
     },
     {
@@ -7778,8 +7808,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_test",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "chores.test.ts"
     },
     {
@@ -7789,8 +7819,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_test_today",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "today"
     },
     {
@@ -7800,8 +7830,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_chores",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "chores.ts"
     },
     {
@@ -7811,8 +7841,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_choreinput",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "choreinput"
     },
     {
@@ -7822,8 +7852,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_choretaskdata",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "choretaskdata"
     },
     {
@@ -7833,8 +7863,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_chores",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "chores"
     },
     {
@@ -7844,8 +7874,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_adddays",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "adddays()"
     },
     {
@@ -7855,8 +7885,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_staggerwindow",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "staggerwindow()"
     },
     {
@@ -7866,8 +7896,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_buildchoretasks",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 30,
+      "community_name": "dependencies",
       "norm_label": "buildchoretasks()"
     },
     {
@@ -7954,8 +7984,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval_test",
-      "community": 121,
-      "community_name": "index.test.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "learnedinterval.test.ts"
     },
     {
@@ -7965,8 +7995,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval",
-      "community": 121,
-      "community_name": "index.test.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "learnedinterval.ts"
     },
     {
@@ -7976,8 +8006,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval_learnedinterval",
-      "community": 121,
-      "community_name": "index.test.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "learnedinterval()"
     },
     {
@@ -8218,8 +8248,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_lib_services_mealingredientpush_test_mondayentry",
-      "community": 0,
-      "community_name": "meals.ts",
+      "community": 22,
+      "community_name": "shopping.ts",
       "norm_label": "mondayentry()"
     },
     {
@@ -8537,8 +8567,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_planning",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "planning.ts"
     },
     {
@@ -8548,8 +8578,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_plandecision",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "plandecision"
     },
     {
@@ -8559,8 +8589,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_planduetasksoptions",
-      "community": 13,
-      "community_name": "weatherCheck.ts",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "planduetasksoptions"
     },
     {
@@ -8570,8 +8600,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_default_phase",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "default_phase"
     },
     {
@@ -8581,8 +8611,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_parseweathercondition",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "parseweathercondition()"
     },
     {
@@ -8592,8 +8622,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_toenginetask",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 130,
+      "community_name": "planning.ts",
       "norm_label": "toenginetask()"
     },
     {
@@ -8603,8 +8633,8 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_loadphaseconfig",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "loadphaseconfig()"
     },
     {
@@ -8834,8 +8864,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeform_ratings",
-      "community": 51,
-      "community_name": "recipes.ts",
+      "community": 64,
+      "community_name": "RecipeEditor.tsx",
       "norm_label": "ratings"
     },
     {
@@ -10000,8 +10030,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_nextduedate",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 133,
+      "community_name": "nextDueDate",
       "norm_label": "nextduedate()"
     },
     {
@@ -10022,8 +10052,8 @@
       "source_location": "L223",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "rescheduleopenoccurrence()"
     },
     {
@@ -10044,8 +10074,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "rollover.ts"
     },
     {
@@ -10055,8 +10085,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover_rolloveropentasks",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "rolloveropentasks()"
     },
     {
@@ -10066,8 +10096,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_test",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 133,
+      "community_name": "nextDueDate",
       "norm_label": "taskdefer.test.ts"
     },
     {
@@ -10077,8 +10107,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_test_datekey",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 133,
+      "community_name": "nextDueDate",
       "norm_label": "datekey()"
     },
     {
@@ -10088,8 +10118,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 133,
+      "community_name": "nextDueDate",
       "norm_label": "taskdefer.ts"
     },
     {
@@ -10099,8 +10129,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_services_taskdefer_nextsensibleday",
-      "community": 25,
-      "community_name": "recurrence.ts",
+      "community": 133,
+      "community_name": "nextDueDate",
       "norm_label": "nextsensibleday()"
     },
     {
@@ -10110,8 +10140,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_test",
-      "community": 33,
-      "community_name": "isDarkBySun",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "suntheme.test.ts"
     },
     {
@@ -10121,8 +10151,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_test_at",
-      "community": 33,
-      "community_name": "isDarkBySun",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "at()"
     },
     {
@@ -10132,8 +10162,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_suntheme",
-      "community": 33,
-      "community_name": "isDarkBySun",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "suntheme.ts"
     },
     {
@@ -10143,8 +10173,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_tominutes",
-      "community": 33,
-      "community_name": "isDarkBySun",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "tominutes()"
     },
     {
@@ -10154,8 +10184,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_suntheme_isdarkbysun",
-      "community": 33,
-      "community_name": "isDarkBySun",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "isdarkbysun()"
     },
     {
@@ -10789,7 +10819,7 @@
       "label": "Rezepte per Link \u00fcbernehmen",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L43",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "readme_rezepte_per_link_\u00fcbernehmen",
       "community": 65,
@@ -13976,10 +14006,21 @@
       "norm_label": "phase 7 \u2014 obsidian ausgebaut (`b9cc89f`)"
     },
     {
-      "label": "Offen",
+      "label": "Cutover auf dem Tablet \u2014 erledigt 2026-08-25",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
       "source_location": "L226",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_cutover_auf_dem_tablet_erledigt_2026_08_25",
+      "community": 67,
+      "community_name": "Rezeptdatenbank in der App \u2014 Obsidian abl\u00f6sen",
+      "norm_label": "cutover auf dem tablet \u2014 erledigt 2026-08-25"
+    },
+    {
+      "label": "Offen",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
+      "source_location": "L293",
       "_origin": "ast",
       "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
       "community": 67,
@@ -13987,21 +14028,43 @@
       "norm_label": "offen"
     },
     {
-      "label": "Cutover auf dem Tablet",
+      "label": "In der App nachzutragen (12 Rezepte)",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L228",
+      "source_location": "L295",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_cutover_auf_dem_tablet",
+      "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_in_der_app_nachzutragen_12_rezepte",
       "community": 67,
       "community_name": "Rezeptdatenbank in der App \u2014 Obsidian abl\u00f6sen",
-      "norm_label": "cutover auf dem tablet"
+      "norm_label": "in der app nachzutragen (12 rezepte)"
+    },
+    {
+      "label": "Termux:API-App fehlt",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
+      "source_location": "L308",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_termux_api_app_fehlt",
+      "community": 67,
+      "community_name": "Rezeptdatenbank in der App \u2014 Obsidian abl\u00f6sen",
+      "norm_label": "termux:api-app fehlt"
+    },
+    {
+      "label": "Der alte Vault-Ordner",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
+      "source_location": "L325",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_der_alte_vault_ordner",
+      "community": 67,
+      "community_name": "Rezeptdatenbank in der App \u2014 Obsidian abl\u00f6sen",
+      "norm_label": "der alte vault-ordner"
     },
     {
       "label": "Nicht gesichert: die Rezeptbilder",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L260",
+      "source_location": "L332",
       "_origin": "ast",
       "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_nicht_gesichert_die_rezeptbilder",
       "community": 67,
@@ -14012,7 +14075,7 @@
       "label": "Verifikation",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L268",
+      "source_location": "L348",
       "_origin": "ast",
       "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_verifikation",
       "community": 67,
@@ -17450,9 +17513,9 @@
       "source_location": "L95",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "p",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_components_adddoneentry_p"
     },
     {
@@ -17463,9 +17526,9 @@
       "source_location": "L96",
       "complexity": 2,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "active",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_components_adddoneentry_active"
     },
     {
@@ -17658,9 +17721,9 @@
       "source_location": "L67",
       "complexity": 2,
       "loc": 1,
-      "community": 43,
+      "community": 33,
       "norm_label": "active",
-      "community_name": "SettingsView.tsx",
+      "community_name": "isDarkBySun",
       "id": "web_src_components_phaseswitch_active"
     },
     {
@@ -17671,9 +17734,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 121,
       "norm_label": "vapid_public_key",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "index.test.ts",
       "id": "web_src_components_pushsetupcontrol_vapid_public_key"
     },
     {
@@ -18165,9 +18228,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 2,
       "norm_label": "[draft, setdraft]",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "NotesEditor.tsx",
       "id": "web_src_components_mobile_noteseditor_draft_setdraft"
     },
     {
@@ -18178,9 +18241,9 @@
       "source_location": "L11",
       "complexity": 2,
       "loc": 9,
-      "community": 21,
+      "community": 2,
       "norm_label": "add()",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "NotesEditor.tsx",
       "id": "web_src_components_mobile_noteseditor_add"
     },
     {
@@ -18191,9 +18254,9 @@
       "source_location": "L49",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 2,
       "norm_label": "[editing, setediting]",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "NotesEditor.tsx",
       "id": "web_src_components_mobile_noteseditor_editing_setediting"
     },
     {
@@ -18204,9 +18267,9 @@
       "source_location": "L50",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 2,
       "norm_label": "[text, settext]",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "NotesEditor.tsx",
       "id": "web_src_components_mobile_noteseditor_text_settext"
     },
     {
@@ -18217,9 +18280,9 @@
       "source_location": "L52",
       "complexity": 2,
       "loc": 8,
-      "community": 21,
+      "community": 2,
       "norm_label": "save()",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "NotesEditor.tsx",
       "id": "web_src_components_mobile_noteseditor_save"
     },
     {
@@ -18659,9 +18722,9 @@
       "source_location": "L21",
       "complexity": 2,
       "loc": 1,
-      "community": 127,
+      "community": 35,
       "norm_label": "prisma",
-      "community_name": "learnedInterval.ts",
+      "community_name": "dayBounds",
       "id": "web_src_lib_db_prisma"
     },
     {
@@ -18867,9 +18930,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 3,
-      "community": 13,
+      "community": 128,
       "norm_label": "busy",
-      "community_name": "weatherCheck.ts",
+      "community_name": "sharp",
       "id": "web_src_lib_engine_availability_test_busy"
     },
     {
@@ -18880,9 +18943,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 128,
       "norm_label": "window",
-      "community_name": "weatherCheck.ts",
+      "community_name": "sharp",
       "id": "web_src_lib_engine_availability_test_window"
     },
     {
@@ -18893,9 +18956,9 @@
       "source_location": "L25",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 75,
       "norm_label": "busy",
-      "community_name": "weatherCheck.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_engine_capacity_test_busy"
     },
     {
@@ -18906,9 +18969,9 @@
       "source_location": "L26",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 75,
       "norm_label": "load",
-      "community_name": "weatherCheck.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_engine_capacity_test_load"
     },
     {
@@ -18919,9 +18982,9 @@
       "source_location": "L47",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 75,
       "norm_label": "all",
-      "community_name": "weatherCheck.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_engine_capacity_test_all"
     },
     {
@@ -18932,9 +18995,9 @@
       "source_location": "L7",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 75,
       "norm_label": "active_start_hour",
-      "community_name": "weatherCheck.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_engine_capacity_active_start_hour"
     },
     {
@@ -18945,9 +19008,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 75,
       "norm_label": "active_end_hour",
-      "community_name": "weatherCheck.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_engine_capacity_active_end_hour"
     },
     {
@@ -18958,9 +19021,9 @@
       "source_location": "L18",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 99,
       "norm_label": "persons",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_fairness_test_persons"
     },
     {
@@ -18971,9 +19034,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 99,
       "norm_label": "balances",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_fairness_test_balances"
     },
     {
@@ -18984,9 +19047,9 @@
       "source_location": "L27",
       "complexity": 1,
       "loc": 7,
-      "community": 13,
+      "community": 127,
       "norm_label": "task",
-      "community_name": "weatherCheck.ts",
+      "community_name": "learnedInterval.ts",
       "id": "web_src_lib_engine_index_test_task"
     },
     {
@@ -18997,9 +19060,9 @@
       "source_location": "L34",
       "complexity": 1,
       "loc": 5,
-      "community": 13,
+      "community": 127,
       "norm_label": "forecast",
-      "community_name": "weatherCheck.ts",
+      "community_name": "learnedInterval.ts",
       "id": "web_src_lib_engine_index_test_forecast"
     },
     {
@@ -19010,9 +19073,9 @@
       "source_location": "L39",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 127,
       "norm_label": "result",
-      "community_name": "weatherCheck.ts",
+      "community_name": "learnedInterval.ts",
       "id": "web_src_lib_engine_index_test_result"
     },
     {
@@ -19023,9 +19086,9 @@
       "source_location": "L57",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 127,
       "norm_label": "window",
-      "community_name": "weatherCheck.ts",
+      "community_name": "learnedInterval.ts",
       "id": "web_src_lib_engine_index_test_window"
     },
     {
@@ -19036,9 +19099,9 @@
       "source_location": "L58",
       "complexity": 1,
       "loc": 4,
-      "community": 13,
+      "community": 127,
       "norm_label": "busy",
-      "community_name": "weatherCheck.ts",
+      "community_name": "learnedInterval.ts",
       "id": "web_src_lib_engine_index_test_busy"
     },
     {
@@ -19049,9 +19112,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 13,
+      "community": 99,
       "norm_label": "full_threshold",
-      "community_name": "weatherCheck.ts",
+      "community_name": "capacity.ts",
       "id": "web_src_lib_engine_index_full_threshold"
     },
     {
@@ -19114,9 +19177,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "client",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_lib_repositories_accounts_test_client"
     },
     {
@@ -19127,9 +19190,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "balances",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_lib_repositories_accounts_test_balances"
     },
     {
@@ -19140,9 +19203,9 @@
       "source_location": "L26",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "split",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_lib_repositories_accounts_test_split"
     },
     {
@@ -19153,9 +19216,9 @@
       "source_location": "L31",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "before",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_lib_repositories_accounts_test_before"
     },
     {
@@ -19166,9 +19229,9 @@
       "source_location": "L33",
       "complexity": 1,
       "loc": 4,
-      "community": 11,
+      "community": 21,
       "norm_label": "created",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_lib_repositories_accounts_test_created"
     },
     {
@@ -19179,9 +19242,9 @@
       "source_location": "L42",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "after",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "web_src_lib_repositories_accounts_test_after"
     },
     {
@@ -20089,9 +20152,9 @@
       "source_location": "L13",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 144,
       "norm_label": "client",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "pushSubscriptions.test.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_client"
     },
     {
@@ -20102,9 +20165,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 144,
       "norm_label": "sub",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "pushSubscriptions.test.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_sub"
     },
     {
@@ -20115,9 +20178,9 @@
       "source_location": "L28",
       "complexity": 1,
       "loc": 1,
-      "community": 16,
+      "community": 144,
       "norm_label": "all",
-      "community_name": "pushNotify.test.ts",
+      "community_name": "pushSubscriptions.test.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_all"
     },
     {
@@ -20843,9 +20906,9 @@
       "source_location": "L13",
       "complexity": 2,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "rasen",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_rasen"
     },
     {
@@ -20856,9 +20919,9 @@
       "source_location": "L20",
       "complexity": 2,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "gassi",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_gassi"
     },
     {
@@ -20869,9 +20932,9 @@
       "source_location": "L26",
       "complexity": 2,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "einkauf",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_einkauf"
     },
     {
@@ -20882,9 +20945,9 @@
       "source_location": "L27",
       "complexity": 2,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "futter",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_futter"
     },
     {
@@ -20895,9 +20958,9 @@
       "source_location": "L45",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "tasks",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_tasks"
     },
     {
@@ -20908,9 +20971,9 @@
       "source_location": "L54",
       "complexity": 2,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "gross",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_gross"
     },
     {
@@ -20921,9 +20984,9 @@
       "source_location": "L55",
       "complexity": 2,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "klein",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_klein"
     },
     {
@@ -20934,9 +20997,9 @@
       "source_location": "L60",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "original",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_test_original"
     },
     {
@@ -20947,9 +21010,9 @@
       "source_location": "L20",
       "complexity": 1,
       "loc": 1,
-      "community": 91,
+      "community": 30,
       "norm_label": "no_rain",
-      "community_name": "prisma",
+      "community_name": "dependencies",
       "id": "web_src_lib_services_chores_no_rain"
     },
     {
@@ -20960,9 +21023,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 1,
-      "community": 121,
+      "community": 25,
       "norm_label": "learned",
-      "community_name": "index.test.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_learnedinterval_test_learned"
     },
     {
@@ -20973,9 +21036,9 @@
       "source_location": "L6",
       "complexity": 1,
       "loc": 1,
-      "community": 121,
+      "community": 25,
       "norm_label": "alpha",
-      "community_name": "index.test.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_learnedinterval_alpha"
     },
     {
@@ -20986,9 +21049,9 @@
       "source_location": "L7",
       "complexity": 1,
       "loc": 1,
-      "community": 121,
+      "community": 25,
       "norm_label": "min_intervals",
-      "community_name": "index.test.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_learnedinterval_min_intervals"
     },
     {
@@ -22936,9 +22999,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 1,
-      "community": 25,
+      "community": 133,
       "norm_label": "today",
-      "community_name": "recurrence.ts",
+      "community_name": "nextDueDate",
       "id": "web_src_lib_services_taskdefer_test_today"
     },
     {
@@ -22949,9 +23012,9 @@
       "source_location": "L18",
       "complexity": 1,
       "loc": 1,
-      "community": 25,
+      "community": 133,
       "norm_label": "result",
-      "community_name": "recurrence.ts",
+      "community_name": "nextDueDate",
       "id": "web_src_lib_services_taskdefer_test_result"
     },
     {
@@ -22962,9 +23025,9 @@
       "source_location": "L28",
       "complexity": 1,
       "loc": 1,
-      "community": 25,
+      "community": 133,
       "norm_label": "before",
-      "community_name": "recurrence.ts",
+      "community_name": "nextDueDate",
       "id": "web_src_lib_services_taskdefer_test_before"
     },
     {
@@ -23053,9 +23116,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "accounts.ts",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_actions_accounts_ts"
     },
     {
@@ -23092,9 +23155,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 43,
+      "community": 33,
       "norm_label": "phase.ts",
-      "community_name": "SettingsView.tsx",
+      "community_name": "isDarkBySun",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_app_actions_phase_ts"
     },
     {
@@ -23313,9 +23376,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 127,
+      "community": 35,
       "norm_label": "db.ts",
-      "community_name": "learnedInterval.ts",
+      "community_name": "dayBounds",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_db_ts"
     },
     {
@@ -23352,9 +23415,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 11,
+      "community": 21,
       "norm_label": "accounts.ts",
-      "community_name": "planning.test.ts",
+      "community_name": "tasks.write.test.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_repositories_accounts_ts"
     },
     {
@@ -23391,9 +23454,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 43,
+      "community": 33,
       "norm_label": "phase.ts",
-      "community_name": "SettingsView.tsx",
+      "community_name": "isDarkBySun",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_repositories_phase_ts"
     },
     {
@@ -25456,10 +25519,42 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/tablet-backup-loop.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "scripts_tablet_backup_loop",
+      "target": "scripts_tablet_backup_loop_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/tablet-backup-loop.sh",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "script_invocation",
+      "source": "scripts_tablet_backup_loop_sh__entry",
+      "target": "scripts_tablet_backup_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/tablet-start.sh",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "script_invocation",
+      "source": "scripts_tablet_start_sh__entry",
+      "target": "scripts_tablet_backup_loop_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "defines",
       "confidence": "EXTRACTED",
       "source_file": "scripts/tablet-backup.sh",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0,
       "source": "scripts_tablet_backup",
       "target": "scripts_tablet_backup_fail",
@@ -25469,7 +25564,7 @@
       "relation": "defines",
       "confidence": "EXTRACTED",
       "source_file": "scripts/tablet-backup.sh",
-      "source_location": "L37",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "scripts_tablet_backup",
       "target": "scripts_tablet_backup_log",
@@ -25489,7 +25584,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "scripts/tablet-backup.sh",
-      "source_location": "L52",
+      "source_location": "L51",
       "weight": 1.0,
       "context": "call",
       "source": "scripts_tablet_backup_sh__entry",
@@ -25500,7 +25595,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "scripts/tablet-backup.sh",
-      "source_location": "L70",
+      "source_location": "L69",
       "weight": 1.0,
       "context": "call",
       "source": "scripts_tablet_backup_sh__entry",
@@ -25511,7 +25606,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "scripts/tablet-backup.sh",
-      "source_location": "L42",
+      "source_location": "L41",
       "weight": 1.0,
       "context": "call",
       "source": "scripts_tablet_backup_fail",
@@ -54658,7 +54753,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0,
       "source": "readme",
       "target": "docs_rezepte_quellen_und_import",
@@ -54728,7 +54823,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0,
       "source": "readme_haushalts_dashboard",
       "target": "readme_rezepte_per_link_\u00fcbernehmen",
@@ -57388,7 +57483,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L226",
+      "source_location": "L293",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_rezeptdatenbank_in_der_app_obsidian_abl\u00f6sen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
@@ -57398,7 +57493,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L268",
+      "source_location": "L348",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_rezeptdatenbank_in_der_app_obsidian_abl\u00f6sen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_verifikation",
@@ -57412,6 +57507,16 @@
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_rezeptdatenbank_in_der_app_obsidian_abl\u00f6sen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_ziel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
+      "source_location": "L226",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_erledigt",
+      "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_cutover_auf_dem_tablet_erledigt_2026_08_25",
       "confidence_score": 1.0
     },
     {
@@ -57488,20 +57593,40 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L228",
+      "source_location": "L325",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
-      "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_cutover_auf_dem_tablet",
+      "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_der_alte_vault_ordner",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L260",
+      "source_location": "L295",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
+      "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_in_der_app_nachzutragen_12_rezepte",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
+      "source_location": "L332",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_nicht_gesichert_die_rezeptbilder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
+      "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_termux_api_app_fehlt",
       "confidence_score": 1.0
     },
     {
@@ -60140,5 +60265,5 @@
       "source_file": "docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md"
     }
   ],
-  "built_at_commit": "1744e9db1343ca25efad2cd07867d139a7490644"
+  "built_at_commit": "fe3ef67f7ac55c2cd6e128fdb2893ce16fca29bb"
 }
