@@ -260,8 +260,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_package",
-      "community": 138,
-      "community_name": "package.json",
+      "community": 73,
+      "community_name": "allowScripts",
       "norm_label": "package.json"
     },
     {
@@ -271,8 +271,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "web_package_name",
-      "community": 138,
-      "community_name": "package.json",
+      "community": 73,
+      "community_name": "allowScripts",
       "norm_label": "name"
     },
     {
@@ -282,8 +282,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "web_package_version",
-      "community": 138,
-      "community_name": "package.json",
+      "community": 73,
+      "community_name": "allowScripts",
       "norm_label": "version"
     },
     {
@@ -293,8 +293,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_package_private",
-      "community": 138,
-      "community_name": "package.json",
+      "community": 73,
+      "community_name": "allowScripts",
       "norm_label": "private"
     },
     {
@@ -502,8 +502,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_package_dependencies_prisma_client",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "@prisma/client"
     },
     {
@@ -513,8 +513,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "prisma_client",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "@prisma/client"
     },
     {
@@ -755,8 +755,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_node",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/node"
     },
     {
@@ -766,8 +766,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "types_node",
-      "community": 97,
-      "community_name": "@types/node",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/node"
     },
     {
@@ -821,8 +821,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "web_package_devdependencies_types_web_push",
-      "community": 140,
-      "community_name": "@types/web-push",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/web-push"
     },
     {
@@ -832,8 +832,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "types_web_push",
-      "community": 140,
-      "community_name": "@types/web-push",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "@types/web-push"
     },
     {
@@ -843,8 +843,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "web_package_devdependencies_eslint",
-      "community": 128,
-      "community_name": "eslint",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "eslint"
     },
     {
@@ -854,8 +854,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "eslint",
-      "community": 128,
-      "community_name": "eslint",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "eslint"
     },
     {
@@ -887,8 +887,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "web_package_devdependencies_prisma",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "prisma"
     },
     {
@@ -898,8 +898,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "prisma",
-      "community": 91,
-      "community_name": "prisma",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "prisma"
     },
     {
@@ -953,8 +953,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "web_package_devdependencies_tsx",
-      "community": 95,
-      "community_name": "tsx",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "tsx"
     },
     {
@@ -964,8 +964,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "tsx",
-      "community": 95,
-      "community_name": "tsx",
+      "community": 37,
+      "community_name": "devDependencies",
       "norm_label": "tsx"
     },
     {
@@ -1129,8 +1129,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_prisma_importchores",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "importchores.ts"
     },
     {
@@ -1140,8 +1140,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_prisma_importchores_main",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "main()"
     },
     {
@@ -1159,7 +1159,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "web/prisma/importRecipe.ts",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "web_prisma_importrecipe_main",
       "community": 24,
@@ -1668,8 +1668,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_routines_page",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "page.tsx"
     },
     {
@@ -1679,8 +1679,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_app_mobile_mobile_routines_page_mobileroutinespage",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "mobileroutinespage()"
     },
     {
@@ -1844,8 +1844,8 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_setactivedayrecipeaction",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "setactivedayrecipeaction()"
     },
     {
@@ -1855,8 +1855,8 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "web_src_app_actions_meals_pushmealingredientsaction",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "pushmealingredientsaction()"
     },
     {
@@ -2050,7 +2050,7 @@
       "label": "revalidateRecipes()",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_revalidaterecipes",
       "community": 51,
@@ -2061,18 +2061,18 @@
       "label": "ingestVaultAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_ingestvaultaction",
-      "community": 51,
-      "community_name": "recipes.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "ingestvaultaction()"
     },
     {
       "label": "createRecipeAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L47",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_createrecipeaction",
       "community": 51,
@@ -2083,7 +2083,7 @@
       "label": "updateRecipeAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L53",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_updaterecipeaction",
       "community": 51,
@@ -2094,7 +2094,7 @@
       "label": "deleteRecipeAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L62",
+      "source_location": "L63",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_deleterecipeaction",
       "community": 51,
@@ -2105,7 +2105,7 @@
       "label": "setRecipeRatingAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L68",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_setreciperatingaction",
       "community": 51,
@@ -2116,7 +2116,7 @@
       "label": "RecipeUrlImportResult",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L73",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_recipeurlimportresult",
       "community": 51,
@@ -2127,7 +2127,7 @@
       "label": "importRecipeUrlAction()",
       "file_type": "code",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L89",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "web_src_app_actions_recipes_importrecipeurlaction",
       "community": 51,
@@ -2390,6 +2390,39 @@
     {
       "label": "route.ts",
       "file_type": "code",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "web_src_app_api_recipe_image_file_route",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "notFound()",
+      "file_type": "code",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "web_src_app_api_recipe_image_file_route_notfound",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "notfound()"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "web_src_app_api_recipe_image_file_route_get",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "get()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
       "source_file": "web/src/app/api/sync/calendar/route.ts",
       "source_location": "L1",
       "_origin": "ast",
@@ -2570,8 +2603,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 125,
+      "community_name": "rollover.test.ts",
       "norm_label": "adddoneentry.tsx"
     },
     {
@@ -2581,8 +2614,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry_loggableperson",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 125,
+      "community_name": "rollover.test.ts",
       "norm_label": "loggableperson"
     },
     {
@@ -2592,8 +2625,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry_people",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 125,
+      "community_name": "rollover.test.ts",
       "norm_label": "people"
     },
     {
@@ -2603,8 +2636,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_components_adddoneentry_adddoneentry",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 125,
+      "community_name": "rollover.test.ts",
       "norm_label": "adddoneentry()"
     },
     {
@@ -2933,8 +2966,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_vaultingestcontrol",
-      "community": 51,
-      "community_name": "recipes.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "vaultingestcontrol.tsx"
     },
     {
@@ -2944,8 +2977,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_components_vaultingestcontrol_vaultingestcontrol",
-      "community": 51,
-      "community_name": "recipes.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "vaultingestcontrol()"
     },
     {
@@ -2955,8 +2988,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_weather",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "weather.tsx"
     },
     {
@@ -2966,8 +2999,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_components_weather_weather",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "weather()"
     },
     {
@@ -3054,8 +3087,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_components_dashboard_usesuntheme",
-      "community": 103,
-      "community_name": "TasksView.tsx",
+      "community": 33,
+      "community_name": "isDarkBySun",
       "norm_label": "usesuntheme()"
     },
     {
@@ -3153,8 +3186,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "web_src_components_icons_weatherglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "weatherglyph()"
     },
     {
@@ -3164,8 +3197,8 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "web_src_components_icons_calendarglyph",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 68,
+      "community_name": "TodayView.tsx",
       "norm_label": "calendarglyph()"
     },
     {
@@ -3208,8 +3241,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist.tsx"
     },
     {
@@ -3219,8 +3252,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_ingredientlabel",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "ingredientlabel()"
     },
     {
@@ -3230,8 +3263,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "web_src_components_mobile_mealweeklist_mealweeklist",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealweeklist()"
     },
     {
@@ -3659,8 +3692,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "web_src_components_mobile_routinesview_routinesview",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "routinesview()"
     },
     {
@@ -3857,8 +3890,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_mobile_todayview",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 103,
+      "community_name": "TasksView.tsx",
       "norm_label": "todayview.tsx"
     },
     {
@@ -3868,8 +3901,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "web_src_components_mobile_todayview_opt",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 103,
+      "community_name": "TasksView.tsx",
       "norm_label": "opt"
     },
     {
@@ -3934,8 +3967,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_ui",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "ui.tsx"
     },
     {
@@ -3945,8 +3978,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_components_ui_card",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "card()"
     },
     {
@@ -3956,8 +3989,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_components_ui_cardhead",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "cardhead()"
     },
     {
@@ -3978,8 +4011,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_components_widgets",
-      "community": 98,
-      "community_name": "dashboard.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "widgets.tsx"
     },
     {
@@ -3989,8 +4022,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealreasonbadge",
-      "community": 98,
-      "community_name": "dashboard.tsx",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "mealreasonbadge()"
     },
     {
@@ -4000,8 +4033,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "web_src_components_widgets_mealplanwidget",
-      "community": 98,
-      "community_name": "dashboard.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "mealplanwidget()"
     },
     {
@@ -4011,8 +4044,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "web_src_components_widgets_noteswidget",
-      "community": 98,
-      "community_name": "dashboard.tsx",
+      "community": 97,
+      "community_name": "@types/node",
       "norm_label": "noteswidget()"
     },
     {
@@ -4143,8 +4176,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_integrations_calendar_google_calendareventinput",
-      "community": 18,
-      "community_name": "calendar.ts",
+      "community": 4,
+      "community_name": "google.ts",
       "norm_label": "calendareventinput"
     },
     {
@@ -4363,8 +4396,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_weathercondition",
-      "community": 41,
-      "community_name": "icons.tsx",
+      "community": 55,
+      "community_name": "openMeteo.ts",
       "norm_label": "weathercondition"
     },
     {
@@ -4374,8 +4407,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "web_src_integrations_weather_openmeteo_currentweather",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "currentweather"
     },
     {
@@ -5100,8 +5133,8 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "web_src_lib_data_person",
-      "community": 68,
-      "community_name": "TodayView.tsx",
+      "community": 125,
+      "community_name": "rollover.test.ts",
       "norm_label": "person"
     },
     {
@@ -5177,8 +5210,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_lib_dates_formattime",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 18,
+      "community_name": "calendar.ts",
       "norm_label": "formattime()"
     },
     {
@@ -5276,8 +5309,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_db",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "db.ts"
     },
     {
@@ -5287,8 +5320,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "web_src_lib_db_globalforprisma",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "globalforprisma"
     },
     {
@@ -5298,8 +5331,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_lib_db_createprismaclient",
-      "community": 75,
-      "community_name": "db.ts",
+      "community": 127,
+      "community_name": "learnedInterval.ts",
       "norm_label": "createprismaclient()"
     },
     {
@@ -5441,8 +5474,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "web_src_lib_engine_capacity_activedaywindow",
-      "community": 99,
-      "community_name": "capacity.ts",
+      "community": 126,
+      "community_name": "planning.ts",
       "norm_label": "activedaywindow()"
     },
     {
@@ -5628,8 +5661,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_engine_index",
-      "community": 105,
-      "community_name": "index.ts",
+      "community": 100,
+      "community_name": "types.ts",
       "norm_label": "index.ts"
     },
     {
@@ -5639,8 +5672,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "web_src_lib_engine_index_plantask",
-      "community": 105,
-      "community_name": "index.ts",
+      "community": 126,
+      "community_name": "planning.ts",
       "norm_label": "plantask()"
     },
     {
@@ -5672,8 +5705,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_test_task",
-      "community": 100,
-      "community_name": "types.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "task()"
     },
     {
@@ -5694,8 +5727,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_engine_personfilter_filterbyperson",
-      "community": 105,
-      "community_name": "index.ts",
+      "community": 100,
+      "community_name": "types.ts",
       "norm_label": "filterbyperson()"
     },
     {
@@ -5749,8 +5782,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_dayforecast",
-      "community": 126,
-      "community_name": "planning.ts",
+      "community": 13,
+      "community_name": "weatherCheck.ts",
       "norm_label": "dayforecast"
     },
     {
@@ -5782,8 +5815,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "web_src_lib_engine_types_planinput",
-      "community": 121,
-      "community_name": "index.test.ts",
+      "community": 100,
+      "community_name": "types.ts",
       "norm_label": "planinput"
     },
     {
@@ -6299,8 +6332,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "choreimport.ts"
     },
     {
@@ -6310,8 +6343,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_summary",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "summary"
     },
     {
@@ -6321,8 +6354,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_people",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "people"
     },
     {
@@ -6332,8 +6365,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_ensurepeople",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "ensurepeople()"
     },
     {
@@ -6343,8 +6376,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "web_src_lib_repositories_choreimport_importchores",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 71,
+      "community_name": "choreImport.test.ts",
       "norm_label": "importchores()"
     },
     {
@@ -6596,8 +6629,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_projects_test",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "projects.test.ts"
     },
     {
@@ -6607,8 +6640,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_projects",
-      "community": 46,
-      "community_name": "page.tsx",
+      "community": 98,
+      "community_name": "dashboard.tsx",
       "norm_label": "projects.ts"
     },
     {
@@ -6640,8 +6673,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_test",
-      "community": 27,
-      "community_name": "PushSetupControl.tsx",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "pushsubscriptions.test.ts"
     },
     {
@@ -6651,8 +6684,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions",
-      "community": 27,
-      "community_name": "PushSetupControl.tsx",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "pushsubscriptions.ts"
     },
     {
@@ -6662,8 +6695,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_pushsubscriptioninput",
-      "community": 27,
-      "community_name": "PushSetupControl.tsx",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "pushsubscriptioninput"
     },
     {
@@ -6673,8 +6706,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_storedsubscription",
-      "community": 27,
-      "community_name": "PushSetupControl.tsx",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "storedsubscription"
     },
     {
@@ -6695,8 +6728,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "web_src_lib_repositories_pushsubscriptions_deletesubscription",
-      "community": 27,
-      "community_name": "PushSetupControl.tsx",
+      "community": 16,
+      "community_name": "pushNotify.test.ts",
       "norm_label": "deletesubscription()"
     },
     {
@@ -6750,8 +6783,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipeingest_ingestreport",
-      "community": 51,
-      "community_name": "recipes.ts",
+      "community": 75,
+      "community_name": "db.ts",
       "norm_label": "ingestreport"
     },
     {
@@ -6791,7 +6824,7 @@
       "label": "seedCurry()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/recipes.test.ts",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_test_seedcurry",
       "community": 24,
@@ -6802,7 +6835,7 @@
       "label": "imported()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/recipes.test.ts",
-      "source_location": "L263",
+      "source_location": "L282",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_test_imported",
       "community": 24,
@@ -6915,8 +6948,8 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_listrecipeoptions",
-      "community": 24,
-      "community_name": "recipes.ts",
+      "community": 3,
+      "community_name": "recipeImport.ts",
       "norm_label": "listrecipeoptions()"
     },
     {
@@ -7041,10 +7074,21 @@
       "norm_label": "deleterecipe()"
     },
     {
+      "label": "setRecipeImage()",
+      "file_type": "code",
+      "source_file": "web/src/lib/repositories/recipes.ts",
+      "source_location": "L348",
+      "_origin": "ast",
+      "id": "web_src_lib_repositories_recipes_setrecipeimage",
+      "community": 24,
+      "community_name": "recipes.ts",
+      "norm_label": "setrecipeimage()"
+    },
+    {
       "label": "setRecipeRating()",
       "file_type": "code",
       "source_file": "web/src/lib/repositories/recipes.ts",
-      "source_location": "L344",
+      "source_location": "L357",
       "_origin": "ast",
       "id": "web_src_lib_repositories_recipes_setreciperating",
       "community": 51,
@@ -7058,8 +7102,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "routinetemplates.test.ts"
     },
     {
@@ -7069,8 +7113,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_todaymidnight",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "todaymidnight()"
     },
     {
@@ -7080,8 +7124,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "web_src_lib_repositories_routinetemplates_test_makechain",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "makechain()"
     },
     {
@@ -7267,8 +7311,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_assigntask",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 126,
+      "community_name": "planning.ts",
       "norm_label": "assigntask()"
     },
     {
@@ -7278,8 +7322,8 @@
       "source_location": "L212",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createtaskinput",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 103,
+      "community_name": "TasksView.tsx",
       "norm_label": "createtaskinput"
     },
     {
@@ -7344,8 +7388,8 @@
       "source_location": "L309",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_defertask",
-      "community": 103,
-      "community_name": "TasksView.tsx",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "defertask()"
     },
     {
@@ -7388,8 +7432,8 @@
       "source_location": "L371",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_listroutinetemplates",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "listroutinetemplates()"
     },
     {
@@ -7443,8 +7487,8 @@
       "source_location": "L541",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_updateroutinetemplate",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "updateroutinetemplate()"
     },
     {
@@ -7465,8 +7509,8 @@
       "source_location": "L589",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_createroutinetemplate",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 7,
+      "community_name": "RoutinesView.tsx",
       "norm_label": "createroutinetemplate()"
     },
     {
@@ -7487,8 +7531,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_write_test",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 95,
+      "community_name": "tsx",
       "norm_label": "tasks.write.test.ts"
     },
     {
@@ -7498,8 +7542,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "web_src_lib_repositories_tasks_write_test_findtaskbytitle",
-      "community": 21,
-      "community_name": "tasks.write.test.ts",
+      "community": 95,
+      "community_name": "tsx",
       "norm_label": "findtaskbytitle()"
     },
     {
@@ -7575,8 +7619,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_revalidate",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "revalidate.ts"
     },
     {
@@ -7586,8 +7630,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_dashboard_paths",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "dashboard_paths"
     },
     {
@@ -7597,8 +7641,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "web_src_lib_revalidate_revalidatedashboard",
-      "community": 56,
-      "community_name": "revalidateDashboard",
+      "community": 0,
+      "community_name": "meals.ts",
       "norm_label": "revalidatedashboard()"
     },
     {
@@ -7751,8 +7795,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_test",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "chores.test.ts"
     },
     {
@@ -7762,8 +7806,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_test_today",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "today"
     },
     {
@@ -7773,8 +7817,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_chores",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "chores.ts"
     },
     {
@@ -7784,8 +7828,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_choreinput",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "choreinput"
     },
     {
@@ -7795,8 +7839,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_choretaskdata",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "choretaskdata"
     },
     {
@@ -7806,8 +7850,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_chores",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "chores"
     },
     {
@@ -7817,8 +7861,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_adddays",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "adddays()"
     },
     {
@@ -7828,8 +7872,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_staggerwindow",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "staggerwindow()"
     },
     {
@@ -7839,8 +7883,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "web_src_lib_services_chores_buildchoretasks",
-      "community": 30,
-      "community_name": "dependencies",
+      "community": 91,
+      "community_name": "prisma",
       "norm_label": "buildchoretasks()"
     },
     {
@@ -7927,8 +7971,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval_test",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "learnedinterval.test.ts"
     },
     {
@@ -7938,8 +7982,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "learnedinterval.ts"
     },
     {
@@ -7949,8 +7993,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "web_src_lib_services_learnedinterval_learnedinterval",
-      "community": 127,
-      "community_name": "learnedInterval.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "learnedinterval()"
     },
     {
@@ -8334,8 +8378,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_services_mealweights_test_r",
-      "community": 0,
-      "community_name": "meals.ts",
+      "community": 119,
+      "community_name": "recipeSearch.ts",
       "norm_label": "r()"
     },
     {
@@ -8565,8 +8609,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_planduetasksoptions",
-      "community": 126,
-      "community_name": "planning.ts",
+      "community": 122,
+      "community_name": "BusyWindow",
       "norm_label": "planduetasksoptions"
     },
     {
@@ -8609,8 +8653,8 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_loadphaseconfig",
-      "community": 43,
-      "community_name": "SettingsView.tsx",
+      "community": 126,
+      "community_name": "planning.ts",
       "norm_label": "loadphaseconfig()"
     },
     {
@@ -8620,8 +8664,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "web_src_lib_services_planning_planduetasks",
-      "community": 35,
-      "community_name": "dayBounds",
+      "community": 126,
+      "community_name": "planning.ts",
       "norm_label": "planduetasks()"
     },
     {
@@ -9090,7 +9134,7 @@
       "label": "runClaude()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L148",
+      "source_location": "L150",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeideas_runclaude",
       "community": 3,
@@ -9101,12 +9145,199 @@
       "label": "generateRecipeIdeas()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L183",
+      "source_location": "L185",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeideas_generaterecipeideas",
       "community": 3,
       "community_name": "recipeImport.ts",
       "norm_label": "generaterecipeideas()"
+    },
+    {
+      "label": "recipeImage.test.ts",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_test",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "recipeimage.test.ts"
+    },
+    {
+      "label": "bytes()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_test_bytes",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "bytes()"
+    },
+    {
+      "label": "JPEG",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_test_jpeg",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "jpeg"
+    },
+    {
+      "label": "PNG",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_test_png",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "png"
+    },
+    {
+      "label": "start()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L104",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_test_start",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "start()"
+    },
+    {
+      "label": "recipeImage.ts",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "recipeimage.ts"
+    },
+    {
+      "label": "CONTENT_TYPES",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_content_types",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "content_types"
+    },
+    {
+      "label": "hasAscii()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_hasascii",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "hasascii()"
+    },
+    {
+      "label": "startsWithBytes()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_startswithbytes",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "startswithbytes()"
+    },
+    {
+      "label": "sniffImageExtension()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_sniffimageextension",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "sniffimageextension()"
+    },
+    {
+      "label": "contentTypeForImage()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_contenttypeforimage",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "contenttypeforimage()"
+    },
+    {
+      "label": "isSafeImageFile()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_issafeimagefile",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "issafeimagefile()"
+    },
+    {
+      "label": "imageFileName()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_imagefilename",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "imagefilename()"
+    },
+    {
+      "label": "readCapped()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L95",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_readcapped",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "readcapped()"
+    },
+    {
+      "label": "recipeImageDir()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_recipeimagedir",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "recipeimagedir()"
+    },
+    {
+      "label": "downloadRecipeImage()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L138",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_downloadrecipeimage",
+      "community": 56,
+      "community_name": "revalidateDashboard",
+      "norm_label": "downloadrecipeimage()"
+    },
+    {
+      "label": "attachRecipeImage()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L176",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "community": 24,
+      "community_name": "recipes.ts",
+      "norm_label": "attachrecipeimage()"
     },
     {
       "label": "recipeImport.test.ts",
@@ -9123,7 +9354,7 @@
       "label": "page()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.test.ts",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_test_page",
       "community": 3,
@@ -9134,7 +9365,7 @@
       "label": "SCHEMA",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.test.ts",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_test_schema",
       "community": 3,
@@ -9145,7 +9376,7 @@
       "label": "stubPage()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.test.ts",
-      "source_location": "L287",
+      "source_location": "L332",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_test_stubpage",
       "community": 3,
@@ -9189,7 +9420,7 @@
       "label": "ENTITIES",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L43",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_entities",
       "community": 3,
@@ -9200,7 +9431,7 @@
       "label": "decodeEntities()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L82",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_decodeentities",
       "community": 3,
@@ -9211,7 +9442,7 @@
       "label": "stripHtml()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L91",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_striphtml",
       "community": 3,
@@ -9222,7 +9453,7 @@
       "label": "Json",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L99",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_json",
       "community": 3,
@@ -9233,7 +9464,7 @@
       "label": "isRecipeNode()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L101",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_isrecipenode",
       "community": 3,
@@ -9244,7 +9475,7 @@
       "label": "findRecipeNode()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L111",
+      "source_location": "L113",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_findrecipenode",
       "community": 3,
@@ -9255,7 +9486,7 @@
       "label": "extractRecipeSchema()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L134",
+      "source_location": "L136",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_extractrecipeschema",
       "community": 3,
@@ -9266,7 +9497,7 @@
       "label": "FRACTIONS",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L155",
+      "source_location": "L157",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_fractions",
       "community": 3,
@@ -9277,7 +9508,7 @@
       "label": "UNITS",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L170",
+      "source_location": "L172",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_units",
       "community": 3,
@@ -9288,7 +9519,7 @@
       "label": "VAGUE_AMOUNTS",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L226",
+      "source_location": "L228",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_vague_amounts",
       "community": 3,
@@ -9299,7 +9530,7 @@
       "label": "formatGermanNumber()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L228",
+      "source_location": "L230",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_formatgermannumber",
       "community": 3,
@@ -9310,7 +9541,7 @@
       "label": "fractionToNumber()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L234",
+      "source_location": "L236",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_fractiontonumber",
       "community": 3,
@@ -9321,7 +9552,7 @@
       "label": "cleanIngredientName()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L243",
+      "source_location": "L245",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_cleaningredientname",
       "community": 3,
@@ -9332,7 +9563,7 @@
       "label": "parseIngredientLine()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L256",
+      "source_location": "L258",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_parseingredientline",
       "community": 3,
@@ -9343,7 +9574,7 @@
       "label": "parseIsoDuration()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L305",
+      "source_location": "L307",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_parseisoduration",
       "community": 3,
@@ -9354,7 +9585,7 @@
       "label": "parseServings()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L315",
+      "source_location": "L317",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_parseservings",
       "community": 3,
@@ -9365,7 +9596,7 @@
       "label": "parseNutritionNumber()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L326",
+      "source_location": "L328",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_parsenutritionnumber",
       "community": 3,
@@ -9376,7 +9607,7 @@
       "label": "collectSteps()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L335",
+      "source_location": "L337",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_collectsteps",
       "community": 3,
@@ -9384,10 +9615,21 @@
       "norm_label": "collectsteps()"
     },
     {
+      "label": "pickImageUrl()",
+      "file_type": "code",
+      "source_file": "web/src/lib/services/recipeImport.ts",
+      "source_location": "L366",
+      "_origin": "ast",
+      "id": "web_src_lib_services_recipeimport_pickimageurl",
+      "community": 3,
+      "community_name": "recipeImport.ts",
+      "norm_label": "pickimageurl()"
+    },
+    {
       "label": "collectTags()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L359",
+      "source_location": "L401",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_collecttags",
       "community": 3,
@@ -9398,7 +9640,7 @@
       "label": "TRANSLITERATE",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L380",
+      "source_location": "L422",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_transliterate",
       "community": 119,
@@ -9409,7 +9651,7 @@
       "label": "slugFromName()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L409",
+      "source_location": "L451",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_slugfromname",
       "community": 3,
@@ -9420,7 +9662,7 @@
       "label": "toImportedRecipe()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L433",
+      "source_location": "L475",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_toimportedrecipe",
       "community": 3,
@@ -9431,7 +9673,7 @@
       "label": "fetchRecipePage()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L482",
+      "source_location": "L525",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_fetchrecipepage",
       "community": 3,
@@ -9442,7 +9684,7 @@
       "label": "normalizeRecipeUrl()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L492",
+      "source_location": "L535",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_normalizerecipeurl",
       "community": 3,
@@ -9453,11 +9695,11 @@
       "label": "importRecipeFromUrl()",
       "file_type": "code",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L511",
+      "source_location": "L554",
       "_origin": "ast",
       "id": "web_src_lib_services_recipeimport_importrecipefromurl",
-      "community": 24,
-      "community_name": "recipes.ts",
+      "community": 3,
+      "community_name": "recipeImport.ts",
       "norm_label": "importrecipefromurl()"
     },
     {
@@ -9874,8 +10116,8 @@
       "source_location": "L223",
       "_origin": "ast",
       "id": "web_src_lib_services_recurrence_rescheduleopenoccurrence",
-      "community": 102,
-      "community_name": "tasks.ts",
+      "community": 25,
+      "community_name": "recurrence.ts",
       "norm_label": "rescheduleopenoccurrence()"
     },
     {
@@ -9885,8 +10127,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover_test",
-      "community": 125,
-      "community_name": "rollover.test.ts",
+      "community": 26,
+      "community_name": "db.ts",
       "norm_label": "rollover.test.ts"
     },
     {
@@ -9896,8 +10138,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover",
-      "community": 125,
-      "community_name": "rollover.test.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "rollover.ts"
     },
     {
@@ -9907,8 +10149,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "web_src_lib_services_rollover_rolloveropentasks",
-      "community": 125,
-      "community_name": "rollover.test.ts",
+      "community": 35,
+      "community_name": "dayBounds",
       "norm_label": "rolloveropentasks()"
     },
     {
@@ -13828,21 +14070,10 @@
       "norm_label": "phase 4 \u2014 detailseite, portionsrechner, bearbeiten"
     },
     {
-      "label": "Offen",
-      "file_type": "document",
-      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L126",
-      "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
-      "community": 67,
-      "community_name": "Rezeptdatenbank in der App \u2014 Obsidian abl\u00f6sen",
-      "norm_label": "offen"
-    },
-    {
       "label": "Phase 5 \u2014 Bilder",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L128",
+      "source_location": "L124",
       "_origin": "ast",
       "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_phase_5_bilder",
       "community": 67,
@@ -13850,10 +14081,21 @@
       "norm_label": "phase 5 \u2014 bilder"
     },
     {
+      "label": "Offen",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
+      "source_location": "L160",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
+      "community": 67,
+      "community_name": "Rezeptdatenbank in der App \u2014 Obsidian abl\u00f6sen",
+      "norm_label": "offen"
+    },
+    {
       "label": "Phase 6 \u2014 Backup (nicht optional, siehe Risiko oben)",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L141",
+      "source_location": "L162",
       "_origin": "ast",
       "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_phase_6_backup_nicht_optional_siehe_risiko_oben",
       "community": 67,
@@ -13864,7 +14106,7 @@
       "label": "Phase 7 \u2014 Obsidian ausbauen",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L153",
+      "source_location": "L174",
       "_origin": "ast",
       "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_phase_7_obsidian_ausbauen",
       "community": 67,
@@ -13875,7 +14117,7 @@
       "label": "Verifikation",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L185",
+      "source_location": "L206",
       "_origin": "ast",
       "id": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_verifikation",
       "community": 67,
@@ -17302,9 +17544,9 @@
       "source_location": "L95",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 125,
       "norm_label": "p",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_components_adddoneentry_p"
     },
     {
@@ -17315,9 +17557,9 @@
       "source_location": "L96",
       "complexity": 2,
       "loc": 1,
-      "community": 21,
+      "community": 125,
       "norm_label": "active",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "rollover.test.ts",
       "id": "web_src_components_adddoneentry_active"
     },
     {
@@ -17783,9 +18025,9 @@
       "source_location": "L57",
       "complexity": 1,
       "loc": 1,
-      "community": 68,
+      "community": 97,
       "norm_label": "p",
-      "community_name": "TodayView.tsx",
+      "community_name": "@types/node",
       "id": "web_src_components_ui_p"
     },
     {
@@ -17796,9 +18038,9 @@
       "source_location": "L11",
       "complexity": 1,
       "loc": 1,
-      "community": 51,
+      "community": 75,
       "norm_label": "pill",
-      "community_name": "recipes.ts",
+      "community_name": "db.ts",
       "id": "web_src_components_vaultingestcontrol_pill"
     },
     {
@@ -18524,9 +18766,9 @@
       "source_location": "L21",
       "complexity": 2,
       "loc": 1,
-      "community": 75,
+      "community": 127,
       "norm_label": "prisma",
-      "community_name": "db.ts",
+      "community_name": "learnedInterval.ts",
       "id": "web_src_lib_db_prisma"
     },
     {
@@ -18914,9 +19156,9 @@
       "source_location": "L8",
       "complexity": 1,
       "loc": 1,
-      "community": 105,
+      "community": 100,
       "norm_label": "full_threshold",
-      "community_name": "index.ts",
+      "community_name": "types.ts",
       "id": "web_src_lib_engine_index_full_threshold"
     },
     {
@@ -19928,9 +20170,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 46,
+      "community": 26,
       "norm_label": "client",
-      "community_name": "page.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_projects_test_client"
     },
     {
@@ -19941,9 +20183,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 46,
+      "community": 26,
       "norm_label": "progress",
-      "community_name": "page.tsx",
+      "community_name": "db.ts",
       "id": "web_src_lib_repositories_projects_test_progress"
     },
     {
@@ -19954,9 +20196,9 @@
       "source_location": "L13",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 16,
       "norm_label": "client",
-      "community_name": "PushSetupControl.tsx",
+      "community_name": "pushNotify.test.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_client"
     },
     {
@@ -19967,9 +20209,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 16,
       "norm_label": "sub",
-      "community_name": "PushSetupControl.tsx",
+      "community_name": "pushNotify.test.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_sub"
     },
     {
@@ -19980,9 +20222,9 @@
       "source_location": "L28",
       "complexity": 1,
       "loc": 1,
-      "community": 27,
+      "community": 16,
       "norm_label": "all",
-      "community_name": "PushSetupControl.tsx",
+      "community_name": "pushNotify.test.ts",
       "id": "web_src_lib_repositories_pushsubscriptions_test_all"
     },
     {
@@ -20474,9 +20716,9 @@
       "source_location": "L10",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "client",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_client"
     },
     {
@@ -20487,9 +20729,9 @@
       "source_location": "L11",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "today",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_today"
     },
     {
@@ -20500,9 +20742,9 @@
       "source_location": "L32",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "task",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_task"
     },
     {
@@ -20513,9 +20755,9 @@
       "source_location": "L34",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "before",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_before"
     },
     {
@@ -20526,9 +20768,9 @@
       "source_location": "L38",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "updated",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_updated"
     },
     {
@@ -20539,9 +20781,9 @@
       "source_location": "L42",
       "complexity": 1,
       "loc": 3,
-      "community": 21,
+      "community": 95,
       "norm_label": "entries",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_entries"
     },
     {
@@ -20552,9 +20794,9 @@
       "source_location": "L48",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "after",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_after"
     },
     {
@@ -20565,9 +20807,9 @@
       "source_location": "L116",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "persons",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_persons"
     },
     {
@@ -20578,9 +20820,9 @@
       "source_location": "L125",
       "complexity": 1,
       "loc": 3,
-      "community": 21,
+      "community": 95,
       "norm_label": "afterentries",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_afterentries"
     },
     {
@@ -20591,9 +20833,9 @@
       "source_location": "L134",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "due",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_due"
     },
     {
@@ -20604,9 +20846,9 @@
       "source_location": "L135",
       "complexity": 1,
       "loc": 4,
-      "community": 21,
+      "community": 95,
       "norm_label": "{ id }",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_id"
     },
     {
@@ -20617,9 +20859,9 @@
       "source_location": "L139",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "row",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_row"
     },
     {
@@ -20630,9 +20872,9 @@
       "source_location": "L159",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "open",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_open"
     },
     {
@@ -20643,9 +20885,9 @@
       "source_location": "L162",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "dues",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_dues"
     },
     {
@@ -20656,9 +20898,9 @@
       "source_location": "L170",
       "complexity": 1,
       "loc": 1,
-      "community": 21,
+      "community": 95,
       "norm_label": "tomorrow",
-      "community_name": "tasks.write.test.ts",
+      "community_name": "tsx",
       "id": "web_src_lib_repositories_tasks_write_test_tomorrow"
     },
     {
@@ -20825,9 +21067,9 @@
       "source_location": "L13",
       "complexity": 2,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "rasen",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_rasen"
     },
     {
@@ -20838,9 +21080,9 @@
       "source_location": "L20",
       "complexity": 2,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "gassi",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_gassi"
     },
     {
@@ -20851,9 +21093,9 @@
       "source_location": "L26",
       "complexity": 2,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "einkauf",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_einkauf"
     },
     {
@@ -20864,9 +21106,9 @@
       "source_location": "L27",
       "complexity": 2,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "futter",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_futter"
     },
     {
@@ -20877,9 +21119,9 @@
       "source_location": "L45",
       "complexity": 1,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "tasks",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_tasks"
     },
     {
@@ -20890,9 +21132,9 @@
       "source_location": "L54",
       "complexity": 2,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "gross",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_gross"
     },
     {
@@ -20903,9 +21145,9 @@
       "source_location": "L55",
       "complexity": 2,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "klein",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_klein"
     },
     {
@@ -20916,9 +21158,9 @@
       "source_location": "L60",
       "complexity": 1,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "original",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_test_original"
     },
     {
@@ -20929,9 +21171,9 @@
       "source_location": "L20",
       "complexity": 1,
       "loc": 1,
-      "community": 30,
+      "community": 91,
       "norm_label": "no_rain",
-      "community_name": "dependencies",
+      "community_name": "prisma",
       "id": "web_src_lib_services_chores_no_rain"
     },
     {
@@ -20942,9 +21184,9 @@
       "source_location": "L17",
       "complexity": 1,
       "loc": 1,
-      "community": 127,
+      "community": 25,
       "norm_label": "learned",
-      "community_name": "learnedInterval.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_learnedinterval_test_learned"
     },
     {
@@ -20955,9 +21197,9 @@
       "source_location": "L6",
       "complexity": 1,
       "loc": 1,
-      "community": 127,
+      "community": 25,
       "norm_label": "alpha",
-      "community_name": "learnedInterval.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_learnedinterval_alpha"
     },
     {
@@ -20968,9 +21210,9 @@
       "source_location": "L7",
       "complexity": 1,
       "loc": 1,
-      "community": 127,
+      "community": 25,
       "norm_label": "min_intervals",
-      "community_name": "learnedInterval.ts",
+      "community_name": "recurrence.ts",
       "id": "web_src_lib_services_learnedinterval_min_intervals"
     },
     {
@@ -22892,9 +23134,9 @@
       "source_location": "L9",
       "complexity": 1,
       "loc": 1,
-      "community": 125,
+      "community": 26,
       "norm_label": "client",
-      "community_name": "rollover.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_rollover_test_client"
     },
     {
@@ -22905,9 +23147,9 @@
       "source_location": "L21",
       "complexity": 1,
       "loc": 1,
-      "community": 125,
+      "community": 26,
       "norm_label": "task",
-      "community_name": "rollover.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_rollover_test_task"
     },
     {
@@ -22918,9 +23160,9 @@
       "source_location": "L23",
       "complexity": 1,
       "loc": 1,
-      "community": 125,
+      "community": 26,
       "norm_label": "fromday",
-      "community_name": "rollover.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_rollover_test_fromday"
     },
     {
@@ -22931,9 +23173,9 @@
       "source_location": "L24",
       "complexity": 1,
       "loc": 1,
-      "community": 125,
+      "community": 26,
       "norm_label": "today",
-      "community_name": "rollover.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_rollover_test_today"
     },
     {
@@ -22944,9 +23186,9 @@
       "source_location": "L27",
       "complexity": 1,
       "loc": 1,
-      "community": 125,
+      "community": 26,
       "norm_label": "count",
-      "community_name": "rollover.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_rollover_test_count"
     },
     {
@@ -22957,9 +23199,9 @@
       "source_location": "L30",
       "complexity": 1,
       "loc": 1,
-      "community": 125,
+      "community": 26,
       "norm_label": "updated",
-      "community_name": "rollover.test.ts",
+      "community_name": "db.ts",
       "id": "web_src_lib_services_rollover_test_updated"
     },
     {
@@ -23347,9 +23589,9 @@
       "source_location": "L1",
       "complexity": 1,
       "loc": 1,
-      "community": 75,
+      "community": 127,
       "norm_label": "db.ts",
-      "community_name": "db.ts",
+      "community_name": "learnedInterval.ts",
       "id": "c_users_thinkpad_documents_claude_dashboard_web_src_lib_db_ts"
     },
     {
@@ -26453,7 +26695,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/prisma/importRecipe.ts",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "web_prisma_importrecipe",
       "target": "web_prisma_importrecipe_main",
@@ -26500,7 +26742,7 @@
       "source_location": "L5",
       "weight": 1.0,
       "source": "web_prisma_importrecipe",
-      "target": "web_src_lib_services_recipeimport",
+      "target": "web_src_lib_services_recipeimage",
       "confidence_score": 1.0
     },
     {
@@ -26511,6 +26753,28 @@
       "source_location": "L5",
       "weight": 1.0,
       "source": "web_prisma_importrecipe",
+      "target": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/prisma/importRecipe.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "web_prisma_importrecipe",
+      "target": "web_src_lib_services_recipeimport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/prisma/importRecipe.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "web_prisma_importrecipe",
       "target": "web_src_lib_services_recipeimport_importrecipefromurl",
       "confidence_score": 1.0
     },
@@ -26519,7 +26783,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/prisma/importRecipe.ts",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0,
       "source": "web_prisma_importrecipe_main",
       "target": "web_src_lib_repositories_recipes_upsertimportedrecipe",
@@ -26530,7 +26794,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/prisma/importRecipe.ts",
-      "source_location": "L27",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "web_prisma_importrecipe_main",
+      "target": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/prisma/importRecipe.ts",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "web_prisma_importrecipe_main",
       "target": "web_src_lib_services_recipeimport_importrecipefromurl",
@@ -30866,7 +31141,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_createrecipeaction",
@@ -30876,7 +31151,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L62",
+      "source_location": "L63",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_deleterecipeaction",
@@ -30886,7 +31161,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L89",
+      "source_location": "L91",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_importrecipeurlaction",
@@ -30896,7 +31171,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_ingestvaultaction",
@@ -30906,7 +31181,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L73",
+      "source_location": "L74",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_recipeurlimportresult",
@@ -30916,7 +31191,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_revalidaterecipes",
@@ -30926,7 +31201,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_setreciperatingaction",
@@ -30936,7 +31211,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_app_actions_recipes_updaterecipeaction",
@@ -31093,7 +31368,7 @@
       "source_location": "L24",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
-      "target": "web_src_lib_services_recipeimport",
+      "target": "web_src_lib_services_recipeimage",
       "confidence_score": 1.0
     },
     {
@@ -31102,6 +31377,28 @@
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
       "source_location": "L24",
+      "weight": 1.0,
+      "source": "web_src_app_actions_recipes",
+      "target": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/actions/recipes.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "web_src_app_actions_recipes",
+      "target": "web_src_lib_services_recipeimport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/actions/recipes.ts",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes",
       "target": "web_src_lib_services_recipeimport_importrecipefromurl",
@@ -31156,7 +31453,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_createrecipeaction",
       "target": "web_src_app_actions_recipes_revalidaterecipes",
@@ -31167,7 +31464,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_deleterecipeaction",
       "target": "web_src_app_actions_recipes_revalidaterecipes",
@@ -31178,7 +31475,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L93",
+      "source_location": "L96",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_importrecipeurlaction",
       "target": "web_src_app_actions_recipes_revalidaterecipes",
@@ -31189,7 +31486,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_ingestvaultaction",
       "target": "web_src_app_actions_recipes_revalidaterecipes",
@@ -31200,7 +31497,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_revalidaterecipes",
       "target": "web_src_lib_revalidate_revalidatedashboard",
@@ -31211,7 +31508,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_setreciperatingaction",
       "target": "web_src_app_actions_recipes_revalidaterecipes",
@@ -31222,7 +31519,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_updaterecipeaction",
       "target": "web_src_app_actions_recipes_revalidaterecipes",
@@ -31234,7 +31531,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_ingestvaultaction",
       "target": "web_src_lib_repositories_recipeingest_ingestvault"
@@ -31267,7 +31564,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_createrecipeaction",
       "target": "web_src_lib_repositories_recipes_createrecipe"
@@ -31300,7 +31597,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L54",
+      "source_location": "L55",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_updaterecipeaction",
       "target": "web_src_lib_repositories_recipes_updaterecipe"
@@ -31333,7 +31630,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L63",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_deleterecipeaction",
       "target": "web_src_lib_repositories_recipes_deleterecipe"
@@ -31366,7 +31663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_setreciperatingaction",
       "target": "web_src_lib_repositories_recipes_setreciperating"
@@ -31410,7 +31707,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L92",
+      "source_location": "L94",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_importrecipeurlaction",
       "target": "web_src_lib_repositories_recipes_upsertimportedrecipe"
@@ -31421,7 +31718,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/app/actions/recipes.ts",
-      "source_location": "L91",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "web_src_app_actions_recipes_importrecipeurlaction",
+      "target": "web_src_lib_services_recipeimage_attachrecipeimage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/app/actions/recipes.ts",
+      "source_location": "L93",
       "weight": 1.0,
       "source": "web_src_app_actions_recipes_importrecipeurlaction",
       "target": "web_src_lib_services_recipeimport_importrecipefromurl"
@@ -32919,6 +33227,114 @@
       "weight": 1.0,
       "source": "web_src_app_api_auth_google_route_get",
       "target": "web_src_integrations_calendar_googleauth_getauthurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route",
+      "target": "web_src_app_api_recipe_image_file_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route",
+      "target": "web_src_app_api_recipe_image_file_route_notfound",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route",
+      "target": "web_src_lib_services_recipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route",
+      "target": "web_src_lib_services_recipeimage_contenttypeforimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route",
+      "target": "web_src_lib_services_recipeimage_issafeimagefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route",
+      "target": "web_src_lib_services_recipeimage_recipeimagedir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route_get",
+      "target": "web_src_app_api_recipe_image_file_route_notfound",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route_get",
+      "target": "web_src_lib_services_recipeimage_contenttypeforimage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route_get",
+      "target": "web_src_lib_services_recipeimage_issafeimagefile"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/app/api/recipe-image/[file]/route.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "web_src_app_api_recipe_image_file_route_get",
+      "target": "web_src_lib_services_recipeimage_recipeimagedir"
     },
     {
       "relation": "contains",
@@ -46242,6 +46658,17 @@
       "source_location": "L6",
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes_test",
+      "target": "web_src_lib_repositories_recipes_setrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/repositories/recipes.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "web_src_lib_repositories_recipes_test",
       "target": "web_src_lib_repositories_recipes_setreciperating",
       "confidence_score": 1.0
     },
@@ -46249,7 +46676,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/recipes.test.ts",
-      "source_location": "L263",
+      "source_location": "L282",
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes_test",
       "target": "web_src_lib_repositories_recipes_test_imported",
@@ -46259,7 +46686,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/recipes.test.ts",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes_test",
       "target": "web_src_lib_repositories_recipes_test_seedcurry",
@@ -46292,7 +46719,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/recipes.test.ts",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes_test",
       "target": "web_src_lib_services_recipeimport",
@@ -46303,7 +46730,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/recipes.test.ts",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes_test",
       "target": "web_src_lib_services_recipeimport_importedrecipe",
@@ -46348,7 +46775,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/repositories/recipes.test.ts",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes_test_seedcurry",
       "target": "web_src_lib_repositories_recipes_createrecipe"
@@ -46527,7 +46954,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/repositories/recipes.ts",
-      "source_location": "L344",
+      "source_location": "L348",
+      "weight": 1.0,
+      "source": "web_src_lib_repositories_recipes",
+      "target": "web_src_lib_repositories_recipes_setrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/repositories/recipes.ts",
+      "source_location": "L357",
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes",
       "target": "web_src_lib_repositories_recipes_setreciperating",
@@ -46652,6 +47089,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_repositories_recipes",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -46727,6 +47175,28 @@
       "weight": 1.0,
       "source": "web_src_lib_repositories_recipes_listrecipes",
       "target": "web_src_lib_services_recipesearch_applyfilters"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_repositories_recipes_getrecipe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "target": "web_src_lib_repositories_recipes_getrecipe"
     },
     {
       "relation": "calls",
@@ -46826,6 +47296,28 @@
       "source": "web_src_lib_repositories_recipes_upsertimportedrecipe",
       "target": "web_src_lib_repositories_recipes_findimportmatch",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_repositories_recipes_setrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "target": "web_src_lib_repositories_recipes_setrecipeimage"
     },
     {
       "relation": "contains",
@@ -51525,7 +52017,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L136",
+      "source_location": "L138",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeideas_recipeideatoimported",
       "target": "web_src_lib_services_recipeform_splitsteps"
@@ -51639,7 +52131,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L183",
+      "source_location": "L185",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeideas",
       "target": "web_src_lib_services_recipeideas_generaterecipeideas",
@@ -51699,7 +52191,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L148",
+      "source_location": "L150",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeideas",
       "target": "web_src_lib_services_recipeideas_runclaude",
@@ -51776,7 +52268,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L187",
+      "source_location": "L189",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeideas_generaterecipeideas",
       "target": "web_src_lib_services_recipeideas_buildideasprompt",
@@ -51809,7 +52301,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L188",
+      "source_location": "L190",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeideas_generaterecipeideas",
       "target": "web_src_lib_services_recipeideas_parseideasresponse",
@@ -51831,10 +52323,325 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeIdeas.ts",
-      "source_location": "L187",
+      "source_location": "L189",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeideas_generaterecipeideas",
       "target": "web_src_lib_services_recipeideas_runclaude",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_contenttypeforimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_imagefilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_issafeimagefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_readcapped",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_sniffimageextension",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_test_bytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_test_jpeg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_test_png",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.test.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_test",
+      "target": "web_src_lib_services_recipeimage_test_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_content_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_contenttypeforimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_downloadrecipeimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_hasascii",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_imagefilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_issafeimagefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_readcapped",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_recipeimagedir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_sniffimageextension",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage",
+      "target": "web_src_lib_services_recipeimage_startswithbytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_sniffimageextension",
+      "target": "web_src_lib_services_recipeimage_hasascii",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_sniffimageextension",
+      "target": "web_src_lib_services_recipeimage_startswithbytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_downloadrecipeimage",
+      "target": "web_src_lib_services_recipeimage_sniffimageextension",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_imagefilename",
+      "target": "web_src_lib_services_recipeimage_issafeimagefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_downloadrecipeimage",
+      "target": "web_src_lib_services_recipeimage_imagefilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_downloadrecipeimage",
+      "target": "web_src_lib_services_recipeimage_readcapped",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "target": "web_src_lib_services_recipeimage_recipeimagedir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_downloadrecipeimage",
+      "target": "web_src_lib_services_recipeimage_recipeimagedir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImage.ts",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimage_attachrecipeimage",
+      "target": "web_src_lib_services_recipeimage_downloadrecipeimage",
       "confidence_score": 1.0
     },
     {
@@ -51955,6 +52762,17 @@
       "source_location": "L3",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_test",
+      "target": "web_src_lib_services_recipeimport_pickimageurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImport.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimport_test",
       "target": "web_src_lib_services_recipeimport_slugfromname",
       "confidence_score": 1.0
     },
@@ -51962,7 +52780,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.test.ts",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_test",
       "target": "web_src_lib_services_recipeimport_test_page",
@@ -51972,7 +52790,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.test.ts",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_test",
       "target": "web_src_lib_services_recipeimport_test_schema",
@@ -51982,7 +52800,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.test.ts",
-      "source_location": "L287",
+      "source_location": "L332",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_test",
       "target": "web_src_lib_services_recipeimport_test_stubpage",
@@ -52003,7 +52821,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L243",
+      "source_location": "L245",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_cleaningredientname",
@@ -52013,7 +52831,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L335",
+      "source_location": "L337",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_collectsteps",
@@ -52023,7 +52841,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L359",
+      "source_location": "L401",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_collecttags",
@@ -52033,7 +52851,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_decodeentities",
@@ -52043,7 +52861,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_entities",
@@ -52053,7 +52871,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L134",
+      "source_location": "L136",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_extractrecipeschema",
@@ -52063,7 +52881,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L482",
+      "source_location": "L525",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_fetchrecipepage",
@@ -52073,7 +52891,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L111",
+      "source_location": "L113",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_findrecipenode",
@@ -52083,7 +52901,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L228",
+      "source_location": "L230",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_formatgermannumber",
@@ -52093,7 +52911,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L155",
+      "source_location": "L157",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_fractions",
@@ -52103,7 +52921,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L234",
+      "source_location": "L236",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_fractiontonumber",
@@ -52133,7 +52951,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L511",
+      "source_location": "L554",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_importrecipefromurl",
@@ -52143,7 +52961,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L101",
+      "source_location": "L103",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_isrecipenode",
@@ -52153,7 +52971,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L99",
+      "source_location": "L101",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_json",
@@ -52163,7 +52981,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L492",
+      "source_location": "L535",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_normalizerecipeurl",
@@ -52173,7 +52991,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L256",
+      "source_location": "L258",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_parseingredientline",
@@ -52183,7 +53001,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L305",
+      "source_location": "L307",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_parseisoduration",
@@ -52193,7 +53011,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L326",
+      "source_location": "L328",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_parsenutritionnumber",
@@ -52203,7 +53021,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L315",
+      "source_location": "L317",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_parseservings",
@@ -52213,7 +53031,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L409",
+      "source_location": "L366",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimport",
+      "target": "web_src_lib_services_recipeimport_pickimageurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImport.ts",
+      "source_location": "L451",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_slugfromname",
@@ -52223,7 +53051,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L91",
+      "source_location": "L93",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_striphtml",
@@ -52233,7 +53061,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L433",
+      "source_location": "L475",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_toimportedrecipe",
@@ -52243,7 +53071,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L380",
+      "source_location": "L422",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_transliterate",
@@ -52253,7 +53081,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L170",
+      "source_location": "L172",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_units",
@@ -52263,7 +53091,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L226",
+      "source_location": "L228",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport",
       "target": "web_src_lib_services_recipeimport_vague_amounts",
@@ -52318,7 +53146,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L92",
+      "source_location": "L94",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_striphtml",
       "target": "web_src_lib_services_recipeimport_decodeentities",
@@ -52329,7 +53157,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L342",
+      "source_location": "L344",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_collectsteps",
       "target": "web_src_lib_services_recipeimport_striphtml",
@@ -52340,7 +53168,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L369",
+      "source_location": "L411",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_collecttags",
       "target": "web_src_lib_services_recipeimport_striphtml",
@@ -52351,7 +53179,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L257",
+      "source_location": "L259",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_parseingredientline",
       "target": "web_src_lib_services_recipeimport_striphtml",
@@ -52362,7 +53190,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L434",
+      "source_location": "L370",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimport_pickimageurl",
+      "target": "web_src_lib_services_recipeimport_striphtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImport.ts",
+      "source_location": "L476",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_striphtml",
@@ -52373,7 +53212,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L113",
+      "source_location": "L115",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_findrecipenode",
       "target": "web_src_lib_services_recipeimport_isrecipenode",
@@ -52384,7 +53223,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L147",
+      "source_location": "L149",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_extractrecipeschema",
       "target": "web_src_lib_services_recipeimport_findrecipenode",
@@ -52395,7 +53234,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L514",
+      "source_location": "L557",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_importrecipefromurl",
       "target": "web_src_lib_services_recipeimport_extractrecipeschema",
@@ -52407,7 +53246,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L266",
+      "source_location": "L268",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_parseingredientline",
       "target": "web_src_lib_services_recipeimport_vague_amounts"
@@ -52417,7 +53256,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L279",
+      "source_location": "L281",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_parseingredientline",
       "target": "web_src_lib_services_recipeimport_formatgermannumber",
@@ -52428,7 +53267,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L277",
+      "source_location": "L279",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_parseingredientline",
       "target": "web_src_lib_services_recipeimport_fractiontonumber",
@@ -52439,7 +53278,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L299",
+      "source_location": "L301",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_parseingredientline",
       "target": "web_src_lib_services_recipeimport_cleaningredientname",
@@ -52450,7 +53289,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L438",
+      "source_location": "L480",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_parseingredientline",
@@ -52461,7 +53300,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L441",
+      "source_location": "L483",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_parseisoduration",
@@ -52472,7 +53311,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L466",
+      "source_location": "L509",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_parseservings",
@@ -52483,7 +53322,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L446",
+      "source_location": "L488",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_parsenutritionnumber",
@@ -52494,7 +53333,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L472",
+      "source_location": "L515",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_collectsteps",
@@ -52505,7 +53344,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L449",
+      "source_location": "L508",
+      "weight": 1.0,
+      "source": "web_src_lib_services_recipeimport_toimportedrecipe",
+      "target": "web_src_lib_services_recipeimport_pickimageurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "web/src/lib/services/recipeImport.ts",
+      "source_location": "L491",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_collecttags",
@@ -52527,7 +53377,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L459",
+      "source_location": "L501",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_toimportedrecipe",
       "target": "web_src_lib_services_recipeimport_slugfromname",
@@ -52538,7 +53388,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L520",
+      "source_location": "L563",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_importrecipefromurl",
       "target": "web_src_lib_services_recipeimport_toimportedrecipe",
@@ -52549,7 +53399,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L513",
+      "source_location": "L556",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_importrecipefromurl",
       "target": "web_src_lib_services_recipeimport_fetchrecipepage",
@@ -52560,7 +53410,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "web/src/lib/services/recipeImport.ts",
-      "source_location": "L512",
+      "source_location": "L555",
       "weight": 1.0,
       "source": "web_src_lib_services_recipeimport_importrecipefromurl",
       "target": "web_src_lib_services_recipeimport_normalizerecipeurl",
@@ -57016,7 +57866,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L126",
+      "source_location": "L160",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_rezeptdatenbank_in_der_app_obsidian_abl\u00f6sen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
@@ -57036,7 +57886,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L185",
+      "source_location": "L206",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_rezeptdatenbank_in_der_app_obsidian_abl\u00f6sen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_verifikation",
@@ -57096,9 +57946,9 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L128",
+      "source_location": "L124",
       "weight": 1.0,
-      "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
+      "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_erledigt",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_phase_5_bilder",
       "confidence_score": 1.0
     },
@@ -57106,7 +57956,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L141",
+      "source_location": "L162",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_phase_6_backup_nicht_optional_siehe_risiko_oben",
@@ -57116,7 +57966,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md",
-      "source_location": "L153",
+      "source_location": "L174",
       "weight": 1.0,
       "source": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_offen",
       "target": "docs_superpowers_plans_2026_08_25_rezeptdatenbank_in_der_app_phase_7_obsidian_ausbauen",
@@ -59748,5 +60598,5 @@
       "source_file": "docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md"
     }
   ],
-  "built_at_commit": "1b3f423bc6032ef34ae5440882136edbcbc402ec"
+  "built_at_commit": "cc14d5f9281ef7ed21929d8395774497d2624b80"
 }

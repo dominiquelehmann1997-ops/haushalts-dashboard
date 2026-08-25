@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "web/src/app/actions/recipes.ts": {
-    "mtime": 1787658172.9796617,
-    "ast_hash": "132adedd521f4ac9936781380e3147c7",
+    "mtime": 1787667220.866858,
+    "ast_hash": "7019764cbe7fa0f5071e77e26c545e12",
     "semantic_hash": ""
   },
   "web/src/app/actions/shopping.ts": {
@@ -795,8 +795,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeIdeas.ts": {
-    "mtime": 1787658071.7289598,
-    "ast_hash": "d180bc102a75f59c1178b8f892d79518",
+    "mtime": 1787667167.6681843,
+    "ast_hash": "df1173d0b09a5271ff11f6d7c8a3a6a3",
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeVault.test.ts": {
@@ -1310,8 +1310,8 @@
     "semantic_hash": ""
   },
   "web/prisma/importRecipe.ts": {
-    "mtime": 1787658519.8086095,
-    "ast_hash": "953a9c5341598a595cd03c5c80236301",
+    "mtime": 1787667238.1299994,
+    "ast_hash": "8b000568fddf4feb191ba9630fd23f26",
     "semantic_hash": ""
   },
   "web/prisma/migrateVaultToDb.ts": {
@@ -1390,13 +1390,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/recipes.test.ts": {
-    "mtime": 1787658701.942459,
-    "ast_hash": "9377381cea92897b1d8e1cfc5bf153f9",
+    "mtime": 1787667387.4980943,
+    "ast_hash": "eaa8465c0478ed0afd63be05f0bef72d",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/recipes.ts": {
-    "mtime": 1787658150.7287567,
-    "ast_hash": "36f5c32f6af39536b461693d0d787fa0",
+    "mtime": 1787667178.5767472,
+    "ast_hash": "2acd9515e8a5be3c7e0cf553b2b3bcbc",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/vaultMigration.test.ts": {
@@ -1430,13 +1430,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeImport.test.ts": {
-    "mtime": 1787657965.227007,
-    "ast_hash": "3fa1ef61a4473f91d797e0bd5ba6e230",
+    "mtime": 1787667317.2743478,
+    "ast_hash": "9c1d0ca317d2207530d881ee288205fd",
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeImport.ts": {
-    "mtime": 1787657926.9082236,
-    "ast_hash": "0957ed116d4e5e2b66a26aaa8c5d7c0d",
+    "mtime": 1787667160.7195184,
+    "ast_hash": "85efe804e0c3b140c393b264249d1d82",
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeSearch.test.ts": {
@@ -1455,8 +1455,23 @@
     "semantic_hash": ""
   },
   "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md": {
-    "mtime": 1787659034.503659,
-    "ast_hash": "a5a43bd7516457679fdb9f9be445dadf",
+    "mtime": 1787667621.1661232,
+    "ast_hash": "3cbd2ab3b065c39c5cd23195c90f7449",
+    "semantic_hash": ""
+  },
+  "web/src/app/api/recipe-image/[file]/route.ts": {
+    "mtime": 1787667193.3686523,
+    "ast_hash": "ad37975525fb6eb9e863412729c149b2",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeImage.test.ts": {
+    "mtime": 1787667345.9252806,
+    "ast_hash": "7d2137b8dd1d2912c3f6c019708e472c",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeImage.ts": {
+    "mtime": 1787667121.3299675,
+    "ast_hash": "91e7ae3920e16972c19e1f213d10a541",
     "semantic_hash": ""
   }
 }

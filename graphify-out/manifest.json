@@ -29,11 +29,6 @@
     "ast_hash": "e91a6c6ea742e03aba260a96edbf3934",
     "semantic_hash": ""
   },
-  "web/prisma/ingestRecipes.ts": {
-    "mtime": 1787654312.35455,
-    "ast_hash": "0505559b61fcd9049e55f737a48df1f4",
-    "semantic_hash": ""
-  },
   "web/prisma/planToday.ts": {
     "mtime": 1787654312.3720708,
     "ast_hash": "87b9a2e1fff522d3bb5488c7774d276c",
@@ -160,8 +155,8 @@
     "semantic_hash": ""
   },
   "web/src/app/actions/recipes.ts": {
-    "mtime": 1787667220.866858,
-    "ast_hash": "7019764cbe7fa0f5071e77e26c545e12",
+    "mtime": 1787672586.263796,
+    "ast_hash": "787ee667a0d15dd58d47c37fff7273a8",
     "semantic_hash": ""
   },
   "web/src/app/actions/shopping.ts": {
@@ -267,11 +262,6 @@
   "web/src/components/ui.tsx": {
     "mtime": 1787654312.419558,
     "ast_hash": "65d90f252af2fc9abb241265dac26c41",
-    "semantic_hash": ""
-  },
-  "web/src/components/VaultIngestControl.tsx": {
-    "mtime": 1787654312.4090495,
-    "ast_hash": "66833f6db4aa16b625d85491bcb8d293",
     "semantic_hash": ""
   },
   "web/src/components/Weather.tsx": {
@@ -385,8 +375,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/data.ts": {
-    "mtime": 1787655006.59647,
-    "ast_hash": "8c681beb5c42d591e99190fd30186c59",
+    "mtime": 1787672728.4712696,
+    "ast_hash": "8523a29d30933e663fbf43564be646cc",
     "semantic_hash": ""
   },
   "web/src/lib/dates.ts": {
@@ -400,8 +390,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/domain.ts": {
-    "mtime": 1787655006.6495688,
-    "ast_hash": "a964db26ca980004498791e9a3277f18",
+    "mtime": 1787672550.9168239,
+    "ast_hash": "e92b1cde0d75a38929819bd25b6b8a95",
     "semantic_hash": ""
   },
   "web/src/lib/revalidate.ts": {
@@ -580,13 +570,13 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/meals.test.ts": {
-    "mtime": 1787655215.1817913,
-    "ast_hash": "ebf8129b230c3dc444011c71dbb29451",
+    "mtime": 1787672736.578493,
+    "ast_hash": "7ea6ef4310837fcf3d5fe8a0964fab5a",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/meals.ts": {
-    "mtime": 1787655499.9587245,
-    "ast_hash": "56f4ab625a134f9645bd6ec9e3e22f2b",
+    "mtime": 1787672599.26765,
+    "ast_hash": "b85c7701018bd9678792705cec873a70",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/notes.test.ts": {
@@ -627,16 +617,6 @@
   "web/src/lib/repositories/pushSubscriptions.ts": {
     "mtime": 1787654312.4491038,
     "ast_hash": "4188cebe2786f1850bb88b11d966ad15",
-    "semantic_hash": ""
-  },
-  "web/src/lib/repositories/recipeIngest.test.ts": {
-    "mtime": 1787654312.4496067,
-    "ast_hash": "f10511dfb3fae8a193766005347062ca",
-    "semantic_hash": ""
-  },
-  "web/src/lib/repositories/recipeIngest.ts": {
-    "mtime": 1787654312.4501033,
-    "ast_hash": "1d971207bc8def8abaab27760404c24e",
     "semantic_hash": ""
   },
   "web/src/lib/repositories/routineTemplates.test.ts": {
@@ -755,8 +735,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/services/mealWeights.ts": {
-    "mtime": 1787654312.4636185,
-    "ast_hash": "85bf5636ba403b556b9e9dbcc169d239",
+    "mtime": 1787672577.2441568,
+    "ast_hash": "088aa23d5541eb045bcf537943b7defe",
     "semantic_hash": ""
   },
   "web/src/lib/services/overdueCatchup.test.ts": {
@@ -795,18 +775,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeIdeas.ts": {
-    "mtime": 1787667167.6681843,
-    "ast_hash": "df1173d0b09a5271ff11f6d7c8a3a6a3",
-    "semantic_hash": ""
-  },
-  "web/src/lib/services/recipeVault.test.ts": {
-    "mtime": 1787654707.5878167,
-    "ast_hash": "2fd9c31b630479e6de013e3db8995da2",
-    "semantic_hash": ""
-  },
-  "web/src/lib/services/recipeVault.ts": {
-    "mtime": 1787654679.7397895,
-    "ast_hash": "c93948345545299a7a63bdedddc4c160",
+    "mtime": 1787672577.2966623,
+    "ast_hash": "ed2d2e97427895a11514d183d66b0cf2",
     "semantic_hash": ""
   },
   "web/src/lib/services/recurrence.test.ts": {
@@ -850,8 +820,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1787654311.880243,
-    "ast_hash": "7e988d31feaa55c4dab8bbdf97ef2c76",
+    "mtime": 1787673076.112346,
+    "ast_hash": "13294fdd4aec20df4fd3ebba0f09c32d",
     "semantic_hash": ""
   },
   "docs/claude-design-prompt.md": {
@@ -865,23 +835,13 @@
     "semantic_hash": ""
   },
   "docs/recipe-importer-init-prompt.md": {
-    "mtime": 1787654311.8822434,
-    "ast_hash": "79b470bee7a018635e447b7168d2df5d",
+    "mtime": 1787673076.1651945,
+    "ast_hash": "8ca64c3ebf860cecf29a9adba37ee39a",
     "semantic_hash": ""
   },
   "docs/recipe-vault-import-contract.md": {
-    "mtime": 1787654311.8822434,
-    "ast_hash": "c2e091f86c1c3684f187b3971d1e1b51",
-    "semantic_hash": ""
-  },
-  "docs/recipe-vault-schema.md": {
-    "mtime": 1787654311.8827434,
-    "ast_hash": "df18ac8e10931b135511c11eabae2878",
-    "semantic_hash": ""
-  },
-  "docs/recipe-vault-template.md": {
-    "mtime": 1787654311.883244,
-    "ast_hash": "178ccb47c456bcc568fc7b92a0576a50",
+    "mtime": 1787673058.6675014,
+    "ast_hash": "3120b8a2e830c12e64475d49706703f4",
     "semantic_hash": ""
   },
   "docs/tablet-kiosk-setup.md": {
@@ -1075,8 +1035,8 @@
     "semantic_hash": ""
   },
   "web/README.md": {
-    "mtime": 1787654312.2464814,
-    "ast_hash": "a4f47235be3c77b60d6e43f11c5f81f4",
+    "mtime": 1787672973.2711575,
+    "ast_hash": "1312db59665a4178f0b004dfec3de1ef",
     "semantic_hash": ""
   },
   "web/docs/push-setup.md": {
@@ -1160,8 +1120,8 @@
     "semantic_hash": ""
   },
   "web/package.json": {
-    "mtime": 1787654775.8397214,
-    "ast_hash": "4bab5ceeb73a0763ee9aaf5f0be59979",
+    "mtime": 1787672744.0824895,
+    "ast_hash": "330fd96be18d7a506cea0d90d3e8fe0f",
     "semantic_hash": ""
   },
   "web/prisma/migrations/20260607132832_init/migration.sql": {
@@ -1227,16 +1187,6 @@
   "web/prisma/migrations/20260709213745_recipe_vault_file/migration.sql": {
     "mtime": 1787654312.3710701,
     "ast_hash": "96bbb42fcf5b759a336610e88f484892",
-    "semantic_hash": ""
-  },
-  "web/src/lib/services/obsidian.test.ts": {
-    "mtime": 1787654312.46412,
-    "ast_hash": "d3a1336c2666efd0b1ceb2f0cd462a15",
-    "semantic_hash": ""
-  },
-  "web/src/lib/services/obsidian.ts": {
-    "mtime": 1787654312.4646182,
-    "ast_hash": "b6ebc8ce1bb38464475dab1b33f08c52",
     "semantic_hash": ""
   },
   "web/tsconfig.json": {
@@ -1312,11 +1262,6 @@
   "web/prisma/importRecipe.ts": {
     "mtime": 1787667238.1299994,
     "ast_hash": "8b000568fddf4feb191ba9630fd23f26",
-    "semantic_hash": ""
-  },
-  "web/prisma/migrateVaultToDb.ts": {
-    "mtime": 1787654775.7907054,
-    "ast_hash": "d700692870c7484ac41465e4fb508713",
     "semantic_hash": ""
   },
   "web/prisma/migrations/20260825104108_recipe_full_fields/migration.sql": {
@@ -1395,18 +1340,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/repositories/recipes.ts": {
-    "mtime": 1787667178.5767472,
-    "ast_hash": "2acd9515e8a5be3c7e0cf553b2b3bcbc",
-    "semantic_hash": ""
-  },
-  "web/src/lib/repositories/vaultMigration.test.ts": {
-    "mtime": 1787654802.7603502,
-    "ast_hash": "2fd056817d0c779eab787b0ba354663b",
-    "semantic_hash": ""
-  },
-  "web/src/lib/repositories/vaultMigration.ts": {
-    "mtime": 1787654762.8997278,
-    "ast_hash": "09ba46921da4525616f54a6395cb5001",
+    "mtime": 1787672384.9365983,
+    "ast_hash": "832ce49ac9ff4dde152b45050ed93382",
     "semantic_hash": ""
   },
   "web/src/lib/services/portions.test.ts": {
@@ -1435,8 +1370,8 @@
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeImport.ts": {
-    "mtime": 1787667160.7195184,
-    "ast_hash": "85efe804e0c3b140c393b264249d1d82",
+    "mtime": 1787672577.3442202,
+    "ast_hash": "9dc3bfd3c36a59f460871955824bce75",
     "semantic_hash": ""
   },
   "web/src/lib/services/recipeSearch.test.ts": {
@@ -1450,13 +1385,13 @@
     "semantic_hash": ""
   },
   "docs/rezepte-quellen-und-import.md": {
-    "mtime": 1787654311.883744,
-    "ast_hash": "8982d744b455ef3f98641e446926825f",
+    "mtime": 1787673019.7682343,
+    "ast_hash": "d6309642d68f70ec7409b46c193ede1f",
     "semantic_hash": ""
   },
   "docs/superpowers/plans/2026-08-25-rezeptdatenbank-in-der-app.md": {
-    "mtime": 1787667621.1661232,
-    "ast_hash": "3cbd2ab3b065c39c5cd23195c90f7449",
+    "mtime": 1787673319.9078865,
+    "ast_hash": "b8fcd9acff9dccfdd12962a93586e771",
     "semantic_hash": ""
   },
   "web/src/app/api/recipe-image/[file]/route.ts": {
@@ -1472,6 +1407,46 @@
   "web/src/lib/services/recipeImage.ts": {
     "mtime": 1787667121.3299675,
     "ast_hash": "91e7ae3920e16972c19e1f213d10a541",
+    "semantic_hash": ""
+  },
+  "scripts/tablet-backup.sh": {
+    "mtime": 1787672211.5753698,
+    "ast_hash": "0dcc909a71637fec19b7041e6f6f4422",
+    "semantic_hash": ""
+  },
+  "web/prisma/exportRecipes.ts": {
+    "mtime": 1787672023.0888133,
+    "ast_hash": "6da0cd080193d663a5ec4d4d0f55358c",
+    "semantic_hash": ""
+  },
+  "web/prisma/migrations/20260825154600_drop_recipe_vault_file/migration.sql": {
+    "mtime": 1787672780.9123662,
+    "ast_hash": "e2dd1aba1210b63c615646067b0555ac",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/recipeExport.test.ts": {
+    "mtime": 1787672103.6364965,
+    "ast_hash": "b20ff6eedd6a5e582e16bae56b2287a9",
+    "semantic_hash": ""
+  },
+  "web/src/lib/repositories/recipeExport.ts": {
+    "mtime": 1787672004.9409654,
+    "ast_hash": "6f6a47992366fdb79196b48624c7baef",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeMarkdown.test.ts": {
+    "mtime": 1787672065.6172802,
+    "ast_hash": "2371e3b4b2bfc92d10509c39758cd81b",
+    "semantic_hash": ""
+  },
+  "web/src/lib/services/recipeMarkdown.ts": {
+    "mtime": 1787671957.747347,
+    "ast_hash": "d91af9cb022ddf79f48d1e840ef38619",
+    "semantic_hash": ""
+  },
+  "docs/rezept-export-format.md": {
+    "mtime": 1787672954.2651074,
+    "ast_hash": "5c3cbc3a74e793f644a0a69c9c863e55",
     "semantic_hash": ""
   }
 }
