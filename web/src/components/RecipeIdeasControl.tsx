@@ -1,12 +1,14 @@
 "use client";
 
-// Phase 2: Claude schlägt neue Rezepte vor (OAuth-Abo via `claude` CLI).
-// Generieren zeigt Vorschlagskarten; "übernehmen" schreibt das Rezept in den
-// Vault + DB. Vorschläge sind flüchtig (nicht persistiert) bis übernommen.
+// Claude schlägt neue Rezepte vor (OAuth-Abo via `claude` CLI). Generieren
+// zeigt Vorschlagskarten; "übernehmen" legt das Rezept im Rezeptbuch an.
+// Vorschläge sind flüchtig (nicht persistiert) bis übernommen.
 
 import { useState, useTransition } from "react";
+import Link from "next/link";
 
 import { acceptRecipeIdeaAction, generateRecipeIdeasAction } from "@/app/actions/recipeIdeas";
+import { RECIPES_PATH } from "@/lib/recipeFilterParams";
 import type { RecipeIdea } from "@/lib/services/recipeIdeas";
 
 const PILL =
@@ -20,6 +22,8 @@ export function RecipeIdeasControl() {
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<Record<string, Status>>({});
   const [acceptingId, setAcceptingId] = useState<string | null>(null);
+  /** Rezept-ids der übernommenen Ideen — für den Sprung auf die Detailseite. */
+  const [savedIds, setSavedIds] = useState<Record<string, string>>({});
 
   const generate = () => {
     setError(null);
@@ -36,6 +40,7 @@ export function RecipeIdeasControl() {
     startTransition(async () => {
       const res = await acceptRecipeIdeaAction(idea);
       setStatus((s) => ({ ...s, [idea.name]: res.ok ? "accepted" : "failed" }));
+      if (res.id) setSavedIds((s) => ({ ...s, [idea.name]: res.id! }));
       if (!res.ok && res.error) setError(res.error);
       setAcceptingId(null);
     });
@@ -67,7 +72,16 @@ export function RecipeIdeasControl() {
             >
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <p className="text-[14px] font-semibold text-ink dark:text-cream/90">{idea.name}</p>
+                  {savedIds[idea.name] ? (
+                    <Link
+                      href={`${RECIPES_PATH}/${savedIds[idea.name]}`}
+                      className="text-[14px] font-semibold text-ink dark:text-cream/90 underline decoration-dotted underline-offset-2"
+                    >
+                      {idea.name}
+                    </Link>
+                  ) : (
+                    <p className="text-[14px] font-semibold text-ink dark:text-cream/90">{idea.name}</p>
+                  )}
                   {idea.tags.length > 0 && (
                     <p className="text-[11px] text-ink-faint dark:text-cream/50">{idea.tags.join(" · ")}</p>
                   )}

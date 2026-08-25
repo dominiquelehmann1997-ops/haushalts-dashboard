@@ -290,24 +290,105 @@ export async function seedDatabase(prisma: PrismaClient) {
     ],
   };
 
+  // Detailfelder für die Rezeptansicht (Filter nach Tags/kcal/Zeit, Kochansicht).
+  // "Reste" bleibt bewusst leer — es gibt Rezepte ohne jede Angabe, und die
+  // müssen Liste und Filter aushalten.
+  const recipeDetails: Record<
+    string,
+    {
+      rating?: string;
+      tags?: string[];
+      servings?: number;
+      prepMinutes?: number;
+      cookMinutes?: number;
+      kcal?: number;
+      protein?: number;
+      steps?: string[];
+    }
+  > = {
+    "Pasta al Pomodoro": {
+      rating: "favorit",
+      tags: ["pasta", "vegetarisch", "schnell"],
+      servings: 4,
+      prepMinutes: 10,
+      cookMinutes: 15,
+      kcal: 620,
+      protein: 21,
+      steps: [
+        "Nudeln in Salzwasser bissfest kochen.",
+        "Knoblauch in Olivenöl anschwitzen, Tomaten zugeben, 10 min einkochen.",
+        "Nudeln unterheben, mit Basilikum und Parmesan servieren.",
+      ],
+    },
+    "Gemüse-Curry": {
+      rating: "ok",
+      tags: ["curry", "vegetarisch", "kalorienarm"],
+      servings: 4,
+      prepMinutes: 15,
+      cookMinutes: 25,
+      kcal: 430,
+      protein: 14,
+      steps: [
+        "Reis nach Packungsanweisung aufsetzen.",
+        "Currypaste kurz anrösten, Gemüse zugeben.",
+        "Mit Kokosmilch ablöschen und 20 min köcheln lassen.",
+      ],
+    },
+    Reste: {},
+    Ofengemüse: {
+      rating: "ok",
+      tags: ["ofen", "vegetarisch", "kalorienarm"],
+      servings: 4,
+      prepMinutes: 20,
+      cookMinutes: 40,
+      kcal: 380,
+      protein: 9,
+      steps: [
+        "Gemüse in grobe Stücke schneiden.",
+        "Mit Olivenöl und Salz mischen, auf ein Blech geben.",
+        "Bei 200 °C 40 Minuten backen, nach der Hälfte wenden.",
+      ],
+    },
+    Pizzaabend: {
+      rating: "favorit",
+      tags: ["pizza", "schnell"],
+      servings: 4,
+      prepMinutes: 10,
+      cookMinutes: 20,
+      kcal: 780,
+      protein: 28,
+      steps: ["Teig ausrollen und belegen.", "Bei 240 °C 12–15 Minuten backen."],
+    },
+  };
+
   const recipesByName = new Map<string, { id: string }>();
   for (const name of recipeNames) {
+    const detail = recipeDetails[name] ?? {};
     const recipe = await prisma.recipe.create({
       data: {
         name,
         simple: simpleRecipes.has(name),
         reheatable: reheatableRecipes.has(name),
+        rating: detail.rating ?? "ok",
+        tags: detail.tags ? JSON.stringify(detail.tags) : null,
+        servings: detail.servings ?? null,
+        prepMinutes: detail.prepMinutes ?? null,
+        cookMinutes: detail.cookMinutes ?? null,
+        kcal: detail.kcal ?? null,
+        protein: detail.protein ?? null,
+        steps: detail.steps ? JSON.stringify(detail.steps) : null,
       },
     });
     recipesByName.set(name, recipe);
 
-    for (const ingredient of recipeIngredients[name] ?? []) {
+    for (const [index, ingredient] of (recipeIngredients[name] ?? []).entries()) {
       await prisma.ingredient.create({
         data: {
           recipeId: recipe.id,
           name: ingredient.name,
           amount: ingredient.amount,
           unit: ingredient.unit,
+          sort: index,
         },
       });
     }

@@ -1,16 +1,18 @@
 // Rezept-Ideen via Claude (OAuth-Abo, kein API-Key): ruft die `claude` CLI
-// headless auf, lässt sie neue Rezeptvorschläge als JSON liefern, und
-// serialisiert angenommene Ideen ins Vault-Markdown-Format (recipeVault).
-// Die reine Logik (Prompt-Bau, Antwort-Parsing, Markdown) ist hier getestet;
-// der CLI-Aufruf + Datei-Write sind dünne, ungetestete Integrations-Wrapper.
+// headless auf und lässt sie neue Rezeptvorschläge als JSON liefern.
+// Die reine Logik (Prompt-Bau, Antwort-Parsing, Umformung) ist hier getestet;
+// der CLI-Aufruf ist ein dünner, ungetesteter Integrations-Wrapper.
+//
+// Angenommene Ideen laufen über dieselbe Schiene wie der Link-Import:
+// `recipeIdeaToImported` → `upsertImportedRecipe` (repositories/recipes.ts).
 
 import { spawn } from "node:child_process";
 import { tmpdir } from "node:os";
-import { writeFile } from "node:fs/promises";
-import path from "node:path";
 
 import type { Rating } from "@/lib/services/recipeVault";
-import { slugFromFilename } from "@/lib/services/recipeVault";
+import type { ImportedRecipe } from "@/lib/services/recipeImport";
+import { slugFromName } from "@/lib/services/recipeImport";
+import { splitSteps } from "@/lib/services/recipeForm";
 
 export interface RecipeIdeaIngredient {
   name: string;
@@ -106,28 +108,35 @@ export function parseIdeasResponse(raw: string): RecipeIdea[] {
   return parsed.map(coerceIdea).filter((i): i is RecipeIdea => i !== null);
 }
 
-/** Serialisiert eine Idee ins Vault-Markdown (round-trips durch parseRecipeMarkdown). */
-export function recipeIdeaToVaultMarkdown(idea: RecipeIdea): string {
-  const slug = slugFromFilename(idea.name);
-  const lines: string[] = [
-    "---",
-    `id: ${slug}`,
-    `name: ${JSON.stringify(idea.name)}`,
-    `rating: ${idea.rating}`,
-    `simple: ${idea.simple}`,
-    `reheatable: ${idea.reheatable}`,
-    "source: claude",
-    `tags: ${JSON.stringify(idea.tags)}`,
-    "ingredients:",
-  ];
-  for (const ing of idea.ingredients) {
-    lines.push(`  - name: ${JSON.stringify(ing.name)}`);
-    if (ing.amount != null) lines.push(`    amount: ${JSON.stringify(ing.amount)}`);
-    if (ing.unit != null) lines.push(`    unit: ${JSON.stringify(ing.unit)}`);
-  }
-  lines.push("---", "");
-  if (idea.steps) lines.push(idea.steps, "");
-  return lines.join("\n");
+/** Der Prompt verlangt Mengen für vier Personen — damit rechnet der Portionsregler. */
+const IDEA_SERVINGS = 4;
+
+/**
+ * Idee → importierbares Rezept, damit angenommene Vorschläge denselben Weg in
+ * die DB nehmen wie der Link-Import (inkl. Dedupe über den Slug).
+ *
+ * `source` bleibt `null`: „claude" ist keine Quell-URL, und ein erfundener
+ * Wert würde die Dedupe-Prüfung des Importers durcheinanderbringen.
+ */
+export function recipeIdeaToImported(idea: RecipeIdea): ImportedRecipe {
+  return {
+    slug: slugFromName(idea.name),
+    name: idea.name,
+    rating: idea.rating,
+    simple: idea.simple,
+    reheatable: idea.reheatable,
+    tags: idea.tags,
+    source: null,
+    imageUrl: null, // Claude liefert Text, kein Bild
+
+    servings: IDEA_SERVINGS,
+    prepMinutes: null,
+    cookMinutes: null,
+    kcal: null,
+    protein: null,
+    ingredients: idea.ingredients.map((i) => ({ name: i.name, amount: i.amount, unit: i.unit })),
+    steps: splitSteps(idea.steps ?? ""),
+  };
 }
 
 // ---- Integration (ungetestet, dünn) ----
@@ -172,18 +181,11 @@ function runClaude(prompt: string, timeoutMs = 120_000): Promise<string> {
   });
 }
 
-/** Generiert Ideen (kein DB/Vault-Write — nur Vorschläge zurück). */
+/** Generiert Ideen (kein DB-Write — nur Vorschläge zurück). */
 export async function generateRecipeIdeas(
   existingNames: string[],
   opts: BuildIdeasOptions,
 ): Promise<RecipeIdea[]> {
   const result = await runClaude(buildIdeasPrompt(existingNames, opts));
   return parseIdeasResponse(result);
-}
-
-/** Schreibt eine angenommene Idee als `.md` in den Vault. Gibt den Dateipfad zurück. */
-export async function saveRecipeIdeaToVault(idea: RecipeIdea, vaultPath: string): Promise<string> {
-  const file = path.join(vaultPath, `${slugFromFilename(idea.name)}.md`);
-  await writeFile(file, recipeIdeaToVaultMarkdown(idea), "utf8");
-  return file;
 }

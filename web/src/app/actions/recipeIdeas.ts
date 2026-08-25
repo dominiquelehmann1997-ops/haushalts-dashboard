@@ -1,17 +1,17 @@
 "use server";
 
-// Server-Actions für Claude-generierte Rezept-Ideen (Phase 2). Läuft über die
-// `claude` CLI (OAuth-Abo, kein API-Key). Generieren liefert nur Vorschläge;
-// erst "übernehmen" schreibt eine `.md` in den Vault + spiegelt sie in die DB.
+// Server-Actions für Claude-generierte Rezept-Ideen. Läuft über die `claude`
+// CLI (OAuth-Abo, kein API-Key). Generieren liefert nur Vorschläge; erst
+// "übernehmen" schreibt das Rezept in die DB — über denselben Upsert wie der
+// Link-Import, damit ein zweimal übernommener Vorschlag keine Dublette wird.
 
 import { revalidateDashboard } from "@/lib/revalidate";
 
-import { listRecipes } from "@/lib/repositories/meals";
+import { listRecipeOptions, upsertImportedRecipe } from "@/lib/repositories/recipes";
 import { getActivePhase } from "@/lib/repositories/phase";
-import { ingestVault } from "@/lib/repositories/recipeIngest";
 import {
   generateRecipeIdeas,
-  saveRecipeIdeaToVault,
+  recipeIdeaToImported,
   type RecipeIdea,
 } from "@/lib/services/recipeIdeas";
 
@@ -20,10 +20,10 @@ export interface IdeasResult {
   error: string | null;
 }
 
-/** Generiert `count` Rezept-Ideen via Claude — ohne DB/Vault-Write. */
+/** Generiert `count` Rezept-Ideen via Claude — ohne DB-Write. */
 export async function generateRecipeIdeasAction(count = 3): Promise<IdeasResult> {
   try {
-    const [recipes, phase] = await Promise.all([listRecipes(), getActivePhase()]);
+    const [recipes, phase] = await Promise.all([listRecipeOptions(), getActivePhase()]);
     const context = phase?.mode === "elternzeit" ? "Elternzeit – möglichst einfach & schnell" : undefined;
     const ideas = await generateRecipeIdeas(
       recipes.map((r) => r.name),
@@ -38,17 +38,20 @@ export async function generateRecipeIdeasAction(count = 3): Promise<IdeasResult>
   }
 }
 
-/** Übernimmt eine Idee: schreibt `.md` in den Vault und spiegelt sie in die DB. */
-export async function acceptRecipeIdeaAction(idea: RecipeIdea): Promise<{ ok: boolean; error: string | null }> {
-  const vaultPath = process.env.RECIPE_VAULT_PATH;
-  if (!vaultPath) return { ok: false, error: "RECIPE_VAULT_PATH ist nicht gesetzt." };
+export interface AcceptIdeaResult {
+  ok: boolean;
+  /** id des angelegten Rezepts — für den Sprung auf die Detailseite. */
+  id: string | null;
+  error: string | null;
+}
+
+/** Übernimmt eine Idee als Rezept in die DB. */
+export async function acceptRecipeIdeaAction(idea: RecipeIdea): Promise<AcceptIdeaResult> {
   try {
-    await saveRecipeIdeaToVault(idea, vaultPath);
-    const report = await ingestVault(vaultPath);
+    const { id } = await upsertImportedRecipe(recipeIdeaToImported(idea));
     revalidateDashboard();
-    if (report.errors.length) return { ok: false, error: report.errors.join("; ") };
-    return { ok: true, error: null };
+    return { ok: true, id, error: null };
   } catch (e) {
-    return { ok: false, error: e instanceof Error ? e.message : "Unbekannter Fehler" };
+    return { ok: false, id: null, error: e instanceof Error ? e.message : "Unbekannter Fehler" };
   }
 }

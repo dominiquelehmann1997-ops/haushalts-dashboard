@@ -18,6 +18,10 @@ export type {
   MealIngredient,
   DraftMeal,
   RecipeOption,
+  Recipe,
+  RecipeIngredient,
+  RecipeFilter,
+  RecipeTagCount,
   Note,
   PersonStyle,
 } from "./data";

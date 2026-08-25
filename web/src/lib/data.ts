@@ -76,6 +76,64 @@ export interface RecipeOption {
   name: string;
 }
 
+/** Eine Zutatenzeile eines Rezepts, in der Reihenfolge des Rezepts. */
+export interface RecipeIngredient {
+  id: string;
+  name: string;
+  amount: string | null;
+  unit: string | null;
+}
+
+/**
+ * Rezept für Liste und Detailseite. Die Listenansicht braucht schon die
+ * Zutaten, weil danach gesucht und gefiltert wird ("was kann ich kochen") —
+ * bei Haushaltsgröße ist das kein Grund für zwei getrennte Abfragen.
+ */
+export interface Recipe {
+  id: string;
+  name: string;
+  slug: string | null;
+  rating: string; // "favorit" | "ok" | "selten"
+  simple: boolean;
+  reheatable: boolean;
+  tags: string[];
+  servings: number | null;
+  prepMinutes: number | null;
+  cookMinutes: number | null;
+  /** Zubereitungs- + Vorbereitungszeit; null, wenn beide fehlen. */
+  totalMinutes: number | null;
+  kcal: number | null;
+  protein: number | null;
+  steps: string[];
+  notes: string | null;
+  sourceUrl: string | null;
+  /** URL, unter der das Bild ausgeliefert wird; null = kein Bild. */
+  imageUrl: string | null;
+  archived: boolean;
+  ingredients: RecipeIngredient[];
+}
+
+/** Filterzustand der Rezeptliste — kommt aus den Suchparametern der URL. */
+export interface RecipeFilter {
+  /** Volltext über Name, Tags, Zutaten und Zubereitung. */
+  query?: string;
+  /** Alle genannten Tags müssen zutreffen (UND). */
+  tags?: string[];
+  /** Nur Rezepte mit einer Zutat, die darauf passt. */
+  ingredient?: string;
+  maxKcal?: number;
+  maxMinutes?: number;
+  rating?: string;
+  simpleOnly?: boolean;
+  reheatableOnly?: boolean;
+}
+
+/** Ein Tag mit seiner Häufigkeit — für die Filter-Chips. */
+export interface RecipeTagCount {
+  tag: string;
+  count: number;
+}
+
 export interface Note {
   id: string;
   icon: string;

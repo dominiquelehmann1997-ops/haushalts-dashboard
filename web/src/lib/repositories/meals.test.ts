@@ -9,7 +9,6 @@ import {
   getDomeShiftsForWeek,
   getDraftMealPlan,
   getWeekMealPlan,
-  listRecipes,
   recentRecipeUse,
 } from "./meals";
 
@@ -199,37 +198,6 @@ describe("meals repository", () => {
     expect(skipped!.dish).toBe("frei");
   });
 
-  it("listRecipes returns id+name sorted by name", async () => {
-    const recipes = await listRecipes(client);
-    const names = recipes.map((r) => r.name);
-    expect(names).toEqual([...names].sort());
-    expect(recipes[0]).toHaveProperty("id");
-    expect(recipes[0]).toHaveProperty("name");
-  });
-});
-
-describe("listRecipes", () => {
-  let client: PrismaClient;
-
-  beforeEach(async () => {
-    client ??= createTestClient();
-    await resetDatabase(client);
-  });
-
-  afterAll(async () => {
-    await client?.$disconnect();
-  });
-
-  it("excludes archived recipes", async () => {
-    const before = await listRecipes(client);
-    expect(before.length).toBeGreaterThan(0);
-    const target = before[0];
-    await client.recipe.update({ where: { id: target.id }, data: { archived: true } });
-
-    const after = await listRecipes(client);
-    expect(after.find((r) => r.id === target.id)).toBeUndefined();
-    expect(after.length).toBe(before.length - 1);
-  });
 });
 
 describe("getDomeShiftsForWeek", () => {

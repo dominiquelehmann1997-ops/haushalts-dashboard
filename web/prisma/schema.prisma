@@ -113,17 +113,34 @@ model PhaseSetting {
   isActive     Boolean   @default(true)
 }
 
-/// A recipe used for meal planning.
+/// A recipe. Die DB ist die Wahrheit — Rezepte werden in der App gepflegt
+/// (früher: Spiegel eines Obsidian-Vaults). `slug` bleibt der stabile
+/// Identitäts-Anker für den Re-Import derselben Quelle und den Backup-Export.
 model Recipe {
   id         String  @id @default(cuid())
   name       String
   simple     Boolean @default(true)
   reheatable Boolean @default(false)
   tags       String? // JSON string array
-  rating     String  @default("ok") // "favorit" | "ok" | "selten" (aus Vault-Frontmatter; Feature A)
-  slug       String? @unique // stabiler Vault-Anker (Frontmatter `id`); null für Nicht-Vault-Rezepte
-  archived   Boolean @default(false) // true, wenn das Rezept nicht mehr im Vault liegt
-  vaultFile  String? // Pfad relativ zum Obsidian-Vault-Root (ohne .md), z.B. "Rezepte/Kokos-Curry" — für Obsidian-Deeplinks
+  rating     String  @default("ok") // "favorit" | "ok" | "selten" (Feature A: Essensplan-Gewichtung)
+  slug       String? @unique // stabiler Identitäts-Anker; null für handangelegte Alt-Rezepte
+  archived   Boolean @default(false) // ausgemustert, aber ggf. noch von MealPlanEntry referenziert
+  vaultFile  String? // DEPRECATED (Obsidian-Deeplink) — entfällt mit dem Vault-Ausbau
+
+  // Kochansicht + Filter. Lagen bisher nur im Vault-Markdown und wurden beim
+  // Ingest verworfen; der URL-Importer liefert sie längst mit.
+  servings    Int? // Portionen, auf die sich `amount` und `kcal` beziehen
+  prepMinutes Int?
+  cookMinutes Int?
+  kcal        Int? // pro Portion, Angabe der Quelle — ungeprüft
+  protein     Int? // g pro Portion
+  steps       String? // JSON string array (Zubereitungsschritte)
+  notes       String? // freies Feld für eigene Anmerkungen
+  sourceUrl   String? // Herkunfts-URL; Dedupe-Anker beim erneuten Import
+  imagePath   String? // Dateiname relativ zu RECIPE_IMAGE_DIR; null = kein Bild
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   ingredients     Ingredient[]
   mealPlanEntries MealPlanEntry[]
@@ -139,6 +156,7 @@ model Ingredient {
   name   String
   amount String?
   unit   String?
+  sort   Int     @default(0) // Reihenfolge im Rezept (stabil beim Bearbeiten)
 }
 
 /// A planned meal for a given date.

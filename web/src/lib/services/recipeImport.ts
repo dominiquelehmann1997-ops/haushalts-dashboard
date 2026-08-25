@@ -1,21 +1,18 @@
-// Rezept-Import per Link: holt eine Rezept-Seite, liest deren schema.org-
+// Rezept-Import per Link: holt eine Rezept-Seite und liest deren schema.org-
 // Rezeptdaten (JSON-LD, das Google-Rich-Result-Markup — praktisch jede große
-// Rezeptseite liefert es) und schreibt daraus eine vertragskonforme `.md` in
-// den Obsidian-Vault (siehe docs/recipe-vault-import-contract.md).
+// Rezeptseite liefert es).
 //
 // Kein LLM, keine API-Keys, keine Kosten: die Seiten liefern die Zutaten und
 // Schritte bereits strukturiert aus. Die reine Logik (Extraktion, Zutaten-
-// Parsing, Markdown) ist hier getestet; Fetch + Datei-Write sind dünne,
-// ungetestete Integrations-Wrapper (wie in recipeIdeas.ts).
-
-import { readdir, readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
-
-import matter from "gray-matter";
+// Parsing) ist hier getestet; der Fetch ist ein dünner, ungetesteter
+// Integrations-Wrapper (wie in recipeIdeas.ts).
+//
+// Geschrieben wird hier nichts: `ImportedRecipe` geht an
+// `upsertImportedRecipe` (repositories/recipes.ts) und landet in der DB.
 
 import type { Rating } from "@/lib/services/recipeVault";
 
-/** Was aus der Seite geholt und in den Vault geschrieben wird. */
+/** Was aus der Seite geholt und in die DB übernommen wird. */
 export interface ImportedIngredient {
   name: string;
   amount?: string | null;
@@ -23,13 +20,17 @@ export interface ImportedIngredient {
 }
 
 export interface ImportedRecipe {
-  id: string;
+  /** Aus dem Namen abgeleitet; Identitäts-Anker für den erneuten Import. */
+  slug: string;
   name: string;
   rating: Rating;
   simple: boolean;
   reheatable: boolean;
   tags: string[];
-  source: string;
+  /** Quell-URL; `null` bei Rezepten ohne Webquelle (z.B. Claude-Ideen). */
+  source: string | null;
+  /** Adresse des Titelbilds auf der Quellseite; geladen wird es in `recipeImage.ts`. */
+  imageUrl: string | null;
   servings: number | null;
   prepMinutes: number | null;
   cookMinutes: number | null;
@@ -356,6 +357,46 @@ export function collectSteps(value: unknown, depth = 0): string[] {
   return [];
 }
 
+/**
+ * `image` → absolute Bild-URL. schema.org erlaubt hier so ziemlich alles:
+ * einen String, eine Liste, ein `ImageObject` mit `url`, oder eine Liste davon
+ * (mehrere Seitenverhältnisse desselben Bilds). Genommen wird die erste
+ * brauchbare Adresse; relative Pfade werden gegen die Seiten-URL aufgelöst.
+ */
+export function pickImageUrl(value: unknown, pageUrl: string, depth = 0): string | null {
+  if (depth > 4 || value == null) return null;
+
+  if (typeof value === "string") {
+    const raw = stripHtml(value);
+    if (!raw) return null;
+    let resolved: URL;
+    try {
+      resolved = new URL(raw, pageUrl);
+    } catch {
+      return null;
+    }
+    // Nur http(s): `data:`-URLs sind Platzhalter-Pixel, alles andere holt der
+    // Downloader ohnehin nicht.
+    if (resolved.protocol !== "http:" && resolved.protocol !== "https:") return null;
+    return resolved.toString();
+  }
+
+  if (Array.isArray(value)) {
+    for (const entry of value) {
+      const hit = pickImageUrl(entry, pageUrl, depth + 1);
+      if (hit) return hit;
+    }
+    return null;
+  }
+
+  if (typeof value === "object") {
+    const node = value as Json;
+    return pickImageUrl(node.url ?? node.contentUrl, pageUrl, depth + 1);
+  }
+
+  return null;
+}
+
 /** `keywords`/`recipeCategory`/`recipeCuisine` → normalisierte Tag-Liste. */
 export function collectTags(schema: Json): string[] {
   const raw: string[] = [];
@@ -378,7 +419,7 @@ export function collectTags(schema: Json): string[] {
 
 // ── Umlaut-sicherer Slug ─────────────────────────────────────────────────────
 
-const TRANSLITERATE: Record<string, string> = {
+export const TRANSLITERATE: Record<string, string> = {
   ä: "ae",
   ö: "oe",
   ü: "ue",
@@ -404,8 +445,8 @@ const TRANSLITERATE: Record<string, string> = {
 /**
  * Rezeptname → stabiler kebab-case-Slug. Anders als `slugFromFilename`
  * werden Umlaute transliteriert ("Gemüse" → "gemuese" statt "gem-se").
- * Der Slug ist der Identitäts-Anker im Vault und wird nie nachträglich
- * geändert (siehe Import-Contract §3).
+ * Der Slug ist der Identitäts-Anker importierter Rezepte und wird nie
+ * nachträglich geändert — sonst legt ein erneuter Import eine Dublette an.
  */
 export function slugFromName(name: string): string {
   const lowered = name.toLowerCase();
@@ -418,19 +459,7 @@ export function slugFromName(name: string): string {
     .replace(/-+$/g, "");
 }
 
-/** Rezeptname → Dateiname (Obsidian zeigt ihn als Notiztitel). */
-export function fileNameFromRecipe(name: string, slug: string): string {
-  const safe = name
-    .replace(/[\\/:*?"<>|#^[\]]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/^_+/, "") // führender "_" würde vom Ingest übersprungen
-    .slice(0, 90)
-    .trim();
-  return `${safe || slug}.md`;
-}
-
-// ── schema.org → Vault-Rezept ────────────────────────────────────────────────
+// ── schema.org → Rezept ──────────────────────────────────────────────────────
 
 /** Ab hier gilt ein Gericht nicht mehr als "einfach" (Alltagstauglichkeit). */
 const SIMPLE_MAX_MINUTES = 45;
@@ -439,9 +468,9 @@ const SIMPLE_MAX_INGREDIENTS = 12;
 const LOW_CALORIE_MAX_KCAL = 500;
 
 /**
- * Baut aus dem schema.org-Knoten das Vault-Rezept. `sourceUrl` landet als
- * `source` im Frontmatter (vom Dashboard ignoriert, aber der Anker, über den
- * ein erneuter Import dieselbe Notiz aktualisiert statt sie zu duplizieren).
+ * Baut aus dem schema.org-Knoten das Rezept. `sourceUrl` bleibt als `source`
+ * erhalten: darüber erkennt ein erneuter Import dasselbe Rezept wieder und
+ * aktualisiert es, statt eine Dublette anzulegen.
  */
 export function toImportedRecipe(schema: Json, sourceUrl: string): ImportedRecipe {
   const rawName = typeof schema.name === "string" ? stripHtml(schema.name) : "";
@@ -469,13 +498,14 @@ export function toImportedRecipe(schema: Json, sourceUrl: string): ImportedRecip
     ingredients.length <= SIMPLE_MAX_INGREDIENTS;
 
   return {
-    id: slugFromName(rawName),
+    slug: slugFromName(rawName),
     name: rawName,
     rating: "ok", // bewusst neutral: Bewertung vergibt der Haushalt selbst
     simple,
     reheatable: false,
     tags: tags.slice(0, 8),
     source: sourceUrl,
+    imageUrl: pickImageUrl(schema.image, sourceUrl),
     servings: parseServings(schema.recipeYield),
     prepMinutes,
     cookMinutes,
@@ -484,50 +514,6 @@ export function toImportedRecipe(schema: Json, sourceUrl: string): ImportedRecip
     ingredients,
     steps: collectSteps(schema.recipeInstructions),
   };
-}
-
-/**
- * Serialisiert das Rezept als Vault-Markdown (YAML via gray-matter, damit die
- * Ausgabe garantiert durch `parseRecipeMarkdown` zurückläuft).
- */
-export function importedRecipeToVaultMarkdown(recipe: ImportedRecipe): string {
-  const nutrition: Record<string, number> = {};
-  if (recipe.kcal !== null) nutrition.kcal = recipe.kcal;
-  if (recipe.protein !== null) nutrition.protein = recipe.protein;
-
-  const frontmatter: Record<string, unknown> = {
-    id: recipe.id,
-    name: recipe.name,
-    rating: recipe.rating,
-    simple: recipe.simple,
-    reheatable: recipe.reheatable,
-    source: recipe.source,
-  };
-  if (recipe.tags.length > 0) frontmatter.tags = recipe.tags;
-  if (recipe.servings !== null) frontmatter.servings = recipe.servings;
-  if (recipe.prepMinutes !== null) frontmatter.prepMinutes = recipe.prepMinutes;
-  if (recipe.cookMinutes !== null) frontmatter.cookMinutes = recipe.cookMinutes;
-  if (Object.keys(nutrition).length > 0) frontmatter.nutrition = nutrition;
-  frontmatter.ingredients = recipe.ingredients.map((i) => ({
-    name: i.name,
-    ...(i.amount != null ? { amount: i.amount } : {}),
-    ...(i.unit != null ? { unit: i.unit } : {}),
-  }));
-
-  const body = [
-    "## Zubereitung",
-    "",
-    ...(recipe.steps.length > 0
-      ? recipe.steps.map((step, index) => `${index + 1}. ${step}`)
-      : ["_(Die Seite liefert keine maschinenlesbaren Schritte — siehe Quelle.)_"]),
-    "",
-    "## Quelle",
-    "",
-    recipe.source,
-    "",
-  ].join("\n");
-
-  return matter.stringify(body, frontmatter);
 }
 
 // ---- Integration (ungetestet, dünn) ----
@@ -561,72 +547,18 @@ export function normalizeRecipeUrl(input: string): string {
 }
 
 /**
- * Sucht im Vault eine Notiz, die dasselbe Rezept meint — gleiche Quell-URL
- * oder gleiche `id`. So aktualisiert ein erneuter Import dieselbe Datei,
- * statt ein zweites Rezept mit demselben Slug anzulegen (Contract §3).
+ * Kompletter Link-Import: URL holen → schema.org lesen → Rezept zurückgeben.
+ * Schreibt selbst nichts; das übernimmt `upsertImportedRecipe`, damit diese
+ * Funktion ohne DB testbar bleibt.
  */
-async function findExistingRecipeFile(
-  vaultPath: string,
-  recipe: ImportedRecipe,
-): Promise<{ file: string; id: string } | null> {
-  let files: string[];
-  try {
-    files = (await readdir(vaultPath)).filter(
-      (f) => f.toLowerCase().endsWith(".md") && !f.startsWith("_"),
-    );
-  } catch {
-    return null;
-  }
-
-  for (const file of files) {
-    let data: Record<string, unknown>;
-    try {
-      data = matter(await readFile(path.join(vaultPath, file), "utf8")).data;
-    } catch {
-      continue;
-    }
-    const id = typeof data.id === "string" ? data.id.trim() : "";
-    const source = typeof data.source === "string" ? data.source.trim() : "";
-    if ((source && source === recipe.source) || (id && id === recipe.id)) {
-      return { file, id: id || recipe.id };
-    }
-  }
-  return null;
-}
-
-export interface ImportResult {
-  recipe: ImportedRecipe;
-  /** Absoluter Pfad der geschriebenen `.md`. */
-  file: string;
-  /** true, wenn eine bestehende Notiz aktualisiert wurde. */
-  updated: boolean;
-}
-
-/**
- * Kompletter Link-Import: URL holen → schema.org lesen → `.md` in den Vault
- * schreiben. Spiegelt **nicht** in die DB — das macht wie immer `ingestVault`
- * (Vault = Wahrheit, DB = Cache).
- */
-export async function importRecipeFromUrl(
-  rawUrl: string,
-  vaultPath: string,
-): Promise<ImportResult> {
+export async function importRecipeFromUrl(rawUrl: string): Promise<ImportedRecipe> {
   const url = normalizeRecipeUrl(rawUrl);
   const html = await fetchRecipePage(url);
   const schema = extractRecipeSchema(html);
   if (!schema) {
     throw new Error(
-      "Die Seite liefert keine schema.org-Rezeptdaten — hier hilft nur der Obsidian Web Clipper.",
+      "Die Seite liefert keine schema.org-Rezeptdaten — hier hilft nur Abtippen im Rezept-Formular.",
     );
   }
-
-  const recipe = toImportedRecipe(schema, url);
-  const existing = await findExistingRecipeFile(vaultPath, recipe);
-  // Bestehende `id` gewinnt: der Slug ist der Identitäts-Anker und darf sich
-  // nie ändern, auch wenn die Seite den Rezeptnamen inzwischen umbenannt hat.
-  if (existing) recipe.id = existing.id;
-
-  const file = path.join(vaultPath, existing?.file ?? fileNameFromRecipe(recipe.name, recipe.id));
-  await writeFile(file, importedRecipeToVaultMarkdown(recipe), "utf8");
-  return { recipe, file, updated: existing !== null };
+  return toImportedRecipe(schema, url);
 }

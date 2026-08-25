@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
-import type { Meal, DraftMeal, RecipeOption } from "@/lib/domain";
+import type { Meal, DraftMeal } from "@/lib/domain";
 import { addDays, currentWeekBounds, localDateKey, mondayOf, weekBoundsOf } from "@/lib/dates";
 import { classifyShift, type ShiftClass } from "@/lib/calendar/shifts";
 import { obsidianUrl } from "@/lib/services/obsidian";
@@ -88,15 +88,6 @@ export async function getDraftMealPlan(
     reason: row.reason,
     extraPortion: row.extraPortion,
   }));
-}
-
-/** Alle Rezepte als `{ id, name }`, nach Name sortiert — fürs Tausch-Picker. */
-export async function listRecipes(client: PrismaClient = prisma): Promise<RecipeOption[]> {
-  const recipes = await client.recipe.findMany({
-    where: { archived: false },
-    orderBy: { name: "asc" },
-  });
-  return recipes.map((r) => ({ id: r.id, name: r.name }));
 }
 
 /**
