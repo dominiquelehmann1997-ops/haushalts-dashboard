@@ -2,7 +2,7 @@
 
 **Datum:** 2026-08-25
 **Branch:** `feat/rezept-db` (Worktree `haushalts-dashboard-rezepte`)
-**Status:** Phasen 1–7 erledigt; offen ist nur noch der Cutover auf dem Tablet
+**Status:** abgeschlossen — Phasen 1–7 erledigt, Cutover auf dem Tablet am 2026-08-25 gefahren
 
 ## Ziel
 
@@ -223,45 +223,125 @@ und `next build` sauber.
 
 ---
 
+### Cutover auf dem Tablet — erledigt 2026-08-25
+
+55 Rezepte aus dem Vault stehen in der DB, die App ist die Wahrheit, das
+Backup läuft. Ablauf und Abweichungen:
+
+**Vier Befunde, die den geplanten Ablauf gebrochen haben:**
+
+1. Das Tablet stand auf `91abcfd` — **älter als der Phasen-1–5-Merge**. Erst
+   `git pull` nötig.
+2. Die Produktions-DB heißt `dev.db`, nicht `prod.db`. Dass
+   `tablet-backup.sh` den Pfad aus `DATABASE_URL` liest statt ihn fest zu
+   verdrahten, hat sich hier sofort ausgezahlt.
+3. **Kein `_prisma_migrations`:** die DB war per `db push` aufgebaut, ohne
+   Migrationshistorie.
+4. **`prisma migrate deploy` ist auf dem Tablet unmöglich.** Die
+   Schema-Engine ist ein glibc-Binary
+   (`schema-engine-debian-openssl-1.1.x`) und startet auf Androids bionic
+   libc nicht — `migrate status`/`deploy`/`resolve` scheitern alle mit
+   „Schema engine error". `prisma generate` läuft (anderer Weg).
+
+**Also stattdessen:** Migrations-SQL direkt mit dem nativ installierten
+`sqlite3` angewandt, jede Migration vorher an einer Kopie der echten DB
+geprobt (Spalten, Zeilenzahlen, `foreign_key_check`, `quick_check`) und in
+einer Transaktion gefahren:
+
+```
+PRAGMA foreign_keys=OFF; BEGIN; <migration.sql ohne PRAGMA-Zeilen> COMMIT;
+```
+
+Danach `_prisma_migrations` angelegt und **alle 15 Migrationen mit echten
+sha256-Prüfsummen** eingetragen — die DB hat damit erstmals eine saubere
+Historie.
+
+**Ergebnis:**
+
+- Vor-Cutover-Snapshot: `~/haushalt-backups/vor-cutover-2026-08-25-2115.db`
+  (verifiziert, bleibt liegen — die Rotation greift nur auf `prod-*.db`).
+- Slug-Abgleich vorab: 55 Vault-`id`s ↔ 55 DB-`slug`s, 1:1. `migrate:vault`
+  meldete folgerichtig **0 neu, 55 aktualisiert**; die 45
+  `MealPlanEntry.recipeId` blieben heil.
+- Datenlage: 49 Rezepte mit Zubereitung (43 davon mit ≥3 Schritten), 762
+  Zutaten. 6 ohne Zubereitung (vom CLI namentlich gemeldet), 6 mit einer
+  Ein-Zeilen-„Zubereitung" — so standen sie im Vault, kein Migrationsfehler.
+- `sourceUrl` bleibt bei 0: nur 3 Vault-Dateien hatten überhaupt ein
+  `source:`, und das waren Autorennamen („Fitnesskoch_Tim"), keine URLs.
+- Export liegt in einem **eigenen** Vault-Ordner
+  (`…/Obsidian/Rezepte/Rezeptbuch`), nicht im alten `Dashboard/`. So bleiben
+  die 55 Alt-Notizen als eingefrorene Vor-Cutover-Kopie liegen, statt sich
+  mit 55 Exportdateien im selben Ordner zu doppeln.
+- `RECIPE_VAULT_PATH` und `OBSIDIAN_VAULT_NAME` in der Tablet-`.env`
+  auskommentiert (nicht gelöscht — der Pfad zur Alt-Kopie bleibt so
+  auffindbar). `RECIPE_IMAGE_DIR` neu gesetzt, damit der Bild-Download aus
+  Phase 5 dort überhaupt greift.
+
+**Zwei Stolpersteine für den nächsten Deploy:**
+
+- `next build` scheitert auf Android („Turbopack is not supported on this
+  platform"). Es braucht **`npx next build --webpack`** — steht in
+  `docs/tablet-kiosk-setup.md`, nicht im `build`-Script. Der fehlgeschlagene
+  Turbopack-Lauf räumt vorher `.next` leer, der Server ist dann bis zum
+  erfolgreichen Build unten.
+- Der Prozess heißt `next-server`, nicht `next start`. `pkill -f next-server`
+  greift. Achtung: das Suchmuster nicht unmaskiert ins eigene Kommando
+  schreiben, sonst erwischt `pkill` die eigene SSH-Shell.
+
+---
+
 ## Offen
 
-### Cutover auf dem Tablet
+### In der App nachzutragen (12 Rezepte)
 
-Der Merge deployt nichts. Auf dem Tablet (dort liegt der Vault, nicht auf dem
-Windows-Rechner):
+Der Vault hatte sie unvollständig; die Übernahme hat das ehrlich abgebildet.
 
-```
-prisma migrate deploy
-prisma generate
-npm run migrate:vault      # Report gegen die Anzahl .md im Vault prüfen
-npm run build
-```
+- **Ohne Zubereitung (6):** Cheeseburger Auflauf, Hähnchen-Kokos-Suppe,
+  Karamellisierte Zwiebelnudeln, Kartoffelauflauf mit Cabanossi,
+  Orzo-Brokkoli One-Pot, Pellkartoffeln mit Mojo-Quark.
+- **Nur eine Zeile statt Schritten (6):** Bigmac-Bowl, New York Style Pizza,
+  PIZZA POMMES zum ABNEHMEN!, One-Pot Hähnchen Orzo Pfanne,
+  High-Protein Hot Pockets, Reispapier Hähnchenbites. Bei Bigmac-Bowl steht
+  unter `## Zubereitung` eine Nährwert-Zeile — die Notiz hatte nie eine
+  Anleitung.
 
-Ohne `migrate:vault` bleiben Zubereitung, Portionen und Nährwerte der
-Bestandsrezepte leer. Restart-Hinweis beachten: das dokumentierte
-`pkill -f "next start"` trifft Next 16 nicht mehr.
+### Termux:API-App fehlt
 
-> ⚠️ **Reihenfolge:** `npm run migrate:vault` gibt es nur bis einschließlich
-> `cecfc05` (Phase 6). Phase 7 (`b9cc89f`) löscht das Script. Also **erst den
-> Cutover fahren, dann Phase 7 ausrollen** — sonst ist die Vault-Übernahme
-> nicht mehr möglich und die Bestandsrezepte bleiben unvollständig.
+`termux-job-scheduler` **hängt** auf diesem Tablet still (am 2026-08-25
+nachgemessen: `--pending` läuft in den Timeout), weil die Termux:API-*App*
+nicht installiert ist. Deshalb taktet `scripts/tablet-backup-loop.sh` das
+Backup, gestartet von `tablet-start.sh` neben dem Server.
 
-Danach einmalig:
+Konsequenz: Die Schleife stirbt bei einem Termux-Force-Stop — wie der Server
+auch. Der dokumentierte Handgriff `bash ~/.termux/boot/tablet-boot.sh` bringt
+beides zurück. Wird die App nachinstalliert, ist der Scheduler die robustere
+Wahl; die Aufrufzeile steht am Ende von `tablet-backup.sh`.
 
-- `RECIPE_EXPORT_PATH` in `web/.env` setzen (darf der alte Vault-Ordner sein).
-- `npm run export:recipes` von Hand laufen lassen und den Ordner ansehen.
-  Beim ersten Lauf im alten Vault meldet der Export die Altbestände als
-  „nicht von uns" — die lassen sich löschen, sobald der Export geprüft ist.
-- `scripts/tablet-backup.sh` einhängen (Aufrufzeile im Script-Kopf) und am
-  Folgetag nachsehen, ob wirklich ein Snapshot liegt. `termux-job-scheduler`
-  braucht die Termux:API-**App**; fehlt sie, hängt der Aufruf still.
-- Erst danach den Vault-Ordner als Rezeptquelle aufgeben.
+Nebenbefund: `tablet-sync.sh` sollte laut `docs/superpowers/plans/2026-06-20-…`
+ebenfalls per `termux-job-scheduler` laufen. Wenn der dort nie funktioniert
+hat, läuft der Kalender-Sync nur beim Serverstart. Nicht geprüft, nicht Teil
+dieses Vorhabens — aber einen Blick wert.
+
+### Der alte Vault-Ordner
+
+`…/Obsidian/Rezepte/Dashboard` liegt mit seinen 55 Notizen unangetastet als
+eingefrorene Vor-Cutover-Kopie. Er kann weg, sobald ein paar Tage Backups
+nachweislich gelaufen sind — der Export schreibt daneben nach
+`…/Obsidian/Rezepte/Rezeptbuch`.
 
 ### Nicht gesichert: die Rezeptbilder
 
 `RECIPE_IMAGE_DIR` liegt außerhalb des Repos und außerhalb der DB — das
-Backup fasst es nicht an. Verschmerzbar (die Bilder hängen an `sourceUrl` und
-sind nachladbar), aber bewusst offen gelassen, nicht übersehen.
+Backup fasst es nicht an. Bewusst offen gelassen, nicht übersehen.
+
+Bis zum Cutover war das folgenlos: keins der 55 übernommenen Rezepte hat eine
+`sourceUrl`, also auch kein Bild. Die Lücke wird erst relevant, sobald per
+Link importiert wird — dann liegen dort Dateien, die nirgends sonst stehen.
+Ein `cp -u`-Spiegel in `tablet-backup.sh` wäre der billige Fix.
+
+Vorsicht mit der bequemen Annahme „Bilder hängen an `sourceUrl` und sind
+nachladbar": das gilt nur für importierte Rezepte, und auch nur solange die
+Quellseite existiert.
 
 ---
 
