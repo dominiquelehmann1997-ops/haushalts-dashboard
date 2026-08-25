@@ -57,3 +57,38 @@ export function weekBoundsOf(date: Date): { start: Date; end: Date } {
 export function localDateKey(date: Date): string {
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
+
+/**
+ * Local midnight on the Monday of the ISO week `offset` weeks away from the week
+ * containing `from` (0 = current week, 1 = next week, -1 = last week). Basis der
+ * Vorausplanung: alle Essensplan-Aktionen nehmen einen `weekStart` entgegen.
+ */
+export function weekStartWithOffset(offset: number, from: Date = new Date()): Date {
+  return addDays(mondayOf(from), offset * 7);
+}
+
+/**
+ * Anzahl ganzer ISO-Wochen zwischen der Woche um `from` und der Woche um `date`
+ * (0 = dieselbe Woche, 1 = die Woche danach). Umkehrung von `weekStartWithOffset`.
+ */
+export function weekOffsetOf(date: Date, from: Date = new Date()): number {
+  const diffMs = mondayOf(date).getTime() - mondayOf(from).getTime();
+  // round statt floor: robust gegen DST-bedingte 23/25-Stunden-Tage.
+  return Math.round(diffMs / (7 * 86_400_000));
+}
+
+/** Kompakte Wochenspanne "25.8. – 31.8." für die Woche um `date`. */
+export function formatWeekRange(date: Date): string {
+  const { start } = weekBoundsOf(date);
+  const end = addDays(start, 6);
+  const day = (d: Date) => `${d.getDate()}.${d.getMonth() + 1}.`;
+  return `${day(start)} – ${day(end)}`;
+}
+
+/** Menschliche Wochen-Bezeichnung: "Diese Woche" / "Nächste Woche" / "in 2 Wochen". */
+export function weekOffsetLabel(offset: number): string {
+  if (offset === 0) return "Diese Woche";
+  if (offset === 1) return "Nächste Woche";
+  if (offset === -1) return "Letzte Woche";
+  return offset > 0 ? `In ${offset} Wochen` : `Vor ${Math.abs(offset)} Wochen`;
+}

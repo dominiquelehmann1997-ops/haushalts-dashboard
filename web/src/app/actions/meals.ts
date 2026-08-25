@@ -22,7 +22,7 @@ import { pushMealIngredients } from "@/lib/services/mealIngredientPush";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { getDomeShiftsForWeek } from "@/lib/repositories/meals";
 import { ingestVaultIfConfigured } from "@/lib/repositories/recipeIngest";
-import { localDateKey } from "@/lib/dates";
+import { formatWeekRange, localDateKey, weekOffsetLabel, weekOffsetOf } from "@/lib/dates";
 import type { BringPushResult } from "@/integrations/bring/client";
 
 /** Generiert die dienstbewusste ENTWURF-Woche (kein Einkauf/Bring). */
@@ -52,11 +52,14 @@ export async function generatePlanAction(weekStartISO: string): Promise<void> {
   });
 
   // Roadmap C2: Beide Handys benachrichtigen, dass ein Entwurf bereitliegt.
+  // Bei Vorausplanung nennt der Push die Woche und verlinkt sie direkt — sonst
+  // landete man auf der laufenden Woche und sähe den Entwurf gar nicht.
   // Non-fatal — ein Push-Fehler darf die Entwurfserzeugung nicht scheitern lassen.
+  const offset = weekOffsetOf(weekStart);
   await sendToAdults({
-    title: "Essensplan-Entwurf bereit 🍽️",
-    body: "Antippen zum Abnicken oder Ändern.",
-    url: "/",
+    title: `Essensplan-Entwurf bereit 🍽️ (${weekOffsetLabel(offset)})`,
+    body: `${formatWeekRange(weekStart)} — antippen zum Abnicken oder Ändern.`,
+    url: offset === 0 ? "/mobile/meals" : `/mobile/meals?w=${offset}`,
   });
 
   revalidateDashboard();

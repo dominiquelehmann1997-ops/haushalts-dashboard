@@ -3,7 +3,7 @@ import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import { createTestClient, resetDatabase } from "@/test/db";
 import { PrismaClient } from "@/generated/prisma/client";
 
-import { addDays, currentWeekBounds, localDateKey } from "@/lib/dates";
+import { addDays, currentWeekBounds, localDateKey, weekStartWithOffset } from "@/lib/dates";
 
 import {
   getDomeShiftsForWeek,
@@ -401,5 +401,76 @@ describe("recentRecipeUse", () => {
     expect(map.has(recipes[1].id)).toBe(false);
     // die geseedeten aktiven Einträge der Woche liegen AUF/NACH dem Montag → zählen nicht
     expect(map.size).toBe(0);
+  });
+});
+
+describe("Wochenwahl (Vorausplanung)", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  it("getWeekMealPlan liefert die Woche um `weekStart` statt der laufenden", async () => {
+    const nextMonday = weekStartWithOffset(1);
+    const recipe = await client.recipe.findFirstOrThrow({ orderBy: { name: "asc" } });
+    await client.mealPlanEntry.create({
+      data: { date: addDays(nextMonday, 2), recipeId: recipe.id, status: "active" },
+    });
+
+    const plan = await getWeekMealPlan(client, nextMonday);
+    expect(plan).toHaveLength(1);
+    expect(plan[0].day).toBe("Mi");
+    expect(plan[0].dish).toBe(recipe.name);
+    // Eine kommende Woche enthält nie "heute" — der Highlight darf nicht anspringen.
+    expect(plan[0].today).toBe(false);
+  });
+
+  it("getWeekMealPlan ohne `weekStart` bleibt bei der laufenden Woche", async () => {
+    const nextMonday = weekStartWithOffset(1);
+    const recipe = await client.recipe.findFirstOrThrow({ orderBy: { name: "asc" } });
+    await client.mealPlanEntry.create({
+      data: { date: addDays(nextMonday, 2), recipeId: recipe.id, status: "active" },
+    });
+
+    const plan = await getWeekMealPlan(client);
+    // Nur die geseedeten Einträge dieser Woche; der Eintrag der Folgewoche fehlt.
+    expect(plan.every((m) => new Date(m.dateISO!) < nextMonday)).toBe(true);
+  });
+
+  it("getDraftMealPlan trennt die Entwürfe zweier Wochen sauber", async () => {
+    const thisMonday = weekStartWithOffset(0);
+    const nextMonday = weekStartWithOffset(1);
+    const recipes = await client.recipe.findMany({ orderBy: { name: "asc" } });
+
+    await client.mealPlanEntry.create({
+      data: { date: thisMonday, recipeId: recipes[0].id, status: "draft" },
+    });
+    await client.mealPlanEntry.create({
+      data: { date: nextMonday, recipeId: recipes[1].id, status: "draft" },
+    });
+
+    const thisWeek = await getDraftMealPlan(client, thisMonday);
+    const nextWeek = await getDraftMealPlan(client, nextMonday);
+    expect(thisWeek.map((d) => d.recipeId)).toEqual([recipes[0].id]);
+    expect(nextWeek.map((d) => d.recipeId)).toEqual([recipes[1].id]);
+  });
+
+  it("akzeptiert jeden Wochentag als `weekStart` (Normalisierung auf den Montag)", async () => {
+    const nextMonday = weekStartWithOffset(1);
+    const recipe = await client.recipe.findFirstOrThrow({ orderBy: { name: "asc" } });
+    await client.mealPlanEntry.create({
+      data: { date: nextMonday, recipeId: recipe.id, status: "active" },
+    });
+
+    // Sonntag derselben Woche → derselbe Plan.
+    const plan = await getWeekMealPlan(client, addDays(nextMonday, 6));
+    expect(plan).toHaveLength(1);
+    expect(plan[0].day).toBe("Mo");
   });
 });
