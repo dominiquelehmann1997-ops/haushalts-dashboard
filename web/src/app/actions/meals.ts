@@ -21,22 +21,12 @@ import {
 import { pushMealIngredients } from "@/lib/services/mealIngredientPush";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { getDomeShiftsForWeek } from "@/lib/repositories/meals";
-import { ingestVaultIfConfigured } from "@/lib/repositories/recipeIngest";
 import { formatWeekRange, localDateKey, weekOffsetLabel, weekOffsetOf } from "@/lib/dates";
 import type { BringPushResult } from "@/integrations/bring/client";
 
 /** Generiert die dienstbewusste ENTWURF-Woche (kein Einkauf/Bring). */
 export async function generatePlanAction(weekStartISO: string): Promise<void> {
   const weekStart = new Date(weekStartISO);
-
-  // Auto-Sync: vor dem Entwurf den Rezepte-Vault (Obsidian) einlesen, damit
-  // neue Rezepte ohne manuellen "Rezepte einlesen"-Klick zur Auswahl stehen.
-  // Non-fatal — ein Vault-Fehler darf die Entwurfserzeugung nicht scheitern lassen.
-  try {
-    await ingestVaultIfConfigured();
-  } catch {
-    // Ingest-Fehler ignorieren; mit dem bestehenden Rezeptbuch weitermachen.
-  }
 
   const phase = await getActivePhase();
 
