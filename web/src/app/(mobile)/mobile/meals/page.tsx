@@ -2,7 +2,8 @@ import { MealDraftPanel } from "@/components/MealDraftPanel";
 import { MealPlanControl } from "@/components/MealPlanControl";
 import { RecipeIdeasControl } from "@/components/RecipeIdeasControl";
 import { RecipeUrlImport } from "@/components/RecipeUrlImport";
-import { getDraftMealPlan, getWeekMealPlan, listRecipes } from "@/lib/repositories/meals";
+import { getDraftMealPlan, getWeekMealPlan } from "@/lib/repositories/meals";
+import { listRecipeOptions } from "@/lib/repositories/recipes";
 import { hasCalendarDataForWeek } from "@/lib/repositories/calendar";
 import { PageHeader } from "@/components/mobile/PageHeader";
 import { MealWeekList } from "@/components/mobile/MealWeekList";
@@ -28,7 +29,7 @@ export default async function MobileMealsPage({
   const [meals, draft, recipes, hasShiftData] = await Promise.all([
     getWeekMealPlan(undefined, weekStart),
     getDraftMealPlan(undefined, weekStart),
-    listRecipes(),
+    listRecipeOptions(),
     hasCalendarDataForWeek(weekStart),
   ]);
 

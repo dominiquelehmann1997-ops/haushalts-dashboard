@@ -378,7 +378,7 @@ export function collectTags(schema: Json): string[] {
 
 // ── Umlaut-sicherer Slug ─────────────────────────────────────────────────────
 
-const TRANSLITERATE: Record<string, string> = {
+export const TRANSLITERATE: Record<string, string> = {
   ä: "ae",
   ö: "oe",
   ü: "ue",

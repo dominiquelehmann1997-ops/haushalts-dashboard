@@ -90,15 +90,6 @@ export async function getDraftMealPlan(
   }));
 }
 
-/** Alle Rezepte als `{ id, name }`, nach Name sortiert — fürs Tausch-Picker. */
-export async function listRecipes(client: PrismaClient = prisma): Promise<RecipeOption[]> {
-  const recipes = await client.recipe.findMany({
-    where: { archived: false },
-    orderBy: { name: "asc" },
-  });
-  return recipes.map((r) => ({ id: r.id, name: r.name }));
-}
-
 /**
  * Dome's shift class per local day for Mon–Sun of the week containing
  * `weekStart`, keyed by `localDateKey`. The next Monday is included as a

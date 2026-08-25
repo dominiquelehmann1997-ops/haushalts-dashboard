@@ -6,7 +6,7 @@
 
 import { revalidateDashboard } from "@/lib/revalidate";
 
-import { listRecipes } from "@/lib/repositories/meals";
+import { listRecipeOptions } from "@/lib/repositories/recipes";
 import { getActivePhase } from "@/lib/repositories/phase";
 import { ingestVault } from "@/lib/repositories/recipeIngest";
 import {
@@ -23,7 +23,7 @@ export interface IdeasResult {
 /** Generiert `count` Rezept-Ideen via Claude — ohne DB/Vault-Write. */
 export async function generateRecipeIdeasAction(count = 3): Promise<IdeasResult> {
   try {
-    const [recipes, phase] = await Promise.all([listRecipes(), getActivePhase()]);
+    const [recipes, phase] = await Promise.all([listRecipeOptions(), getActivePhase()]);
     const context = phase?.mode === "elternzeit" ? "Elternzeit – möglichst einfach & schnell" : undefined;
     const ideas = await generateRecipeIdeas(
       recipes.map((r) => r.name),

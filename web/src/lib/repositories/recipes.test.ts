@@ -1,0 +1,258 @@
+import { afterAll, beforeEach, describe, expect, it } from "vitest";
+
+import { createTestClient, resetDatabase } from "@/test/db";
+import { PrismaClient } from "@/generated/prisma/client";
+
+import {
+  createRecipe,
+  deleteRecipe,
+  getRecipe,
+  listRecipeOptions,
+  listRecipeTags,
+  listRecipes,
+  setRecipeRating,
+  updateRecipe,
+} from "./recipes";
+
+describe("recipes repository", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  /** Legt ein vollständig ausgefülltes Rezept an und gibt seine id zurück. */
+  async function seedCurry() {
+    return createRecipe(
+      {
+        name: "Kokos-Curry",
+        rating: "favorit",
+        simple: false,
+        reheatable: true,
+        tags: ["curry", "vegan"],
+        servings: 4,
+        prepMinutes: 15,
+        cookMinutes: 25,
+        kcal: 540,
+        protein: 22,
+        steps: ["Zwiebeln anschwitzen.", "Kokosmilch zugeben."],
+        notes: "Mit Naan servieren.",
+        sourceUrl: "https://example.org/curry",
+        ingredients: [
+          { name: "Kokosmilch", amount: "400", unit: "ml" },
+          { name: "Spinat" },
+        ],
+      },
+      client,
+    );
+  }
+
+  describe("createRecipe / getRecipe", () => {
+    it("legt ein Rezept mit allen Feldern an und liest es als DTO zurück", async () => {
+      const { id } = await seedCurry();
+      const saved = await getRecipe(id, client);
+
+      expect(saved).toMatchObject({
+        name: "Kokos-Curry",
+        rating: "favorit",
+        simple: false,
+        reheatable: true,
+        tags: ["curry", "vegan"],
+        servings: 4,
+        prepMinutes: 15,
+        cookMinutes: 25,
+        kcal: 540,
+        protein: 22,
+        notes: "Mit Naan servieren.",
+        sourceUrl: "https://example.org/curry",
+        archived: false,
+      });
+      expect(saved!.steps).toEqual(["Zwiebeln anschwitzen.", "Kokosmilch zugeben."]);
+    });
+
+    it("hält die Zutatenreihenfolge fest", async () => {
+      const { id } = await seedCurry();
+      const saved = await getRecipe(id, client);
+      expect(saved!.ingredients.map((i) => i.name)).toEqual(["Kokosmilch", "Spinat"]);
+      expect(saved!.ingredients[1]).toMatchObject({ amount: null, unit: null });
+    });
+
+    it("rechnet totalMinutes aus Vorbereitung + Kochzeit", async () => {
+      const { id } = await seedCurry();
+      expect((await getRecipe(id, client))!.totalMinutes).toBe(40);
+    });
+
+    it("liefert totalMinutes nur dann null, wenn beide Zeiten fehlen", async () => {
+      const nurKochzeit = await createRecipe({ name: "A", cookMinutes: 20 }, client);
+      const ohne = await createRecipe({ name: "B" }, client);
+      expect((await getRecipe(nurKochzeit.id, client))!.totalMinutes).toBe(20);
+      expect((await getRecipe(ohne.id, client))!.totalMinutes).toBeNull();
+    });
+
+    it("verwirft leere Zutatenzeilen aus dem Formular", async () => {
+      const { id } = await createRecipe(
+        { name: "X", ingredients: [{ name: "Reis" }, { name: "   " }] },
+        client,
+      );
+      expect((await getRecipe(id, client))!.ingredients).toHaveLength(1);
+    });
+
+    it("gibt null für eine unbekannte id zurück", async () => {
+      expect(await getRecipe("gibt-es-nicht", client)).toBeNull();
+    });
+  });
+
+  describe("listRecipes", () => {
+    it("sortiert nach Name und lässt archivierte Rezepte weg", async () => {
+      const all = await listRecipes({}, client);
+      expect(all.length).toBeGreaterThan(0);
+      expect(all.map((r) => r.name)).toEqual([...all.map((r) => r.name)].sort());
+
+      await client.recipe.update({ where: { id: all[0].id }, data: { archived: true } });
+      const after = await listRecipes({}, client);
+      expect(after.find((r) => r.id === all[0].id)).toBeUndefined();
+      expect(after).toHaveLength(all.length - 1);
+    });
+
+    it("reicht den Filter an die Suchlogik durch", async () => {
+      await seedCurry();
+      expect((await listRecipes({ query: "kokos-curry" }, client)).map((r) => r.name)).toEqual([
+        "Kokos-Curry",
+      ]);
+      expect(await listRecipes({ query: "gibtesnicht" }, client)).toEqual([]);
+    });
+
+    it("sucht feldübergreifend — 'kokos' trifft auch Rezepte mit Kokosmilch als Zutat", async () => {
+      await seedCurry();
+      const treffer = await listRecipes({ query: "kokos" }, client);
+      // Das Seed-Rezept "Gemüse-Curry" hat Kokosmilch in den Zutaten.
+      expect(treffer.map((r) => r.name)).toContain("Gemüse-Curry");
+      expect(treffer.map((r) => r.name)).toContain("Kokos-Curry");
+    });
+
+    it("findet Rezepte über eine Zutat", async () => {
+      await seedCurry();
+      const treffer = await listRecipes({ ingredient: "spinat" }, client);
+      expect(treffer.map((r) => r.name)).toEqual(["Kokos-Curry"]);
+    });
+  });
+
+  describe("listRecipeOptions", () => {
+    it("liefert nur id und name, ohne archivierte", async () => {
+      const options = await listRecipeOptions(client);
+      expect(options.length).toBeGreaterThan(0);
+      expect(Object.keys(options[0]).sort()).toEqual(["id", "name"]);
+
+      await client.recipe.update({ where: { id: options[0].id }, data: { archived: true } });
+      expect(await listRecipeOptions(client)).toHaveLength(options.length - 1);
+    });
+  });
+
+  describe("listRecipeTags", () => {
+    it("zählt die Tags aller aktiven Rezepte", async () => {
+      const countOf = (list: { tag: string; count: number }[], tag: string) =>
+        list.find((t) => t.tag === tag)?.count ?? 0;
+
+      const before = await listRecipeTags(client);
+      await createRecipe({ name: "AAA", tags: ["curry", "zzz-unikat"] }, client);
+      await createRecipe({ name: "BBB", tags: ["curry"] }, client);
+      const after = await listRecipeTags(client);
+
+      expect(countOf(after, "curry")).toBe(countOf(before, "curry") + 2);
+      expect(countOf(after, "zzz-unikat")).toBe(1);
+    });
+
+    it("sortiert nach Häufigkeit, seltene Tags landen hinten", async () => {
+      await createRecipe({ name: "AAA", tags: ["zzz-unikat"] }, client);
+      const tags = await listRecipeTags(client);
+      const counts = tags.map((t) => t.count);
+      expect(counts).toEqual([...counts].sort((a, b) => b - a));
+      expect(tags.at(-1)!.count).toBe(1);
+    });
+
+    it("lässt archivierte Rezepte aus der Tagliste", async () => {
+      const { id } = await createRecipe({ name: "AAA", tags: ["zzz-unikat"] }, client);
+      await client.recipe.update({ where: { id }, data: { archived: true } });
+      expect((await listRecipeTags(client)).find((t) => t.tag === "zzz-unikat")).toBeUndefined();
+    });
+  });
+
+  describe("updateRecipe", () => {
+    it("überschreibt Felder und ersetzt die Zutaten vollständig", async () => {
+      const { id } = await seedCurry();
+
+      await updateRecipe(
+        id,
+        {
+          name: "Kokos-Curry mit Linsen",
+          tags: ["curry"],
+          servings: 6,
+          steps: ["Alles in einen Topf."],
+          ingredients: [{ name: "Rote Linsen", amount: "200", unit: "g" }],
+        },
+        client,
+      );
+
+      const saved = await getRecipe(id, client);
+      expect(saved!.name).toBe("Kokos-Curry mit Linsen");
+      expect(saved!.servings).toBe(6);
+      expect(saved!.tags).toEqual(["curry"]);
+      expect(saved!.steps).toEqual(["Alles in einen Topf."]);
+      expect(saved!.ingredients.map((i) => i.name)).toEqual(["Rote Linsen"]);
+    });
+
+    it("setzt weggelassene Felder zurück statt sie stehen zu lassen", async () => {
+      const { id } = await seedCurry();
+      await updateRecipe(id, { name: "Kokos-Curry" }, client);
+
+      const saved = await getRecipe(id, client);
+      expect(saved!.kcal).toBeNull();
+      expect(saved!.notes).toBeNull();
+      expect(saved!.tags).toEqual([]);
+      expect(saved!.ingredients).toEqual([]);
+    });
+
+    it("hinterlässt keine verwaisten Zutaten", async () => {
+      const { id } = await seedCurry();
+      await updateRecipe(id, { name: "X", ingredients: [{ name: "Reis" }] }, client);
+      expect(await client.ingredient.count({ where: { recipeId: id } })).toBe(1);
+    });
+  });
+
+  describe("deleteRecipe", () => {
+    it("löscht ein Rezept, das in keinem Essensplan hängt", async () => {
+      const { id } = await seedCurry();
+      expect(await deleteRecipe(id, client)).toEqual({ deleted: true });
+      expect(await getRecipe(id, client)).toBeNull();
+      expect(await client.ingredient.count({ where: { recipeId: id } })).toBe(0);
+    });
+
+    it("archiviert statt zu löschen, wenn das Rezept noch verplant ist", async () => {
+      const { id } = await seedCurry();
+      await client.mealPlanEntry.create({ data: { date: new Date(), recipeId: id } });
+
+      expect(await deleteRecipe(id, client)).toEqual({ deleted: false });
+
+      const saved = await getRecipe(id, client);
+      expect(saved).not.toBeNull();
+      expect(saved!.archived).toBe(true);
+      // Aus der Auswahl verschwunden, der Planeintrag löst aber weiter auf.
+      expect((await listRecipes({}, client)).find((r) => r.id === id)).toBeUndefined();
+    });
+  });
+
+  describe("setRecipeRating", () => {
+    it("ändert nur die Bewertung", async () => {
+      const { id } = await seedCurry();
+      await setRecipeRating(id, "selten", client);
+      const saved = await getRecipe(id, client);
+      expect(saved!.rating).toBe("selten");
+      expect(saved!.name).toBe("Kokos-Curry");
+    });
+  });
+});
