@@ -90,6 +90,7 @@ export interface RecipeIngredient {
   name: string;
   amount: string | null;
   unit: string | null;
+  section: string | null;
 }
 
 /**
@@ -112,6 +113,8 @@ export interface Recipe {
   totalMinutes: number | null;
   kcal: number | null;
   protein: number | null;
+  carbs: number | null;
+  fat: number | null;
   steps: string[];
   notes: string | null;
   sourceUrl: string | null;

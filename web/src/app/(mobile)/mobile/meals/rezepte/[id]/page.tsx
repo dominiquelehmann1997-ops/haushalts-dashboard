@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChefHat, Clock, Drumstick, Flame, Link2, Pencil, Users } from "lucide-react";
+import { ChefHat, Clock, Droplet, Drumstick, Flame, Link2, Pencil, Users, Wheat } from "lucide-react";
 
 import { PageHeader } from "@/components/mobile/PageHeader";
 import { formatMinutes } from "@/components/mobile/RecipeCard";
@@ -92,6 +92,18 @@ export default async function MobileRecipePage({ params }: { params: Promise<{ i
           <span className={CHIP}>
             <Drumstick size={11} strokeWidth={2.2} />
             {recipe.protein} g Eiweiß
+          </span>
+        )}
+        {recipe.carbs !== null && (
+          <span className={CHIP}>
+            <Wheat size={11} strokeWidth={2.2} />
+            {recipe.carbs} g Kohlenhydrate
+          </span>
+        )}
+        {recipe.fat !== null && (
+          <span className={CHIP}>
+            <Droplet size={11} strokeWidth={2.2} />
+            {recipe.fat} g Fett
           </span>
         )}
         {recipe.simple && <span className={CHIP}>einfach</span>}

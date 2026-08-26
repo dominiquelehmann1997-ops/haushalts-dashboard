@@ -212,6 +212,18 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
           value={draft.protein}
           onChange={(v) => set("protein", v)}
         />
+        <NumberField
+          label="Kohlenhydrate"
+          suffix="g/Portion"
+          value={draft.carbs}
+          onChange={(v) => set("carbs", v)}
+        />
+        <NumberField
+          label="Fett"
+          suffix="g/Portion"
+          value={draft.fat}
+          onChange={(v) => set("fat", v)}
+        />
       </div>
 
       <label className="block">

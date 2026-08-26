@@ -26,6 +26,8 @@ function recipe(overrides: Partial<Recipe> = {}): Recipe {
     totalMinutes: null,
     kcal: null,
     protein: null,
+    carbs: null,
+    fat: null,
     steps: [],
     notes: null,
     sourceUrl: null,
@@ -52,8 +54,8 @@ const FULL = recipe({
   notes: "Mit Limette abschmecken.",
   sourceUrl: "https://www.chefkoch.de/rezepte/1",
   ingredients: [
-    { id: "i1", name: "Kokosmilch", amount: "400", unit: "ml" },
-    { id: "i2", name: "Spinat", amount: null, unit: null },
+    { id: "i1", name: "Kokosmilch", amount: "400", unit: "ml", section: null },
+    { id: "i2", name: "Spinat", amount: null, unit: null, section: null },
   ],
 });
 

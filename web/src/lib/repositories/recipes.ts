@@ -60,12 +60,20 @@ type RecipeRow = {
   cookMinutes: number | null;
   kcal: number | null;
   protein: number | null;
+  carbs: number | null;
+  fat: number | null;
   steps: string | null;
   notes: string | null;
   sourceUrl: string | null;
   imagePath: string | null;
   archived: boolean;
-  ingredients: { id: string; name: string; amount: string | null; unit: string | null }[];
+  ingredients: {
+    id: string;
+    name: string;
+    amount: string | null;
+    unit: string | null;
+    section: string | null;
+  }[];
 };
 
 /** `steps` liegt als JSON-String in der DB — kaputte Werte ergeben eine leere Liste, keinen Crash. */
@@ -107,13 +115,17 @@ function toRecipe(row: RecipeRow): Recipe {
     totalMinutes: prep === null && cook === null ? null : (prep ?? 0) + (cook ?? 0),
     kcal: row.kcal,
     protein: row.protein,
+    carbs: row.carbs,
+    fat: row.fat,
     steps: parseStepsJson(row.steps),
     notes: row.notes,
     sourceUrl: row.sourceUrl,
     imageUrl: imageUrlOf(row.imagePath),
     archived: row.archived,
     ingredients: row.ingredients.map(
-      (i): RecipeIngredient => ({ id: i.id, name: i.name, amount: i.amount, unit: i.unit }),
+      (i): RecipeIngredient => ({
+        id: i.id, name: i.name, amount: i.amount, unit: i.unit, section: i.section,
+      }),
     ),
   };
 }

@@ -5,7 +5,7 @@ import type { RecipeIngredient } from "@/lib/domain";
 import { MAX_PORTIONS, clampPortions, scaleAmount, scaleIngredients } from "./portions";
 
 function ing(name: string, amount: string | null, unit: string | null = null): RecipeIngredient {
-  return { id: name, name, amount, unit };
+  return { id: name, name, amount, unit, section: null };
 }
 
 describe("clampPortions", () => {

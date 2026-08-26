@@ -108,6 +108,14 @@ describe("recipes repository", () => {
     it("gibt null für eine unbekannte id zurück", async () => {
       expect(await getRecipe("gibt-es-nicht", client)).toBeNull();
     });
+
+    it("gibt carbs, fat und section im DTO zurück", async () => {
+      const { id } = await seedCurry();
+      const recipe = await getRecipe(id, client);
+      expect(recipe).toHaveProperty("carbs");
+      expect(recipe).toHaveProperty("fat");
+      expect(recipe?.ingredients[0]).toHaveProperty("section");
+    });
   });
 
   describe("listRecipes", () => {

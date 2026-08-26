@@ -25,14 +25,16 @@ function recipe(over: Partial<Recipe> = {}): Recipe {
     totalMinutes: 40,
     kcal: 420,
     protein: 18,
+    carbs: null,
+    fat: null,
     steps: ["Zwiebeln anschwitzen.", "Kokosmilch zugeben."],
     notes: null,
     sourceUrl: null,
     imageUrl: null,
     archived: false,
     ingredients: [
-      { id: "i1", name: "Kokosmilch", amount: "400", unit: "ml" },
-      { id: "i2", name: "Süßkartoffel", amount: "2", unit: null },
+      { id: "i1", name: "Kokosmilch", amount: "400", unit: "ml", section: null },
+      { id: "i2", name: "Süßkartoffel", amount: "2", unit: null, section: null },
     ],
     ...over,
   };
@@ -96,7 +98,7 @@ describe("applyFilters", () => {
     rating: "favorit",
     simple: true,
     reheatable: true,
-    ingredients: [{ id: "i3", name: "Nudeln", amount: "500", unit: "g" }],
+    ingredients: [{ id: "i3", name: "Nudeln", amount: "500", unit: "g", section: null }],
     steps: [],
   });
   const unbekannt = recipe({

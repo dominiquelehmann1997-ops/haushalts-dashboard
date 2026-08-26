@@ -13,6 +13,7 @@ export interface RecipeDraftIngredient {
   name: string;
   amount: string;
   unit: string;
+  section: string | null;
 }
 
 export interface RecipeDraft {
@@ -27,6 +28,8 @@ export interface RecipeDraft {
   cookMinutes: string;
   kcal: string;
   protein: string;
+  carbs: string;
+  fat: string;
   /** Ein Schritt pro Zeile. */
   steps: string;
   notes: string;
@@ -36,7 +39,7 @@ export interface RecipeDraft {
 
 export const RATINGS = ["favorit", "ok", "selten"] as const;
 
-export const EMPTY_INGREDIENT: RecipeDraftIngredient = { name: "", amount: "", unit: "" };
+export const EMPTY_INGREDIENT: RecipeDraftIngredient = { name: "", amount: "", unit: "", section: null };
 
 /** Leeres Formular für „neues Rezept" — mit einer leeren Zutatenzeile. */
 export function emptyDraft(): RecipeDraft {
@@ -51,6 +54,8 @@ export function emptyDraft(): RecipeDraft {
     cookMinutes: "",
     kcal: "",
     protein: "",
+    carbs: "",
+    fat: "",
     steps: "",
     notes: "",
     sourceUrl: "",
@@ -75,6 +80,8 @@ export function draftFromRecipe(recipe: Recipe): RecipeDraft {
     cookMinutes: numberField(recipe.cookMinutes),
     kcal: numberField(recipe.kcal),
     protein: numberField(recipe.protein),
+    carbs: numberField(recipe.carbs),
+    fat: numberField(recipe.fat),
     steps: recipe.steps.join("\n"),
     notes: recipe.notes ?? "",
     sourceUrl: recipe.sourceUrl ?? "",
@@ -84,6 +91,7 @@ export function draftFromRecipe(recipe: Recipe): RecipeDraft {
             name: i.name,
             amount: i.amount ?? "",
             unit: i.unit ?? "",
+            section: i.section ?? null,
           }))
         : [{ ...EMPTY_INGREDIENT }],
   };
@@ -140,12 +148,19 @@ export function draftToInput(draft: RecipeDraft): RecipeInput {
     cookMinutes: parseOptionalInt(draft.cookMinutes),
     kcal: parseOptionalInt(draft.kcal),
     protein: parseOptionalInt(draft.protein),
+    carbs: parseOptionalInt(draft.carbs),
+    fat: parseOptionalInt(draft.fat),
     steps: splitSteps(draft.steps),
     notes: draft.notes.trim() || null,
     sourceUrl: draft.sourceUrl.trim() || null,
     ingredients: draft.ingredients
       .filter((i) => i.name.trim() !== "")
-      .map((i) => ({ name: i.name.trim(), amount: i.amount.trim() || null, unit: i.unit.trim() || null })),
+      .map((i) => ({
+        name: i.name.trim(),
+        amount: i.amount.trim() || null,
+        unit: i.unit.trim() || null,
+        section: i.section,
+      })),
   };
 }
 
