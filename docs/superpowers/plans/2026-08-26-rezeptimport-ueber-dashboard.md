@@ -1771,3 +1771,200 @@ git commit -m "docs(rezepte): Weg ueber ObsidiDine und die neuen Endpunkte"
 - **`freshness` fällt weg.** Die Spalte wurde am 2026-07-08 aus dem Schema entfernt (`meal_ingredients_pushed_and_drop_freshness`). Die App erfasst das Feld weiter, es wird beim Import verworfen.
 - **Rezeptbilder aus Fotos.** Der Import über Rohtext liefert kein Titelbild. Ein Bild aus dem geteilten Foto zu übernehmen wäre möglich, ist hier aber nicht vorgesehen.
 - **Abo-Kontingent.** Jeder Extraktions-Aufruf trägt rund 28k Kontext-Tokens (Claude Codes eigener System-Prompt), gemessen am 2026-08-26. Bei ein paar Rezepten pro Woche irrelevant; würde der Import je automatisiert laufen, wäre das die erste Stellschraube.
+
+---
+
+### Task 9: Kohlenhydrate, Fett und Zutaten-Gruppen im Dashboard
+
+**Reihenfolge:** direkt nach Task 2 ausführen, vor Task 3.
+
+**Warum diese Task existiert:** Tasks 1 und 2 legen `carbs`, `fat` und
+`section` in der DB ab, aber nichts zeigt sie an und nichts trägt sie durch
+den Editor. Zwei Folgen, beide inakzeptabel:
+
+1. Die beiden Nährwerte wären gespeichert, aber weder sichtbar noch
+   editierbar — „getrackt" wäre damit nur die halbe Wahrheit.
+2. **Datenverlust:** `recipeFormDraft` kennt kein `section`. Wer ein
+   importiertes Rezept im Dashboard-Editor auch nur öffnet und speichert,
+   verliert alle Zutaten-Gruppen, weil `toRecipeInput` sie nicht
+   zurückschreibt.
+
+Punkt 2 ist der wichtigere. Gruppen im Editor zu **bearbeiten** ist hier
+nicht verlangt — sie müssen den Rundlauf nur unbeschadet überstehen.
+
+**Files:**
+- Modify: `web/src/lib/data.ts` (`Recipe`, `RecipeIngredient`)
+- Modify: `web/src/lib/repositories/recipes.ts` (Row-Typ, `select`, Zeilen-Mapping)
+- Modify: `web/src/lib/services/recipeForm.ts` (`RecipeDraft`, `RecipeDraftIngredient`, `EMPTY_INGREDIENT`, `toRecipeFormDraft`, `toRecipeInput`)
+- Modify: `web/src/components/mobile/RecipeEditor.tsx` (zwei `NumberField`)
+- Modify: `web/src/app/(mobile)/mobile/meals/rezepte/[id]/page.tsx` (zwei Chips)
+- Test: `web/src/lib/services/recipeForm.test.ts`, `web/src/lib/repositories/recipes.test.ts`
+
+**Interfaces:**
+- Consumes: `Recipe.carbs`/`.fat` und `Ingredient.section` aus Task 1.
+- Produces: `Recipe` und `RecipeIngredient` (DTO) mit den neuen Feldern; der
+  Formular-Rundlauf `toRecipeFormDraft` → `toRecipeInput` erhält `section`.
+
+- [ ] **Step 1: Die failing tests schreiben**
+
+In `web/src/lib/services/recipeForm.test.ts`:
+
+```ts
+  it("trägt Kohlenhydrate und Fett durch den Formular-Rundlauf", () => {
+    const draft = toRecipeFormDraft({ ...RECIPE, carbs: 55, fat: 9 });
+    expect(draft.carbs).toBe("55");
+    expect(draft.fat).toBe("9");
+    const input = toRecipeInput(draft);
+    expect(input.carbs).toBe(55);
+    expect(input.fat).toBe(9);
+  });
+
+  it("verliert Zutaten-Gruppen beim Bearbeiten nicht", () => {
+    const draft = toRecipeFormDraft({
+      ...RECIPE,
+      ingredients: [
+        { id: "1", name: "Rote Linsen", amount: "200", unit: "g", section: null },
+        { id: "2", name: "Skyr", amount: "150", unit: "g", section: "Dip" },
+      ],
+    });
+    expect(toRecipeInput(draft).ingredients?.map((i) => i.section)).toEqual([null, "Dip"]);
+  });
+```
+
+`RECIPE` ist die in dieser Datei bereits vorhandene Fixture — sie muss um
+`carbs: null, fat: null` und `section: null` je Zutat ergänzt werden, sonst
+schlägt der Typecheck in allen bestehenden Tests fehl.
+
+In `web/src/lib/repositories/recipes.test.ts`:
+
+```ts
+  it("gibt carbs, fat und section im DTO zurück", async () => {
+    const id = await seedCurry();
+    const recipe = await getRecipe(id);
+    expect(recipe).toHaveProperty("carbs");
+    expect(recipe).toHaveProperty("fat");
+    expect(recipe?.ingredients[0]).toHaveProperty("section");
+  });
+```
+
+- [ ] **Step 2: Tests laufen lassen, Fehlschlag bestätigen**
+
+Run: `cd web && npx vitest run src/lib/services/recipeForm.test.ts src/lib/repositories/recipes.test.ts`
+Erwartung: FAIL — `carbs`/`fat`/`section` existieren auf den DTO- und Draft-Typen nicht.
+
+- [ ] **Step 3: DTO und Mapping erweitern**
+
+In `web/src/lib/data.ts`, im `Recipe`-Typ unter `protein: number | null;`:
+
+```ts
+  carbs: number | null;
+  fat: number | null;
+```
+
+und im `RecipeIngredient`-Typ unter `unit`:
+
+```ts
+  section: string | null;
+```
+
+In `web/src/lib/repositories/recipes.ts`: den internen Row-Typ um
+`carbs: number | null;` und `fat: number | null;` erweitern, im
+`ingredients`-Teil des Row-Typs um `section: string | null`. Falls die
+Prisma-Abfragen die Spalten per `select` einschränken, `carbs`, `fat` und
+`section` dort ergänzen — sonst kommen sie nie an. Im Zeilen-Mapping unter
+`protein: row.protein,`:
+
+```ts
+    carbs: row.carbs,
+    fat: row.fat,
+```
+
+und im Zutaten-Mapping:
+
+```ts
+      (i): RecipeIngredient => ({
+        id: i.id, name: i.name, amount: i.amount, unit: i.unit, section: i.section,
+      }),
+```
+
+- [ ] **Step 4: Formular durchlässig machen**
+
+In `web/src/lib/services/recipeForm.ts`:
+
+- `RecipeDraft` um `carbs: string;` und `fat: string;` unter `protein` erweitern.
+- `RecipeDraftIngredient` um `section: string | null;` erweitern.
+- `EMPTY_INGREDIENT` auf `{ name: "", amount: "", unit: "", section: null }` setzen.
+- Im leeren Draft (dort, wo `kcal: ""` steht) `carbs: ""` und `fat: ""` ergänzen.
+- In `toRecipeFormDraft` unter `protein: numberField(recipe.protein),`:
+
+```ts
+    carbs: numberField(recipe.carbs),
+    fat: numberField(recipe.fat),
+```
+
+  und im Zutaten-Mapping derselben Funktion `section: i.section ?? null,` mitnehmen.
+- In `toRecipeInput` unter `protein: parseOptionalInt(draft.protein),`:
+
+```ts
+    carbs: parseOptionalInt(draft.carbs),
+    fat: parseOptionalInt(draft.fat),
+```
+
+  und im Zutaten-Mapping `section: i.section` mitgeben.
+
+- [ ] **Step 5: Editor-Felder ergänzen**
+
+In `web/src/components/mobile/RecipeEditor.tsx`, direkt hinter dem
+`NumberField` für „Eiweiß":
+
+```tsx
+        <NumberField
+          label="Kohlenhydrate"
+          suffix="g/Portion"
+          value={draft.carbs}
+          onChange={(v) => set("carbs", v)}
+        />
+        <NumberField
+          label="Fett"
+          suffix="g/Portion"
+          value={draft.fat}
+          onChange={(v) => set("fat", v)}
+        />
+```
+
+- [ ] **Step 6: Chips auf der Detailseite**
+
+In `web/src/app/(mobile)/mobile/meals/rezepte/[id]/page.tsx`, direkt hinter
+dem `protein`-Chip:
+
+```tsx
+        {recipe.carbs !== null && (
+          <span className={CHIP}>
+            <Wheat size={11} strokeWidth={2.2} />
+            {recipe.carbs} g Kohlenhydrate
+          </span>
+        )}
+        {recipe.fat !== null && (
+          <span className={CHIP}>
+            <Droplet size={11} strokeWidth={2.2} />
+            {recipe.fat} g Fett
+          </span>
+        )}
+```
+
+`Wheat` und `Droplet` zur bestehenden `lucide-react`-Import-Zeile ergänzen —
+beide Icons sind in der installierten Version vorhanden (gegengeprüft).
+
+- [ ] **Step 7: Tests, Lint, Typecheck**
+
+Run: `cd web && npm test && npm run lint && npm run typecheck`
+Erwartung: PASS. Der Typecheck ist hier der eigentliche Wächter: Er findet
+jede Fixture und jeden Aufrufer, die um die neuen Pflichtfelder ergänzt
+werden müssen.
+
+- [ ] **Step 8: Commit**
+
+```bash
+git add web/src
+git commit -m "feat(rezepte): Kohlenhydrate und Fett im Editor, Gruppen ueberleben das Bearbeiten"
+```
