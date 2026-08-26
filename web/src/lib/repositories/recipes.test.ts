@@ -43,11 +43,13 @@ describe("recipes repository", () => {
         cookMinutes: 25,
         kcal: 540,
         protein: 22,
+        carbs: 55,
+        fat: 9,
         steps: ["Zwiebeln anschwitzen.", "Kokosmilch zugeben."],
         notes: "Mit Naan servieren.",
         sourceUrl: "https://example.org/curry",
         ingredients: [
-          { name: "Kokosmilch", amount: "400", unit: "ml" },
+          { name: "Kokosmilch", amount: "400", unit: "ml", section: "Basis" },
           { name: "Spinat" },
         ],
       },
@@ -109,12 +111,16 @@ describe("recipes repository", () => {
       expect(await getRecipe("gibt-es-nicht", client)).toBeNull();
     });
 
-    it("gibt carbs, fat und section im DTO zurück", async () => {
+    it("ordnet carbs, fat und protein im DTO nicht vertauscht zu", async () => {
       const { id } = await seedCurry();
       const recipe = await getRecipe(id, client);
-      expect(recipe).toHaveProperty("carbs");
-      expect(recipe).toHaveProperty("fat");
-      expect(recipe?.ingredients[0]).toHaveProperty("section");
+      // Drei verschiedene Werte statt einer Konstante: ein vertauschtes Feld
+      // (z.B. `carbs: row.protein`) fiele hier auf, bei gleichen Werten nicht.
+      expect(recipe!.protein).toBe(22);
+      expect(recipe!.carbs).toBe(55);
+      expect(recipe!.fat).toBe(9);
+      expect(recipe!.ingredients[0].section).toBe("Basis");
+      expect(recipe!.ingredients[1].section).toBeNull();
     });
   });
 
