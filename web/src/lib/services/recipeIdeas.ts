@@ -6,10 +6,8 @@
 // Angenommene Ideen laufen über dieselbe Schiene wie der Link-Import:
 // `recipeIdeaToImported` → `upsertImportedRecipe` (repositories/recipes.ts).
 
-import { spawn } from "node:child_process";
-import { tmpdir } from "node:os";
-
 import type { Rating } from "@/lib/domain";
+import { runClaude } from "@/lib/services/claudeCli";
 import type { ImportedRecipe } from "@/lib/services/recipeImport";
 import { slugFromName } from "@/lib/services/recipeImport";
 import { splitSteps } from "@/lib/services/recipeForm";
@@ -142,46 +140,6 @@ export function recipeIdeaToImported(idea: RecipeIdea): ImportedRecipe {
 }
 
 // ---- Integration (ungetestet, dünn) ----
-
-/**
- * Ruft die `claude` CLI headless auf (OAuth-Abo). Wirft bei Fehler/Timeout.
- * Der Prompt geht via **stdin** rein (nicht argv) — vermeidet Quoting-Probleme
- * mit mehrzeiligen Prompts plattformübergreifend. Nur Flags stehen in argv,
- * daher ist `shell:true` (Windows: `claude.cmd` auflösen) hier ungefährlich.
- */
-function runClaude(prompt: string, timeoutMs = 120_000): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const child = spawn(
-      "claude",
-      ["-p", "--output-format", "json", "--model", "claude-sonnet-4-6"],
-      { cwd: tmpdir(), shell: process.platform === "win32" }, // tmp-cwd: kein Repo-Context
-    );
-    let out = "";
-    let err = "";
-    const timer = setTimeout(() => {
-      child.kill();
-      reject(new Error("claude CLI Timeout"));
-    }, timeoutMs);
-    child.stdin.on("error", () => {}); // EPIPE schlucken, falls Kind früh stirbt
-    child.stdin.write(prompt);
-    child.stdin.end();
-    child.stdout.on("data", (d) => (out += d));
-    child.stderr.on("data", (d) => (err += d));
-    child.on("error", (e) => {
-      clearTimeout(timer);
-      reject(e);
-    });
-    child.on("close", (code) => {
-      clearTimeout(timer);
-      if (code !== 0) return reject(new Error(`claude CLI exit ${code}: ${err.slice(0, 500)}`));
-      try {
-        resolve(String(JSON.parse(out).result ?? ""));
-      } catch {
-        reject(new Error("claude CLI: unerwartetes Ausgabeformat"));
-      }
-    });
-  });
-}
 
 /** Generiert Ideen (kein DB-Write — nur Vorschläge zurück). */
 export async function generateRecipeIdeas(
