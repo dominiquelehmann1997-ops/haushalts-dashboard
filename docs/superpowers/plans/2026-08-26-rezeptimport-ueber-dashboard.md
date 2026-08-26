@@ -203,17 +203,34 @@ git commit -m "feat(rezepte): carbs, fat und Zutaten-Gruppen im Datenmodell"
 
 ---
 
-### Task 2: Link-Import liefert carbs und fat mit
+### Task 2: Link-Import liefert carbs und fat mit — Testabdeckung nachziehen
+
+> **Zuschnitt geändert (2026-08-26, nach dem Review von Task 1).** Der
+> Implementer von Task 1 hat den Produktionscode dieser Task bereits
+> geschrieben: `toImportedRecipe` in `web/src/lib/services/recipeImport.ts`
+> verdrahtet `carbohydrateContent`/`fatContent` seit Commit `5ff15be` echt.
+> Entscheidung des Auftraggebers: Code bleibt stehen, statt ihn zurückzubauen
+> und identisch neu zu schreiben.
+>
+> **Diese Task ist damit reine Testarbeit.** Die Extraktion ist derzeit
+> ungetestet — das ist die Lücke, die hier geschlossen wird. Weil der Code
+> schon da ist, kann der Test nicht auf dem üblichen Weg rot starten;
+> stattdessen wird seine Trennschärfe nachgewiesen, indem die zwei
+> Produktionszeilen kurzzeitig entfernt werden. Ein Test, dessen Versagen nie
+> beobachtet wurde, ist kein Test.
+>
+> **Am Produktionscode wird in dieser Task nichts dauerhaft geändert.**
 
 **Files:**
-- Modify: `web/src/lib/services/recipeImport.ts` (Nährwert-Extraktion)
-- Test: `web/src/lib/services/recipeImport.test.ts`
+- Test: `web/src/lib/services/recipeImport.test.ts` (einziger dauerhafter Änderungsort)
+- Temporär und wieder rückgängig: `web/src/lib/services/recipeImport.ts`
 
 **Interfaces:**
-- Consumes: `ImportedRecipe.carbs`/`.fat` aus Task 1.
-- Produces: nichts Neues — `importRecipeFromUrl` füllt die beiden Felder jetzt aus dem schema.org-Markup.
+- Consumes: `ImportedRecipe.carbs`/`.fat` aus Task 1 und die dort bereits
+  eingebaute Extraktion in `toImportedRecipe`.
+- Produces: nichts Neues.
 
-- [ ] **Step 1: Den failing test schreiben**
+- [ ] **Step 1: Den Test schreiben**
 
 In `web/src/lib/services/recipeImport.test.ts` — die vorhandene `SCHEMA`-Fixture hat einen `nutrition`-Block. Neuer Test daneben:
 
@@ -235,39 +252,65 @@ In `web/src/lib/services/recipeImport.test.ts` — die vorhandene `SCHEMA`-Fixtu
   });
 ```
 
-- [ ] **Step 2: Test laufen lassen, Fehlschlag bestätigen**
+Der Test prüft absichtlich zwei verschiedene Dinge: die glatte Ganzzahl (`55`)
+und die Rundung der Kommazahl (`9,5 g` → `10`). `parseNutritionNumber`
+(`recipeImport.ts`, ca. Zeile 328) ersetzt `","` durch `"."` und rundet — die
+zweite Erwartung ist der eigentliche Nachweis, dass die Funktion greift und
+nicht zufällig eine Zahl durchreicht.
+
+- [ ] **Step 2: Test laufen lassen — er ist sofort grün**
 
 Run: `cd web && npx vitest run src/lib/services/recipeImport.test.ts -t "Kohlenhydrate"`
-Erwartung: FAIL — `carbs` ist `null`.
+Erwartung: PASS. Das ist hier korrekt und kein Fehler: Der Produktionscode
+steht seit Commit `5ff15be`. Ein Test, der sofort besteht, beweist aber noch
+nichts — deshalb Step 3.
 
-- [ ] **Step 3: Extraktion ergänzen**
+- [ ] **Step 3: Trennschärfe nachweisen (temporärer Rückbau)**
 
-In `web/src/lib/services/recipeImport.ts`, in `toImportedRecipe` direkt unter der Zeile `const protein = parseNutritionNumber(nutrition.proteinContent);`:
+In `web/src/lib/services/recipeImport.ts`, in `toImportedRecipe`, die beiden
+Zeilen
 
 ```ts
   const carbs = parseNutritionNumber(nutrition.carbohydrateContent);
   const fat = parseNutritionNumber(nutrition.fatContent);
 ```
 
-und im `return`-Objekt derselben Funktion unter `protein,`:
+**vorübergehend** ersetzen durch:
 
 ```ts
-    carbs,
-    fat,
+  const carbs = null;
+  const fat = null;
 ```
 
-`parseNutritionNumber` existiert bereits (Zeile ~328), macht `","` zu `"."` und rundet — `9,5 g` wird damit zu `10`. Keine zweite Parse-Funktion schreiben.
+Run: `cd web && npx vitest run src/lib/services/recipeImport.test.ts -t "Kohlenhydrate"`
+Erwartung: **FAIL** — `expected null to be 55`. Diese Ausgabe wörtlich in den
+Report übernehmen; sie ist der RED-Nachweis dieser Task.
 
-- [ ] **Step 4: Tests**
+Sieht der Test das nicht (bleibt er grün), prüft er nicht, was er soll — dann
+den Test reparieren, nicht den Produktionscode.
+
+- [ ] **Step 4: Rückbau zurücknehmen und grün bestätigen**
+
+Die zwei Zeilen exakt in ihren Ursprungszustand zurückversetzen (die
+`parseNutritionNumber`-Aufrufe von oben). Danach:
+
+Run: `cd web && git diff --stat web/src/lib/services/recipeImport.ts`
+Erwartung: **keine Ausgabe** — die Datei ist unverändert gegenüber `HEAD`.
+Steht dort noch eine Änderung, ist der Rückbau unvollständig; das ist ein
+Fehler und muss behoben werden, bevor du weitermachst.
 
 Run: `cd web && npx vitest run src/lib/services/recipeImport.test.ts`
 Erwartung: PASS, auch die bestehenden Nährwert-Tests.
 
 - [ ] **Step 5: Commit**
 
+Nur die Testdatei wird committet — am Produktionscode darf nichts hängen
+geblieben sein:
+
 ```bash
-git add web/src/lib/services/recipeImport.ts web/src/lib/services/recipeImport.test.ts
-git commit -m "feat(rezepte): Link-Import uebernimmt Kohlenhydrate und Fett"
+git add web/src/lib/services/recipeImport.test.ts
+git status --short   # web/src/lib/services/recipeImport.ts darf NICHT auftauchen
+git commit -m "test(rezepte): Kohlenhydrate und Fett aus dem Naehrwert-Block abgedeckt"
 ```
 
 ---
