@@ -17,6 +17,8 @@ export interface ImportedIngredient {
   name: string;
   amount?: string | null;
   unit?: string | null;
+  /** Zutaten-Gruppe der Quelle, z.B. "Für die Soße". null = keine Gruppe. */
+  section?: string | null;
 }
 
 export interface ImportedRecipe {
@@ -36,6 +38,8 @@ export interface ImportedRecipe {
   cookMinutes: number | null;
   kcal: number | null;
   protein: number | null;
+  carbs: number | null;
+  fat: number | null;
   ingredients: ImportedIngredient[];
   steps: string[];
 }
@@ -487,6 +491,8 @@ export function toImportedRecipe(schema: Json, sourceUrl: string): ImportedRecip
   const nutrition = (schema.nutrition ?? {}) as Json;
   const kcal = parseNutritionNumber(nutrition.calories);
   const protein = parseNutritionNumber(nutrition.proteinContent);
+  const carbs = parseNutritionNumber(nutrition.carbohydrateContent);
+  const fat = parseNutritionNumber(nutrition.fatContent);
 
   const tags = collectTags(schema);
   if (kcal !== null && kcal <= LOW_CALORIE_MAX_KCAL && !tags.includes("kalorienarm")) {
@@ -511,6 +517,8 @@ export function toImportedRecipe(schema: Json, sourceUrl: string): ImportedRecip
     cookMinutes,
     kcal,
     protein,
+    carbs,
+    fat,
     ingredients,
     steps: collectSteps(schema.recipeInstructions),
   };

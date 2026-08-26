@@ -134,6 +134,8 @@ export function recipeIdeaToImported(idea: RecipeIdea): ImportedRecipe {
     cookMinutes: null,
     kcal: null,
     protein: null,
+    carbs: null,
+    fat: null,
     ingredients: idea.ingredients.map((i) => ({ name: i.name, amount: i.amount, unit: i.unit })),
     steps: splitSteps(idea.steps ?? ""),
   };

@@ -294,6 +294,8 @@ describe("recipes repository", () => {
         cookMinutes: 20,
         kcal: 480,
         protein: 20,
+        carbs: null,
+        fat: null,
         ingredients: [{ name: "Kokosmilch", amount: "400", unit: "ml" }],
         steps: ["Alles kochen."],
         ...overrides,
@@ -412,6 +414,41 @@ describe("recipes repository", () => {
 
       expect(again.id).toBe(handmade.id);
       expect((await getRecipe(handmade.id, client))!.slug).toBeNull();
+    });
+
+    it("übernimmt carbs, fat und Zutaten-Gruppen beim Import", async () => {
+      const imported: ImportedRecipe = {
+        slug: "linsen-dal",
+        name: "Linsen-Dal",
+        rating: "ok",
+        simple: true,
+        reheatable: true,
+        tags: ["vegetarisch"],
+        source: null,
+        imageUrl: null,
+        servings: 4,
+        prepMinutes: 10,
+        cookMinutes: 25,
+        kcal: 420,
+        protein: 18,
+        carbs: 55,
+        fat: 9,
+        ingredients: [
+          { name: "Rote Linsen", amount: "200", unit: "g", section: null },
+          { name: "Skyr", amount: "150", unit: "g", section: "Dip" },
+        ],
+        steps: ["Linsen waschen.", "25 Minuten köcheln."],
+      };
+
+      const { id } = await upsertImportedRecipe(imported, client);
+      const row = await client.recipe.findUnique({
+        where: { id },
+        include: { ingredients: { orderBy: { sort: "asc" } } },
+      });
+
+      expect(row?.carbs).toBe(55);
+      expect(row?.fat).toBe(9);
+      expect(row?.ingredients.map((i) => i.section)).toEqual([null, "Dip"]);
     });
   });
 });

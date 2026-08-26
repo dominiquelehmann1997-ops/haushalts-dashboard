@@ -133,6 +133,8 @@ model Recipe {
   cookMinutes Int?
   kcal        Int? // pro Portion, Angabe der Quelle — ungeprüft
   protein     Int? // g pro Portion
+  carbs       Int? // g pro Portion
+  fat         Int? // g pro Portion
   steps       String? // JSON string array (Zubereitungsschritte)
   notes       String? // freies Feld für eigene Anmerkungen
   sourceUrl   String? // Herkunfts-URL; Dedupe-Anker beim erneuten Import
@@ -152,10 +154,11 @@ model Ingredient {
   recipeId String
   recipe   Recipe @relation(fields: [recipeId], references: [id])
 
-  name   String
-  amount String?
-  unit   String?
-  sort   Int     @default(0) // Reihenfolge im Rezept (stabil beim Bearbeiten)
+  name    String
+  amount  String?
+  unit    String?
+  section String? // Zutaten-Gruppe der Quelle, z.B. "Für die Soße"; null = keine Gruppe
+  sort    Int     @default(0) // Reihenfolge im Rezept (stabil beim Bearbeiten)
 }
 
 /// A planned meal for a given date.

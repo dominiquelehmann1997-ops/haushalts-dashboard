@@ -23,6 +23,7 @@ export interface RecipeIngredientInput {
   name: string;
   amount?: string | null;
   unit?: string | null;
+  section?: string | null;
 }
 
 export interface RecipeInput {
@@ -36,6 +37,8 @@ export interface RecipeInput {
   cookMinutes?: number | null;
   kcal?: number | null;
   protein?: number | null;
+  carbs?: number | null;
+  fat?: number | null;
   steps?: string[];
   notes?: string | null;
   sourceUrl?: string | null;
@@ -188,6 +191,8 @@ function scalarFields(input: RecipeInput) {
     cookMinutes: input.cookMinutes ?? null,
     kcal: input.kcal ?? null,
     protein: input.protein ?? null,
+    carbs: input.carbs ?? null,
+    fat: input.fat ?? null,
     steps: input.steps && input.steps.length > 0 ? JSON.stringify(input.steps) : null,
     notes: input.notes ?? null,
     sourceUrl: input.sourceUrl ?? null,
@@ -203,6 +208,7 @@ function ingredientRows(recipeId: string, ingredients: RecipeIngredientInput[] =
       name: i.name.trim(),
       amount: i.amount?.trim() || null,
       unit: i.unit?.trim() || null,
+      section: i.section?.trim() || null,
       sort: index,
     }));
 }
@@ -281,12 +287,15 @@ export async function upsertImportedRecipe(
     cookMinutes: recipe.cookMinutes,
     kcal: recipe.kcal,
     protein: recipe.protein,
+    carbs: recipe.carbs,
+    fat: recipe.fat,
     steps: recipe.steps,
     sourceUrl: recipe.source,
     ingredients: recipe.ingredients.map((i) => ({
       name: i.name,
       amount: i.amount ?? null,
       unit: i.unit ?? null,
+      section: i.section ?? null,
     })),
   };
 
