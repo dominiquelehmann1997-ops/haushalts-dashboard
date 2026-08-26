@@ -41,6 +41,19 @@ Request pro Rezept.
 **Am Handy:** Dashboard → *Essensplan* → **Rezept per Link** → Link einfügen →
 *übernehmen*. Danach steht das Rezept sofort im Essensplan zur Wahl.
 
+**Am Handy per Teilen-Menü (ObsidiDine):** Für alles, was *kein* Rezept-Markup
+hat — ein abfotografiertes Rezept aus einem Kochbuch oder von einer
+HelloFresh-Karte, eine Instagram- oder TikTok-Caption, eine
+YouTube-Beschreibung. Foto oder Link ins Teilen-Menü → *ObsidiDine* wählen. Die
+App liest den Text (OCR läuft auf dem Gerät), schickt ihn ans Dashboard, und
+dort extrahiert **Claude über das Abo** das Rezept — kein API-Key, keine Kosten
+pro Import. Das Ergebnis kommt zurück in die App, wo du es vor dem Speichern
+noch anpassen kannst.
+
+Das ist der Weg für Quellen, an denen der Link-Import scheitert. Ein normaler
+Rezept-Link geht auch über die App, wird aber intern trotzdem ohne LLM aus dem
+Seiten-Markup gelesen — schneller und genauer.
+
 **Am Rechner/Tablet-Terminal:**
 
 ```bash
@@ -105,3 +118,36 @@ Details, die den Alltag betreffen:
 - Bild-Download: `web/src/lib/services/recipeImage.ts`, Ablage in
   `RECIPE_IMAGE_DIR`.
 - Backup der Rezepte: [`rezept-export-format.md`](rezept-export-format.md).
+
+### Der Weg über ObsidiDine
+
+- Extraktion aus Rohtext: `web/src/lib/services/recipeExtract.ts` (+ `.test.ts`).
+  Enthält den Prompt, das Antwort-Parsing und **einen** Repair-Retry — mehr als
+  zwei CLI-Aufrufe pro Import gibt es nicht.
+- Aufruf der `claude` CLI: `web/src/lib/services/claudeCli.ts`. Modell
+  `claude-sonnet-5`. Die CLI beendet sich bei abgelaufenem Token **mit
+  Exit-Code 0** und meldet den Fehler nur als `is_error` im JSON — der Wrapper
+  wirft deshalb darauf, sonst verschwindet der Fehler lautlos.
+- Vegetarisch-Erkennung: `web/src/lib/services/vegetarianTag.ts`. Feste
+  Wortliste, kein LLM — deterministisch und kostenlos. Setzt den Tag
+  `vegetarisch`; im App-Preview kann er überstimmt werden.
+- Endpunkte: `web/src/app/api/recipes/parse/route.ts` (Text → Entwurf, **kein**
+  DB-Schreibzugriff) und `web/src/app/api/recipes/import/route.ts` (Entwurf →
+  DB). Beide über `web/src/lib/api/importAuth.ts` mit
+  `Authorization: Bearer <RECIPE_IMPORT_TOKEN>` geschützt.
+- App: Repository `Rezept-Importer`, `dashboard/DashboardClient.kt`. Die App
+  hat keine API-Keys mehr; in den Einstellungen stehen Dashboard-Adresse,
+  Import-Token und optional das Cloudflare-Access-Service-Token.
+
+**Zwei Env-Variablen** in `web/.env` (beide in `.env.example` beschrieben):
+
+- `RECIPE_IMPORT_TOKEN` — ohne ihn antworten beide Endpunkte mit 503 statt
+  ungeschützt zu laufen.
+- `CLAUDE_CODE_OAUTH_TOKEN` — langlebiger Abo-Token, erzeugt mit
+  `claude setup-token`. Läuft er ab, hängt jeder Import rund drei Minuten in
+  Retries und endet dann mit einem 401.
+
+**Grenzen:** Nährwerte werden nur übernommen, wenn die Quelle sie *pro Portion*
+angibt. Steht dort „pro 100 g", werden sie verworfen statt umgerechnet — ohne
+Portionsgewicht wäre jede Umrechnung geraten, und falsche Zahlen sind schlimmer
+als gar keine.
