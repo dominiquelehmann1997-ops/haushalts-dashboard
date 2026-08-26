@@ -33,10 +33,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Rezept ohne Zutaten." }, { status: 400 });
   }
 
+  // Der Client darf den Slug leer lassen — bei einem frisch abfotografierten
+  // Rezept gibt es keine Vorgeschichte, aus der er stammen könnte.
+  const slug = recipe.slug?.trim() || slugFromName(recipe.name);
+  if (slug === "") {
+    // slugFromName wirft Namen weg, die nur aus Symbolen/Emoji bestehen —
+    // ohne diese Prüfung würden alle solchen Rezepte denselben (leeren)
+    // Slug teilen und sich in findImportMatch gegenseitig überschreiben.
+    return NextResponse.json(
+      { ok: false, error: "Rezeptname ergibt keinen gültigen Slug." },
+      { status: 400 },
+    );
+  }
+
   try {
-    // Der Client darf den Slug leer lassen — bei einem frisch abfotografierten
-    // Rezept gibt es keine Vorgeschichte, aus der er stammen könnte.
-    const slug = recipe.slug?.trim() || slugFromName(recipe.name);
     const { id, name, updated } = await upsertImportedRecipe({ ...recipe, slug });
     await attachRecipeImage(id, recipe.imageUrl ?? null);
     revalidateDashboard();
