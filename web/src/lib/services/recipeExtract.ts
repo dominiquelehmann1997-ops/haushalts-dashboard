@@ -163,17 +163,65 @@ function coerceNutrition(raw: unknown): ExtractedNutrition | null {
   return empty ? null : nutrition;
 }
 
+/**
+ * Position des zu `text[start]` (einer "{") passenden "}", oder -1.
+ * Klammern innerhalb von String-Literalen zählen nicht mit — ein
+ * Rezeptname wie "Currywurst {Deluxe}" würde sonst die Zählung
+ * durcheinanderbringen. Escapte Anführungszeichen ("\"" im String)
+ * dürfen das String-Ende nicht vortäuschen, sonst kippt die Zählung ab
+ * dem nächsten Zeichen.
+ */
+function findMatchingBrace(text: string, start: number): number {
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let i = start; i < text.length; i++) {
+    const ch = text[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (ch === "\\") escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === "{") depth++;
+    else if (ch === "}") {
+      depth--;
+      if (depth === 0) return i;
+    }
+  }
+  return -1;
+}
+
+/**
+ * Zieht das JSON-Objekt aus einer Antwort, die Claude mit Prosa oder Fences
+ * garniert haben kann. Ein naives "erstes { bis letztes }" reißt dabei auch
+ * Prosa-Klammern wie "Bitte beachte {Hinweis}" mit ins Ergebnis und
+ * JSON.parse schlägt fehl — deshalb: zuerst einen Fenced-Code-Block
+ * bevorzugen (dort schreibt das Modell das JSON hin, wenn es auch Prosa
+ * dazuschreibt), sonst nacheinander jedes klammer-balancierte Top-Level-Stück
+ * probieren, bis eines sich als gültiges JSON parsen lässt.
+ */
+function extractJsonPayload(raw: string): unknown {
+  const fence = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  const text = fence ? fence[1] : raw;
+  let from = 0;
+  for (;;) {
+    const start = text.indexOf("{", from);
+    if (start === -1) return null;
+    const end = findMatchingBrace(text, start);
+    if (end === -1) return null;
+    try {
+      return JSON.parse(text.slice(start, end + 1));
+    } catch {
+      from = end + 1; // kein gültiges JSON — nächstes Klammerstück versuchen
+    }
+  }
+}
+
 /** Erstes JSON-Objekt aus der (evtl. mit Prosa/Fences garnierten) Antwort. */
 export function parseExtractionResponse(raw: string): ExtractedRecipe | null {
-  const start = raw.indexOf("{");
-  const end = raw.lastIndexOf("}");
-  if (start === -1 || end <= start) return null;
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(raw.slice(start, end + 1));
-  } catch {
-    return null;
-  }
+  const parsed = extractJsonPayload(raw);
   if (!parsed || typeof parsed !== "object") return null;
   const e = parsed as Record<string, unknown>;
   if (typeof e.name !== "string") return null;

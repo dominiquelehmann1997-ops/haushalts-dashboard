@@ -22,6 +22,10 @@ const EXTRACTED = {
 };
 
 describe("parseExtractionResponse", () => {
+  it("liest reines JSON ohne Prosa oder Fence", () => {
+    expect(parseExtractionResponse(JSON.stringify(EXTRACTED))?.name).toBe("Linsen-Dal");
+  });
+
   it("liest JSON auch mit Prosa und Code-Fence drumherum", () => {
     const raw = "Hier das Rezept:\n```json\n" + JSON.stringify(EXTRACTED) + "\n```\nViel Spaß!";
     expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
@@ -29,6 +33,27 @@ describe("parseExtractionResponse", () => {
 
   it("gibt null bei unlesbarer Antwort", () => {
     expect(parseExtractionResponse("Tut mir leid, kein Rezept gefunden.")).toBeNull();
+  });
+
+  it("ignoriert eine Klammer in Prosa VOR dem eigentlichen JSON", () => {
+    const raw = "Bitte beachte {Hinweis}: " + JSON.stringify(EXTRACTED);
+    expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
+  });
+
+  it("ignoriert eine Klammer in Prosa NACH dem eigentlichen JSON", () => {
+    const raw = JSON.stringify(EXTRACTED) + "\nHinweis: Klammer {so}";
+    expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
+  });
+
+  it("findet das JSON im Fence, auch wenn die umgebende Prosa selbst Klammern enthält", () => {
+    const raw = "Vorher {a}\n```json\n" + JSON.stringify(EXTRACTED) + "\n```\nNachher {b}";
+    expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
+  });
+
+  it("zerbricht nicht an einer Klammer im Rezeptnamen (String-Literal wird nicht mitgezählt)", () => {
+    const withBrace = { ...EXTRACTED, name: 'Currywurst "Spezial" {Deluxe}' };
+    const raw = "Vorher {a}\n" + JSON.stringify(withBrace) + "\nNachher {b}";
+    expect(parseExtractionResponse(raw)?.name).toBe('Currywurst "Spezial" {Deluxe}');
   });
 });
 
