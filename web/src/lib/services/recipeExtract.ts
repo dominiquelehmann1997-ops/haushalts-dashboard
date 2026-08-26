@@ -194,29 +194,57 @@ function findMatchingBrace(text: string, start: number): number {
 }
 
 /**
- * Zieht das JSON-Objekt aus einer Antwort, die Claude mit Prosa oder Fences
- * garniert haben kann. Ein naives "erstes { bis letztes }" reißt dabei auch
- * Prosa-Klammern wie "Bitte beachte {Hinweis}" mit ins Ergebnis und
- * JSON.parse schlägt fehl — deshalb: zuerst einen Fenced-Code-Block
- * bevorzugen (dort schreibt das Modell das JSON hin, wenn es auch Prosa
- * dazuschreibt), sonst nacheinander jedes klammer-balancierte Top-Level-Stück
- * probieren, bis eines sich als gültiges JSON parsen lässt.
+ * Höchstens so viele Klammer-Kandidaten pro Textabschnitt probieren. Ohne
+ * Deckel würde ein pathologischer Text voller Streu-Klammern die Suche zu
+ * einem quadratischen Scan machen (pro Kandidat bis zu O(n) Zeichen); mit
+ * Deckel bleibt es O(cap · n). Reale Modell-Antworten haben höchstens eine
+ * Handvoll Klammerstücke, 20 ist großzügig bemessen.
  */
-function extractJsonPayload(raw: string): unknown {
-  const fence = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  const text = fence ? fence[1] : raw;
+const MAX_JSON_CANDIDATES = 20;
+
+/**
+ * Sucht in `text` nacheinander jedes klammer-balancierte Top-Level-Stück und
+ * liefert das erste, das sich als JSON-Objekt parsen lässt — `null`, wenn
+ * keins passt. Ein Kandidat ohne Gegenstück (z.B. eine einzelne offene "{"
+ * in der Prosa vor dem echten JSON) wird übersprungen statt die Suche
+ * abzubrechen: sonst reicht eine kaputte Klammer irgendwo im Text, um ein
+ * daneben stehendes, sauberes Rezept zu verwerfen.
+ */
+function firstJsonObject(text: string): unknown {
   let from = 0;
-  for (;;) {
+  for (let tries = 0; tries < MAX_JSON_CANDIDATES; tries++) {
     const start = text.indexOf("{", from);
     if (start === -1) return null;
     const end = findMatchingBrace(text, start);
-    if (end === -1) return null;
+    if (end === -1) {
+      from = start + 1; // Klammer ohne Gegenstück — ab der nächsten "{" weitersuchen
+      continue;
+    }
     try {
       return JSON.parse(text.slice(start, end + 1));
     } catch {
       from = end + 1; // kein gültiges JSON — nächstes Klammerstück versuchen
     }
   }
+  return null;
+}
+
+/**
+ * Zieht das JSON-Objekt aus einer Antwort, die Claude mit Prosa oder Fences
+ * garniert haben kann. Ein naives "erstes { bis letztes }" reißt dabei auch
+ * Prosa-Klammern wie "Bitte beachte {Hinweis}" mit ins Ergebnis und
+ * JSON.parse schlägt fehl — deshalb: zuerst einen Fenced-Code-Block
+ * bevorzugen (dort schreibt das Modell das JSON hin, wenn es auch Prosa
+ * dazuschreibt); steht dort kein gültiges JSON (Fence mit Kommentar/Müll
+ * statt Rezept), auf den kompletten Rohtext ausweichen statt aufzugeben.
+ */
+function extractJsonPayload(raw: string): unknown {
+  const fence = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fence) {
+    const fromFence = firstJsonObject(fence[1]);
+    if (fromFence !== null) return fromFence;
+  }
+  return firstJsonObject(raw);
 }
 
 /** Erstes JSON-Objekt aus der (evtl. mit Prosa/Fences garnierten) Antwort. */

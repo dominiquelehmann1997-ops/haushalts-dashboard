@@ -55,6 +55,25 @@ describe("parseExtractionResponse", () => {
     const raw = "Vorher {a}\n" + JSON.stringify(withBrace) + "\nNachher {b}";
     expect(parseExtractionResponse(raw)?.name).toBe('Currywurst "Spezial" {Deluxe}');
   });
+
+  it("weicht auf den Volltext aus, wenn im Fence kein gültiges JSON steht", () => {
+    const raw =
+      "```json\n{not valid json at all}\n```\n\nHere is the real one:\n" +
+      JSON.stringify(EXTRACTED);
+    expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
+  });
+
+  it("erholt sich von einer unbalancierten Klammer in Prosa vor dem JSON", () => {
+    const raw =
+      "Achtung: geschweifte Klammer { oeffnen ohne schliessen. " + JSON.stringify(EXTRACTED);
+    expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
+  });
+
+  it("erholt sich von einer unbalancierten Klammer auch innerhalb eines Fence", () => {
+    const raw =
+      "```json\nAchtung: unklammer { vor dem JSON.\n" + JSON.stringify(EXTRACTED) + "\n```";
+    expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
+  });
 });
 
 describe("toImportedFromExtraction", () => {
