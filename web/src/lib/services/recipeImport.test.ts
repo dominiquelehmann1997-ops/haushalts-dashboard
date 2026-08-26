@@ -303,6 +303,22 @@ describe("toImportedRecipe", () => {
     expect(recipe.steps).toHaveLength(2);
   });
 
+  it("liest Kohlenhydrate und Fett aus dem Nährwert-Block", () => {
+    const schema = {
+      ...SCHEMA,
+      nutrition: {
+        "@type": "NutritionInformation",
+        calories: "420 kcal",
+        proteinContent: "18 g",
+        carbohydrateContent: "55 g",
+        fatContent: "9,5 g",
+      },
+    };
+    const recipe = toImportedRecipe(schema, "https://example.org/rezept");
+    expect(recipe.carbs).toBe(55);
+    expect(recipe.fat).toBe(10);
+  });
+
   it("taggt kalorienarme Rezepte automatisch", () => {
     expect(recipe.tags[0]).toBe("kalorienarm");
     expect(toImportedRecipe({ ...SCHEMA, nutrition: { calories: "980 kcal" } }, "x").tags).not.toContain(
