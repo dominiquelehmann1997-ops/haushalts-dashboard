@@ -190,7 +190,15 @@ export async function listRecipeTags(client: PrismaClient = prisma): Promise<Rec
   return collectTags(rows.map((r) => ({ tags: parseTags(r.tags) }) as Recipe));
 }
 
-/** Feldwerte aus dem Input, gemeinsam für create und update. */
+/**
+ * Feldwerte aus dem Input, gemeinsam für create und update.
+ *
+ * **`imagePath` steht bewusst NICHT hier drin.** Das Titelbild hängt nicht am
+ * Formular: `draftToInput` liefert es nicht mit, also wäre `input.imagePath`
+ * beim Bearbeiten immer `undefined` und ein `?? null` würde das
+ * heruntergeladene Bild bei jedem Speichern löschen. Gesetzt wird es nur dort,
+ * wo es wirklich gemeint ist — beim Anlegen und in `setRecipeImage`.
+ */
 function scalarFields(input: RecipeInput) {
   return {
     name: input.name.trim(),
@@ -208,7 +216,6 @@ function scalarFields(input: RecipeInput) {
     steps: input.steps && input.steps.length > 0 ? JSON.stringify(input.steps) : null,
     notes: input.notes ?? null,
     sourceUrl: input.sourceUrl ?? null,
-    imagePath: input.imagePath ?? null,
   };
 }
 
@@ -231,7 +238,9 @@ export async function createRecipe(
   client: PrismaClient = prisma,
 ): Promise<{ id: string }> {
   const created = await client.recipe.create({
-    data: scalarFields(input),
+    // Beim Anlegen ist `imagePath` echt gemeint — anders als beim Update, siehe
+    // Kommentar an `scalarFields`.
+    data: { ...scalarFields(input), imagePath: input.imagePath ?? null },
     select: { id: true },
   });
   for (const row of ingredientRows(created.id, input.ingredients)) {
@@ -274,19 +283,38 @@ async function findImportMatch(recipe: ImportedRecipe, client: PrismaClient) {
     const bySource = await client.recipe.findFirst({ where: { sourceUrl: recipe.source } });
     if (bySource) return bySource;
   }
+  // Ein leerer Slug (Name ganz ohne ASCII-Alphanumerisches, z.B. rein kyrillisch/
+  // chinesisch) darf hier nicht zum Suchkriterium werden — sonst liefert
+  // `findFirst({ where: { slug: "" } })` irgendein anderes Rezept mit leerem
+  // Slug zurück, und zwei unabhängige Importe verschmelzen zu einem.
+  if (recipe.slug === "") return null;
   return client.recipe.findFirst({ where: { slug: recipe.slug } });
 }
 
+export interface UpsertImportOptions {
+  /**
+   * Übernimmt `recipe.rating` auch beim Update eines bestehenden Rezepts.
+   * Nur der App-Import (POST /api/recipes/import) darf das setzen: dort ist
+   * die Bewertung eine bewusste Entscheidung im Preview. Link-Import und
+   * Claude-Ideen kennen den Haushalt nicht — für sie bleibt `existing.rating`
+   * unangetastet (Default).
+   */
+  allowRatingOverride?: boolean;
+}
+
 /**
- * Übernimmt ein importiertes Rezept (Link-Import oder Claude-Idee) in die DB.
+ * Übernimmt ein importiertes Rezept (Link-Import, Claude-Idee oder App-Import)
+ * in die DB.
  *
- * Beim Update überleben die Felder, die der Haushalt selbst pflegt:
- * `rating`, `notes` und `imagePath`. Die Quelle weiß nichts davon, und ein
- * erneuter Import darf einen Favoriten nicht auf „ok" zurücksetzen.
+ * Beim Update überleben die Felder, die der Haushalt selbst pflegt: `notes`
+ * und `imagePath` immer, `rating` nur, wenn `options.allowRatingOverride`
+ * nicht gesetzt ist. Die automatischen Quellen wissen nichts vom Haushalt,
+ * und ein erneuter Import darf einen Favoriten nicht auf „ok" zurücksetzen.
  */
 export async function upsertImportedRecipe(
   recipe: ImportedRecipe,
   client: PrismaClient = prisma,
+  options: UpsertImportOptions = {},
 ): Promise<RecipeUpsert> {
   const input: RecipeInput = {
     name: recipe.name,
@@ -319,7 +347,9 @@ export async function upsertImportedRecipe(
   // ein anderes Rezept trägt (`slug` ist unique).
   const slug =
     existing?.slug ??
-    ((await client.recipe.findFirst({ where: { slug: recipe.slug } })) ? null : recipe.slug);
+    ((await client.recipe.findFirst({ where: { slug: recipe.slug } }))
+      ? null
+      : recipe.slug || null); // "" darf nie im unique Slug-Feld landen
 
   const id = existing
     ? (
@@ -327,7 +357,7 @@ export async function upsertImportedRecipe(
           where: { id: existing.id },
           data: {
             ...scalarFields(input),
-            rating: existing.rating,
+            rating: options.allowRatingOverride ? input.rating : existing.rating,
             notes: existing.notes,
             imagePath: existing.imagePath,
             slug,

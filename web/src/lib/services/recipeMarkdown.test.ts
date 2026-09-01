@@ -50,11 +50,13 @@ const FULL = recipe({
   cookMinutes: 25,
   kcal: 540,
   protein: 22,
+  carbs: 60,
+  fat: 18,
   steps: ["Zwiebeln anschwitzen.", "Kokosmilch zugeben."],
   notes: "Mit Limette abschmecken.",
   sourceUrl: "https://www.chefkoch.de/rezepte/1",
   ingredients: [
-    { id: "i1", name: "Kokosmilch", amount: "400", unit: "ml", section: null },
+    { id: "i1", name: "Kokosmilch", amount: "400", unit: "ml", section: "Basis" },
     { id: "i2", name: "Spinat", amount: null, unit: null, section: null },
   ],
 });
@@ -73,12 +75,12 @@ describe("recipeToMarkdown", () => {
       servings: 4,
       prepMinutes: 15,
       cookMinutes: 25,
-      nutrition: { kcal: 540, protein: 22 },
+      nutrition: { kcal: 540, protein: 22, carbs: 60, fat: 18 },
       source: "https://www.chefkoch.de/rezepte/1",
       exportedBy: EXPORT_MARKER,
     });
     expect(data.ingredients).toEqual([
-      { name: "Kokosmilch", amount: "400", unit: "ml" },
+      { name: "Kokosmilch", amount: "400", unit: "ml", section: "Basis" },
       { name: "Spinat" },
     ]);
   });
@@ -107,11 +109,13 @@ describe("recipeToMarkdown", () => {
     expect(content.trim()).toBe("");
   });
 
-  it("schreibt nutrition auch, wenn nur eins von beiden gesetzt ist", () => {
+  it("schreibt nutrition auch, wenn nur eins von vieren gesetzt ist", () => {
     expect(matter(recipeToMarkdown(recipe({ kcal: 300 }))).data.nutrition).toEqual({ kcal: 300 });
     expect(matter(recipeToMarkdown(recipe({ protein: 12 }))).data.nutrition).toEqual({
       protein: 12,
     });
+    expect(matter(recipeToMarkdown(recipe({ carbs: 40 }))).data.nutrition).toEqual({ carbs: 40 });
+    expect(matter(recipeToMarkdown(recipe({ fat: 8 }))).data.nutrition).toEqual({ fat: 8 });
   });
 
   it("lässt id weg, wenn das Rezept keinen Slug hat (in der App angelegt)", () => {

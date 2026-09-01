@@ -279,6 +279,24 @@ describe("recipes repository", () => {
       await setRecipeImage(id, null, client);
       expect((await getRecipe(id, client))!.imageUrl).toBeNull();
     });
+
+    // Das Titelbild hängt nicht am Formular — wer ein Rezept im Editor
+    // bearbeitet, schickt kein `imagePath` mit. Ohne Schutz würde jedes
+    // Speichern das heruntergeladene Bild löschen.
+    it("überlebt das Bearbeiten des Rezepts im Editor", async () => {
+      const { id } = await seedCurry();
+      await setRecipeImage(id, "kokos-curry.jpg", client);
+
+      await updateRecipe(
+        id,
+        { name: "Kokos-Curry mit Reis", ingredients: [{ name: "Kokosmilch" }] },
+        client,
+      );
+
+      const saved = await getRecipe(id, client);
+      expect(saved!.name).toBe("Kokos-Curry mit Reis");
+      expect(saved!.imageUrl).toBe("/api/recipe-image/kokos-curry.jpg");
+    });
   });
 
   describe("setRecipeRating", () => {
@@ -463,6 +481,48 @@ describe("recipes repository", () => {
       expect(row?.carbs).toBe(55);
       expect(row?.fat).toBe(9);
       expect(row?.ingredients.map((i) => i.section)).toEqual([null, "Dip"]);
+    });
+
+    it("lässt die Bewertung des Haushalts standardmäßig in Ruhe, auch bei einer anderen im Payload", async () => {
+      const { id } = await upsertImportedRecipe(imported(), client);
+      await client.recipe.update({ where: { id }, data: { rating: "favorit" } });
+
+      await upsertImportedRecipe(imported({ rating: "selten" }), client);
+
+      expect((await getRecipe(id, client))!.rating).toBe("favorit");
+    });
+
+    it("übernimmt die Bewertung aus dem Payload, wenn der Aufrufer das per Option erlaubt", async () => {
+      // Simuliert POST /api/recipes/import: dort ist die Bewertung eine bewusste
+      // Nutzerentscheidung im App-Preview, kein automatischer Import.
+      const { id } = await upsertImportedRecipe(imported(), client);
+      await client.recipe.update({ where: { id }, data: { rating: "favorit" } });
+
+      await upsertImportedRecipe(imported({ rating: "selten" }), client, {
+        allowRatingOverride: true,
+      });
+
+      expect((await getRecipe(id, client))!.rating).toBe("selten");
+    });
+
+    it("hält zwei Rezepte mit leerem Slug auseinander, statt sie zu verschmelzen", async () => {
+      // Ein Name ganz ohne ASCII-Alphanumerisches (rein kyrillisch/chinesisch)
+      // ergibt über slugFromName einen leeren Slug. `slug` ist unique — ohne
+      // Guard würde findImportMatch das zweite Rezept über das erste finden.
+      const a = await upsertImportedRecipe(
+        imported({ slug: "", name: "Рецепт А", source: null }),
+        client,
+      );
+      const b = await upsertImportedRecipe(
+        imported({ slug: "", name: "Рецепт Б", source: null }),
+        client,
+      );
+
+      expect(a.id).not.toBe(b.id);
+      expect((await getRecipe(a.id, client))!.name).toBe("Рецепт А");
+      expect((await getRecipe(b.id, client))!.name).toBe("Рецепт Б");
+      expect((await getRecipe(a.id, client))!.slug).toBeNull();
+      expect((await getRecipe(b.id, client))!.slug).toBeNull();
     });
   });
 });

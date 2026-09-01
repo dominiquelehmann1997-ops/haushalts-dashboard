@@ -12,6 +12,17 @@ import { slugFromName, type ImportedRecipe } from "@/lib/services/recipeImport";
 
 export const MAX_INPUT_CHARS = 6000;
 
+/**
+ * Knapper als `runClaude`s Default (120s) — sonst gewinnt beim Wettlauf mit dem
+ * Android-Client (callTimeout ~120s) immer der Client, und unsere Fehlermeldung
+ * (claude CLI HTTP 401, "keine Rezeptdaten" o.ä.) kommt nie an, obwohl das
+ * Abo-Kontingent schon verbraucht ist. Nur hier gesetzt, nicht am Default von
+ * `runClaude` — die Rezept-Ideen (`recipeIdeas.ts`) laufen ohne UI-Wettlauf und
+ * behalten ihr Budget. Ein Cloudflare-Tunnel kappt ohnehin bei ~100s — dieser
+ * Wert ist also eine Obergrenze, kein Versprechen.
+ */
+const EXTRACTION_TIMEOUT_MS = 75_000;
+
 export interface ExtractedIngredient {
   name: string;
   amount?: string | null;
@@ -328,14 +339,18 @@ export async function extractRecipeFromText(
 ): Promise<ImportedRecipe> {
   if (rawText.trim() === "") throw new Error("Kein Text zum Auswerten übergeben.");
 
-  const first = parseExtractionResponse(await runClaude(buildExtractionPrompt(rawText)));
+  const first = parseExtractionResponse(
+    await runClaude(buildExtractionPrompt(rawText), { timeoutMs: EXTRACTION_TIMEOUT_MS }),
+  );
   const firstProblems = first
     ? problemsOf(toImportedFromExtraction(first, sourceUrl))
     : ["Antwort enthielt kein lesbares JSON"];
   if (first && firstProblems.length === 0) return toImportedFromExtraction(first, sourceUrl);
 
   const second = parseExtractionResponse(
-    await runClaude(buildExtractionPrompt(rawText, firstProblems.join("; "))),
+    await runClaude(buildExtractionPrompt(rawText, firstProblems.join("; ")), {
+      timeoutMs: EXTRACTION_TIMEOUT_MS,
+    }),
   );
   if (!second) throw new Error("Aus dem Text ließ sich kein Rezept lesen.");
   const recipe = toImportedFromExtraction(second, sourceUrl);

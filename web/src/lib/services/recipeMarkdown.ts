@@ -29,6 +29,7 @@ interface FrontmatterIngredient {
   name: string;
   amount?: string;
   unit?: string;
+  section?: string;
 }
 
 /**
@@ -50,10 +51,17 @@ export function recipeToMarkdown(recipe: Recipe): string {
   if (recipe.servings !== null) data.servings = recipe.servings;
   if (recipe.prepMinutes !== null) data.prepMinutes = recipe.prepMinutes;
   if (recipe.cookMinutes !== null) data.cookMinutes = recipe.cookMinutes;
-  if (recipe.kcal !== null || recipe.protein !== null) {
+  if (
+    recipe.kcal !== null ||
+    recipe.protein !== null ||
+    recipe.carbs !== null ||
+    recipe.fat !== null
+  ) {
     const nutrition: Record<string, number> = {};
     if (recipe.kcal !== null) nutrition.kcal = recipe.kcal;
     if (recipe.protein !== null) nutrition.protein = recipe.protein;
+    if (recipe.carbs !== null) nutrition.carbs = recipe.carbs;
+    if (recipe.fat !== null) nutrition.fat = recipe.fat;
     data.nutrition = nutrition;
   }
   if (recipe.sourceUrl) data.source = recipe.sourceUrl;
@@ -65,6 +73,7 @@ export function recipeToMarkdown(recipe: Recipe): string {
       const out: FrontmatterIngredient = { name: i.name };
       if (i.amount) out.amount = i.amount;
       if (i.unit) out.unit = i.unit;
+      if (i.section) out.section = i.section;
       return out;
     });
   }

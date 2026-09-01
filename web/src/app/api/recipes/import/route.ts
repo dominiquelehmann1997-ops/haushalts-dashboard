@@ -47,7 +47,12 @@ export async function POST(request: Request) {
   }
 
   try {
-    const { id, name, updated } = await upsertImportedRecipe({ ...recipe, slug });
+    // Anders als Link-Import und Claude-Ideen: hier bearbeitet ein Mensch das
+    // Rezept im App-Preview, die Bewertung ist also eine bewusste Entscheidung
+    // und darf bei einem erneuten Speichern (Re-Share) übernommen werden.
+    const { id, name, updated } = await upsertImportedRecipe({ ...recipe, slug }, undefined, {
+      allowRatingOverride: true,
+    });
     await attachRecipeImage(id, recipe.imageUrl ?? null);
     revalidateDashboard();
     revalidatePath("/mobile/meals/rezepte/[id]", "page");

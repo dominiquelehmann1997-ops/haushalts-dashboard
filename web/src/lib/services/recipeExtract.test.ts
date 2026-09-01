@@ -1,7 +1,11 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
+vi.mock("@/lib/services/claudeCli", () => ({ runClaude: vi.fn() }));
+
+import { runClaude } from "@/lib/services/claudeCli";
 import {
   buildExtractionPrompt,
+  extractRecipeFromText,
   parseExtractionResponse,
   problemsOf,
   toImportedFromExtraction,
@@ -124,5 +128,16 @@ describe("buildExtractionPrompt", () => {
     const prompt = buildExtractionPrompt("x".repeat(20_000), "Name fehlt");
     expect(prompt.length).toBeLessThan(20_000);
     expect(prompt).toContain("Name fehlt");
+  });
+});
+
+describe("extractRecipeFromText", () => {
+  it("ruft die CLI mit einem knapperen Timeout als runClaudes Default auf", async () => {
+    vi.mocked(runClaude).mockResolvedValue(JSON.stringify(EXTRACTED));
+
+    await extractRecipeFromText("irgendein Rohtext");
+
+    expect(runClaude).toHaveBeenCalledTimes(1);
+    expect(runClaude).toHaveBeenCalledWith(expect.any(String), { timeoutMs: 75_000 });
   });
 });

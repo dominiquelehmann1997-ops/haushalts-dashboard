@@ -20,6 +20,7 @@ vi.mock("next/cache", () => ({
   revalidatePath: vi.fn(),
 }));
 
+import { upsertImportedRecipe } from "@/lib/repositories/recipes";
 import { POST } from "./route";
 
 const TOKEN = "test-token-1234567890";
@@ -146,6 +147,19 @@ describe("POST /api/recipes/import — Slug-Validierung", () => {
     expect(res.status).not.toBe(400);
     await expect(res.json()).resolves.not.toEqual(
       expect.objectContaining({ error: "Rezeptname ergibt keinen gültigen Slug." }),
+    );
+  });
+});
+
+describe("POST /api/recipes/import — Bewertung", () => {
+  it("erlaubt upsertImportedRecipe ausdrücklich, die Bewertung aus dem Payload zu übernehmen", async () => {
+    // Anders als Link-Import/Claude-Ideen: hier bearbeitet ein Mensch im
+    // App-Preview, die Bewertung darf also mit re-importiert werden.
+    await POST(post({ recipe: REZEPT }, `Bearer ${TOKEN}`));
+    expect(upsertImportedRecipe).toHaveBeenCalledWith(
+      expect.objectContaining({ name: "Linsen-Dal" }),
+      undefined,
+      { allowRatingOverride: true },
     );
   });
 });
