@@ -12,7 +12,7 @@ import { useState, startTransition } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowDown, ArrowUp, Plus, X } from "lucide-react";
 
-import type { Recipe } from "@/lib/domain";
+import { CATEGORY_LABELS, RECIPE_CATEGORIES, type Recipe, type RecipeCategory } from "@/lib/domain";
 import { createRecipeAction, updateRecipeAction } from "@/app/actions/recipes";
 import { RECIPES_PATH } from "@/lib/recipeFilterParams";
 import {
@@ -160,7 +160,7 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
         />
       </label>
 
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-3 gap-2">
         <label className="block">
           <span className={LABEL}>Bewertung</span>
           <select
@@ -171,6 +171,20 @@ export function RecipeEditor({ recipe }: { recipe?: Recipe }) {
             {RATINGS.map((r) => (
               <option key={r} value={r}>
                 {r}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="block">
+          <span className={LABEL}>Kategorie</span>
+          <select
+            value={draft.category}
+            onChange={(e) => set("category", e.target.value as RecipeCategory)}
+            className={FIELD_WIDE}
+          >
+            {RECIPE_CATEGORIES.map((c) => (
+              <option key={c} value={c}>
+                {CATEGORY_LABELS[c]}
               </option>
             ))}
           </select>

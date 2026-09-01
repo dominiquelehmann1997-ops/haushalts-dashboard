@@ -60,11 +60,22 @@ describe("draftFromRecipe / draftToInput", () => {
       steps: ["Zwiebeln anschwitzen.", "Kokosmilch zugeben."],
       notes: "Mit Naan servieren.",
       sourceUrl: "https://example.org/curry",
+      category: "hauptmahlzeit",
       ingredients: [
         { name: "Kokosmilch", amount: "400", unit: "ml", section: null },
         { name: "Spinat", amount: null, unit: null, section: null },
       ],
     });
+  });
+
+  it("startet neue Rezepte als Hauptmahlzeit", () => {
+    expect(emptyDraft().category).toBe("hauptmahlzeit");
+  });
+
+  it("nimmt die Kategorie aus dem Rezept und gibt sie wieder heraus", () => {
+    const draft = draftFromRecipe({ ...CURRY, category: "suesses" });
+    expect(draft.category).toBe("suesses");
+    expect(draftToInput(draft).category).toBe("suesses");
   });
 
   it("zeigt fehlende Zahlen als leeres Feld statt als 0", () => {

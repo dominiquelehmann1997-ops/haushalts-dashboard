@@ -6,7 +6,7 @@
 // nun einmal Strings, und ein halb getipptes Feld ("1", während "15" gemeint
 // ist) darf nicht schon beim Tippen zu einer Zahl gerundet werden.
 
-import type { Recipe } from "@/lib/domain";
+import type { Recipe, RecipeCategory } from "@/lib/domain";
 import type { RecipeInput } from "@/lib/repositories/recipes";
 
 export interface RecipeDraftIngredient {
@@ -34,6 +34,7 @@ export interface RecipeDraft {
   steps: string;
   notes: string;
   sourceUrl: string;
+  category: RecipeCategory;
   ingredients: RecipeDraftIngredient[];
 }
 
@@ -59,6 +60,7 @@ export function emptyDraft(): RecipeDraft {
     steps: "",
     notes: "",
     sourceUrl: "",
+    category: "hauptmahlzeit",
     ingredients: [{ ...EMPTY_INGREDIENT }],
   };
 }
@@ -85,6 +87,7 @@ export function draftFromRecipe(recipe: Recipe): RecipeDraft {
     steps: recipe.steps.join("\n"),
     notes: recipe.notes ?? "",
     sourceUrl: recipe.sourceUrl ?? "",
+    category: recipe.category,
     ingredients:
       recipe.ingredients.length > 0
         ? recipe.ingredients.map((i) => ({
@@ -153,6 +156,7 @@ export function draftToInput(draft: RecipeDraft): RecipeInput {
     steps: splitSteps(draft.steps),
     notes: draft.notes.trim() || null,
     sourceUrl: draft.sourceUrl.trim() || null,
+    category: draft.category,
     ingredients: draft.ingredients
       .filter((i) => i.name.trim() !== "")
       .map((i) => ({
