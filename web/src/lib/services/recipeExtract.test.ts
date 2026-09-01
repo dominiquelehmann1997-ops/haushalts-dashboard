@@ -78,6 +78,11 @@ describe("parseExtractionResponse", () => {
       "```json\nAchtung: unklammer { vor dem JSON.\n" + JSON.stringify(EXTRACTED) + "\n```";
     expect(parseExtractionResponse(raw)?.name).toBe("Linsen-Dal");
   });
+
+  it("liest die Kategorie aus der Antwort", () => {
+    const raw = JSON.stringify({ ...EXTRACTED, category: "suesses" });
+    expect(parseExtractionResponse(raw)?.category).toBe("suesses");
+  });
 });
 
 describe("toImportedFromExtraction", () => {
@@ -104,6 +109,16 @@ describe("toImportedFromExtraction", () => {
     expect(r.carbs).toBeNull();
     expect(r.fat).toBeNull();
     expect(r.protein).toBeNull();
+  });
+
+  it("macht aus einer fehlenden Kategorie eine Hauptmahlzeit", () => {
+    const imported = toImportedFromExtraction(EXTRACTED, null);
+    expect(imported.category).toBe("hauptmahlzeit");
+  });
+
+  it("verwirft eine erfundene Kategorie", () => {
+    const parsed = parseExtractionResponse(JSON.stringify({ ...EXTRACTED, category: "nachtisch" }));
+    expect(toImportedFromExtraction(parsed!, null).category).toBe("hauptmahlzeit");
   });
 });
 

@@ -3,9 +3,10 @@
 // `recipeImport.ts` ohne LLM aus dem schema.org-Markup.
 //
 // Die Regeln im Prompt sind aus ObsidiDine übernommen (ExtractionPrompt.kt)
-// und an echten HelloFresh-Karten und Instagram-Captions getunt. Nicht
-// umformulieren, ohne an denselben Quellen gegenzuprüfen.
+// und an echten Instagram- und TikTok-Captions getunt. Nicht umformulieren,
+// ohne an denselben Quellen gegenzuprüfen.
 
+import { normalizeCategory } from "@/lib/domain";
 import { runClaude } from "@/lib/services/claudeCli";
 import { withVegetarianTag } from "@/lib/services/vegetarianTag";
 import { slugFromName, type ImportedRecipe } from "@/lib/services/recipeImport";
@@ -43,6 +44,7 @@ export interface ExtractedNutrition {
 export interface ExtractedRecipe {
   name: string;
   tags?: string[];
+  category?: string | null;
   servings?: number | null;
   prepMinutes?: number | null;
   cookMinutes?: number | null;
@@ -77,25 +79,16 @@ Regeln:
   Setze bei JEDER Zutat unterhalb einer solchen Zeile "section" auf diese Überschrift
   (ohne Doppelpunkt, Schreibweise der Quelle). Die Überschrift selbst NIEMALS als Zutat
   ausgeben. Zutaten oberhalb der ersten Überschrift bleiben ohne "section".
-  Beispiel:
-    "300g Hähnchenbrust"  ⇒ {"name":"Hähnchenbrust","amount":"300","unit":"g"}
-    "Dip"                 ⇒ Überschrift, KEINE Zutat
-    "150g Skyr"           ⇒ {"name":"Skyr","amount":"150","unit":"g","section":"Dip"}
   Keine Gruppen sind Zeilen wie "Zutaten", "Zutaten für 2 Personen", "Rezept",
   "Zubereitung". Reihenfolge der Zutaten nicht verändern. Fehlen solche Zeilen,
   "section" überall weglassen — keine Gruppen erfinden.
-- PORTIONEN: Enthält der Text Zutatenmengen für mehrere Personenzahlen (z.B. Spalten "2P",
-  "3P", "4P" oder "2 Personen / 4 Personen"), verwende ausschließlich die Mengen der
-  kleinsten angegebenen Portion (z.B. 2P) und setze "servings" auf diese Zahl.
-  Nimm niemals Mengen aus verschiedenen Portionsspalten.
-- "steps": Bei mehrspaltig gescannten Rezeptkarten (z.B. HelloFresh 3×2-Raster) liefert
-  der OCR-Text die Schritte spaltenweise gruppiert: erst alle Schritte der linken Spalte
-  (z.B. Schritt 1 und 4), dann der mittleren (2 und 5), dann der rechten (3 und 6).
-  Erkenne jeden Schritt am Titel (kurze Imperativphrase, z.B. „Kartoffeln vorbereiten").
-  Der zugehörige Beschreibungstext folgt direkt darunter bis zum nächsten Titel.
-  Bringe die Schritte in die logisch richtige Kochreihenfolge; sind Schrittnummern im Text
-  vorhanden, nutze sie zur Sortierung. Schrittnummern nicht in den Ausgabetext übernehmen.
-  Jeden Schritt als vollständige Sätze ausgeben.
+- "steps": Jeden Zubereitungsschritt knapp fassen, ein bis zwei Sätze. Sind
+  Schrittnummern im Text, danach sortieren, die Nummern aber nicht in den
+  Ausgabetext übernehmen.
+- KATEGORIE: "category" ist "hauptmahlzeit" für richtige Gerichte,
+  "snack" für Kleinigkeiten zwischendurch (Riegel, Bites, Dips, Aufstriche),
+  "suesses" für Süßspeisen und Gebäck (Kuchen, Kekse, Desserts, Eis).
+  Im Zweifel "hauptmahlzeit".
 - "nutrition" nur befüllen, wenn Nährwerte im Text explizit genannt sind: kcal (Energie),
   protein/carbs/fat in Gramm (nur Zahl, ohne Einheit). Nährwerte niemals schätzen oder
   berechnen.
@@ -104,17 +97,13 @@ Regeln:
 - Unbekannte Felder weglassen bzw. auf null setzen. Nichts erfinden.
 
 Format:
-{ "name": string, "tags": string[], "servings": number|null,
+{ "name": string, "tags": string[], "category": string, "servings": number|null,
   "prepMinutes": number|null, "cookMinutes": number|null,
   "ingredients": [{ "name": string, "amount": string|null, "unit": string|null,
                     "section": string|null }],
   "steps": string[],
   "nutrition": { "basis": string|null, "kcal": number|null, "protein": number|null,
                  "carbs": number|null, "fat": number|null } | null }
-
-Prüfe vor dem Antworten selbst: Steht jede ausgegebene Zutat wörtlich im
-Quelltext? Ist jede Menge übernommen und keine erfunden? Ist alles auf Deutsch
-und metrisch? Korrigiere still, bevor du antwortest.
 `.trim();
 
 export function buildExtractionPrompt(rawText: string, repairHint?: string | null): string {
@@ -269,6 +258,7 @@ export function parseExtractionResponse(raw: string): ExtractedRecipe | null {
   return {
     name: e.name,
     tags: Array.isArray(e.tags) ? e.tags.map(String) : [],
+    category: typeof e.category === "string" ? e.category : null,
     servings: numberOrNull(e.servings),
     prepMinutes: numberOrNull(e.prepMinutes),
     cookMinutes: numberOrNull(e.cookMinutes),
@@ -305,7 +295,7 @@ export function toImportedFromExtraction(
     rating: "ok", // Haushaltsentscheidung, nicht Sache der Quelle
     simple: true,
     reheatable: false,
-    category: "hauptmahlzeit", // vorläufig fest; ein späterer Task rät die Kategorie aus der Extraktion
+    category: normalizeCategory(e.category),
     tags: withVegetarianTag(e.tags ?? [], ingredients),
     source: sourceUrl,
     imageUrl: null, // aus Rohtext kommt kein Bild
