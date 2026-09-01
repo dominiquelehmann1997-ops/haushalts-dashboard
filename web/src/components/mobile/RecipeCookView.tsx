@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
 
 import type { Recipe } from "@/lib/domain";
+import { groupIngredientsBySection } from "@/lib/services/ingredientGroups";
 
 /**
  * Hält den Bildschirm an, solange die Ansicht offen ist.
@@ -108,16 +109,29 @@ export function RecipeCookView({ recipe }: { recipe: Recipe }) {
         }
       >
         {recipe.ingredients.length > 0 ? (
-          <ul className="divide-y divide-ink/5 dark:divide-white/5">
-            {recipe.ingredients.map((i) => (
-              <li key={i.id} className="flex items-baseline gap-2.5 py-1.5">
-                <span className="shrink-0 min-w-[3.5rem] text-[13px] text-ink-soft dark:text-cream/60 tabular-nums">
-                  {[i.amount, i.unit].filter(Boolean).join(" ")}
-                </span>
-                <span className="text-[13.5px] text-ink dark:text-cream/85">{i.name}</span>
-              </li>
+          // Ohne Gruppen ergibt die Schleife genau eine Gruppe ohne Überschrift,
+          // die Darstellung bleibt dann unverändert.
+          <div className="space-y-3">
+            {groupIngredientsBySection(recipe.ingredients).map((gruppe, index) => (
+              <div key={gruppe.section ?? `ohne-gruppe-${index}`}>
+                {gruppe.section && (
+                  <h3 className="pb-1 text-[11.5px] font-semibold text-ink-soft dark:text-cream/70">
+                    {gruppe.section}
+                  </h3>
+                )}
+                <ul className="divide-y divide-ink/5 dark:divide-white/5">
+                  {gruppe.items.map((i) => (
+                    <li key={i.id} className="flex items-baseline gap-2.5 py-1.5">
+                      <span className="shrink-0 min-w-[3.5rem] text-[13px] text-ink-soft dark:text-cream/60 tabular-nums">
+                        {[i.amount, i.unit].filter(Boolean).join(" ")}
+                      </span>
+                      <span className="text-[13.5px] text-ink dark:text-cream/85">{i.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
           <p className="text-[13px] text-ink-faint">Keine Zutaten hinterlegt.</p>
         )}

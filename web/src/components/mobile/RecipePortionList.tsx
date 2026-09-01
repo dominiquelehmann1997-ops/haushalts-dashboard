@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 
 import type { RecipeIngredient } from "@/lib/domain";
+import { groupIngredientsBySection } from "@/lib/services/ingredientGroups";
 import { clampPortions, MAX_PORTIONS, MIN_PORTIONS, scaleIngredients } from "@/lib/services/portions";
 
 const STEP_BUTTON =
@@ -68,16 +69,29 @@ export function RecipePortionList({
       </div>
 
       {shown.length > 0 ? (
-        <ul className="divide-y divide-ink/5 dark:divide-white/5">
-          {shown.map((i) => (
-            <li key={i.id} className="flex items-baseline justify-between gap-3 py-1.5">
-              <span className="text-[13.5px] text-ink dark:text-cream/85">{i.name}</span>
-              <span className="shrink-0 text-[13px] text-ink-soft dark:text-cream/60 tabular-nums">
-                {[i.amount, i.unit].filter(Boolean).join(" ")}
-              </span>
-            </li>
+        // Ohne Gruppen bleibt es eine einzige Liste — dann rendert die Schleife
+        // genau eine Gruppe ohne Überschrift, also exakt wie vorher.
+        <div className="space-y-3">
+          {groupIngredientsBySection(shown).map((gruppe, index) => (
+            <div key={gruppe.section ?? `ohne-gruppe-${index}`}>
+              {gruppe.section && (
+                <h3 className="pb-1 text-[11.5px] font-semibold text-ink-soft dark:text-cream/70">
+                  {gruppe.section}
+                </h3>
+              )}
+              <ul className="divide-y divide-ink/5 dark:divide-white/5">
+                {gruppe.items.map((i) => (
+                  <li key={i.id} className="flex items-baseline justify-between gap-3 py-1.5">
+                    <span className="text-[13.5px] text-ink dark:text-cream/85">{i.name}</span>
+                    <span className="shrink-0 text-[13px] text-ink-soft dark:text-cream/60 tabular-nums">
+                      {[i.amount, i.unit].filter(Boolean).join(" ")}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p className="text-[13px] text-ink-faint">Für dieses Rezept sind keine Zutaten hinterlegt.</p>
       )}
