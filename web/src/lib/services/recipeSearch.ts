@@ -82,6 +82,7 @@ export function applyFilters(recipes: Recipe[], filter: RecipeFilter): Recipe[] 
       if (r.totalMinutes === null || r.totalMinutes > filter.maxMinutes) return false;
     }
 
+    if (filter.category && r.category !== filter.category) return false;
     if (filter.rating && r.rating !== filter.rating) return false;
     if (filter.simpleOnly && !r.simple) return false;
     if (filter.reheatableOnly && !r.reheatable) return false;

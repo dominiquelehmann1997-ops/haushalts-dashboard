@@ -60,6 +60,14 @@ describe("parseRecipeFilter", () => {
     expect(parseRecipeFilter({ bewertung: "selten" }).rating).toBe("selten");
   });
 
+  it("liest die Kategorie aus den Suchparametern", () => {
+    expect(parseRecipeFilter({ kategorie: "snack" }).category).toBe("snack");
+  });
+
+  it("ignoriert eine unbekannte Kategorie", () => {
+    expect(parseRecipeFilter({ kategorie: "quatsch" }).category).toBeUndefined();
+  });
+
   it("behandelt Schalter nur bei '1' als an", () => {
     expect(parseRecipeFilter({ einfach: "0" }).simpleOnly).toBeUndefined();
     expect(parseRecipeFilter({ einfach: "true" }).simpleOnly).toBeUndefined();
@@ -91,6 +99,14 @@ describe("buildRecipeQuery / recipesHref", () => {
   it("verlinkt ohne Fragezeichen, wenn nichts gefiltert wird", () => {
     expect(recipesHref({})).toBe("/mobile/meals/rezepte");
     expect(recipesHref({ query: "curry" })).toBe("/mobile/meals/rezepte?q=curry");
+  });
+
+  it("gibt die Kategorie über recipesHref und zurück durch parseRecipeFilter unverändert weiter", () => {
+    const href = recipesHref({ category: "snack" });
+    const [, query] = href.split("?");
+    expect(parseRecipeFilter(Object.fromEntries(new URLSearchParams(query))).category).toBe(
+      "snack",
+    );
   });
 });
 

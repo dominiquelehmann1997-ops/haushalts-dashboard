@@ -5,7 +5,8 @@
 // so überlebt er den Zurück-Button, lässt sich als Lesezeichen ablegen, und
 // die Liste kann serverseitig gerendert werden.
 
-import type { RecipeFilter } from "@/lib/domain";
+import type { RecipeCategory, RecipeFilter } from "@/lib/domain";
+import { RECIPE_CATEGORIES } from "@/lib/domain";
 
 /** Rohe Suchparameter, wie Next sie liefert. */
 export type RawSearchParams = Record<string, string | string[] | undefined>;
@@ -17,6 +18,7 @@ export const PARAM = {
   maxKcal: "kcal",
   maxMinutes: "zeit",
   rating: "bewertung",
+  category: "kategorie",
   simple: "einfach",
   reheatable: "aufwaermbar",
 } as const;
@@ -70,6 +72,11 @@ export function parseRecipeFilter(params: RawSearchParams): RecipeFilter {
   const rating = firstValue(params[PARAM.rating]);
   if (rating && RATINGS.includes(rating)) filter.rating = rating;
 
+  const category = firstValue(params[PARAM.category]);
+  if (category && RECIPE_CATEGORIES.includes(category as RecipeCategory)) {
+    filter.category = category as RecipeCategory;
+  }
+
   if (isOn(params[PARAM.simple])) filter.simpleOnly = true;
   if (isOn(params[PARAM.reheatable])) filter.reheatableOnly = true;
 
@@ -88,6 +95,7 @@ export function buildRecipeQuery(filter: RecipeFilter): string {
   if (filter.maxKcal !== undefined) p.set(PARAM.maxKcal, String(filter.maxKcal));
   if (filter.maxMinutes !== undefined) p.set(PARAM.maxMinutes, String(filter.maxMinutes));
   if (filter.rating) p.set(PARAM.rating, filter.rating);
+  if (filter.category) p.set(PARAM.category, filter.category);
   if (filter.simpleOnly) p.set(PARAM.simple, "1");
   if (filter.reheatableOnly) p.set(PARAM.reheatable, "1");
   return p.toString();

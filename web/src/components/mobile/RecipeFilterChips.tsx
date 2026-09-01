@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 
+import { CATEGORY_LABELS, RECIPE_CATEGORIES } from "@/lib/domain";
 import type { RecipeFilter, RecipeTagCount } from "@/lib/domain";
 import { recipesHref, toggleField, toggleTag } from "@/lib/recipeFilterParams";
 
@@ -52,6 +53,18 @@ export function RecipeFilterChips({
 
   return (
     <div className="space-y-2">
+      <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1">
+        {RECIPE_CATEGORIES.map((c) => (
+          <Chip
+            key={c}
+            href={recipesHref(toggleField(filter, "category", c))}
+            active={filter.category === c}
+          >
+            {CATEGORY_LABELS[c]}
+          </Chip>
+        ))}
+      </div>
+
       {shown.length > 0 && (
         <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1">
           {shown.map(({ tag, count }) => {

@@ -144,6 +144,14 @@ describe("applyFilters", () => {
     ).toEqual(["r1"]);
     expect(applyFilters(all, { query: "curry", maxKcal: 100 })).toHaveLength(0);
   });
+
+  it("filtert nach Kategorie", () => {
+    const haupt = recipe({ id: "1", category: "hauptmahlzeit" });
+    const snack = recipe({ id: "2", category: "snack" });
+
+    expect(applyFilters([haupt, snack], { category: "snack" })).toEqual([snack]);
+    expect(applyFilters([haupt, snack], {})).toHaveLength(2);
+  });
 });
 
 describe("collectTags", () => {
