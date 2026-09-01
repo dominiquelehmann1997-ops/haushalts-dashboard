@@ -23,6 +23,9 @@ export type {
   RecipeIngredient,
   RecipeFilter,
   RecipeTagCount,
+  RecipeCategory,
   Note,
   PersonStyle,
 } from "./data";
+
+export { normalizeCategory, RECIPE_CATEGORIES, CATEGORY_LABELS } from "./data";

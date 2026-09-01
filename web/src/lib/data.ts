@@ -84,6 +84,29 @@ export interface RecipeOption {
  */
 export type Rating = "favorit" | "ok" | "selten";
 
+/** Kategorie eines Rezepts. Nur `hauptmahlzeit` kommt in den Wochenplan. */
+export type RecipeCategory = "hauptmahlzeit" | "snack" | "suesses";
+
+export const RECIPE_CATEGORIES: RecipeCategory[] = ["hauptmahlzeit", "snack", "suesses"];
+
+/** Anzeigename je Kategorie — für Chips, Formular und App gleichermaßen. */
+export const CATEGORY_LABELS: Record<RecipeCategory, string> = {
+  hauptmahlzeit: "Hauptmahlzeit",
+  snack: "Snack",
+  suesses: "Süßes",
+};
+
+/**
+ * Beliebigen Wert auf eine gültige Kategorie abbilden. Unbekanntes wird zur
+ * Hauptmahlzeit — ein Rezept ohne brauchbare Kategorie soll planbar bleiben,
+ * nicht unsichtbar werden.
+ */
+export function normalizeCategory(value: unknown): RecipeCategory {
+  return RECIPE_CATEGORIES.includes(value as RecipeCategory)
+    ? (value as RecipeCategory)
+    : "hauptmahlzeit";
+}
+
 /** Eine Zutatenzeile eines Rezepts, in der Reihenfolge des Rezepts. */
 export interface RecipeIngredient {
   id: string;
@@ -121,6 +144,7 @@ export interface Recipe {
   /** URL, unter der das Bild ausgeliefert wird; null = kein Bild. */
   imageUrl: string | null;
   archived: boolean;
+  category: RecipeCategory;
   ingredients: RecipeIngredient[];
 }
 
@@ -137,6 +161,8 @@ export interface RecipeFilter {
   rating?: string;
   simpleOnly?: boolean;
   reheatableOnly?: boolean;
+  /** Nur Rezepte dieser Kategorie. */
+  category?: RecipeCategory;
 }
 
 /** Ein Tag mit seiner Häufigkeit — für die Filter-Chips. */

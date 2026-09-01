@@ -33,6 +33,7 @@ function recipe(overrides: Partial<Recipe> = {}): Recipe {
     sourceUrl: null,
     imageUrl: null,
     archived: false,
+    category: "hauptmahlzeit",
     ingredients: [],
     ...overrides,
   };

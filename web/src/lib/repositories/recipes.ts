@@ -7,8 +7,10 @@
 
 import { prisma } from "@/lib/db";
 import { PrismaClient } from "@/generated/prisma/client";
+import { normalizeCategory } from "@/lib/domain";
 import type {
   Recipe,
+  RecipeCategory,
   RecipeFilter,
   RecipeIngredient,
   RecipeOption,
@@ -31,6 +33,7 @@ export interface RecipeInput {
   rating?: string;
   simple?: boolean;
   reheatable?: boolean;
+  category?: string;
   tags?: string[];
   servings?: number | null;
   prepMinutes?: number | null;
@@ -67,6 +70,7 @@ type RecipeRow = {
   sourceUrl: string | null;
   imagePath: string | null;
   archived: boolean;
+  category: string;
   ingredients: {
     id: string;
     name: string;
@@ -122,6 +126,7 @@ function toRecipe(row: RecipeRow): Recipe {
     sourceUrl: row.sourceUrl,
     imageUrl: imageUrlOf(row.imagePath),
     archived: row.archived,
+    category: normalizeCategory(row.category),
     ingredients: row.ingredients.map(
       (i): RecipeIngredient => ({
         id: i.id, name: i.name, amount: i.amount, unit: i.unit, section: i.section,
@@ -216,6 +221,7 @@ function scalarFields(input: RecipeInput) {
     steps: input.steps && input.steps.length > 0 ? JSON.stringify(input.steps) : null,
     notes: input.notes ?? null,
     sourceUrl: input.sourceUrl ?? null,
+    ...(input.category === undefined ? {} : { category: normalizeCategory(input.category) }),
   };
 }
 
@@ -323,6 +329,7 @@ export async function upsertImportedRecipe(
     reheatable: recipe.reheatable,
     tags: recipe.tags,
     servings: recipe.servings,
+    category: normalizeCategory(recipe.category),
     prepMinutes: recipe.prepMinutes,
     cookMinutes: recipe.cookMinutes,
     kcal: recipe.kcal,

@@ -32,6 +32,7 @@ function recipe(over: Partial<Recipe> = {}): Recipe {
     sourceUrl: null,
     imageUrl: null,
     archived: false,
+    category: "hauptmahlzeit",
     ingredients: [
       { id: "i1", name: "Kokosmilch", amount: "400", unit: "ml", section: null },
       { id: "i2", name: "Süßkartoffel", amount: "2", unit: null, section: null },

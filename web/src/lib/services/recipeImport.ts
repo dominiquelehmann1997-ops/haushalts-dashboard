@@ -10,7 +10,7 @@
 // Geschrieben wird hier nichts: `ImportedRecipe` geht an
 // `upsertImportedRecipe` (repositories/recipes.ts) und landet in der DB.
 
-import type { Rating } from "@/lib/domain";
+import type { Rating, RecipeCategory } from "@/lib/domain";
 
 /** Was aus der Seite geholt und in die DB übernommen wird. */
 export interface ImportedIngredient {
@@ -28,6 +28,8 @@ export interface ImportedRecipe {
   rating: Rating;
   simple: boolean;
   reheatable: boolean;
+  /** "hauptmahlzeit" | "snack" | "suesses"; aus der Extraktion geraten, im App-Preview korrigierbar. */
+  category: RecipeCategory;
   tags: string[];
   /** Quell-URL; `null` bei Rezepten ohne Webquelle (z.B. Claude-Ideen). */
   source: string | null;
@@ -509,6 +511,7 @@ export function toImportedRecipe(schema: Json, sourceUrl: string): ImportedRecip
     rating: "ok", // bewusst neutral: Bewertung vergibt der Haushalt selbst
     simple,
     reheatable: false,
+    category: "hauptmahlzeit", // vorläufig fest; ein späterer Task rät die Kategorie aus der Extraktion
     tags: tags.slice(0, 8),
     source: sourceUrl,
     imageUrl: pickImageUrl(schema.image, sourceUrl),

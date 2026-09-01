@@ -318,6 +318,7 @@ describe("recipes repository", () => {
         rating: "ok",
         simple: true,
         reheatable: false,
+        category: "hauptmahlzeit",
         tags: ["curry"],
         source: "https://example.org/curry",
         imageUrl: null,
@@ -455,6 +456,7 @@ describe("recipes repository", () => {
         rating: "ok",
         simple: true,
         reheatable: true,
+        category: "hauptmahlzeit",
         tags: ["vegetarisch"],
         source: null,
         imageUrl: null,
@@ -523,6 +525,24 @@ describe("recipes repository", () => {
       expect((await getRecipe(b.id, client))!.name).toBe("Рецепт Б");
       expect((await getRecipe(a.id, client))!.slug).toBeNull();
       expect((await getRecipe(b.id, client))!.slug).toBeNull();
+    });
+  });
+
+  describe("category", () => {
+    it("legt neue Rezepte als Hauptmahlzeit an", async () => {
+      const { id } = await createRecipe({ name: "Testgericht" }, client);
+      const recipe = await getRecipe(id, client);
+      expect(recipe?.category).toBe("hauptmahlzeit");
+    });
+
+    it("uebernimmt eine gesetzte Kategorie", async () => {
+      const { id } = await createRecipe({ name: "Testriegel", category: "snack" }, client);
+      expect((await getRecipe(id, client))?.category).toBe("snack");
+    });
+
+    it("faellt bei Unfug auf hauptmahlzeit zurueck", async () => {
+      const { id } = await createRecipe({ name: "Testunfug", category: "voelliger-quatsch" }, client);
+      expect((await getRecipe(id, client))?.category).toBe("hauptmahlzeit");
     });
   });
 });

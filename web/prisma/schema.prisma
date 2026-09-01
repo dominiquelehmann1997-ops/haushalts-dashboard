@@ -126,6 +126,9 @@ model Recipe {
   slug       String? @unique // stabiler Identitäts-Anker; null für handangelegte Alt-Rezepte
   archived   Boolean @default(false) // ausgemustert, aber ggf. noch von MealPlanEntry referenziert
 
+  /// "hauptmahlzeit" | "snack" | "suesses" — nur Hauptmahlzeiten landen im Wochenplan.
+  category String @default("hauptmahlzeit")
+
   // Kochansicht + Filter. Lagen bisher nur im Vault-Markdown und wurden beim
   // Ingest verworfen; der URL-Importer liefert sie längst mit.
   servings    Int? // Portionen, auf die sich `amount` und `kcal` beziehen

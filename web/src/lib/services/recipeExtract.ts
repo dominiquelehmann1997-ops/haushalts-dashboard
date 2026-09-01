@@ -305,6 +305,7 @@ export function toImportedFromExtraction(
     rating: "ok", // Haushaltsentscheidung, nicht Sache der Quelle
     simple: true,
     reheatable: false,
+    category: "hauptmahlzeit", // vorläufig fest; ein späterer Task rät die Kategorie aus der Extraktion
     tags: withVegetarianTag(e.tags ?? [], ingredients),
     source: sourceUrl,
     imageUrl: null, // aus Rohtext kommt kein Bild

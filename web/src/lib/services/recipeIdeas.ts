@@ -123,6 +123,7 @@ export function recipeIdeaToImported(idea: RecipeIdea): ImportedRecipe {
     rating: idea.rating,
     simple: idea.simple,
     reheatable: idea.reheatable,
+    category: "hauptmahlzeit", // vorläufig fest; ein späterer Task rät die Kategorie aus der Idee
     tags: idea.tags,
     source: null,
     imageUrl: null, // Claude liefert Text, kein Bild
