@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Prisma Model: OAuthToken](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
+- [README.md — Haushalts-Dashboard](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md)
 
 ## Audit Trail
 

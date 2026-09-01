@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Pure-mapper / thin-network-wrapper integration pattern](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts) (0 connections)
+- [Rezept-Importer Init-Prompt (ReciMe-Klon)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-importer-init-prompt.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/integrations/calendar/google.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts)
+- [docs/recipe-importer-init-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-importer-init-prompt.md)
 
 ## Audit Trail
 

@@ -1,26 +1,32 @@
 # Community 51
 
-> 5 nodes · cohesion 0.40
+> 11 nodes · cohesion 0.18
 
 ## Key Concepts
 
-- [availability.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L1) (4 connections)
-- [busy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L17) (1 connections)
-- [persons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L6) (1 connections)
-- [win()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L8) (1 connections)
-- [window](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts#L24) (1 connections)
+- [Dienstplan-bewusster Essensplan — Implementation Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L1) (10 connections)
+- [2026-06-09-dienstplan-bewusster-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L1) (1 connections)
+- [File Structure](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L17) (1 connections)
+- [Self-Review (durch den Plan-Autor bereits erfolgt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L1012) (1 connections)
+- [Task 1: `classifyShift` (reine Schicht-Klassifizierung)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L36) (1 connections)
+- [Task 2: `deriveDayConstraints` + Date-Helfer](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L121) (1 connections)
+- [Task 3: Schema-Migration (reheatable / reason / extraPortion) + Seed](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L319) (1 connections)
+- [Task 4: Constraint-bewusster `generateWeekPlan`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L405) (1 connections)
+- [Task 5: `getDomeShiftsForWeek` Repository + `localDateKey`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L676) (1 connections)
+- [Task 6: Verdrahtung (Action) + Anzeige (Domain + Widget)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L828) (1 connections)
+- [Task 7: Manuelle Verifikation im laufenden Dashboard](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md#L982) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[unknown]] (20 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\availability.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/availability.test.ts)
+- [docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 20 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [FreshnessOverride](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (0 connections)
+- [web/AGENTS.md — Safe Development Workflow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
+- [web/AGENTS.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md)
 
 ## Audit Trail
 

@@ -1,11 +1,10 @@
 # Database Client
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [client.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts#L1) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts#L7) (1 connections)
+- [vitest.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/vitest.config.ts#L1) (0 connections)
 
 ## Relationships
 
@@ -13,11 +12,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\bring\client.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\vitest.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/vitest.config.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [public/manifest.webmanifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/manifest.webmanifest) (0 connections)
+- [dom](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L4) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/manifest.webmanifest](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/manifest.webmanifest)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

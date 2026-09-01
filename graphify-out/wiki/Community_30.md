@@ -1,30 +1,37 @@
 # Community 30
 
-> 9 nodes · cohesion 0.25
+> 16 nodes · cohesion 0.12
 
 ## Key Concepts
 
-- [index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L1) (8 connections)
-- [baseInput()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L12) (2 connections)
-- [day()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L8) (2 connections)
-- [busy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L58) (1 connections)
-- [forecast](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L34) (1 connections)
-- [PHASE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L6) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L39) (1 connections)
-- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L27) (1 connections)
-- [window](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L57) (1 connections)
+- [tasks.write.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L1) (17 connections)
+- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L48) (1 connections)
+- [afterEntries](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L125) (1 connections)
+- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L34) (1 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L10) (1 connections)
+- [due](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L134) (1 connections)
+- [dues](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L162) (1 connections)
+- [findTaskByTitle()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L22) (1 connections)
+- [{ id }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L135) (1 connections)
+- [open](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L159) (1 connections)
+- [persons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L116) (1 connections)
+- [row](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L139) (1 connections)
+- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L32) (1 connections)
+- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L11) (1 connections)
+- [tomorrow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L170) (1 connections)
+- [updated](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts#L38) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\tasks.write.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.write.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 18 (100%)
+- EXTRACTED: 32 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

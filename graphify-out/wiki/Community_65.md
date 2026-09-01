@@ -1,27 +1,29 @@
 # Community 65
 
-> 4 nodes · cohesion 0.50
+> 7 nodes · cohesion 0.29
 
 ## Key Concepts
 
-- [Design: Tablet-Betrieb + Chore-Import](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (2 connections)
-- [Path A: Termux-Node-Server am Tablet](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (2 connections)
-- [Catch-up überfälliger Routinen + Aufgaben-Übernahme Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md) (1 connections)
-- [Hundefutter-Vorrats-Rechner (Follow-up)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (1 connections)
+- [bring-read-list.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L1) (6 connections)
+- [Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L11) (1 connections)
+- [env](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L14) (1 connections)
+- [envPath](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L13) (1 connections)
+- [items](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L24) (1 connections)
+- [m](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L16) (1 connections)
+- [require](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs#L10) (1 connections)
 
 ## Relationships
 
-- [[Community 68]] (6 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-22-catchup-uebernahme.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-22-catchup-uebernahme.md)
-- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\bring-read-list.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-read-list.mjs)
 
 ## Audit Trail
 
-- EXTRACTED: 4 (67%)
-- INFERRED: 2 (33%)
+- EXTRACTED: 12 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

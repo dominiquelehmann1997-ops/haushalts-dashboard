@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Handy-Steuerungsoberfläche Plan (/mobile MVP)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md) (0 connections)
+- [Warum nicht Tailscale — Android 16 netlink-Blocker](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-17-handy-steuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md)
+- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md)
 
 ## Audit Trail
 

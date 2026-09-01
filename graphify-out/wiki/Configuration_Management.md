@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [sw-register.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx#L1) (1 connections)
-- [ServiceWorkerRegister()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx#L9) (1 connections)
+- [icons.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx#L1) (1 connections)
+- [CheckIcon()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx#L3) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\sw-register.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\icons.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx)
 
 ## Audit Trail
 

@@ -1,12 +1,14 @@
 # Community 70
 
-> 3 nodes · cohesion 0.67
+> 5 nodes · cohesion 0.50
 
 ## Key Concepts
 
-- [ui.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx#L1) (2 connections)
-- [Card()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx#L4) (1 connections)
-- [p](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx#L57) (1 connections)
+- [globalSetup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L1) (4 connections)
+- [globalSetup()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L22) (2 connections)
+- [removeIfExists()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L16) (2 connections)
+- [TEST_DATABASE_URL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L14) (1 connections)
+- [TEST_DB_PATH](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L13) (1 connections)
 
 ## Relationships
 
@@ -14,11 +16,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\ui.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/ui.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\test\globalSetup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

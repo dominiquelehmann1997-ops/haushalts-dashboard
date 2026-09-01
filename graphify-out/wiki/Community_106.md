@@ -1,23 +1,22 @@
 # Community 106
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Einkauf & Bring!-Sync (Push)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
-- [Essensplan stufenweise (Rezeptbuch → präferenz-lernend)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
+- [enums.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/enums.ts#L1) (0 connections)
 
 ## Relationships
 
-- [[Community 107]] (2 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\enums.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/enums.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

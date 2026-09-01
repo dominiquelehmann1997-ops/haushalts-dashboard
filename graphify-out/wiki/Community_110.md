@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [next-env.d.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next-env.d.ts#L1) (0 connections)
+- [Ingredient.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/models/Ingredient.ts#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\next-env.d.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next-env.d.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\models\Ingredient.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/models/Ingredient.ts)
 
 ## Audit Trail
 

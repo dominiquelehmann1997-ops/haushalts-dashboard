@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [MealPlanEntry.recipeId made nullable to support skip-day (no meal, no ingredients)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql) (0 connections)
+- [@types/web-push](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L38) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623130810_meal_skip_day_nullable_recipe/migration.sql)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

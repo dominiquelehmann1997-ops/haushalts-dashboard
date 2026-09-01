@@ -4,17 +4,18 @@
 
 ## Key Concepts
 
-- [phase.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L1) (2 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L9) (1 connections)
-- [phase](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts#L21) (1 connections)
+- [next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts#L1) (2 connections)
+- [next](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L28) (1 connections)
+- [nextConfig](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts#L3) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 30]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\phase.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/phase.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

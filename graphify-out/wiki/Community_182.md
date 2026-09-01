@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Catch-up fuer ueberfaellige Routinen vor planDueTasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.ts#L1-4) (0 connections)
+- [„Vault = Wahrheit, DB = Cache"](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-import-contract.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/overdueCatchup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.ts)
+- [docs/recipe-vault-import-contract.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-import-contract.md)
 
 ## Audit Trail
 

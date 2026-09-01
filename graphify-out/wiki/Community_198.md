@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [https://cockpit.domelehmann.org](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md) (0 connections)
+- [Design — Einkauf nach Haltbarkeit, gestaffelt auf Bring (D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md)
+- [docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md)
 
 ## Audit Trail
 

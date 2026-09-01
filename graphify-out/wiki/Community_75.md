@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- [projects.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts#L1) (2 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts#L9) (1 connections)
-- [progress](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts#L21) (1 connections)
+- [SettingsView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/SettingsView.tsx#L1) (2 connections)
+- [SectionTitle()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/SettingsView.tsx#L8) (1 connections)
+- [SettingsView()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/SettingsView.tsx#L16) (1 connections)
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\projects.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/projects.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\mobile\SettingsView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/SettingsView.tsx)
 
 ## Audit Trail
 

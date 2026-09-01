@@ -1,37 +1,45 @@
 # Community 20
 
-> 12 nodes · cohesion 0.24
+> 23 nodes · cohesion 0.09
 
 ## Key Concepts
 
-- [ingestVault()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/recipeIngest.ts#L25) (9 connections)
-- [recipeVault.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.ts#L1) (5 connections)
-- [parseRecipeMarkdown()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.ts#L76) (4 connections)
-- [ingestVaultIfConfigured()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/recipeIngest.ts#L121) (3 connections)
-- [ingestVaultAction()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/recipes.ts#L10) (3 connections)
-- [parseIngredients()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.ts#L48) (3 connections)
-- [slugFromFilename()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.ts#L35) (3 connections)
-- [recipeIngest.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/recipeIngest.ts#L1) (2 connections)
-- [toStringOrNull()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.ts#L43) (2 connections)
-- [recipes.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/recipes.ts#L1) (1 connections)
-- [Vault-Archivierungs-Logik (Orphan-Archivierung)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/recipeIngest.ts) (1 connections)
-- [RATINGS](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.ts#L10) (1 connections)
+- [prismaNamespaceBrowser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L1) (22 connections)
+- [AccountEntryScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L144) (1 connections)
+- [AnyNull](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L50) (1 connections)
+- [CalendarEventScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L127) (1 connections)
+- [DbNull](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L36) (1 connections)
+- [Decimal](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L23) (1 connections)
+- [IngredientScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L186) (1 connections)
+- [JsonNull](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L43) (1 connections)
+- [MealPlanEntryScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L197) (1 connections)
+- [ModelName](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L53) (1 connections)
+- [NoteScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L225) (1 connections)
+- [NullsOrder](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L268) (1 connections)
+- [NullTypes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L26) (1 connections)
+- [OAuthTokenScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L236) (1 connections)
+- [PersonScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L82) (1 connections)
+- [PhaseSettingScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L157) (1 connections)
+- [ProjectScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L118) (1 connections)
+- [PushSubscriptionScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L248) (1 connections)
+- [RecipeScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L171) (1 connections)
+- [ShoppingItemScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L210) (1 connections)
+- [SortOrder](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L260) (1 connections)
+- [TaskScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L93) (1 connections)
+- [TransactionIsolationLevel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L75) (1 connections)
 
 ## Relationships
 
-- [[Community 8]] (1 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\actions\recipes.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/recipes.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\recipeIngest.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/recipeIngest.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\recipeVault.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.ts)
-- [web/src/lib/repositories/recipeIngest.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/recipeIngest.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\internal\prismaNamespaceBrowser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 22 (59%)
-- INFERRED: 15 (41%)
+- EXTRACTED: 44 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

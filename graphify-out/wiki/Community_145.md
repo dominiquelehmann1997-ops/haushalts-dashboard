@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [public/icon.svg (source icon)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/icon.svg) (0 connections)
+- [eslint-config-next](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L40) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/icon.svg](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/icon.svg)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

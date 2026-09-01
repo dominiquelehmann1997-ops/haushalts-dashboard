@@ -1,34 +1,45 @@
 # Community 19
 
-> 13 nodes · cohesion 0.15
+> 24 nodes · cohesion 0.08
 
 ## Key Concepts
 
-- [shoppingBatch.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L1) (12 connections)
-- [{ calls, push }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L34) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L11) (1 connections)
-- [failingPush()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L67) (1 connections)
-- [fakePush()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L24) (1 connections)
-- [frisch](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L43) (1 connections)
-- [haltbar](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L39) (1 connections)
-- [{ push }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L78) (1 connections)
-- [pushed](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L57) (1 connections)
-- [res](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L35) (1 connections)
-- [rows](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L53) (1 connections)
-- [second](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L80) (1 connections)
-- [specByName](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts#L56) (1 connections)
+- [overdueCatchup.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L1) (24 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L10) (1 connections)
+- [dome](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L46) (1 connections)
+- [fu](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L86) (1 connections)
+- [future](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L81) (1 connections)
+- [makeRoutine()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L22) (1 connections)
+- [movedParent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L121) (1 connections)
+- [newer](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L61) (1 connections)
+- [newerRow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L70) (1 connections)
+- [openChild](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L126) (1 connections)
+- [parent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L60) (1 connections)
+- [parentRow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L69) (1 connections)
+- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L50) (1 connections)
+- [routine](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L93) (1 connections)
+- [rows](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L134) (1 connections)
+- [s](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L85) (1 connections)
+- [second](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L143) (1 connections)
+- [shopping](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L79) (1 connections)
+- [{ start, end }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L53) (1 connections)
+- [t](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L47) (1 connections)
+- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L11) (1 connections)
+- [todayTask](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L80) (1 connections)
+- [todo](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L94) (1 connections)
+- [updated](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts#L52) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\shoppingBatch.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingBatch.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\overdueCatchup.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/overdueCatchup.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 24 (100%)
+- EXTRACTED: 47 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

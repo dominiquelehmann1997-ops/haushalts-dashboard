@@ -1,30 +1,37 @@
 # Clothing UV Advisor
 
-> 9 nodes · cohesion 0.22
+> 16 nodes · cohesion 0.12
 
 ## Key Concepts
 
-- [freshnessOverride.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L1) (8 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L9) (1 connections)
-- [item](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L21) (1 connections)
-- [manual](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L54) (1 connections)
-- [map](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L68) (1 connections)
-- [next](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L25) (1 connections)
-- [override](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L30) (1 connections)
-- [uncategorized](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L55) (1 connections)
-- [updated](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts#L28) (1 connections)
+- [Design — Essensplan-Entwurf + Abnicken/Ändern (Roadmap-Schritt C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L1) (9 connections)
+- [Architektur](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L47) (7 connections)
+- [2026-06-09-essensplan-entwurf-freigabe-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L1) (1 connections)
+- [Bewusst außerhalb des Scopes (YAGNI für C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L171) (1 connections)
+- [Datenmodell (Ansatz A — `status`-Feld)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L27) (1 connections)
+- [Einkaufs-/Push-Naht (batch-vorbereitet)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L91) (1 connections)
+- [Fehlerfälle](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L132) (1 connections)
+- [Festgelegte Entscheidungen (aus Brainstorming)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L15) (1 connections)
+- [Pure Logik](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L49) (1 connections)
+- [Repository](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L81) (1 connections)
+- [Schritt D — Anforderung & Naht (bewusst außerhalb C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L156) (1 connections)
+- [Server Actions (`src/app/actions/meals.ts`)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L100) (1 connections)
+- [Services](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L63) (1 connections)
+- [Tests](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L139) (1 connections)
+- [UI](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L115) (1 connections)
+- [Ziel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md#L6) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 58]] (30 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\freshnessOverride.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/freshnessOverride.test.ts)
+- [docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 16 (100%)
+- EXTRACTED: 30 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

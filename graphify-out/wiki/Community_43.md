@@ -1,27 +1,33 @@
 # Community 43
 
-> 6 nodes · cohesion 0.33
+> 12 nodes · cohesion 0.17
 
 ## Key Concepts
 
-- [TasksView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L1) (5 connections)
-- [[addOpen, setAddOpen]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L30) (1 connections)
-- [complete()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L174) (1 connections)
-- [[pickOpen, setPickOpen]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L31) (1 connections)
-- [run()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L24) (1 connections)
-- [[tasks, applyOpt]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx#L15) (1 connections)
+- [Global Constraints](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L11) (8 connections)
+- [C2 Handy-Push (Essensplan-Entwurf) Implementation Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L1) (4 connections)
+- [2026-06-17-c2-handy-push-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L1) (1 connections)
+- [Manuelle End-to-End-Verifikation (nach allen Tasks)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L744) (1 connections)
+- [Self-Review (vom Plan-Autor durchgeführt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L756) (1 connections)
+- [Task 1: `PushSubscription`-Modell, Migration & Repository](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L23) (1 connections)
+- [Task 2: `web-push`-Dependency + `pushNotify`-Service](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L192) (1 connections)
+- [Task 3: Server Actions (subscribe/unsubscribe)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L394) (1 connections)
+- [Task 4: Service Worker — `push` + `notificationclick`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L463) (1 connections)
+- [Task 5: Versand in `generatePlanAction` einhängen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L535) (1 connections)
+- [Task 6: Client `PushSetupControl` + Einbindung](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L581) (1 connections)
+- [Task 7: VAPID-Keys & Betrieb dokumentieren](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md#L709) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Database Client]] (22 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\mobile\TasksView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/TasksView.tsx)
+- [docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
+- EXTRACTED: 22 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

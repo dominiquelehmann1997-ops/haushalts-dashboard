@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Sync-as-snapshot pruning rationale](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts) (0 connections)
+- [Baby-Wetter / Kleidungsempfehlung Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/calendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts)
+- [docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md)
 
 ## Audit Trail
 

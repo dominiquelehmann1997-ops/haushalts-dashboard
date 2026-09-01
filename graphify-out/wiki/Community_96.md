@@ -1,11 +1,10 @@
 # Community 96
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [a](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.test.ts#L7) (1 connections)
-- [age.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.test.ts#L1) (1 connections)
+- [toggleShoppingAction](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/shopping.ts#L19) (0 connections)
 
 ## Relationships
 
@@ -13,11 +12,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\age.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.test.ts)
+- [web/src/app/actions/shopping.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/shopping.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

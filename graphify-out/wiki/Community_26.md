@@ -1,31 +1,39 @@
 # Community 26
 
-> 10 nodes · cohesion 0.20
+> 18 nodes · cohesion 0.11
 
 ## Key Concepts
 
-- [chores.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L1) (9 connections)
-- [einkauf](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L26) (1 connections)
-- [futter](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L27) (1 connections)
-- [gassi](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L20) (1 connections)
-- [gross](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L54) (1 connections)
-- [klein](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L55) (1 connections)
-- [original](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L60) (1 connections)
-- [rasen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L13) (1 connections)
-- [tasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L45) (1 connections)
-- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts#L5) (1 connections)
+- [tasks.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L1) (18 connections)
+- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L80) (1 connections)
+- [byText](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L35) (1 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L17) (1 connections)
+- [count](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L55) (1 connections)
+- [dateKey()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L9) (1 connections)
+- [dayStart](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L61) (1 connections)
+- [emely](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L133) (1 connections)
+- [entries](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L150) (1 connections)
+- [expected](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L83) (1 connections)
+- [makeRoutine()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L175) (1 connections)
+- [person](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L64) (1 connections)
+- [successors](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L196) (1 connections)
+- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L65) (1 connections)
+- [tasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L30) (1 connections)
+- [titles](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L219) (1 connections)
+- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L18) (1 connections)
+- [updated](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts#L158) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\chores.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/chores.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\tasks.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 18 (100%)
+- EXTRACTED: 35 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

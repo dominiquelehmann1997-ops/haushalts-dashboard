@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- ["Aufschieben" = nächster sinnvoller Tag](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md) (0 connections)
+- [PWA + Tailscale + Kiosk Autostart — Implementation Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md)
+- [docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-15-pwa-tailscale-kiosk.md)
 
 ## Audit Trail
 

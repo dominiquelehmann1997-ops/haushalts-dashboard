@@ -1,12 +1,13 @@
 # Community 72
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.50
 
 ## Key Concepts
 
-- [fairness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts#L1) (2 connections)
-- [balances](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts#L21) (1 connections)
-- [persons](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts#L18) (1 connections)
+- [db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L1) (3 connections)
+- [createPrismaClient()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L13) (1 connections)
+- [globalForPrisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L9) (1 connections)
+- [prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L21) (1 connections)
 
 ## Relationships
 
@@ -14,11 +15,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\fairness.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 6 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

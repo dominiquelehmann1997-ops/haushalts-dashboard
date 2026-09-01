@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [ShoppingItem.spec added to carry quantity for Bring shopping list integration](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623163000_shopping_item_spec/migration.sql) (0 connections)
+- [eslint](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L39) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/prisma/migrations/20260623163000_shopping_item_spec/migration.sql](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/migrations/20260623163000_shopping_item_spec/migration.sql)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

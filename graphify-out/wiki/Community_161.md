@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Prisma Model: CalendarEvent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
+- [**/*.mts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L25) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

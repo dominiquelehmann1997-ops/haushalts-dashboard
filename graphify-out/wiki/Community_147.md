@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Idempotent seed = single source of truth for fixtures (CLI + test harness)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts) (0 connections)
+- [tailwindcss](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L43) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/prisma/seed.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

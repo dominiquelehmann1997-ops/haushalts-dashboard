@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Overnight shift busy-window correction (lookback day)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts) (0 connections)
+- [Backlog: Handy-Steuerung/Essensplan/Einkauf Roadmap](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/calendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/calendar.ts)
+- [docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md)
 
 ## Audit Trail
 

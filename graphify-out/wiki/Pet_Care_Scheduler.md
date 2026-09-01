@@ -1,30 +1,38 @@
 # Pet Care Scheduler
 
-> 9 nodes · cohesion 0.22
+> 17 nodes · cohesion 0.12
 
 ## Key Concepts
 
-- [TaskActionMenu.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L1) (8 connections)
-- [itemCount](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L53) (1 connections)
-- [left](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L59) (1 connections)
-- [MENU_HEIGHT](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L4) (1 connections)
-- [MENU_MARGIN](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L5) (1 connections)
-- [MENU_WIDTH](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L3) (1 connections)
-- [menuHeight](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L56) (1 connections)
-- [MenuItem()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L7) (1 connections)
-- [top](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx#L63) (1 connections)
+- [Handy-Vollsteuerung Implementation Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L1) (16 connections)
+- [2026-06-18-handy-vollsteuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L1) (1 connections)
+- [File Structure](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L26) (1 connections)
+- [Global Constraints](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L11) (1 connections)
+- [Self-Review](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L1554) (1 connections)
+- [Task 10: Einkauf page (`ShoppingView`)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L1219) (1 connections)
+- [Task 11: Mehr page (`MoreView` + `NotesEditor`)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L1327) (1 connections)
+- [Task 12: Re-skin the Essen page header + final sweep](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L1513) (1 connections)
+- [Task 1: `learnedInterval` pure function](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L55) (1 connections)
+- [Task 2: Wire recurrence into completion (restart-from-completion + learned interval)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L143) (1 connections)
+- [Task 3: `createTask` + `listOpenTasks` repository + `addTaskAction`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L299) (1 connections)
+- [Task 4: Notes CRUD repository + actions](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L469) (1 connections)
+- [Task 5: Shared `revalidateDashboard()` covering `/mobile/*`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L626) (1 connections)
+- [Task 6: Re-skin the mobile layout shell + `PageHeader`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L677) (1 connections)
+- [Task 7: 5-tab cream `MobileNavBar`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L773) (1 connections)
+- [Task 8: Heute page (`TodayView`)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L834) (1 connections)
+- [Task 9: Aufgaben page (`TasksView`) — list, quick-add, complete-existing picker, defer](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md#L990) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 54]] (32 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\TaskActionMenu.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/TaskActionMenu.tsx)
+- [docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md)
 
 ## Audit Trail
 
-- EXTRACTED: 16 (100%)
+- EXTRACTED: 32 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

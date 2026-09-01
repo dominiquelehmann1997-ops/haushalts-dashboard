@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [WeatherGlyph condition coupling fix](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx) (0 connections)
+- [.next/dev/types/**/*.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L25) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/icons.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/icons.tsx)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

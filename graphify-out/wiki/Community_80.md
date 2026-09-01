@@ -1,23 +1,24 @@
 # Community 80
 
-> 2 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L1) (1 connections)
-- [eslintConfig](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L5) (1 connections)
+- [AGENTS.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md#L1) (2 connections)
+- [🛡️ Safe Development Workflow (Laufender Betrieb vs. Entwicklung)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md#L7) (1 connections)
+- [This is NOT the Next.js you know](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md#L2) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[VPN tunneling]] (4 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs)
+- [web/AGENTS.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Recency damping for meal plan weighting (Feature A)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts) (0 connections)
+- [Einkauf Haltbarkeit-Batching Plan (D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/meals.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts)
+- [docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md)
 
 ## Audit Trail
 

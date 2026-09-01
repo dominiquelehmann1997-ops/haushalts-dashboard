@@ -1,29 +1,37 @@
 # Community 47
 
-> 6 nodes · cohesion 0.33
+> 11 nodes · cohesion 0.18
 
 ## Key Concepts
 
-- [Haushalts-Dashboard Design-Spezifikation](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (3 connections)
-- [Elternzeit-/Phasen-Modus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (2 connections)
-- [Verteil-Engine Fairness-Konto](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (2 connections)
-- [Design — Dienstplan-bewusster Essensplan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md) (1 connections)
-- [Konzeptionelles Datenmodell (Person/Aufgabe/Projekt/Konto-Buchung/Rezept/...)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
-- [Spontan-Nachtrag erledigter Aufgaben](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md) (1 connections)
+- [Dashboard (tablet root component)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx#L60) (7 connections)
+- [useSunTheme() [tablet auto dark/light hook]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx#L25) (2 connections)
+- [Header (tablet topbar)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/header.tsx#L26) (2 connections)
+- [ThemeToggle (mobile light/dark/auto switch)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/ThemeToggle.tsx#L29) (2 connections)
+- [completeTaskByAction](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/tasks.ts) (1 connections)
+- [completeTaskByBothAction](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/tasks.ts) (1 connections)
+- [deferTaskAction](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/tasks.ts) (1 connections)
+- [failTaskAction](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/tasks.ts) (1 connections)
+- [toggleTaskAction](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/tasks.ts) (1 connections)
+- [useClock() hook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/header.tsx#L8) (1 connections)
+- [TaskRow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx#L10) (1 connections)
 
 ## Relationships
 
-- [[Community 50]] (10 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md)
-- [docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md)
+- [web/src/app/actions/tasks.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/tasks.ts)
+- [web/src/components/dashboard.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx)
+- [web/src/components/header.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/header.tsx)
+- [web/src/components/mobile/ThemeToggle.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/ThemeToggle.tsx)
+- [web/src/components/tiles.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (80%)
-- INFERRED: 2 (20%)
+- EXTRACTED: 14 (70%)
+- INFERRED: 6 (30%)
 - AMBIGUOUS: 0 (0%)
 
 ---

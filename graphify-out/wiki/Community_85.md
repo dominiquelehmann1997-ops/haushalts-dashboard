@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [AddDoneInline()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneInline.tsx#L7) (1 connections)
-- [AddDoneInline.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneInline.tsx#L1) (1 connections)
+- [client.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/client.ts#L1) (1 connections)
+- [PrismaClient](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/client.ts#L40) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\AddDoneInline.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneInline.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\client.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/client.ts)
 
 ## Audit Trail
 

@@ -1,36 +1,44 @@
 # Community 21
 
-> 12 nodes · cohesion 0.17
+> 23 nodes · cohesion 0.09
 
 ## Key Concepts
 
-- [Dashboard Roadmap: Handy-Steuerung, Essensplan, Einkauf](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (3 connections)
-- [Step B: Dienstplan-bewusster Essensplan (erledigt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (3 connections)
-- [Step C1: Essensplan-Entwurf + Abnicken/Ändern (erledigt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (3 connections)
-- [Step D1: Haltbarkeits-Batching, gestaffelt auf Bring (erledigt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (3 connections)
-- [Step C2: Benachrichtigung aufs Handy / Web-Push (erledigt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (2 connections)
-- [Step D2: Einkaufstermine 'auf dem Weg' (offen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (2 connections)
-- [Plan: Dienstplan-bewusster Essensplan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md) (1 connections)
-- [Plan: Einkauf nach Haltbarkeit, gestaffelt auf Bring (D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md) (1 connections)
-- [Plan: Essensplan-Entwurf + Abnicken/Ändern (C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md) (1 connections)
-- [Step A: Dienst-Zeiten + Schlaf (erledigt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (1 connections)
-- [Step C3: Automatischer Auslöser (offen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (1 connections)
-- [Step D3: Einkauf als verteilte Aufgabe (offen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md) (1 connections)
+- [routineTemplates.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L1) (23 connections)
+- [base](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L375) (1 connections)
+- [child](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L134) (1 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L22) (1 connections)
+- [DAY_MS](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L13) (1 connections)
+- [dome](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L439) (1 connections)
+- [done](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L247) (1 connections)
+- [due](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L319) (1 connections)
+- [entry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L453) (1 connections)
+- [found](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L97) (1 connections)
+- [{ id }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L332) (1 connections)
+- [longAgo](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L283) (1 connections)
+- [makeChain()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L34) (1 connections)
+- [mine](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L71) (1 connections)
+- [moved](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L417) (1 connections)
+- [open](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L263) (1 connections)
+- [parent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L55) (1 connections)
+- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L430) (1 connections)
+- [row](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L196) (1 connections)
+- [rows](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L152) (1 connections)
+- [templates](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L70) (1 connections)
+- [titles](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L113) (1 connections)
+- [todayMidnight()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts#L15) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-dashboard-roadmap-handy-steuerung-essensplan.md)
-- [docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md)
-- [docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-einkauf-haltbarkeit-batching.md)
-- [docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\routineTemplates.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/routineTemplates.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 22 (100%)
+- EXTRACTED: 45 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

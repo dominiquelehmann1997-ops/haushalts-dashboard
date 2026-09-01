@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Pure type contract (no db/prisma/next imports)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts) (0 connections)
+- [Haushalts-Dashboard Umsetzungsplan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/engine/types.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts)
+- [docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-07-haushalts-dashboard-umsetzung.md)
 
 ## Audit Trail
 

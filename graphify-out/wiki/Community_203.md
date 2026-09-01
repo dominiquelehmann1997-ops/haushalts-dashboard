@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Note](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (0 connections)
+- [Handy-Vollsteuerung (Mobile Control v2) — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
+- [docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md)
 
 ## Audit Trail
 

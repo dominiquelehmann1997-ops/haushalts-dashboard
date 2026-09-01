@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Cloudflare named tunnel chosen over Tailscale (Android 16 blocks netlink for non-root)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/scripts/tablet-boot.sh) (0 connections)
+- [@types/react](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L36) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [scripts/tablet-boot.sh](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/scripts/tablet-boot.sh)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

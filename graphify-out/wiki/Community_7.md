@@ -1,55 +1,53 @@
 # Community 7
 
-> 33 nodes · cohesion 0.09
+> 68 nodes · cohesion 0.03
 
 ## Key Concepts
 
-- [GET()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L31) (12 connections)
-- [google.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L1) (8 connections)
-- [syncCalendar()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts#L51) (7 connections)
-- [googleAuth.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L1) (6 connections)
-- [fetchEvents()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L145) (6 connections)
-- [freshness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L1) (5 connections)
-- [configuredCalendars()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts#L20) (5 connections)
-- [resolveFreshness()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L56) (5 connections)
-- [mapGoogleEvents()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L99) (5 connections)
-- [runSync()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L10) (5 connections)
-- [parseEventTime()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L53) (4 connections)
-- [createOAuth2Client()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L24) (4 connections)
-- [route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L1) (3 connections)
-- [calendarSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts#L1) (3 connections)
-- [normalizeIngredientName()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L47) (3 connections)
-- [exchangeCode()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L63) (3 connections)
-- [getAccessToken()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L98) (3 connections)
-- [getAuthUrl()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts#L43) (3 connections)
-- [main()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/syncCalendar.ts#L8) (3 connections)
-- [classifyFreshness()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts#L41) (2 connections)
-- [deriveKind()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L76) (2 connections)
-- [derivePersonKey()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L69) (2 connections)
-- [toRfc3339()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts#L129) (2 connections)
-- [POST()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L35) (2 connections)
-- [syncCalendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/syncCalendar.ts#L1) (1 connections)
-- *... and 8 more nodes in this community*
+- [Handy-Vollsteuerung (Mobile Control v2)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md#L1) (12 connections)
+- [Sanftes Lernen — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md#L1) (11 connections)
+- [Rezepte-Vault V1 Implementation Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L1) (10 connections)
+- [Rezepte-Vault (Obsidian) — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md#L1) (10 connections)
+- [Handy-Steuerungsoberfläche (Mobile Control)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md#L1) (6 connections)
+- [Komponenten](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md#L54) (5 connections)
+- [Abschnitt 3 — Import-Weg (drei Stufen, nach Aufwand/Kosten gestaffelt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md#L74) (4 connections)
+- [2026-06-10-sanftes-lernen-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md#L1) (4 connections)
+- [Neues Backend](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md#L75) (4 connections)
+- [2026-06-10-rezepte-vault-v1.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L1) (3 connections)
+- [2026-06-10-rezepte-vault-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md#L1) (3 connections)
+- [Feature C — Frische/Einkauf](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md#L83) (3 connections)
+- [2026-06-18-handy-vollsteuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md#L1) (3 connections)
+- [Zubereitung](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L819) (2 connections)
+- [2026-06-17-handy-steuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md#L1) (2 connections)
+- [Architektur & Routing](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md#L29) (2 connections)
+- [Self-Review (vom Plan-Autor durchgeführt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L884) (1 connections)
+- [Task 1: `gray-matter`-Abhängigkeit hinzufügen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L19) (1 connections)
+- [Task 2: Schema-Felder `slug`, `archived`, `rating` am `Recipe`-Cache](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L49) (1 connections)
+- [Task 3: Reine Parse-Funktionen `slugFromFilename` + `parseRecipeMarkdown`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L109) (1 connections)
+- [Task 4: Ingest-Repository `ingestVault`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L338) (1 connections)
+- [Task 5: Server-Action `ingestVaultAction`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L624) (1 connections)
+- [Task 6: UI — `VaultIngestControl` + Einbau ins Dashboard](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L671) (1 connections)
+- [Task 7: Template + `RECIPE_VAULT_PATH` dokumentieren](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L780) (1 connections)
+- [Task 8: Volle Test-Suite + Abschluss-Verifikation](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md#L857) (1 connections)
+- *... and 43 more nodes in this community*
 
 ## Relationships
 
-- [[Community 5]] (1 shared connections)
+- [[unknown]] (111 shared connections)
+- [[Community 85]] (25 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\prisma\syncCalendar.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/syncCalendar.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\auth\google\callback\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/auth/google/callback/route.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\auth\google\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/auth/google/route.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\sync\calendar\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\google.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\googleAuth.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/googleAuth.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\calendarSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/calendarSync.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\freshness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/freshness.ts)
+- [docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md)
+- [docs/superpowers/specs/2026-06-10-rezepte-vault-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md)
+- [docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-sanftes-lernen-design.md)
+- [docs/superpowers/specs/2026-06-17-handy-steuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md)
+- [docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 79 (71%)
-- INFERRED: 33 (29%)
+- EXTRACTED: 136 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

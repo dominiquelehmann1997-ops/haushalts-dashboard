@@ -209,3 +209,19 @@
 | 204 | Community 204 | Represents OAuth 2.0 access tokens for authenticating API requests. |
 | 205 | Community 205 |  |
 | 206 | Community 206 | Handles storing and managing client push subscription details for delivering targeted push messages. |
+| 207 | Community 207 |  |
+| 208 | Community 208 |  |
+| 209 | Community 209 |  |
+| 210 | Community 210 |  |
+| 211 | Community 211 |  |
+| 212 | Community 212 |  |
+| 213 | Community 213 |  |
+| 214 | Community 214 |  |
+| 215 | Community 215 |  |
+| 216 | Community 216 |  |
+| 217 | Community 217 |  |
+| 218 | Community 218 |  |
+| 219 | Community 219 |  |
+| 220 | Community 220 |  |
+| 221 | Community 221 |  |
+| 222 | Community 222 |  |

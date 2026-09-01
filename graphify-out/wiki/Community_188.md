@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Handy-Vollsteuerung Plan (/mobile full control)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md) (0 connections)
+- [better-sqlite3 Driver-Adapter umgeht Rust-Query-Engine auf Android](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-18-handy-vollsteuerung.md)
+- [docs/tablet-termux-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md)
 
 ## Audit Trail
 

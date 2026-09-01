@@ -2,35 +2,35 @@
   "hotspots": [
     {
       "label": "seedDatabase()",
-      "risk": 0.512,
+      "risk": 0.582,
       "type": "FUNCTION"
     },
     {
       "label": "PushSetupControl()",
-      "risk": 0.43,
+      "risk": 0.425,
       "type": "FUNCTION"
     },
     {
-      "label": "conditionForCode()",
-      "risk": 0.347,
+      "label": "vitest",
+      "risk": 0.412,
+      "type": "UNKNOWN"
+    },
+    {
+      "label": "recipeToMarkdown()",
+      "risk": 0.408,
       "type": "FUNCTION"
     },
     {
-      "label": "labelForCode()",
-      "risk": 0.335,
-      "type": "FUNCTION"
-    },
-    {
-      "label": "Dashboard()",
-      "risk": 0.292,
+      "label": "validateRoutineFields()",
+      "risk": 0.403,
       "type": "FUNCTION"
     }
   ],
   "blast_radius": {
-    "map": 37,
-    "revalidateDashboard()": 25,
-    "GET()": 12,
-    "dayBounds()": 12,
-    "rerollDraftDay()": 11
+    "vitest": 58,
+    "map": 48,
+    "filter": 33,
+    "revalidateDashboard()": 21,
+    "GET()": 20
   }
 }

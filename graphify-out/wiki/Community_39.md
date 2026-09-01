@@ -1,31 +1,34 @@
 # Community 39
 
-> 7 nodes · cohesion 0.29
+> 12 nodes · cohesion 0.21
 
 ## Key Concepts
 
-- [Isolierte Entwicklung via git-Worktree (niemals main+Prod-DB direkt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md) (3 connections)
-- [Catch-up überfälliger Chores + Aufgaben-Übernahme Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md) (2 connections)
-- [Google Kalender — Termine, Verteilung & Sync Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md) (2 connections)
-- [web/AGENTS.md — Safe Development Workflow](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md) (2 connections)
-- [Aufgaben-Übernahme: Gutschrift an Erlediger statt Zugewiesenem](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md) (1 connections)
-- [Hybrid Tageskapazität (08:00-22:00 statt Zeitfenster pro Task)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md) (1 connections)
-- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md) (1 connections)
+- [route.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts#L1) (11 connections)
+- [route.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/parse/route.test.ts#L1) (5 connections)
+- [original](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/parse/route.test.ts#L10) (2 connections)
+- [post()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/parse/route.test.ts#L22) (2 connections)
+- [res](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/parse/route.test.ts#L35) (2 connections)
+- [TOKEN](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/parse/route.test.ts#L9) (2 connections)
+- [emoji](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts#L116) (1 connections)
+- [fehlt](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts#L108) (1 connections)
+- [leer](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts#L104) (1 connections)
+- [ohneName](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts#L98) (1 connections)
+- [REZEPT](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts#L50) (1 connections)
+- [satzzeichen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts#L125) (1 connections)
 
 ## Relationships
 
-- [[Community 42]] (12 shared connections)
+- [[Community 37]] (2 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md)
-- [docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-22-catchup-uebernahme-design.md)
-- [web/AGENTS.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/AGENTS.md)
-- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\recipes\import\route.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/import/route.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\recipes\parse\route.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/recipes/parse/route.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
+- EXTRACTED: 30 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

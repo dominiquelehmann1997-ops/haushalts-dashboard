@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Zwei Rutschen statt Tages-Mikrobatches](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md) (0 connections)
+- [MealPlanEntry.status (active/draft Koexistenz)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md)
+- [docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md)
 
 ## Audit Trail
 

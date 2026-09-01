@@ -1,14 +1,19 @@
 # Community 54
 
-> 5 nodes · cohesion 0.40
+> 10 nodes · cohesion 0.20
 
 ## Key Concepts
 
-- [recipeVault.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L1) (4 connections)
-- [full](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L18) (1 connections)
-- [md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L58) (1 connections)
-- [{ recipe }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L49) (1 connections)
-- [{ recipe, errors }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts#L37) (1 connections)
+- [data.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L1) (9 connections)
+- [appointments](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L199) (1 connections)
+- [initialShopping](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L205) (1 connections)
+- [initialTasks](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L182) (1 connections)
+- [mealPlan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L216) (1 connections)
+- [notes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L224) (1 connections)
+- [PERSON](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L232) (1 connections)
+- [personFill()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L265) (1 connections)
+- [split](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L230) (1 connections)
+- [weather](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts#L167) (1 connections)
 
 ## Relationships
 
@@ -16,11 +21,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\recipeVault.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recipeVault.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\data.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/data.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 18 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

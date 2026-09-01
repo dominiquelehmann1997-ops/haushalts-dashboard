@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Claude-Skill 'Rezept → Vault-Markdown' (Stufe 1.5)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md) (0 connections)
+- [Spec: 2026-06-10-sanftes-lernen-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-10-rezepte-vault-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-10-rezepte-vault-design.md)
+- [docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md)
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Dienstbewusst Essensplan-Entwurf: haltbar sofort, frisch verzögert](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/meals.ts) (0 connections)
+- [tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L44) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/actions/meals.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/meals.ts)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (0 connections)
+- [Mental-Load-Reduktion (Leitprinzip)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
+- [README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md)
 
 ## Audit Trail
 

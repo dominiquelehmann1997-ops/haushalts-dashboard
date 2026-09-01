@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Prisma Model: Note](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
+- [CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md)
 
 ## Audit Trail
 

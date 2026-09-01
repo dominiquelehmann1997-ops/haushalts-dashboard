@@ -1,27 +1,30 @@
 # Community 67
 
-> 4 nodes · cohesion 0.50
+> 7 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- [Handy-Steuerungsoberfläche (Mobile Control) Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md) (2 connections)
-- [Handy-Vollsteuerung (Mobile Control v2) Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md) (2 connections)
-- [Bottom-Navigation-Bar (4 Bereiche: Essen/Aufgaben/Notizen/Einstellungen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md) (1 connections)
-- [Vitest hängt unter Windows (manuell testen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md) (1 connections)
+- [pushSubscriptions.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L1) (3 connections)
+- [push.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts#L1) (2 connections)
+- [subscribePushAction()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts#L16) (2 connections)
+- [unsubscribePushAction()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts#L29) (2 connections)
+- [deleteSubscription()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L31) (2 connections)
+- [upsertSubscription()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L19) (2 connections)
+- [getAllSubscriptions()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts#L38) (1 connections)
 
 ## Relationships
 
-- [[Community 70]] (6 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-17-handy-steuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-handy-steuerung-design.md)
-- [docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-18-handy-vollsteuerung-design.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\actions\push.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/push.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\pushSubscriptions.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/pushSubscriptions.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 10 (71%)
+- INFERRED: 4 (29%)
 - AMBIGUOUS: 0 (0%)
 
 ---

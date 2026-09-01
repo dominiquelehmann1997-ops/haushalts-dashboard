@@ -1,32 +1,36 @@
 # Community 34
 
-> 8 nodes · cohesion 0.25
+> 14 nodes · cohesion 0.14
 
 ## Key Concepts
 
-- [PWA + Tailscale-Fernzugriff + Tablet-Kiosk-Autostart Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (3 connections)
-- [Tablet Remote Access via Cloudflare Tunnel Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (3 connections)
-- [tailscale serve HTTPS-Proxy (verworfen zugunsten Cloudflare)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (2 connections)
-- [Tailscale verworfen (Android 16 netlink permission denied)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (2 connections)
-- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (1 connections)
-- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (1 connections)
-- [Tablet Kiosk Autostart Runbook](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md) (1 connections)
-- [Cloudflare Access (Zero Trust Gate)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (1 connections)
+- [Design — Einkauf nach Haltbarkeit, gestaffelt auf Bring (Roadmap-Schritt D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L1) (9 connections)
+- [Architektur](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L52) (5 connections)
+- [2026-06-09-einkauf-haltbarkeit-batching-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L1) (1 connections)
+- [Bewusst außerhalb des Scopes (YAGNI für D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L144) (1 connections)
+- [Datenmodell](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L27) (1 connections)
+- [Fehlerfälle](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L108) (1 connections)
+- [Festgelegte Entscheidungen (aus Brainstorming)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L14) (1 connections)
+- [Reine Logik](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L54) (1 connections)
+- [Schritt D2/D3 — Anforderung & Naht (bewusst außerhalb D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L135) (1 connections)
+- [Server Actions (`src/app/actions/meals.ts`)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L84) (1 connections)
+- [Services / Repository](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L66) (1 connections)
+- [Tests](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L119) (1 connections)
+- [UI](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L96) (1 connections)
+- [Ziel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md#L6) (1 connections)
 
 ## Relationships
 
-- [[Community 37]] (14 shared connections)
+- [[Community 74]] (26 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md)
-- [docs/tablet-kiosk-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-kiosk-setup.md)
-- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md)
+- [docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-einkauf-haltbarkeit-batching-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (86%)
-- INFERRED: 2 (14%)
+- EXTRACTED: 26 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

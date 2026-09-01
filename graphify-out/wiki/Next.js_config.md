@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [postcss.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs#L1) (1 connections)
-- [config](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs#L1) (1 connections)
+- [MobileNotesPage](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/mobile/notes/page.tsx#L6) (1 connections)
+- [getNotes()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.ts) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,8 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\postcss.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs)
+- [web/src/app/(mobile)/mobile/notes/page.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/mobile/notes/page.tsx)
+- [web/src/lib/repositories/notes.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.ts)
 
 ## Audit Trail
 

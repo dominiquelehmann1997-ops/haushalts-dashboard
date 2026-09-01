@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Bring Machbarkeit Spike (2026-06-07)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md) (0 connections)
+- [Handoff-Prompt (Dashboard weiterführen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
+- [docs/handoff-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md)
 
 ## Audit Trail
 

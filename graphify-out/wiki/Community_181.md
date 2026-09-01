@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Feature A Sanftes Lernen: gewichtetes Roulette-Rad fuer Rezeptauswahl](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.ts#L1-4) (0 connections)
+- [Elternzeit-Modus (Aufgabenverteilung zugunsten Emely)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/mealWeights.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealWeights.ts)
+- [docs/claude-design-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md)
 
 ## Audit Trail
 

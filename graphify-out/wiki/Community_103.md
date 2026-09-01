@@ -1,24 +1,23 @@
 # Community 103
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Prisma Model: FreshnessOverride](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
-- [Prisma Model: ShoppingItem](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
+- [NotesView](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/NotesView.tsx#L5) (0 connections)
 
 ## Relationships
 
-- [[Community 104]] (2 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [web/src/components/mobile/NotesView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/NotesView.tsx)
 
 ## Audit Trail
 
 - EXTRACTED: 0 (0%)
-- INFERRED: 2 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

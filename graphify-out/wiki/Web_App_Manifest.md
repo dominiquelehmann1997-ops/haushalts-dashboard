@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [force-dynamic rendering for date-dependent dashboard](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/page.tsx#L10-13) (0 connections)
+- [dom.iterable](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L4) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/page.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/page.tsx)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

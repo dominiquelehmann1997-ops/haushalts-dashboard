@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [CalendarEvent](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (0 connections)
+- [Haushalts-Dashboard: PWA + Tailscale + Kiosk-Autostart — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
+- [docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-15-pwa-tailscale-kiosk-design.md)
 
 ## Audit Trail
 

@@ -1,26 +1,32 @@
 # Community 52
 
-> 5 nodes · cohesion 0.40
+> 11 nodes · cohesion 0.18
 
 ## Key Concepts
 
-- [notes.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L1) (4 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L9) (1 connections)
-- [{ id }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L29) (1 connections)
-- [note](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L30) (1 connections)
-- [notes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts#L21) (1 connections)
+- [Web Push / VAPID — Setup & Operations](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L1) (9 connections)
+- [Environment Variables](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L31) (2 connections)
+- [push-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L1) (1 connections)
+- [Example `.env` block](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L44) (1 connections)
+- [Generating a VAPID Key Pair](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L9) (1 connections)
+- [iOS Note](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L78) (1 connections)
+- [Localhost vs. Cloudflare Tunnel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L61) (1 connections)
+- [Overview](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L3) (1 connections)
+- [Production Deployment (Railway / Vercel)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L55) (1 connections)
+- [Revoking / Rotating Keys](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L86) (1 connections)
+- [Tablet-Deploy (Android / Termux — Besonderheiten)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md#L97) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[unknown]] (20 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\notes.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/notes.test.ts)
+- [web/docs/push-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 20 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

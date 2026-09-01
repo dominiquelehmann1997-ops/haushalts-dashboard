@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Kiosk Auto-Refresh effect](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx) (0 connections)
+- [.next/types/**/*.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L25) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/dashboard.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/dashboard.tsx)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

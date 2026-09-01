@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [PushSubscription](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (0 connections)
+- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
+- [web/CLAUDE.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/CLAUDE.md)
 
 ## Audit Trail
 

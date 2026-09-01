@@ -4,17 +4,18 @@
 
 ## Key Concepts
 
-- [Recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (2 connections)
-- [Ingredient](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (1 connections)
-- [MealPlanEntry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (1 connections)
+- [eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L1) (2 connections)
+- [eslintConfig](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs#L5) (1 connections)
+- [typescript](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L45) (1 connections)
 
 ## Relationships
 
-- [[Community 999]] (4 shared connections)
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\eslint.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/eslint.config.mjs)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

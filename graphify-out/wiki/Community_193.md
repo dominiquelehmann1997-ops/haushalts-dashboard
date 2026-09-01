@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [MealPlanEntry.status Ansatz A (active|draft)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md) (0 connections)
+- [Einkaufs-Rutschen / Batch-Push an Bring (D-Naht)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-essensplan-entwurf-freigabe-design.md)
+- [docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md)
 
 ## Audit Trail
 

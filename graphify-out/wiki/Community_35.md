@@ -1,28 +1,35 @@
 # Community 35
 
-> 7 nodes · cohesion 0.29
+> 14 nodes · cohesion 0.14
 
 ## Key Concepts
 
-- [sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L1) (6 connections)
-- [CACHE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L5) (1 connections)
-- [data](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L34) (1 connections)
-- [OFFLINE_URL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L6) (1 connections)
-- [open](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L52) (1 connections)
-- [{ request }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L25) (1 connections)
-- [url](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js#L47) (1 connections)
+- [Google Kalender — Termine, intelligente Verteilung & Sync — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L1) (9 connections)
+- [B) Termine in die Verteilung verdrahten (Hybrid Tageskapazität)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L61) (5 connections)
+- [2026-06-20-google-kalender-verteilung-sync-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L1) (1 connections)
+- [A) Auto-Sync](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L40) (1 connections)
+- [B1 — Neues pures Modul `src/lib/engine/capacity.ts`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L67) (1 connections)
+- [B2 — `planTask` erweitern](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L78) (1 connections)
+- [B3 — `selectByFairness` erweitern](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L95) (1 connections)
+- [B4 — Wire-up](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L102) (1 connections)
+- [Bestandsaufnahme (was schon da ist)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L12) (1 connections)
+- [C) Manueller Sync-Button (Handy + Tablet)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L114) (1 connections)
+- [Die drei Lücken (Ist-Zustand)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L25) (1 connections)
+- [Grenzen / Out of Scope](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L128) (1 connections)
+- [Testing](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L139) (1 connections)
+- [Umsetzung (Betriebsschutz)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md#L151) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Project Lifecycle]] (26 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\public\sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js)
+- [docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
+- EXTRACTED: 26 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Logging invisible work (Betreuung) to make it visible, not to add to-dos](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx#L3-6) (0 connections)
+- [next-env.d.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L25) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/AddDoneEntry.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/AddDoneEntry.tsx)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

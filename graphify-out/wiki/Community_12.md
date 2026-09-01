@@ -1,45 +1,47 @@
 # Community 12
 
-> 24 nodes · cohesion 0.08
+> 33 nodes · cohesion 0.06
 
 ## Key Concepts
 
-- [prismaNamespaceBrowser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L1) (23 connections)
-- [AccountEntryScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L145) (1 connections)
-- [AnyNull](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L50) (1 connections)
-- [CalendarEventScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L128) (1 connections)
-- [DbNull](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L36) (1 connections)
-- [Decimal](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L23) (1 connections)
-- [FreshnessOverrideScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L249) (1 connections)
-- [IngredientScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L186) (1 connections)
-- [JsonNull](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L43) (1 connections)
-- [MealPlanEntryScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L198) (1 connections)
-- [ModelName](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L53) (1 connections)
-- [NoteScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L226) (1 connections)
-- [NullsOrder](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L278) (1 connections)
-- [NullTypes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L26) (1 connections)
-- [OAuthTokenScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L237) (1 connections)
-- [PersonScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L83) (1 connections)
-- [PhaseSettingScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L158) (1 connections)
-- [ProjectScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L119) (1 connections)
-- [PushSubscriptionScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L258) (1 connections)
-- [RecipeScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L172) (1 connections)
-- [ShoppingItemScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L210) (1 connections)
-- [SortOrder](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L270) (1 connections)
-- [TaskScalarFieldEnum](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L94) (1 connections)
-- [TransactionIsolationLevel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts#L76) (1 connections)
+- [meals.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L1) (34 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L16) (1 connections)
+- [dayOfWeek](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L38) (1 connections)
+- [domeEvent()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L178) (1 connections)
+- [draft](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L98) (1 connections)
+- [earlyEnd](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L266) (1 connections)
+- [earlyStart](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L264) (1 connections)
+- [end](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L67) (1 connections)
+- [entry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L49) (1 connections)
+- [isWeekday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L39) (1 connections)
+- [monday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L32) (1 connections)
+- [mondayMeal](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L59) (1 connections)
+- [names](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L113) (1 connections)
+- [nextMon](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L218) (1 connections)
+- [nextMonday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L350) (1 connections)
+- [nextWeek](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L389) (1 connections)
+- [plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L28) (1 connections)
+- [recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L351) (1 connections)
+- [recipes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L300) (1 connections)
+- [sat](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L200) (1 connections)
+- [seeded](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L69) (1 connections)
+- [skipped](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L158) (1 connections)
+- [{ start }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L46) (1 connections)
+- [{ start: monday }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L197) (1 connections)
+- [sun](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L202) (1 connections)
+- *... and 8 more nodes in this community*
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\internal\prismaNamespaceBrowser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/prismaNamespaceBrowser.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\meals.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 46 (100%)
+- EXTRACTED: 66 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

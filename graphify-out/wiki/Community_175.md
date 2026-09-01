@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [First-classifiable-shift-wins per day (calendar noise resilience)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts) (0 connections)
+- [Essensplan-Entwurf + Abnicken/Ändern Plan (C1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/meals.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts)
+- [docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-essensplan-entwurf-freigabe.md)
 
 ## Audit Trail
 

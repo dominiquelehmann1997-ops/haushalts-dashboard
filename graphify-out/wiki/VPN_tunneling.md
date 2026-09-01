@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [next.config.ts ignores TypeScript build errors](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts) (0 connections)
+- [@types/react-dom](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L37) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

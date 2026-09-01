@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Offline-first minimal SW design (no data caching, only shell)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js) (0 connections)
+- [prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L41) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/sw.js](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/sw.js)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 

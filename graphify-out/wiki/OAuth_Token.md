@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [OAuthToken](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma) (0 connections)
+- [Google Kalender — Termine, Verteilung & Sync — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web\prisma\schema.prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/schema.prisma)
+- [docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-20-google-kalender-verteilung-sync-design.md)
 
 ## Audit Trail
 

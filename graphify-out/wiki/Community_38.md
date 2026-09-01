@@ -1,28 +1,34 @@
 # Community 38
 
-> 7 nodes · cohesion 0.29
+> 13 nodes · cohesion 0.15
 
 ## Key Concepts
 
-- [google.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L1) (6 connections)
-- [birthday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L31) (1 connections)
-- [birthdayEvents](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L62) (1 connections)
-- [events](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L8) (1 connections)
-- [familyEvents](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L54) (1 connections)
-- [[sport]](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L19) (1 connections)
-- [u4](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts#L42) (1 connections)
+- [Global Constraints](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L11) (9 connections)
+- [Google Kalender — Termine, Verteilung & Sync — Implementation Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L1) (4 connections)
+- [2026-06-20-google-kalender-verteilung-sync.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L1) (1 connections)
+- [Abschluss](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L1020) (1 connections)
+- [Spec-Coverage-Check](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L1027) (1 connections)
+- [Task 1: Fairness — weicher Last-Bias (`loadPenalty`)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L22) (1 connections)
+- [Task 2: Tageskapazität — pures `capacity.ts`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L110) (1 connections)
+- [Task 3: `planTask` — Hybrid-Kapazität (harte Sperre + weicher Bias)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L272) (1 connections)
+- [Task 4: `calendarSync`-Service extrahieren + Route refactoren](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L397) (1 connections)
+- [Task 5: CLI-Sync-Script + Auto-Sync-Hooks (Start + Cron)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L599) (1 connections)
+- [Task 6: Wire-up — `planDueTasks`/`planToday.ts` füttern busy + forecast](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L709) (1 connections)
+- [Task 7: Server-Action `syncCalendarAction` (Sync + Re-Plan + Revalidate)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L833) (1 connections)
+- [Task 8: Sync-Button — `RefreshIcon` + `SyncButton`, Tablet + Handy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md#L906) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[unknown]] (24 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\integrations\calendar\google.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/calendar/google.test.ts)
+- [docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-20-google-kalender-verteilung-sync.md)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
+- EXTRACTED: 24 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

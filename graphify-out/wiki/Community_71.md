@@ -1,24 +1,26 @@
 # Community 71
 
-> 3 nodes · cohesion 1.00
+> 5 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- [babyAge()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L23) (2 connections)
-- [completedMonths()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L7) (2 connections)
-- [age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L1) (2 connections)
+- [Handy-Steuerungsoberfläche Implementation Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md#L1) (4 connections)
+- [2026-06-17-handy-steuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md#L1) (1 connections)
+- [Task 1: Route Group & Mobile Layout Setup](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md#L13) (1 connections)
+- [Task 2: Mobile Root Redirect & Meals Page](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md#L63) (1 connections)
+- [Task 3: Placeholder Pages for Tasks, Notes & Settings](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md#L99) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[unknown]] (8 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts)
+- [docs/superpowers/plans/2026-06-17-handy-steuerung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-handy-steuerung.md)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

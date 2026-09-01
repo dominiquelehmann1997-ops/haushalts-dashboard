@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Sanftes Lernen: EWMA-Intervall mit Mindestbeobachtungen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts#L1-7) (0 connections)
+- [Verteil-Engine „Fairness-Konto"](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/learnedInterval.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts)
+- [README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md)
 
 ## Audit Trail
 

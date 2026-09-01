@@ -1,27 +1,33 @@
 # Community 44
 
-> 6 nodes · cohesion 0.33
+> 12 nodes · cohesion 0.17
 
 ## Key Concepts
 
-- [clothing.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L1) (5 connections)
-- [advice](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L7) (1 connections)
-- [allgemein](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L55) (1 connections)
-- [older](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L62) (1 connections)
-- [trage](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L54) (1 connections)
-- [young](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts#L61) (1 connections)
+- [Kompakt-Dashboard fürs Tablet — Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L1) (10 connections)
+- [Aufgaben-Interaktion (einziger Schreibpfad am Tablet)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L46) (2 connections)
+- [2026-06-14-kompakt-dashboard-tablet-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L1) (1 connections)
+- [„Aufschieben" = automatisch sinnvoller Tag](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L59) (1 connections)
+- [Entfällt aus der Tablet-Ansicht](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L81) (1 connections)
+- [Komponenten-Schnitt](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L95) (1 connections)
+- [Layout (Querformat, 3 Zonen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L27) (1 connections)
+- [Out of Scope (Folge-Projekt Handy-App)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L113) (1 connections)
+- [Technischer Ansatz](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L18) (1 connections)
+- [Testing](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L104) (1 connections)
+- [Wetter-Widget (detailliert, ohne Baby)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L70) (1 connections)
+- [Ziel & Leitidee](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md#L9) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 96]] (22 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\clothing.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.test.ts)
+- [docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-14-kompakt-dashboard-tablet-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
+- EXTRACTED: 22 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,26 +1,31 @@
 # Community 56
 
-> 5 nodes · cohesion 0.50
+> 10 nodes · cohesion 0.20
 
 ## Key Concepts
 
-- [globalSetup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L1) (4 connections)
-- [globalSetup()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L22) (2 connections)
-- [removeIfExists()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L16) (2 connections)
-- [TEST_DATABASE_URL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L14) (1 connections)
-- [TEST_DB_PATH](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L13) (1 connections)
+- [Baby-Wetter / Kleidungsempfehlung — Feature-Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L1) (9 connections)
+- [2026-06-08-baby-wetter-kleidungsempfehlung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L1) (1 connections)
+- [Datei-Struktur](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L28) (1 connections)
+- [Self-Review (Abdeckung)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L123) (1 connections)
+- [Spätere Ausbaustufen (nicht jetzt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L131) (1 connections)
+- [Task 1 — Open-Meteo um UV-Index erweitern](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L50) (1 connections)
+- [Task 2 — Kleidungs-Empfehlung (reine Logik, TDD)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L63) (1 connections)
+- [Task 3 — UV-Schutz-Empfehlung (reine Logik, TDD)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L91) (1 connections)
+- [Task 4 — UI-Karte „Baby-Wetter"](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L106) (1 connections)
+- [Wichtige Entscheidungen / Leitplanken](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md#L15) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[unknown]] (18 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\test\globalSetup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts)
+- [docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-08-baby-wetter-kleidungsempfehlung.md)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
+- EXTRACTED: 18 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

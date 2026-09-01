@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [choreImport requires explicit client (no prisma singleton)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.ts) (0 connections)
+- [Dienstplan-bewusster Essensplan Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/choreImport.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/choreImport.ts)
+- [docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-09-dienstplan-bewusster-essensplan.md)
 
 ## Audit Trail
 

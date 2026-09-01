@@ -1,35 +1,35 @@
 # Community 8
 
-> 31 nodes · cohesion 0.06
+> 49 nodes · cohesion 0.06
 
 ## Key Concepts
 
-- [meals.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L1) (31 connections)
-- [after](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L162) (1 connections)
-- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L157) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L17) (1 connections)
-- [dayOfWeek](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L39) (1 connections)
-- [domeEvent()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L181) (1 connections)
-- [draft](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L99) (1 connections)
-- [earlyEnd](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L269) (1 connections)
-- [earlyStart](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L267) (1 connections)
-- [end](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L68) (1 connections)
-- [entry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L50) (1 connections)
-- [isWeekday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L40) (1 connections)
-- [monday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L33) (1 connections)
-- [mondayMeal](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L60) (1 connections)
-- [names](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L137) (1 connections)
-- [nextMon](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L221) (1 connections)
-- [plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L29) (1 connections)
-- [recipes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L136) (1 connections)
-- [sat](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L203) (1 connections)
-- [seeded](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L70) (1 connections)
-- [skipped](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L130) (1 connections)
-- [{ start }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L47) (1 connections)
-- [{ start: monday }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L200) (1 connections)
-- [sun](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L205) (1 connections)
-- [target](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts#L159) (1 connections)
-- *... and 6 more nodes in this community*
+- [tasks.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts#L1) (20 connections)
+- [recurrence.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L1) (13 connections)
+- [rhythm.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/rhythm.ts#L1) (8 connections)
+- [generateNextOccurrence()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L136) (7 connections)
+- [learnedInterval.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts#L1) (5 connections)
+- [dayOffsetFor()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L55) (5 connections)
+- [nextDueDate()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L109) (5 connections)
+- [setTaskStatus()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts#L103) (5 connections)
+- [validateRoutineFields()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts#L441) (5 connections)
+- [parseCustomRhythm()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/rhythm.ts#L40) (4 connections)
+- [updateRoutineTemplate()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts#L541) (4 connections)
+- [learnedInterval()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts#L38) (3 connections)
+- [configuredIntervalDays()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L90) (3 connections)
+- [isFixedRhythm()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L80) (3 connections)
+- [rescheduleOpenOccurrence()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L223) (3 connections)
+- [isValidRhythm()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/rhythm.ts#L55) (3 connections)
+- [commitDraft()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/RoutinesView.tsx#L447) (3 connections)
+- [nextSensibleDay()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.ts#L9) (3 connections)
+- [createRoutineTemplate()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts#L589) (3 connections)
+- [recordCompletion()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/completion.ts#L23) (2 connections)
+- [onChange()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/RecipeSearchBar.tsx#L40) (2 connections)
+- [chainCompletionGaps()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L13) (2 connections)
+- [makeCustomRhythm()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/rhythm.ts#L50) (2 connections)
+- [rhythmLabel()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/rhythm.ts#L60) (2 connections)
+- [completeTaskBy()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts#L283) (2 connections)
+- *... and 24 more nodes in this community*
 
 ## Relationships
 
@@ -37,12 +37,19 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\meals.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.test.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\mobile\RecipeSearchBar.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/RecipeSearchBar.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\mobile\RoutinesView.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/mobile/RoutinesView.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\completion.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/completion.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\tasks.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\rhythm.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/rhythm.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\learnedInterval.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/learnedInterval.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\recurrence.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\taskDefer.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 61 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 121 (84%)
+- INFERRED: 23 (16%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md) (0 connections)
+- [NOTE: `light` is intentionally left `undefined` — there is no DB source for](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts#L28) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md)
+- [web/src/lib/repositories/meals.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/meals.ts)
 
 ## Audit Trail
 

@@ -1,28 +1,33 @@
 # Community 41
 
-> 6 nodes · cohesion 0.33
+> 12 nodes · cohesion 0.17
 
 ## Key Concepts
 
-- [layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L1) (4 connections)
-- [viewport](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx#L9) (2 connections)
-- [layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx#L1) (1 connections)
-- [body](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L13) (1 connections)
-- [display](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L6) (1 connections)
-- [metadata](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L20) (1 connections)
+- [Google Calendar Setup (Phase 4 — read-only sync)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L1) (10 connections)
+- [8. Trigger the sync](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L121) (2 connections)
+- [google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L1) (1 connections)
+- [1. Create a Google Cloud project + enable the Calendar API](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L10) (1 connections)
+- [2. Configure the OAuth consent screen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L17) (1 connections)
+- [3. Create an OAuth Client ID](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L31) (1 connections)
+- [4. Fill in `web/.env`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L42) (1 connections)
+- [5. Connect the dashboard to Google](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L55) (1 connections)
+- [6. Find your calendar IDs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L80) (1 connections)
+- [7. Fill in the calendar IDs in `web/.env`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L99) (1 connections)
+- [Re-syncing](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L141) (1 connections)
+- [Troubleshooting](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md#L148) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[unknown]] (22 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\(mobile)\layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/%28mobile%29/layout.tsx)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx)
+- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
+- EXTRACTED: 22 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

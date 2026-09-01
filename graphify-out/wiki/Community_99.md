@@ -1,11 +1,10 @@
 # Community 99
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [shifts.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/calendar/shifts.test.ts#L1) (1 connections)
-- [start](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/calendar/shifts.test.ts#L24) (1 connections)
+- [TaskTile](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx#L150) (0 connections)
 
 ## Relationships
 
@@ -13,11 +12,11 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\calendar\shifts.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/calendar/shifts.test.ts)
+- [web/src/components/tiles.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/tiles.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

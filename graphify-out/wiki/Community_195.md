@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Termux-Runbook + tablet-start.sh](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md) (0 connections)
+- [PWA-Manifest (installierbare Vollbild-App)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-12-tablet-betrieb-chore-import-design.md)
+- [docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-12-tablet-betrieb-chore-import.md)
 
 ## Audit Trail
 

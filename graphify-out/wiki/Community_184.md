@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Regenerate, not merge (Shopping-Sync-Strategie)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.ts) (0 connections)
+- [Token-/Kosten-sparsame KI-Nutzung (Deterministisch vor LLM)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-importer-init-prompt.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/shoppingSync.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/shoppingSync.ts)
+- [docs/recipe-importer-init-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-importer-init-prompt.md)
 
 ## Audit Trail
 

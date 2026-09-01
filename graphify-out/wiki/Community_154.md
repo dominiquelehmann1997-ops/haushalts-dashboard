@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Service worker registration guarded on secure context (Tailscale HTTPS)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx#L5-8) (0 connections)
+- [esnext](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L4) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/sw-register.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/sw-register.tsx)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

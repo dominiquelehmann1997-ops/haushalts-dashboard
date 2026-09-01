@@ -1,25 +1,28 @@
 # Community 68
 
-> 4 nodes · cohesion 0.50
+> 7 nodes · cohesion 0.29
 
 ## Key Concepts
 
-- [Rezepte-Vault (Obsidian Markdown, Vault=Wahrheit/DB=Cache)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (3 connections)
-- [Haltbarkeits-Korrektur (gemerkte Zutaten-Klassifikation)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
-- [web/README.md (Next.js project + Rezepte-Vault)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
-- [Gewichtete Essensplan-Auswahl (rating: favorit/ok/selten)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md) (1 connections)
+- [Handoff-Prompt — Haushalts-Dashboard in neuem Chat weiterführen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md#L1) (6 connections)
+- [handoff-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md#L1) (1 connections)
+- [Arbeitsweise / Regeln](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md#L43) (1 connections)
+- [Dein erster Schritt (jetzt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md#L35) (1 connections)
+- [Was noch fehlt (Umfang der echten Umsetzung — aus der Spec)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md#L26) (1 connections)
+- [Was schon existiert (bitte zuerst lesen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md#L15) (1 connections)
+- [Ziel & Kontext](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md#L10) (1 connections)
 
 ## Relationships
 
-- [[Community 71]] (6 shared connections)
+- [[unknown]] (12 shared connections)
 
 ## Source Files
 
-- [web/README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/README.md)
+- [docs/handoff-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/handoff-prompt.md)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 12 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

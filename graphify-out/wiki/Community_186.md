@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Kompakt-Dashboard fürs Tablet Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md) (0 connections)
+- [Cloudflare Named Tunnel (userspace, kein root)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-14-kompakt-dashboard-tablet.md)
+- [docs/tablet-remote-access.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-remote-access.md)
 
 ## Audit Trail
 

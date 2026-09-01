@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Interval restart bei Completion + gelerntes Intervall ersetzt Rhythmus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts#L106-113) (0 connections)
+- [Slug/ID als Identitäts-Anker](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-import-contract.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/services/recurrence.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.ts)
+- [docs/recipe-vault-import-contract.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-vault-import-contract.md)
 
 ## Audit Trail
 

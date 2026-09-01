@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts#L1) (1 connections)
-- [nextConfig](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts#L3) (1 connections)
+- [postcss.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs#L1) (1 connections)
+- [config](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs#L1) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\next.config.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/next.config.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\postcss.config.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/postcss.config.mjs)
 
 ## Audit Trail
 

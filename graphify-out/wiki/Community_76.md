@@ -4,22 +4,23 @@
 
 ## Key Concepts
 
-- [Prisma Model: Recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (2 connections)
-- [Prisma Model: Ingredient](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
-- [Prisma Model: MealPlanEntry](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (1 connections)
+- [pushToBringAction](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/shopping.ts#L46) (2 connections)
+- [pushShoppingList()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.ts) (1 connections)
+- [toBringItems()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.ts) (1 connections)
 
 ## Relationships
 
-- [[Community 79]] (4 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [web/src/app/actions/shopping.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/actions/shopping.ts)
+- [web/src/integrations/bring/client.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/integrations/bring/client.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
-- INFERRED: 4 (100%)
+- EXTRACTED: 4 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

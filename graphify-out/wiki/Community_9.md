@@ -1,53 +1,49 @@
 # Community 9
 
-> 30 nodes · cohesion 0.07
+> 36 nodes · cohesion 0.06
 
 ## Key Concepts
 
-- [mealDraft.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L1) (13 connections)
-- [seedDatabase()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts#L30) (7 connections)
-- [rollover.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/rollover.test.ts#L1) (6 connections)
-- [count](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/rollover.test.ts#L27) (6 connections)
-- [seed.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts#L1) (4 connections)
-- [approveDraft()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.ts#L19) (4 connections)
-- [weekCounts()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L22) (3 connections)
-- [db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/db.ts#L1) (2 connections)
-- [resetDatabase()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/db.ts#L27) (2 connections)
-- [addDays()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts#L15) (2 connections)
-- [main()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts#L489) (2 connections)
-- [getOpenTaskCount()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts#L81) (2 connections)
-- [createTestClient()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/db.ts#L17) (1 connections)
-- [allRecipes](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L89) (1 connections)
-- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L88) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L11) (1 connections)
-- [monday](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L102) (1 connections)
-- [ok](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L38) (1 connections)
-- [others](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L123) (1 connections)
-- [pizza](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L137) (1 connections)
-- [recipe](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L109) (1 connections)
-- [{ start }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L154) (1 connections)
-- [updated](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L92) (1 connections)
-- [zeroRng()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts#L72) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/rollover.test.ts#L9) (1 connections)
-- *... and 5 more nodes in this community*
+- [recurrence.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L1) (31 connections)
+- [class.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L1) (4 connections)
+- [from](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L9) (3 connections)
+- [decodeBase64AsWasm()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L41) (2 connections)
+- [makeChain()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L388) (2 connections)
+- [today()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L381) (2 connections)
+- [config](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L18) (1 connections)
+- [getPrismaClientClass()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L322) (1 connections)
+- [{ wasm }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L51) (1 connections)
+- [assignedDue](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L471) (1 connections)
+- [chainBase](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L248) (1 connections)
+- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L84) (1 connections)
+- [completedAt](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L231) (1 connections)
+- [created](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L119) (1 connections)
+- [DAY_MS](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L364) (1 connections)
+- [days](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L255) (1 connections)
+- [daysAgo()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L374) (1 connections)
+- [dome](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L166) (1 connections)
+- [done](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L413) (1 connections)
+- [due](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L230) (1 connections)
+- [dueDate](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L167) (1 connections)
+- [first](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L134) (1 connections)
+- [last](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L256) (1 connections)
+- [makeRoutineTask()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L95) (1 connections)
+- [movedDue](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L456) (1 connections)
+- *... and 11 more nodes in this community*
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\prisma\seed.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/prisma/seed.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\repositories\tasks.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\mealDraft.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.test.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\mealDraft.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/mealDraft.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\rollover.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/rollover.test.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\test\db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/db.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\internal\class.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\recurrence.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 55 (77%)
-- INFERRED: 16 (23%)
+- EXTRACTED: 71 (96%)
+- INFERRED: 3 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---

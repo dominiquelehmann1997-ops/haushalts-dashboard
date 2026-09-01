@@ -1,25 +1,30 @@
 # Community 60
 
-> 4 nodes · cohesion 0.50
+> 9 nodes · cohesion 0.25
 
 ## Key Concepts
 
-- [db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L1) (3 connections)
-- [createPrismaClient()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L13) (1 connections)
-- [globalForPrisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L9) (1 connections)
-- [prisma](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts#L21) (1 connections)
+- [index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L1) (9 connections)
+- [baseInput()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L12) (2 connections)
+- [day()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L8) (2 connections)
+- [busy](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L58) (1 connections)
+- [forecast](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L34) (1 connections)
+- [PHASE](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L6) (1 connections)
+- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L39) (1 connections)
+- [task](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L27) (1 connections)
+- [window](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts#L57) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\db.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/db.ts)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\engine\index.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/index.test.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 19 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

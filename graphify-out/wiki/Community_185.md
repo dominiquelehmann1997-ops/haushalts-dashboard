@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Plan: Haltbarkeits-Korrektur-Gedächtnis (FreshnessOverride, C1 Sanftes Lernen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md) (0 connections)
+- [ReciMe-Klon Konzept (Share-Intent → KI-Rezept → Obsidian)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-importer-init-prompt.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-10-freshness-override.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md)
+- [docs/recipe-importer-init-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/recipe-importer-init-prompt.md)
 
 ## Audit Trail
 

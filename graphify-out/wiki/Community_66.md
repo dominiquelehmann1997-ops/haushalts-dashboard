@@ -1,25 +1,29 @@
 # Community 66
 
-> 4 nodes · cohesion 0.50
+> 7 nodes · cohesion 0.29
 
 ## Key Concepts
 
-- [C2 · Web-Push für Essensplan-Entwurf Design](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (3 connections)
-- [Cloudflare-Tunnel (Voraussetzung für public HTTPS Push)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (1 connections)
-- [Keine Action-Buttons in Notification (YAGNI, weniger Angriffsfläche)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (1 connections)
-- [dashboard-roadmap-handy-steuerung-essensplan.md (Roadmap C2)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md) (1 connections)
+- [gen-icons.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L1) (6 connections)
+- [here](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L9) (1 connections)
+- [pub](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L10) (1 connections)
+- [src](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L11) (1 connections)
+- [targets](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L14) (1 connections)
+- [TEAL](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs#L12) (1 connections)
+- [sharp](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json#L42) (1 connections)
 
 ## Relationships
 
-- [[Community 69]] (6 shared connections)
+- [[Community 37]] (1 shared connections)
 
 ## Source Files
 
-- [docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-17-c2-handy-push-essensplan-design.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\gen-icons.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/gen-icons.mjs)
+- [web/package.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/package.json)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 12 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

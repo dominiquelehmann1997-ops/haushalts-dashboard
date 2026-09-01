@@ -1,31 +1,37 @@
 # Community 32
 
-> 8 nodes · cohesion 0.36
+> 15 nodes · cohesion 0.13
 
 ## Key Concepts
 
-- [clothing.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L1) (4 connections)
-- [recommendClothing()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L56) (4 connections)
-- [uvAdvice()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L20) (3 connections)
-- [uv.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L1) (2 connections)
-- [bandFor()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L22) (2 connections)
-- [removeOneLayer()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L41) (2 connections)
-- [levelFor()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts#L7) (2 connections)
-- [PROTECTED](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts#L38) (1 connections)
+- [Design — Dienstplan-bewusster Essensplan (Roadmap-Schritt B)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L1) (7 connections)
+- [Architektur](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L55) (6 connections)
+- [Regeln (Planungstage Mo–Fr)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L29) (3 connections)
+- [2026-06-09-dienstplan-bewusster-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L1) (1 connections)
+- [1 · `web/src/lib/calendar/shifts.ts` (rein, erweitern)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L60) (1 connections)
+- [2 · `web/src/lib/services/mealConstraints.ts` (rein, neu)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L70) (1 connections)
+- [3 · Schema (`web/prisma/schema.prisma`) + Migration](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L92) (1 connections)
+- [4 · `web/src/lib/services/mealPlanner.ts` (erweitern)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L111) (1 connections)
+- [5 · Anbindung & Anzeige](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L123) (1 connections)
+- [Bewusst außerhalb des Scopes (YAGNI)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L145) (1 connections)
+- [Extraportion](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L49) (1 connections)
+- [Konfliktauflösung](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L40) (1 connections)
+- [Schicht-Vokabular (Google-Kalender, personKey `dome`)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L14) (1 connections)
+- [Tests](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L134) (1 connections)
+- [Ziel](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md#L6) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 69]] (28 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\clothing.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/clothing.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\uv.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/uv.ts)
+- [docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-09-dienstplan-bewusster-essensplan-design.md)
 
 ## Audit Trail
 
-- EXTRACTED: 18 (90%)
-- INFERRED: 2 (10%)
+- EXTRACTED: 28 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

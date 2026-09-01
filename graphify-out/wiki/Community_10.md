@@ -1,49 +1,54 @@
 # Community 10
 
-> 26 nodes · cohesion 0.08
+> 36 nodes · cohesion 0.06
 
 ## Key Concepts
 
-- [recurrence.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L1) (20 connections)
-- [class.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L1) (4 connections)
-- [decodeBase64AsWasm()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L41) (2 connections)
-- [from](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L9) (2 connections)
-- [config](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L18) (1 connections)
-- [getPrismaClientClass()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L332) (1 connections)
-- [{ wasm }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts#L51) (1 connections)
-- [chainBase](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L193) (1 connections)
-- [client](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L74) (1 connections)
-- [completedAt](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L176) (1 connections)
-- [created](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L109) (1 connections)
-- [days](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L200) (1 connections)
-- [dome](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L137) (1 connections)
-- [due](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L175) (1 connections)
-- [dueDate](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L138) (1 connections)
-- [first](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L124) (1 connections)
-- [last](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L201) (1 connections)
-- [makeRoutineTask()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L85) (1 connections)
-- [next](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L184) (1 connections)
-- [offsetDays](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L216) (1 connections)
-- [original](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L61) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L12) (1 connections)
-- [routine](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L177) (1 connections)
-- [second](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L127) (1 connections)
-- [successors](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts#L130) (1 connections)
-- *... and 1 more nodes in this community*
+- [Haushalts-Dashboard — Design-Spezifikation](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L1) (11 connections)
+- [5 · Funktionsbereiche](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L72) (10 connections)
+- [Dashboard am Pixel Tablet (Termux) betreiben](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md#L1) (7 connections)
+- [Haushalts-Dashboard](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md#L1) (6 connections)
+- [README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md#L1) (4 connections)
+- [2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L1) (2 connections)
+- [tablet-termux-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md#L1) (2 connections)
+- [10 · Spätere Ausbaustufen (nicht jetzt)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L216) (1 connections)
+- [1 · Ziel & Leitprinzip](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L9) (1 connections)
+- [2 · Umfang & Nicht-Ziele](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L20) (1 connections)
+- [3 · Nutzerkontext](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L42) (1 connections)
+- [4 · Layout & Bildschirmbereiche (Layout C — „Heute" im Fokus)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L52) (1 connections)
+- [5.1 Aufgaben](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L74) (1 connections)
+- [5.2 Verteil-Engine „Fairness-Konto" (Herzstück)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L97) (1 connections)
+- [5.2a Elternzeit-/Phasen-Modus](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L110) (1 connections)
+- [5.3 Spontan-Nachtrag erledigter Aufgaben](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L119) (1 connections)
+- [5.4 Kalender-Integration (Google Calendar)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L125) (1 connections)
+- [5.5 Essensplan (stufenweise)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L132) (1 connections)
+- [5.6 Einkauf & Bring!-Sync](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L139) (1 connections)
+- [5.7 Wetter](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L147) (1 connections)
+- [5.8 Notizen & Wochenübersicht](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L153) (1 connections)
+- [6 · Datenmodell (konzeptionell)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L160) (1 connections)
+- [7 · Architektur & Integrationen (grob)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L180) (1 connections)
+- [8 · Risiken & offene Punkte](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L198) (1 connections)
+- [9 · Annahmen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md#L207) (1 connections)
+- *... and 11 more nodes in this community*
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 8]] (20 shared connections)
+- [[Community 27]] (19 shared connections)
+- [[Community 65]] (18 shared connections)
+- [[Community 100]] (13 shared connections)
+- [[unknown]] (1 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\internal\class.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/internal/class.ts)
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\recurrence.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/recurrence.test.ts)
+- [README.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/README.md)
+- [docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/specs/2026-06-07-haushalts-dashboard-design.md)
+- [docs/tablet-termux-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/tablet-termux-setup.md)
 
 ## Audit Trail
 
-- EXTRACTED: 48 (96%)
-- INFERRED: 2 (4%)
+- EXTRACTED: 71 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

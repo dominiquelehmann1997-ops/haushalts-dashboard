@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [phone-to-/mobile redirect inline script](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx#L51-56) (0 connections)
+- [IMPORTANT: this must never touch `dev.db` — it always points `DATABASE_URL`](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts#L5) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/app/layout.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/layout.tsx)
+- [web/src/test/globalSetup.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/test/globalSetup.ts)
 
 ## Audit Trail
 

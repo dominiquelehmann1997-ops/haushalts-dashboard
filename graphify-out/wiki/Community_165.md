@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Prisma Model: PushSubscription](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts) (0 connections)
+- [Claude Design-Prompt (Visuelles Design)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/generated/prisma/browser.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/browser.ts)
+- [docs/claude-design-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md)
 
 ## Audit Trail
 

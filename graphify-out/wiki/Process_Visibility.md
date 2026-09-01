@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Staggered second grocery run timed close to consumption (Roadmap D1)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx#L3-5) (0 connections)
+- [**/*.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L25) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/components/FreshShoppingControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/FreshShoppingControl.tsx)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

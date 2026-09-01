@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [completeTaskBy: Punkte gehen an tatsächlichen Erlediger, nicht Zugewiesenen](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts) (0 connections)
+- [Haltbarkeits-Korrektur-Gedächtnis Plan (FreshnessOverride, C1 sanftes Lernen)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/repositories/tasks.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/repositories/tasks.ts)
+- [docs/superpowers/plans/2026-06-10-freshness-override.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md)
 
 ## Audit Trail
 

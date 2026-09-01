@@ -1,24 +1,22 @@
 # Community 102
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Bring has no official API — manual push-on-request with clipboard fallback](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/BringSyncControl.tsx#L3-6) (1 connections)
-- [docs/spikes/2026-06-07-bring-machbarkeit.md (Push mit Fallback)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md) (1 connections)
+- [Weather.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/Weather.tsx#L1) (0 connections)
 
 ## Relationships
 
-- [[Community 103]] (2 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
-- [web/src/components/BringSyncControl.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/BringSyncControl.tsx)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\components\Weather.tsx](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/components/Weather.tsx)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [PlanInput.dayLoad (capacity injection)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts) (0 connections)
+- [Spike: Bring!-Integration Machbarkeit](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/engine/types.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/types.ts)
+- [docs/spikes/2026-06-07-bring-machbarkeit.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/spikes/2026-06-07-bring-machbarkeit.md)
 
 ## Audit Trail
 

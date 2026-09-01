@@ -1,23 +1,22 @@
 # Community 105
 
-> 2 nodes · cohesion 1.00
+> 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [C2 Handy-Push (Essensplan-Entwurf) Plan](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md) (1 connections)
-- [VAPID key generation + push-setup.md operations doc](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md) (1 connections)
+- [commonInputTypes.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/commonInputTypes.ts#L1) (0 connections)
 
 ## Relationships
 
-- [[Community 106]] (2 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-17-c2-handy-push-essensplan.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\generated\prisma\commonInputTypes.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/generated/prisma/commonInputTypes.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 0 (0%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

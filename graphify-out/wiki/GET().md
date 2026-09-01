@@ -1,67 +1,64 @@
 # GET()
 
-> God node · 12 connections · [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\sync\calendar\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L31)
+> God node · 20 connections · [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\app\api\sync\calendar\route.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/app/api/sync/calendar/route.ts#L31)
 
 ## Call Trace Diagram
 
 ```mermaid
 sequenceDiagram
     participant P0 as GET()
-    participant P1 as syncIngredientsToShopping()
-    participant P2 as map
-    participant P3 as generateWeekPlan()
-    participant P4 as combineAmounts()
-    participant P5 as getFreshShoppingState()
-    participant P6 as sendToAdults()
-    participant P7 as mapCurrent()
-    participant P8 as getShoppingItems()
-    participant P9 as getFreshnessOverrides()
-    participant P10 as getNotes()
-    participant P11 as configuredCalendars()
-    participant P12 as weightedPick()
-    participant P13 as pushRecipeBatch()
-    participant P14 as main()
-    participant P15 as reduce()
-    participant P16 as parseEventTime()
-    participant P17 as coveredMs()
-    participant P18 as fromLocalDateKey()
-    participant P19 as getTodaysEvents()
-    participant P20 as replaceWindowEvents()
-    participant P21 as getWeekMealPlan()
-    participant P22 as getDraftMealPlan()
-    participant P23 as getTasksByPerson()
-    participant P24 as getTasksForDay()
-    participant P25 as buildChoreTasks()
-    participant P26 as deriveDayConstraints()
-    participant P27 as handleCopy()
-    participant P28 as handleCopy()
-    participant P29 as handleCopy()
-    participant P30 as toBringItems()
-    participant P31 as mapForecast()
-    participant P32 as toMinutes()
-    participant P33 as listOpenTasks()
-    participant P34 as constraintsForWeek()
-    participant P35 as VaultIngestControl()
-    participant P36 as MobileNavBar()
-    participant P37 as listRecipes()
-    participant P38 as currentWeekBounds()
-    participant P39 as approveDraftAction()
-    participant P40 as resolveFreshness()
-    participant P41 as main()
-    participant P42 as seedDatabase()
-    participant P43 as rollOverdueRoutines()
-    participant P44 as runSync()
-    participant P45 as classifyShift()
-    participant P46 as getAuthUrl()
-    participant P47 as exchangeCode()
+    participant P1 as join
+    participant P2 as exportRecipes()
+    participant P3 as cleanup()
+    participant P4 as add()
+    participant P5 as main()
+    participant P6 as assignExportFileNames()
+    participant P7 as recipeToMarkdown()
+    participant P8 as message()
+    participant P9 as listAllRecipes()
+    participant P10 as extractRecipeFromText()
+    participant P11 as POST()
+    participant P12 as parseExtractionResponse()
+    participant P13 as toImportedFromExtraction()
+    participant P14 as runClaude()
+    participant P15 as buildExtractionPrompt()
+    participant P16 as problemsOf()
+    participant P17 as downloadRecipeImage()
+    participant P18 as combineAmounts()
+    participant P19 as searchHaystack()
+    participant P20 as handleCopy()
+    participant P21 as draftFromRecipe()
+    participant P22 as buildIdeasPrompt()
+    participant P23 as buildBody()
+    participant P24 as isVegetarian()
+    participant P25 as ingredientLabel()
+    participant P26 as handleCopy()
+    participant P27 as makeDir()
+    participant P28 as seedDatabase()
+    participant P29 as notFound()
+    participant P30 as runSync()
+    participant P31 as checkImportToken()
+    participant P32 as rollOverdueRoutines()
+    participant P33 as collectTags()
+    participant P34 as recipeImageDir()
+    participant P35 as classifyShift()
+    participant P36 as listRoutineTemplates()
+    participant P37 as getAuthUrl()
+    participant P38 as exchangeCode()
+    participant P39 as isSafeImageFile()
+    participant P40 as contentTypeForImage()
     P0->>+ P1: calls
     P1-->>- P0: return
+    P1->>+ P0: calls
+    P0-->>- P1: return
     P1->>+ P2: calls
     P2-->>- P1: return
-    P2->>+ P3: calls
-    P3-->>- P2: return
+    P2->>+ P0: calls
+    P0-->>- P2: return
     P2->>+ P1: calls
     P1-->>- P2: return
+    P2->>+ P3: calls
+    P3-->>- P2: return
     P2->>+ P4: calls
     P4-->>- P2: return
     P2->>+ P5: calls
@@ -74,108 +71,102 @@ sequenceDiagram
     P8-->>- P2: return
     P2->>+ P9: calls
     P9-->>- P2: return
-    P2->>+ P10: calls
-    P10-->>- P2: return
-    P2->>+ P11: calls
-    P11-->>- P2: return
-    P2->>+ P12: calls
-    P12-->>- P2: return
-    P2->>+ P13: calls
-    P13-->>- P2: return
-    P2->>+ P14: calls
-    P14-->>- P2: return
-    P2->>+ P15: calls
-    P15-->>- P2: return
-    P2->>+ P16: calls
-    P16-->>- P2: return
-    P2->>+ P17: calls
-    P17-->>- P2: return
-    P2->>+ P18: calls
-    P18-->>- P2: return
-    P2->>+ P19: calls
-    P19-->>- P2: return
-    P2->>+ P20: calls
-    P20-->>- P2: return
-    P2->>+ P21: calls
-    P21-->>- P2: return
-    P2->>+ P22: calls
-    P22-->>- P2: return
-    P2->>+ P23: calls
-    P23-->>- P2: return
-    P2->>+ P24: calls
-    P24-->>- P2: return
-    P2->>+ P25: calls
-    P25-->>- P2: return
-    P2->>+ P26: calls
-    P26-->>- P2: return
-    P2->>+ P27: calls
-    P27-->>- P2: return
-    P2->>+ P28: calls
-    P28-->>- P2: return
-    P2->>+ P29: calls
-    P29-->>- P2: return
-    P2->>+ P30: calls
-    P30-->>- P2: return
-    P2->>+ P31: calls
-    P31-->>- P2: return
-    P2->>+ P32: calls
-    P32-->>- P2: return
-    P2->>+ P33: calls
-    P33-->>- P2: return
-    P2->>+ P34: calls
-    P34-->>- P2: return
-    P2->>+ P35: calls
-    P35-->>- P2: return
-    P2->>+ P36: calls
-    P36-->>- P2: return
-    P2->>+ P37: calls
-    P37-->>- P2: return
-    P1->>+ P0: calls
-    P0-->>- P1: return
-    P1->>+ P38: calls
-    P38-->>- P1: return
-    P1->>+ P4: calls
-    P4-->>- P1: return
-    P1->>+ P39: calls
-    P39-->>- P1: return
-    P1->>+ P9: calls
-    P9-->>- P1: return
-    P1->>+ P40: calls
-    P40-->>- P1: return
-    P1->>+ P41: calls
-    P41-->>- P1: return
-    P0->>+ P4: calls
-    P4-->>- P0: return
-    P0->>+ P42: calls
-    P42-->>- P0: return
-    P0->>+ P43: calls
-    P43-->>- P0: return
-    P0->>+ P44: calls
-    P44-->>- P0: return
+    P1->>+ P10: calls
+    P10-->>- P1: return
+    P10->>+ P1: calls
+    P1-->>- P10: return
+    P10->>+ P11: calls
+    P11-->>- P10: return
+    P10->>+ P12: calls
+    P12-->>- P10: return
+    P10->>+ P13: calls
+    P13-->>- P10: return
+    P10->>+ P14: calls
+    P14-->>- P10: return
+    P10->>+ P15: calls
+    P15-->>- P10: return
+    P10->>+ P16: calls
+    P16-->>- P10: return
+    P1->>+ P17: calls
+    P17-->>- P1: return
+    P1->>+ P18: calls
+    P18-->>- P1: return
+    P1->>+ P3: calls
+    P3-->>- P1: return
+    P1->>+ P19: calls
+    P19-->>- P1: return
+    P1->>+ P5: calls
+    P5-->>- P1: return
+    P1->>+ P20: calls
+    P20-->>- P1: return
+    P1->>+ P21: calls
+    P21-->>- P1: return
+    P1->>+ P22: calls
+    P22-->>- P1: return
+    P1->>+ P23: calls
+    P23-->>- P1: return
+    P1->>+ P24: calls
+    P24-->>- P1: return
+    P1->>+ P25: calls
+    P25-->>- P1: return
+    P1->>+ P26: calls
+    P26-->>- P1: return
+    P1->>+ P27: calls
+    P27-->>- P1: return
+    P0->>+ P2: calls
+    P2-->>- P0: return
+    P0->>+ P28: calls
+    P28-->>- P0: return
+    P0->>+ P18: calls
+    P18-->>- P0: return
+    P0->>+ P29: calls
+    P29-->>- P0: return
+    P0->>+ P30: calls
+    P30-->>- P0: return
+    P0->>+ P31: calls
+    P31-->>- P0: return
+    P0->>+ P32: calls
+    P32-->>- P0: return
+    P0->>+ P33: calls
+    P33-->>- P0: return
+    P0->>+ P34: calls
+    P34-->>- P0: return
+    P0->>+ P35: calls
+    P35-->>- P0: return
+    P0->>+ P36: calls
+    P36-->>- P0: return
+    P0->>+ P37: calls
+    P37-->>- P0: return
+    P0->>+ P38: calls
+    P38-->>- P0: return
+    P0->>+ P39: calls
+    P39-->>- P0: return
     P0->>+ P40: calls
     P40-->>- P0: return
-    P0->>+ P45: calls
-    P45-->>- P0: return
-    P0->>+ P46: calls
-    P46-->>- P0: return
-    P0->>+ P47: calls
-    P47-->>- P0: return
 ```
 
 ## Connections by Relation
 
 ### calls
-- [[syncIngredientsToShopping()]] `INFERRED`
-- [[combineAmounts()]] `INFERRED`
+- [[join]] `INFERRED`
+- [[exportRecipes()]] `INFERRED`
 - [[seedDatabase()]] `INFERRED`
-- [[rollOverdueRoutines()]] `INFERRED`
+- [[combineAmounts()]] `INFERRED`
+- [[notFound()]] `EXTRACTED`
 - [[runSync()]] `EXTRACTED`
-- [[resolveFreshness()]] `INFERRED`
+- [[checkImportToken()]] `INFERRED`
+- [[rollOverdueRoutines()]] `INFERRED`
+- [[collectTags()]] `INFERRED`
+- [[recipeImageDir()]] `INFERRED`
 - [[classifyShift()]] `INFERRED`
+- [[listRoutineTemplates()]] `INFERRED`
 - [[getAuthUrl()]] `INFERRED`
 - [[exchangeCode()]] `INFERRED`
+- [[isSafeImageFile()]] `INFERRED`
+- [[contentTypeForImage()]] `INFERRED`
 
 ### contains
+- [[route.ts]] `EXTRACTED`
 - [[route.ts]] `EXTRACTED`
 - [[route.ts]] `EXTRACTED`
 - [[route.ts]] `EXTRACTED`

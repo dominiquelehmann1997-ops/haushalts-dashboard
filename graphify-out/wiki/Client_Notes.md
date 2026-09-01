@@ -1,26 +1,31 @@
 # Client Notes
 
-> 5 nodes · cohesion 0.40
+> 10 nodes · cohesion 0.20
 
 ## Key Concepts
 
-- [taskDefer.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L1) (4 connections)
-- [before](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L28) (1 connections)
-- [dateKey()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L8) (1 connections)
-- [result](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L18) (1 connections)
-- [today](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts#L17) (1 connections)
+- [Prompt für Claude — Visuelles Design „Haushalts-Dashboard"](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L1) (9 connections)
+- [claude-design-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L1) (1 connections)
+- [Aufgaben-Status (visuell unterscheidbar)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L72) (1 connections)
+- [Konkrete Beispieldaten (Heute = Montag, 7. Juni)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L44) (1 connections)
+- [Layout — „Heute im Fokus"](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L22) (1 connections)
+- [Nicht tun](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L85) (1 connections)
+- [Personen-Farbcodierung](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L41) (1 connections)
+- [Produkt](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L9) (1 connections)
+- [Stil](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L78) (1 connections)
+- [Technik](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md#L16) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[unknown]] (18 shared connections)
 
 ## Source Files
 
-- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\services\taskDefer.test.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/services/taskDefer.test.ts)
+- [docs/claude-design-prompt.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/claude-design-prompt.md)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 18 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

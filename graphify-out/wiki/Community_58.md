@@ -1,27 +1,31 @@
 # Community 58
 
-> 5 nodes · cohesion 0.50
+> 9 nodes · cohesion 0.22
 
 ## Key Concepts
 
-- [Web Push / VAPID — Setup & Operations](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (3 connections)
-- [Prisma migrate-engine läuft nicht auf Android (unknown OS)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (3 connections)
-- [next build --webpack (Turbopack scheitert auf android/arm64)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (2 connections)
-- [Manuelle SQL-Migration via better-sqlite3 (PushSubscription Tabelle)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (1 connections)
-- [VAPID Key Pair (PUBLIC/PRIVATE/SUBJECT)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md) (1 connections)
+- [bring-list-uuids.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L1) (8 connections)
+- [Bring](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L13) (1 connections)
+- [env](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L17) (1 connections)
+- [envPath](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L16) (1 connections)
+- [{ lists }](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L37) (1 connections)
+- [m](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L19) (1 connections)
+- [mail](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L23) (1 connections)
+- [password](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L24) (1 connections)
+- [require](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs#L12) (1 connections)
 
 ## Relationships
 
-- [[Community 61]] (10 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [web/docs/push-setup.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/docs/push-setup.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\scripts\bring-list-uuids.mjs](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/scripts/bring-list-uuids.mjs)
 
 ## Audit Trail
 
-- EXTRACTED: 8 (80%)
-- INFERRED: 2 (20%)
+- EXTRACTED: 16 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

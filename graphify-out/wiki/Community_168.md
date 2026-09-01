@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [loadPenalty mechanism](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts) (0 connections)
+- [Google Calendar Setup (Phase 4)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/src/lib/engine/fairness.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/engine/fairness.ts)
+- [docs/setup/google-calendar.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/setup/google-calendar.md)
 
 ## Audit Trail
 

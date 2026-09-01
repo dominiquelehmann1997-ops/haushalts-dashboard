@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [public/offline.html](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/offline.html) (0 connections)
+- [./src/*](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json#L22) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [web/public/offline.html](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/public/offline.html)
+- [web/tsconfig.json](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/tsconfig.json)
 
 ## Audit Trail
 

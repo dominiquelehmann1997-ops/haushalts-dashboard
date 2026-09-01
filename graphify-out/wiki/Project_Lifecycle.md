@@ -1,27 +1,25 @@
 # Project Lifecycle
 
-> 3 nodes · cohesion 0.67
+> 3 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Freshness resolution order: Frontmatter → Override → Heuristik](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md) (2 connections)
-- [Sanftes Lernen (gewichtete Auswahl statt Zufall)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md) (1 connections)
-- [Vault = Wahrheit, DB = Cache (mirroring pattern)](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md) (1 connections)
+- [babyAge()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L23) (2 connections)
+- [completedMonths()](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L7) (2 connections)
+- [age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts#L1) (2 connections)
 
 ## Relationships
 
-- [[Community 80]] (4 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-essensplan-gewichtung.md)
-- [docs/superpowers/plans/2026-06-10-freshness-override.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-freshness-override.md)
-- [docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/docs/superpowers/plans/2026-06-10-rezepte-vault-v1.md)
+- [C:\Users\ThinkPad\Documents\Claude\Dashboard\web\src\lib\baby\age.ts](file:///C:/Users/ThinkPad/Documents/Claude/Dashboard/web/src/lib/baby/age.ts)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
-- INFERRED: 4 (100%)
+- EXTRACTED: 6 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---
