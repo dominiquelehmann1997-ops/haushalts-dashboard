@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("@/lib/services/claudeCli", () => ({ runClaude: vi.fn() }));
 
@@ -132,12 +132,50 @@ describe("buildExtractionPrompt", () => {
 });
 
 describe("extractRecipeFromText", () => {
+  beforeEach(() => vi.mocked(runClaude).mockReset());
+
   it("ruft die CLI mit einem knapperen Timeout als runClaudes Default auf", async () => {
     vi.mocked(runClaude).mockResolvedValue(JSON.stringify(EXTRACTED));
 
     await extractRecipeFromText("irgendein Rohtext");
 
     expect(runClaude).toHaveBeenCalledTimes(1);
-    expect(runClaude).toHaveBeenCalledWith(expect.any(String), { timeoutMs: 75_000 });
+    expect(runClaude).toHaveBeenCalledWith(expect.any(String), { timeoutMs: 90_000 });
+  });
+
+  it("gibt dem Repair-Retry nur die Restzeit des gemeinsamen Budgets", async () => {
+    vi.useFakeTimers();
+    try {
+      vi.mocked(runClaude)
+        .mockImplementationOnce(async () => {
+          vi.advanceTimersByTime(50_000); // Erstversuch verbraucht 50s …
+          return JSON.stringify({ ...EXTRACTED, steps: [] }); // … und ist unbrauchbar
+        })
+        .mockResolvedValueOnce(JSON.stringify(EXTRACTED));
+
+      await extractRecipeFromText("irgendein Rohtext");
+
+      // … also bleiben dem Retry 40s, nicht noch einmal die vollen 90s.
+      expect(runClaude).toHaveBeenNthCalledWith(2, expect.any(String), { timeoutMs: 40_000 });
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("verzichtet auf den Retry, wenn das Budget fast aufgebraucht ist", async () => {
+    vi.useFakeTimers();
+    try {
+      vi.mocked(runClaude).mockImplementationOnce(async () => {
+        vi.advanceTimersByTime(85_000);
+        return JSON.stringify({ ...EXTRACTED, steps: [] });
+      });
+
+      await expect(extractRecipeFromText("irgendein Rohtext")).rejects.toThrow(
+        /Keine Zubereitungsschritte/,
+      );
+      expect(runClaude).toHaveBeenCalledTimes(1);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

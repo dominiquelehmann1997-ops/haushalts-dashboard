@@ -13,15 +13,17 @@ import { slugFromName, type ImportedRecipe } from "@/lib/services/recipeImport";
 export const MAX_INPUT_CHARS = 6000;
 
 /**
- * Knapper als `runClaude`s Default (120s) — sonst gewinnt beim Wettlauf mit dem
- * Android-Client (callTimeout ~120s) immer der Client, und unsere Fehlermeldung
- * (claude CLI HTTP 401, "keine Rezeptdaten" o.ä.) kommt nie an, obwohl das
- * Abo-Kontingent schon verbraucht ist. Nur hier gesetzt, nicht am Default von
- * `runClaude` — die Rezept-Ideen (`recipeIdeas.ts`) laufen ohne UI-Wettlauf und
- * behalten ihr Budget. Ein Cloudflare-Tunnel kappt ohnehin bei ~100s — dieser
- * Wert ist also eine Obergrenze, kein Versprechen.
+ * Budget für die **komplette** Extraktion, also Erstversuch UND Repair-Retry
+ * zusammen — nicht pro CLI-Aufruf. Zwei Aufrufe mit je eigenem Timeout hätten
+ * zusammen länger gebraucht als der Cloudflare-Tunnel (~100s) und der
+ * Android-Client (callTimeout 120s) warten: dann gewinnt immer die Gegenseite
+ * und unsere Fehlermeldung (claude CLI HTTP 401, "keine Rezeptdaten" o.ä.)
+ * kommt nie an, obwohl das Abo-Kontingent schon verbraucht ist.
+ *
+ * Nur hier gesetzt, nicht am Default von `runClaude` — die Rezept-Ideen
+ * (`recipeIdeas.ts`) laufen ohne UI-Wettlauf und behalten ihr Budget.
  */
-const EXTRACTION_TIMEOUT_MS = 75_000;
+const EXTRACTION_BUDGET_MS = 90_000;
 
 export interface ExtractedIngredient {
   name: string;
@@ -339,17 +341,28 @@ export async function extractRecipeFromText(
 ): Promise<ImportedRecipe> {
   if (rawText.trim() === "") throw new Error("Kein Text zum Auswerten übergeben.");
 
+  // Beide Aufrufe teilen sich EIN Zeitbudget: was der Erstversuch verbraucht,
+  // fehlt dem Retry.
+  const deadline = Date.now() + EXTRACTION_BUDGET_MS;
+
   const first = parseExtractionResponse(
-    await runClaude(buildExtractionPrompt(rawText), { timeoutMs: EXTRACTION_TIMEOUT_MS }),
+    await runClaude(buildExtractionPrompt(rawText), { timeoutMs: EXTRACTION_BUDGET_MS }),
   );
   const firstProblems = first
     ? problemsOf(toImportedFromExtraction(first, sourceUrl))
     : ["Antwort enthielt kein lesbares JSON"];
   if (first && firstProblems.length === 0) return toImportedFromExtraction(first, sourceUrl);
 
+  // Zu wenig Rest für einen zweiten Anlauf: lieber jetzt mit dem konkreten Mangel
+  // scheitern, als den Client in den Netzwerk-Timeout laufen zu lassen.
+  const remaining = deadline - Date.now();
+  if (remaining < 10_000) {
+    throw new Error(`Extraktion bleibt unvollständig: ${firstProblems.join("; ")}`);
+  }
+
   const second = parseExtractionResponse(
     await runClaude(buildExtractionPrompt(rawText, firstProblems.join("; ")), {
-      timeoutMs: EXTRACTION_TIMEOUT_MS,
+      timeoutMs: remaining,
     }),
   );
   if (!second) throw new Error("Aus dem Text ließ sich kein Rezept lesen.");
