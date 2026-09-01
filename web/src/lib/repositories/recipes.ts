@@ -173,7 +173,9 @@ export async function listAllRecipes(client: PrismaClient = prisma): Promise<Rec
  */
 export async function listRecipeOptions(client: PrismaClient = prisma): Promise<RecipeOption[]> {
   const recipes = await client.recipe.findMany({
-    where: { archived: false },
+    // Snacks und Süßes sind keine Abendessen. Wer bewusst Kuchen einplanen
+    // will, ändert vorher die Kategorie des Rezepts.
+    where: { archived: false, category: "hauptmahlzeit" },
     orderBy: { name: "asc" },
     select: { id: true, name: true },
   });

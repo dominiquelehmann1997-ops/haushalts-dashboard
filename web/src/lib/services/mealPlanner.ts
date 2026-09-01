@@ -84,7 +84,9 @@ export async function generateWeekPlan(
   const { start: monday, end: sunday } = weekBoundsOf(weekStart);
 
   const recipes = await client.recipe.findMany({
-    where: { archived: false },
+    // Snacks und Süßes sind keine Abendessen. Wer bewusst Kuchen einplanen
+    // will, ändert vorher die Kategorie des Rezepts.
+    where: { archived: false, category: "hauptmahlzeit" },
     orderBy: { name: "asc" },
   });
   if (recipes.length === 0) return [];

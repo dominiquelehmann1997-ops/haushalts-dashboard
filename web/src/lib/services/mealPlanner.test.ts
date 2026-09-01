@@ -6,6 +6,7 @@ import { addDays, currentWeekBounds } from "@/lib/dates";
 
 import { generateWeekPlan } from "./mealPlanner";
 import type { DayConstraint } from "./mealConstraints";
+import { createRecipe } from "@/lib/repositories/recipes";
 
 describe("mealPlanner service", () => {
   let client: PrismaClient;
@@ -318,5 +319,33 @@ describe("generateWeekPlan — dienstbewusst", () => {
     expect(monday.extraPortion).toBe(true);
     const recipe = await cclient.recipe.findUniqueOrThrow({ where: { id: monday.recipeId! } });
     expect(recipe.reheatable).toBe(false); // proves the empty-pool → base fallback fired
+  });
+});
+
+describe("generateWeekPlan — Kategorie-Filter", () => {
+  let catClient: PrismaClient;
+
+  beforeEach(async () => {
+    catClient ??= createTestClient();
+    await resetDatabase(catClient);
+  });
+
+  afterAll(async () => {
+    await catClient?.$disconnect();
+  });
+
+  it("plant weder Snacks noch Suesses ein", async () => {
+    // Seed-Rezepte raus (sonst ist der Riegel nicht das einzige Rezept der DB).
+    await catClient.recipe.updateMany({ data: { archived: true } });
+    // Einziges Rezept der DB ist ein Snack: es darf kein Plan entstehen.
+    await createRecipe({ name: "Proteinriegel", category: "snack" }, catClient);
+
+    const entries = await generateWeekPlan(
+      new Date("2026-09-07"),
+      { preferSimple: false },
+      catClient,
+    );
+
+    expect(entries).toEqual([]);
   });
 });
