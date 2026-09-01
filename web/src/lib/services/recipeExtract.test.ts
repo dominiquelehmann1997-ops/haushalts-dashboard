@@ -120,6 +120,11 @@ describe("toImportedFromExtraction", () => {
     const parsed = parseExtractionResponse(JSON.stringify({ ...EXTRACTED, category: "nachtisch" }));
     expect(toImportedFromExtraction(parsed!, null).category).toBe("hauptmahlzeit");
   });
+
+  it("reicht eine gueltige Kategorie unveraendert durch", () => {
+    const parsed = parseExtractionResponse(JSON.stringify({ ...EXTRACTED, category: "suesses" }));
+    expect(toImportedFromExtraction(parsed!, null).category).toBe("suesses");
+  });
 });
 
 describe("problemsOf", () => {
