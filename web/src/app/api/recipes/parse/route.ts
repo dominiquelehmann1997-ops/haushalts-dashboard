@@ -11,7 +11,37 @@ import { NextResponse } from "next/server";
 import { checkImportToken } from "@/lib/api/importAuth";
 import { createJob, failJob, finishJob, readJob } from "@/lib/services/importJobs";
 import { extractRecipeFromText } from "@/lib/services/recipeExtract";
-import { importRecipeFromUrl } from "@/lib/services/recipeImport";
+import { importRecipeFromUrl, type ImportedRecipe } from "@/lib/services/recipeImport";
+
+const LINK_IMPORT_ERROR_MESSAGE =
+  "Die Seite liefert keine Rezeptdaten. Teile stattdessen den Text oder einen Screenshot.";
+
+/** Markiert einen fehlgeschlagenen Link-Import, damit der synchrone Weg dafür
+ *  gezielt mit 422 statt 502 antworten kann. */
+class LinkImportError extends Error {
+  constructor() {
+    super(LINK_IMPORT_ERROR_MESSAGE);
+  }
+}
+
+/**
+ * Text oder Link zu einem Rezept. Reiner Link ohne Text läuft über den
+ * günstigen Weg (Seiten-Markup, kein Abo-Kontingent); scheitert der, gibt es
+ * gezielt die verständliche Meldung statt der Roh-Exception — sonst sieht der
+ * Nutzer beim Teilen eines Links ohne schema.org-Markup nur Technik-Kauderwelsch.
+ * Von synchronem und asynchronem Weg gleichermaßen genutzt, damit beide
+ * dieselbe Fehlerbehandlung bekommen.
+ */
+async function resolveRecipe(text: string, sourceUrl: string | null): Promise<ImportedRecipe> {
+  if (sourceUrl && text.trim() === "") {
+    try {
+      return await importRecipeFromUrl(sourceUrl);
+    } catch {
+      throw new LinkImportError();
+    }
+  }
+  return extractRecipeFromText(text, sourceUrl);
+}
 
 export async function POST(request: Request) {
   const auth = checkImportToken(request);
@@ -46,26 +76,11 @@ export async function POST(request: Request) {
   }
 
   try {
-    // Reiner Link ohne Text: erst der günstige Weg über das Seiten-Markup.
-    if (sourceUrl && text.trim() === "") {
-      try {
-        return NextResponse.json({ ok: true, recipe: await importRecipeFromUrl(sourceUrl) });
-      } catch {
-        return NextResponse.json(
-          {
-            ok: false,
-            error:
-              "Die Seite liefert keine Rezeptdaten. Teile stattdessen den Text oder einen Screenshot.",
-          },
-          { status: 422 },
-        );
-      }
-    }
-    return NextResponse.json({ ok: true, recipe: await extractRecipeFromText(text, sourceUrl) });
+    return NextResponse.json({ ok: true, recipe: await resolveRecipe(text, sourceUrl) });
   } catch (e) {
     return NextResponse.json(
       { ok: false, error: e instanceof Error ? e.message : "Extraktion fehlgeschlagen." },
-      { status: 502 },
+      { status: e instanceof LinkImportError ? 422 : 502 },
     );
   }
 }
@@ -76,11 +91,7 @@ export async function POST(request: Request) {
  */
 async function runExtraction(jobId: string, text: string, sourceUrl: string | null) {
   try {
-    const recipe =
-      sourceUrl && text.trim() === ""
-        ? await importRecipeFromUrl(sourceUrl)
-        : await extractRecipeFromText(text, sourceUrl);
-    finishJob(jobId, recipe);
+    finishJob(jobId, await resolveRecipe(text, sourceUrl));
   } catch (e) {
     failJob(jobId, e instanceof Error ? e.message : "Extraktion fehlgeschlagen.");
   }

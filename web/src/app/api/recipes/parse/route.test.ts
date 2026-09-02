@@ -11,8 +11,15 @@ vi.mock("@/lib/services/recipeExtract", () => ({
   extractRecipeFromText: vi.fn(),
 }));
 
+// Für den Link-Weg (siehe unten) muss auch der günstige Import gemockt werden,
+// sonst liefe der Fehlerfall gegen eine echte Seite.
+vi.mock("@/lib/services/recipeImport", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/services/recipeImport")>();
+  return { ...actual, importRecipeFromUrl: vi.fn() };
+});
+
 import { extractRecipeFromText } from "@/lib/services/recipeExtract";
-import type { ImportedRecipe } from "@/lib/services/recipeImport";
+import { importRecipeFromUrl, type ImportedRecipe } from "@/lib/services/recipeImport";
 import { __resetJobsForTest } from "@/lib/services/importJobs";
 import { GET, POST } from "./route";
 
@@ -123,6 +130,31 @@ describe("POST /api/recipes/parse — Body-Prüfung", () => {
   it("wertet reinen Leerraum wie fehlenden Text", async () => {
     const res = await POST(post({ text: "   \n  " }, `Bearer ${TOKEN}`));
     expect(res.status).toBe(400);
+  });
+});
+
+describe("Link-Import ohne schema.org-Markup", () => {
+  const LINK_ERROR_MESSAGE =
+    "Die Seite liefert keine Rezeptdaten. Teile stattdessen den Text oder einen Screenshot.";
+
+  it("antwortet synchron 422 mit der verständlichen Meldung", async () => {
+    vi.mocked(importRecipeFromUrl).mockRejectedValue(new Error("kein schema.org gefunden"));
+
+    const res = await POST(authorizedRequest({ sourceUrl: "https://example.com/rezept" }));
+
+    expect(res.status).toBe(422);
+    await expect(res.json()).resolves.toEqual({ ok: false, error: LINK_ERROR_MESSAGE });
+  });
+
+  it("landet im asynchronen Modus als status:error mit derselben Meldung", async () => {
+    vi.mocked(importRecipeFromUrl).mockRejectedValue(new Error("kein schema.org gefunden"));
+    const { jobId } = await (
+      await POST(authorizedRequest({ sourceUrl: "https://example.com/rezept", async: true }))
+    ).json();
+    await new Promise((r) => setTimeout(r, 0));
+
+    const body = await (await GET(authorizedGet(`?job=${jobId}`))).json();
+    expect(body).toMatchObject({ status: "error", error: LINK_ERROR_MESSAGE });
   });
 });
 
