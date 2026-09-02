@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   createJob,
+  enqueue,
   failJob,
   finishJob,
   JOB_TTL_MS,
@@ -56,5 +57,42 @@ describe("importJobs", () => {
 
   it("ignoriert Ergebnisse fuer unbekannte Jobs", () => {
     expect(() => finishJob("gibtsnicht", RECIPE)).not.toThrow();
+  });
+});
+
+describe("enqueue", () => {
+  it("laesst immer nur eine Aufgabe gleichzeitig laufen", async () => {
+    let laufend = 0;
+    let gleichzeitigMax = 0;
+    const lauf = () => async () => {
+      laufend++;
+      gleichzeitigMax = Math.max(gleichzeitigMax, laufend);
+      await new Promise((r) => setTimeout(r, 10));
+      laufend--;
+    };
+
+    enqueue(lauf());
+    enqueue(lauf());
+    enqueue(lauf());
+    await new Promise((r) => setTimeout(r, 100));
+
+    expect(gleichzeitigMax).toBe(1);
+  });
+
+  it("laesst einen Fehlschlag die Warteschlange nicht anhalten", async () => {
+    const gelaufen: string[] = [];
+    enqueue(async () => {
+      throw new Error("kaputt");
+    });
+    enqueue(async () => {
+      gelaufen.push("zweite");
+    });
+    await new Promise((r) => setTimeout(r, 50));
+
+    expect(gelaufen).toEqual(["zweite"]);
+  });
+
+  it("haelt Jobs eine Stunde", () => {
+    expect(JOB_TTL_MS).toBe(3_600_000);
   });
 });

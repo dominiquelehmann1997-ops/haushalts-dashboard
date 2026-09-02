@@ -9,7 +9,7 @@
 import { NextResponse } from "next/server";
 
 import { checkImportToken } from "@/lib/api/importAuth";
-import { createJob, failJob, finishJob, readJob } from "@/lib/services/importJobs";
+import { createJob, enqueue, failJob, finishJob, readJob } from "@/lib/services/importJobs";
 import { extractRecipeFromText } from "@/lib/services/recipeExtract";
 import { importRecipeFromUrl, type ImportedRecipe } from "@/lib/services/recipeImport";
 
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
   // der Cloudflare-Edge kann nicht mehr greifen.
   if (body?.async === true) {
     const jobId = createJob();
-    void runExtraction(jobId, text, sourceUrl);
+    enqueue(() => runExtraction(jobId, text, sourceUrl));
     return NextResponse.json({ ok: true, jobId }, { status: 202 });
   }
 

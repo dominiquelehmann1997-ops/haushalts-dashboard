@@ -13,8 +13,12 @@ export type ImportJob =
   | { status: "done"; recipe: ImportedRecipe }
   | { status: "error"; error: string };
 
-/** Nach dieser Zeit wird ein Job vergessen, fertig oder nicht. */
-export const JOB_TTL_MS = 600_000;
+/**
+ * Nach dieser Zeit wird ein Job vergessen, fertig oder nicht. Eine Stunde, weil
+ * zwischen dem Fertigwerden und dem Antippen der Benachrichtigung auf dem Handy
+ * beliebig viel Zeit liegen kann.
+ */
+export const JOB_TTL_MS = 3_600_000;
 
 const jobs = new Map<string, { job: ImportJob; createdAt: number }>();
 
@@ -62,4 +66,20 @@ export function failJob(id: string, error: string): void {
 /** Nur für Tests. */
 export function __resetJobsForTest(): void {
   jobs.clear();
+}
+
+/**
+ * Extraktionen laufen nacheinander, nie parallel. Ein `claude`-Prozess wiegt
+ * ~126 MB; das Tablet hat 7,4 GB RAM, davon 2,2 GB frei, und swappt bereits zu
+ * 80 %. `next-server` ist mit 194 MB der größte Prozess und damit erster
+ * Kandidat, wenn Android unter Druck aufräumt. Angenommen wird trotzdem sofort
+ * (die Route antwortet mit 202) — nur die Arbeit reiht sich ein.
+ */
+let queue: Promise<void> = Promise.resolve();
+
+export function enqueue(task: () => Promise<void>): void {
+  // `catch` in der Kette, nicht am Aufrufer: ein gescheiterter Job darf die
+  // Warteschlange nicht anhalten — er hat seinen Fehler ohnehin schon im Job
+  // vermerkt.
+  queue = queue.then(task).catch(() => {});
 }
