@@ -154,13 +154,13 @@ describe("buildExtractionPrompt", () => {
 describe("extractRecipeFromText", () => {
   beforeEach(() => vi.mocked(runClaude).mockReset());
 
-  it("ruft die CLI mit einem knapperen Timeout als runClaudes Default auf", async () => {
+  it("ruft die CLI mit dem gemeinsamen Extraktionsbudget auf", async () => {
     vi.mocked(runClaude).mockResolvedValue(JSON.stringify(EXTRACTED));
 
     await extractRecipeFromText("irgendein Rohtext");
 
     expect(runClaude).toHaveBeenCalledTimes(1);
-    expect(runClaude).toHaveBeenCalledWith(expect.any(String), { timeoutMs: 90_000 });
+    expect(runClaude).toHaveBeenCalledWith(expect.any(String), { timeoutMs: 240_000 });
   });
 
   it("gibt dem Repair-Retry nur die Restzeit des gemeinsamen Budgets", async () => {
@@ -175,8 +175,8 @@ describe("extractRecipeFromText", () => {
 
       await extractRecipeFromText("irgendein Rohtext");
 
-      // … also bleiben dem Retry 40s, nicht noch einmal die vollen 90s.
-      expect(runClaude).toHaveBeenNthCalledWith(2, expect.any(String), { timeoutMs: 40_000 });
+      // … also bleiben dem Retry 190s, nicht noch einmal die vollen 240s.
+      expect(runClaude).toHaveBeenNthCalledWith(2, expect.any(String), { timeoutMs: 190_000 });
     } finally {
       vi.useRealTimers();
     }
@@ -186,7 +186,7 @@ describe("extractRecipeFromText", () => {
     vi.useFakeTimers();
     try {
       vi.mocked(runClaude).mockImplementationOnce(async () => {
-        vi.advanceTimersByTime(85_000);
+        vi.advanceTimersByTime(235_000);
         return JSON.stringify({ ...EXTRACTED, steps: [] });
       });
 

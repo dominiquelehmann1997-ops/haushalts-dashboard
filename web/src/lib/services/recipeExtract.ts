@@ -15,16 +15,24 @@ export const MAX_INPUT_CHARS = 6000;
 
 /**
  * Budget für die **komplette** Extraktion, also Erstversuch UND Repair-Retry
- * zusammen — nicht pro CLI-Aufruf. Zwei Aufrufe mit je eigenem Timeout hätten
- * zusammen länger gebraucht als der Cloudflare-Tunnel (~100s) und der
- * Android-Client (callTimeout 120s) warten: dann gewinnt immer die Gegenseite
- * und unsere Fehlermeldung (claude CLI HTTP 401, "keine Rezeptdaten" o.ä.)
- * kommt nie an, obwohl das Abo-Kontingent schon verbraucht ist.
+ * zusammen — nicht pro CLI-Aufruf.
+ *
+ * Der Wert stand bis zum 2026-09-02 auf 90s, weil damals der Cloudflare-Tunnel
+ * (~100s) und der Android-Client (callTimeout 120s) mitgerechnet werden mussten:
+ * wer zuerst aufgab, gewann, und unsere Fehlermeldung kam nie an. Seit der Import
+ * als Hintergrund-Job läuft (`importJobs.ts`) bindet beides nicht mehr — jeder
+ * HTTP-Request dauert Millisekunden. Übrig blieb nur der Deckel selbst, und der
+ * hat am 2026-09-02 einen echten Import mit "claude CLI Timeout nach 90s"
+ * abgeschossen: eine Extraktion braucht je nach Quelle 33-90+s, die Streuung ist
+ * groß.
+ *
+ * 240s gibt beiden Aufrufen Luft. Die Grenze ist bewusst großzügig — ein
+ * abgebrochener Import kostet Abo-Kontingent und liefert nichts.
  *
  * Nur hier gesetzt, nicht am Default von `runClaude` — die Rezept-Ideen
- * (`recipeIdeas.ts`) laufen ohne UI-Wettlauf und behalten ihr Budget.
+ * (`recipeIdeas.ts`) haben ihr eigenes Budget.
  */
-const EXTRACTION_BUDGET_MS = 90_000;
+const EXTRACTION_BUDGET_MS = 240_000;
 
 export interface ExtractedIngredient {
   name: string;
