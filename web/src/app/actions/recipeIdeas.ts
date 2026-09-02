@@ -23,7 +23,11 @@ export interface IdeasResult {
 /** Generiert `count` Rezept-Ideen via Claude — ohne DB-Write. */
 export async function generateRecipeIdeasAction(count = 3): Promise<IdeasResult> {
   try {
-    const [recipes, phase] = await Promise.all([listRecipeOptions(), getActivePhase()]);
+    // Alle Rezepte, nicht nur Hauptmahlzeiten: die Liste dient hier nur dazu,
+    // Claude vorhandene Namen zu zeigen, damit es keine Dubletten vorschlägt.
+    // Gefiltert liefe ein bereits vorhandener Snack erneut hinein und würde
+    // beim Übernehmen über den Slug-Upsert still auf "hauptmahlzeit" gesetzt.
+    const [recipes, phase] = await Promise.all([listRecipeOptions(false), getActivePhase()]);
     const context = phase?.mode === "elternzeit" ? "Elternzeit – möglichst einfach & schnell" : undefined;
     const ideas = await generateRecipeIdeas(
       recipes.map((r) => r.name),

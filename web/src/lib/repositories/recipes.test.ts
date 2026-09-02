@@ -161,12 +161,22 @@ describe("recipes repository", () => {
 
   describe("listRecipeOptions", () => {
     it("liefert nur id und name, ohne archivierte", async () => {
-      const options = await listRecipeOptions(client);
+      const options = await listRecipeOptions(true, client);
       expect(options.length).toBeGreaterThan(0);
       expect(Object.keys(options[0]).sort()).toEqual(["id", "name"]);
 
       await client.recipe.update({ where: { id: options[0].id }, data: { archived: true } });
-      expect(await listRecipeOptions(client)).toHaveLength(options.length - 1);
+      expect(await listRecipeOptions(true, client)).toHaveLength(options.length - 1);
+    });
+
+    it("blendet Snacks standardmaessig aus, ungefiltert liefert sie mit", async () => {
+      await createRecipe({ name: "Energy-Balls", category: "snack" }, client);
+
+      const gefiltert = await listRecipeOptions(true, client);
+      expect(gefiltert.map((r) => r.name)).not.toContain("Energy-Balls");
+
+      const ungefiltert = await listRecipeOptions(false, client);
+      expect(ungefiltert.map((r) => r.name)).toContain("Energy-Balls");
     });
   });
 

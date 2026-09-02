@@ -10,7 +10,6 @@ import { PrismaClient } from "@/generated/prisma/client";
 import { normalizeCategory } from "@/lib/domain";
 import type {
   Recipe,
-  RecipeCategory,
   RecipeFilter,
   RecipeIngredient,
   RecipeOption,
@@ -170,12 +169,23 @@ export async function listAllRecipes(client: PrismaClient = prisma): Promise<Rec
 /**
  * Schlanke `{id, name}`-Liste für die Rezept-Auswahl im Essensplan. Bewusst
  * getrennt von `listRecipes`: die Dropdowns brauchen weder Zutaten noch Filter.
+ *
+ * `onlyMainMeals` (Default `true`) blendet Snacks und Süßes aus — richtig für
+ * das Essensplan-Dropdown, wo niemand aus Versehen Kuchen einplanen soll. Die
+ * Rezept-Ideen (`recipeIdeas.ts`) brauchen dagegen ALLE Rezepte: sie nutzen
+ * die Liste nur, damit Claude keine Dublette vorschlägt, und mit gefilterten
+ * Ergebnissen würde ein bereits vorhandener Snack erneut vorgeschlagen und
+ * beim Übernehmen über den Slug-Upsert still auf "hauptmahlzeit" umkategorisiert.
  */
-export async function listRecipeOptions(client: PrismaClient = prisma): Promise<RecipeOption[]> {
+export async function listRecipeOptions(
+  onlyMainMeals = true,
+  client: PrismaClient = prisma,
+): Promise<RecipeOption[]> {
   const recipes = await client.recipe.findMany({
-    // Snacks und Süßes sind keine Abendessen. Wer bewusst Kuchen einplanen
-    // will, ändert vorher die Kategorie des Rezepts.
-    where: { archived: false, category: "hauptmahlzeit" },
+    where: {
+      archived: false,
+      ...(onlyMainMeals ? { category: "hauptmahlzeit" } : {}),
+    },
     orderBy: { name: "asc" },
     select: { id: true, name: true },
   });
