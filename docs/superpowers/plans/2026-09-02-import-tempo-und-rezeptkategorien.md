@@ -1143,9 +1143,10 @@ Erwartet: größer 0. Ist das Ergebnis 0, war `prisma generate` wirkungslos — 
 npx next build --webpack     # Turbopack hat keine Bindings auf android/arm64
 ~/restart-dashboard.sh
 curl -s -o /dev/null -w "%{http_code}\n" http://localhost:3001/
+curl -s -o /dev/null -w "%{http_code}\n" http://localhost:3001/mobile/meals
 ```
 
-Erwartet: `200`.
+Erwartet: beide `200`. Die Startseite allein genügt als Probe nicht — sie liest die Rezept-Tabelle gar nicht, während `/mobile/meals` den Essensplan lädt und damit die neue Spalte und den frisch generierten Prisma-Client trifft; mit `typescript.ignoreBuildErrors: true` liefen sonst Build und Smoke-Test grün, obwohl der Essensplan beim ersten Öffnen durch den Nutzer bricht.
 
 - [ ] **Step 7: Messwert NACH dem Deploy holen**
 
