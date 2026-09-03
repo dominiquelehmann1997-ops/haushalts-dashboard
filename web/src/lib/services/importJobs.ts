@@ -1,6 +1,6 @@
 // Zustand laufender Rezept-Importe. Bewusst nur im Speicher: ein Import lebt
-// eine Minute, danach ist der Eintrag wertlos. Eine Tabelle dafür hieße eine
-// Migration auf dem Android-Tablet für Wegwerfdaten.
+// eine Stunde (JOB_TTL_MS), danach ist der Eintrag wertlos. Eine Tabelle dafür
+// hieße eine Migration auf dem Android-Tablet für Wegwerfdaten.
 //
 // Das trägt, weil `next start` EIN Prozess ist. Liefe das Dashboard je mit
 // mehreren Workern, landeten Start und Abfrage in verschiedenen Prozessen und
