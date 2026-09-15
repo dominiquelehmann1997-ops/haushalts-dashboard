@@ -9,9 +9,10 @@
 import { useState, useTransition } from "react";
 import Link from "next/link";
 
-import type { Meal, RecipeOption } from "@/lib/data";
+import type { Meal, Recipe } from "@/lib/data";
 import { RECIPES_PATH } from "@/lib/recipeFilterParams";
 import { Card } from "@/components/ui";
+import { RecipePicker } from "@/components/mobile/RecipePicker";
 import { MealReasonBadge } from "@/components/widgets";
 import {
   setActiveDayRecipeAction,
@@ -27,7 +28,7 @@ function ingredientLabel(i: { name: string; amount: string | null; unit: string 
   return amount ? `${i.name} — ${amount}` : i.name;
 }
 
-export function MealWeekList({ meals, recipes }: { meals: Meal[]; recipes: RecipeOption[] }) {
+export function MealWeekList({ meals, recipes }: { meals: Meal[]; recipes: Recipe[] }) {
   const [openDay, setOpenDay] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
   const [pushResult, setPushResult] = useState<{ entryId: string; bring: BringPushResult; items: string[] } | null>(
@@ -139,21 +140,14 @@ export function MealWeekList({ meals, recipes }: { meals: Meal[]; recipes: Recip
                   )}
 
                   <div className="flex items-center gap-2 flex-wrap">
-                    <select
-                      key={m.recipeId ?? "skip"}
-                      defaultValue={m.recipeId ?? ""}
+                    <RecipePicker
+                      recipes={recipes}
+                      currentId={m.recipeId ?? null}
+                      title={`Gericht für ${m.day} wählen`}
                       disabled={pending}
-                      onChange={(e) => handleSwap(m, e.target.value)}
-                      className="text-[12px] rounded-lg bg-white dark:bg-white/10 px-1.5 py-1 max-w-[140px]"
-                      aria-label={`${m.day} Gericht tauschen`}
-                    >
-                      <option value="">— überspringen</option>
-                      {recipes.map((r) => (
-                        <option key={r.id} value={r.id}>
-                          {r.name}
-                        </option>
-                      ))}
-                    </select>
+                      onPick={(id) => handleSwap(m, id)}
+                      triggerClassName={`${PILL} text-ink-soft dark:text-cream/70 bg-white dark:bg-white/10 hover:bg-cream disabled:cursor-wait`}
+                    />
 
                     {m.id && (m.ingredients?.length ?? 0) > 0 && (
                       <button

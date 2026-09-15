@@ -5,7 +5,7 @@ import { MealPlanControl } from "@/components/MealPlanControl";
 import { RecipeIdeasControl } from "@/components/RecipeIdeasControl";
 import { RecipeUrlImport } from "@/components/RecipeUrlImport";
 import { getDraftMealPlan, getWeekMealPlan } from "@/lib/repositories/meals";
-import { listRecipeOptions } from "@/lib/repositories/recipes";
+import { listRecipes } from "@/lib/repositories/recipes";
 import { hasCalendarDataForWeek } from "@/lib/repositories/calendar";
 import { PageHeader } from "@/components/mobile/PageHeader";
 import { MealWeekList } from "@/components/mobile/MealWeekList";
@@ -31,7 +31,8 @@ export default async function MobileMealsPage({
   const [meals, draft, recipes, hasShiftData] = await Promise.all([
     getWeekMealPlan(undefined, weekStart),
     getDraftMealPlan(undefined, weekStart),
-    listRecipeOptions(),
+    // Samt Zutaten und Tags — die Gericht-Auswahl sucht und filtert danach.
+    listRecipes({ category: "hauptmahlzeit" }),
     hasCalendarDataForWeek(weekStart),
   ]);
 

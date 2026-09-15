@@ -12,8 +12,9 @@
 
 import { useState, useTransition } from "react";
 
-import type { DraftMeal, RecipeOption } from "@/lib/data";
+import type { DraftMeal, Recipe } from "@/lib/data";
 import { MealReasonBadge } from "@/components/widgets";
+import { RecipePicker } from "@/components/mobile/RecipePicker";
 import {
   approveDraftAction,
   discardDraftAction,
@@ -30,7 +31,7 @@ export function MealDraftPanel({
   weekLabel,
 }: {
   draft: DraftMeal[];
-  recipes: RecipeOption[];
+  recipes: Recipe[];
   weekStartISO?: string;
   weekLabel?: string;
 }) {
@@ -93,21 +94,14 @@ export function MealDraftPanel({
             >
               🎲
             </button>
-            <select
-              key={m.recipeId ?? "skip"}
-              defaultValue={m.recipeId ?? ""}
+            <RecipePicker
+              recipes={recipes}
+              currentId={m.recipeId ?? null}
+              title={`Gericht für ${m.day} wählen`}
               disabled={pending}
-              onChange={(e) => run(() => setDraftDayRecipeAction(m.dateISO, e.target.value))}
-              className="shrink-0 text-[12px] rounded-lg bg-white dark:bg-white/10 px-1.5 py-1 max-w-[120px]"
-              aria-label={`${m.day} Gericht tauschen`}
-            >
-              <option value="">— überspringen</option>
-              {recipes.map((r) => (
-                <option key={r.id} value={r.id}>
-                  {r.name}
-                </option>
-              ))}
-            </select>
+              onPick={(id) => run(() => setDraftDayRecipeAction(m.dateISO, id))}
+              triggerClassName="shrink-0 text-[12px] rounded-lg bg-white dark:bg-white/10 px-2 py-1 disabled:cursor-wait"
+            />
           </li>
         ))}
       </ul>

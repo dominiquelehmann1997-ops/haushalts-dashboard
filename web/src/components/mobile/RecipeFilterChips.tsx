@@ -7,6 +7,7 @@ import Link from "next/link";
 import { CATEGORY_LABELS, RECIPE_CATEGORIES } from "@/lib/domain";
 import type { RecipeFilter, RecipeTagCount } from "@/lib/domain";
 import { recipesHref, toggleField, toggleTag } from "@/lib/recipeFilterParams";
+import { visibleTags } from "@/lib/services/recipeSearch";
 
 const BASE =
   "inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full transition-colors whitespace-nowrap";
@@ -43,13 +44,7 @@ export function RecipeFilterChips({
   tags: RecipeTagCount[];
 }) {
   const activeTags = filter.tags ?? [];
-
-  // Sonst wird die Chip-Leiste bei vielen Tags unbedienbar. Aktive Tags sind
-  // immer dabei, auch wenn sie sonst hinten rausfielen.
-  const shown = [
-    ...tags.filter((t) => activeTags.includes(t.tag)),
-    ...tags.filter((t) => !activeTags.includes(t.tag)).slice(0, 12),
-  ];
+  const shown = visibleTags(tags, activeTags);
 
   return (
     <div className="space-y-2">

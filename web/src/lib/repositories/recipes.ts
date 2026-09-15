@@ -167,11 +167,10 @@ export async function listAllRecipes(client: PrismaClient = prisma): Promise<Rec
 }
 
 /**
- * Schlanke `{id, name}`-Liste für die Rezept-Auswahl im Essensplan. Bewusst
- * getrennt von `listRecipes`: die Dropdowns brauchen weder Zutaten noch Filter.
+ * Schlanke `{id, name}`-Liste ohne Zutaten. (Die Gericht-Auswahl im Essensplan
+ * nutzt inzwischen `listRecipes`, weil sie nach Zutaten und Tags filtert.)
  *
- * `onlyMainMeals` (Default `true`) blendet Snacks und Süßes aus — richtig für
- * das Essensplan-Dropdown, wo niemand aus Versehen Kuchen einplanen soll. Die
+ * `onlyMainMeals` (Default `true`) blendet Snacks und Süßes aus. Die
  * Rezept-Ideen (`recipeIdeas.ts`) brauchen dagegen ALLE Rezepte: sie nutzen
  * die Liste nur, damit Claude keine Dublette vorschlägt, und mit gefilterten
  * Ergebnissen würde ein bereits vorhandener Snack erneut vorgeschlagen und

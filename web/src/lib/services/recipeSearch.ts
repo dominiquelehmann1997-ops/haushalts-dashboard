@@ -107,3 +107,16 @@ export function collectTags(recipes: Recipe[]): RecipeTagCount[] {
     .map(([tag, count]) => ({ tag, count }))
     .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag, "de"));
 }
+
+/**
+ * Welche Tag-Chips gezeigt werden: aktive immer (vorne), dazu die häufigsten
+ * bis `limit`. Sonst wird eine Chip-Leiste bei vielen Tags unbedienbar — und
+ * ein aktiver Tag darf nicht hinten rausfallen, sonst ließe er sich nicht mehr
+ * abwählen.
+ */
+export function visibleTags(tags: RecipeTagCount[], active: string[], limit = 12): RecipeTagCount[] {
+  return [
+    ...tags.filter((t) => active.includes(t.tag)),
+    ...tags.filter((t) => !active.includes(t.tag)).slice(0, limit),
+  ];
+}

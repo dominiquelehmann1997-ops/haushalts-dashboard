@@ -8,6 +8,7 @@ import {
   hasIngredient,
   matchesQuery,
   normalizeSearchText,
+  visibleTags,
 } from "./recipeSearch";
 
 function recipe(over: Partial<Recipe> = {}): Recipe {
@@ -170,5 +171,14 @@ describe("collectTags", () => {
 
   it("liefert eine leere Liste, wenn niemand Tags hat", () => {
     expect(collectTags([recipe({ tags: [] })])).toEqual([]);
+  });
+});
+
+describe("visibleTags", () => {
+  const tags = ["a", "b", "c", "d"].map((tag) => ({ tag, count: 1 }));
+
+  it("kappt auf die häufigsten, hält aktive aber immer vorne", () => {
+    expect(visibleTags(tags, [], 2).map((t) => t.tag)).toEqual(["a", "b"]);
+    expect(visibleTags(tags, ["d"], 2).map((t) => t.tag)).toEqual(["d", "a", "b"]);
   });
 });
