@@ -23,6 +23,13 @@
 # Android 16 blocks netlink for non-root, so tailscaled cannot start. cloudflared
 # runs entirely in userspace. See docs/tablet-remote-access.md.
 
+# Termux:Boot starts us without LD_PRELOAD — only the Termux app's own terminal
+# sessions get it. Without termux-exec, shebangs like `#!/usr/bin/env node` fail
+# (`sh: 1: next: not found`), so npm/next never start after a reboot.
+if [ -z "$LD_PRELOAD" ] && [ -f "$PREFIX/lib/libtermux-exec-ld-preload.so" ]; then
+  export LD_PRELOAD="$PREFIX/lib/libtermux-exec-ld-preload.so"
+fi
+
 # Keep CPU/network awake while the server runs (prevents Doze killing it).
 termux-wake-lock 2>/dev/null || true
 
