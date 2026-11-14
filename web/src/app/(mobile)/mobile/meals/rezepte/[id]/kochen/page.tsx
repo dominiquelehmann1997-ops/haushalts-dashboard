@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { RecipeCookView } from "@/components/mobile/RecipeCookView";
 import { getRecipe } from "@/lib/repositories/recipes";
 import { RECIPES_PATH } from "@/lib/recipeFilterParams";
+import { parsePortionsParam, PORTIONS_PARAM } from "@/lib/services/portions";
 
 export const dynamic = "force-dynamic";
 
@@ -12,10 +13,14 @@ export const dynamic = "force-dynamic";
 // eigenes Layout mit fester Höhe haben, ohne die Detailseite zu verbiegen.
 export default async function MobileRecipeCookPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { id } = await params;
+  // Portionszahl aus der Detailseite (`?portionen=N`) — ohne Angabe gilt das Rezept.
+  const portions = parsePortionsParam((await searchParams)[PORTIONS_PARAM]);
   const recipe = await getRecipe(id);
   if (!recipe) notFound();
 
@@ -35,7 +40,7 @@ export default async function MobileRecipeCookPage({
           </h1>
         </div>
         <Link
-          href={`${RECIPES_PATH}/${recipe.id}`}
+          href={`${RECIPES_PATH}/${recipe.id}${portions !== null ? `?${PORTIONS_PARAM}=${portions}` : ""}`}
           className="shrink-0 text-[11.5px] font-semibold px-2.5 py-1 rounded-full
                      bg-cream/70 dark:bg-white/[0.06] text-ink-soft dark:text-cream/70
                      hover:bg-cream dark:hover:bg-white/[0.1] transition-colors"
@@ -43,7 +48,7 @@ export default async function MobileRecipeCookPage({
           Zurück
         </Link>
       </div>
-      <RecipeCookView recipe={recipe} />
+      <RecipeCookView recipe={recipe} portions={portions} />
     </div>
   );
 }

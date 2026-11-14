@@ -1,32 +1,28 @@
 "use client";
 
-// Zutatenliste der Kochansicht mit Portionsregler. Client-Komponente, weil
+// Zutatenliste der Detailseite mit Portionsregler. Client-Komponente, weil
 // sich die Mengen beim Schieben live ändern sollen — gerechnet wird in
 // `portions.ts` (rein und getestet).
 //
 // Ohne Portionsangabe am Rezept wird nicht gerechnet: Der Regler bleibt weg
 // und die Zutaten stehen so da, wie sie im Rezept stehen.
 
-import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 
 import type { RecipeIngredient } from "@/lib/domain";
 import { groupIngredientsBySection } from "@/lib/services/ingredientGroups";
-import { clampPortions, MAX_PORTIONS, MIN_PORTIONS, scaleIngredients } from "@/lib/services/portions";
+import { MAX_PORTIONS, MIN_PORTIONS, scaleIngredients } from "@/lib/services/portions";
+import { useRecipePortions } from "@/components/mobile/RecipePortions";
 
 const STEP_BUTTON =
   "w-8 h-8 grid place-items-center rounded-full bg-white/70 dark:bg-white/[0.08] " +
   "text-ink-soft dark:text-cream/70 disabled:opacity-35 disabled:cursor-not-allowed " +
   "hover:bg-white dark:hover:bg-white/[0.14] transition-colors";
 
-export function RecipePortionList({
-  ingredients,
-  servings,
-}: {
-  ingredients: RecipeIngredient[];
-  servings: number | null;
-}) {
-  const [portions, setPortions] = useState(() => clampPortions(servings ?? MIN_PORTIONS));
+export function RecipePortionList({ ingredients }: { ingredients: RecipeIngredient[] }) {
+  // Portionszahl kommt aus dem Provider der Detailseite — Koch-Link und
+  // Bring-Knopf lesen dieselbe Zahl.
+  const { servings, portions, setPortions } = useRecipePortions();
 
   const scalable = servings !== null && servings > 0;
   const shown = scalable ? scaleIngredients(ingredients, servings, portions) : ingredients;
@@ -42,7 +38,7 @@ export function RecipePortionList({
           <div className="flex items-center gap-1.5">
             <button
               type="button"
-              onClick={() => setPortions((p) => clampPortions(p - 1))}
+              onClick={() => setPortions((p) => p - 1)}
               disabled={portions <= MIN_PORTIONS}
               aria-label="Eine Portion weniger"
               className={STEP_BUTTON}
@@ -57,7 +53,7 @@ export function RecipePortionList({
             </span>
             <button
               type="button"
-              onClick={() => setPortions((p) => clampPortions(p + 1))}
+              onClick={() => setPortions((p) => p + 1)}
               disabled={portions >= MAX_PORTIONS}
               aria-label="Eine Portion mehr"
               className={STEP_BUTTON}

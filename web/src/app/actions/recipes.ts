@@ -19,6 +19,8 @@ import {
 } from "@/lib/repositories/recipes";
 import { attachRecipeImage } from "@/lib/services/recipeImage";
 import { importRecipeFromUrl } from "@/lib/services/recipeImport";
+import { pushRecipeIngredients } from "@/lib/services/mealIngredientPush";
+import type { BringPushResult } from "@/integrations/bring/client";
 
 /**
  * Wie `revalidateDashboard`, nimmt aber die Rezept-Detailseiten mit. Die
@@ -100,4 +102,16 @@ export async function importRecipeUrlAction(url: string): Promise<RecipeUrlImpor
       error: e instanceof Error ? e.message : "Unbekannter Fehler",
     };
   }
+}
+
+/**
+ * Pusht die Zutaten eines Rezepts — direkt aus dem Rezeptbuch, ohne Umweg
+ * über den Wochenplan — auf Bring!, umgerechnet auf `portions`. Never throws:
+ * liefert das Bring-Ergebnis + die Namen (für den Kopier-Fallback).
+ */
+export async function pushRecipeIngredientsAction(
+  recipeId: string,
+  portions: number | null,
+): Promise<{ bring: BringPushResult; items: string[] }> {
+  return pushRecipeIngredients(recipeId, portions);
 }

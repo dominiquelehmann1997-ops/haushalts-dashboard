@@ -5,7 +5,7 @@ import { PrismaClient } from "@/generated/prisma/client";
 import { currentWeekBounds } from "@/lib/dates";
 import type { BringItem, BringPushResult } from "@/integrations/bring/client";
 
-import { pushMealIngredients } from "./mealIngredientPush";
+import { pushMealIngredients, pushRecipeIngredients } from "./mealIngredientPush";
 
 describe("pushMealIngredients", () => {
   let client: PrismaClient;
@@ -129,6 +129,82 @@ describe("pushMealIngredients", () => {
 
     const res = await pushMealIngredients(entry.id, client, push);
 
+    expect(res).toEqual({ bring: { ok: true, pushed: 0 }, items: [] });
+    expect(calls).toHaveLength(0);
+  });
+});
+
+describe("pushRecipeIngredients", () => {
+  let client: PrismaClient;
+
+  beforeEach(async () => {
+    client ??= createTestClient();
+    await resetDatabase(client);
+  });
+
+  afterAll(async () => {
+    await client?.$disconnect();
+  });
+
+  function fakePush() {
+    const calls: BringItem[][] = [];
+    const push = async (items: BringItem[]): Promise<BringPushResult> => {
+      calls.push(items);
+      return { ok: true, pushed: items.length };
+    };
+    return { calls, push };
+  }
+
+  async function createRecipe(servings: number | null) {
+    return client.recipe.create({
+      data: {
+        name: "Testgericht",
+        servings,
+        ingredients: {
+          create: [
+            { name: "Nudeln", amount: "500", unit: "g" },
+            { name: "Salz", amount: "etwas", unit: null },
+          ],
+        },
+      },
+    });
+  }
+
+  it("pushes any recipe without a meal plan entry, with original amounts", async () => {
+    const recipe = await createRecipe(4);
+    const { calls, push } = fakePush();
+
+    const res = await pushRecipeIngredients(recipe.id, null, client, push);
+
+    expect(res.bring.ok).toBe(true);
+    expect(calls[0]).toEqual(
+      expect.arrayContaining([{ name: "Nudeln", spec: "500 g" }, { name: "Salz", spec: "etwas" }]),
+    );
+  });
+
+  it("scales amounts to the requested portions", async () => {
+    const recipe = await createRecipe(4);
+    const { calls, push } = fakePush();
+
+    await pushRecipeIngredients(recipe.id, 6, client, push);
+
+    expect(calls[0]).toEqual(
+      expect.arrayContaining([{ name: "Nudeln", spec: "750 g" }, { name: "Salz", spec: "etwas" }]),
+    );
+  });
+
+  it("ignores portions when the recipe has no servings", async () => {
+    const recipe = await createRecipe(null);
+    const { calls, push } = fakePush();
+
+    await pushRecipeIngredients(recipe.id, 8, client, push);
+
+    expect(calls[0]).toEqual(expect.arrayContaining([{ name: "Nudeln", spec: "500 g" }]));
+  });
+
+  it("is a no-op success for an unknown recipe", async () => {
+    const { calls, push } = fakePush();
+    const res = await pushRecipeIngredients("gibt-es-nicht", 2, client, push);
     expect(res).toEqual({ bring: { ok: true, pushed: 0 }, items: [] });
     expect(calls).toHaveLength(0);
   });

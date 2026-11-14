@@ -15,6 +15,7 @@ import { Check } from "lucide-react";
 
 import type { Recipe } from "@/lib/domain";
 import { groupIngredientsBySection } from "@/lib/services/ingredientGroups";
+import { scaleIngredients } from "@/lib/services/portions";
 
 /**
  * Hält den Bildschirm an, solange die Ansicht offen ist.
@@ -80,8 +81,21 @@ function Pane({
   );
 }
 
-export function RecipeCookView({ recipe }: { recipe: Recipe }) {
+export function RecipeCookView({
+  recipe,
+  portions = null,
+}: {
+  recipe: Recipe;
+  /** Auf der Detailseite gewählte Portionszahl; `null` = Originalmengen. */
+  portions?: number | null;
+}) {
   useWakeLock();
+
+  const scalable = recipe.servings !== null && recipe.servings > 0 && portions !== null;
+  const shownServings = scalable ? portions : recipe.servings;
+  const ingredients = scalable
+    ? scaleIngredients(recipe.ingredients, recipe.servings, portions)
+    : recipe.ingredients;
 
   const [done, setDone] = useState<ReadonlySet<number>>(() => new Set());
 
@@ -103,16 +117,16 @@ export function RecipeCookView({ recipe }: { recipe: Recipe }) {
       <Pane
         title="Zutaten"
         count={
-          recipe.servings !== null
-            ? `für ${recipe.servings} ${recipe.servings === 1 ? "Portion" : "Portionen"}`
+          shownServings !== null
+            ? `für ${shownServings} ${shownServings === 1 ? "Portion" : "Portionen"}`
             : undefined
         }
       >
-        {recipe.ingredients.length > 0 ? (
+        {ingredients.length > 0 ? (
           // Ohne Gruppen ergibt die Schleife genau eine Gruppe ohne Überschrift,
           // die Darstellung bleibt dann unverändert.
           <div className="space-y-3">
-            {groupIngredientsBySection(recipe.ingredients).map((gruppe, index) => (
+            {groupIngredientsBySection(ingredients).map((gruppe, index) => (
               <div key={gruppe.section ?? `ohne-gruppe-${index}`}>
                 {gruppe.section && (
                   <h3 className="pb-1 text-[11.5px] font-semibold text-ink-soft dark:text-cream/70">

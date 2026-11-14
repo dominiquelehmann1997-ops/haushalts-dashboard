@@ -20,6 +20,17 @@ export function clampPortions(value: number): number {
   return Math.min(MAX_PORTIONS, Math.max(MIN_PORTIONS, Math.round(value)));
 }
 
+/** Query-Parameter, mit dem die Portionszahl zwischen Detail- und Kochansicht wandert. */
+export const PORTIONS_PARAM = "portionen";
+
+/** Liest `?portionen=` robust — Unsinn fällt auf `null` (= Originalportionen) zurück. */
+export function parsePortionsParam(value: string | string[] | undefined): number | null {
+  const raw = Array.isArray(value) ? value[0] : value;
+  if (!raw) return null;
+  const n = Number(raw);
+  return Number.isFinite(n) && n > 0 ? clampPortions(n) : null;
+}
+
 /**
  * Skaliert eine einzelne Mengenangabe. Nicht-numerische Angaben und `null`
  * bleiben unverändert. Faktor 1 gibt das Original zurück, ohne umzuformatieren
